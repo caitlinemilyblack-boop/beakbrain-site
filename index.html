@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>BeakBrain, learn the birds around you</title>
-  <meta name="description" content="BeakBrain helps you learn to identify birds by sight and sound, with short daily lessons built around the birds where you live and the places you travel." />
+  <title>BeakBrain, learn the birds you will actually see</title>
+  <meta name="description" content="The fast, friendly way to learn your birds by sight and sound. Pick any country and BeakBrain builds a learning path from the most common birds up to the rarities, tuned to the month you travel." />
   <link rel="icon" href="assets/favicon.png" />
 
-  <meta property="og:title" content="BeakBrain, learn the birds around you" />
-  <meta property="og:description" content="Short daily lessons that teach you the birds you will actually see and hear, wherever you are." />
+  <meta property="og:title" content="BeakBrain, learn the birds you will actually see" />
+  <meta property="og:description" content="Short daily rounds that teach you the birds near you and the birds you will meet on your next trip, by sight and by sound." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://beakbrain.com" />
 
   <style>
-    /* Real app fonts, self-hosted (subset to Latin). Same faces the app uses. */
+    /* Real app fonts, self-hosted (subset to Latin). The same faces the app uses. */
     @font-face { font-family: 'Fredoka'; font-weight: 500; font-display: swap; src: url('fonts/Fredoka-500.woff') format('woff'); }
     @font-face { font-family: 'Fredoka'; font-weight: 600; font-display: swap; src: url('fonts/Fredoka-600.woff') format('woff'); }
     @font-face { font-family: 'Fredoka'; font-weight: 700; font-display: swap; src: url('fonts/Fredoka-700.woff') format('woff'); }
@@ -46,14 +46,15 @@
     a { color: var(--green); }
     img { max-width: 100%; display: block; }
 
+    .wordmark { font-family: var(--display); font-weight: 700; color: var(--green); letter-spacing: -0.3px; text-decoration: none; }
     .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
-    .section { padding: 88px 0; }
+    .section { padding: 92px 0; }
     .eyebrow { font-family: var(--display); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; font-size: 13px; color: var(--gold-deep); }
 
     /* Header */
     header { position: sticky; top: 0; z-index: 30; background: rgba(242, 232, 207, 0.88); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
     .nav { display: flex; align-items: center; justify-content: space-between; height: 70px; }
-    .nav .logo { height: 26px; width: auto; }
+    .nav .wordmark { font-size: 25px; }
     .btn { display: inline-block; font-family: var(--body); font-weight: 800; font-size: 16px; background: var(--green); color: #fff; text-decoration: none; padding: 13px 24px; border-radius: 999px; border: none; cursor: pointer; transition: background 0.15s ease, transform 0.05s ease; }
     .btn:hover { background: var(--green-dark); }
     .btn:active { transform: translateY(1px); }
@@ -64,50 +65,52 @@
     .btn-ghost:hover { background: var(--surface-alt); }
 
     /* Hero with looping video background */
-    .hero { position: relative; min-height: 88vh; display: flex; align-items: center; overflow: hidden; background: linear-gradient(150deg, #2C5134 0%, #386641 45%, #4A7A3E 100%); }
-    .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0; transition: opacity 0.8s ease; }
+    .hero { position: relative; min-height: 90vh; display: flex; align-items: center; overflow: hidden; background: linear-gradient(150deg, #2C5134 0%, #386641 45%, #4A7A3E 100%); }
+    .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0; transition: opacity 0.9s ease; }
     .hero-video.ready { opacity: 1; }
-    /* Warm brand-green wash so white type stays legible over any footage */
-    .hero::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(30,45,30,0.35) 0%, rgba(30,45,30,0.55) 60%, rgba(24,38,26,0.8) 100%); }
-    .hero-inner { position: relative; z-index: 2; color: #fff; padding: 96px 0; }
-    .hero .mark { width: 64px; height: 64px; margin-bottom: 22px; filter: drop-shadow(0 6px 18px rgba(0,0,0,0.35)); }
-    .hero h1 { font-size: clamp(40px, 6.4vw, 68px); color: #fff; letter-spacing: -0.5px; max-width: 15ch; }
-    .hero .lede { font-size: clamp(18px, 2.2vw, 22px); color: #EFE7D2; max-width: 40ch; margin-top: 22px; }
+    .hero::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(30,45,30,0.34) 0%, rgba(30,45,30,0.52) 55%, rgba(22,36,24,0.82) 100%); }
+    .hero-inner { position: relative; z-index: 2; color: #fff; padding: 104px 0; }
+    .hero h1 { font-size: clamp(40px, 6.6vw, 70px); color: #fff; letter-spacing: -0.5px; max-width: 15ch; }
+    .hero .lede { font-size: clamp(18px, 2.2vw, 22px); color: #EFE7D2; max-width: 44ch; margin-top: 22px; }
     .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 34px; }
     .hero .note { color: #D8E5CF; font-size: 15px; margin-top: 18px; }
 
     /* Section heads */
-    .section-head { max-width: 660px; margin-bottom: 52px; }
+    .section-head { max-width: 680px; margin-bottom: 54px; }
     .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
     .section-head h2 { font-size: clamp(28px, 4vw, 40px); color: var(--green); margin-top: 10px; }
     .section-head p { color: var(--muted); font-size: 19px; margin-top: 14px; }
 
-    /* How it works: a real sequence, shown as a connected path */
-    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
-    .step { position: relative; }
-    .step .num { font-family: var(--display); font-weight: 700; font-size: 15px; letter-spacing: 1.5px; color: var(--gold-deep); }
-    .step .bead { width: 52px; height: 52px; border-radius: 50%; background: var(--green); color: #fff; display: flex; align-items: center; justify-content: center; margin: 14px 0 18px; box-shadow: var(--shadow); }
-    .step .bead svg { width: 26px; height: 26px; stroke: #fff; fill: none; stroke-width: 2; }
-    .step h3 { font-size: 22px; margin-bottom: 8px; color: var(--ink); }
+    /* How it works */
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+    .step .bead { width: 54px; height: 54px; border-radius: 50%; background: var(--green); color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow); margin-bottom: 20px; }
+    .step .bead svg { width: 27px; height: 27px; stroke: #fff; fill: none; stroke-width: 2; }
+    .step .num { font-family: var(--display); font-weight: 600; font-size: 13px; letter-spacing: 1.5px; color: var(--gold-deep); text-transform: uppercase; }
+    .step h3 { font-size: 22px; margin: 4px 0 8px; color: var(--ink); }
     .step p { color: var(--muted); }
-    /* connector line between beads on wide screens */
-    .step:not(:last-child)::after { content: ""; position: absolute; top: 40px; left: 66px; right: -13px; height: 2px; background: repeating-linear-gradient(90deg, var(--border) 0 8px, transparent 8px 14px); }
 
-    /* Why: editorial two-column list, not uniform cards */
+    /* Why */
     .why { background: var(--surface-alt); }
     .why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px 56px; }
-    .why-item { border-left: 3px solid var(--sage); padding-left: 20px; }
+    .why-item { border-left: 3px solid var(--sage); padding-left: 22px; }
     .why-item h3 { font-size: 21px; color: var(--green); margin-bottom: 8px; }
     .why-item p { color: var(--muted); }
 
     /* Who */
-    .who-list { display: grid; gap: 14px; max-width: 760px; }
+    .who-list { display: grid; gap: 14px; max-width: 780px; }
     .who-list .row { display: flex; align-items: baseline; gap: 14px; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 20px 22px; }
     .who-list .row b { font-family: var(--display); color: var(--green); font-size: 18px; white-space: nowrap; }
     .who-list .row span { color: var(--muted); }
 
+    /* Founder */
+    .founder { background: linear-gradient(150deg, #2C5134, #386641); color: #fff; }
+    .founder .wrap { max-width: 820px; text-align: center; }
+    .founder .eyebrow { color: #F2D98A; }
+    .founder p.lead { font-family: var(--display); font-weight: 500; font-size: clamp(22px, 3vw, 30px); line-height: 1.3; margin: 14px 0 20px; color: #fff; }
+    .founder p.sub { color: #DCEAD4; font-size: 18px; max-width: 62ch; margin: 0 auto; }
+
     /* Pricing */
-    .prices { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; max-width: 760px; }
+    .prices { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; max-width: 780px; margin: 0 auto; }
     .price { background: var(--surface); border: 1px solid var(--border); border-radius: 22px; padding: 34px; box-shadow: var(--shadow); }
     .price.pro { border: 2px solid var(--green); position: relative; }
     .price.pro .flag { position: absolute; top: 22px; right: 22px; background: var(--gold); color: #4A3608; font-family: var(--display); font-weight: 700; font-size: 12px; letter-spacing: 0.5px; padding: 5px 12px; border-radius: 999px; }
@@ -118,16 +121,16 @@
     .price li::before { content: ""; position: absolute; left: 0; top: 7px; width: 13px; height: 13px; border-radius: 50%; background: var(--sage); }
 
     /* FAQ */
-    .faq { max-width: 780px; }
-    details { border-bottom: 1px solid var(--border); padding: 6px 4px; }
-    summary { font-family: var(--display); font-weight: 600; font-size: 19px; color: var(--ink); cursor: pointer; padding: 18px 0; list-style: none; display: flex; justify-content: space-between; gap: 20px; }
+    .faq { max-width: 800px; }
+    details { border-bottom: 1px solid var(--border); }
+    summary { font-family: var(--display); font-weight: 600; font-size: 19px; color: var(--ink); cursor: pointer; padding: 20px 4px; list-style: none; display: flex; justify-content: space-between; gap: 20px; }
     summary::-webkit-details-marker { display: none; }
     summary::after { content: "+"; color: var(--green); font-size: 24px; line-height: 1; }
     details[open] summary::after { content: "\2212"; }
-    details p { color: var(--muted); padding-bottom: 20px; max-width: 68ch; }
+    details p { color: var(--muted); padding: 0 4px 22px; max-width: 70ch; }
 
     /* CTA */
-    .cta-band { background: linear-gradient(150deg, #2C5134, #386641); border-radius: 30px; padding: 58px 34px; text-align: center; color: #fff; }
+    .cta-band { background: linear-gradient(150deg, #2C5134, #386641); border-radius: 30px; padding: 60px 34px; text-align: center; color: #fff; }
     .cta-band h2 { font-size: clamp(26px, 3.6vw, 36px); color: #fff; }
     .cta-band p { color: #DCEAD4; margin-top: 12px; font-size: 19px; }
     .waitlist { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 28px; }
@@ -138,17 +141,16 @@
     /* Footer */
     footer { border-top: 1px solid var(--border); padding: 46px 0; }
     .foot { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 18px; }
-    .foot img { height: 24px; }
+    .foot .wordmark { font-size: 22px; }
     .foot nav a { color: var(--muted); text-decoration: none; margin-left: 24px; font-weight: 700; }
     .foot nav a:hover { color: var(--green); }
     .foot .copy { color: var(--muted); font-size: 14px; width: 100%; }
 
     @media (max-width: 860px) {
-      .steps { grid-template-columns: 1fr; gap: 18px; }
-      .step:not(:last-child)::after { display: none; }
+      .steps { grid-template-columns: 1fr; gap: 26px; }
       .why-grid, .prices { grid-template-columns: 1fr; }
-      .section { padding: 64px 0; }
-      .hero { min-height: 80vh; }
+      .section { padding: 66px 0; }
+      .hero { min-height: 82vh; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -159,28 +161,27 @@
 <body>
   <header>
     <div class="wrap nav">
-      <a href="#top" aria-label="BeakBrain home"><img class="logo" src="assets/logo-name-green.png" alt="BeakBrain" /></a>
+      <a class="wordmark" href="#top">BeakBrain</a>
       <a class="btn" href="#waitlist">Join the waitlist</a>
     </div>
   </header>
 
   <span id="top"></span>
 
-  <!-- Hero: looping video background, warm green wash, real logo mark -->
+  <!-- Hero -->
   <section class="hero">
     <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="auto" poster="assets/video/hero-poster.jpg">
       <source src="assets/video/hero.mp4" type="video/mp4" />
     </video>
     <div class="wrap hero-inner">
-      <img class="mark" src="assets/logo-mark.png" alt="" />
-      <span class="eyebrow" style="color:#F2D98A;">Coming soon to iPhone and Android</span>
-      <h1>Learn the birds around you</h1>
-      <p class="lede">BeakBrain teaches you to know birds by sight and sound. Short daily lessons, built around the birds where you live and the places you travel.</p>
+      <span class="eyebrow" style="color:#F2D98A;">Duolingo for birding</span>
+      <h1>Learn the birds you will actually see</h1>
+      <p class="lede">The fast, friendly way to learn your birds by sight and sound. Pick any country and BeakBrain builds a learning path from the most common birds up to the rarities, tuned to the month you travel.</p>
       <div class="hero-cta">
         <a class="btn btn-light" href="#waitlist">Join the waitlist</a>
         <a class="btn btn-ghost" href="#how" style="color:#fff;border-color:rgba(255,255,255,0.5);">See how it works</a>
       </div>
-      <p class="note">Free to start. No account needed to begin.</p>
+      <p class="note">Free to start. No account needed. Coming soon to iPhone and Android.</p>
     </div>
   </section>
 
@@ -189,26 +190,26 @@
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow">How it works</span>
-        <h2>A few minutes a day, three simple steps</h2>
+        <h2>Short daily rounds that actually stick</h2>
       </div>
       <div class="steps">
         <div class="step">
-          <div class="num">STEP ONE</div>
           <div class="bead"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
-          <h3>Choose your place</h3>
-          <p>Pick your country or a trip you are planning. BeakBrain shows you the birds you are most likely to meet there.</p>
+          <div class="num">Step one</div>
+          <h3>Pick your country</h3>
+          <p>Choose where you are birding. BeakBrain orders every bird by how common it is where you are, so you start with the ones you will really meet.</p>
         </div>
         <div class="step">
-          <div class="num">STEP TWO</div>
           <div class="bead"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
-          <h3>Play a quick round</h3>
-          <p>Match photos and calls in a few minutes a day. Every bird you miss becomes a small lesson right away.</p>
+          <div class="num">Step two</div>
+          <h3>Learn by sight and sound</h3>
+          <p>Identify a bird from a photo or its call. Review lookalikes side by side. A daily streak keeps you coming back.</p>
         </div>
         <div class="step">
-          <div class="num">STEP THREE</div>
           <div class="bead"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2M20 14h2M15 13v2M9 13v2"/></svg></div>
-          <h3>Remember for good</h3>
-          <p>BeakBrain brings birds back at the right moment, so the ones you learn today stay with you tomorrow.</p>
+          <div class="num">Step three</div>
+          <h3>Keep what you learn</h3>
+          <p>The birds you find tricky return more often until you know them. Spaced practice does the remembering for you.</p>
         </div>
       </div>
     </div>
@@ -219,24 +220,24 @@
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow">Why it works</span>
-        <h2>Built for the field, and for how people really learn</h2>
+        <h2>Built for the field, and for how you learn</h2>
       </div>
       <div class="why-grid">
         <div class="why-item">
-          <h3>Sight and sound together</h3>
-          <p>Learn what a bird looks like and what it sounds like, the same way you meet birds in the wild. You can play fully by eye or fully by ear.</p>
+          <h3>Every country on Earth</h3>
+          <p>Birds from every country, ordered by how common each one is where you are. Your first birds are the ones outside your window.</p>
         </div>
         <div class="why-item">
-          <h3>Based on how memory works</h3>
-          <p>Spaced repetition and mixed practice are proven ways to learn and to keep what you learn. BeakBrain handles the timing for you.</p>
+          <h3>By ear and by eye</h3>
+          <p>Real photos and real recordings, the way birding actually works. Play fully by sight, fully by sound, or both.</p>
         </div>
         <div class="why-item">
-          <h3>Ready for anywhere</h3>
-          <p>Birds from around the world, ordered by what is common where you are, so your first birds are the ones you are most likely to see.</p>
+          <h3>Practice that pays off</h3>
+          <p>Spaced repetition and interleaving put your time where it counts, so a few minutes a day adds up fast.</p>
         </div>
         <div class="why-item">
-          <h3>Honest photos and sounds</h3>
-          <p>Every image and recording is openly licensed and credited to the person who made it. What you learn is the real bird.</p>
+          <h3>Ready for your next trip</h3>
+          <p>Set your destination and the month you travel, then drill exactly the birds you will see when you arrive.</p>
         </div>
       </div>
     </div>
@@ -246,14 +247,23 @@
   <section class="section">
     <div class="wrap">
       <div class="section-head">
-        <span class="eyebrow">Who it is for</span>
-        <h2>Whether you are starting out or sharpening tricky calls</h2>
+        <h2>For every kind of birder</h2>
+        <p>Whether you are meeting your first birds or sharpening the calls that always trip you up.</p>
       </div>
       <div class="who-list">
-        <div class="row"><b>New to birds</b><span>and looking for a friendly place to start.</span></div>
-        <div class="row"><b>Traveling soon</b><span>and want to know the birds before you go.</span></div>
+        <div class="row"><b>New to birds</b><span>and want a friendly place to start.</span></div>
+        <div class="row"><b>Planning a trip</b><span>and want to know the birds before you go.</span></div>
         <div class="row"><b>A keen birder</b><span>working on calls and the species that always trip you up.</span></div>
       </div>
+    </div>
+  </section>
+
+  <!-- Founder -->
+  <section class="section founder">
+    <div class="wrap">
+      <span class="eyebrow">Made by a birder</span>
+      <p class="lead">BeakBrain is built by Dr Cat Black, a behavioural ecologist and conservation scientist at the University of Oxford and co-creator of Penguin Watch.</p>
+      <p class="sub">Every photo and recording is openly licensed and credited to the person who made it, drawn from Wikimedia Commons, iNaturalist and the Xeno-canto community. What you learn is the real bird.</p>
     </div>
   </section>
 
@@ -264,7 +274,7 @@
         <span class="eyebrow">Simple pricing</span>
         <h2>Start for free, upgrade only if you want more</h2>
       </div>
-      <div class="prices" style="margin: 0 auto;">
+      <div class="prices">
         <div class="price">
           <h3>Free</h3>
           <div class="tag">Always free</div>
@@ -297,11 +307,11 @@
       <div class="faq">
         <details open>
           <summary>Is BeakBrain free?</summary>
-          <p>Yes, you can start for free. Every quick game and a starter pack for every country are always free. A Pro upgrade unlocks the full packs, seasons, trips, and offline use.</p>
+          <p>Yes, you can start for free. Every quick game and a starter pack for every country are always free. A Pro upgrade opens the full packs, seasons, trips, and offline use.</p>
         </details>
         <details>
           <summary>Which birds does it cover?</summary>
-          <p>Birds from around the world. Packs are ordered by what is common where you are, so the first birds you learn are the ones you are most likely to see near home or on a trip.</p>
+          <p>Birds from every country. Packs are ordered by how common each bird is where you are, so the first birds you learn are the ones you are most likely to see near home or on a trip.</p>
         </details>
         <details>
           <summary>Do I need an internet connection?</summary>
@@ -309,11 +319,11 @@
         </details>
         <details>
           <summary>Is it on iPhone and Android?</summary>
-          <p>BeakBrain is coming to both. Join the waitlist and we will tell you the moment it is ready to download.</p>
+          <p>BeakBrain is coming to both. Join the waitlist and we will tell you the day it is ready to download.</p>
         </details>
         <details>
           <summary>Where do the photos and sounds come from?</summary>
-          <p>From open, credited sources such as iNaturalist and the Xeno-canto community. Every photo and recording shows the person who made it and its licence.</p>
+          <p>From open, credited sources including Wikimedia Commons, iNaturalist and the Xeno-canto community. Every photo and recording shows the person who made it and its licence.</p>
         </details>
       </div>
     </div>
@@ -338,22 +348,21 @@
 
   <footer>
     <div class="wrap foot">
-      <img src="assets/logo-name-green.png" alt="BeakBrain" />
+      <span class="wordmark">BeakBrain</span>
       <nav>
         <a href="mailto:hello@beakbrain.com">Contact</a>
         <a href="/privacy.html">Privacy</a>
       </nav>
-      <div class="copy">Learn the birds around you. &copy; 2026 BeakBrain.</div>
+      <div class="copy">Learn the birds you will actually see. &copy; 2026 BeakBrain.</div>
     </div>
   </footer>
 
   <script>
-    // Hero background loop: a single stitched clip (3 seconds from each source video).
-    // To refresh it, re-run the ffmpeg stitch step and replace web/assets/video/hero.mp4.
+    // Hero background loop: a single stitched clip, 3 seconds from each source video.
+    // Refresh it by re-running the ffmpeg stitch step and replacing assets/video/hero.mp4.
     (function () {
       var v = document.getElementById('heroVideo');
       if (!v) return;
-      // Honour reduced-motion: keep the poster/gradient, drop the moving footage.
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { v.remove(); return; }
       v.addEventListener('loadeddata', function () { v.classList.add('ready'); });
       var p = v.play();
