@@ -103,6 +103,10 @@
     .feat h3 { font-size: 19px; color: var(--ink); margin-bottom: 8px; }
     .feat p { color: var(--muted); font-size: 16px; }
 
+    /* Bird gallery (masonry) */
+    .gallery { columns: 3 300px; column-gap: 18px; }
+    .gallery img { width: 100%; border-radius: 16px; margin: 0 0 18px; display: block; break-inside: avoid; box-shadow: var(--shadow); }
+
     /* Why */
     .why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 44px 60px; }
     .why-item { border-left: 3px solid var(--sage); padding-left: 26px; }
@@ -145,7 +149,9 @@
     details p { color: var(--muted); padding: 0 6px 26px; max-width: 72ch; }
 
     /* CTA */
-    .cta-band { background: linear-gradient(150deg, #2C5134, #386641); border-radius: 30px; padding: 66px 40px; text-align: center; color: #fff; }
+    .cta-band { position: relative; overflow: hidden; background: linear-gradient(150deg, #2C5134, #386641); border-radius: 30px; padding: 66px 40px; text-align: center; color: #fff; }
+    .cta-band::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(150deg, rgba(38,68,45,0.82), rgba(48,88,56,0.82)); }
+    .cta-content { position: relative; z-index: 2; }
     .cta-band h2 { font-size: clamp(26px, 3.6vw, 36px); color: #fff; }
     .cta-band p { color: #DCEAD4; margin-top: 14px; font-size: 19px; }
     .waitlist { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 30px; }
@@ -192,7 +198,7 @@
     </video>
     <div class="wrap hero-inner">
       <span class="eyebrow" style="color:#F2D98A;">Learn birds by sight and sound</span>
-      <h1>Learn the birds you will actually see</h1>
+      <h1>Know the birds before you meet them</h1>
       <p class="lede">BeakBrain teaches you to identify birds before your trip. Pick a country and it builds a learning path from the most common birds up to the rarities, tuned to the time of year you travel.</p>
       <div class="hero-cta">
         <a class="btn btn-light" href="#waitlist">Join the waitlist</a>
@@ -216,7 +222,6 @@
   <section class="section" id="how">
     <div class="wrap">
       <div class="section-head">
-        <span class="eyebrow">How it works</span>
         <h2>Short daily rounds that build real knowledge</h2>
       </div>
       <div class="steps">
@@ -242,11 +247,32 @@
     </div>
   </section>
 
+  <!-- Bird gallery -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Real photos, real birds</span>
+        <h2>You learn from photographs, not diagrams</h2>
+        <p>Every bird is shown in real photographs and, where one exists, its real call. A bird you meet in the wild already looks and sounds familiar.</p>
+      </div>
+      <div class="gallery">
+        <img src="assets/birds/bird-4.jpg" alt="Wild bird photograph" loading="lazy" />
+        <img src="assets/birds/bird-5.jpg" alt="Wild bird photograph" loading="lazy" />
+        <img src="assets/birds/bird-2.jpg" alt="Wild bird photograph" loading="lazy" />
+        <img src="assets/birds/bird-9.jpg" alt="Wild bird photograph" loading="lazy" />
+        <img src="assets/birds/bird-3.jpg" alt="Wild bird photograph" loading="lazy" />
+        <img src="assets/birds/bird-6.jpg" alt="Wild bird photograph" loading="lazy" />
+        <img src="assets/birds/bird-1.jpg" alt="Wild bird photograph" loading="lazy" />
+        <img src="assets/birds/bird-7.jpg" alt="Wild bird photograph" loading="lazy" />
+        <img src="assets/birds/bird-8.jpg" alt="Wild bird photograph" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
   <!-- Everything inside -->
   <section class="section features">
     <div class="wrap">
       <div class="section-head">
-        <span class="eyebrow">Everything inside</span>
         <h2>A full birding classroom in your pocket</h2>
         <p>Real photos and recordings, a learning path for every country, and quick games that make practice a habit.</p>
       </div>
@@ -304,7 +330,6 @@
   <section class="section">
     <div class="wrap">
       <div class="section-head">
-        <span class="eyebrow">Why it works</span>
         <h2>Built for the field, and for how you learn</h2>
       </div>
       <div class="why-grid">
@@ -362,7 +387,6 @@
   <section class="section">
     <div class="wrap">
       <div class="section-head center">
-        <span class="eyebrow">Simple pricing</span>
         <h2>Start for free, upgrade only if you want more</h2>
       </div>
       <div class="prices">
@@ -432,6 +456,10 @@
   <section class="section" id="waitlist">
     <div class="wrap">
       <div class="cta-band">
+        <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/video/hero-poster.jpg">
+          <source src="assets/video/hero.mp4" type="video/mp4" />
+        </video>
+        <div class="cta-content">
         <h2>Be first to know</h2>
         <p>Join the waitlist and we will email you the day BeakBrain is ready.</p>
         <form class="waitlist" id="waitlistForm">
@@ -439,6 +467,7 @@
           <button class="btn btn-light" type="submit">Join the waitlist</button>
         </form>
         <p class="form-note" id="waitlistNote">By joining you agree we can email you when the app launches. No spam, and you can unsubscribe any time. See our <a href="/privacy.html" style="color:#F2D98A;">Privacy Policy</a>.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -458,12 +487,15 @@
   <script>
     // Hero background loop: one stitched clip, 3 seconds from each source video.
     (function () {
-      var v = document.getElementById('heroVideo');
-      if (!v) return;
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { v.remove(); return; }
-      v.addEventListener('loadeddata', function () { v.classList.add('ready'); });
-      var p = v.play();
-      if (p && p.catch) { p.catch(function () {}); }
+      var vids = document.querySelectorAll('.hero-video');
+      if (!vids.length) return;
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      vids.forEach(function (v) {
+        if (reduce) { v.remove(); return; }
+        v.addEventListener('loadeddata', function () { v.classList.add('ready'); });
+        var p = v.play();
+        if (p && p.catch) { p.catch(function () {}); }
+      });
     })();
 
     // Founder photo: swap the initials for a real image if assets/cat.jpg is present.
