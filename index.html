@@ -168,7 +168,9 @@
 
   <!-- Hero: looping video background, warm green wash, real logo mark -->
   <section class="hero">
-    <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="auto"></video>
+    <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="auto" poster="assets/video/hero-poster.jpg">
+      <source src="assets/video/hero.mp4" type="video/mp4" />
+    </video>
     <div class="wrap hero-inner">
       <img class="mark" src="assets/logo-mark.png" alt="" />
       <span class="eyebrow" style="color:#F2D98A;">Coming soon to iPhone and Android</span>
@@ -346,25 +348,16 @@
   </footer>
 
   <script>
-    // Hero background video. Drop one or more files into web/assets/video/ and list
-    // them here; they play in sequence and loop. With none listed, the hero shows
-    // its brand-green gradient (still looks intentional).
+    // Hero background loop: a single stitched clip (3 seconds from each source video).
+    // To refresh it, re-run the ffmpeg stitch step and replace web/assets/video/hero.mp4.
     (function () {
-      var heroVideos = [
-        // e.g. 'assets/video/clip-1.mp4', 'assets/video/clip-2.mp4'
-      ];
       var v = document.getElementById('heroVideo');
-      if (!v || !heroVideos.length) { if (v) v.remove(); return; }
-      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (reduce) { v.remove(); return; }
-      var i = 0;
-      v.loop = heroVideos.length === 1;
-      function load(n) { v.src = heroVideos[n]; v.play().catch(function () {}); }
+      if (!v) return;
+      // Honour reduced-motion: keep the poster/gradient, drop the moving footage.
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { v.remove(); return; }
       v.addEventListener('loadeddata', function () { v.classList.add('ready'); });
-      if (heroVideos.length > 1) {
-        v.addEventListener('ended', function () { i = (i + 1) % heroVideos.length; load(i); });
-      }
-      load(0);
+      var p = v.play();
+      if (p && p.catch) { p.catch(function () {}); }
     })();
   </script>
 </body>
