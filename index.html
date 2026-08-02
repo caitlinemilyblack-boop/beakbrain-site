@@ -58,6 +58,10 @@
     .nav { display: flex; align-items: center; justify-content: space-between; height: 92px; }
     .nav .wordmark { font-size: 25px; color: #fff; transition: color .28s ease; }
     header.scrolled .nav .wordmark { color: var(--green); }
+    .nav-right { display: flex; align-items: center; gap: 24px; }
+    .nav-link { color: #fff; text-decoration: none; font-family: var(--display); font-weight: 600; font-size: 15px; transition: color .28s ease; }
+    header.scrolled .nav .nav-link { color: var(--green); }
+    @media (max-width: 520px) { .nav-link { display: none; } }
     .nav .btn { background: #fff; color: var(--green); }
     .nav .btn:hover { background: #F4EEDD; }
     header.scrolled .nav .btn { background: var(--green); color: #fff; }
@@ -192,7 +196,10 @@
   <header>
     <div class="wrap nav">
       <a class="wordmark" href="#top">BeakBrain</a>
-      <a class="btn" href="#waitlist">Join the waitlist</a>
+      <div class="nav-right">
+        <a class="nav-link" href="community.html">Birding groups</a>
+        <a class="btn" href="#waitlist">Join the waitlist</a>
+      </div>
     </div>
   </header>
 
