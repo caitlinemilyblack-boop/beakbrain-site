@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Birding groups and societies | BeakBrain</title>
-  <meta name="description" content="A structured, geo-filtered directory of bird societies, local clubs and citizen-science projects. Find birders near home or where you're travelling. Pilot: South Africa and the Netherlands." />
+  <title>Find Your Community | BeakBrain</title>
+  <meta name="description" content="A directory of bird societies, local clubs and citizen-science projects, listed by country and region. Find people to bird with near home or on your next trip." />
   <link rel="icon" href="assets/favicon.png" />
-  <meta property="og:title" content="Birding groups and societies | BeakBrain" />
-  <meta property="og:description" content="Find the bird societies, local clubs and citizen-science projects that cover any region. A cleaner, structured take on the classic birding directory." />
+  <meta property="og:title" content="Find Your Community | BeakBrain" />
+  <meta property="og:description" content="Bird societies, local clubs and citizen-science projects, listed by country and region." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://beakbrain.com/community.html" />
 
@@ -22,13 +22,12 @@
     :root {
       --bg: #F2E8CF; --surface: #FFFFFF; --surface-alt: #E7D9B4; --ink: #2E2A25;
       --muted: #6B6155; --border: #DDCBA0; --green: #386641; --green-dark: #2C5134;
-      --sage: #6A994E; --gold: #EBB93C; --gold-deep: #8C6410; --terra: #BC4749;
+      --sage: #6A994E; --gold: #EBB93C; --gold-deep: #8C6410;
       --display: 'Fredoka', 'Trebuchet MS', system-ui, sans-serif;
       --body: 'Nunito', system-ui, -apple-system, sans-serif;
       --shadow: 0 14px 34px rgba(46, 42, 37, 0.09);
     }
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
     body { margin: 0; font-family: var(--body); color: var(--ink); background: var(--bg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
     h1, h2, h3 { font-family: var(--display); font-weight: 700; line-height: 1.14; margin: 0; }
     p { margin: 0; }
@@ -41,48 +40,30 @@
     .nav .wordmark { font-size: 24px; }
     .nav a.back { text-decoration: none; font-weight: 800; color: var(--green); font-size: 15px; }
 
-    .hero { padding: 56px 0 28px; }
-    .eyebrow { font-family: var(--display); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; font-size: 13px; color: var(--gold-deep); }
-    .hero h1 { font-size: clamp(30px, 5vw, 46px); margin-top: 10px; }
-    .hero p { color: var(--muted); font-size: 18px; margin-top: 14px; max-width: 680px; }
+    .hero { padding: 48px 0 6px; }
+    .hero h1 { font-size: clamp(30px, 5vw, 46px); }
+    .hero p { color: var(--muted); font-size: 18px; margin-top: 12px; max-width: 680px; }
 
-    .filters { display: flex; flex-wrap: wrap; gap: 10px; margin: 26px 0 8px; }
-    .filter { font-family: var(--display); font-weight: 600; font-size: 14px; border: 1.5px solid var(--border); background: var(--surface); color: var(--ink); border-radius: 999px; padding: 8px 18px; cursor: pointer; }
-    .filter[aria-pressed="true"] { background: var(--green); border-color: var(--green); color: #fff; }
+    .controls { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 26px 0 4px; }
+    .controls label { font-family: var(--display); font-weight: 600; font-size: 15px; color: var(--muted); }
+    select { font-family: var(--display); font-weight: 600; font-size: 16px; color: var(--ink); background: var(--surface); border: 1.5px solid var(--border); border-radius: 12px; padding: 11px 40px 11px 16px; cursor: pointer; -webkit-appearance: none; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23386641' stroke-width='3'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; }
 
-    .country { padding: 30px 0 10px; }
-    .country h2 { font-size: 26px; display: flex; align-items: center; gap: 12px; }
-    .country .flag { font-size: 30px; }
-    .country .count { font-family: var(--body); font-weight: 800; font-size: 13px; color: var(--muted); background: var(--surface-alt); border-radius: 999px; padding: 3px 12px; }
-    .region-label { font-family: var(--display); font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; font-size: 12px; color: var(--gold-deep); margin: 22px 0 12px; }
+    .cmap { width: 100%; height: 380px; border: 0; border-radius: 16px; box-shadow: var(--shadow); margin: 14px 0 6px; display: block; }
 
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 16px; }
+    .region-label { font-family: var(--display); font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; font-size: 12px; color: var(--gold-deep); margin: 26px 0 12px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
     .card { display: block; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 18px 20px; text-decoration: none; color: inherit; box-shadow: var(--shadow); transition: transform .12s ease, box-shadow .12s ease; }
     .card:hover { transform: translateY(-2px); box-shadow: 0 18px 40px rgba(46,42,37,0.14); }
     .card .top { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
     .card h3 { font-size: 17px; color: var(--green-dark); }
     .card .blurb { color: var(--muted); font-size: 14.5px; margin-top: 6px; }
-    .chip { font-family: var(--body); font-weight: 800; font-size: 11px; white-space: nowrap; border-radius: 999px; padding: 3px 10px; color: var(--gold-deep); background: var(--surface-alt); }
-    .chip.region { color: #fff; background: var(--sage); }
     .card .arrow { color: var(--green); font-weight: 800; font-size: 13px; margin-top: 10px; }
+    .chip { font-family: var(--body); font-weight: 800; font-size: 11px; white-space: nowrap; border-radius: 999px; padding: 3px 10px; color: var(--gold-deep); background: var(--surface-alt); }
 
-    .directory { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; background: var(--surface-alt); border: 1px dashed var(--gold-deep); border-radius: 14px; padding: 14px 18px; margin: 6px 0 4px; }
-    .directory .tag { font-family: var(--body); font-weight: 800; font-size: 11px; color: #fff; background: var(--gold-deep); border-radius: 999px; padding: 3px 10px; white-space: nowrap; }
-    .directory p { font-size: 14.5px; color: var(--ink); flex: 1; min-width: 220px; }
-    .directory a { font-weight: 800; white-space: nowrap; }
-
-    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 30px 32px; margin: 30px 0 0; box-shadow: var(--shadow); }
-    .help h2 { font-size: 22px; }
-    .help p { color: var(--muted); margin-top: 8px; max-width: 720px; }
-    .help ul { margin: 16px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px 22px; }
-    .help li { color: var(--ink); font-size: 14.5px; padding-left: 20px; position: relative; }
-    .help li::before { content: '🔒'; position: absolute; left: 0; font-size: 12px; }
-
-    .cta { background: var(--green); color: #fff; border-radius: 20px; padding: 34px; margin: 30px 0 20px; text-align: center; box-shadow: var(--shadow); }
+    .cta { background: var(--green); color: #fff; border-radius: 20px; padding: 34px; margin: 40px 0 20px; text-align: center; box-shadow: var(--shadow); }
     .cta h2 { color: #fff; font-size: 24px; }
     .cta p { color: rgba(255,255,255,0.9); margin: 10px auto 20px; max-width: 560px; }
     .cta a.btn { display: inline-block; background: var(--gold); color: #2E2A25; font-family: var(--display); font-weight: 700; text-decoration: none; border-radius: 999px; padding: 13px 26px; }
-    .note { color: var(--muted); font-size: 13px; text-align: center; margin-top: 14px; }
 
     footer { background: var(--green-dark); color: #EAF1E4; margin-top: 40px; }
     .foot { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; padding: 30px 28px; }
@@ -101,25 +82,20 @@
 
   <main class="wrap">
     <section class="hero">
-      <span class="eyebrow">Find your flock</span>
-      <h1>Birding groups &amp; societies</h1>
-      <p>Bird societies, local clubs and citizen-science projects, sorted by country and region, with a plain note on each so you know what you are joining. Every direct link here is checked by hand. For the smaller clubs we also point you to each country's official club directory, which stays up to date. A lot of grassroots birding happens in Facebook, WhatsApp and Meetup groups that sit behind a login, so the list also grows from your suggestions. Right now it covers South Africa and the Netherlands, with more places to come.</p>
-      <div class="filters" id="filters">
-        <button class="filter" data-country="all" aria-pressed="true">All</button>
-        <button class="filter" data-country="ZA" aria-pressed="false">🇿🇦 South Africa</button>
-        <button class="filter" data-country="NL" aria-pressed="false">🇳🇱 Netherlands</button>
+      <h1>Find Your Community</h1>
+      <p>Bird societies, local clubs and citizen-science projects, listed by country and region. Pick a place to find people to bird with near home or on your next trip.</p>
+      <div class="controls">
+        <label for="countrySel">Country</label>
+        <select id="countrySel">
+          <option value="ZA">🇿🇦 South Africa</option>
+          <option value="NL">🇳🇱 Netherlands</option>
+        </select>
       </div>
     </section>
 
-    <!-- ── South Africa ────────────────────────────────────────────────── -->
+    <!-- South Africa -->
     <section class="country" data-country="ZA">
-      <h2><span class="flag">🇿🇦</span> South Africa <span class="count">12 groups + full directory</span></h2>
-
-      <div class="directory">
-        <span class="tag">Every club</span>
-        <p>For the smaller clubs not listed here, this is the official, always-current directory of all 40 affiliated bird clubs, province by province.</p>
-        <a href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/" target="_blank" rel="noopener">BirdLife SA: Join a Bird Club →</a>
-      </div>
+      <iframe class="cmap" loading="lazy" title="Bird clubs in South Africa" src="https://www.google.com/maps?q=bird+club+South+Africa&output=embed"></iframe>
 
       <div class="region-label">Countrywide</div>
       <div class="grid">
@@ -132,34 +108,27 @@
 
       <div class="region-label">Western Cape</div>
       <div class="grid">
-        <a class="card" href="https://www.capebirdclub.org.za" target="_blank" rel="noopener"><div class="top"><h3>Cape Bird Club</h3><span class="chip region">Western Cape</span></div><p class="blurb">Outings, talks and courses across the Cape Peninsula and beyond.</p><div class="arrow">Visit →</div></a>
-        <a class="card" href="https://www.somersetwestbirdclub.co.za" target="_blank" rel="noopener"><div class="top"><h3>Somerset West Bird Club</h3><span class="chip region">Western Cape</span></div><p class="blurb">Local outings and monthly meetings in the Helderberg basin.</p><div class="arrow">Visit →</div></a>
-        <a class="card" href="https://www.tygerbergbirdclub.org" target="_blank" rel="noopener"><div class="top"><h3>Tygerberg Bird Club</h3><span class="chip region">Western Cape</span></div><p class="blurb">Northern-suburbs Cape Town club with regular outings and talks.</p><div class="arrow">Visit →</div></a>
-        <a class="card" href="https://www.capetownpelagics.com" target="_blank" rel="noopener"><div class="top"><h3>Cape Town Pelagics</h3><span class="chip region">Western Cape</span></div><p class="blurb">Boat trips off Cape Point for albatrosses, petrels and other seabirds.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.capebirdclub.org.za" target="_blank" rel="noopener"><div class="top"><h3>Cape Bird Club</h3></div><p class="blurb">Outings, talks and courses across the Cape Peninsula and beyond.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.somersetwestbirdclub.co.za" target="_blank" rel="noopener"><div class="top"><h3>Somerset West Bird Club</h3></div><p class="blurb">Local outings and monthly meetings in the Helderberg basin.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.tygerbergbirdclub.org" target="_blank" rel="noopener"><div class="top"><h3>Tygerberg Bird Club</h3></div><p class="blurb">Northern-suburbs Cape Town club with regular outings and talks.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.capetownpelagics.com" target="_blank" rel="noopener"><div class="top"><h3>Cape Town Pelagics</h3></div><p class="blurb">Boat trips off Cape Point for albatrosses, petrels and other seabirds.</p><div class="arrow">Visit →</div></a>
       </div>
 
       <div class="region-label">Gauteng</div>
       <div class="grid">
-        <a class="card" href="https://witsbirdclub.org.za" target="_blank" rel="noopener"><div class="top"><h3>Witwatersrand Bird Club</h3><span class="chip region">Gauteng</span></div><p class="blurb">South Africa's oldest bird club (est. 1947), serving Johannesburg.</p><div class="arrow">Visit →</div></a>
-        <a class="card" href="https://www.blng.co.za" target="_blank" rel="noopener"><div class="top"><h3>BirdLife Northern Gauteng</h3><span class="chip region">Gauteng</span></div><p class="blurb">Pretoria-based club: outings, evening meetings and ID courses for all levels.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://witsbirdclub.org.za" target="_blank" rel="noopener"><div class="top"><h3>Witwatersrand Bird Club</h3></div><p class="blurb">South Africa's oldest bird club (est. 1947), serving Johannesburg.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.blng.co.za" target="_blank" rel="noopener"><div class="top"><h3>BirdLife Northern Gauteng</h3></div><p class="blurb">Pretoria-based club: outings, evening meetings and ID courses for all levels.</p><div class="arrow">Visit →</div></a>
       </div>
 
       <div class="region-label">KwaZulu-Natal</div>
       <div class="grid">
-        <a class="card" href="https://blpn.org" target="_blank" rel="noopener"><div class="top"><h3>BirdLife eThekwini KZN</h3><span class="chip region">KwaZulu-Natal</span></div><p class="blurb">Durban-based (est. 1949), one of the oldest bird clubs in Africa.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://blpn.org" target="_blank" rel="noopener"><div class="top"><h3>BirdLife eThekwini KZN</h3></div><p class="blurb">Durban-based (est. 1949), one of the oldest bird clubs in Africa.</p><div class="arrow">Visit →</div></a>
       </div>
     </section>
 
-    <!-- ── Netherlands ─────────────────────────────────────────────────── -->
+    <!-- Netherlands -->
     <section class="country" data-country="NL">
-      <h2><span class="flag">🇳🇱</span> Netherlands <span class="count">13 groups + full directory</span></h2>
-
-      <div class="directory">
-        <span class="tag">Every group</span>
-        <p>Every local vogelwerkgroep, province by province, in the official directories. Or use the Vogelbescherming finder to spot one near you.</p>
-        <a href="https://www.sovon.nl/over-sovon/vogelwerkgroepen" target="_blank" rel="noopener">Sovon: vogelwerkgroepen →</a>
-        <a href="https://www.vogelbescherming.nl/bescherming/in-de-buurt/vogelwerkgroep" target="_blank" rel="noopener">Find one near you →</a>
-      </div>
+      <iframe class="cmap" loading="lazy" title="Bird groups in the Netherlands" src="https://www.google.com/maps?q=vogelwerkgroep+Netherlands&output=embed"></iframe>
 
       <div class="region-label">Countrywide</div>
       <div class="grid">
@@ -168,48 +137,33 @@
         <a class="card" href="https://www.sovon.nl" target="_blank" rel="noopener"><div class="top"><h3>Sovon Vogelonderzoek</h3><span class="chip">Citizen science</span></div><p class="blurb">National bird monitoring and counts. Join a survey near you.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.trektellen.nl" target="_blank" rel="noopener"><div class="top"><h3>Trektellen</h3><span class="chip">Citizen science</span></div><p class="blurb">Migration counts from watchpoints across the country.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://waarneming.nl" target="_blank" rel="noopener"><div class="top"><h3>Waarneming.nl</h3><span class="chip">Logging app</span></div><p class="blurb">The main Dutch platform for logging and sharing your sightings.</p><div class="arrow">Visit →</div></a>
-        <a class="card" href="https://www.knnv.nl" target="_blank" rel="noopener"><div class="top"><h3>KNNV Field Naturalists</h3><span class="chip">Local club</span></div><p class="blurb">Nationwide nature-study association with many local departments.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.knnv.nl" target="_blank" rel="noopener"><div class="top"><h3>KNNV Field Naturalists</h3><span class="chip">National network</span></div><p class="blurb">Nationwide nature-study association with many local departments.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.grauwekiekendief.nl" target="_blank" rel="noopener"><div class="top"><h3>Grauwe Kiekendief</h3><span class="chip">Citizen science</span></div><p class="blurb">Research and fieldwork on farmland birds like harriers and buntings.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.facebook.com/groups/dutchbirding" target="_blank" rel="noopener"><div class="top"><h3>Dutch Birding</h3><span class="chip">Facebook group</span></div><p class="blurb">Rarities, identification and sightings from across the country.</p><div class="arrow">Visit →</div></a>
       </div>
 
       <div class="region-label">Noord-Holland</div>
       <div class="grid">
-        <a class="card" href="https://www.vogelsamsterdam.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelwerkgroep Amsterdam</h3><span class="chip region">Noord-Holland</span></div><p class="blurb">Excursions, lectures and courses in and around Amsterdam.</p><div class="arrow">Visit →</div></a>
-        <a class="card" href="https://www.vwgzkl.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelwerkgroep Zuid-Kennemerland</h3><span class="chip region">Haarlem</span></div><p class="blurb">Haarlem's bird group since 1951: counts, courses, outings and youth activities.</p><div class="arrow">Visit →</div></a>
-        <a class="card" href="https://www.vwggooi.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelwerkgroep Het Gooi e.o.</h3><span class="chip region">Het Gooi</span></div><p class="blurb">Fieldwork and excursions across the Gooi and Vecht region.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.vogelsamsterdam.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelwerkgroep Amsterdam</h3></div><p class="blurb">Excursions, lectures and courses in and around Amsterdam.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.vwgzkl.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelwerkgroep Zuid-Kennemerland</h3></div><p class="blurb">Haarlem's bird group since 1951: counts, courses, outings and youth activities.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.vwggooi.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelwerkgroep Het Gooi e.o.</h3></div><p class="blurb">Fieldwork and excursions across the Gooi and Vecht region.</p><div class="arrow">Visit →</div></a>
       </div>
 
       <div class="region-label">Zuid-Holland</div>
       <div class="grid">
-        <a class="card" href="https://www.haagsevogels.nl" target="_blank" rel="noopener"><div class="top"><h3>Haagse Vogels (VWG Den Haag)</h3><span class="chip region">Zuid-Holland</span></div><p class="blurb">The bird working group for The Hague and its dunes and coast.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.haagsevogels.nl" target="_blank" rel="noopener"><div class="top"><h3>Haagse Vogels (VWG Den Haag)</h3></div><p class="blurb">The bird working group for The Hague and its dunes and coast.</p><div class="arrow">Visit →</div></a>
       </div>
 
       <div class="region-label">Utrecht</div>
       <div class="grid">
-        <a class="card" href="https://www.vogelwacht-utrecht.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelwacht Utrecht</h3><span class="chip region">Utrecht</span></div><p class="blurb">One of the country's larger regional groups, active across the Utrecht province.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.vogelwacht-utrecht.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelwacht Utrecht</h3></div><p class="blurb">One of the country's larger regional groups, active across the Utrecht province.</p><div class="arrow">Visit →</div></a>
       </div>
     </section>
 
-    <section class="help">
-      <h2>How complete is this?</h2>
-      <p>The direct links above are a hand-checked start, and the official directories cover almost every registered club. A lot of local birding also happens in groups that sit behind a login, which we cannot find or check automatically. If you are part of one, help us add it:</p>
-      <ul>
-        <li>Facebook groups &amp; pages</li>
-        <li>WhatsApp groups</li>
-        <li>Meetup groups</li>
-        <li>Discord &amp; Telegram servers</li>
-        <li>Regional mailing lists &amp; listservs</li>
-        <li>Members-only club areas</li>
-        <li>University &amp; young-birder clubs</li>
-        <li>Local ringing &amp; atlas teams</li>
-      </ul>
-    </section>
-
     <section class="cta">
-      <h2>Know a group we're missing?</h2>
-      <p>This directory grows with the community. If your local club, society, or Facebook group should be here, send it our way and we'll add it.</p>
+      <h2>Know a group we should add?</h2>
+      <p>This list grows over time. If your local club, society, or Facebook group belongs here, send it our way and we will add it.</p>
       <a class="btn" href="mailto:hello@beakbrain.com?subject=Birding%20group%20suggestion">Suggest a group</a>
-      <p class="note">Every link here is checked before it goes live. Spot a dead one? Tell us and we'll fix it.</p>
     </section>
   </main>
 
@@ -227,19 +181,14 @@
   </footer>
 
   <script>
-    // Country filter: show only the chosen country's section.
     (function () {
-      var buttons = document.querySelectorAll('#filters .filter');
-      var sections = document.querySelectorAll('.country');
-      buttons.forEach(function (b) {
-        b.addEventListener('click', function () {
-          var c = b.getAttribute('data-country');
-          buttons.forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
-          sections.forEach(function (s) {
-            s.style.display = (c === 'all' || s.getAttribute('data-country') === c) ? '' : 'none';
-          });
-        });
-      });
+      var sel = document.getElementById('countrySel');
+      var secs = document.querySelectorAll('.country');
+      function show(c) {
+        secs.forEach(function (s) { s.style.display = s.getAttribute('data-country') === c ? '' : 'none'; });
+      }
+      sel.addEventListener('change', function () { show(sel.value); });
+      show(sel.value);
     })();
   </script>
 </body>
