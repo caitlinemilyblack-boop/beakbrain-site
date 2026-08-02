@@ -66,7 +66,19 @@
     .chip.region { color: #fff; background: var(--sage); }
     .card .arrow { color: var(--green); font-weight: 800; font-size: 13px; margin-top: 10px; }
 
-    .cta { background: var(--green); color: #fff; border-radius: 20px; padding: 34px; margin: 44px 0 20px; text-align: center; box-shadow: var(--shadow); }
+    .directory { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; background: var(--surface-alt); border: 1px dashed var(--gold-deep); border-radius: 14px; padding: 14px 18px; margin: 6px 0 4px; }
+    .directory .tag { font-family: var(--body); font-weight: 800; font-size: 11px; color: #fff; background: var(--gold-deep); border-radius: 999px; padding: 3px 10px; white-space: nowrap; }
+    .directory p { font-size: 14.5px; color: var(--ink); flex: 1; min-width: 220px; }
+    .directory a { font-weight: 800; white-space: nowrap; }
+
+    .help { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 30px 32px; margin: 30px 0 0; box-shadow: var(--shadow); }
+    .help h2 { font-size: 22px; }
+    .help p { color: var(--muted); margin-top: 8px; max-width: 720px; }
+    .help ul { margin: 16px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px 22px; }
+    .help li { color: var(--ink); font-size: 14.5px; padding-left: 20px; position: relative; }
+    .help li::before { content: '🔒'; position: absolute; left: 0; font-size: 12px; }
+
+    .cta { background: var(--green); color: #fff; border-radius: 20px; padding: 34px; margin: 30px 0 20px; text-align: center; box-shadow: var(--shadow); }
     .cta h2 { color: #fff; font-size: 24px; }
     .cta p { color: rgba(255,255,255,0.9); margin: 10px auto 20px; max-width: 560px; }
     .cta a.btn { display: inline-block; background: var(--gold); color: #2E2A25; font-family: var(--display); font-weight: 700; text-decoration: none; border-radius: 999px; padding: 13px 26px; }
@@ -91,7 +103,7 @@
     <section class="hero">
       <span class="eyebrow">Find your flock</span>
       <h1>Birding groups &amp; societies</h1>
-      <p>The bird societies, local clubs and citizen-science projects that cover a place — sorted by country and region, with a plain-language note on each so you know what you're joining. A cleaner, structured take on the classic birding directory, and it grows region by region. This is the pilot: South Africa and the Netherlands.</p>
+      <p>The bird societies, local clubs and citizen-science projects that cover a place — sorted by country and region, with a plain-language note on each so you know what you're joining. Every direct link here is hand-checked. For total coverage of the smaller clubs we also point you at each country's official, always-current club directory. And because grassroots groups live on Facebook, WhatsApp and Meetup — behind logins no crawler can reach — the list grows by suggestion too. This is the pilot: South Africa and the Netherlands.</p>
       <div class="filters" id="filters">
         <button class="filter" data-country="all" aria-pressed="true">All</button>
         <button class="filter" data-country="ZA" aria-pressed="false">🇿🇦 South Africa</button>
@@ -101,12 +113,17 @@
 
     <!-- ── South Africa ────────────────────────────────────────────────── -->
     <section class="country" data-country="ZA">
-      <h2><span class="flag">🇿🇦</span> South Africa <span class="count">12 groups</span></h2>
+      <h2><span class="flag">🇿🇦</span> South Africa <span class="count">12 groups + full directory</span></h2>
+
+      <div class="directory">
+        <span class="tag">Every club</span>
+        <p>For the smaller clubs not listed here, this is the official, always-current directory of all 40 affiliated bird clubs, province by province.</p>
+        <a href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/" target="_blank" rel="noopener">BirdLife SA: Join a Bird Club →</a>
+      </div>
 
       <div class="region-label">Countrywide</div>
       <div class="grid">
         <a class="card" href="https://www.birdlife.org.za" target="_blank" rel="noopener"><div class="top"><h3>BirdLife South Africa</h3><span class="chip">National society</span></div><p class="blurb">The national bird conservation body and BirdLife International partner.</p><div class="arrow">Visit →</div></a>
-        <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/" target="_blank" rel="noopener"><div class="top"><h3>Join a Bird Club (BirdLife SA)</h3><span class="chip">Club directory</span></div><p class="blurb">The full directory of 40+ affiliated bird clubs across the country.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://sabap2.birdmap.africa" target="_blank" rel="noopener"><div class="top"><h3>SABAP2 — Bird Atlas</h3><span class="chip">Citizen science</span></div><p class="blurb">Map the birds of your area for the Southern African Bird Atlas Project.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.birdlasser.com" target="_blank" rel="noopener"><div class="top"><h3>BirdLasser</h3><span class="chip">Logging app</span></div><p class="blurb">The go-to South African app for logging sightings and joining challenges.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.rarebirdalert.co.za" target="_blank" rel="noopener"><div class="top"><h3>SA Rare Bird Alert</h3><span class="chip">Rare birds</span></div><p class="blurb">Where scarce and vagrant sightings across the country get reported.</p><div class="arrow">Visit →</div></a>
@@ -117,6 +134,7 @@
       <div class="grid">
         <a class="card" href="https://www.capebirdclub.org.za" target="_blank" rel="noopener"><div class="top"><h3>Cape Bird Club</h3><span class="chip region">Western Cape</span></div><p class="blurb">Outings, talks and courses across the Cape Peninsula and beyond.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.somersetwestbirdclub.co.za" target="_blank" rel="noopener"><div class="top"><h3>Somerset West Bird Club</h3><span class="chip region">Western Cape</span></div><p class="blurb">Local outings and monthly meetings in the Helderberg basin.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.tygerbergbirdclub.org" target="_blank" rel="noopener"><div class="top"><h3>Tygerberg Bird Club</h3><span class="chip region">Western Cape</span></div><p class="blurb">Northern-suburbs Cape Town club with regular outings and talks.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.capetownpelagics.com" target="_blank" rel="noopener"><div class="top"><h3>Cape Town Pelagics</h3><span class="chip region">Western Cape</span></div><p class="blurb">Boat trips off Cape Point for albatrosses, petrels and other seabirds.</p><div class="arrow">Visit →</div></a>
       </div>
 
@@ -134,7 +152,14 @@
 
     <!-- ── Netherlands ─────────────────────────────────────────────────── -->
     <section class="country" data-country="NL">
-      <h2><span class="flag">🇳🇱</span> Netherlands <span class="count">10 groups</span></h2>
+      <h2><span class="flag">🇳🇱</span> Netherlands <span class="count">10 groups + full directory</span></h2>
+
+      <div class="directory">
+        <span class="tag">Every group</span>
+        <p>Every local vogelwerkgroep, province by province, in the official directories — or use Vogelbescherming's "find a group near you".</p>
+        <a href="https://www.sovon.nl/over-sovon/vogelwerkgroepen" target="_blank" rel="noopener">Sovon: vogelwerkgroepen →</a>
+        <a href="https://www.vogelbescherming.nl/bescherming/in-de-buurt/vogelwerkgroep" target="_blank" rel="noopener">Find one near you →</a>
+      </div>
 
       <div class="region-label">Countrywide</div>
       <div class="grid">
@@ -156,6 +181,21 @@
       <div class="grid">
         <a class="card" href="https://www.haagsevogels.nl" target="_blank" rel="noopener"><div class="top"><h3>Haagse Vogels (VWG Den Haag)</h3><span class="chip region">Zuid-Holland</span></div><p class="blurb">The bird working group for The Hague and its dunes and coast.</p><div class="arrow">Visit →</div></a>
       </div>
+    </section>
+
+    <section class="help">
+      <h2>How complete is this?</h2>
+      <p>Honestly: the direct links above are a hand-checked start, and the official directories cover essentially every registered club. But the liveliest birding happens in groups that sit behind a login, where no automatic crawler can see or verify them. These are the ones we rely on you to point us to:</p>
+      <ul>
+        <li>Facebook groups &amp; pages</li>
+        <li>WhatsApp groups</li>
+        <li>Meetup groups</li>
+        <li>Discord &amp; Telegram servers</li>
+        <li>Regional mailing lists &amp; listservs</li>
+        <li>Members-only club areas</li>
+        <li>University &amp; young-birder clubs</li>
+        <li>Local ringing &amp; atlas teams</li>
+      </ul>
     </section>
 
     <section class="cta">
