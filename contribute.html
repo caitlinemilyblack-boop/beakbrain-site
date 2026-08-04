@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contribute Photos & Recordings | BeakBrain</title>
+  <meta name="description" content="Help fill the gaps in BeakBrain. Add your bird photos and call recordings so every species can be learned by sight and sound." />
+  <link rel="icon" href="assets/favicon.png" />
+  <meta property="og:title" content="Contribute Photos & Recordings | BeakBrain" />
+  <meta property="og:description" content="Add your bird photos and call recordings so every species can be learned by sight and sound." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://beakbrain.com/contribute.html" />
+
+  <style>
+    @font-face { font-family: 'Fredoka'; font-weight: 500; font-display: swap; src: url('fonts/Fredoka-500.woff') format('woff'); }
+    @font-face { font-family: 'Fredoka'; font-weight: 600; font-display: swap; src: url('fonts/Fredoka-600.woff') format('woff'); }
+    @font-face { font-family: 'Fredoka'; font-weight: 700; font-display: swap; src: url('fonts/Fredoka-700.woff') format('woff'); }
+    @font-face { font-family: 'Nunito'; font-weight: 400; font-display: swap; src: url('fonts/Nunito-400.woff') format('woff'); }
+    @font-face { font-family: 'Nunito'; font-weight: 700; font-display: swap; src: url('fonts/Nunito-700.woff') format('woff'); }
+    @font-face { font-family: 'Nunito'; font-weight: 800; font-display: swap; src: url('fonts/Nunito-800.woff') format('woff'); }
+
+    :root {
+      --bg: #F2E8CF; --surface: #FFFFFF; --surface-alt: #E7D9B4; --ink: #2E2A25;
+      --muted: #6B6155; --border: #DDCBA0; --green: #386641; --green-dark: #2C5134;
+      --sage: #6A994E; --gold: #EBB93C; --gold-deep: #8C6410;
+      --display: 'Fredoka', 'Trebuchet MS', system-ui, sans-serif;
+      --body: 'Nunito', system-ui, -apple-system, sans-serif;
+      --shadow: 0 14px 34px rgba(46, 42, 37, 0.09);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: var(--body); color: var(--ink); background: var(--bg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3 { font-family: var(--display); font-weight: 700; line-height: 1.14; margin: 0; }
+    p { margin: 0; }
+    a { color: var(--green); }
+    .wrap { max-width: 860px; margin: 0 auto; padding: 0 28px; }
+    .wordmark { font-family: var(--display); font-weight: 700; color: var(--green); letter-spacing: -0.3px; text-decoration: none; }
+
+    header { background: rgba(242,232,207,0.94); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 30; }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .nav .wordmark { font-size: 24px; }
+    .nav a.back { text-decoration: none; font-weight: 800; color: var(--green); font-size: 15px; }
+
+    .hero { padding: 48px 0 6px; }
+    .hero h1 { font-size: clamp(30px, 5vw, 46px); }
+    .hero p { color: var(--muted); font-size: 18px; margin-top: 12px; }
+
+    .step { display: flex; gap: 18px; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 22px 24px; box-shadow: var(--shadow); margin: 16px 0; }
+    .step .n { flex: 0 0 auto; width: 40px; height: 40px; border-radius: 50%; background: var(--green); color: #fff; font-family: var(--display); font-weight: 700; font-size: 20px; display: flex; align-items: center; justify-content: center; }
+    .step h3 { font-size: 19px; color: var(--green-dark); }
+    .step p { color: var(--muted); font-size: 15.5px; margin-top: 6px; }
+    .step a { font-weight: 800; }
+
+    .note { color: var(--muted); font-size: 15px; margin: 26px 0; }
+
+    .cta { background: var(--green); color: #fff; border-radius: 20px; padding: 34px; margin: 34px 0 20px; text-align: center; box-shadow: var(--shadow); }
+    .cta h2 { color: #fff; font-size: 24px; }
+    .cta p { color: rgba(255,255,255,0.9); margin: 10px auto 20px; max-width: 560px; }
+    .cta a.btn { display: inline-block; background: var(--gold); color: #2E2A25; font-family: var(--display); font-weight: 700; text-decoration: none; border-radius: 999px; padding: 13px 26px; }
+
+    footer { background: var(--green-dark); color: #EAF1E4; margin-top: 40px; }
+    .foot { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; padding: 30px 28px; max-width: 1080px; margin: 0 auto; }
+    .foot .wordmark { color: #fff; font-size: 22px; }
+    .foot nav a { color: #EAF1E4; text-decoration: none; margin-left: 22px; font-weight: 700; }
+    .foot .copy { width: 100%; color: rgba(234,241,228,0.7); font-size: 13px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="wordmark" href="/">BeakBrain</a>
+      <a class="back" href="/">&larr; Home</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1>Add a Photo or Recording</h1>
+      <p>BeakBrain learns from open, community-sourced media. When a bird is missing a photo or a call, you can help fill the gap so everyone can learn it by sight and sound.</p>
+    </section>
+
+    <div class="step">
+      <div class="n">1</div>
+      <div>
+        <h3>Add a photo</h3>
+        <p>Upload your bird photos to <a href="https://www.inaturalist.org" target="_blank" rel="noopener">iNaturalist</a> or <a href="https://commons.wikimedia.org/wiki/Special:UploadWizard" target="_blank" rel="noopener">Wikimedia Commons</a> under an open licence. BeakBrain draws its images from these open sources, so a photo you share there can reach the whole community.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="n">2</div>
+      <div>
+        <h3>Add a recording</h3>
+        <p>Upload bird calls and songs to <a href="https://xeno-canto.org" target="_blank" rel="noopener">Xeno-canto</a>, the open library of bird sound. This is where BeakBrain sources its recordings, and it is the fastest way to give a silent species its voice.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="n">3</div>
+      <div>
+        <h3>Or send it straight to us</h3>
+        <p>Not sure where to start, or want a species prioritised? Email <a href="mailto:hello@beakbrain.com?subject=Contribution">hello@beakbrain.com</a> with the species name and your photo or recording, and we will take it from there.</p>
+      </div>
+    </div>
+
+    <p class="note">Spotted a wrong or blurry photo in the app? Tap "Report this photo" on the bird's page. Those reports come straight to us so we can swap it out.</p>
+
+    <section class="cta">
+      <h2>Every bird, by sight and sound</h2>
+      <p>Thousands of species still need a good photo or a clean recording. Your sightings help complete the picture.</p>
+      <a class="btn" href="mailto:hello@beakbrain.com?subject=Contribution">Email a contribution</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="foot">
+      <span class="wordmark">BeakBrain</span>
+      <nav>
+        <a href="/">Home</a>
+        <a href="community.html">Community</a>
+        <a href="mailto:hello@beakbrain.com">Contact</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+      <div class="copy">Greet every bird by name. &copy; 2026 BeakBrain.</div>
+    </div>
+  </footer>
+</body>
+</html>
