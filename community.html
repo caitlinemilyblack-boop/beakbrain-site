@@ -40,15 +40,20 @@
     .nav .wordmark { font-size: 24px; }
     .nav a.back { text-decoration: none; font-weight: 800; color: var(--green); font-size: 15px; }
 
-    .hero { padding: 48px 0 6px; }
-    .hero h1 { font-size: clamp(30px, 5vw, 46px); }
-    .hero p { color: var(--muted); font-size: 18px; margin-top: 12px; max-width: 680px; }
+    .hero { position: relative; min-height: 42vh; display: flex; align-items: flex-end; overflow: hidden; background: linear-gradient(150deg, #2C5134 0%, #386641 45%, #4A7A3E 100%); }
+    .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0; transition: opacity .9s ease; }
+    .hero-video.ready { opacity: 1; }
+    .hero::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(30,45,30,0.30) 0%, rgba(30,45,30,0.52) 60%, rgba(22,36,24,0.82) 100%); }
+    .hero-inner { position: relative; z-index: 2; color: #fff; padding: 64px 0 40px; }
+    .hero h1 { font-size: clamp(30px, 5vw, 46px); color: #fff; }
+    .hero p { color: #EFE7D2; font-size: 18px; margin-top: 12px; max-width: 680px; }
+    @media (prefers-reduced-motion: reduce) { .hero-video { transition: none; } }
 
     .controls { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 26px 0 4px; }
     .controls label { font-family: var(--display); font-weight: 600; font-size: 15px; color: var(--muted); }
     select { font-family: var(--display); font-weight: 600; font-size: 16px; color: var(--ink); background: var(--surface); border: 1.5px solid var(--border); border-radius: 12px; padding: 11px 40px 11px 16px; cursor: pointer; -webkit-appearance: none; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23386641' stroke-width='3'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; }
 
-    .cmap { width: 100%; height: 380px; border: 0; border-radius: 16px; box-shadow: var(--shadow); margin: 14px 0 6px; display: block; }
+    .country-title { font-family: var(--display); font-weight: 700; font-size: 26px; color: var(--green-dark); margin: 36px 0 2px; }
 
     .region-label { font-family: var(--display); font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; font-size: 12px; color: var(--gold-deep); margin: 26px 0 12px; }
     .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
@@ -80,22 +85,29 @@
     </div>
   </header>
 
-  <main class="wrap">
-    <section class="hero">
+  <section class="hero">
+    <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="auto" poster="assets/video/hero-poster.jpg">
+      <source src="assets/video/hero.mp4" type="video/mp4" />
+    </video>
+    <div class="wrap hero-inner">
       <h1>Find Your Community</h1>
-      <p>Bird societies, local clubs and citizen-science projects, listed by country and region. Pick a place to find people to bird with near home or on your next trip.</p>
-      <div class="controls">
-        <label for="countrySel">Country</label>
-        <select id="countrySel">
-          <option value="ZA">🇿🇦 South Africa</option>
-          <option value="NL">🇳🇱 Netherlands</option>
-        </select>
-      </div>
-    </section>
+      <p>Bird societies, local clubs and citizen-science projects, listed by country and region. Find people to bird with near home or on your next trip.</p>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <div class="controls">
+      <label for="countrySel">Country</label>
+      <select id="countrySel">
+        <option value="all">🌍 All countries</option>
+        <option value="ZA">🇿🇦 South Africa</option>
+        <option value="NL">🇳🇱 Netherlands</option>
+      </select>
+    </div>
 
     <!-- South Africa -->
     <section class="country" data-country="ZA">
-      <iframe class="cmap" loading="lazy" title="Bird clubs in South Africa" src="https://www.google.com/maps?q=bird+club+South+Africa&output=embed"></iframe>
+      <h2 class="country-title">🇿🇦 South Africa</h2>
 
       <div class="region-label">Countrywide</div>
       <div class="grid">
@@ -176,7 +188,7 @@
 
     <!-- Netherlands -->
     <section class="country" data-country="NL">
-      <iframe class="cmap" loading="lazy" title="Bird groups in the Netherlands" src="https://www.google.com/maps?q=vogelwerkgroep+Netherlands&output=embed"></iframe>
+      <h2 class="country-title">🇳🇱 Netherlands</h2>
 
       <div class="region-label">Countrywide</div>
       <div class="grid">
@@ -283,10 +295,17 @@
       var sel = document.getElementById('countrySel');
       var secs = document.querySelectorAll('.country');
       function show(c) {
-        secs.forEach(function (s) { s.style.display = s.getAttribute('data-country') === c ? '' : 'none'; });
+        secs.forEach(function (s) {
+          s.style.display = (c === 'all' || s.getAttribute('data-country') === c) ? '' : 'none';
+        });
       }
       sel.addEventListener('change', function () { show(sel.value); });
       show(sel.value);
+      var v = document.getElementById('heroVideo');
+      if (v) {
+        var ready = function () { v.classList.add('ready'); };
+        if (v.readyState >= 2) ready(); else v.addEventListener('loadeddata', ready);
+      }
     })();
   </script>
 </body>
