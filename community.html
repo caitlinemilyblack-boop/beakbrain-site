@@ -49,9 +49,11 @@
     .hero p { color: #EFE7D2; font-size: 18px; margin-top: 12px; max-width: 680px; }
     @media (prefers-reduced-motion: reduce) { .hero-video { transition: none; } }
 
-    .controls { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 26px 0 4px; }
-    .controls label { font-family: var(--display); font-weight: 600; font-size: 15px; color: var(--muted); }
-    select { font-family: var(--display); font-weight: 600; font-size: 16px; color: var(--ink); background: var(--surface); border: 1.5px solid var(--border); border-radius: 12px; padding: 11px 40px 11px 16px; cursor: pointer; -webkit-appearance: none; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23386641' stroke-width='3'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; }
+    .chooser { display: flex; flex-wrap: wrap; gap: 10px; margin: 28px 0 6px; }
+    .choice { font-family: var(--display); font-weight: 600; font-size: 15px; color: var(--green-dark); background: var(--surface); border: 1.5px solid var(--border); border-radius: 999px; padding: 10px 18px; cursor: pointer; transition: background .12s ease, color .12s ease, border-color .12s ease; }
+    .choice:hover { border-color: var(--sage); }
+    .choice.active { background: var(--green); color: #fff; border-color: var(--green); }
+    .choice:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
 
     .country-title { font-family: var(--display); font-weight: 700; font-size: 26px; color: var(--green-dark); margin: 36px 0 2px; }
 
@@ -96,14 +98,102 @@
   </section>
 
   <main class="wrap">
-    <div class="controls">
-      <label for="countrySel">Country</label>
-      <select id="countrySel">
-        <option value="all">🌍 All countries</option>
-        <option value="ZA">🇿🇦 South Africa</option>
-        <option value="NL">🇳🇱 Netherlands</option>
-      </select>
+    <div class="chooser" id="chooser">
+      <button type="button" class="choice active" data-country="all">🌍 All countries</button>
+      <button type="button" class="choice" data-country="NL">🇳🇱 Netherlands</button>
+      <button type="button" class="choice" data-country="ZA">🇿🇦 South Africa</button>
     </div>
+
+    <!-- Netherlands -->
+    <section class="country" data-country="NL">
+      <h2 class="country-title">🇳🇱 Netherlands</h2>
+      <div class="region-label">Countrywide</div>
+      <div class="grid">
+        <a class="card" href="https://www.vogelbescherming.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelbescherming Nederland</h3></div><p class="blurb">The national bird protection society and BirdLife International partner.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.dutchbirding.nl" target="_blank" rel="noopener"><div class="top"><h3>Dutch Birding Association</h3></div><p class="blurb">For keen birders: rarities, identification and the Dutch Birding journal.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.sovon.nl" target="_blank" rel="noopener"><div class="top"><h3>Sovon Vogelonderzoek</h3></div><p class="blurb">National bird monitoring and counts. Join a survey near you.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.trektellen.nl" target="_blank" rel="noopener"><div class="top"><h3>Trektellen</h3></div><p class="blurb">Migration counts from watchpoints across the country.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://waarneming.nl" target="_blank" rel="noopener"><div class="top"><h3>Waarneming.nl</h3></div><p class="blurb">The main Dutch platform for logging and sharing your sightings.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.knnv.nl" target="_blank" rel="noopener"><div class="top"><h3>KNNV Field Naturalists</h3></div><p class="blurb">Nationwide nature study association with many local departments.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.grauwekiekendief.nl" target="_blank" rel="noopener"><div class="top"><h3>Grauwe Kiekendief</h3></div><p class="blurb">Research and fieldwork on farmland birds like harriers and buntings.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.njn.nl" target="_blank" rel="noopener"><div class="top"><h3>NJN, Nederlandse Jeugdbond voor Natuurstudie</h3></div><p class="blurb">A nationwide nature club for ages 11 to 25 with an active bird working group.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.facebook.com/groups/dutchbirding" target="_blank" rel="noopener"><div class="top"><h3>Dutch Birding (Facebook)</h3></div><p class="blurb">Rarities, identification and sightings from across the country.</p><div class="arrow">Visit →</div></a>
+      </div>
+
+      <div class="region-label">Drenthe</div>
+      <div class="grid">
+        <a class="card" href="https://www.avifaunadrenthe.nl" target="_blank" rel="noopener"><div class="top"><h3>Werkgroep Avifauna Drenthe</h3></div><p class="blurb">Bird recording and study across the Drenthe province.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.vliegvlugmeppel.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelwerkgroep Vliegvlug Meppel</h3></div><p class="blurb">Local bird club based in Meppel, active across southwest Drenthe.</p><div class="arrow">Visit →</div></a>
+      </div>
+
+      <div class="region-label">Flevoland</div>
+      <div class="grid">
+        <a class="card" href="https://www.vogelwachtflevoland.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogel en Natuurwacht Flevoland</h3></div><p class="blurb">Bird and nature watch group covering Flevoland, from bird counts to ringing and nest protection.</p><div class="arrow">Visit →</div></a>
+      </div>
+
+      <div class="region-label">Friesland</div>
+      <div class="grid">
+        <a class="card" href="https://www.friesevogelwachten.nl/nl" target="_blank" rel="noopener"><div class="top"><h3>Bond Friese VogelWachten</h3></div><p class="blurb">Federation of over 100 local vogelwachten across Friesland, protecting meadow and water birds.</p><div class="arrow">Visit →</div></a>
+      </div>
+
+      <div class="region-label">Gelderland</div>
+      <div class="grid">
+        <a class="card" href="https://www.vogelwerkgroepnijmegen.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelwerkgroep Nijmegen</h3></div><p class="blurb">The bird study group for Nijmegen and the Rijk van Nijmegen.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://vogelwerkgroeparnhem.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelwerkgroep Arnhem en Omstreken</h3></div><p class="blurb">Arnhem's bird club, one of the country's larger groups with over 300 members.</p><div class="arrow">Visit →</div></a>
+      </div>
+
+      <div class="region-label">Groningen</div>
+      <div class="grid">
+        <a class="card" href="https://avifaunagroningen.nl" target="_blank" rel="noopener"><div class="top"><h3>Avifauna Groningen</h3></div><p class="blurb">The provincial bird study group for Groningen.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://groningen.knnv.nl/werkgroep/vogelwerkgroep/" target="_blank" rel="noopener"><div class="top"><h3>KNNV Groningen Vogelwerkgroep</h3></div><p class="blurb">KNNV's Groningen bird group, meeting monthly for local birding outings.</p><div class="arrow">Visit →</div></a>
+      </div>
+
+      <div class="region-label">Limburg</div>
+      <div class="grid">
+        <a class="card" href="https://www.vogelwerkgroepnederweert.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelwerkgroep Nederweert</h3></div><p class="blurb">An active local group in central Limburg.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.nhgl.nl" target="_blank" rel="noopener"><div class="top"><h3>Natuurhistorisch Genootschap Limburg</h3></div><p class="blurb">The province's natural history society, with a bird study section.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://vwl-vogelwerkgroep-maastricht.nl" target="_blank" rel="noopener"><div class="top"><h3>VWL Vogelwerkgroep Maastricht</h3></div><p class="blurb">Maastricht's bird study group, running waterbird and swallow counts for Sovon.</p><div class="arrow">Visit →</div></a>
+      </div>
+
+      <div class="region-label">Noord-Brabant</div>
+      <div class="grid">
+        <a class="card" href="https://www.vwgdekempen.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelwerkgroep De Kempen</h3></div><p class="blurb">Active across the Brabantse Kempen around Eindhoven and the Belgian border.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.vwgmiddenbrabant.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelwerkgroep Midden Brabant</h3></div><p class="blurb">Covers the countryside northeast of Tilburg, between Udenhout and Berkel Enschot.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.westbrabantsevwg.nl" target="_blank" rel="noopener"><div class="top"><h3>West Brabantse Vogelwerkgroep</h3></div><p class="blurb">Bird study and outings across West Brabant, based around Breda.</p><div class="arrow">Visit →</div></a>
+      </div>
+
+      <div class="region-label">Noord-Holland</div>
+      <div class="grid">
+        <a class="card" href="https://www.vogelsamsterdam.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelwerkgroep Amsterdam</h3></div><p class="blurb">Excursions, lectures and courses in and around Amsterdam.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.vwgzkl.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelwerkgroep Zuid-Kennemerland</h3></div><p class="blurb">Haarlem's bird group since 1951: counts, courses, outings and youth activities.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.vwggooi.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelwerkgroep Het Gooi e.o.</h3></div><p class="blurb">Fieldwork and excursions across the Gooi and Vecht region.</p><div class="arrow">Visit →</div></a>
+      </div>
+
+      <div class="region-label">Overijssel</div>
+      <div class="grid">
+        <a class="card" href="https://www.vwgzwolle.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelbeschermingswacht Zwolle</h3></div><p class="blurb">Zwolle and the Vecht and IJssel valleys.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://tvwg.nl" target="_blank" rel="noopener"><div class="top"><h3>Twentse Vogelwerkgroep</h3></div><p class="blurb">Covers Twente and the Enschede area in the east of the province.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://vwg-deijsselstreek.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelwerkgroep De IJsselstreek</h3></div><p class="blurb">Birding the IJssel valley around Deventer, Olst and Zutphen.</p><div class="arrow">Visit →</div></a>
+      </div>
+
+      <div class="region-label">Utrecht</div>
+      <div class="grid">
+        <a class="card" href="https://www.vogelwacht-utrecht.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelwacht Utrecht</h3></div><p class="blurb">One of the country's larger regional groups, active across Utrecht province.</p><div class="arrow">Visit →</div></a>
+      </div>
+
+      <div class="region-label">Zeeland</div>
+      <div class="grid">
+        <a class="card" href="https://www.vwgwalcheren.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelwerkgroep Walcheren</h3></div><p class="blurb">Birding the Walcheren coast, dunes and Delta.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://steltkluut.nl/werkgroepen/vogelwerkgroep/" target="_blank" rel="noopener"><div class="top"><h3>Vogelwerkgroep De Steltkluut</h3></div><p class="blurb">Covers middle and east Zeeuws Vlaanderen, east of Biervliet.</p><div class="arrow">Visit →</div></a>
+      </div>
+
+      <div class="region-label">Zuid-Holland</div>
+      <div class="grid">
+        <a class="card" href="https://www.haagsevogels.nl" target="_blank" rel="noopener"><div class="top"><h3>Haagse Vogels (VWG Den Haag)</h3></div><p class="blurb">The bird working group for The Hague and its dunes and coast.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.vwgalphen.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelwerkgroep Alphen</h3></div><p class="blurb">For Alphen aan den Rijn and the surrounding Green Heart.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.nvwk.nl" target="_blank" rel="noopener"><div class="top"><h3>Natuur- en Vogelwacht Krimpenerwaard</h3></div><p class="blurb">Birding and nature study in the Krimpenerwaard polders.</p><div class="arrow">Visit →</div></a>
+      </div>
+    </section>
 
     <!-- South Africa -->
     <section class="country" data-country="ZA">
@@ -113,28 +203,28 @@
       <div class="grid">
         <a class="card" href="https://www.birdlife.org.za" target="_blank" rel="noopener"><div class="top"><h3>BirdLife South Africa</h3></div><p class="blurb">The national bird conservation body and BirdLife International partner.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://sabap2.birdmap.africa" target="_blank" rel="noopener"><div class="top"><h3>SABAP2 Bird Atlas</h3></div><p class="blurb">Map the birds of your patch for the Southern African Bird Atlas Project.</p><div class="arrow">Visit →</div></a>
-        <a class="card" href="https://www.birdlasser.com" target="_blank" rel="noopener"><div class="top"><h3>BirdLasser</h3></div><p class="blurb">The go-to South African app for logging sightings and joining challenges.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.birdlasser.com" target="_blank" rel="noopener"><div class="top"><h3>BirdLasser</h3></div><p class="blurb">The go to South African app for logging sightings and joining challenges.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.rarebirdalert.co.za" target="_blank" rel="noopener"><div class="top"><h3>SA Rare Bird Alert</h3></div><p class="blurb">Where scarce and vagrant sightings across the country get reported.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.facebook.com/groups/birdingsouthafrica" target="_blank" rel="noopener"><div class="top"><h3>Birding South Africa (Facebook)</h3></div><p class="blurb">A large, active group for sightings, ID help and trip reports.</p><div class="arrow">Visit →</div></a>
       </div>
 
       <div class="region-label">Eastern Cape</div>
       <div class="grid">
-        <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/eastern-cape/birdlife-eastern-cape/" target="_blank" rel="noopener"><div class="top"><h3>BirdLife Eastern Cape</h3></div><p class="blurb">Gqeberha (Port Elizabeth) based club with outings across the province.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/eastern-cape/birdlife-eastern-cape/" target="_blank" rel="noopener"><div class="top"><h3>BirdLife Eastern Cape</h3></div><p class="blurb">Gqeberha based club with outings across the province.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/eastern-cape/birdlife-border/" target="_blank" rel="noopener"><div class="top"><h3>BirdLife Border</h3></div><p class="blurb">For the Border region around East London and the former Ciskei.</p><div class="arrow">Visit →</div></a>
-        <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/eastern-cape/birdlife-queenstown/" target="_blank" rel="noopener"><div class="top"><h3>BirdLife Queenstown</h3></div><p class="blurb">Local club for the Komani (Queenstown) area of the eastern Karoo.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/eastern-cape/birdlife-queenstown/" target="_blank" rel="noopener"><div class="top"><h3>BirdLife Queenstown</h3></div><p class="blurb">Local club for the Komani area of the eastern Karoo.</p><div class="arrow">Visit →</div></a>
       </div>
 
       <div class="region-label">Free State</div>
       <div class="grid">
-        <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/free-state/birdlife-free-state/" target="_blank" rel="noopener"><div class="top"><h3>BirdLife Free State</h3></div><p class="blurb">Bloemfontein-based club serving the central Free State.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/free-state/birdlife-free-state/" target="_blank" rel="noopener"><div class="top"><h3>BirdLife Free State</h3></div><p class="blurb">Bloemfontein based club serving the central Free State.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/free-state/birdlife-eastern-free-state-oos-vrystaat/" target="_blank" rel="noopener"><div class="top"><h3>BirdLife Eastern Free State</h3></div><p class="blurb">For the eastern Free State around the Maluti foothills.</p><div class="arrow">Visit →</div></a>
       </div>
 
       <div class="region-label">Gauteng</div>
       <div class="grid">
-        <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/gauteng/witwatersrand-bird-club/" target="_blank" rel="noopener"><div class="top"><h3>Witwatersrand Bird Club</h3></div><p class="blurb">South Africa’s oldest bird club (est. 1947), serving Johannesburg.</p><div class="arrow">Visit →</div></a>
-        <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/gauteng/birdlife-northern-gauteng/" target="_blank" rel="noopener"><div class="top"><h3>BirdLife Northern Gauteng</h3></div><p class="blurb">Pretoria-based club with outings, evening meetings and ID courses.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/gauteng/witwatersrand-bird-club/" target="_blank" rel="noopener"><div class="top"><h3>Witwatersrand Bird Club</h3></div><p class="blurb">South Africa's oldest bird club, established 1947, serving Johannesburg.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.blng.co.za" target="_blank" rel="noopener"><div class="top"><h3>BirdLife Northern Gauteng</h3></div><p class="blurb">Pretoria based club with outings, evening meetings and ID courses.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/gauteng/birdlife-sandton/" target="_blank" rel="noopener"><div class="top"><h3>BirdLife Sandton</h3></div><p class="blurb">Northern Johannesburg club with regular local outings.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/gauteng/cuckoo-bird-club/" target="_blank" rel="noopener"><div class="top"><h3>Cuckoo Bird Club</h3></div><p class="blurb">A friendly Gauteng club welcoming birders of every level.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/gauteng/rand-barbet-bird-club/" target="_blank" rel="noopener"><div class="top"><h3>Rand Barbet Bird Club</h3></div><p class="blurb">East Rand club running outings and monthly meetings.</p><div class="arrow">Visit →</div></a>
@@ -145,7 +235,7 @@
 
       <div class="region-label">KwaZulu-Natal</div>
       <div class="grid">
-        <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/kwazulu-natal/birdlife-ethekwini-kzn/" target="_blank" rel="noopener"><div class="top"><h3>BirdLife eThekwini KZN</h3></div><p class="blurb">Durban-based (est. 1949), one of the oldest bird clubs in Africa.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/kwazulu-natal/birdlife-ethekwini-kzn/" target="_blank" rel="noopener"><div class="top"><h3>BirdLife eThekwini KZN</h3></div><p class="blurb">Durban based, established 1949, one of the oldest bird clubs in Africa.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/kwazulu-natal/birdlife-kzn-midlands/" target="_blank" rel="noopener"><div class="top"><h3>BirdLife KZN Midlands</h3></div><p class="blurb">For the Midlands around Howick and Pietermaritzburg.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/kwazulu-natal/birdlife-northern-natal/" target="_blank" rel="noopener"><div class="top"><h3>BirdLife Northern Natal</h3></div><p class="blurb">Serving the north around Newcastle and the Battlefields.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/kwazulu-natal/birdlife-sisonke/" target="_blank" rel="noopener"><div class="top"><h3>BirdLife Sani</h3></div><p class="blurb">For the southern Drakensberg and Sani Pass area.</p><div class="arrow">Visit →</div></a>
@@ -159,9 +249,14 @@
 
       <div class="region-label">Mpumalanga</div>
       <div class="grid">
-        <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/mpumalanga/birdlife-lowveld/" target="_blank" rel="noopener"><div class="top"><h3>BirdLife Lowveld</h3></div><p class="blurb">Mbombela (Nelspruit) based club for the Lowveld and Kruger gateway.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/mpumalanga/birdlife-lowveld/" target="_blank" rel="noopener"><div class="top"><h3>BirdLife Lowveld</h3></div><p class="blurb">Mbombela based club for the Lowveld and Kruger gateway.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/mpumalanga/wakkerstroom-bird-club/" target="_blank" rel="noopener"><div class="top"><h3>Wakkerstroom Bird Club</h3></div><p class="blurb">In the birding mecca of Wakkerstroom, famed for its grassland specials.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/mpumalanga/barberton-bird-club/" target="_blank" rel="noopener"><div class="top"><h3>Barberton Bird Club</h3></div><p class="blurb">For the Barberton Makhonjwa mountains and De Kaap valley.</p><div class="arrow">Visit →</div></a>
+      </div>
+
+      <div class="region-label">Northern Cape</div>
+      <div class="grid">
+        <a class="card" href="https://www.gariepbirdclub.org.za/" target="_blank" rel="noopener"><div class="top"><h3>Gariep Bird Club</h3></div><p class="blurb">Kimberley based club for the birds of greater Kimberley and the Northern Cape.</p><div class="arrow">Visit →</div></a>
       </div>
 
       <div class="region-label">North West</div>
@@ -173,100 +268,16 @@
 
       <div class="region-label">Western Cape</div>
       <div class="grid">
-        <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/western-cape/cape-bird-club/" target="_blank" rel="noopener"><div class="top"><h3>Cape Bird Club</h3></div><p class="blurb">Outings, talks and courses across the Cape Peninsula and beyond.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.capebirdclub.org.za" target="_blank" rel="noopener"><div class="top"><h3>Cape Bird Club</h3></div><p class="blurb">Outings, talks and courses across the Cape Peninsula and beyond.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.capetownpelagics.com" target="_blank" rel="noopener"><div class="top"><h3>Cape Town Pelagics</h3></div><p class="blurb">Boat trips off Cape Point for albatrosses, petrels and other seabirds.</p><div class="arrow">Visit →</div></a>
-        <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/western-cape/tygerberg-bird-club/" target="_blank" rel="noopener"><div class="top"><h3>Tygerberg Bird Club</h3></div><p class="blurb">Northern-suburbs Cape Town club with regular outings and talks.</p><div class="arrow">Visit →</div></a>
-        <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/western-cape/somerset-west-bird-club/" target="_blank" rel="noopener"><div class="top"><h3>Somerset West Bird Club</h3></div><p class="blurb">Local outings and monthly meetings in the Helderberg basin.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/western-cape/tygerberg-bird-club/" target="_blank" rel="noopener"><div class="top"><h3>Tygerberg Bird Club</h3></div><p class="blurb">Northern suburbs Cape Town club with regular outings and talks.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://somersetwestbirdclub.co.za" target="_blank" rel="noopener"><div class="top"><h3>Somerset West Bird Club</h3></div><p class="blurb">Local outings and monthly meetings in the Helderberg basin.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/western-cape/birdlife-overberg/" target="_blank" rel="noopener"><div class="top"><h3>BirdLife Overberg</h3></div><p class="blurb">Hermanus and the Overberg wheatbelt and coast.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/western-cape/hermanus-bird-club/" target="_blank" rel="noopener"><div class="top"><h3>Hermanus Bird Club</h3></div><p class="blurb">Birding the Hermanus coast, cliffs and lagoons.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/western-cape/birdlife-plettenberg-bay/" target="_blank" rel="noopener"><div class="top"><h3>BirdLife Plettenberg Bay</h3></div><p class="blurb">Garden Route club around Plettenberg Bay.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/western-cape/lakes-bird-club/" target="_blank" rel="noopener"><div class="top"><h3>Lakes Bird Club</h3></div><p class="blurb">The Garden Route lakes around Sedgefield and Wilderness.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/western-cape/west-coast-bird-club/" target="_blank" rel="noopener"><div class="top"><h3>West Coast Bird Club</h3></div><p class="blurb">For the West Coast wetlands, strandveld and Langebaan.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/western-cape/birdlife-worcester/" target="_blank" rel="noopener"><div class="top"><h3>BirdLife Worcester</h3></div><p class="blurb">Breede River valley and the Karoo edge.</p><div class="arrow">Visit →</div></a>
-      </div>
-    </section>
-
-    <!-- Netherlands -->
-    <section class="country" data-country="NL">
-      <h2 class="country-title">🇳🇱 Netherlands</h2>
-
-      <div class="region-label">Countrywide</div>
-      <div class="grid">
-        <a class="card" href="https://www.vogelbescherming.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelbescherming Nederland</h3></div><p class="blurb">The national bird protection society and BirdLife International partner.</p><div class="arrow">Visit →</div></a>
-        <a class="card" href="https://www.dutchbirding.nl" target="_blank" rel="noopener"><div class="top"><h3>Dutch Birding Association</h3></div><p class="blurb">For keen birders: rarities, identification and the Dutch Birding journal.</p><div class="arrow">Visit →</div></a>
-        <a class="card" href="https://www.sovon.nl" target="_blank" rel="noopener"><div class="top"><h3>Sovon Vogelonderzoek</h3></div><p class="blurb">National bird monitoring and counts. Join a survey near you.</p><div class="arrow">Visit →</div></a>
-        <a class="card" href="https://www.trektellen.nl" target="_blank" rel="noopener"><div class="top"><h3>Trektellen</h3></div><p class="blurb">Migration counts from watchpoints across the country.</p><div class="arrow">Visit →</div></a>
-        <a class="card" href="https://waarneming.nl" target="_blank" rel="noopener"><div class="top"><h3>Waarneming.nl</h3></div><p class="blurb">The main Dutch platform for logging and sharing your sightings.</p><div class="arrow">Visit →</div></a>
-        <a class="card" href="https://www.knnv.nl" target="_blank" rel="noopener"><div class="top"><h3>KNNV Field Naturalists</h3></div><p class="blurb">Nationwide nature-study association with many local departments.</p><div class="arrow">Visit →</div></a>
-        <a class="card" href="https://www.grauwekiekendief.nl" target="_blank" rel="noopener"><div class="top"><h3>Grauwe Kiekendief</h3></div><p class="blurb">Research and fieldwork on farmland birds like harriers and buntings.</p><div class="arrow">Visit →</div></a>
-        <a class="card" href="https://www.vogelbescherming.nl/bescherming/in-de-buurt/vogelwerkgroep" target="_blank" rel="noopener"><div class="top"><h3>Find a group near you</h3></div><p class="blurb">Vogelbescherming’s finder for a local bird group anywhere in the country.</p><div class="arrow">Visit →</div></a>
-        <a class="card" href="https://www.facebook.com/groups/dutchbirding" target="_blank" rel="noopener"><div class="top"><h3>Dutch Birding (Facebook)</h3></div><p class="blurb">Rarities, identification and sightings from across the country.</p><div class="arrow">Visit →</div></a>
-      </div>
-
-      <div class="region-label">Noord-Holland</div>
-      <div class="grid">
-        <a class="card" href="https://www.vogelsamsterdam.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelwerkgroep Amsterdam</h3></div><p class="blurb">Excursions, lectures and courses in and around Amsterdam.</p><div class="arrow">Visit →</div></a>
-        <a class="card" href="https://www.vwgzkl.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelwerkgroep Zuid-Kennemerland</h3></div><p class="blurb">Haarlem’s bird group since 1951: counts, courses, outings and youth activities.</p><div class="arrow">Visit →</div></a>
-        <a class="card" href="https://www.vwggooi.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelwerkgroep Het Gooi e.o.</h3></div><p class="blurb">Fieldwork and excursions across the Gooi and Vecht region.</p><div class="arrow">Visit →</div></a>
-        <a class="card" href="https://www.vogelwerkgroepennh.nl" target="_blank" rel="noopener"><div class="top"><h3>Samenwerkende Vogelwerkgroepen Noord-Holland</h3></div><p class="blurb">Umbrella body linking the many local groups across the province.</p><div class="arrow">Visit →</div></a>
-      </div>
-
-      <div class="region-label">Zuid-Holland</div>
-      <div class="grid">
-        <a class="card" href="https://www.haagsevogels.nl" target="_blank" rel="noopener"><div class="top"><h3>Haagse Vogels (VWG Den Haag)</h3></div><p class="blurb">The bird working group for The Hague and its dunes and coast.</p><div class="arrow">Visit →</div></a>
-        <a class="card" href="https://www.vwgalphen.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelwerkgroep Alphen</h3></div><p class="blurb">For Alphen aan den Rijn and the surrounding Green Heart.</p><div class="arrow">Visit →</div></a>
-        <a class="card" href="https://www.nvwk.nl" target="_blank" rel="noopener"><div class="top"><h3>Natuur- en Vogelwacht Krimpenerwaard</h3></div><p class="blurb">Birding and nature study in the Krimpenerwaard polders.</p><div class="arrow">Visit →</div></a>
-      </div>
-
-      <div class="region-label">Utrecht</div>
-      <div class="grid">
-        <a class="card" href="https://www.vogelwacht-utrecht.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelwacht Utrecht</h3></div><p class="blurb">One of the country’s larger regional groups, active across Utrecht province.</p><div class="arrow">Visit →</div></a>
-      </div>
-
-      <div class="region-label">Gelderland</div>
-      <div class="grid">
-        <a class="card" href="https://www.vogelwerkgroepnijmegen.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelwerkgroep Nijmegen</h3></div><p class="blurb">The bird study group for Nijmegen and the Rijk van Nijmegen.</p><div class="arrow">Visit →</div></a>
-      </div>
-
-      <div class="region-label">Noord-Brabant</div>
-      <div class="grid">
-        <a class="card" href="https://www.vwgdekempen.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelwerkgroep De Kempen</h3></div><p class="blurb">Active across the Brabantse Kempen around Eindhoven and the Belgian border.</p><div class="arrow">Visit →</div></a>
-      </div>
-
-      <div class="region-label">Overijssel</div>
-      <div class="grid">
-        <a class="card" href="https://www.vwgzwolle.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelbeschermingswacht Zwolle</h3></div><p class="blurb">Zwolle and the Vecht and IJssel valleys.</p><div class="arrow">Visit →</div></a>
-      </div>
-
-      <div class="region-label">Groningen</div>
-      <div class="grid">
-        <a class="card" href="https://avifaunagroningen.nl" target="_blank" rel="noopener"><div class="top"><h3>Avifauna Groningen</h3></div><p class="blurb">The provincial bird study group for Groningen.</p><div class="arrow">Visit →</div></a>
-      </div>
-
-      <div class="region-label">Drenthe</div>
-      <div class="grid">
-        <a class="card" href="https://www.avifaunadrenthe.nl" target="_blank" rel="noopener"><div class="top"><h3>Werkgroep Avifauna Drenthe</h3></div><p class="blurb">Bird recording and study across the Drenthe province.</p><div class="arrow">Visit →</div></a>
-      </div>
-
-      <div class="region-label">Zeeland</div>
-      <div class="grid">
-        <a class="card" href="https://www.vwgwalcheren.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelwerkgroep Walcheren</h3></div><p class="blurb">Birding the Walcheren coast, dunes and Delta.</p><div class="arrow">Visit →</div></a>
-      </div>
-
-      <div class="region-label">Limburg</div>
-      <div class="grid">
-        <a class="card" href="https://www.vogelwerkgroepnederweert.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelwerkgroep Nederweert</h3></div><p class="blurb">An active local group in Midden-Limburg.</p><div class="arrow">Visit →</div></a>
-        <a class="card" href="https://www.nhgl.nl" target="_blank" rel="noopener"><div class="top"><h3>Natuurhistorisch Genootschap Limburg</h3></div><p class="blurb">The province’s natural history society, with a bird study section.</p><div class="arrow">Visit →</div></a>
-      </div>
-
-      <div class="region-label">Friesland</div>
-      <div class="grid">
-        <a class="card" href="https://www.vogelbescherming.nl/bescherming/in-de-buurt/vogelwerkgroep" target="_blank" rel="noopener"><div class="top"><h3>Find a group in Friesland</h3></div><p class="blurb">Use the finder to reach a local vogelwacht in Friesland.</p><div class="arrow">Visit →</div></a>
-      </div>
-
-      <div class="region-label">Flevoland</div>
-      <div class="grid">
-        <a class="card" href="https://www.vogelbescherming.nl/bescherming/in-de-buurt/vogelwerkgroep" target="_blank" rel="noopener"><div class="top"><h3>Find a group in Flevoland</h3></div><p class="blurb">Use the finder to reach a local group in Flevoland.</p><div class="arrow">Visit →</div></a>
       </div>
     </section>
 
@@ -292,15 +303,18 @@
 
   <script>
     (function () {
-      var sel = document.getElementById('countrySel');
+      var choices = document.querySelectorAll('.choice');
       var secs = document.querySelectorAll('.country');
       function show(c) {
         secs.forEach(function (s) {
           s.style.display = (c === 'all' || s.getAttribute('data-country') === c) ? '' : 'none';
         });
+        choices.forEach(function (b) { b.classList.toggle('active', b.getAttribute('data-country') === c); });
       }
-      sel.addEventListener('change', function () { show(sel.value); });
-      show(sel.value);
+      choices.forEach(function (b) {
+        b.addEventListener('click', function () { show(b.getAttribute('data-country')); });
+      });
+      show('all');
       var v = document.getElementById('heroVideo');
       if (v) {
         var ready = function () { v.classList.add('ready'); };
