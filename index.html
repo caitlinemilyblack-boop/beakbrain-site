@@ -56,6 +56,12 @@
     .wrap { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
     .section { padding: 100px 0; }
     .eyebrow { font-family: var(--display); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; font-size: 13px; color: var(--gold-deep); }
+    .shots-title { font-family: var(--display); font-weight: 700; font-size: clamp(28px, 4vw, 40px); color: var(--ink); margin: 10px 0 34px; }
+    .shots { display: flex; gap: 22px; overflow-x: auto; padding-bottom: 14px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+    .shot { flex: 0 0 auto; width: 208px; margin: 0; scroll-snap-align: center; text-align: center; }
+    .shot img { width: 100%; height: auto; display: block; border-radius: 30px; border: 7px solid var(--ink); box-shadow: 0 14px 34px rgba(46,42,37,0.20); background: var(--bg); }
+    .shot figcaption { font-family: var(--display); font-weight: 600; font-size: 15px; color: var(--muted); margin-top: 15px; }
+    @media (min-width: 900px) { .shots { flex-wrap: nowrap; overflow-x: visible; justify-content: center; } }
 
     /* Header: fixed so it overlays the hero video (transparent), solid once scrolled */
     header { position: fixed; top: 0; left: 0; right: 0; z-index: 30; background: transparent; border-bottom: 1px solid transparent; transition: background .28s ease, border-color .28s ease, backdrop-filter .28s ease; }
@@ -238,6 +244,19 @@
   </section>
 
   <!-- How it works -->
+  <!-- Screenshots -->
+  <section class="wrap" id="screens" style="padding-top: 40px; padding-bottom: 8px;">
+    <p class="eyebrow">See it in action</p>
+    <h2 class="shots-title">A quick look inside</h2>
+    <div class="shots">
+      <figure class="shot"><img src="assets/screens/screen-1.png" alt="Onboarding, pick your country" loading="lazy" /><figcaption>Pick your country</figcaption></figure>
+      <figure class="shot"><img src="assets/screens/screen-2.png" alt="Photo identification quiz" loading="lazy" /><figcaption>Learn by sight</figcaption></figure>
+      <figure class="shot"><img src="assets/screens/screen-3.png" alt="Sound identification quiz" loading="lazy" /><figcaption>Learn by ear</figcaption></figure>
+      <figure class="shot"><img src="assets/screens/screen-4.png" alt="Your learning path" loading="lazy" /><figcaption>Your learning path</figcaption></figure>
+      <figure class="shot"><img src="assets/screens/screen-5.png" alt="A study pack" loading="lazy" /><figcaption>A pack for every place</figcaption></figure>
+    </div>
+  </section>
+
   <section class="section" id="how">
     <div class="wrap">
       <div class="section-head">
