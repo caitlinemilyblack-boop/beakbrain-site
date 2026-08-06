@@ -56,8 +56,13 @@ regardless of what this table says was "launched".
 
 ## Wave discipline (why waves are sized the way they are)
 
-3 to 4 research agents per wave, not more, with model `"sonnet"` explicitly on each. 6 to 8 at once
-burned through a full session's quota within an hour on 2026-08-05/06 even when every agent behaved
-correctly, because WebSearch/WebFetch calls are expensive per agent. See
-`~/.claude/commands/birding-community.md`'s "Delegating research to subagents" section and
-`build/BRIEF.md` (tightened 2026-08-06 to cut searches/curls per agent) for the full mechanics.
+3 to 4 research agents per wave, not more. 6 to 8 at once burned through a full session's quota
+within an hour on 2026-08-05/06 even when every agent behaved correctly, because WebSearch/WebFetch
+calls are expensive per agent. See `~/.claude/commands/birding-community.md`'s "Delegating research
+to subagents" section and `build/BRIEF.md` (tightened 2026-08-06 to cut searches/curls per agent) for
+the full mechanics.
+
+**Model:** wave 1 (UK, France/Iberia, Nordics, Ireland/Italy) was launched on `model: "sonnet"`.
+From wave 2 onward, use `model: "haiku"` — with BRIEF.md now this procedural, it's a follow-the-recipe
+task Haiku should handle fine, and it eases quota pressure further. Fall back to Sonnet for a batch if
+Haiku's output shows weak judgment (sloppy blurbs, missed parked domains, wrong region grouping).
