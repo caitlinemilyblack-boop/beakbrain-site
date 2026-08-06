@@ -145,7 +145,10 @@
       <div class="chooser countries" id="countries">
       <button type="button" class="choice" data-country="AL" data-continent="Europe" data-search="albania al albanian shqipëri">🇦🇱 Albania</button>
       <button type="button" class="choice" data-country="AD" data-continent="Europe" data-search="andorra ad andorra andorran">🇦🇩 Andorra</button>
+      <button type="button" class="choice" data-country="AM" data-continent="Europe" data-search="armenia am armenian hayastan">🇦🇲 Armenia</button>
       <button type="button" class="choice" data-country="AT" data-continent="Europe" data-search="austria at austria osterreich österreich austrian">🇦🇹 Austria</button>
+      <button type="button" class="choice" data-country="AZ" data-continent="Europe" data-search="azerbaijan az azerbaijani azərbaycan">🇦🇿 Azerbaijan</button>
+      <button type="button" class="choice" data-country="BY" data-continent="Europe" data-search="belarus by belarusian byelorussia">🇧🇾 Belarus</button>
       <button type="button" class="choice" data-country="BE" data-continent="Europe" data-search="belgium be belgium belgie belgië belgique belgien belgian">🇧🇪 Belgium</button>
       <button type="button" class="choice" data-country="BA" data-continent="Europe" data-search="bosnia and herzegovina ba bosnian herzegovina">🇧🇦 Bosnia and Herzegovina</button>
       <button type="button" class="choice" data-country="BG" data-continent="Europe" data-search="bulgaria bg bulgarian българия">🇧🇬 Bulgaria</button>
@@ -157,6 +160,7 @@
       <button type="button" class="choice" data-country="FO" data-continent="Europe" data-search="faroe islands fo faeroes faroese">🇫🇴 Faroe Islands</button>
       <button type="button" class="choice" data-country="FI" data-continent="Europe" data-search="finland fi suomi finnish">🇫🇮 Finland</button>
       <button type="button" class="choice" data-country="FR" data-continent="Europe" data-search="france fr france french">🇫🇷 France</button>
+      <button type="button" class="choice" data-country="GE" data-continent="Europe" data-search="georgia ge georgian sakartvelo">🇬🇪 Georgia</button>
       <button type="button" class="choice" data-country="DE" data-continent="Europe" data-search="germany de germany deutschland german bundesrepublik deutschland">🇩🇪 Germany</button>
       <button type="button" class="choice" data-country="GI" data-continent="Europe" data-search="gibraltar gi gibraltar">🇬🇮 Gibraltar</button>
       <button type="button" class="choice" data-country="GR" data-continent="Europe" data-search="greece gr hellenic greek ελλάδα">🇬🇷 Greece</button>
@@ -170,6 +174,7 @@
       <button type="button" class="choice" data-country="LT" data-continent="Europe" data-search="lithuania lt lithuania lietuva">🇱🇹 Lithuania</button>
       <button type="button" class="choice" data-country="LU" data-continent="Europe" data-search="luxembourg lu luxembourg luxemburg letzebuerg luxembourgish">🇱🇺 Luxembourg</button>
       <button type="button" class="choice" data-country="MT" data-continent="Europe" data-search="malta mt malta maltese">🇲🇹 Malta</button>
+      <button type="button" class="choice" data-country="MD" data-continent="Europe" data-search="moldova md moldovan moldavian">🇲🇩 Moldova</button>
       <button type="button" class="choice" data-country="ME" data-continent="Europe" data-search="montenegro me montenegrin црна гора">🇲🇪 Montenegro</button>
       <button type="button" class="choice" data-country="NL" data-continent="Europe" data-search="netherlands nl">🇳🇱 Netherlands</button>
       <button type="button" class="choice" data-country="MK" data-continent="Europe" data-search="north macedonia mk macedonian македонија">🇲🇰 North Macedonia</button>
@@ -177,6 +182,7 @@
       <button type="button" class="choice" data-country="PL" data-continent="Europe" data-search="poland pl poland polski">🇵🇱 Poland</button>
       <button type="button" class="choice" data-country="PT" data-continent="Europe" data-search="portugal pt portugal portuguese">🇵🇹 Portugal</button>
       <button type="button" class="choice" data-country="RO" data-continent="Europe" data-search="romania ro romanian românia">🇷🇴 Romania</button>
+      <button type="button" class="choice" data-country="RU" data-continent="Europe" data-search="russia ru russian federation rossiya">🇷🇺 Russia</button>
       <button type="button" class="choice" data-country="SM" data-continent="Europe" data-search="san marino sm san marino sammarinese">🇸🇲 San Marino</button>
       <button type="button" class="choice" data-country="RS" data-continent="Europe" data-search="serbia rs serbian србија">🇷🇸 Serbia</button>
       <button type="button" class="choice" data-country="SK" data-continent="Europe" data-search="slovakia sk slovakia slovenská republika">🇸🇰 Slovakia</button>
@@ -185,10 +191,11 @@
       <button type="button" class="choice" data-country="SE" data-continent="Europe" data-search="sweden se sverige swedish">🇸🇪 Sweden</button>
       <button type="button" class="choice" data-country="CH" data-continent="Europe" data-search="switzerland ch switzerland schweiz suisse svizzera swiss confoederatio helvetica">🇨🇭 Switzerland</button>
       <button type="button" class="choice" data-country="TR" data-continent="Europe" data-search="turkey tr türkiye turkish turkiye">🇹🇷 Turkey</button>
+      <button type="button" class="choice" data-country="UA" data-continent="Europe" data-search="ukraine ua ukrainian ukraina">🇺🇦 Ukraine</button>
       <button type="button" class="choice" data-country="GB" data-continent="Europe" data-search="united kingdom gb united kingdom uk great britain britain gb england scotland wales northern ireland">🇬🇧 United Kingdom</button>
       <button type="button" class="choice" data-country="ZA" data-continent="Africa" data-search="south africa za">🇿🇦 South Africa</button>
       </div>
-      <p class="count-note">44 countries and territories, 525 groups. Pick one to see its clubs, societies and projects.</p>
+      <p class="count-note">51 countries and territories, 539 groups. Pick one to see its clubs, societies and projects.</p>
     </div>
     <p class="empty" id="empty" hidden>No match yet. Try another spelling, or tell us who is missing and we will add them.</p>
 
@@ -262,6 +269,15 @@
       </div>
     </section>
 
+    <!-- Armenia -->
+    <section class="country" data-country="AM" data-continent="Europe" data-search="armenia am armenian hayastan">
+      <h2 class="country-title">🇦🇲 Armenia</h2>
+      <div class="region-label">Countrywide</div>
+      <div class="grid">
+        <a class="card" href="https://www.aspbirds.org" target="_blank" rel="noopener"><div class="top"><h3>ASPB / Armenian Society for the Protection of Birds</h3></div><p class="blurb">BirdLife partner managing Important Bird Areas and running bird conservation and monitoring across Armenia.</p><div class="arrow">Visit →</div></a>
+      </div>
+    </section>
+
     <!-- Austria -->
     <section class="country" data-country="AT" data-continent="Europe" data-search="austria at austria osterreich österreich austrian">
       <h2 class="country-title">🇦🇹 Austria</h2>
@@ -304,6 +320,25 @@
       <div class="region-label">Vorarlberg</div>
       <div class="grid">
         <a class="card" href="https://avifaunistik-rheindelta.at" target="_blank" rel="noopener"><div class="top"><h3>Arbeitsgruppe Avifaunistik Vorarlberger Rheindelta</h3></div><p class="blurb">A working group researching the bird life of the Vorarlberg Rhine delta, in partnership with BirdLife.</p><div class="arrow">Visit →</div></a>
+      </div>
+    </section>
+
+    <!-- Azerbaijan -->
+    <section class="country" data-country="AZ" data-continent="Europe" data-search="azerbaijan az azerbaijani azərbaycan">
+      <h2 class="country-title">🇦🇿 Azerbaijan</h2>
+      <div class="region-label">Countrywide</div>
+      <div class="grid">
+        <a class="card" href="https://birdingazerbaijan.org" target="_blank" rel="noopener"><div class="top"><h3>Birding Azerbaijan</h3></div><p class="blurb">Nonprofit sharing bird news, scientific research and birding opportunities with focus on Asian species and conservation.</p><div class="arrow">Visit →</div></a>
+      </div>
+    </section>
+
+    <!-- Belarus -->
+    <section class="country" data-country="BY" data-continent="Europe" data-search="belarus by belarusian byelorussia">
+      <h2 class="country-title">🇧🇾 Belarus</h2>
+      <div class="region-label">Countrywide</div>
+      <div class="grid">
+        <a class="card" href="https://npbp.by/eng/" target="_blank" rel="noopener"><div class="top"><h3>Belovezhskaya Pushcha National Park</h3></div><p class="blurb">UNESCO World Heritage site and key ornithological area monitoring over 250 bird species including rare raptors.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.facebook.com/birdingbelarus/" target="_blank" rel="noopener"><div class="top"><h3>Birding Belarus</h3></div><p class="blurb">Facebook community sharing rare bird sightings and birding observations across Belarus.</p><div class="arrow">Visit →</div></a>
       </div>
     </section>
 
@@ -714,6 +749,19 @@
       </div>
     </section>
 
+    <!-- Georgia -->
+    <section class="country" data-country="GE" data-continent="Europe" data-search="georgia ge georgian sakartvelo">
+      <h2 class="country-title">🇬🇪 Georgia</h2>
+      <div class="region-label">Countrywide</div>
+      <div class="grid">
+        <a class="card" href="https://www.sabuko.org" target="_blank" rel="noopener"><div class="top"><h3>SABUKO / Society for Nature Conservation</h3></div><p class="blurb">BirdLife partner since 2013 running bird monitoring and conservation across Georgia's wetlands and mountains.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Batumi and Southwest Georgia</div>
+      <div class="grid">
+        <a class="card" href="https://www.batumiraptorcount.org/" target="_blank" rel="noopener"><div class="top"><h3>Batumi Raptor Count</h3></div><p class="blurb">Citizen science project monitoring one million migrating raptors each autumn at a key global migration bottleneck.</p><div class="arrow">Visit →</div></a>
+      </div>
+    </section>
+
     <!-- Germany -->
     <section class="country" data-country="DE" data-continent="Europe" data-search="germany de germany deutschland german bundesrepublik deutschland">
       <h2 class="country-title">🇩🇪 Germany</h2>
@@ -986,6 +1034,15 @@
       </div>
     </section>
 
+    <!-- Moldova -->
+    <section class="country" data-country="MD" data-continent="Europe" data-search="moldova md moldovan moldavian">
+      <h2 class="country-title">🇲🇩 Moldova</h2>
+      <div class="region-label">Countrywide</div>
+      <div class="grid">
+        <a class="card" href="https://pecbms.info/country/moldova/" target="_blank" rel="noopener"><div class="top"><h3>SPPN / Society for Birds and Nature Protection</h3></div><p class="blurb">The national bird and nature protection society, with no site of its own; linked via the PECBMS monitoring page that credits them as Moldova's contributing partner.</p><div class="arrow">Visit →</div></a>
+      </div>
+    </section>
+
     <!-- Montenegro -->
     <section class="country" data-country="ME" data-continent="Europe" data-search="montenegro me montenegrin црна гора">
       <h2 class="country-title">🇲🇪 Montenegro</h2>
@@ -1227,6 +1284,21 @@
         <a class="card" href="https://www.birdlife.org/partners/romania-romanian-ornithological-society-sor-birdlife-romania/" target="_blank" rel="noopener"><div class="top"><h3>Romanian Ornithological Society (SOR)</h3></div><p class="blurb">The national bird society and BirdLife partner since 1997, operating from Bucharest, Cluj Napoca and Tulcea.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://milvus.ro/en/" target="_blank" rel="noopener"><div class="top"><h3>Milvus Group</h3></div><p class="blurb">Bird and nature protection association specialising in raptor conservation and bird ringing research.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://ebird.org/region/RO/" target="_blank" rel="noopener"><div class="top"><h3>eBird Romania</h3></div><p class="blurb">Citizen science sighting platform documenting Romanian bird distribution and abundance.</p><div class="arrow">Visit →</div></a>
+      </div>
+    </section>
+
+    <!-- Russia -->
+    <section class="country" data-country="RU" data-continent="Europe" data-search="russia ru russian federation rossiya">
+      <h2 class="country-title">🇷🇺 Russia</h2>
+      <div class="region-label">Countrywide</div>
+      <div class="grid">
+        <a class="card" href="https://birdsrussia.org" target="_blank" rel="noopener"><div class="top"><h3>BirdsRussia</h3></div><p class="blurb">National ornithological society with eleven regional branches running field research and conservation across Russia.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://birdsassociation.ru" target="_blank" rel="noopener"><div class="top"><h3>Russian Ornithological Society</h3></div><p class="blurb">Regional ornithological association from Saint Petersburg running bird rehabilitation and conservation activities.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://ru-birds.ru" target="_blank" rel="noopener"><div class="top"><h3>Ru-Birds platform</h3></div><p class="blurb">Online bird observation database for ornithologists and birders to share sightings and data from across Russia.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Eastern Siberia</div>
+      <div class="grid">
+        <a class="card" href="https://siberia.russia.birding.day" target="_blank" rel="noopener"><div class="top"><h3>Birds of Siberia</h3></div><p class="blurb">Birding platform for rare birds and birdwatching reports from Irkutsk, Yakutia and Lake Baikal regions.</p><div class="arrow">Visit →</div></a>
       </div>
     </section>
 
@@ -1517,6 +1589,20 @@
       <div class="region-label">Northeastern Turkey</div>
       <div class="grid">
         <a class="card" href="https://kuzeydoga.net/en/homepage/" target="_blank" rel="noopener"><div class="top"><h3>KuzeyDoga (Northeastern Nature)</h3></div><p class="blurb">Conservation NGO based in Kars conducting bird research and community education in northeastern provinces.</p><div class="arrow">Visit →</div></a>
+      </div>
+    </section>
+
+    <!-- Ukraine -->
+    <section class="country" data-country="UA" data-continent="Europe" data-search="ukraine ua ukrainian ukraina">
+      <h2 class="country-title">🇺🇦 Ukraine</h2>
+      <div class="region-label">Countrywide</div>
+      <div class="grid">
+        <a class="card" href="https://birdlife.org.ua" target="_blank" rel="noopener"><div class="top"><h3>USPB / BirdLife Ukraine</h3></div><p class="blurb">Ukrainian Society for the Protection of Birds, BirdLife partner since 1994 with regional branches and conservation work.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://uabirds.org" target="_blank" rel="noopener"><div class="top"><h3>Birds of Ukraine</h3></div><p class="blurb">Ukraine's largest bird photo database and communication hub for birdwatchers with species records and checklists.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">National Community</div>
+      <div class="grid">
+        <a class="card" href="https://www.facebook.com/groups/birdwatching.ua/" target="_blank" rel="noopener"><div class="top"><h3>Birdwatching Ukraine</h3></div><p class="blurb">Facebook community of birdwatchers and ornithologists sharing observations and birding news across Ukraine.</p><div class="arrow">Visit →</div></a>
       </div>
     </section>
 
