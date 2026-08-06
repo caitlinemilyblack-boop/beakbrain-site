@@ -1,0 +1,993 @@
+[
+  {
+    "code": "AT",
+    "name": "Austria",
+    "flag": "🇦🇹",
+    "continent": "Europe",
+    "aka": [
+      "austria",
+      "osterreich",
+      "österreich",
+      "austrian"
+    ],
+    "gaps": [
+      "Wien: no bird or nature club with its own website was found for the city itself, only BirdLife Osterreich's central contact person."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "BirdLife Osterreich",
+            "url": "https://www.birdlife.at",
+            "blurb": "Austria's national bird conservation body and BirdLife partner, with groups in every state."
+          },
+          {
+            "name": "ornitho.at",
+            "url": "https://www.ornitho.at",
+            "blurb": "The national bird sightings portal run by BirdLife Osterreich, used by thousands of observers."
+          },
+          {
+            "name": "Club300 Osterreich",
+            "url": "https://www.club300.at",
+            "blurb": "A club for Austrian listers to share rare bird sightings, rankings and photos."
+          },
+          {
+            "name": "Naturschutzbund Osterreich",
+            "url": "https://naturschutzbund.at",
+            "blurb": "The national nature conservation association, with nine regional groups and bird protection projects."
+          },
+          {
+            "name": "Osterreichische Vogelwarte",
+            "url": "https://www.vetmeduni.ac.at/de/klivv/oesterreichische-vogelwarte/",
+            "blurb": "The Austrian bird observatory, researching wild bird populations and running ringing and monitoring work."
+          }
+        ]
+      },
+      {
+        "name": "Burgenland",
+        "groups": [
+          {
+            "name": "Naturschutzbund Burgenland",
+            "url": "https://naturschutzbund-burgenland.at",
+            "blurb": "The Burgenland branch of the national nature group, working on bird habitats around the Neusiedler See."
+          }
+        ]
+      },
+      {
+        "name": "Carinthia",
+        "groups": [
+          {
+            "name": "Naturschutzbund Karnten",
+            "url": "https://naturschutzbund.at/kaernten.html",
+            "blurb": "The Carinthian branch of the national nature conservation association, active in bird protection."
+          }
+        ]
+      },
+      {
+        "name": "Lower Austria",
+        "groups": [
+          {
+            "name": "Ornithologische Arbeitsgemeinschaft Wachau",
+            "url": "https://oagw.at",
+            "blurb": "A BirdLife working group researching and protecting the bird life of the Wachau region."
+          }
+        ]
+      },
+      {
+        "name": "Upper Austria",
+        "groups": [
+          {
+            "name": "Naturschutzbund Oberosterreich",
+            "url": "https://naturschutzbund-ooe.at",
+            "blurb": "The Upper Austria branch of the national nature group, running local conservation and bird projects."
+          }
+        ]
+      },
+      {
+        "name": "Salzburg",
+        "groups": [
+          {
+            "name": "Naturschutzbund Salzburg",
+            "url": "https://naturschutzbund.at/salzburg.html",
+            "blurb": "The Salzburg branch of the national nature conservation association, active in species protection."
+          }
+        ]
+      },
+      {
+        "name": "Styria",
+        "groups": [
+          {
+            "name": "Naturschutzbund Steiermark",
+            "url": "https://www.naturschutzbundsteiermark.at",
+            "blurb": "The Styrian branch of the national nature group, running conservation projects and membership events."
+          }
+        ]
+      },
+      {
+        "name": "Tyrol",
+        "groups": [
+          {
+            "name": "Naturschutzbund Tirol",
+            "url": "https://naturschutzbund.at/tirol.html",
+            "blurb": "The Tyrol branch of the national nature conservation association."
+          }
+        ]
+      },
+      {
+        "name": "Vorarlberg",
+        "groups": [
+          {
+            "name": "Arbeitsgruppe Avifaunistik Vorarlberger Rheindelta",
+            "url": "https://avifaunistik-rheindelta.at",
+            "blurb": "A working group researching the bird life of the Vorarlberg Rhine delta, in partnership with BirdLife."
+          }
+        ]
+      },
+      {
+        "name": "Vienna",
+        "groups": []
+      }
+    ]
+  },
+  {
+    "code": "BE",
+    "name": "Belgium",
+    "flag": "🇧🇪",
+    "continent": "Europe",
+    "aka": [
+      "belgium",
+      "belgie",
+      "belgië",
+      "belgique",
+      "belgien",
+      "belgian"
+    ],
+    "gaps": [],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Natuurpunt",
+            "url": "https://www.natuurpunt.be",
+            "blurb": "Flanders largest nature organisation, with over a hundred local bird working groups running walks and counts."
+          },
+          {
+            "name": "Natagora",
+            "url": "https://www.natagora.be",
+            "blurb": "Wallonia and Brussels nature association, running reserves and dozens of local branches."
+          },
+          {
+            "name": "Aves",
+            "url": "https://aves.natagora.be",
+            "blurb": "The ornithological wing of Natagora, monitoring wild bird populations across Wallonia and Brussels since 1966."
+          },
+          {
+            "name": "waarnemingen.be",
+            "url": "https://www.waarnemingen.be",
+            "blurb": "The Flemish wildlife sightings platform used by Belgian birders to log observations."
+          },
+          {
+            "name": "observations.be",
+            "url": "https://www.observations.be",
+            "blurb": "The French language Belgian wildlife sightings platform, part of the Observation.org network."
+          },
+          {
+            "name": "Trektellen",
+            "url": "https://www.trektellen.org",
+            "blurb": "The migration count portal used by Belgian and Dutch counters to log visible migration."
+          },
+          {
+            "name": "Belgian Rare Birds Committee",
+            "url": "https://www.belgianrbc.be",
+            "blurb": "The national rarities committee reviewing records of scarce and vagrant birds in Belgium."
+          },
+          {
+            "name": "BeBirds",
+            "url": "https://odnature.naturalsciences.be/bebirds/fr/",
+            "blurb": "The national bird ringing database, run with the Royal Belgian Institute of Natural Sciences."
+          }
+        ]
+      },
+      {
+        "name": "Antwerp",
+        "groups": [
+          {
+            "name": "Vogelwerkgroep Ardea",
+            "url": "https://vogelwerkgroep-ardea.be",
+            "blurb": "A Natuurpunt bird group covering the southern Antwerp area, running walks and counts."
+          }
+        ]
+      },
+      {
+        "name": "East Flanders",
+        "groups": [
+          {
+            "name": "Vogelwerkgroep Gent",
+            "url": "https://www.natuurpunt.be/werkgroepen/vogelwerkgroep-gent",
+            "blurb": "A Natuurpunt bird group active in and around Gent, running outings and surveys."
+          }
+        ]
+      },
+      {
+        "name": "West Flanders",
+        "groups": [
+          {
+            "name": "Mergus",
+            "url": "https://www.mergus.be",
+            "blurb": "A bird group of about a hundred active members monitoring the Zwin, Zeebrugge and nearby areas."
+          }
+        ]
+      },
+      {
+        "name": "Flemish Brabant",
+        "groups": [
+          {
+            "name": "Vogelwerkgroep Oost Brabant",
+            "url": "https://www.natuurpuntoostbrabant.be",
+            "blurb": "A regional Natuurpunt group running bird excursions and courses across Flemish Brabant."
+          }
+        ]
+      },
+      {
+        "name": "Limburg",
+        "groups": [
+          {
+            "name": "Vogelwerkgroep Fruitstreek",
+            "url": "https://www.vogelwerkgroepfruitstreek.be",
+            "blurb": "The main Natuurpunt bird group for the province of Limburg."
+          }
+        ]
+      },
+      {
+        "name": "Hainaut",
+        "groups": [
+          {
+            "name": "Natagora Centre Ouest Hainaut",
+            "url": "https://www.natagora.be/centreouesthainaut/",
+            "blurb": "A Natagora local branch running nature and bird outings in western Hainaut."
+          }
+        ]
+      },
+      {
+        "name": "Liege",
+        "groups": [
+          {
+            "name": "Natagora Liege",
+            "url": "https://www.natagora.be/liege",
+            "blurb": "The Natagora branch for Liege province, running reserves and bird focused outings."
+          }
+        ]
+      },
+      {
+        "name": "Luxembourg province",
+        "groups": [
+          {
+            "name": "Natagora Lorraine",
+            "url": "https://www.natagora.be/lorraine/",
+            "blurb": "The Natagora branch covering the Gaume and Lorraine area of Luxembourg province."
+          }
+        ]
+      },
+      {
+        "name": "Namur",
+        "groups": [
+          {
+            "name": "Natagora Famenne",
+            "url": "https://www.natagora.be/famenne",
+            "blurb": "The Natagora branch for the Famenne area of Namur province."
+          }
+        ]
+      },
+      {
+        "name": "Walloon Brabant",
+        "groups": [
+          {
+            "name": "Natagora Brabant Wallon",
+            "url": "https://brabantwallon.natagora.be/",
+            "blurb": "The Natagora branch for Walloon Brabant, running reserves and local nature outings."
+          }
+        ]
+      },
+      {
+        "name": "Brussels",
+        "groups": [
+          {
+            "name": "Natagora Bruxelles",
+            "url": "https://www.natagora.be/bruxelles",
+            "blurb": "The Natagora branch for the Brussels region, running urban nature and bird projects."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "DE",
+    "name": "Germany",
+    "flag": "🇩🇪",
+    "continent": "Europe",
+    "aka": [
+      "germany",
+      "deutschland",
+      "german",
+      "bundesrepublik deutschland"
+    ],
+    "gaps": [],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "NABU",
+            "url": "https://www.nabu.de",
+            "blurb": "Germany's largest nature group and BirdLife partner, with hundreds of local groups running walks and counts."
+          },
+          {
+            "name": "Deutsche Ornithologische Gesellschaft",
+            "url": "https://www.do-g.de",
+            "blurb": "The scientific ornithological society, founded in 1850, connecting researchers and field birders nationwide."
+          },
+          {
+            "name": "Dachverband Deutscher Avifaunisten",
+            "url": "https://www.dda-web.de",
+            "blurb": "The umbrella body for German avifaunists, coordinating monitoring schemes and the ornitho.de platform."
+          },
+          {
+            "name": "ornitho.de",
+            "url": "https://www.ornitho.de",
+            "blurb": "The national sightings platform used by birders across Germany and Luxembourg to log observations."
+          },
+          {
+            "name": "naturgucker",
+            "url": "https://www.naturgucker.de",
+            "blurb": "A nationwide nature observation network where members log and share bird and wildlife sightings."
+          },
+          {
+            "name": "Club300 Deutschland",
+            "url": "https://www.club300.de",
+            "blurb": "A club for keen listers, with rare bird news, rankings and a members forum."
+          },
+          {
+            "name": "Max Planck Institute of Animal Behavior, Vogelwarte Radolfzell",
+            "url": "https://www.ab.mpg.de",
+            "blurb": "Home of the historic Vogelwarte Radolfzell bird ringing and migration research station."
+          },
+          {
+            "name": "Institut für Vogelforschung, Vogelwarte Helgoland",
+            "url": "https://www.ifv-vogelwarte.de",
+            "blurb": "The bird ringing centre for northwest Germany, based in Wilhelmshaven and on Helgoland."
+          },
+          {
+            "name": "Beringungszentrale Hiddensee",
+            "url": "https://www.lung.mv-regierung.de/fachinformationen/natur-und-landschaft/beringungszentrale-hiddensee/",
+            "blurb": "The ringing centre for eastern Germany, coordinating volunteer bird banders since 1936."
+          },
+          {
+            "name": "Deutsche Avifaunistische Kommission",
+            "url": "https://www.dda-web.de/dak",
+            "blurb": "The national rarities committee, reviewing and publishing records of scarce birds in Germany."
+          },
+          {
+            "name": "NAJU",
+            "url": "https://www.naju.de",
+            "blurb": "The youth wing of NABU, running local nature and bird groups for children and teenagers."
+          }
+        ]
+      },
+      {
+        "name": "Baden Wurttemberg",
+        "groups": [
+          {
+            "name": "Ornithologische Gesellschaft Baden Wurttemberg",
+            "url": "https://www.ogbw.de",
+            "blurb": "The state ornithological society, publishing yearbooks and coordinating field surveys."
+          },
+          {
+            "name": "Ornithologische Arbeitsgemeinschaft Rhein Neckar",
+            "url": "https://www.oag-rhein-neckar.de",
+            "blurb": "A local working group studying and protecting birds around the Rhein Neckar region."
+          }
+        ]
+      },
+      {
+        "name": "Bavaria",
+        "groups": [
+          {
+            "name": "LBV",
+            "url": "https://www.lbv.de",
+            "blurb": "Bavaria's bird and nature league, with local groups and reserves across the state since 1909."
+          },
+          {
+            "name": "Ornithologische Arbeitsgemeinschaft Ostbayern",
+            "url": "https://www.oag-ostbayern.de",
+            "blurb": "A regional working group recording bird life across eastern Bavaria."
+          }
+        ]
+      },
+      {
+        "name": "Berlin",
+        "groups": [
+          {
+            "name": "Berliner Ornithologische Arbeitsgemeinschaft",
+            "url": "https://www.orniberlin.de",
+            "blurb": "The Berlin ornithological working group, meeting since 1990 to record and publish local bird data."
+          }
+        ]
+      },
+      {
+        "name": "Brandenburg",
+        "groups": [
+          {
+            "name": "Arbeitsgemeinschaft Berlin Brandenburgischer Ornithologen",
+            "url": "https://www.abbo-info.de",
+            "blurb": "A joint Berlin and Brandenburg working group of field ornithologists sharing records and research."
+          }
+        ]
+      },
+      {
+        "name": "Bremen",
+        "groups": [
+          {
+            "name": "Ornithologische Arbeitsgemeinschaft Bremen",
+            "url": "https://www.bund-bremen.net/oag/",
+            "blurb": "The Bremen ornithological working group, running excursions and an annual bird report."
+          }
+        ]
+      },
+      {
+        "name": "Hamburg",
+        "groups": [
+          {
+            "name": "Arbeitskreis Vogelschutzwarte Hamburg",
+            "url": "https://www.ornithologie-hamburg.de",
+            "blurb": "A Hamburg based group promoting bird study and protection in the city and surrounds."
+          }
+        ]
+      },
+      {
+        "name": "Hesse",
+        "groups": [
+          {
+            "name": "HGON",
+            "url": "https://www.hgon.de",
+            "blurb": "Hesse's ornithology and nature conservation society, running surveys and projects since 1964."
+          }
+        ]
+      },
+      {
+        "name": "Lower Saxony",
+        "groups": [
+          {
+            "name": "Niedersachsische Ornithologische Vereinigung",
+            "url": "https://www.ornithologie-niedersachsen.de",
+            "blurb": "The state ornithological association covering Lower Saxony and Bremen, with regional groups."
+          },
+          {
+            "name": "Arbeitskreis Gottinger Ornithologen",
+            "url": "https://www.ornithologie-goettingen.de",
+            "blurb": "A local group recording and mapping birds around Gottingen in southern Lower Saxony."
+          }
+        ]
+      },
+      {
+        "name": "Mecklenburg Vorpommern",
+        "groups": [
+          {
+            "name": "Ornithologische Arbeitsgemeinschaft Mecklenburg Vorpommern",
+            "url": "https://www.oamv.de",
+            "blurb": "The state working group for ornithology, coordinating bird recording across Mecklenburg Vorpommern."
+          }
+        ]
+      },
+      {
+        "name": "North Rhine Westphalia",
+        "groups": [
+          {
+            "name": "Nordrhein Westfalische Ornithologengesellschaft",
+            "url": "https://www.nw-ornithologen.de",
+            "blurb": "The North Rhine Westphalia ornithological society, formed from a 1998 merger of two regional groups."
+          },
+          {
+            "name": "Ornithologische Arbeitsgemeinschaft Kreis Unna",
+            "url": "https://www.oagkreisunna.de",
+            "blurb": "A district level working group recording birds in and around Kreis Unna."
+          }
+        ]
+      },
+      {
+        "name": "Rhineland Palatinate",
+        "groups": [
+          {
+            "name": "GNOR",
+            "url": "https://gnor.de",
+            "blurb": "The state society for nature conservation and ornithology, active in Rhineland Palatinate since 1977."
+          }
+        ]
+      },
+      {
+        "name": "Saarland",
+        "groups": [
+          {
+            "name": "Ornithologischer Beobachterring Saar",
+            "url": "https://ornithologie-saar.de",
+            "blurb": "The Saarland birders ring, founded in 1963 to study and record the state's bird life."
+          }
+        ]
+      },
+      {
+        "name": "Saxony",
+        "groups": [
+          {
+            "name": "Verein Sachsischer Ornithologen",
+            "url": "https://vso-web.de",
+            "blurb": "The Saxon ornithologists association, founded in 1922 to research and protect the state's birds."
+          }
+        ]
+      },
+      {
+        "name": "Saxony Anhalt",
+        "groups": [
+          {
+            "name": "Ornithologenverband Sachsen Anhalt",
+            "url": "https://www.osa-internet.de",
+            "blurb": "The Saxony Anhalt ornithologists federation, linking regional groups and coordinating surveys."
+          },
+          {
+            "name": "Ornithologischer Verein Halle",
+            "url": "https://www.ornithologischer-verein-halle.de",
+            "blurb": "A local society in Halle running species protection projects and public bird walks."
+          }
+        ]
+      },
+      {
+        "name": "Schleswig Holstein",
+        "groups": [
+          {
+            "name": "Ornithologische Arbeitsgemeinschaft fur Schleswig Holstein und Hamburg",
+            "url": "https://www.oagsh.de",
+            "blurb": "A regional group with over 600 members researching the bird life of Schleswig Holstein and Hamburg."
+          },
+          {
+            "name": "Ornithologische Arbeitsgemeinschaft Helgoland",
+            "url": "https://www.oag-helgoland.de",
+            "blurb": "A working group focused on recording migrant and breeding birds on the island of Helgoland."
+          }
+        ]
+      },
+      {
+        "name": "Thuringia",
+        "groups": [
+          {
+            "name": "Verein Thuringer Ornithologen",
+            "url": "https://ornithologen-thueringen.de",
+            "blurb": "The Thuringian ornithologists association, founded in 1990 to research and protect local birds."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "LI",
+    "name": "Liechtenstein",
+    "flag": "🇱🇮",
+    "continent": "Europe",
+    "aka": [
+      "liechtenstein"
+    ],
+    "gaps": [
+      "Only one general natural history society was found with a public bird programme, no dedicated bird only club with its own site exists in Liechtenstein."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Botanisch Zoologische Gesellschaft Liechtenstein Sarganserland Werdenberg",
+            "url": "https://www.bzg.li",
+            "blurb": "Liechtenstein's natural history society, researching and protecting local flora and fauna including birds."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "LU",
+    "name": "Luxembourg",
+    "flag": "🇱🇺",
+    "continent": "Europe",
+    "aka": [
+      "luxembourg",
+      "luxemburg",
+      "letzebuerg",
+      "luxembourgish"
+    ],
+    "gaps": [
+      "No separate site was found for a distinct Centrale ornithologique or ringing scheme, this work appears to run inside natur&emwelt without its own web presence."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "natur&emwelt",
+            "url": "https://www.naturemwelt.lu",
+            "blurb": "Luxembourg's nature conservation body and BirdLife partner, running bird protection and habitat projects."
+          },
+          {
+            "name": "ornitho.lu",
+            "url": "https://www.ornitho.lu",
+            "blurb": "The national bird sightings platform, shared with ornitho.de, used by birders across Luxembourg."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "NL",
+    "name": "Netherlands",
+    "flag": "🇳🇱",
+    "continent": "Europe",
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Vogelbescherming Nederland",
+            "url": "https://www.vogelbescherming.nl",
+            "blurb": "The national bird protection society and BirdLife International partner."
+          },
+          {
+            "name": "Dutch Birding Association",
+            "url": "https://www.dutchbirding.nl",
+            "blurb": "For keen birders: rarities, identification and the Dutch Birding journal."
+          },
+          {
+            "name": "Sovon Vogelonderzoek",
+            "url": "https://www.sovon.nl",
+            "blurb": "National bird monitoring and counts. Join a survey near you."
+          },
+          {
+            "name": "Trektellen",
+            "url": "https://www.trektellen.nl",
+            "blurb": "Migration counts from watchpoints across the country."
+          },
+          {
+            "name": "Waarneming.nl",
+            "url": "https://waarneming.nl",
+            "blurb": "The main Dutch platform for logging and sharing your sightings."
+          },
+          {
+            "name": "KNNV Field Naturalists",
+            "url": "https://www.knnv.nl",
+            "blurb": "Nationwide nature study association with many local departments."
+          },
+          {
+            "name": "Grauwe Kiekendief",
+            "url": "https://www.grauwekiekendief.nl",
+            "blurb": "Research and fieldwork on farmland birds like harriers and buntings."
+          },
+          {
+            "name": "NJN, Nederlandse Jeugdbond voor Natuurstudie",
+            "url": "https://www.njn.nl",
+            "blurb": "A nationwide nature club for ages 11 to 25 with an active bird working group."
+          },
+          {
+            "name": "Dutch Birding (Facebook)",
+            "url": "https://www.facebook.com/groups/dutchbirding",
+            "blurb": "Rarities, identification and sightings from across the country."
+          }
+        ]
+      },
+      {
+        "name": "Drenthe",
+        "groups": [
+          {
+            "name": "Werkgroep Avifauna Drenthe",
+            "url": "https://www.avifaunadrenthe.nl",
+            "blurb": "Bird recording and study across the Drenthe province."
+          },
+          {
+            "name": "Vogelwerkgroep Vliegvlug Meppel",
+            "url": "https://www.vliegvlugmeppel.nl",
+            "blurb": "Local bird club based in Meppel, active across southwest Drenthe."
+          }
+        ]
+      },
+      {
+        "name": "Flevoland",
+        "groups": [
+          {
+            "name": "Vogel en Natuurwacht Flevoland",
+            "url": "https://www.vogelwachtflevoland.nl",
+            "blurb": "Bird and nature watch group covering Flevoland, from bird counts to ringing and nest protection."
+          }
+        ]
+      },
+      {
+        "name": "Friesland",
+        "groups": [
+          {
+            "name": "Bond Friese VogelWachten",
+            "url": "https://www.friesevogelwachten.nl/nl",
+            "blurb": "Federation of over 100 local vogelwachten across Friesland, protecting meadow and water birds."
+          }
+        ]
+      },
+      {
+        "name": "Gelderland",
+        "groups": [
+          {
+            "name": "Vogelwerkgroep Nijmegen",
+            "url": "https://www.vogelwerkgroepnijmegen.nl",
+            "blurb": "The bird study group for Nijmegen and the Rijk van Nijmegen."
+          },
+          {
+            "name": "Vogelwerkgroep Arnhem en Omstreken",
+            "url": "https://vogelwerkgroeparnhem.nl",
+            "blurb": "Arnhem's bird club, one of the country's larger groups with over 300 members."
+          }
+        ]
+      },
+      {
+        "name": "Groningen",
+        "groups": [
+          {
+            "name": "Avifauna Groningen",
+            "url": "https://avifaunagroningen.nl",
+            "blurb": "The provincial bird study group for Groningen."
+          },
+          {
+            "name": "KNNV Groningen Vogelwerkgroep",
+            "url": "https://groningen.knnv.nl/werkgroep/vogelwerkgroep/",
+            "blurb": "KNNV's Groningen bird group, meeting monthly for local birding outings."
+          }
+        ]
+      },
+      {
+        "name": "Limburg",
+        "groups": [
+          {
+            "name": "Vogelwerkgroep Nederweert",
+            "url": "https://www.vogelwerkgroepnederweert.nl",
+            "blurb": "An active local group in central Limburg."
+          },
+          {
+            "name": "Natuurhistorisch Genootschap Limburg",
+            "url": "https://www.nhgl.nl",
+            "blurb": "The province's natural history society, with a bird study section."
+          },
+          {
+            "name": "VWL Vogelwerkgroep Maastricht",
+            "url": "https://vwl-vogelwerkgroep-maastricht.nl",
+            "blurb": "Maastricht's bird study group, running waterbird and swallow counts for Sovon."
+          }
+        ]
+      },
+      {
+        "name": "Noord-Brabant",
+        "groups": [
+          {
+            "name": "Vogelwerkgroep De Kempen",
+            "url": "https://www.vwgdekempen.nl",
+            "blurb": "Active across the Brabantse Kempen around Eindhoven and the Belgian border."
+          },
+          {
+            "name": "Vogelwerkgroep Midden Brabant",
+            "url": "https://www.vwgmiddenbrabant.nl",
+            "blurb": "Covers the countryside northeast of Tilburg, between Udenhout and Berkel Enschot."
+          },
+          {
+            "name": "West Brabantse Vogelwerkgroep",
+            "url": "https://www.westbrabantsevwg.nl",
+            "blurb": "Bird study and outings across West Brabant, based around Breda."
+          }
+        ]
+      },
+      {
+        "name": "Noord-Holland",
+        "groups": [
+          {
+            "name": "Vogelwerkgroep Amsterdam",
+            "url": "https://www.vogelsamsterdam.nl",
+            "blurb": "Excursions, lectures and courses in and around Amsterdam."
+          },
+          {
+            "name": "Vogelwerkgroep Zuid-Kennemerland",
+            "url": "https://www.vwgzkl.nl",
+            "blurb": "Haarlem's bird group since 1951: counts, courses, outings and youth activities."
+          },
+          {
+            "name": "Vogelwerkgroep Het Gooi e.o.",
+            "url": "https://www.vwggooi.nl",
+            "blurb": "Fieldwork and excursions across the Gooi and Vecht region."
+          }
+        ]
+      },
+      {
+        "name": "Overijssel",
+        "groups": [
+          {
+            "name": "Vogelbeschermingswacht Zwolle",
+            "url": "https://www.vwgzwolle.nl",
+            "blurb": "Zwolle and the Vecht and IJssel valleys."
+          },
+          {
+            "name": "Twentse Vogelwerkgroep",
+            "url": "https://tvwg.nl",
+            "blurb": "Covers Twente and the Enschede area in the east of the province."
+          },
+          {
+            "name": "Vogelwerkgroep De IJsselstreek",
+            "url": "https://vwg-deijsselstreek.nl",
+            "blurb": "Birding the IJssel valley around Deventer, Olst and Zutphen."
+          }
+        ]
+      },
+      {
+        "name": "Utrecht",
+        "groups": [
+          {
+            "name": "Vogelwacht Utrecht",
+            "url": "https://www.vogelwacht-utrecht.nl",
+            "blurb": "One of the country's larger regional groups, active across Utrecht province."
+          }
+        ]
+      },
+      {
+        "name": "Zeeland",
+        "groups": [
+          {
+            "name": "Vogelwerkgroep Walcheren",
+            "url": "https://www.vwgwalcheren.nl",
+            "blurb": "Birding the Walcheren coast, dunes and Delta."
+          },
+          {
+            "name": "Vogelwerkgroep De Steltkluut",
+            "url": "https://steltkluut.nl/werkgroepen/vogelwerkgroep/",
+            "blurb": "Covers middle and east Zeeuws Vlaanderen, east of Biervliet."
+          }
+        ]
+      },
+      {
+        "name": "Zuid-Holland",
+        "groups": [
+          {
+            "name": "Haagse Vogels (VWG Den Haag)",
+            "url": "https://www.haagsevogels.nl",
+            "blurb": "The bird working group for The Hague and its dunes and coast."
+          },
+          {
+            "name": "Vogelwerkgroep Alphen",
+            "url": "https://www.vwgalphen.nl",
+            "blurb": "For Alphen aan den Rijn and the surrounding Green Heart."
+          },
+          {
+            "name": "Natuur- en Vogelwacht Krimpenerwaard",
+            "url": "https://www.nvwk.nl",
+            "blurb": "Birding and nature study in the Krimpenerwaard polders."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "CH",
+    "name": "Switzerland",
+    "flag": "🇨🇭",
+    "continent": "Europe",
+    "aka": [
+      "switzerland",
+      "schweiz",
+      "suisse",
+      "svizzera",
+      "swiss",
+      "confoederatio helvetica"
+    ],
+    "gaps": [
+      "Neuchatel: no local bird club with its own site was found beyond Nos Oiseaux, the countrywide French speaking society historically founded there."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Schweizerische Vogelwarte Sempach",
+            "url": "https://www.vogelwarte.ch",
+            "blurb": "The Swiss ornithological institute, running national monitoring, ringing and the ornitho.ch platform."
+          },
+          {
+            "name": "BirdLife Schweiz",
+            "url": "https://www.birdlife.ch",
+            "blurb": "The umbrella body for Swiss bird and nature protection, with 17 cantonal associations and 430 local groups."
+          },
+          {
+            "name": "Nos Oiseaux",
+            "url": "https://www.nosoiseaux.ch",
+            "blurb": "The French speaking Swiss ornithological society, founded in Neuchatel in 1913."
+          },
+          {
+            "name": "Ala, Schweizerische Gesellschaft fur Vogelkunde und Vogelschutz",
+            "url": "https://www.ala-schweiz.ch",
+            "blurb": "The German speaking Swiss society for ornithology and bird protection, active since 1909."
+          },
+          {
+            "name": "ornitho.ch",
+            "url": "https://www.ornitho.ch",
+            "blurb": "The national bird sightings portal for Switzerland and neighbouring regions."
+          }
+        ]
+      },
+      {
+        "name": "Zurich",
+        "groups": [
+          {
+            "name": "BirdLife Zurich",
+            "url": "https://birdlife-zuerich.ch",
+            "blurb": "An umbrella of 110 nature and bird protection groups across canton Zurich."
+          }
+        ]
+      },
+      {
+        "name": "Bern",
+        "groups": [
+          {
+            "name": "BirdLife Bern",
+            "url": "https://birdlifebern.ch",
+            "blurb": "The Bern cantonal bird and nature association, formed from a 2024 merger of two older groups."
+          }
+        ]
+      },
+      {
+        "name": "Aargau",
+        "groups": [
+          {
+            "name": "BirdLife Aargau",
+            "url": "https://birdlife-ag.ch",
+            "blurb": "The Aargau cantonal umbrella for nature and bird protection societies."
+          }
+        ]
+      },
+      {
+        "name": "Geneve",
+        "groups": [
+          {
+            "name": "Groupe Ornithologique du Bassin Genevois",
+            "url": "https://www.facebook.com/groupeornithologiquedubassingenevois/",
+            "blurb": "The Geneva basin ornithological group, the first French speaking cantonal BirdLife section."
+          }
+        ]
+      },
+      {
+        "name": "Vaud",
+        "groups": [
+          {
+            "name": "Cercle Ornithologique de Lausanne",
+            "url": "https://oiseau.ch",
+            "blurb": "A Lausanne based bird club founded in 1927, part of the Nos Oiseaux network."
+          }
+        ]
+      },
+      {
+        "name": "Valais",
+        "groups": [
+          {
+            "name": "Groupe ornithologique valaisan",
+            "url": "https://groupeornithovs.ch",
+            "blurb": "The Valais cantonal bird group, running outings and surveys across the canton."
+          }
+        ]
+      },
+      {
+        "name": "Ticino",
+        "groups": [
+          {
+            "name": "Ficedula",
+            "url": "https://www.ficedula.ch",
+            "blurb": "The Italian speaking Swiss bird society, studying and protecting the birds of Ticino."
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -55,6 +55,20 @@
     .choice.active { background: var(--green); color: #fff; border-color: var(--green); }
     .choice:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
 
+    .finder { margin: 26px 0 4px; }
+    .search-row { position: relative; max-width: 460px; }
+    .search { width: 100%; font-family: var(--body); font-size: 16px; color: var(--ink); background: var(--surface); border: 1.5px solid var(--border); border-radius: 999px; padding: 13px 20px 13px 46px; }
+    .search::placeholder { color: var(--muted); }
+    .search:focus { outline: none; border-color: var(--sage); box-shadow: 0 0 0 3px rgba(106,153,78,0.18); }
+    .search-icon { position: absolute; left: 17px; top: 50%; transform: translateY(-50%); font-size: 16px; opacity: .55; pointer-events: none; }
+    .chooser.continents { margin-top: 18px; }
+    .chooser.countries { gap: 8px; margin: 14px 0 4px; }
+    .chooser.countries .choice { font-size: 14px; padding: 8px 14px; }
+    .choice[hidden] { display: none; }
+    .picker-note { color: var(--muted); font-size: 14px; margin-top: 14px; }
+    .empty { color: var(--muted); font-size: 15px; padding: 26px 0; }
+    .count-note { color: var(--muted); font-size: 13.5px; margin-top: 10px; }
+
     .country-title { font-family: var(--display); font-weight: 700; font-size: 26px; color: var(--green-dark); margin: 36px 0 2px; }
 
     .region-label { font-family: var(--display); font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; font-size: 12px; color: var(--gold-deep); margin: 26px 0 12px; }
@@ -98,14 +112,291 @@
   </section>
 
   <main class="wrap">
-    <div class="chooser" id="chooser">
-      <button type="button" class="choice active" data-country="all">🌍 All countries</button>
-      <button type="button" class="choice" data-country="NL">🇳🇱 Netherlands</button>
-      <button type="button" class="choice" data-country="ZA">🇿🇦 South Africa</button>
+    <div class="finder">
+      <div class="search-row">
+        <span class="search-icon">🔎</span>
+        <input class="search" id="csearch" type="search" autocomplete="off" placeholder="Search a country or territory" aria-label="Search a country or territory" />
+      </div>
+      <div class="chooser continents" id="continents">
+      <button type="button" class="choice active" data-cont="all">🌍 Everywhere</button>
+      <button type="button" class="choice" data-cont="Europe">Europe</button>
+      <button type="button" class="choice" data-cont="Africa">Africa</button>
+      </div>
+      <div class="chooser countries" id="countries">
+      <button type="button" class="choice" data-country="AT" data-continent="Europe" data-search="austria at austria osterreich österreich austrian">🇦🇹 Austria</button>
+      <button type="button" class="choice" data-country="BE" data-continent="Europe" data-search="belgium be belgium belgie belgië belgique belgien belgian">🇧🇪 Belgium</button>
+      <button type="button" class="choice" data-country="DE" data-continent="Europe" data-search="germany de germany deutschland german bundesrepublik deutschland">🇩🇪 Germany</button>
+      <button type="button" class="choice" data-country="LI" data-continent="Europe" data-search="liechtenstein li liechtenstein">🇱🇮 Liechtenstein</button>
+      <button type="button" class="choice" data-country="LU" data-continent="Europe" data-search="luxembourg lu luxembourg luxemburg letzebuerg luxembourgish">🇱🇺 Luxembourg</button>
+      <button type="button" class="choice" data-country="NL" data-continent="Europe" data-search="netherlands nl">🇳🇱 Netherlands</button>
+      <button type="button" class="choice" data-country="CH" data-continent="Europe" data-search="switzerland ch switzerland schweiz suisse svizzera swiss confoederatio helvetica">🇨🇭 Switzerland</button>
+      <button type="button" class="choice" data-country="ZA" data-continent="Africa" data-search="south africa za">🇿🇦 South Africa</button>
+      </div>
+      <p class="count-note">8 countries and territories, 185 groups. Pick one to see its clubs, societies and projects.</p>
     </div>
+    <p class="empty" id="empty" hidden>No match yet. Try another spelling, or tell us who is missing and we will add them.</p>
+
+    <!-- International and global -->
+    <section class="country" data-country="INT" data-continent="INT" data-search="international and global int international global worldwide everywhere">
+      <h2 class="country-title">🌍 International and global</h2>
+      <div class="region-label">Communities that welcome everyone</div>
+      <div class="grid">
+        <a class="card" href="https://www.feministbirdclub.org" target="_blank" rel="noopener"><div class="top"><h3>Feminist Bird Club</h3></div><p class="blurb">Chapters on several continents run free, inclusive bird walks open to anyone.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.birdability.org" target="_blank" rel="noopener"><div class="top"><h3>Birdability</h3></div><p class="blurb">The community for birders with disabilities and other health concerns, with an accessible sites map anyone can add to.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.blackafinstem.com" target="_blank" rel="noopener"><div class="top"><h3>Black AF In STEM and Black Birders Week</h3></div><p class="blurb">The collective behind Black Birders Week, a worldwide programme of talks, walks and online events.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://femalebirdday.wordpress.com" target="_blank" rel="noopener"><div class="top"><h3>Female Bird Day and the Galbatross Project</h3></div><p class="blurb">A yearly global challenge to notice and record the overlooked female half of every species.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.globalyoungbirdersnetwork.org/" target="_blank" rel="noopener"><div class="top"><h3>Global Young Birders Network</h3></div><p class="blurb">Connects birders under 25 worldwide to young birder clubs, camps and careers with birds.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Regional societies</div>
+      <div class="grid">
+        <a class="card" href="https://www.africanbirdclub.org" target="_blank" rel="noopener"><div class="top"><h3>African Bird Club</h3></div><p class="blurb">The society for birders across Africa, with country checklists, a journal and conservation grants.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://orientalbirdclub.org" target="_blank" rel="noopener"><div class="top"><h3>Oriental Bird Club</h3></div><p class="blurb">Covers birders and birds across South and South East Asia, with an image database and grants.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.neotropicalbirdclub.org" target="_blank" rel="noopener"><div class="top"><h3>Neotropical Bird Club</h3></div><p class="blurb">The club for Central and South America and the Caribbean, publishing Cotinga and Neotropical Birding.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://osme.org" target="_blank" rel="noopener"><div class="top"><h3>OSME</h3></div><p class="blurb">The Ornithological Society of the Middle East, the Caucasus and Central Asia, with the journal Sandgrouse.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://birdscaribbean.org" target="_blank" rel="noopener"><div class="top"><h3>BirdsCaribbean</h3></div><p class="blurb">The regional network for the Caribbean islands, running the Caribbean Waterbird Census and festivals.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.ebcc.info" target="_blank" rel="noopener"><div class="top"><h3>European Bird Census Council</h3></div><p class="blurb">Links the national monitoring schemes behind the European Breeding Bird Atlas.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Specialist worldwide groups</div>
+      <div class="grid">
+        <a class="card" href="https://waderstudygroup.org" target="_blank" rel="noopener"><div class="top"><h3>International Wader Study Group</h3></div><p class="blurb">A worldwide network of amateurs and scientists studying waders and shorebirds.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://waderquest.net" target="_blank" rel="noopener"><div class="top"><h3>Wader Quest</h3></div><p class="blurb">A small international charity and community of shorebird enthusiasts supporting local conservation projects.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://waterbirds.org" target="_blank" rel="noopener"><div class="top"><h3>The Waterbird Society</h3></div><p class="blurb">An international society for anyone interested in waterbird study and conservation.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.worldseabirdunion.org" target="_blank" rel="noopener"><div class="top"><h3>World Seabird Union</h3></div><p class="blurb">Brings together seabird groups from every ocean, with a worldwide conference every few years.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://raptorresearchfoundation.org" target="_blank" rel="noopener"><div class="top"><h3>Raptor Research Foundation</h3></div><p class="blurb">The global society for people who study and watch birds of prey.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.wetlands.org" target="_blank" rel="noopener"><div class="top"><h3>Wetlands International</h3></div><p class="blurb">Runs the International Waterbird Census, the world's largest volunteer waterbird count.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.springalive.net" target="_blank" rel="noopener"><div class="top"><h3>Spring Alive</h3></div><p class="blurb">A BirdLife project for children and families across Europe, Africa and Asia to record the first migrants of spring.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Worldwide platforms and projects</div>
+      <div class="grid">
+        <a class="card" href="https://www.birdlife.org" target="_blank" rel="noopener"><div class="top"><h3>BirdLife International</h3></div><p class="blurb">The global partnership of national bird conservation societies. Its partner directory points you to the society in almost any country.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://ebird.org/about" target="_blank" rel="noopener"><div class="top"><h3>eBird</h3></div><p class="blurb">The worldwide platform for logging what you see. Your lists feed real science and connect you to birders near you.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://ebird.org/news" target="_blank" rel="noopener"><div class="top"><h3>Global Big Day and October Big Day</h3></div><p class="blurb">Two days a year when tens of thousands of birders in every country count together. Anyone can join with a single checklist.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.inaturalist.org" target="_blank" rel="noopener"><div class="top"><h3>iNaturalist</h3></div><p class="blurb">A worldwide naturalist community where members help identify each other's photos and sound recordings.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://observation.org" target="_blank" rel="noopener"><div class="top"><h3>Observation.org</h3></div><p class="blurb">International sightings platform used across Europe, Africa and beyond, with the ObsIdentify app.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://xeno-canto.org" target="_blank" rel="noopener"><div class="top"><h3>Xeno-canto</h3></div><p class="blurb">A global community sharing and identifying bird sound recordings from every continent.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://motus.org" target="_blank" rel="noopener"><div class="top"><h3>Motus Wildlife Tracking System</h3></div><p class="blurb">An international network of receiving stations tracking tagged birds. Volunteers host and monitor stations.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.worldmigratorybirdday.org" target="_blank" rel="noopener"><div class="top"><h3>World Migratory Bird Day</h3></div><p class="blurb">A global campaign with public events, walks and counts on two days each year across all flyways.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://globalbirdfair.org" target="_blank" rel="noopener"><div class="top"><h3>Global Birdfair</h3></div><p class="blurb">The largest annual gathering of birders, clubs and conservation projects from around the world.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.reddit.com/r/birding/" target="_blank" rel="noopener"><div class="top"><h3>r/birding on Reddit</h3></div><p class="blurb">A large open forum for birders everywhere to share sightings, questions and trip reports.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.reddit.com/r/whatsthisbird/" target="_blank" rel="noopener"><div class="top"><h3>r/whatsthisbird on Reddit</h3></div><p class="blurb">Post a photo from anywhere in the world and experienced birders will help you identify it.</p><div class="arrow">Visit →</div></a>
+      </div>
+    </section>
+
+    <!-- Austria -->
+    <section class="country" data-country="AT" data-continent="Europe" data-search="austria at austria osterreich österreich austrian">
+      <h2 class="country-title">🇦🇹 Austria</h2>
+      <div class="region-label">Countrywide</div>
+      <div class="grid">
+        <a class="card" href="https://www.birdlife.at" target="_blank" rel="noopener"><div class="top"><h3>BirdLife Osterreich</h3></div><p class="blurb">Austria's national bird conservation body and BirdLife partner, with groups in every state.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.ornitho.at" target="_blank" rel="noopener"><div class="top"><h3>ornitho.at</h3></div><p class="blurb">The national bird sightings portal run by BirdLife Osterreich, used by thousands of observers.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.club300.at" target="_blank" rel="noopener"><div class="top"><h3>Club300 Osterreich</h3></div><p class="blurb">A club for Austrian listers to share rare bird sightings, rankings and photos.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://naturschutzbund.at" target="_blank" rel="noopener"><div class="top"><h3>Naturschutzbund Osterreich</h3></div><p class="blurb">The national nature conservation association, with nine regional groups and bird protection projects.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.vetmeduni.ac.at/de/klivv/oesterreichische-vogelwarte/" target="_blank" rel="noopener"><div class="top"><h3>Osterreichische Vogelwarte</h3></div><p class="blurb">The Austrian bird observatory, researching wild bird populations and running ringing and monitoring work.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Burgenland</div>
+      <div class="grid">
+        <a class="card" href="https://naturschutzbund-burgenland.at" target="_blank" rel="noopener"><div class="top"><h3>Naturschutzbund Burgenland</h3></div><p class="blurb">The Burgenland branch of the national nature group, working on bird habitats around the Neusiedler See.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Carinthia</div>
+      <div class="grid">
+        <a class="card" href="https://naturschutzbund.at/kaernten.html" target="_blank" rel="noopener"><div class="top"><h3>Naturschutzbund Karnten</h3></div><p class="blurb">The Carinthian branch of the national nature conservation association, active in bird protection.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Lower Austria</div>
+      <div class="grid">
+        <a class="card" href="https://oagw.at" target="_blank" rel="noopener"><div class="top"><h3>Ornithologische Arbeitsgemeinschaft Wachau</h3></div><p class="blurb">A BirdLife working group researching and protecting the bird life of the Wachau region.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Salzburg</div>
+      <div class="grid">
+        <a class="card" href="https://naturschutzbund.at/salzburg.html" target="_blank" rel="noopener"><div class="top"><h3>Naturschutzbund Salzburg</h3></div><p class="blurb">The Salzburg branch of the national nature conservation association, active in species protection.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Styria</div>
+      <div class="grid">
+        <a class="card" href="https://www.naturschutzbundsteiermark.at" target="_blank" rel="noopener"><div class="top"><h3>Naturschutzbund Steiermark</h3></div><p class="blurb">The Styrian branch of the national nature group, running conservation projects and membership events.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Tyrol</div>
+      <div class="grid">
+        <a class="card" href="https://naturschutzbund.at/tirol.html" target="_blank" rel="noopener"><div class="top"><h3>Naturschutzbund Tirol</h3></div><p class="blurb">The Tyrol branch of the national nature conservation association.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Upper Austria</div>
+      <div class="grid">
+        <a class="card" href="https://naturschutzbund-ooe.at" target="_blank" rel="noopener"><div class="top"><h3>Naturschutzbund Oberosterreich</h3></div><p class="blurb">The Upper Austria branch of the national nature group, running local conservation and bird projects.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Vorarlberg</div>
+      <div class="grid">
+        <a class="card" href="https://avifaunistik-rheindelta.at" target="_blank" rel="noopener"><div class="top"><h3>Arbeitsgruppe Avifaunistik Vorarlberger Rheindelta</h3></div><p class="blurb">A working group researching the bird life of the Vorarlberg Rhine delta, in partnership with BirdLife.</p><div class="arrow">Visit →</div></a>
+      </div>
+    </section>
+
+    <!-- Belgium -->
+    <section class="country" data-country="BE" data-continent="Europe" data-search="belgium be belgium belgie belgië belgique belgien belgian">
+      <h2 class="country-title">🇧🇪 Belgium</h2>
+      <div class="region-label">Countrywide</div>
+      <div class="grid">
+        <a class="card" href="https://www.natuurpunt.be" target="_blank" rel="noopener"><div class="top"><h3>Natuurpunt</h3></div><p class="blurb">Flanders largest nature organisation, with over a hundred local bird working groups running walks and counts.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.natagora.be" target="_blank" rel="noopener"><div class="top"><h3>Natagora</h3></div><p class="blurb">Wallonia and Brussels nature association, running reserves and dozens of local branches.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://aves.natagora.be" target="_blank" rel="noopener"><div class="top"><h3>Aves</h3></div><p class="blurb">The ornithological wing of Natagora, monitoring wild bird populations across Wallonia and Brussels since 1966.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.waarnemingen.be" target="_blank" rel="noopener"><div class="top"><h3>waarnemingen.be</h3></div><p class="blurb">The Flemish wildlife sightings platform used by Belgian birders to log observations.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.observations.be" target="_blank" rel="noopener"><div class="top"><h3>observations.be</h3></div><p class="blurb">The French language Belgian wildlife sightings platform, part of the Observation.org network.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.trektellen.org" target="_blank" rel="noopener"><div class="top"><h3>Trektellen</h3></div><p class="blurb">The migration count portal used by Belgian and Dutch counters to log visible migration.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.belgianrbc.be" target="_blank" rel="noopener"><div class="top"><h3>Belgian Rare Birds Committee</h3></div><p class="blurb">The national rarities committee reviewing records of scarce and vagrant birds in Belgium.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://odnature.naturalsciences.be/bebirds/fr/" target="_blank" rel="noopener"><div class="top"><h3>BeBirds</h3></div><p class="blurb">The national bird ringing database, run with the Royal Belgian Institute of Natural Sciences.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Antwerp</div>
+      <div class="grid">
+        <a class="card" href="https://vogelwerkgroep-ardea.be" target="_blank" rel="noopener"><div class="top"><h3>Vogelwerkgroep Ardea</h3></div><p class="blurb">A Natuurpunt bird group covering the southern Antwerp area, running walks and counts.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Brussels</div>
+      <div class="grid">
+        <a class="card" href="https://www.natagora.be/bruxelles" target="_blank" rel="noopener"><div class="top"><h3>Natagora Bruxelles</h3></div><p class="blurb">The Natagora branch for the Brussels region, running urban nature and bird projects.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">East Flanders</div>
+      <div class="grid">
+        <a class="card" href="https://www.natuurpunt.be/werkgroepen/vogelwerkgroep-gent" target="_blank" rel="noopener"><div class="top"><h3>Vogelwerkgroep Gent</h3></div><p class="blurb">A Natuurpunt bird group active in and around Gent, running outings and surveys.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Flemish Brabant</div>
+      <div class="grid">
+        <a class="card" href="https://www.natuurpuntoostbrabant.be" target="_blank" rel="noopener"><div class="top"><h3>Vogelwerkgroep Oost Brabant</h3></div><p class="blurb">A regional Natuurpunt group running bird excursions and courses across Flemish Brabant.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Hainaut</div>
+      <div class="grid">
+        <a class="card" href="https://www.natagora.be/centreouesthainaut/" target="_blank" rel="noopener"><div class="top"><h3>Natagora Centre Ouest Hainaut</h3></div><p class="blurb">A Natagora local branch running nature and bird outings in western Hainaut.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Liege</div>
+      <div class="grid">
+        <a class="card" href="https://www.natagora.be/liege" target="_blank" rel="noopener"><div class="top"><h3>Natagora Liege</h3></div><p class="blurb">The Natagora branch for Liege province, running reserves and bird focused outings.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Limburg</div>
+      <div class="grid">
+        <a class="card" href="https://www.vogelwerkgroepfruitstreek.be" target="_blank" rel="noopener"><div class="top"><h3>Vogelwerkgroep Fruitstreek</h3></div><p class="blurb">The main Natuurpunt bird group for the province of Limburg.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Luxembourg province</div>
+      <div class="grid">
+        <a class="card" href="https://www.natagora.be/lorraine/" target="_blank" rel="noopener"><div class="top"><h3>Natagora Lorraine</h3></div><p class="blurb">The Natagora branch covering the Gaume and Lorraine area of Luxembourg province.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Namur</div>
+      <div class="grid">
+        <a class="card" href="https://www.natagora.be/famenne" target="_blank" rel="noopener"><div class="top"><h3>Natagora Famenne</h3></div><p class="blurb">The Natagora branch for the Famenne area of Namur province.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Walloon Brabant</div>
+      <div class="grid">
+        <a class="card" href="https://brabantwallon.natagora.be/" target="_blank" rel="noopener"><div class="top"><h3>Natagora Brabant Wallon</h3></div><p class="blurb">The Natagora branch for Walloon Brabant, running reserves and local nature outings.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">West Flanders</div>
+      <div class="grid">
+        <a class="card" href="https://www.mergus.be" target="_blank" rel="noopener"><div class="top"><h3>Mergus</h3></div><p class="blurb">A bird group of about a hundred active members monitoring the Zwin, Zeebrugge and nearby areas.</p><div class="arrow">Visit →</div></a>
+      </div>
+    </section>
+
+    <!-- Germany -->
+    <section class="country" data-country="DE" data-continent="Europe" data-search="germany de germany deutschland german bundesrepublik deutschland">
+      <h2 class="country-title">🇩🇪 Germany</h2>
+      <div class="region-label">Countrywide</div>
+      <div class="grid">
+        <a class="card" href="https://www.nabu.de" target="_blank" rel="noopener"><div class="top"><h3>NABU</h3></div><p class="blurb">Germany's largest nature group and BirdLife partner, with hundreds of local groups running walks and counts.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.do-g.de" target="_blank" rel="noopener"><div class="top"><h3>Deutsche Ornithologische Gesellschaft</h3></div><p class="blurb">The scientific ornithological society, founded in 1850, connecting researchers and field birders nationwide.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.dda-web.de" target="_blank" rel="noopener"><div class="top"><h3>Dachverband Deutscher Avifaunisten</h3></div><p class="blurb">The umbrella body for German avifaunists, coordinating monitoring schemes and the ornitho.de platform.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.ornitho.de" target="_blank" rel="noopener"><div class="top"><h3>ornitho.de</h3></div><p class="blurb">The national sightings platform used by birders across Germany and Luxembourg to log observations.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.naturgucker.de" target="_blank" rel="noopener"><div class="top"><h3>naturgucker</h3></div><p class="blurb">A nationwide nature observation network where members log and share bird and wildlife sightings.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.club300.de" target="_blank" rel="noopener"><div class="top"><h3>Club300 Deutschland</h3></div><p class="blurb">A club for keen listers, with rare bird news, rankings and a members forum.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.ab.mpg.de" target="_blank" rel="noopener"><div class="top"><h3>Max Planck Institute of Animal Behavior, Vogelwarte Radolfzell</h3></div><p class="blurb">Home of the historic Vogelwarte Radolfzell bird ringing and migration research station.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.ifv-vogelwarte.de" target="_blank" rel="noopener"><div class="top"><h3>Institut für Vogelforschung, Vogelwarte Helgoland</h3></div><p class="blurb">The bird ringing centre for northwest Germany, based in Wilhelmshaven and on Helgoland.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.lung.mv-regierung.de/fachinformationen/natur-und-landschaft/beringungszentrale-hiddensee/" target="_blank" rel="noopener"><div class="top"><h3>Beringungszentrale Hiddensee</h3></div><p class="blurb">The ringing centre for eastern Germany, coordinating volunteer bird banders since 1936.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.dda-web.de/dak" target="_blank" rel="noopener"><div class="top"><h3>Deutsche Avifaunistische Kommission</h3></div><p class="blurb">The national rarities committee, reviewing and publishing records of scarce birds in Germany.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.naju.de" target="_blank" rel="noopener"><div class="top"><h3>NAJU</h3></div><p class="blurb">The youth wing of NABU, running local nature and bird groups for children and teenagers.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Baden Wurttemberg</div>
+      <div class="grid">
+        <a class="card" href="https://www.ogbw.de" target="_blank" rel="noopener"><div class="top"><h3>Ornithologische Gesellschaft Baden Wurttemberg</h3></div><p class="blurb">The state ornithological society, publishing yearbooks and coordinating field surveys.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.oag-rhein-neckar.de" target="_blank" rel="noopener"><div class="top"><h3>Ornithologische Arbeitsgemeinschaft Rhein Neckar</h3></div><p class="blurb">A local working group studying and protecting birds around the Rhein Neckar region.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Bavaria</div>
+      <div class="grid">
+        <a class="card" href="https://www.lbv.de" target="_blank" rel="noopener"><div class="top"><h3>LBV</h3></div><p class="blurb">Bavaria's bird and nature league, with local groups and reserves across the state since 1909.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.oag-ostbayern.de" target="_blank" rel="noopener"><div class="top"><h3>Ornithologische Arbeitsgemeinschaft Ostbayern</h3></div><p class="blurb">A regional working group recording bird life across eastern Bavaria.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Berlin</div>
+      <div class="grid">
+        <a class="card" href="https://www.orniberlin.de" target="_blank" rel="noopener"><div class="top"><h3>Berliner Ornithologische Arbeitsgemeinschaft</h3></div><p class="blurb">The Berlin ornithological working group, meeting since 1990 to record and publish local bird data.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Brandenburg</div>
+      <div class="grid">
+        <a class="card" href="https://www.abbo-info.de" target="_blank" rel="noopener"><div class="top"><h3>Arbeitsgemeinschaft Berlin Brandenburgischer Ornithologen</h3></div><p class="blurb">A joint Berlin and Brandenburg working group of field ornithologists sharing records and research.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Bremen</div>
+      <div class="grid">
+        <a class="card" href="https://www.bund-bremen.net/oag/" target="_blank" rel="noopener"><div class="top"><h3>Ornithologische Arbeitsgemeinschaft Bremen</h3></div><p class="blurb">The Bremen ornithological working group, running excursions and an annual bird report.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Hamburg</div>
+      <div class="grid">
+        <a class="card" href="https://www.ornithologie-hamburg.de" target="_blank" rel="noopener"><div class="top"><h3>Arbeitskreis Vogelschutzwarte Hamburg</h3></div><p class="blurb">A Hamburg based group promoting bird study and protection in the city and surrounds.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Hesse</div>
+      <div class="grid">
+        <a class="card" href="https://www.hgon.de" target="_blank" rel="noopener"><div class="top"><h3>HGON</h3></div><p class="blurb">Hesse's ornithology and nature conservation society, running surveys and projects since 1964.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Lower Saxony</div>
+      <div class="grid">
+        <a class="card" href="https://www.ornithologie-niedersachsen.de" target="_blank" rel="noopener"><div class="top"><h3>Niedersachsische Ornithologische Vereinigung</h3></div><p class="blurb">The state ornithological association covering Lower Saxony and Bremen, with regional groups.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.ornithologie-goettingen.de" target="_blank" rel="noopener"><div class="top"><h3>Arbeitskreis Gottinger Ornithologen</h3></div><p class="blurb">A local group recording and mapping birds around Gottingen in southern Lower Saxony.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Mecklenburg Vorpommern</div>
+      <div class="grid">
+        <a class="card" href="https://www.oamv.de" target="_blank" rel="noopener"><div class="top"><h3>Ornithologische Arbeitsgemeinschaft Mecklenburg Vorpommern</h3></div><p class="blurb">The state working group for ornithology, coordinating bird recording across Mecklenburg Vorpommern.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">North Rhine Westphalia</div>
+      <div class="grid">
+        <a class="card" href="https://www.nw-ornithologen.de" target="_blank" rel="noopener"><div class="top"><h3>Nordrhein Westfalische Ornithologengesellschaft</h3></div><p class="blurb">The North Rhine Westphalia ornithological society, formed from a 1998 merger of two regional groups.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.oagkreisunna.de" target="_blank" rel="noopener"><div class="top"><h3>Ornithologische Arbeitsgemeinschaft Kreis Unna</h3></div><p class="blurb">A district level working group recording birds in and around Kreis Unna.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Rhineland Palatinate</div>
+      <div class="grid">
+        <a class="card" href="https://gnor.de" target="_blank" rel="noopener"><div class="top"><h3>GNOR</h3></div><p class="blurb">The state society for nature conservation and ornithology, active in Rhineland Palatinate since 1977.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Saarland</div>
+      <div class="grid">
+        <a class="card" href="https://ornithologie-saar.de" target="_blank" rel="noopener"><div class="top"><h3>Ornithologischer Beobachterring Saar</h3></div><p class="blurb">The Saarland birders ring, founded in 1963 to study and record the state's bird life.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Saxony</div>
+      <div class="grid">
+        <a class="card" href="https://vso-web.de" target="_blank" rel="noopener"><div class="top"><h3>Verein Sachsischer Ornithologen</h3></div><p class="blurb">The Saxon ornithologists association, founded in 1922 to research and protect the state's birds.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Saxony Anhalt</div>
+      <div class="grid">
+        <a class="card" href="https://www.osa-internet.de" target="_blank" rel="noopener"><div class="top"><h3>Ornithologenverband Sachsen Anhalt</h3></div><p class="blurb">The Saxony Anhalt ornithologists federation, linking regional groups and coordinating surveys.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.ornithologischer-verein-halle.de" target="_blank" rel="noopener"><div class="top"><h3>Ornithologischer Verein Halle</h3></div><p class="blurb">A local society in Halle running species protection projects and public bird walks.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Schleswig Holstein</div>
+      <div class="grid">
+        <a class="card" href="https://www.oagsh.de" target="_blank" rel="noopener"><div class="top"><h3>Ornithologische Arbeitsgemeinschaft fur Schleswig Holstein und Hamburg</h3></div><p class="blurb">A regional group with over 600 members researching the bird life of Schleswig Holstein and Hamburg.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.oag-helgoland.de" target="_blank" rel="noopener"><div class="top"><h3>Ornithologische Arbeitsgemeinschaft Helgoland</h3></div><p class="blurb">A working group focused on recording migrant and breeding birds on the island of Helgoland.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Thuringia</div>
+      <div class="grid">
+        <a class="card" href="https://ornithologen-thueringen.de" target="_blank" rel="noopener"><div class="top"><h3>Verein Thuringer Ornithologen</h3></div><p class="blurb">The Thuringian ornithologists association, founded in 1990 to research and protect local birds.</p><div class="arrow">Visit →</div></a>
+      </div>
+    </section>
+
+    <!-- Liechtenstein -->
+    <section class="country" data-country="LI" data-continent="Europe" data-search="liechtenstein li liechtenstein">
+      <h2 class="country-title">🇱🇮 Liechtenstein</h2>
+      <div class="region-label">Countrywide</div>
+      <div class="grid">
+        <a class="card" href="https://www.bzg.li" target="_blank" rel="noopener"><div class="top"><h3>Botanisch Zoologische Gesellschaft Liechtenstein Sarganserland Werdenberg</h3></div><p class="blurb">Liechtenstein's natural history society, researching and protecting local flora and fauna including birds.</p><div class="arrow">Visit →</div></a>
+      </div>
+    </section>
+
+    <!-- Luxembourg -->
+    <section class="country" data-country="LU" data-continent="Europe" data-search="luxembourg lu luxembourg luxemburg letzebuerg luxembourgish">
+      <h2 class="country-title">🇱🇺 Luxembourg</h2>
+      <div class="region-label">Countrywide</div>
+      <div class="grid">
+        <a class="card" href="https://www.naturemwelt.lu" target="_blank" rel="noopener"><div class="top"><h3>natur&amp;emwelt</h3></div><p class="blurb">Luxembourg's nature conservation body and BirdLife partner, running bird protection and habitat projects.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.ornitho.lu" target="_blank" rel="noopener"><div class="top"><h3>ornitho.lu</h3></div><p class="blurb">The national bird sightings platform, shared with ornitho.de, used by birders across Luxembourg.</p><div class="arrow">Visit →</div></a>
+      </div>
+    </section>
 
     <!-- Netherlands -->
-    <section class="country" data-country="NL">
+    <section class="country" data-country="NL" data-continent="Europe" data-search="netherlands nl">
       <h2 class="country-title">🇳🇱 Netherlands</h2>
       <div class="region-label">Countrywide</div>
       <div class="grid">
@@ -119,74 +410,62 @@
         <a class="card" href="https://www.njn.nl" target="_blank" rel="noopener"><div class="top"><h3>NJN, Nederlandse Jeugdbond voor Natuurstudie</h3></div><p class="blurb">A nationwide nature club for ages 11 to 25 with an active bird working group.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.facebook.com/groups/dutchbirding" target="_blank" rel="noopener"><div class="top"><h3>Dutch Birding (Facebook)</h3></div><p class="blurb">Rarities, identification and sightings from across the country.</p><div class="arrow">Visit →</div></a>
       </div>
-
       <div class="region-label">Drenthe</div>
       <div class="grid">
         <a class="card" href="https://www.avifaunadrenthe.nl" target="_blank" rel="noopener"><div class="top"><h3>Werkgroep Avifauna Drenthe</h3></div><p class="blurb">Bird recording and study across the Drenthe province.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.vliegvlugmeppel.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelwerkgroep Vliegvlug Meppel</h3></div><p class="blurb">Local bird club based in Meppel, active across southwest Drenthe.</p><div class="arrow">Visit →</div></a>
       </div>
-
       <div class="region-label">Flevoland</div>
       <div class="grid">
         <a class="card" href="https://www.vogelwachtflevoland.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogel en Natuurwacht Flevoland</h3></div><p class="blurb">Bird and nature watch group covering Flevoland, from bird counts to ringing and nest protection.</p><div class="arrow">Visit →</div></a>
       </div>
-
       <div class="region-label">Friesland</div>
       <div class="grid">
         <a class="card" href="https://www.friesevogelwachten.nl/nl" target="_blank" rel="noopener"><div class="top"><h3>Bond Friese VogelWachten</h3></div><p class="blurb">Federation of over 100 local vogelwachten across Friesland, protecting meadow and water birds.</p><div class="arrow">Visit →</div></a>
       </div>
-
       <div class="region-label">Gelderland</div>
       <div class="grid">
         <a class="card" href="https://www.vogelwerkgroepnijmegen.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelwerkgroep Nijmegen</h3></div><p class="blurb">The bird study group for Nijmegen and the Rijk van Nijmegen.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://vogelwerkgroeparnhem.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelwerkgroep Arnhem en Omstreken</h3></div><p class="blurb">Arnhem's bird club, one of the country's larger groups with over 300 members.</p><div class="arrow">Visit →</div></a>
       </div>
-
       <div class="region-label">Groningen</div>
       <div class="grid">
         <a class="card" href="https://avifaunagroningen.nl" target="_blank" rel="noopener"><div class="top"><h3>Avifauna Groningen</h3></div><p class="blurb">The provincial bird study group for Groningen.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://groningen.knnv.nl/werkgroep/vogelwerkgroep/" target="_blank" rel="noopener"><div class="top"><h3>KNNV Groningen Vogelwerkgroep</h3></div><p class="blurb">KNNV's Groningen bird group, meeting monthly for local birding outings.</p><div class="arrow">Visit →</div></a>
       </div>
-
       <div class="region-label">Limburg</div>
       <div class="grid">
         <a class="card" href="https://www.vogelwerkgroepnederweert.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelwerkgroep Nederweert</h3></div><p class="blurb">An active local group in central Limburg.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.nhgl.nl" target="_blank" rel="noopener"><div class="top"><h3>Natuurhistorisch Genootschap Limburg</h3></div><p class="blurb">The province's natural history society, with a bird study section.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://vwl-vogelwerkgroep-maastricht.nl" target="_blank" rel="noopener"><div class="top"><h3>VWL Vogelwerkgroep Maastricht</h3></div><p class="blurb">Maastricht's bird study group, running waterbird and swallow counts for Sovon.</p><div class="arrow">Visit →</div></a>
       </div>
-
       <div class="region-label">Noord-Brabant</div>
       <div class="grid">
         <a class="card" href="https://www.vwgdekempen.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelwerkgroep De Kempen</h3></div><p class="blurb">Active across the Brabantse Kempen around Eindhoven and the Belgian border.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.vwgmiddenbrabant.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelwerkgroep Midden Brabant</h3></div><p class="blurb">Covers the countryside northeast of Tilburg, between Udenhout and Berkel Enschot.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.westbrabantsevwg.nl" target="_blank" rel="noopener"><div class="top"><h3>West Brabantse Vogelwerkgroep</h3></div><p class="blurb">Bird study and outings across West Brabant, based around Breda.</p><div class="arrow">Visit →</div></a>
       </div>
-
       <div class="region-label">Noord-Holland</div>
       <div class="grid">
         <a class="card" href="https://www.vogelsamsterdam.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelwerkgroep Amsterdam</h3></div><p class="blurb">Excursions, lectures and courses in and around Amsterdam.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.vwgzkl.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelwerkgroep Zuid-Kennemerland</h3></div><p class="blurb">Haarlem's bird group since 1951: counts, courses, outings and youth activities.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.vwggooi.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelwerkgroep Het Gooi e.o.</h3></div><p class="blurb">Fieldwork and excursions across the Gooi and Vecht region.</p><div class="arrow">Visit →</div></a>
       </div>
-
       <div class="region-label">Overijssel</div>
       <div class="grid">
         <a class="card" href="https://www.vwgzwolle.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelbeschermingswacht Zwolle</h3></div><p class="blurb">Zwolle and the Vecht and IJssel valleys.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://tvwg.nl" target="_blank" rel="noopener"><div class="top"><h3>Twentse Vogelwerkgroep</h3></div><p class="blurb">Covers Twente and the Enschede area in the east of the province.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://vwg-deijsselstreek.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelwerkgroep De IJsselstreek</h3></div><p class="blurb">Birding the IJssel valley around Deventer, Olst and Zutphen.</p><div class="arrow">Visit →</div></a>
       </div>
-
       <div class="region-label">Utrecht</div>
       <div class="grid">
         <a class="card" href="https://www.vogelwacht-utrecht.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelwacht Utrecht</h3></div><p class="blurb">One of the country's larger regional groups, active across Utrecht province.</p><div class="arrow">Visit →</div></a>
       </div>
-
       <div class="region-label">Zeeland</div>
       <div class="grid">
         <a class="card" href="https://www.vwgwalcheren.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelwerkgroep Walcheren</h3></div><p class="blurb">Birding the Walcheren coast, dunes and Delta.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://steltkluut.nl/werkgroepen/vogelwerkgroep/" target="_blank" rel="noopener"><div class="top"><h3>Vogelwerkgroep De Steltkluut</h3></div><p class="blurb">Covers middle and east Zeeuws Vlaanderen, east of Biervliet.</p><div class="arrow">Visit →</div></a>
       </div>
-
       <div class="region-label">Zuid-Holland</div>
       <div class="grid">
         <a class="card" href="https://www.haagsevogels.nl" target="_blank" rel="noopener"><div class="top"><h3>Haagse Vogels (VWG Den Haag)</h3></div><p class="blurb">The bird working group for The Hague and its dunes and coast.</p><div class="arrow">Visit →</div></a>
@@ -195,10 +474,50 @@
       </div>
     </section>
 
-    <!-- South Africa -->
-    <section class="country" data-country="ZA">
-      <h2 class="country-title">🇿🇦 South Africa</h2>
+    <!-- Switzerland -->
+    <section class="country" data-country="CH" data-continent="Europe" data-search="switzerland ch switzerland schweiz suisse svizzera swiss confoederatio helvetica">
+      <h2 class="country-title">🇨🇭 Switzerland</h2>
+      <div class="region-label">Countrywide</div>
+      <div class="grid">
+        <a class="card" href="https://www.vogelwarte.ch" target="_blank" rel="noopener"><div class="top"><h3>Schweizerische Vogelwarte Sempach</h3></div><p class="blurb">The Swiss ornithological institute, running national monitoring, ringing and the ornitho.ch platform.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.birdlife.ch" target="_blank" rel="noopener"><div class="top"><h3>BirdLife Schweiz</h3></div><p class="blurb">The umbrella body for Swiss bird and nature protection, with 17 cantonal associations and 430 local groups.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.nosoiseaux.ch" target="_blank" rel="noopener"><div class="top"><h3>Nos Oiseaux</h3></div><p class="blurb">The French speaking Swiss ornithological society, founded in Neuchatel in 1913.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.ala-schweiz.ch" target="_blank" rel="noopener"><div class="top"><h3>Ala, Schweizerische Gesellschaft fur Vogelkunde und Vogelschutz</h3></div><p class="blurb">The German speaking Swiss society for ornithology and bird protection, active since 1909.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.ornitho.ch" target="_blank" rel="noopener"><div class="top"><h3>ornitho.ch</h3></div><p class="blurb">The national bird sightings portal for Switzerland and neighbouring regions.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Aargau</div>
+      <div class="grid">
+        <a class="card" href="https://birdlife-ag.ch" target="_blank" rel="noopener"><div class="top"><h3>BirdLife Aargau</h3></div><p class="blurb">The Aargau cantonal umbrella for nature and bird protection societies.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Bern</div>
+      <div class="grid">
+        <a class="card" href="https://birdlifebern.ch" target="_blank" rel="noopener"><div class="top"><h3>BirdLife Bern</h3></div><p class="blurb">The Bern cantonal bird and nature association, formed from a 2024 merger of two older groups.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Geneve</div>
+      <div class="grid">
+        <a class="card" href="https://www.facebook.com/groupeornithologiquedubassingenevois/" target="_blank" rel="noopener"><div class="top"><h3>Groupe Ornithologique du Bassin Genevois</h3></div><p class="blurb">The Geneva basin ornithological group, the first French speaking cantonal BirdLife section.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Ticino</div>
+      <div class="grid">
+        <a class="card" href="https://www.ficedula.ch" target="_blank" rel="noopener"><div class="top"><h3>Ficedula</h3></div><p class="blurb">The Italian speaking Swiss bird society, studying and protecting the birds of Ticino.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Valais</div>
+      <div class="grid">
+        <a class="card" href="https://groupeornithovs.ch" target="_blank" rel="noopener"><div class="top"><h3>Groupe ornithologique valaisan</h3></div><p class="blurb">The Valais cantonal bird group, running outings and surveys across the canton.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Vaud</div>
+      <div class="grid">
+        <a class="card" href="https://oiseau.ch" target="_blank" rel="noopener"><div class="top"><h3>Cercle Ornithologique de Lausanne</h3></div><p class="blurb">A Lausanne based bird club founded in 1927, part of the Nos Oiseaux network.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Zurich</div>
+      <div class="grid">
+        <a class="card" href="https://birdlife-zuerich.ch" target="_blank" rel="noopener"><div class="top"><h3>BirdLife Zurich</h3></div><p class="blurb">An umbrella of 110 nature and bird protection groups across canton Zurich.</p><div class="arrow">Visit →</div></a>
+      </div>
+    </section>
 
+    <!-- South Africa -->
+    <section class="country" data-country="ZA" data-continent="Africa" data-search="south africa za">
+      <h2 class="country-title">🇿🇦 South Africa</h2>
       <div class="region-label">Countrywide</div>
       <div class="grid">
         <a class="card" href="https://www.birdlife.org.za" target="_blank" rel="noopener"><div class="top"><h3>BirdLife South Africa</h3></div><p class="blurb">The national bird conservation body and BirdLife International partner.</p><div class="arrow">Visit →</div></a>
@@ -207,20 +526,17 @@
         <a class="card" href="https://groups.google.com/g/sa-rarebirdnews" target="_blank" rel="noopener"><div class="top"><h3>SA Rare Bird News</h3></div><p class="blurb">Trevor Hardaker's free alert group for scarce and vagrant sightings across the country.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.facebook.com/groups/birdingsouthafrica" target="_blank" rel="noopener"><div class="top"><h3>Birding South Africa (Facebook)</h3></div><p class="blurb">A large, active group for sightings, ID help and trip reports.</p><div class="arrow">Visit →</div></a>
       </div>
-
       <div class="region-label">Eastern Cape</div>
       <div class="grid">
         <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/eastern-cape/birdlife-eastern-cape/" target="_blank" rel="noopener"><div class="top"><h3>BirdLife Eastern Cape</h3></div><p class="blurb">Gqeberha based club with outings across the province.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.facebook.com/groups/borderbirdlife/" target="_blank" rel="noopener"><div class="top"><h3>BirdLife Border</h3></div><p class="blurb">For the Border region around East London and the former Ciskei.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/eastern-cape/birdlife-queenstown/" target="_blank" rel="noopener"><div class="top"><h3>BirdLife Queenstown</h3></div><p class="blurb">Local club for the Komani area of the eastern Karoo.</p><div class="arrow">Visit →</div></a>
       </div>
-
       <div class="region-label">Free State</div>
       <div class="grid">
         <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/free-state/birdlife-free-state/" target="_blank" rel="noopener"><div class="top"><h3>BirdLife Free State</h3></div><p class="blurb">Bloemfontein based club serving the central Free State.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/free-state/birdlife-eastern-free-state-oos-vrystaat/" target="_blank" rel="noopener"><div class="top"><h3>BirdLife Eastern Free State</h3></div><p class="blurb">For the eastern Free State around the Maluti foothills.</p><div class="arrow">Visit →</div></a>
       </div>
-
       <div class="region-label">Gauteng</div>
       <div class="grid">
         <a class="card" href="https://witsbirdclub.org.za" target="_blank" rel="noopener"><div class="top"><h3>Witwatersrand Bird Club</h3></div><p class="blurb">South Africa's oldest bird club, established 1947, serving Johannesburg.</p><div class="arrow">Visit →</div></a>
@@ -232,7 +548,6 @@
         <a class="card" href="https://www.facebook.com/people/Waterfall-bird-club/100068322501854/" target="_blank" rel="noopener"><div class="top"><h3>Waterfall Bird Club</h3></div><p class="blurb">For the Midrand and Waterfall area between the two cities.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/gauteng/birdlife-inkwazi/" target="_blank" rel="noopener"><div class="top"><h3>BirdLife Inkwazi</h3></div><p class="blurb">A West Rand club with outings across Gauteng.</p><div class="arrow">Visit →</div></a>
       </div>
-
       <div class="region-label">KwaZulu-Natal</div>
       <div class="grid">
         <a class="card" href="https://blpn.org" target="_blank" rel="noopener"><div class="top"><h3>BirdLife eThekwini KZN</h3></div><p class="blurb">Durban based, established 1949, one of the oldest bird clubs in Africa.</p><div class="arrow">Visit →</div></a>
@@ -241,31 +556,26 @@
         <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/kwazulu-natal/birdlife-sisonke/" target="_blank" rel="noopener"><div class="top"><h3>BirdLife Sani</h3></div><p class="blurb">For the southern Drakensberg and Sani Pass area.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/kwazulu-natal/ladysmith-birders/" target="_blank" rel="noopener"><div class="top"><h3>Ladysmith Birders</h3></div><p class="blurb">A local group birding the Ladysmith district.</p><div class="arrow">Visit →</div></a>
       </div>
-
       <div class="region-label">Limpopo</div>
       <div class="grid">
         <a class="card" href="https://www.birdlifepolokwane.co.za" target="_blank" rel="noopener"><div class="top"><h3>BirdLife Polokwane</h3></div><p class="blurb">The main club for Limpopo, based in Polokwane.</p><div class="arrow">Visit →</div></a>
       </div>
-
       <div class="region-label">Mpumalanga</div>
       <div class="grid">
         <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/mpumalanga/birdlife-lowveld/" target="_blank" rel="noopener"><div class="top"><h3>BirdLife Lowveld</h3></div><p class="blurb">Mbombela based club for the Lowveld and Kruger gateway.</p><div class="arrow">Visit →</div></a>
-        <a class="card" href="https://www.wakkerstroombirdclub.org.za" target="_blank" rel="noopener"><div class="top"><h3>Wakkerstroom Bird Club</h3></div><p class="blurb">In the birding mecca of Wakkerstroom, famed for its grassland specials.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://wakkerstroombirdclub.org.za" target="_blank" rel="noopener"><div class="top"><h3>Wakkerstroom Bird Club</h3></div><p class="blurb">In the birding mecca of Wakkerstroom, famed for its grassland specials.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/mpumalanga/barberton-bird-club/" target="_blank" rel="noopener"><div class="top"><h3>Barberton Bird Club</h3></div><p class="blurb">For the Barberton Makhonjwa mountains and De Kaap valley.</p><div class="arrow">Visit →</div></a>
       </div>
-
-      <div class="region-label">Northern Cape</div>
-      <div class="grid">
-        <a class="card" href="https://www.gariepbirdclub.org.za/" target="_blank" rel="noopener"><div class="top"><h3>Gariep Bird Club</h3></div><p class="blurb">Kimberley based club for the birds of greater Kimberley and the Northern Cape.</p><div class="arrow">Visit →</div></a>
-      </div>
-
       <div class="region-label">North West</div>
       <div class="grid">
         <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/north-west/birdlife-harties/" target="_blank" rel="noopener"><div class="top"><h3>BirdLife Harties</h3></div><p class="blurb">For the Hartbeespoort dam and Magaliesberg area.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/north-west/birdlife-rustenburg/" target="_blank" rel="noopener"><div class="top"><h3>BirdLife Rustenburg</h3></div><p class="blurb">Rustenburg and the western Magaliesberg.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/north-west/birdlife-wesvaal/" target="_blank" rel="noopener"><div class="top"><h3>BirdLife Wesvaal</h3></div><p class="blurb">Klerksdorp and the western Highveld.</p><div class="arrow">Visit →</div></a>
       </div>
-
+      <div class="region-label">Northern Cape</div>
+      <div class="grid">
+        <a class="card" href="https://www.gariepbirdclub.org.za/" target="_blank" rel="noopener"><div class="top"><h3>Gariep Bird Club</h3></div><p class="blurb">Kimberley based club for the birds of greater Kimberley and the Northern Cape.</p><div class="arrow">Visit →</div></a>
+      </div>
       <div class="region-label">Western Cape</div>
       <div class="grid">
         <a class="card" href="https://www.capebirdclub.org.za" target="_blank" rel="noopener"><div class="top"><h3>Cape Bird Club</h3></div><p class="blurb">Outings, talks and courses across the Cape Peninsula and beyond.</p><div class="arrow">Visit →</div></a>
@@ -303,18 +613,60 @@
 
   <script>
     (function () {
-      var choices = document.querySelectorAll('.choice');
-      var secs = document.querySelectorAll('.country');
-      function show(c) {
-        secs.forEach(function (s) {
-          s.style.display = (c === 'all' || s.getAttribute('data-country') === c) ? '' : 'none';
+      var contBtns = Array.prototype.slice.call(document.querySelectorAll('#continents .choice'));
+      var cBtns = Array.prototype.slice.call(document.querySelectorAll('#countries .choice'));
+      var secs = Array.prototype.slice.call(document.querySelectorAll('.country'));
+      var search = document.getElementById('csearch');
+      var empty = document.getElementById('empty');
+      var cont = 'all';
+      var country = null;
+
+      function render() {
+        var q = (search.value || '').trim().toLowerCase();
+        var visible = 0;
+        cBtns.forEach(function (b) {
+          var okCont = cont === 'all' || b.getAttribute('data-continent') === cont;
+          var okQ = !q || b.getAttribute('data-search').indexOf(q) > -1;
+          var show = okCont && okQ;
+          b.hidden = !show;
+          if (show) visible++;
+          b.classList.toggle('active', country === b.getAttribute('data-country'));
         });
-        choices.forEach(function (b) { b.classList.toggle('active', b.getAttribute('data-country') === c); });
+        contBtns.forEach(function (b) { b.classList.toggle('active', b.getAttribute('data-cont') === cont); });
+        empty.hidden = visible !== 0;
+
+        secs.forEach(function (s) {
+          var code = s.getAttribute('data-country');
+          if (s.getAttribute('data-continent') === 'INT') { s.style.display = ''; return; }
+          var show;
+          if (country) show = code === country;
+          else if (q) show = s.getAttribute('data-search').indexOf(q) > -1 && (cont === 'all' || s.getAttribute('data-continent') === cont);
+          else show = false;
+          s.style.display = show ? '' : 'none';
+        });
       }
-      choices.forEach(function (b) {
-        b.addEventListener('click', function () { show(b.getAttribute('data-country')); });
+
+      contBtns.forEach(function (b) {
+        b.addEventListener('click', function () {
+          cont = b.getAttribute('data-cont');
+          country = null;
+          render();
+        });
       });
-      show('all');
+      cBtns.forEach(function (b) {
+        b.addEventListener('click', function () {
+          var code = b.getAttribute('data-country');
+          country = country === code ? null : code;
+          render();
+          if (country) {
+            var s = document.querySelector('.country[data-country="' + code + '"]');
+            if (s) s.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+      search.addEventListener('input', function () { country = null; render(); });
+      render();
+
       var v = document.getElementById('heroVideo');
       if (v) {
         var ready = function () { v.classList.add('ready'); };

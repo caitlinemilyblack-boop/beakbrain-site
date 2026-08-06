@@ -1,0 +1,181 @@
+[
+  {
+    "code": "INT",
+    "name": "International and global",
+    "flag": "🌍",
+    "continent": "International",
+    "aka": [
+      "international",
+      "global",
+      "worldwide",
+      "everywhere"
+    ],
+    "regions": [
+      {
+        "name": "Worldwide platforms and projects",
+        "groups": [
+          {
+            "name": "BirdLife International",
+            "url": "https://www.birdlife.org",
+            "blurb": "The global partnership of national bird conservation societies. Its partner directory points you to the society in almost any country."
+          },
+          {
+            "name": "eBird",
+            "url": "https://ebird.org/about",
+            "blurb": "The worldwide platform for logging what you see. Your lists feed real science and connect you to birders near you."
+          },
+          {
+            "name": "Global Big Day and October Big Day",
+            "url": "https://ebird.org/news",
+            "blurb": "Two days a year when tens of thousands of birders in every country count together. Anyone can join with a single checklist."
+          },
+          {
+            "name": "iNaturalist",
+            "url": "https://www.inaturalist.org",
+            "blurb": "A worldwide naturalist community where members help identify each other's photos and sound recordings."
+          },
+          {
+            "name": "Observation.org",
+            "url": "https://observation.org",
+            "blurb": "International sightings platform used across Europe, Africa and beyond, with the ObsIdentify app."
+          },
+          {
+            "name": "Xeno-canto",
+            "url": "https://xeno-canto.org",
+            "blurb": "A global community sharing and identifying bird sound recordings from every continent."
+          },
+          {
+            "name": "Motus Wildlife Tracking System",
+            "url": "https://motus.org",
+            "blurb": "An international network of receiving stations tracking tagged birds. Volunteers host and monitor stations."
+          },
+          {
+            "name": "World Migratory Bird Day",
+            "url": "https://www.worldmigratorybirdday.org",
+            "blurb": "A global campaign with public events, walks and counts on two days each year across all flyways."
+          },
+          {
+            "name": "Global Birdfair",
+            "url": "https://globalbirdfair.org",
+            "blurb": "The largest annual gathering of birders, clubs and conservation projects from around the world."
+          },
+          {
+            "name": "r/birding on Reddit",
+            "url": "https://www.reddit.com/r/birding/",
+            "blurb": "A large open forum for birders everywhere to share sightings, questions and trip reports."
+          },
+          {
+            "name": "r/whatsthisbird on Reddit",
+            "url": "https://www.reddit.com/r/whatsthisbird/",
+            "blurb": "Post a photo from anywhere in the world and experienced birders will help you identify it."
+          }
+        ]
+      },
+      {
+        "name": "Communities that welcome everyone",
+        "groups": [
+          {
+            "name": "Feminist Bird Club",
+            "url": "https://www.feministbirdclub.org",
+            "blurb": "Chapters on several continents run free, inclusive bird walks open to anyone."
+          },
+          {
+            "name": "Birdability",
+            "url": "https://www.birdability.org",
+            "blurb": "The community for birders with disabilities and other health concerns, with an accessible sites map anyone can add to."
+          },
+          {
+            "name": "Black AF In STEM and Black Birders Week",
+            "url": "https://www.blackafinstem.com",
+            "blurb": "The collective behind Black Birders Week, a worldwide programme of talks, walks and online events."
+          },
+          {
+            "name": "Female Bird Day and the Galbatross Project",
+            "url": "https://femalebirdday.wordpress.com",
+            "blurb": "A yearly global challenge to notice and record the overlooked female half of every species."
+          },
+          {
+            "name": "Global Young Birders Network",
+            "url": "https://www.globalyoungbirdersnetwork.org/",
+            "blurb": "Connects birders under 25 worldwide to young birder clubs, camps and careers with birds."
+          }
+        ]
+      },
+      {
+        "name": "Regional societies",
+        "groups": [
+          {
+            "name": "African Bird Club",
+            "url": "https://www.africanbirdclub.org",
+            "blurb": "The society for birders across Africa, with country checklists, a journal and conservation grants."
+          },
+          {
+            "name": "Oriental Bird Club",
+            "url": "https://orientalbirdclub.org",
+            "blurb": "Covers birders and birds across South and South East Asia, with an image database and grants."
+          },
+          {
+            "name": "Neotropical Bird Club",
+            "url": "https://www.neotropicalbirdclub.org",
+            "blurb": "The club for Central and South America and the Caribbean, publishing Cotinga and Neotropical Birding."
+          },
+          {
+            "name": "OSME",
+            "url": "https://osme.org",
+            "blurb": "The Ornithological Society of the Middle East, the Caucasus and Central Asia, with the journal Sandgrouse."
+          },
+          {
+            "name": "BirdsCaribbean",
+            "url": "https://birdscaribbean.org",
+            "blurb": "The regional network for the Caribbean islands, running the Caribbean Waterbird Census and festivals."
+          },
+          {
+            "name": "European Bird Census Council",
+            "url": "https://www.ebcc.info",
+            "blurb": "Links the national monitoring schemes behind the European Breeding Bird Atlas."
+          }
+        ]
+      },
+      {
+        "name": "Specialist worldwide groups",
+        "groups": [
+          {
+            "name": "International Wader Study Group",
+            "url": "https://waderstudygroup.org",
+            "blurb": "A worldwide network of amateurs and scientists studying waders and shorebirds."
+          },
+          {
+            "name": "Wader Quest",
+            "url": "https://waderquest.net",
+            "blurb": "A small international charity and community of shorebird enthusiasts supporting local conservation projects."
+          },
+          {
+            "name": "The Waterbird Society",
+            "url": "https://waterbirds.org",
+            "blurb": "An international society for anyone interested in waterbird study and conservation."
+          },
+          {
+            "name": "World Seabird Union",
+            "url": "https://www.worldseabirdunion.org",
+            "blurb": "Brings together seabird groups from every ocean, with a worldwide conference every few years."
+          },
+          {
+            "name": "Raptor Research Foundation",
+            "url": "https://raptorresearchfoundation.org",
+            "blurb": "The global society for people who study and watch birds of prey."
+          },
+          {
+            "name": "Wetlands International",
+            "url": "https://www.wetlands.org",
+            "blurb": "Runs the International Waterbird Census, the world's largest volunteer waterbird count."
+          },
+          {
+            "name": "Spring Alive",
+            "url": "https://www.springalive.net",
+            "blurb": "A BirdLife project for children and families across Europe, Africa and Asia to record the first migrants of spring."
+          }
+        ]
+      }
+    ]
+  }
+]

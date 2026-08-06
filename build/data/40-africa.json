@@ -1,0 +1,265 @@
+[
+  {
+    "code": "ZA",
+    "name": "South Africa",
+    "flag": "🇿🇦",
+    "continent": "Africa",
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "BirdLife South Africa",
+            "url": "https://www.birdlife.org.za",
+            "blurb": "The national bird conservation body and BirdLife International partner."
+          },
+          {
+            "name": "SABAP2 Bird Atlas",
+            "url": "https://sabap2.birdmap.africa",
+            "blurb": "Map the birds of your patch for the Southern African Bird Atlas Project."
+          },
+          {
+            "name": "BirdLasser",
+            "url": "https://www.birdlasser.com",
+            "blurb": "The go to South African app for logging sightings and joining challenges."
+          },
+          {
+            "name": "SA Rare Bird News",
+            "url": "https://groups.google.com/g/sa-rarebirdnews",
+            "blurb": "Trevor Hardaker's free alert group for scarce and vagrant sightings across the country."
+          },
+          {
+            "name": "Birding South Africa (Facebook)",
+            "url": "https://www.facebook.com/groups/birdingsouthafrica",
+            "blurb": "A large, active group for sightings, ID help and trip reports."
+          }
+        ]
+      },
+      {
+        "name": "Eastern Cape",
+        "groups": [
+          {
+            "name": "BirdLife Eastern Cape",
+            "url": "https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/eastern-cape/birdlife-eastern-cape/",
+            "blurb": "Gqeberha based club with outings across the province."
+          },
+          {
+            "name": "BirdLife Border",
+            "url": "https://www.facebook.com/groups/borderbirdlife/",
+            "blurb": "For the Border region around East London and the former Ciskei."
+          },
+          {
+            "name": "BirdLife Queenstown",
+            "url": "https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/eastern-cape/birdlife-queenstown/",
+            "blurb": "Local club for the Komani area of the eastern Karoo."
+          }
+        ]
+      },
+      {
+        "name": "Free State",
+        "groups": [
+          {
+            "name": "BirdLife Free State",
+            "url": "https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/free-state/birdlife-free-state/",
+            "blurb": "Bloemfontein based club serving the central Free State."
+          },
+          {
+            "name": "BirdLife Eastern Free State",
+            "url": "https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/free-state/birdlife-eastern-free-state-oos-vrystaat/",
+            "blurb": "For the eastern Free State around the Maluti foothills."
+          }
+        ]
+      },
+      {
+        "name": "Gauteng",
+        "groups": [
+          {
+            "name": "Witwatersrand Bird Club",
+            "url": "https://witsbirdclub.org.za",
+            "blurb": "South Africa's oldest bird club, established 1947, serving Johannesburg."
+          },
+          {
+            "name": "BirdLife Northern Gauteng",
+            "url": "https://www.blng.co.za",
+            "blurb": "Pretoria based club with outings, evening meetings and ID courses."
+          },
+          {
+            "name": "BirdLife Sandton",
+            "url": "https://www.facebook.com/groups/birdlifesandton/",
+            "blurb": "Northern Johannesburg club with regular local outings."
+          },
+          {
+            "name": "Cuckoo Bird Club",
+            "url": "https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/gauteng/cuckoo-bird-club/",
+            "blurb": "A friendly Gauteng club welcoming birders of every level."
+          },
+          {
+            "name": "Rand Barbet Bird Club",
+            "url": "https://www.facebook.com/groups/RandBarbet",
+            "blurb": "East Rand club running outings and monthly meetings."
+          },
+          {
+            "name": "Vaal Bird Club",
+            "url": "https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/gauteng/vaal-bird-club/",
+            "blurb": "Vereeniging and the Vaal River area."
+          },
+          {
+            "name": "Waterfall Bird Club",
+            "url": "https://www.facebook.com/people/Waterfall-bird-club/100068322501854/",
+            "blurb": "For the Midrand and Waterfall area between the two cities."
+          },
+          {
+            "name": "BirdLife Inkwazi",
+            "url": "https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/gauteng/birdlife-inkwazi/",
+            "blurb": "A West Rand club with outings across Gauteng."
+          }
+        ]
+      },
+      {
+        "name": "KwaZulu-Natal",
+        "groups": [
+          {
+            "name": "BirdLife eThekwini KZN",
+            "url": "https://blpn.org",
+            "blurb": "Durban based, established 1949, one of the oldest bird clubs in Africa."
+          },
+          {
+            "name": "BirdLife KZN Midlands",
+            "url": "https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/kwazulu-natal/birdlife-kzn-midlands/",
+            "blurb": "For the Midlands around Howick and Pietermaritzburg."
+          },
+          {
+            "name": "BirdLife Northern Natal",
+            "url": "https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/kwazulu-natal/birdlife-northern-natal/",
+            "blurb": "Serving the north around Newcastle and the Battlefields."
+          },
+          {
+            "name": "BirdLife Sani",
+            "url": "https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/kwazulu-natal/birdlife-sisonke/",
+            "blurb": "For the southern Drakensberg and Sani Pass area."
+          },
+          {
+            "name": "Ladysmith Birders",
+            "url": "https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/kwazulu-natal/ladysmith-birders/",
+            "blurb": "A local group birding the Ladysmith district."
+          }
+        ]
+      },
+      {
+        "name": "Limpopo",
+        "groups": [
+          {
+            "name": "BirdLife Polokwane",
+            "url": "https://www.birdlifepolokwane.co.za",
+            "blurb": "The main club for Limpopo, based in Polokwane."
+          }
+        ]
+      },
+      {
+        "name": "Mpumalanga",
+        "groups": [
+          {
+            "name": "BirdLife Lowveld",
+            "url": "https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/mpumalanga/birdlife-lowveld/",
+            "blurb": "Mbombela based club for the Lowveld and Kruger gateway."
+          },
+          {
+            "name": "Wakkerstroom Bird Club",
+            "url": "https://wakkerstroombirdclub.org.za",
+            "blurb": "In the birding mecca of Wakkerstroom, famed for its grassland specials."
+          },
+          {
+            "name": "Barberton Bird Club",
+            "url": "https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/mpumalanga/barberton-bird-club/",
+            "blurb": "For the Barberton Makhonjwa mountains and De Kaap valley."
+          }
+        ]
+      },
+      {
+        "name": "Northern Cape",
+        "groups": [
+          {
+            "name": "Gariep Bird Club",
+            "url": "https://www.gariepbirdclub.org.za/",
+            "blurb": "Kimberley based club for the birds of greater Kimberley and the Northern Cape."
+          }
+        ]
+      },
+      {
+        "name": "North West",
+        "groups": [
+          {
+            "name": "BirdLife Harties",
+            "url": "https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/north-west/birdlife-harties/",
+            "blurb": "For the Hartbeespoort dam and Magaliesberg area."
+          },
+          {
+            "name": "BirdLife Rustenburg",
+            "url": "https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/north-west/birdlife-rustenburg/",
+            "blurb": "Rustenburg and the western Magaliesberg."
+          },
+          {
+            "name": "BirdLife Wesvaal",
+            "url": "https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/north-west/birdlife-wesvaal/",
+            "blurb": "Klerksdorp and the western Highveld."
+          }
+        ]
+      },
+      {
+        "name": "Western Cape",
+        "groups": [
+          {
+            "name": "Cape Bird Club",
+            "url": "https://www.capebirdclub.org.za",
+            "blurb": "Outings, talks and courses across the Cape Peninsula and beyond."
+          },
+          {
+            "name": "Cape Town Pelagics",
+            "url": "https://www.capetownpelagics.com",
+            "blurb": "Boat trips off Cape Point for albatrosses, petrels and other seabirds."
+          },
+          {
+            "name": "Tygerberg Bird Club",
+            "url": "https://www.tygerbergbirdclub.org",
+            "blurb": "Northern suburbs Cape Town club with regular outings and talks."
+          },
+          {
+            "name": "Somerset West Bird Club",
+            "url": "https://somersetwestbirdclub.co.za",
+            "blurb": "Local outings and monthly meetings in the Helderberg basin."
+          },
+          {
+            "name": "BirdLife Overberg",
+            "url": "https://birdlifeoverberg.org.za",
+            "blurb": "Hermanus and the Overberg wheatbelt and coast."
+          },
+          {
+            "name": "Hermanus Bird Club",
+            "url": "https://hermanusbirdclub.wordpress.com",
+            "blurb": "Birding the Hermanus coast, cliffs and lagoons."
+          },
+          {
+            "name": "BirdLife Plettenberg Bay",
+            "url": "https://birdlife-plett.co.za",
+            "blurb": "Garden Route club around Plettenberg Bay."
+          },
+          {
+            "name": "Lakes Bird Club",
+            "url": "https://www.facebook.com/groups/458945447630535/",
+            "blurb": "Garden Route club for the lakes around Sedgefield and Wilderness."
+          },
+          {
+            "name": "West Coast Bird Club",
+            "url": "https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/western-cape/west-coast-bird-club/",
+            "blurb": "For the West Coast wetlands, strandveld and Langebaan."
+          },
+          {
+            "name": "BirdLife Worcester",
+            "url": "https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/western-cape/birdlife-worcester/",
+            "blurb": "Breede River valley and the Karoo edge."
+          }
+        ]
+      }
+    ]
+  }
+]
