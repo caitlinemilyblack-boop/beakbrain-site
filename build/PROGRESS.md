@@ -33,6 +33,43 @@ Also this session: **community.html header, hero and footer now match beakbrain.
 (commit edf6c49) — fixed transparent-over-video header that solidifies on scroll, same nav-right/btn
 styling, and a footer video band (the community footer previously had no video at all).
 
+## Site and deploy work, 2026-08-06 night
+
+**GitHub Pages was silently failing to publish for ~12 hours.** beakbrain.com served a build from
+07:52 UTC (commit 27d2758, the UK batch) while every Europe commit sat correctly on `main`, unpublished.
+Worth knowing the diagnosis path, because the symptom looks exactly like "my commits didn't push":
+
+- `git log origin/main..HEAD` was empty and `git ls-remote` confirmed GitHub had every commit, so the
+  push side was never the problem.
+- The repo is public, so the `pages build and deployment` runs are readable without auth:
+  `curl -s "https://api.github.com/repos/caitlinemilyblack-boop/beakbrain-site/actions/runs?per_page=10"`.
+  That showed the **"Build with Jekyll" step succeeding every time** and the separate **"Deploy to
+  GitHub Pages" step failing**: two runs sat `in_progress` for exactly 10 minutes and timed out, and
+  the last one never left `queued`.
+- Cause was a **GitHub-wide major outage of Actions and Pages**, declared 15:22 UTC 2026-08-06
+  (`curl -s https://www.githubstatus.com/api/v2/summary.json`). Nothing in this repo caused it.
+  It recovered and published at 20:19 UTC.
+
+**Check that Actions-runs endpoint before debugging repo content next time the site looks stale.**
+A `.nojekyll` file was added mid-diagnosis on a wrong guess that Jekyll was breaking; it stays because
+this is hand written HTML plus a node generator and the Jekyll pass earns nothing, but it was never
+the fix. Commit ae8ba4b corrects that record.
+
+Page changes shipped the same night:
+
+- **Hero copy now aligns to the page grid on both `index.html` and `community.html`** (commit cad67b5).
+  `.hero-inner` carries `.wrap` (max-width 1080, `margin: 0 auto`) but sits inside a flex container, so
+  it shrank to its longest line of text and the auto margins centred that shrunken box. Hero copy sat
+  at x=336 on home and x=300 on community while the wordmark, section headings and footer all sit at
+  x=128. `width: 100%` on `.hero-inner` restores the grid; the 28px inline padding matches `.wrap`.
+  **If you add another flex hero, it needs `width: 100%` or it will drift the same way.**
+- Community hero picked up the home treatment: vertically centred rather than bottom cramped, 52vh,
+  larger clamped h1 with matching letter spacing, 46ch measure on the lede in place of a flat 680px.
+- **The `Home` nav link is gone from the community header** (commit d775d60); the BeakBrain wordmark
+  already links to `/`. The footer keeps its `Home` link, mirroring index.html's footer nav.
+- Home page gained two lazy loaded video bands replacing photo breaks (commit a6e6900), poster first
+  and the mp4 only fetched once the band is within 200px of the viewport.
+
 ### What went wrong and got fixed along the way (read before the next continent)
 
 Countries that turn out to have zero findable community of their own (Monaco, Greenland) get an empty
@@ -62,10 +99,30 @@ link fixes. 2 of 5 (Balkans/Turkey, Russia/Caucasus) produced fabricated or misc
 Conclusion: keep using Haiku for cost, but always do the manual URL spot check above before merging,
 regardless of how clean the automated verify pass looks.
 
+## In progress: North America, wave 1 (launched 2026-08-06 night)
+
+Four Haiku research agents, one per batch. **Nothing below is done until it has been through the full
+ingest/verify/manual-spot-check/generate/commit sequence.** Status is updated in place as each lands.
+
+| Batch | Countries | Output file | Status |
+|---|---|---|---|
+| na-usa | USA, all 50 states + DC | `data/incoming/na-usa.json` | launched |
+| na-canada | Canada, all provinces + territories | `data/incoming/na-canada.json` | launched |
+| na-mexico-central | MX, GT, BZ, HN, SV, NI, CR, PA | `data/incoming/na-mexico-central.json` | launched |
+| na-caribbean | CU, JM, DO, HT, PR, TT, BS, BB, + smaller islands | `data/incoming/na-caribbean.json` | launched |
+
+**One agent must own the whole USA.** `ingest.js` merges by country code and *replaces* any existing
+entry with the same code (see its "merge (replace any existing country with the same code)" step), so
+two incoming files that both contain a `US` object silently clobber each other rather than combining.
+Same applies to Canada. Split big countries across agents only if you also merge the regions by hand
+before ingest.
+
+`20-north-america.json` already holds a Greenland entry with zero groups, from the Nordics batch that
+correctly found no community of its own. `generate.js` drops zero group countries, so it is harmless;
+leave it as the honest record.
+
 ## Queued (not started)
 
-- North America + Central America + Caribbean: USA (by state), Canada (by province), Mexico, Central
-  America (Guatemala, Belize, Honduras, El Salvador, Nicaragua, Costa Rica, Panama), Caribbean islands
 - South America: Brazil, Argentina, Colombia, Peru, Ecuador, Chile, Venezuela, Bolivia, Paraguay,
   Uruguay, Guyana, Suriname, French Guiana (check for duplicates against France's overseas territories
   first, in case the France batch already picked one up)
