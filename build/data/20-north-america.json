@@ -1,1 +1,21 @@
-[]
+[
+  {
+    "code": "GL",
+    "name": "Greenland",
+    "flag": "🇬🇱",
+    "continent": "North America",
+    "aka": [
+      "kalaallit",
+      "greenlandic"
+    ],
+    "gaps": [
+      "No independent ornithological society found for Greenland; birding is administered through Denmark's DOF, already listed under Denmark. No Greenland specific website, sightings platform or public group of its own was findable."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": []
+      }
+    ]
+  }
+]

@@ -1,5 +1,43 @@
 [
   {
+    "code": "AL",
+    "name": "Albania",
+    "flag": "🇦🇱",
+    "continent": "Europe",
+    "aka": [
+      "albanian",
+      "shqipëri"
+    ],
+    "gaps": [],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Albanian Ornithological Society (AOS)",
+            "url": "https://aos-alb.org/",
+            "blurb": "The biggest conservation NGO in Albania, running conservation programs, birdwatching tours and youth clubs."
+          },
+          {
+            "name": "AOS Facebook",
+            "url": "https://www.facebook.com/AOSALB/",
+            "blurb": "Public Facebook page for Albanian Ornithological Society news and community."
+          }
+        ]
+      },
+      {
+        "name": "Gjirokastra",
+        "groups": [
+          {
+            "name": "Conservation Youth Club Gjirokastra",
+            "url": "https://www.facebook.com/CYCGjirokastra/",
+            "blurb": "Youth group working with AOS as ambassadors for Egyptian Vulture protection in Gjirokastra region."
+          }
+        ]
+      }
+    ]
+  },
+  {
     "code": "AD",
     "name": "Andorra",
     "flag": "🇦🇩",
@@ -327,6 +365,717 @@
             "name": "Natagora Bruxelles",
             "url": "https://www.natagora.be/bruxelles",
             "blurb": "The Natagora branch for the Brussels region, running urban nature and bird projects."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "BA",
+    "name": "Bosnia and Herzegovina",
+    "flag": "🇧🇦",
+    "continent": "Europe",
+    "aka": [
+      "bosnian",
+      "herzegovina"
+    ],
+    "gaps": [
+      "Limited online presence for Naše ptice; organisation confirmed active with bird ringing programs and annual Ornitofestival"
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Ornithological Society Naše ptice",
+            "url": "https://www.ptice.ba/",
+            "blurb": "A nonprofit ornithological society running bird ringing, monitoring and habitat protection since 2003."
+          },
+          {
+            "name": "eBird Bosnia and Herzegovina",
+            "url": "https://ebird.org/region/BA/",
+            "blurb": "Citizen science platform for recording bird sightings throughout Bosnia and Herzegovina."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "BG",
+    "name": "Bulgaria",
+    "flag": "🇧🇬",
+    "continent": "Europe",
+    "aka": [
+      "bulgarian",
+      "българия"
+    ],
+    "gaps": [],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Bulgarian Society for the Protection of Birds (BSPB)",
+            "url": "https://bspb.org/en/",
+            "blurb": "The national bird society and BirdLife partner, Bulgaria's largest conservation NGO with local structures nationwide."
+          },
+          {
+            "name": "Atlas of Breeding Birds in Bulgaria",
+            "url": "https://atlas.bspb.org/en/",
+            "blurb": "Citizen science project collecting breeding bird distribution data for Bulgaria's second bird atlas."
+          },
+          {
+            "name": "Bulgarian Bird Ringing Scheme",
+            "url": "https://migrationatlas.org/node/?page=34",
+            "blurb": "National bird ringing scheme operated by the Bulgarian Ornithological Centre tracking migration and population dynamics."
+          },
+          {
+            "name": "Green Balkans",
+            "url": "https://greenbalkans.org/en/",
+            "blurb": "Bulgaria's oldest conservation NGO founded 1988, leading rare species and habitat protection work nationwide."
+          },
+          {
+            "name": "Birds of Prey Protection Society (BPPS)",
+            "url": "https://www.birdsinbulgaria.org/organizations.php?l=en",
+            "blurb": "Specialist society established 1990 focused on studying and protecting birds of prey in Bulgaria."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "HR",
+    "name": "Croatia",
+    "flag": "🇭🇷",
+    "continent": "Europe",
+    "aka": [
+      "croatian",
+      "hrvatska"
+    ],
+    "gaps": [],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "BIOM (Association BIOM)",
+            "url": "https://www.biom.hr/en/",
+            "blurb": "The national bird society and BirdLife partner, leading conservation NGO organising annual ornithological camps."
+          },
+          {
+            "name": "eBird Croatia",
+            "url": "https://ebird.org/region/HR/",
+            "blurb": "Citizen science platform for recording bird sightings and distribution across Croatia."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "CY",
+    "name": "Cyprus",
+    "flag": "🇨🇾",
+    "continent": "Europe",
+    "aka": [
+      "cypriot",
+      "κύπρος"
+    ],
+    "gaps": [],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "BirdLife Cyprus",
+            "url": "https://birdlifecyprus.org/",
+            "blurb": "The national bird society and BirdLife partner, formed in 2003 to protect Cyprus birds and habitats."
+          },
+          {
+            "name": "BirdLife Cyprus Facebook Group",
+            "url": "https://www.facebook.com/groups/birdlifecyprus/",
+            "blurb": "Public Facebook community for birders and bird enthusiasts throughout Cyprus."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "CZ",
+    "name": "Czechia",
+    "flag": "🇨🇿",
+    "continent": "Europe",
+    "aka": [
+      "czech republic",
+      "czechia",
+      "česká republika"
+    ],
+    "gaps": [],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Czech Society for Ornithology (CSO / Česká společnost ornitologická)",
+            "url": "https://www.birdlife.cz",
+            "blurb": "The national ornithological society and BirdLife partner with 7,800 members and nine regional branches across the country."
+          }
+        ]
+      },
+      {
+        "name": "North Bohemia",
+        "groups": [
+          {
+            "name": "Severočeská pobočka ČSO",
+            "url": "https://severoceskapobocka-cso.webnode.cz",
+            "blurb": "North Bohemian branch of CSO running ornithological excursions and community activities."
+          }
+        ]
+      },
+      {
+        "name": "West Bohemia",
+        "groups": [
+          {
+            "name": "Západočeská pobočka ČSO",
+            "url": "https://www.zcpcso.cz",
+            "blurb": "West Bohemian branch of CSO conducting bird research and protection in the region."
+          }
+        ]
+      },
+      {
+        "name": "Central Bohemia and Prague",
+        "groups": [
+          {
+            "name": "Pobočka Střední Čechy a Praha",
+            "url": "https://stredcechcso.cz",
+            "blurb": "Central Bohemia and Prague branch serving the capital region and surrounding areas."
+          }
+        ]
+      },
+      {
+        "name": "South Bohemia",
+        "groups": [
+          {
+            "name": "Jihočeský ornitologický klub",
+            "url": "https://jok.cso.cz",
+            "blurb": "South Bohemian ornithological club organizing bird studies and protection activities."
+          }
+        ]
+      },
+      {
+        "name": "East Bohemia",
+        "groups": [
+          {
+            "name": "Východočeská pobočka ČSO",
+            "url": "https://www.vcpcso.cz",
+            "blurb": "East Bohemian branch with nearly 200 members running walks and surveys in Hradec Králové and Pardubice regions."
+          }
+        ]
+      },
+      {
+        "name": "South Moravia",
+        "groups": [
+          {
+            "name": "Jihomoravská pobočka ČSO",
+            "url": "https://www.jmpcso.cz",
+            "blurb": "South Moravian branch of CSO based in Brno coordinating ornithological activities and research."
+          }
+        ]
+      },
+      {
+        "name": "Central Moravia",
+        "groups": [
+          {
+            "name": "Moravský ornitologický spolek",
+            "url": "https://www.mos-cso.cz",
+            "blurb": "Central Moravian ornithological society working on bird research and conservation."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "DK",
+    "name": "Denmark",
+    "flag": "🇩🇰",
+    "continent": "Europe",
+    "aka": [
+      "danmark",
+      "danish"
+    ],
+    "gaps": [
+      "Vestsjælland, Møn, and some smaller regions lack dedicated local club sites; Halland-adjacent areas fall under existing branches"
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Dansk Ornitologisk Forening",
+            "url": "https://www.dof.dk",
+            "blurb": "The national bird society and BirdLife partner, with 13 local branches offering bird watching trips and conservation work across Denmark."
+          },
+          {
+            "name": "DOFbasen",
+            "url": "https://dofbasen.dk",
+            "blurb": "National bird sightings database run by DOF, tracking bird observations with rarity committee review and public search access."
+          }
+        ]
+      },
+      {
+        "name": "North Jutland",
+        "groups": [
+          {
+            "name": "DOF Nordjylland",
+            "url": "https://dofnord.dk/",
+            "blurb": "Regional branch covering North Jutland with local bird walks, meetings and conservation projects."
+          }
+        ]
+      },
+      {
+        "name": "Northwest Jutland",
+        "groups": [
+          {
+            "name": "DOF Nordvestjylland",
+            "url": "https://dof-nordvestjylland.dk/",
+            "blurb": "Regional branch for northwest Jutland, running ornithological activities and habitat surveys."
+          }
+        ]
+      },
+      {
+        "name": "East Jutland",
+        "groups": [
+          {
+            "name": "DOF Østjylland",
+            "url": "https://dofoj.dk/",
+            "blurb": "Regional branch covering Aarhus and surrounding municipalities with bird trips and recording initiatives."
+          }
+        ]
+      },
+      {
+        "name": "Funen",
+        "groups": [
+          {
+            "name": "DOF Fyn",
+            "url": "https://www.doffyn.dk/",
+            "blurb": "Regional branch for the Fyn island and Odense area, organizing bird watching tours and local surveys."
+          }
+        ]
+      },
+      {
+        "name": "South Jutland",
+        "groups": [
+          {
+            "name": "DOF Sønderjylland",
+            "url": "https://www.dof-syd.dk/",
+            "blurb": "Regional branch covering South Jutland including Wadden Sea coastal bird areas."
+          }
+        ]
+      },
+      {
+        "name": "Zealand",
+        "groups": [
+          {
+            "name": "DOF Roskilde",
+            "url": "https://www.dof-roskilde.dk/",
+            "blurb": "Regional branch covering Roskilde and central Zealand with guided bird walks and local ornithology."
+          }
+        ]
+      },
+      {
+        "name": "Bornholm",
+        "groups": [
+          {
+            "name": "DOF Bornholm",
+            "url": "https://dof-bornholm.dk",
+            "blurb": "Island branch covering Bornholm's unique coastal and cliff bird habitats with conservation focus."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "EE",
+    "name": "Estonia",
+    "flag": "🇪🇪",
+    "continent": "Europe",
+    "aka": [
+      "estonia",
+      "eesti"
+    ],
+    "gaps": [],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "BirdLife Estonia (Estonian Ornithological Society)",
+            "url": "https://www.eoy.ee",
+            "blurb": "The national ornithological society founded in 1921 with over 600 members, working on bird research, protection and education."
+          },
+          {
+            "name": "Birding Estonia",
+            "url": "https://www.estbirding.ee",
+            "blurb": "Community organization bringing together keen birders in Estonia valuing correct observation recording and bird knowledge sharing."
+          }
+        ]
+      },
+      {
+        "name": "All Regions",
+        "groups": [
+          {
+            "name": "Eagle Club",
+            "url": "https://www.kotkas.ee",
+            "blurb": "A nonprofit organization with 25 members studying and protecting eagles and black storks across Estonia for decades."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "FO",
+    "name": "Faroe Islands",
+    "flag": "🇫🇴",
+    "continent": "Europe",
+    "aka": [
+      "faeroes",
+      "faroese"
+    ],
+    "gaps": [
+      "Faroese Ornithological Society has no website, only email and social media contact; no regional club structure identified"
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Faroese Ornithological Society",
+            "url": "https://www.birdlife.org/partners/faroe-islands-faroese-ornithological-society/",
+            "blurb": "National bird ringing and research society active in seabird monitoring and bird protection work. Contact: [email protected]"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "FI",
+    "name": "Finland",
+    "flag": "🇫🇮",
+    "continent": "Europe",
+    "aka": [
+      "suomi",
+      "finnish"
+    ],
+    "gaps": [
+      "No major gaps identified; 30 regional societies provide comprehensive coverage"
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "BirdLife Suomi",
+            "url": "https://www.birdlife.fi",
+            "blurb": "The national bird conservation umbrella organization for 30 regional ornithological societies and 27,000 members."
+          },
+          {
+            "name": "Lintuatlas",
+            "url": "https://lintuatlas.fi",
+            "blurb": "Fourth breeding bird atlas of Finland, 2022 to 2025, a citizen science project mapping bird distribution."
+          },
+          {
+            "name": "Bongariliitto",
+            "url": "https://www.bongariliitto.fi/",
+            "blurb": "National birdwatching and listing society for serious bird enthusiasts."
+          }
+        ]
+      },
+      {
+        "name": "Kanta-Häme",
+        "groups": [
+          {
+            "name": "BirdLife Kanta-Häme",
+            "url": "https://www.birdlifekantahame.fi/",
+            "blurb": "Regional ornithological society for the Kanta Häme region."
+          }
+        ]
+      },
+      {
+        "name": "Keski-Häme",
+        "groups": [
+          {
+            "name": "BirdLife Keski-Häme",
+            "url": "https://sites.google.com/view/birdlifekeskihame/",
+            "blurb": "Ornithological society for central Häme region."
+          }
+        ]
+      },
+      {
+        "name": "Keski-Pohjanmaa",
+        "groups": [
+          {
+            "name": "BirdLife Keski-Pohjanmaa",
+            "url": "https://www.kpbirdlife.fi/",
+            "blurb": "Regional ornithological society in central Pohjanmaa."
+          }
+        ]
+      },
+      {
+        "name": "Keski-Suomi",
+        "groups": [
+          {
+            "name": "BirdLife Keski-Suomi",
+            "url": "https://birdlifekeskisuomi.fi/",
+            "blurb": "Ornithological society for central Finland."
+          }
+        ]
+      },
+      {
+        "name": "Lohja-Siuntio",
+        "groups": [
+          {
+            "name": "BirdLife Lohja-Siuntio",
+            "url": "https://www.hakkilohja.fi/",
+            "blurb": "Regional bird society for the Lohja and Siuntio area."
+          }
+        ]
+      },
+      {
+        "name": "Pohjois-Karjala",
+        "groups": [
+          {
+            "name": "BirdLife Pohjois-Karjala",
+            "url": "https://www.pklty.fi/",
+            "blurb": "Ornithological society for North Karelia region."
+          }
+        ]
+      },
+      {
+        "name": "Etelä-Karjala",
+        "groups": [
+          {
+            "name": "Etelä-Karjalan lintutieteellinen yhdistys",
+            "url": "https://www.ekly.org/",
+            "blurb": "South Karelian ornithological society promoting bird conservation and research."
+          }
+        ]
+      },
+      {
+        "name": "Etelä-Savo",
+        "groups": [
+          {
+            "name": "Etelä-Savon Lintuharrastajat Oriolus",
+            "url": "https://www.oriolus.org/",
+            "blurb": "South Savonia bird enthusiasts group, active in local ornithology."
+          }
+        ]
+      },
+      {
+        "name": "Helsinki Region",
+        "groups": [
+          {
+            "name": "Helsingin Seudun Lintutieteellinen Yhdistys Tringa",
+            "url": "https://www.tringa.fi/",
+            "blurb": "Capital region ornithological society, one of Finland's largest urban bird groups."
+          }
+        ]
+      },
+      {
+        "name": "Kainuu",
+        "groups": [
+          {
+            "name": "Kainuun Lintutieteellinen Yhdistys",
+            "url": "https://www.kainuunlintutieteellinenyhdistys.fi/",
+            "blurb": "Ornithological society for Kainuu region."
+          }
+        ]
+      },
+      {
+        "name": "Keski- ja Pohjois-Uusimaa",
+        "groups": [
+          {
+            "name": "Keski- ja Pohjois-Uusenmaan Lintuharrastajat Apus",
+            "url": "https://www.birdlife.fi/apus/",
+            "blurb": "Bird enthusiasts group for central and north Uusimaa."
+          }
+        ]
+      },
+      {
+        "name": "Kuusamo",
+        "groups": [
+          {
+            "name": "Kuusamon Lintukerho",
+            "url": "https://www.kuusamonlintukerho.fi/",
+            "blurb": "Ornithological club for Kuusamo region in North Ostrobothnia."
+          }
+        ]
+      },
+      {
+        "name": "Kymenlaakso",
+        "groups": [
+          {
+            "name": "Kymenlaakson Lintutieteellinen Yhdistys",
+            "url": "https://www.kyly.fi/",
+            "blurb": "Ornithological society for Kymenlaakso region."
+          }
+        ]
+      },
+      {
+        "name": "Lapland",
+        "groups": [
+          {
+            "name": "Lapin lintutieteellinen yhdistys",
+            "url": "https://www.lly.fi/",
+            "blurb": "Ornithological society for Finnish Lapland with Arctic bird focus."
+          }
+        ]
+      },
+      {
+        "name": "Pohjois-Savo",
+        "groups": [
+          {
+            "name": "Lintuyhdistys Kuikka",
+            "url": "https://lintuyhdistyskuikka.net/",
+            "blurb": "Ornithological association for North Savonia."
+          }
+        ]
+      },
+      {
+        "name": "Lounais-Häme",
+        "groups": [
+          {
+            "name": "Lounais-Hämeen Lintuharrastajat",
+            "url": "https://www.lhlhry.fi/",
+            "blurb": "Southwest Häme bird enthusiasts group."
+          }
+        ]
+      },
+      {
+        "name": "Merenkurkku",
+        "groups": [
+          {
+            "name": "Merenkurkun Lintutieteellinen Yhdistys",
+            "url": "https://www.facebook.com/merenkurkunlty/",
+            "blurb": "Ornithological society for the Quark Strait region between Finland and Sweden."
+          }
+        ]
+      },
+      {
+        "name": "Meri-Lapland",
+        "groups": [
+          {
+            "name": "Meri-Lapin Lintutieteellinen Yhdistys Xenus",
+            "url": "https://www.xenus.fi/",
+            "blurb": "Ornithological society for coastal Lapland with Arctic seabird focus."
+          }
+        ]
+      },
+      {
+        "name": "Ostrobothnia",
+        "groups": [
+          {
+            "name": "Ostrobothnia Australis",
+            "url": "https://www.oa.fi/",
+            "blurb": "Ornithological association for southern Ostrobothnia."
+          }
+        ]
+      },
+      {
+        "name": "Pirkanmaa",
+        "groups": [
+          {
+            "name": "Pirkanmaan lintutieteellinen yhdistys",
+            "url": "https://www.pily.fi/",
+            "blurb": "Ornithological society for Pirkanmaa region with 1,200 members."
+          }
+        ]
+      },
+      {
+        "name": "Pohjois-Pohjanmaa",
+        "groups": [
+          {
+            "name": "Pohjois-Pohjanmaan lintutieteellinen yhdistys",
+            "url": "https://www.pply.fi/",
+            "blurb": "Ornithological society for North Ostrobothnia."
+          }
+        ]
+      },
+      {
+        "name": "Pori",
+        "groups": [
+          {
+            "name": "Porin Lintutieteellinen Yhdistys",
+            "url": "https://www.satakunnanlinnut.fi/",
+            "blurb": "Ornithological society for Pori and Satakunta region."
+          }
+        ]
+      },
+      {
+        "name": "Porvoo Region",
+        "groups": [
+          {
+            "name": "Porvoon Seudun Lintuyhdistys",
+            "url": "https://www.psly-bnff.com/",
+            "blurb": "Ornithological society for Porvoo and surrounding area."
+          }
+        ]
+      },
+      {
+        "name": "Päijät-Häme",
+        "groups": [
+          {
+            "name": "Päijät-Hämeen lintutieteellinen yhdistys",
+            "url": "https://www.phly.fi/",
+            "blurb": "Ornithological society for the Päijät Häme region."
+          }
+        ]
+      },
+      {
+        "name": "Raisio-Rauma",
+        "groups": [
+          {
+            "name": "Rauman Seudun Lintuharrastajat",
+            "url": "https://rslh.fi/",
+            "blurb": "Bird enthusiasts group for Rauma region in southwest Finland."
+          }
+        ]
+      },
+      {
+        "name": "Suomenselkä",
+        "groups": [
+          {
+            "name": "Suomenselän Lintutieteellinen Yhdistys",
+            "url": "https://www.sslty.fi/",
+            "blurb": "Ornithological society for the Suomenselkä lake region."
+          }
+        ]
+      },
+      {
+        "name": "Suupohja",
+        "groups": [
+          {
+            "name": "Suupohjan Lintutieteellinen Yhdistys",
+            "url": "https://www.suupohjanlinnut.fi/sply/",
+            "blurb": "Ornithological society for Suupohja region in Ostrobothnia."
+          }
+        ]
+      },
+      {
+        "name": "Turku",
+        "groups": [
+          {
+            "name": "Turun Lintutieteellinen Yhdistys",
+            "url": "https://www.tly.fi/",
+            "blurb": "Southwest Finland ornithological society, active in Turku area and archipelago."
+          }
+        ]
+      },
+      {
+        "name": "Åland Islands",
+        "groups": [
+          {
+            "name": "Ålands fågelskyddsförening",
+            "url": "https://www.alandsfagelskyddsforening.com/",
+            "blurb": "Bird protection society for the autonomous Åland Islands."
           }
         ]
       }
@@ -868,6 +1617,432 @@
     ]
   },
   {
+    "code": "GR",
+    "name": "Greece",
+    "flag": "🇬🇷",
+    "continent": "Europe",
+    "aka": [
+      "hellenic",
+      "greek",
+      "ελλάδα"
+    ],
+    "gaps": [],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Hellenic Ornithological Society (HOS)",
+            "url": "https://ornithologiki.gr/en/",
+            "blurb": "The national bird society and BirdLife partner, working since 1982 to conserve birds and habitats across Greece."
+          },
+          {
+            "name": "BirdWING (BirdWatching In Northern Greece)",
+            "url": "https://birdwing.eu/",
+            "blurb": "Community group raising awareness of birds in northern Greece with over 600 international members."
+          },
+          {
+            "name": "Antikythira Bird Observatory",
+            "url": "https://ornithologiki.gr/en/our-work/conservation-scientific-research/bird-monitoring/1299-ornithologikos-stathmos-antikythiron",
+            "blurb": "Research station operated by HOS monitoring migratory bird species in the Aegean Sea."
+          },
+          {
+            "name": "Birding in Greece",
+            "url": "https://www.facebook.com/birdingingreece/",
+            "blurb": "Public Facebook group for bird watching enthusiasts in Athens and central Greece."
+          },
+          {
+            "name": "Lesvos Birdwatching",
+            "url": "https://www.facebook.com/lesvosbirdwatching/",
+            "blurb": "Community group organising guided birdwatching and photography on Lesvos Island."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "HU",
+    "name": "Hungary",
+    "flag": "🇭🇺",
+    "continent": "Europe",
+    "aka": [
+      "hungary",
+      "magyarország"
+    ],
+    "gaps": [
+      "MME operates 32 local groups across counties but individual group websites are not systematically listed online. Main organization website is primary resource for engagement."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "MME (Hungarian Ornithological and Nature Conservation Society / BirdLife Hungary)",
+            "url": "https://mme.hu",
+            "blurb": "The national ornithological society founded in 1974 with 10,000 members and 32 local groups running conservation and research across Hungary."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IS",
+    "name": "Iceland",
+    "flag": "🇮🇸",
+    "continent": "Europe",
+    "aka": [
+      "island",
+      "icelandic"
+    ],
+    "gaps": [
+      "Iceland is small with limited regional club infrastructure beyond the capital region; most birdwatching organized nationally"
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Fuglavernd",
+            "url": "https://fuglavernd.is",
+            "blurb": "The national bird society and BirdLife Iceland partner, 1,300 members, organizing tours and conservation since 1963."
+          },
+          {
+            "name": "Fuglatal",
+            "url": "https://fuglatal-design-hub.replit.app/",
+            "blurb": "Iceland's citizen science bird census platform, real time tracking of 424 species with mobile app for volunteers."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IE",
+    "name": "Ireland",
+    "flag": "🇮🇪",
+    "continent": "Europe",
+    "aka": [
+      "ireland",
+      "irish",
+      "éire"
+    ],
+    "gaps": [
+      "Many BirdWatch Ireland branches exist but lack their own websites; only major branches with dedicated sites are listed. Wexford, Offaly, Roscommon, and other counties have branches operating under the national organization."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "BirdWatch Ireland",
+            "url": "https://birdwatchireland.ie/",
+            "blurb": "The national bird society with 15,000 members and 30 branches nationwide, running walks and monitoring schemes."
+          }
+        ]
+      },
+      {
+        "name": "County Cork",
+        "groups": [
+          {
+            "name": "BirdWatch Cork",
+            "url": "https://www.birdwatchcork.com/",
+            "blurb": "Cork branch of BirdWatch Ireland providing local birding information and organizing outings in the county."
+          }
+        ]
+      },
+      {
+        "name": "County Clare",
+        "groups": [
+          {
+            "name": "Clare Birdwatching",
+            "url": "https://www.clarebirdwatching.com/",
+            "blurb": "Clare and Limerick region birding group providing local site guides and birdwatching information."
+          }
+        ]
+      },
+      {
+        "name": "County Galway",
+        "groups": [
+          {
+            "name": "BirdWatch Galway",
+            "url": "https://www.birdwatchgalway.org/",
+            "blurb": "BirdWatch Ireland branch for Galway city and county, organizing regular walks and citizen science surveys."
+          }
+        ]
+      },
+      {
+        "name": "County Mayo",
+        "groups": [
+          {
+            "name": "BirdWatch Mayo",
+            "url": "https://birdwatchingmayo.org/",
+            "blurb": "Mayo branch of BirdWatch Ireland welcoming members and visitors for regular birding outings and events."
+          }
+        ]
+      },
+      {
+        "name": "County Dublin",
+        "groups": [
+          {
+            "name": "South Dublin Birds",
+            "url": "https://www.southdublinbirds.com/",
+            "blurb": "South Dublin branch focused on the south city and Dun Laoghaire/Rathdown catchment area."
+          },
+          {
+            "name": "BWI Fingal",
+            "url": "https://www.bwifingal.ie/",
+            "blurb": "North Dublin Fingal branch of BirdWatch Ireland for the northern suburban counties."
+          },
+          {
+            "name": "Dublin Birding",
+            "url": "https://dublinbirding.ie/",
+            "blurb": "Tolka Valley birding group in Dublin providing local sightings and events in the northeast of the city."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "IT",
+    "name": "Italy",
+    "flag": "🇮🇹",
+    "continent": "Europe",
+    "aka": [
+      "italy",
+      "italian",
+      "italia"
+    ],
+    "gaps": [
+      "LIPU has approximately 100 local sections across Italy. This list includes sections with verified websites; most smaller delegations lack standalone websites but operate through the main LIPU organization. Additional independent ornithological societies exist (S.O.I., SROPU, ASOIM) but are specialized research organizations.",
+      "LIPU Vibo (Calabria, Vibo Valentia): the delegazione's domain has lapsed and is now a for sale parking page, and no Facebook page of its own was findable, so it was dropped rather than published broken."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "LIPU",
+            "url": "https://www.lipu.it/",
+            "blurb": "National bird protection league with nearly 100 local sections, managing nature reserves and citizen science surveys across Italy."
+          },
+          {
+            "name": "Società Ornitologica Italiana",
+            "url": "https://it.wikipedia.org/wiki/Societ%C3%A0_ornitologica_italiana",
+            "blurb": "Italian ornithological society founded 1975, promoting scientific ornithological research and publishes Gli Uccelli d'Italia journal."
+          }
+        ]
+      },
+      {
+        "name": "Piemonte",
+        "groups": [
+          {
+            "name": "LIPU Torino",
+            "url": "https://www.liputorino.it/",
+            "blurb": "Turin regional delegazione of LIPU managing local conservation and education activities in northern Piedmont."
+          },
+          {
+            "name": "LIPU Asti",
+            "url": "https://www.lipuat.com/",
+            "blurb": "Asti delegazione running a wildlife recovery center for injured animals and organizing local conservation activities."
+          }
+        ]
+      },
+      {
+        "name": "Valle d'Aosta",
+        "groups": []
+      },
+      {
+        "name": "Liguria",
+        "groups": [
+          {
+            "name": "LIPU Genova",
+            "url": "https://www.lipugenova.org/",
+            "blurb": "Genoa delegazione of LIPU coordinating bird conservation and education in the Liguria coastal region."
+          }
+        ]
+      },
+      {
+        "name": "Lombardia",
+        "groups": [
+          {
+            "name": "LIPU Milano",
+            "url": "https://www.lipumilano.it/",
+            "blurb": "Milan delegazione of LIPU promoting urban conservation, habitat protection and environmental education in Lombardy."
+          },
+          {
+            "name": "LIPU Brescia",
+            "url": "https://www.lipubrescia.org/",
+            "blurb": "Brescia delegazione of LIPU working on local bird conservation and operating a wildlife emergency response service."
+          }
+        ]
+      },
+      {
+        "name": "Trentino-Alto Adige",
+        "groups": []
+      },
+      {
+        "name": "Veneto",
+        "groups": [
+          {
+            "name": "LIPU Padova",
+            "url": "https://www.lipupadova.it/",
+            "blurb": "Padua delegazione providing birding activities, citizen science projects and habitat protection in the Veneto region."
+          },
+          {
+            "name": "LIPU Venezia",
+            "url": "https://www.lipuvenezia.it/",
+            "blurb": "Venice section defending animals and nature, protecting endangered species and managing wildlife recovery in the lagoon."
+          },
+          {
+            "name": "LIPU Treviso",
+            "url": "https://www.liputreviso.it/",
+            "blurb": "Treviso delegazione of LIPU coordinating conservation efforts in the northeastern Veneto region."
+          }
+        ]
+      },
+      {
+        "name": "Friuli-Venezia Giulia",
+        "groups": [
+          {
+            "name": "LIPU Belluno",
+            "url": "https://lipubelluno.org/",
+            "blurb": "Belluno delegazione of LIPU in the eastern Alps region organizing conservation and education activities."
+          }
+        ]
+      },
+      {
+        "name": "Emilia-Romagna",
+        "groups": [
+          {
+            "name": "LIPU Reggio Emilia",
+            "url": "https://www.lipureggioemilia.it/",
+            "blurb": "Reggio Emilia delegazione of LIPU coordinating bird conservation across the Emilia Romagna region."
+          }
+        ]
+      },
+      {
+        "name": "Toscana",
+        "groups": []
+      },
+      {
+        "name": "Umbria",
+        "groups": []
+      },
+      {
+        "name": "Marche",
+        "groups": []
+      },
+      {
+        "name": "Lazio",
+        "groups": [
+          {
+            "name": "SROPU",
+            "url": "https://www.sropu.org/",
+            "blurb": "Roman Station for Bird Observation and Protection, one of Italy's oldest ornithological societies founded 1965."
+          }
+        ]
+      },
+      {
+        "name": "Abruzzo",
+        "groups": []
+      },
+      {
+        "name": "Molise",
+        "groups": []
+      },
+      {
+        "name": "Campania",
+        "groups": []
+      },
+      {
+        "name": "Puglia",
+        "groups": [
+          {
+            "name": "ASOIM",
+            "url": "https://www.asoim.org/",
+            "blurb": "Association for Ornithological Studies of Southern Italy focusing on research and bird conservation in the Puglia region."
+          }
+        ]
+      },
+      {
+        "name": "Basilicata",
+        "groups": []
+      },
+      {
+        "name": "Calabria",
+        "groups": [
+          {
+            "name": "LIPU Rende",
+            "url": "https://www.lipurende.it/",
+            "blurb": "Rende delegazione of LIPU working on conservation and education in the Calabria region of southern Italy."
+          }
+        ]
+      },
+      {
+        "name": "Sicilia",
+        "groups": [
+          {
+            "name": "LIPU Palermo",
+            "url": "https://lipupalermo.it/",
+            "blurb": "Palermo delegazione of LIPU coordinating bird protection and environmental conservation in western Sicily."
+          }
+        ]
+      },
+      {
+        "name": "Sardegna",
+        "groups": []
+      }
+    ]
+  },
+  {
+    "code": "XK",
+    "name": "Kosovo",
+    "flag": "🇽🇰",
+    "continent": "Europe",
+    "aka": [
+      "kosovar"
+    ],
+    "gaps": [
+      "No independently confirmed national ornithological society was found for Kosovo; a LinkedIn listing under this name could not be corroborated as a real organisation and was dropped rather than published unverified. eBird Kosovo is listed as the best available public option."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "eBird Kosovo",
+            "url": "https://ebird.org/region/XK/",
+            "blurb": "Citizen science platform for recording Kosovo bird observations and sightings."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "LV",
+    "name": "Latvia",
+    "flag": "🇱🇻",
+    "continent": "Europe",
+    "aka": [
+      "latvia",
+      "latvija"
+    ],
+    "gaps": [
+      "Latvian Ornithological Society operates across all regions but specific regional branches and local club details are not individually documented online."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Latvian Ornithological Society (LOB)",
+            "url": "https://www.lob.lv/en/",
+            "blurb": "The largest nature conservation organization in Latvia with 1,000+ members working on bird and habitat protection since 1985."
+          }
+        ]
+      }
+    ]
+  },
+  {
     "code": "LI",
     "name": "Liechtenstein",
     "flag": "🇱🇮",
@@ -886,6 +2061,34 @@
             "name": "Botanisch Zoologische Gesellschaft Liechtenstein Sarganserland Werdenberg",
             "url": "https://www.bzg.li",
             "blurb": "Liechtenstein's natural history society, researching and protecting local flora and fauna including birds."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "LT",
+    "name": "Lithuania",
+    "flag": "🇱🇹",
+    "continent": "Europe",
+    "aka": [
+      "lithuania",
+      "lietuva"
+    ],
+    "gaps": [],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Lithuanian Ornithological Society (LOD / BirdLife Lithuania)",
+            "url": "https://birdlife.lt/en/",
+            "blurb": "The national ornithological society and BirdLife partner with 400+ members organizing bird research, protection and public engagement."
+          },
+          {
+            "name": "Lithuanian Bird Ringing Centre",
+            "url": "https://www.ziedavimas.lt/en/",
+            "blurb": "Scientific facility based at Tadas Ivanauskas Zoological Museum coordinating bird ringing and migration research."
           }
         ]
       }
@@ -918,6 +2121,64 @@
             "name": "ornitho.lu",
             "url": "https://www.ornitho.lu",
             "blurb": "The national bird sightings platform, shared with ornitho.de, used by birders across Luxembourg."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "MT",
+    "name": "Malta",
+    "flag": "🇲🇹",
+    "continent": "Europe",
+    "aka": [
+      "malta",
+      "maltese"
+    ],
+    "gaps": [
+      "Malta has a small birding community. BirdLife Malta is the dominant organization. A public Birds of Malta Facebook group exists but has limited discoverability without logging in."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "BirdLife Malta",
+            "url": "https://birdlifemalta.org/",
+            "blurb": "Malta's national bird conservation organization founded 1962, managing nature reserves and running education programmes."
+          },
+          {
+            "name": "Birds of Malta",
+            "url": "https://www.birdsofmalta.com/",
+            "blurb": "Community bird atlas and sighting platform with identification resources and species data for Malta."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "ME",
+    "name": "Montenegro",
+    "flag": "🇲🇪",
+    "continent": "Europe",
+    "aka": [
+      "montenegrin",
+      "црна гора"
+    ],
+    "gaps": [],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Center for Protection and Research of Birds (CZIP)",
+            "url": "https://czip.me/en/",
+            "blurb": "Established 2000, BirdLife partner running bird ringing programs and biodiversity monitoring across Montenegro."
+          },
+          {
+            "name": "eBird Montenegro",
+            "url": "https://ebird.org/region/ME/",
+            "blurb": "Citizen science platform for recording Montenegro bird sightings and observations."
           }
         ]
       }
@@ -1172,6 +2433,346 @@
     ]
   },
   {
+    "code": "MK",
+    "name": "North Macedonia",
+    "flag": "🇲🇰",
+    "continent": "Europe",
+    "aka": [
+      "macedonian",
+      "македонија"
+    ],
+    "gaps": [
+      "Limited findable clubs beyond national organisation; SOR operates with branches but specific regional clubs not publicly listed"
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Macedonian Ecological Society (MES)",
+            "url": "https://mes.org.mk/en/",
+            "blurb": "Founded 1972, the oldest environmental organisation in North Macedonia focusing on biodiversity conservation."
+          },
+          {
+            "name": "eBird North Macedonia",
+            "url": "https://ebird.org/region/MK/",
+            "blurb": "Citizen science platform for recording bird observations in North Macedonia."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "NO",
+    "name": "Norway",
+    "flag": "🇳🇴",
+    "continent": "Europe",
+    "aka": [
+      "norge",
+      "norwegian"
+    ],
+    "gaps": [
+      "Some small municipalities have no dedicated local club site, relying on county divisions for activities"
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "BirdLife Norge",
+            "url": "https://www.birdlife.no",
+            "blurb": "The national bird society, Norwegian Ornithological Society partner with county and local group networks across the country."
+          },
+          {
+            "name": "Norwegian Bird Ringing Centre",
+            "url": "https://www.norskringmerkingssentral.no/",
+            "blurb": "National ringing scheme operated from Stavanger Museum, over 9 million birds ringed since 1914 with citizen science volunteers."
+          }
+        ]
+      },
+      {
+        "name": "Nordland",
+        "groups": [
+          {
+            "name": "BirdLife Nordland",
+            "url": "https://www.birdlife.no/organisasjonen/fylkesavdelinger/nordland/",
+            "blurb": "County division organizing birding activities, surveys and conservation in the Nordland region."
+          }
+        ]
+      },
+      {
+        "name": "Troms",
+        "groups": [
+          {
+            "name": "BirdLife Troms",
+            "url": "https://www.birdlife.no/organisasjonen/fylkesavdelinger/troms/",
+            "blurb": "County group running bird counts, trips and habitat protection work in Arctic Troms."
+          }
+        ]
+      },
+      {
+        "name": "Finnmark",
+        "groups": [
+          {
+            "name": "BirdLife Finnmark",
+            "url": "https://www.birdlife.no/organisasjonen/fylkesavdelinger/finnmark/",
+            "blurb": "Northern county branch with birding activities and migration monitoring in Finnmark."
+          }
+        ]
+      },
+      {
+        "name": "Trøndelag",
+        "groups": [
+          {
+            "name": "BirdLife Trøndelag",
+            "url": "https://www.birdlife.no/organisasjonen/fylkesavdelinger/trondelag/",
+            "blurb": "Central Norwegian county group organizing bird watching trips and field surveys."
+          }
+        ]
+      },
+      {
+        "name": "Hordaland",
+        "groups": [
+          {
+            "name": "BirdLife Hordaland",
+            "url": "https://www.birdlife.no/organisasjonen/fylkesavdelinger/hordaland/",
+            "blurb": "Western coastal county group with seabird monitoring and fjord bird watching activities."
+          }
+        ]
+      },
+      {
+        "name": "Rogaland",
+        "groups": [
+          {
+            "name": "BirdLife Rogaland",
+            "url": "https://www.birdlife.no/organisasjonen/fylkesavdelinger/rogaland/",
+            "blurb": "County group in southwestern Norway hosting bird trips and habitat conservation projects."
+          }
+        ]
+      },
+      {
+        "name": "Møre og Romsdal",
+        "groups": [
+          {
+            "name": "BirdLife Møre og Romsdal",
+            "url": "https://www.birdlife.no/organisasjonen/fylkesavdelinger/moreogromsdal/",
+            "blurb": "Coastal county branch with bird watching and survey activities."
+          }
+        ]
+      },
+      {
+        "name": "Sogn og Fjordane",
+        "groups": [
+          {
+            "name": "BirdLife Sogn og Fjordane",
+            "url": "https://www.birdlife.no/organisasjonen/fylkesavdelinger/sognogfjordane/",
+            "blurb": "County group in western fjord areas organizing bird activities and habitat work."
+          }
+        ]
+      },
+      {
+        "name": "Buskerud",
+        "groups": [
+          {
+            "name": "BirdLife Buskerud",
+            "url": "https://www.birdlife.no/organisasjonen/fylkesavdelinger/buskerud/",
+            "blurb": "County branch with forest and water bird activities in Buskerud."
+          }
+        ]
+      },
+      {
+        "name": "Hedmark",
+        "groups": [
+          {
+            "name": "BirdLife Hedmark",
+            "url": "https://www.birdlife.no/organisasjonen/fylkesavdelinger/hedmark/",
+            "blurb": "Forest and lake region branch with bird watching and citizen science activities."
+          }
+        ]
+      },
+      {
+        "name": "Oppland",
+        "groups": [
+          {
+            "name": "BirdLife Oppland",
+            "url": "https://www.birdlife.no/organisasjonen/fylkesavdelinger/oppland/",
+            "blurb": "Mountain region county group organizing bird walks and survey projects."
+          }
+        ]
+      },
+      {
+        "name": "Telemark",
+        "groups": [
+          {
+            "name": "BirdLife Telemark",
+            "url": "https://www.birdlife.no/organisasjonen/fylkesavdelinger/telemark/",
+            "blurb": "County branch with bird watching trips and local monitoring activities."
+          }
+        ]
+      },
+      {
+        "name": "Vestfold",
+        "groups": [
+          {
+            "name": "BirdLife Vestfold",
+            "url": "https://www.birdlife.no/organisasjonen/fylkesavdelinger/vestfold/",
+            "blurb": "Coastal county group running seabird and shorebird watching activities."
+          }
+        ]
+      },
+      {
+        "name": "Østfold",
+        "groups": [
+          {
+            "name": "BirdLife Østfold",
+            "url": "https://www.birdlife.no/organisasjonen/fylkesavdelinger/ostfold/",
+            "blurb": "Eastern county branch with bird trips and habitat conservation work."
+          }
+        ]
+      },
+      {
+        "name": "Oslo and Akershus",
+        "groups": [
+          {
+            "name": "BirdLife Oslo og Akershus",
+            "url": "https://www.birdlife.no/organisasjonen/fylkesavdelinger/osloakershus/",
+            "blurb": "Capital region group running city bird watching and urban habitat projects."
+          }
+        ]
+      },
+      {
+        "name": "Aust-Agder",
+        "groups": [
+          {
+            "name": "BirdLife Aust-Agder",
+            "url": "https://www.birdlife.no/organisasjonen/fylkesavdelinger/aust-agder/",
+            "blurb": "Southern county branch with coastal bird activities."
+          }
+        ]
+      },
+      {
+        "name": "Vest-Agder",
+        "groups": [
+          {
+            "name": "BirdLife Vest-Agder",
+            "url": "https://www.birdlife.no/organisasjonen/fylkesavdelinger/vest-agder/",
+            "blurb": "Southwest county group organizing bird watching in coastal areas."
+          }
+        ]
+      },
+      {
+        "name": "Svalbard",
+        "groups": [
+          {
+            "name": "BirdLife Svalbard",
+            "url": "https://www.birdlife.no/organisasjonen/fylkesavdelinger/longyearbyen/",
+            "blurb": "Arctic archipelago group with Arctic seabird and special habitat monitoring."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "PL",
+    "name": "Poland",
+    "flag": "🇵🇱",
+    "continent": "Europe",
+    "aka": [
+      "poland",
+      "polski"
+    ],
+    "gaps": [
+      "Many regional Towarzystwo Ornitologiczne branches exist but lack individual websites; referencing main OTOP portal instead. Extensive OTOP local group network of 18+ groups verified through official directory but individual pages scattered across OTOP.org.pl, Facebook, and emails."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "OTOP (Polish Society for the Protection of Birds)",
+            "url": "https://otop.org.pl",
+            "blurb": "The national bird protection society and BirdLife partner, with 18 local groups running walks, surveys and conservation work across Poland."
+          },
+          {
+            "name": "Ornitho.pl",
+            "url": "https://www.ornitho.pl",
+            "blurb": "Poland's bird observation platform for recording and viewing distribution maps of bird sightings and species occurrences."
+          },
+          {
+            "name": "Monitoring Ptaków Polski (MBP)",
+            "url": "https://monitoringptakow.gios.gov.pl/about-project.html",
+            "blurb": "The national bird monitoring scheme with 25 programmes covering 190 bird species and over 800 amateur and professional observers."
+          }
+        ]
+      },
+      {
+        "name": "Mazovia and Holy Cross Region",
+        "groups": [
+          {
+            "name": "Warszawska Grupa OTOP",
+            "url": "https://otop.org.pl/wlacz-sie/grupy-lokalne-otop/lista-grup-lokalnych-otop/warszawska-grupa-otop/",
+            "blurb": "Warsaw OTOP local group conducting field walks, lectures and bird protection activities in the capital region."
+          },
+          {
+            "name": "Białołęcka Grupa OTOP",
+            "url": "https://otop.org.pl/wlacz-sie/grupy-lokalne-otop/lista-grup-lokalnych-otop/bialolecka-grupa-otop/",
+            "blurb": "Warsaw district local group promoting bird observation and protection in Białołęka."
+          },
+          {
+            "name": "Mazowiecko-Świętokrzyskie Towarzystwo Ornitologiczne",
+            "url": "https://fanimani.pl/m-sto",
+            "blurb": "Regional ornithological society protecting fauna and flora in Masovian and Holy Cross regions since 2006."
+          }
+        ]
+      },
+      {
+        "name": "Greater Poland",
+        "groups": [
+          {
+            "name": "Poznańska Grupa OTOP",
+            "url": "https://otop.org.pl/wlacz-sie/grupy-lokalne-otop/lista-grup-lokalnych-otop/poznanska-grupa-otop/",
+            "blurb": "Poznań OTOP local group organizing bird walks, trips and citizen science activities across the region."
+          }
+        ]
+      },
+      {
+        "name": "Pomerania",
+        "groups": [
+          {
+            "name": "Trójmiejska Grupa OTOP",
+            "url": "https://trojmiejskagrupaotop.weebly.com",
+            "blurb": "Tricity OTOP group (Gdańsk, Gdynia, Sopot) running ornithological excursions and conservation projects."
+          },
+          {
+            "name": "Stacja Ornitologiczna MiIZ PAN (Polish Ringing Centre)",
+            "url": "https://www.stornit.gda.pl/index.php",
+            "blurb": "Ornithological research station in Gdańsk coordinating bird ringing, research and population monitoring since 1931."
+          }
+        ]
+      },
+      {
+        "name": "Lesser Poland",
+        "groups": [
+          {
+            "name": "Małopolskie Towarzystwo Ornitologiczne",
+            "url": "https://mto-kr.pl",
+            "blurb": "Regional ornithological society researching and protecting birds across Kraków and Lesser Poland since 1982."
+          }
+        ]
+      },
+      {
+        "name": "Lublin Region",
+        "groups": [
+          {
+            "name": "Lubelskie Towarzystwo Ornitologiczne",
+            "url": "https://www.lto.org.pl",
+            "blurb": "Lublin region ornithological society conducting bird research, protection and education in eastern Poland."
+          }
+        ]
+      }
+    ]
+  },
+  {
     "code": "PT",
     "name": "Portugal",
     "flag": "🇵🇹",
@@ -1228,6 +2829,155 @@
             "name": "Asas do Mar",
             "url": "https://asasdomar.org",
             "blurb": "An Azorean institute studying and protecting the islands' seabirds and marine ornithology."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "RO",
+    "name": "Romania",
+    "flag": "🇷🇴",
+    "continent": "Europe",
+    "aka": [
+      "romanian",
+      "românia"
+    ],
+    "gaps": [],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Romanian Ornithological Society (SOR)",
+            "url": "https://www.birdlife.org/partners/romania-romanian-ornithological-society-sor-birdlife-romania/",
+            "blurb": "The national bird society and BirdLife partner since 1997, operating from Bucharest, Cluj Napoca and Tulcea."
+          },
+          {
+            "name": "Milvus Group",
+            "url": "https://milvus.ro/en/",
+            "blurb": "Bird and nature protection association specialising in raptor conservation and bird ringing research."
+          },
+          {
+            "name": "eBird Romania",
+            "url": "https://ebird.org/region/RO/",
+            "blurb": "Citizen science sighting platform documenting Romanian bird distribution and abundance."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "SM",
+    "name": "San Marino",
+    "flag": "🇸🇲",
+    "continent": "Europe",
+    "aka": [
+      "san marino",
+      "sammarinese"
+    ],
+    "gaps": [
+      "San Marino is a very small country with limited independent birding community organizations. Centro Naturalistico Sammarinese is a natural history museum and research center focused on ornithology, not a membership-based birding club. No other dedicated birding clubs or societies with public presence found."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Centro Naturalistico Sammarinese",
+            "url": "https://www.centronaturalistico.sm/",
+            "blurb": "Natural history museum and research institute with extensive ornithology collection and documentation of San Marino's avifauna."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "RS",
+    "name": "Serbia",
+    "flag": "🇷🇸",
+    "continent": "Europe",
+    "aka": [
+      "serbian",
+      "србија"
+    ],
+    "gaps": [],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Bird Protection and Study Society of Serbia (BPSSS)",
+            "url": "https://www.birdlife.org/partners/serbia-bird-protection-and-study-society-of-serbia/",
+            "blurb": "The national bird society and BirdLife partner since 2010, working on targeted species conservation."
+          },
+          {
+            "name": "Bird Protection and Study Society of Serbia",
+            "url": "https://pticesrbije.rs/en/pocetna-english/",
+            "blurb": "The national bird society and BirdLife partner, running conservation, monitoring and public outreach programmes."
+          },
+          {
+            "name": "eBird Serbia",
+            "url": "https://ebird.org/region/RS/",
+            "blurb": "Citizen science sighting platform for recording bird observations across Serbia."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "SK",
+    "name": "Slovakia",
+    "flag": "🇸🇰",
+    "continent": "Europe",
+    "aka": [
+      "slovakia",
+      "slovenská republika"
+    ],
+    "gaps": [
+      "SOS/BirdLife Slovakia maintains regional branches across all regions but individual branch websites and contact information not publicly listed online. Main organization portal and Facebook are primary findable resources."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "SOS/BirdLife Slovakia (Slovak Ornithological Society)",
+            "url": "https://www.watching.sk",
+            "blurb": "The national bird conservation organization and BirdLife partner with over 1,000 members and regional branches in all regions of Slovakia."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "SI",
+    "name": "Slovenia",
+    "flag": "🇸🇮",
+    "continent": "Europe",
+    "aka": [
+      "slovenian",
+      "slovenija"
+    ],
+    "gaps": [],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "DOPPS (Društvo za Opazovanje in Proučevanje Ptic Slovenije)",
+            "url": "https://ptice.si/en/",
+            "blurb": "The national bird society and BirdLife partner founded 1979, largest conservation NGO in Slovenia with five regional sections."
+          },
+          {
+            "name": "DOPPS Facebook",
+            "url": "https://www.facebook.com/pticeDOPPS/",
+            "blurb": "Public Facebook group for bird watching community in Slovenia."
+          },
+          {
+            "name": "eBird Slovenia",
+            "url": "https://ebird.org/region/SI/",
+            "blurb": "Citizen science platform for recording Slovenian bird sightings and observations."
           }
         ]
       }
@@ -1489,6 +3239,281 @@
     ]
   },
   {
+    "code": "SE",
+    "name": "Sweden",
+    "flag": "🇸🇪",
+    "continent": "Europe",
+    "aka": [
+      "sverige",
+      "swedish"
+    ],
+    "gaps": [
+      "Halland ornithological society appears to lack an independent website"
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "BirdLife Sverige",
+            "url": "https://birdlife.se",
+            "blurb": "The national bird society with 25 regional associations across Sweden, 16,500 members and major conservation initiatives."
+          },
+          {
+            "name": "Artportalen",
+            "url": "https://www.artportalen.se",
+            "blurb": "Sweden's species observation system for birds and all wildlife, over 100 million observations from citizen scientists."
+          },
+          {
+            "name": "Ottenby Bird Station",
+            "url": "https://www.ottenby.se",
+            "blurb": "Bird ringing and research station operated since 1946, conducting migration studies and training."
+          }
+        ]
+      },
+      {
+        "name": "Gävleborg",
+        "groups": [
+          {
+            "name": "Gävleborgs Läns Ornitologiska Förening",
+            "url": "https://glof.birdlife.se/",
+            "blurb": "Regional society for bird study and protection in Gävleborg county."
+          }
+        ]
+      },
+      {
+        "name": "Jämtland",
+        "groups": [
+          {
+            "name": "Jämtlands Läns Ornitologiska Förening",
+            "url": "https://www.jorf.se/",
+            "blurb": "Mountain region ornithological society organizing bird watching and surveys."
+          }
+        ]
+      },
+      {
+        "name": "Medelpad",
+        "groups": [
+          {
+            "name": "BirdLife Medelpad",
+            "url": "https://birdlifemedelpad.se/",
+            "blurb": "Regional birding community in Medelpad with guided trips and local activities."
+          }
+        ]
+      },
+      {
+        "name": "Ångermanland",
+        "groups": [
+          {
+            "name": "Ångermanlands Ornitologiska Förening",
+            "url": "https://angermanlandsof.se/",
+            "blurb": "Ornithological society for the Ångermanland region."
+          }
+        ]
+      },
+      {
+        "name": "Västerbotten",
+        "groups": [
+          {
+            "name": "Västerbottens Ornitologiska Förening",
+            "url": "https://vasterbotten.birdlife.se/",
+            "blurb": "Northern Swedish ornithological society with bird watching and monitoring activities."
+          }
+        ]
+      },
+      {
+        "name": "Norrbotten",
+        "groups": [
+          {
+            "name": "Norrbottens Ornitologiska Förening",
+            "url": "https://www.nof.nu/",
+            "blurb": "Far northern ornithological society for Swedish Lapland."
+          }
+        ]
+      },
+      {
+        "name": "Sörmland",
+        "groups": [
+          {
+            "name": "Föreningen Sörmlands Ornitologer",
+            "url": "https://sormlandsornitologerna.se/fso2/start.php",
+            "blurb": "Sörmland ornithological association in central eastern Sweden."
+          }
+        ]
+      },
+      {
+        "name": "Stockholm",
+        "groups": [
+          {
+            "name": "Stockholms Ornitologiska Förening",
+            "url": "https://www.stof.nu/",
+            "blurb": "Stockholm region's ornithological society, one of Sweden's largest urban bird groups."
+          }
+        ]
+      },
+      {
+        "name": "Närke",
+        "groups": [
+          {
+            "name": "Närkes Ornitologiska Förening",
+            "url": "https://nof.birdlife.se/",
+            "blurb": "Ornithological society for Närke region with regular bird walks and surveys."
+          }
+        ]
+      },
+      {
+        "name": "Värmland",
+        "groups": [
+          {
+            "name": "Värmlands Ornitologiska Förening",
+            "url": "https://varmlandsornitologiska.se/",
+            "blurb": "West central Swedish ornithological society."
+          }
+        ]
+      },
+      {
+        "name": "Västmanland",
+        "groups": [
+          {
+            "name": "BirdLife Västmanland",
+            "url": "https://vof.birdlife.se/",
+            "blurb": "Regional bird society for Västmanland with organized bird activities."
+          }
+        ]
+      },
+      {
+        "name": "Uppland",
+        "groups": [
+          {
+            "name": "BirdLife Uppland",
+            "url": "https://uppland.birdlife.se/",
+            "blurb": "Ornithological society for Uppland county with bird watching and recording."
+          }
+        ]
+      },
+      {
+        "name": "Dalarna",
+        "groups": [
+          {
+            "name": "Dalarnas Ornitologiska Förening",
+            "url": "https://dalafaglar.se/",
+            "blurb": "Ornithological society for Dalarna region in central Sweden."
+          }
+        ]
+      },
+      {
+        "name": "Scania",
+        "groups": [
+          {
+            "name": "Skånes Ornitologiska Förening",
+            "url": "https://www.skof.se/",
+            "blurb": "Southern Scania ornithological society, active in migration monitoring and bird conservation."
+          }
+        ]
+      },
+      {
+        "name": "Blekinge",
+        "groups": [
+          {
+            "name": "Blekinges Ornitologiska Förening",
+            "url": "https://blekinge.birdlife.se/",
+            "blurb": "Southeastern ornithological society on the Baltic coast."
+          }
+        ]
+      },
+      {
+        "name": "Öland",
+        "groups": [
+          {
+            "name": "Ölands Ornitologiska Förening",
+            "url": "https://www.oof.nu/",
+            "blurb": "Island ornithological society for Öland with seabird and migration focus."
+          }
+        ]
+      },
+      {
+        "name": "Östergötland (East)",
+        "groups": [
+          {
+            "name": "BirdLife Östra Småland",
+            "url": "https://osof.se/",
+            "blurb": "Ornithological group for eastern Småland region."
+          }
+        ]
+      },
+      {
+        "name": "Småland",
+        "groups": [
+          {
+            "name": "BirdLife Småland",
+            "url": "https://smof.se/",
+            "blurb": "Central Småland ornithological society with bird watching activities."
+          }
+        ]
+      },
+      {
+        "name": "Västergötland",
+        "groups": [
+          {
+            "name": "Västergötlands Ornitologiska Förening",
+            "url": "https://vgof.se/",
+            "blurb": "Ornithological society for western Västergötland."
+          }
+        ]
+      },
+      {
+        "name": "Gotland",
+        "groups": [
+          {
+            "name": "Gotlands Ornitologiska Förening",
+            "url": "https://www.blacku.se/",
+            "blurb": "Island ornithological society for Gotland with seabird migration interests."
+          }
+        ]
+      },
+      {
+        "name": "Bohuslän",
+        "groups": [
+          {
+            "name": "Bohusläns Ornitologiska Förening",
+            "url": "https://www.bohof.com/",
+            "blurb": "Coastal ornithological society for Bohuslän."
+          }
+        ]
+      },
+      {
+        "name": "Gothenburg",
+        "groups": [
+          {
+            "name": "Göteborgs Ornitologiska Förening",
+            "url": "https://www.gof.nu/",
+            "blurb": "West coast city ornithological society, one of Sweden's active urban bird groups."
+          }
+        ]
+      },
+      {
+        "name": "Östergötland",
+        "groups": [
+          {
+            "name": "BirdLife Östergötland",
+            "url": "https://www.ogof.se/",
+            "blurb": "Ornithological society for eastern Östergötland region."
+          }
+        ]
+      },
+      {
+        "name": "Dalsland",
+        "groups": [
+          {
+            "name": "Dalslands Ornitologiska Förening",
+            "url": "https://www.xn--fglarpdal-52af.se/",
+            "blurb": "Ornithological society for Dalsland in southwest Sweden."
+          }
+        ]
+      }
+    ]
+  },
+  {
     "code": "CH",
     "name": "Switzerland",
     "flag": "🇨🇭",
@@ -1602,6 +3627,45 @@
             "name": "Ficedula",
             "url": "https://www.ficedula.ch",
             "blurb": "The Italian speaking Swiss bird society, studying and protecting the birds of Ticino."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TR",
+    "name": "Turkey",
+    "flag": "🇹🇷",
+    "continent": "Europe",
+    "aka": [
+      "türkiye",
+      "turkish",
+      "turkiye"
+    ],
+    "gaps": [],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Doğa Derneği (Nature Society)",
+            "url": "https://dogadernegi.org/en/",
+            "blurb": "The national bird society and BirdLife partner, working on species protection and bird conservation across Turkey."
+          },
+          {
+            "name": "eKuşbank (eBird Turkey)",
+            "url": "https://ebird.org/region/TR",
+            "blurb": "Citizen science platform and bird sighting database integrated with global eBird network since 2015."
+          }
+        ]
+      },
+      {
+        "name": "Northeastern Turkey",
+        "groups": [
+          {
+            "name": "KuzeyDoga (Northeastern Nature)",
+            "url": "https://kuzeydoga.net/en/homepage/",
+            "blurb": "Conservation NGO based in Kars conducting bird research and community education in northeastern provinces."
           }
         ]
       }
