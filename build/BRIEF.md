@@ -10,7 +10,11 @@ directory at beakbrain.com/community.html. Output is a JSON file. Read this whol
 - Citizen science: breeding bird atlas, national bird monitoring scheme, garden bird count,
   migration counts, waterbird census, nest record scheme
 - The sightings / logging platform birders in that country actually use (Trektellen, Waarneming,
-  Ornitho.*, BirdLasser, eBird country portal, Observado, Artportalen, Tarsiger, etc.)
+  Ornitho.*, BirdLasser, eBird country portal, Observado, Artportalen, Tarsiger, etc.). If you use an
+  eBird link, use a region portal like `ebird.org/region/XX`, never an `ebird.org/alert/summary?sid=`
+  link: those "rare bird alert" URLs require a logged in session and redirect into an endless login
+  loop for a visitor, they never resolve to public content. This has actually broken two batches in
+  this project already.
 - Rare bird alert / news services and their mailing lists or Google Groups
 - Young birders clubs, women's birding groups, and other inclusive birding communities
 - **Public** Facebook groups, Discord servers, Meetup groups and WhatsApp communities for birding
@@ -71,6 +75,16 @@ directory at beakbrain.com/community.html. Output is a JSON file. Read this whol
 7. **De-duplicate.** One card per group. Never repeat a URL, in this file or across regions.
 
 8. **Be current.** It is August 2026. Check that the group still exists and the site is live now.
+
+9. **Never cite a personal profile as an organization's own link, and never include a group you
+   can't independently confirm is real.** A personal LinkedIn/Facebook/X profile URL is not an
+   organization's own presence even if its display name matches a group you're looking for. Before
+   including any group, confirm it's a real, currently active organization via its own website, an
+   organization's Facebook PAGE (not a personal profile), or a credible independent source (BirdLife's
+   partner directory, Wikipedia, a national government or press listing). If you can't verify a group
+   is real this way, leave it out and say so in `gaps` rather than guessing. This has actually
+   happened once in this project: an agent cited a LinkedIn personal profile as "Kosovo Ornithological
+   Society" for an entity that turned out not to be independently verifiable at all.
 
 ## Output format
 
