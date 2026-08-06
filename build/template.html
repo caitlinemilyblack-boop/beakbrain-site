@@ -54,13 +54,16 @@
     header.scrolled .nav .btn { background: var(--green); color: #fff; }
     header.scrolled .nav .btn:hover { background: var(--green-dark); }
 
-    .hero { position: relative; min-height: 42vh; display: flex; align-items: flex-end; overflow: hidden; background: linear-gradient(150deg, #2C5134 0%, #386641 45%, #4A7A3E 100%); }
+    .hero { position: relative; min-height: 52vh; display: flex; align-items: center; overflow: hidden; background: linear-gradient(150deg, #2C5134 0%, #386641 45%, #4A7A3E 100%); }
     .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0; transition: opacity .9s ease; }
     .hero-video.ready { opacity: 1; }
     .hero::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(30,45,30,0.30) 0%, rgba(30,45,30,0.52) 60%, rgba(22,36,24,0.82) 100%); }
-    .hero-inner { position: relative; z-index: 2; color: #fff; padding: 132px 0 40px; }
-    .hero h1 { font-size: clamp(30px, 5vw, 46px); color: #fff; }
-    .hero p { color: #EFE7D2; font-size: 18px; margin-top: 12px; max-width: 680px; }
+    /* width:100% keeps .wrap's 1080px grid: as a flex item it would otherwise shrink to
+       the widest line of text, and margin:0 auto would centre that, pushing the hero copy
+       right of the wordmark and everything below it. Horizontal padding matches .wrap. */
+    .hero-inner { position: relative; z-index: 2; width: 100%; color: #fff; padding: 128px 28px 56px; }
+    .hero h1 { font-size: clamp(34px, 5.4vw, 54px); color: #fff; letter-spacing: -0.5px; }
+    .hero p { color: #EFE7D2; font-size: clamp(17px, 2vw, 20px); margin-top: 20px; max-width: 46ch; }
     @media (prefers-reduced-motion: reduce) { .hero-video { transition: none; } }
 
     .chooser { display: flex; flex-wrap: wrap; gap: 10px; margin: 28px 0 6px; }
