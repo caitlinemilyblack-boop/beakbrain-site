@@ -14,15 +14,20 @@ commit/push have ALL completed for it. A file merely landing in `data/incoming/`
 - Netherlands (35 groups, all 12 provinces) — commit 7d240a4
 - South Africa (41 groups, all 9 provinces) — commit 7d240a4
 - Germany, Austria, Switzerland, Liechtenstein, Luxembourg, Belgium (80 groups) — commit 7d240a4
+- United Kingdom (88 groups, 72 regions incl. Channel Islands and Isle of Man as GB regions) —
+  research by Sonnet agent, 2 URL fixes during ingest (http to https, and a meta-refresh landing page
+  swapped for its real target), BirdGuides/BBRC kept despite curl 403 (Cloudflare "Just a moment"
+  bot challenge on two unambiguous, well known live UK institutions, same class of false positive as
+  the Facebook family) — commit pending in this session, see below.
 
-Total live: 185 cards, 8 countries + International, all curl-verified.
+Total live after UK merge: 273 groups across 9 countries + International.
 
 ## In progress
 
 ### Europe wave 1 — launched 2026-08-06, 4 agents in background
 | Batch | Countries | Output file | Status |
 |---|---|---|---|
-| UK | United Kingdom (GB) | `data/incoming/eu-uk.json` | launched |
+| UK | United Kingdom (GB) | `data/incoming/eu-uk.json` | done, merged and generated, commit pending |
 | France/Iberia | France, Spain, Portugal, Andorra, Gibraltar, Monaco (FR, ES, PT, AD, GI, MC) | `data/incoming/eu-france-iberia.json` | launched |
 | Nordics | Denmark, Norway, Sweden, Finland, Iceland, Faroe Islands (DK, NO, SE, FI, IS, FO) + Greenland (GL, continent North America) | `data/incoming/eu-nordics.json` | launched |
 | Ireland/Italy | Ireland, Italy, Malta, San Marino (IE, IT, MT, SM) | `data/incoming/eu-ireland-italy.json` | launched |

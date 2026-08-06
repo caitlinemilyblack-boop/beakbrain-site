@@ -989,5 +989,832 @@
         ]
       }
     ]
+  },
+  {
+    "code": "GB",
+    "name": "United Kingdom",
+    "flag": "🇬🇧",
+    "continent": "Europe",
+    "aka": [
+      "united kingdom",
+      "uk",
+      "great britain",
+      "britain",
+      "gb",
+      "england",
+      "scotland",
+      "wales",
+      "northern ireland"
+    ],
+    "gaps": [
+      "Ceredigion: no independent bird club website was found, birders there coordinate mainly through a Facebook group and WhatsApp chats rather than a public site.",
+      "Staffordshire, Warwickshire and Worcestershire: none has its own county bird club, all three share the West Midland Bird Club alongside the West Midlands, listed once under West Midlands.",
+      "Northern Ireland Ornithologists Club: its site nioc.co.uk no longer resolves and its Facebook page could not be curl verified, so it has been left out rather than listing a dead link.",
+      "Outer Hebrides: outerhebridesbirds.org.uk currently returns a Cloudflare phishing warning on its live domain, so no verified link is listed for this region.",
+      "Next Generation Birders: its blog has had no posts since 2016 and its main presence now is an X account that needs login to browse, so it has been left out as likely dormant.",
+      "Caithness: the branch's own domain, caithnessbirds.co.uk, did not respond to repeated checks, so the Scottish Ornithologists Club branch page is listed instead."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "RSPB",
+            "url": "https://www.rspb.org.uk",
+            "blurb": "The UK's BirdLife partner and largest nature charity, with reserves and local groups nationwide."
+          },
+          {
+            "name": "British Trust for Ornithology",
+            "url": "https://www.bto.org",
+            "blurb": "The UK's leading bird research body, coordinating tens of thousands of volunteer surveyors."
+          },
+          {
+            "name": "BirdTrack",
+            "url": "https://www.birdtrack.net",
+            "blurb": "The BTO, RSPB and partner sightings platform where birders across Britain and Ireland log records."
+          },
+          {
+            "name": "BTO Garden BirdWatch",
+            "url": "https://www.bto.org/gbw",
+            "blurb": "A year round citizen science count of the birds and wildlife using gardens across the UK."
+          },
+          {
+            "name": "RSPB Big Garden Birdwatch",
+            "url": "https://www.rspb.org.uk/whats-happening/big-garden-birdwatch",
+            "blurb": "The world's largest garden wildlife survey, held every January across the UK."
+          },
+          {
+            "name": "Wetland Bird Survey",
+            "url": "https://www.bto.org/our-science/projects/wetland-bird-survey",
+            "blurb": "The BTO's monthly volunteer count of non breeding waterbirds at wetlands across the UK."
+          },
+          {
+            "name": "Breeding Bird Survey",
+            "url": "https://www.bto.org/our-science/projects/breeding-bird-survey",
+            "blurb": "The main BTO, JNCC and RSPB scheme tracking population trends of common breeding birds."
+          },
+          {
+            "name": "British Birds Rarities Committee",
+            "url": "https://www.bbrc.org.uk",
+            "blurb": "The national panel that assesses and publishes records of Britain's rarest bird sightings."
+          },
+          {
+            "name": "British Ornithologists' Union",
+            "url": "https://bou.org.uk",
+            "blurb": "A learned society founded in 1858, publishing research and holding conferences on world birds."
+          },
+          {
+            "name": "British Ornithologists' Club",
+            "url": "https://boc-online.org",
+            "blurb": "A discussion club for ornithologists since 1892, holding talks and publishing a bulletin."
+          },
+          {
+            "name": "Rare Bird Alert",
+            "url": "https://www.rarebirdalert.co.uk",
+            "blurb": "A long running instant news service reporting rare bird sightings across the UK by app and pager."
+          },
+          {
+            "name": "BirdGuides",
+            "url": "https://www.birdguides.com",
+            "blurb": "A UK wide birding news and sightings service with alerts, articles and photo galleries."
+          },
+          {
+            "name": "Flock Together",
+            "url": "https://www.flocktogether.world",
+            "blurb": "A birdwatching collective for people of colour, running walks and events from a London base."
+          },
+          {
+            "name": "Black2Nature",
+            "url": "https://black2nature.org",
+            "blurb": "A charity running nature and birding camps to connect minority ethnic young people with the outdoors."
+          },
+          {
+            "name": "Wader Quest",
+            "url": "https://www.waderquest.net",
+            "blurb": "A small UK charity and community raising awareness and funds for shorebird conservation worldwide."
+          },
+          {
+            "name": "Hawk and Owl Trust",
+            "url": "https://hawkandowltrust.org",
+            "blurb": "A national charity for birds of prey, with reserves, nest cameras and a UK wide membership."
+          }
+        ]
+      },
+      {
+        "name": "Bedfordshire",
+        "groups": [
+          {
+            "name": "Bedfordshire Bird Club",
+            "url": "https://bedsbirdclub.org.uk",
+            "blurb": "The county bird club, part of the Bedfordshire Natural History Society, running walks and talks."
+          }
+        ]
+      },
+      {
+        "name": "Berkshire",
+        "groups": [
+          {
+            "name": "Berkshire Ornithological Club",
+            "url": "https://berksoc.org.uk",
+            "blurb": "The county bird club, coordinating recording and outings across Berkshire."
+          },
+          {
+            "name": "Newbury District Ornithological Club",
+            "url": "https://www.newburybirders.co.uk",
+            "blurb": "A club for birdwatchers around Newbury, founded in 1959, with walks and evening talks."
+          }
+        ]
+      },
+      {
+        "name": "Buckinghamshire",
+        "groups": [
+          {
+            "name": "Buckinghamshire Bird Club",
+            "url": "https://bucksbirdclub.co.uk",
+            "blurb": "The county's main bird club, running field trips, talks and an annual bird report."
+          }
+        ]
+      },
+      {
+        "name": "Cambridgeshire",
+        "groups": [
+          {
+            "name": "Cambridgeshire Bird Club",
+            "url": "https://www.cambridgebirdclub.org.uk",
+            "blurb": "The county bird club, gathering records and running walks across Cambridgeshire."
+          }
+        ]
+      },
+      {
+        "name": "Cheshire",
+        "groups": [
+          {
+            "name": "Cheshire and Wirral Ornithological Society",
+            "url": "https://www.cawos.org",
+            "blurb": "The county society covering Cheshire and the Wirral, with an atlas project and bird reports."
+          }
+        ]
+      },
+      {
+        "name": "Cornwall",
+        "groups": [
+          {
+            "name": "Cornwall Birds, CBWPS",
+            "url": "https://cbwps.org.uk",
+            "blurb": "Cornwall's bird society since 1931, managing reserves and reporting sightings countywide."
+          }
+        ]
+      },
+      {
+        "name": "Isles of Scilly",
+        "groups": [
+          {
+            "name": "Isles of Scilly Bird Group",
+            "url": "https://www.scilly-birding.co.uk",
+            "blurb": "A community championing birds and wildlife across the Isles of Scilly, with sightings and a review."
+          }
+        ]
+      },
+      {
+        "name": "Cumbria",
+        "groups": [
+          {
+            "name": "Cumbria Bird Club",
+            "url": "https://cumbriabirdclub.org.uk",
+            "blurb": "A countywide club for Cumbrian birders, with talks, trips and an annual report."
+          }
+        ]
+      },
+      {
+        "name": "Derbyshire",
+        "groups": [
+          {
+            "name": "Derbyshire Ornithological Society",
+            "url": "https://www.derbyshireos.org.uk",
+            "blurb": "The only society covering the whole of Derbyshire, founded in 1954, with around 550 members."
+          }
+        ]
+      },
+      {
+        "name": "Devon",
+        "groups": [
+          {
+            "name": "Devon Birds",
+            "url": "https://www.devonbirds.org",
+            "blurb": "Devon's bird society since 1928, running events and recording sightings across the county."
+          }
+        ]
+      },
+      {
+        "name": "Dorset",
+        "groups": [
+          {
+            "name": "Dorset Bird Club",
+            "url": "https://dorsetbirds.co.uk",
+            "blurb": "The county bird club, with a daily sightings page and an annual Dorset Bird Report."
+          }
+        ]
+      },
+      {
+        "name": "County Durham",
+        "groups": [
+          {
+            "name": "Durham Bird Club",
+            "url": "https://www.durhambirdclub.org.uk",
+            "blurb": "The county club for ornithology and education, active in County Durham since 1974."
+          }
+        ]
+      },
+      {
+        "name": "Essex",
+        "groups": [
+          {
+            "name": "Essex Birdwatching Society",
+            "url": "https://www.ebws.org.uk",
+            "blurb": "Essex's bird society since 1949, promoting birdwatching and conservation across the county."
+          }
+        ]
+      },
+      {
+        "name": "Gloucestershire",
+        "groups": [
+          {
+            "name": "Cheltenham Bird Club",
+            "url": "https://cheltenhambirdclub.org.uk",
+            "blurb": "A Gloucestershire club running walks and talks for birders around Cheltenham and beyond."
+          }
+        ]
+      },
+      {
+        "name": "Bristol",
+        "groups": [
+          {
+            "name": "Bristol Ornithological Club",
+            "url": "https://bristolornithologicalclub.co.uk",
+            "blurb": "A club for birders in Bristol and the former Avon area, with field trips and an annual report."
+          }
+        ]
+      },
+      {
+        "name": "Greater Manchester",
+        "groups": [
+          {
+            "name": "Manchester Birding",
+            "url": "https://www.manchesterbirding.com",
+            "blurb": "A recording and discussion hub for birders across Greater Manchester, with a forum and sightings."
+          }
+        ]
+      },
+      {
+        "name": "Hampshire",
+        "groups": [
+          {
+            "name": "Hampshire Ornithological Society",
+            "url": "https://www.hos.org.uk",
+            "blurb": "The county society covering Hampshire, Portsmouth and Southampton, with surveys and walks."
+          }
+        ]
+      },
+      {
+        "name": "Herefordshire",
+        "groups": [
+          {
+            "name": "Herefordshire Ornithological Club",
+            "url": "https://www.herefordshirebirds.org",
+            "blurb": "One of the country's oldest county clubs, founded in 1950, with field meetings and talks."
+          }
+        ]
+      },
+      {
+        "name": "Hertfordshire",
+        "groups": [
+          {
+            "name": "Herts Bird Club",
+            "url": "https://www.hnhs.org/herts-bird-club/home",
+            "blurb": "The county bird club, part of the Hertfordshire Natural History Society, with surveys and a report."
+          }
+        ]
+      },
+      {
+        "name": "Isle of Wight",
+        "groups": [
+          {
+            "name": "Isle of Wight Ornithological Group",
+            "url": "https://iwogroup.org.uk",
+            "blurb": "A community recording and publishing information on the wild birds of the Isle of Wight."
+          }
+        ]
+      },
+      {
+        "name": "Kent",
+        "groups": [
+          {
+            "name": "Kent Ornithological Society",
+            "url": "https://www.kentos.org.uk",
+            "blurb": "Kent's bird society since 1952, recording the county list and running field meetings."
+          }
+        ]
+      },
+      {
+        "name": "Lancashire",
+        "groups": [
+          {
+            "name": "Lancaster and District Birdwatching Society",
+            "url": "https://lancasterbirdwatching.org.uk",
+            "blurb": "A society covering North Lancashire and Morecambe Bay, with sightings and social meetings."
+          }
+        ]
+      },
+      {
+        "name": "Leicestershire and Rutland",
+        "groups": [
+          {
+            "name": "Leicestershire and Rutland Ornithological Society",
+            "url": "https://lros.org.uk",
+            "blurb": "The joint county society since 1941, with over 500 members recording and enjoying local birds."
+          }
+        ]
+      },
+      {
+        "name": "Lincolnshire",
+        "groups": [
+          {
+            "name": "Lincolnshire Bird Club",
+            "url": "https://www.lincsbirdclub.co.uk/site",
+            "blurb": "The county bird club since 1979, with a members forum, sightings and site guides."
+          }
+        ]
+      },
+      {
+        "name": "London",
+        "groups": [
+          {
+            "name": "London Bird Club",
+            "url": "https://www.lnhs.org.uk/index.php/sections/london-bird-club",
+            "blurb": "The ornithology section of the London Natural History Society, recording birds across the capital."
+          }
+        ]
+      },
+      {
+        "name": "Norfolk",
+        "groups": [
+          {
+            "name": "Norfolk Ornithologists Association",
+            "url": "https://noa.org.uk",
+            "blurb": "A Norfolk conservation body based at Holme Bird Observatory, with reserves and bird research."
+          }
+        ]
+      },
+      {
+        "name": "Northamptonshire",
+        "groups": [
+          {
+            "name": "Northamptonshire Bird Club",
+            "url": "https://northantsbirdclub.blogspot.com",
+            "blurb": "The county bird club, meeting monthly near Pitsford Reservoir for talks and outings."
+          }
+        ]
+      },
+      {
+        "name": "Northumberland",
+        "groups": [
+          {
+            "name": "Northumberland and Tyneside Bird Club",
+            "url": "https://www.ntbc.org.uk",
+            "blurb": "Founded in 1958, covering Northumberland, North Tyneside and Newcastle, with an annual report."
+          }
+        ]
+      },
+      {
+        "name": "Nottinghamshire",
+        "groups": [
+          {
+            "name": "Nottinghamshire Birdwatchers",
+            "url": "https://www.nottsbirders.net",
+            "blurb": "A countywide group running guided walks and trips for Nottinghamshire birders of all levels."
+          }
+        ]
+      },
+      {
+        "name": "Oxfordshire",
+        "groups": [
+          {
+            "name": "Oxford Ornithological Society",
+            "url": "https://www.oos.org.uk",
+            "blurb": "Collates bird records and runs indoor meetings and field trips across Oxfordshire."
+          }
+        ]
+      },
+      {
+        "name": "Shropshire",
+        "groups": [
+          {
+            "name": "Shropshire Ornithological Society",
+            "url": "https://www.shropshirebirds.com",
+            "blurb": "The county society, publishing the annual Shropshire Bird Report and running local meetings."
+          }
+        ]
+      },
+      {
+        "name": "Somerset",
+        "groups": [
+          {
+            "name": "Somerset Ornithological Society",
+            "url": "https://somersetbirding.org.uk",
+            "blurb": "Studying and helping to preserve Somerset's birds for over a century, with walks and a journal."
+          }
+        ]
+      },
+      {
+        "name": "Suffolk",
+        "groups": [
+          {
+            "name": "Suffolk Bird Group",
+            "url": "https://www.suffolkbirdgroup.org",
+            "blurb": "An independent birding charity for Suffolk since 1973, with field trips and a quarterly bulletin."
+          }
+        ]
+      },
+      {
+        "name": "Surrey",
+        "groups": [
+          {
+            "name": "Surrey Bird Club",
+            "url": "https://surreybirdclub.org.uk",
+            "blurb": "Founded in 1957, bringing together professional and amateur birders across the county of Surrey."
+          }
+        ]
+      },
+      {
+        "name": "Sussex",
+        "groups": [
+          {
+            "name": "Sussex Ornithological Society",
+            "url": "https://sos.org.uk",
+            "blurb": "One of Britain's largest county bird clubs, recording and conserving Sussex birds since 1962."
+          }
+        ]
+      },
+      {
+        "name": "West Midlands",
+        "groups": [
+          {
+            "name": "West Midland Bird Club",
+            "url": "https://www.westmidlandbirdclub.org.uk",
+            "blurb": "The UK's largest regional society, covering Staffordshire, Warwickshire, Worcestershire and West Midlands."
+          }
+        ]
+      },
+      {
+        "name": "Wiltshire",
+        "groups": [
+          {
+            "name": "Wiltshire Ornithological Society",
+            "url": "https://www.wiltshirebirds.co.uk",
+            "blurb": "Over 500 members studying, recording and conserving the birds of Wiltshire since 1974."
+          }
+        ]
+      },
+      {
+        "name": "Yorkshire",
+        "groups": [
+          {
+            "name": "Yorkshire Naturalists' Union",
+            "url": "https://www.ynu.org.uk",
+            "blurb": "An association of naturalists across Yorkshire, with an ornithological section and annual bird report."
+          }
+        ]
+      },
+      {
+        "name": "East Yorkshire",
+        "groups": [
+          {
+            "name": "Spurn Bird Observatory",
+            "url": "https://spurnbirdobservatory.co.uk",
+            "blurb": "An east coast bird observatory on the Spurn peninsula, running migration research since 1946."
+          }
+        ]
+      },
+      {
+        "name": "North Yorkshire",
+        "groups": [
+          {
+            "name": "Filey Bird Observatory and Group",
+            "url": "https://www.fbog.org.uk",
+            "blurb": "Records and studies the birds of Filey, and manages several local nature reserves."
+          }
+        ]
+      },
+      {
+        "name": "South Yorkshire",
+        "groups": [
+          {
+            "name": "Sheffield Bird Study Group",
+            "url": "https://www.sbsg.org",
+            "blurb": "A forum for Sheffield area birdwatchers since 1972, with a large sightings database."
+          }
+        ]
+      },
+      {
+        "name": "West Yorkshire",
+        "groups": [
+          {
+            "name": "Wharfedale Naturalists",
+            "url": "https://www.wharfedale-nats.org.uk",
+            "blurb": "Records and enjoys the wildlife of the Wharfe catchment around Ilkley in West Yorkshire."
+          }
+        ]
+      },
+      {
+        "name": "Countrywide Wales",
+        "groups": [
+          {
+            "name": "Welsh Ornithological Society",
+            "url": "https://birdsin.wales",
+            "blurb": "Promotes the study and conservation of birds across Wales, publishing the Welsh Bird Report."
+          }
+        ]
+      },
+      {
+        "name": "North Wales",
+        "groups": [
+          {
+            "name": "Cambrian Ornithological Society",
+            "url": "https://birdsin.wales/cambrian-ornithological-society/",
+            "blurb": "The county bird club for Caernarfon, Anglesey and Meirionnydd in north west Wales."
+          }
+        ]
+      },
+      {
+        "name": "Gwent",
+        "groups": [
+          {
+            "name": "Gwent Ornithological Society",
+            "url": "https://www.gwentbirds.org.uk",
+            "blurb": "One of the most active county bird clubs in Wales since 1961, with meetings and field trips."
+          }
+        ]
+      },
+      {
+        "name": "Glamorgan",
+        "groups": [
+          {
+            "name": "Glamorgan Bird Club",
+            "url": "https://glamorganbirds.org.uk",
+            "blurb": "Formed in 1989, running a full programme of walks and talks across south Wales."
+          }
+        ]
+      },
+      {
+        "name": "Carmarthenshire",
+        "groups": [
+          {
+            "name": "Carmarthenshire Bird Club",
+            "url": "https://carmarthenshirebird.club",
+            "blurb": "Promotes the study, recording and protection of wild birds across Carmarthenshire."
+          }
+        ]
+      },
+      {
+        "name": "Pembrokeshire",
+        "groups": [
+          {
+            "name": "Pembrokeshire Bird Group",
+            "url": "https://pembsavifauna.co.uk",
+            "blurb": "A Wildlife Trust bird section for Pembrokeshire, with indoor meetings and outdoor trips."
+          }
+        ]
+      },
+      {
+        "name": "Powys",
+        "groups": [
+          {
+            "name": "Brecknock Birds",
+            "url": "https://www.brecknockbirds.co.uk",
+            "blurb": "Encourages bird recording and birdwatching across the Brecknock, Breconshire area of Powys."
+          }
+        ]
+      },
+      {
+        "name": "Northern Ireland",
+        "groups": [
+          {
+            "name": "Copeland Bird Observatory",
+            "url": "https://www.thecbo.org.uk",
+            "blurb": "Northern Ireland's only bird observatory, on Old Lighthouse Island off County Down, since 1954."
+          }
+        ]
+      },
+      {
+        "name": "Countrywide Scotland",
+        "groups": [
+          {
+            "name": "Scottish Ornithologists' Club",
+            "url": "https://www.the-soc.org.uk",
+            "blurb": "Scotland's bird club, with over 3,000 members in fifteen local branches from Shetland to Galloway."
+          }
+        ]
+      },
+      {
+        "name": "Ayrshire",
+        "groups": [
+          {
+            "name": "Ayrshire Birding",
+            "url": "https://www.ayrshire-birding.org.uk",
+            "blurb": "A site for Ayrshire and Arran birders since 2000, with site guides and branch activities."
+          }
+        ]
+      },
+      {
+        "name": "Borders",
+        "groups": [
+          {
+            "name": "Scottish Ornithologists' Club, Borders branch",
+            "url": "https://www.the-soc.org.uk/pages/local-branch/borders",
+            "blurb": "The Borders branch of Scotland's bird club, publishing a Borders Bird Report each year."
+          }
+        ]
+      },
+      {
+        "name": "Caithness",
+        "groups": [
+          {
+            "name": "Scottish Ornithologists' Club, Caithness branch",
+            "url": "https://www.the-soc.org.uk/pages/local-branch/caithness",
+            "blurb": "The Caithness branch of Scotland's bird club, sharing sightings, meetings and outings."
+          }
+        ]
+      },
+      {
+        "name": "Clyde",
+        "groups": [
+          {
+            "name": "Birds in Clyde",
+            "url": "https://www.birdsinclyde.scot",
+            "blurb": "The Clyde branch of the Scottish Ornithologists Club, covering the Glasgow area and beyond."
+          }
+        ]
+      },
+      {
+        "name": "Dumfries and Galloway",
+        "groups": [
+          {
+            "name": "Scottish Ornithologists' Club, Dumfries branch",
+            "url": "https://www.the-soc.org.uk/pages/local-branch/dumfries",
+            "blurb": "The Dumfries branch of Scotland's bird club, meeting monthly from September to March."
+          }
+        ]
+      },
+      {
+        "name": "Fife",
+        "groups": [
+          {
+            "name": "Fife Bird Club",
+            "url": "https://fifebirdclub.org.uk",
+            "blurb": "Formed in 1985 to support birders across mainland Fife, with a digitised bird report archive."
+          }
+        ]
+      },
+      {
+        "name": "Highland",
+        "groups": [
+          {
+            "name": "Highland Birds",
+            "url": "https://www.highlandbirds.scot",
+            "blurb": "Home of the SOC Highland branch, with sightings and the Highland Bird Report."
+          }
+        ]
+      },
+      {
+        "name": "Lothian",
+        "groups": [
+          {
+            "name": "Scottish Ornithologists' Club, Lothian branch",
+            "url": "https://www.the-soc.org.uk/pages/local-branch/lothian",
+            "blurb": "The Lothian branch of Scotland's bird club, meeting monthly near Edinburgh since the 1960s."
+          }
+        ]
+      },
+      {
+        "name": "Moray and Nairn",
+        "groups": [
+          {
+            "name": "Birds in Moray and Nairn",
+            "url": "https://birdsinmorayandnairn.org",
+            "blurb": "Sightings, surveys and the Moray and Nairn Bird Report for this branch of Scottish birders."
+          }
+        ]
+      },
+      {
+        "name": "North East Scotland",
+        "groups": [
+          {
+            "name": "Scottish Ornithologists' Club, North East Scotland branch",
+            "url": "https://www.the-soc.org.uk/pages/local-branch/north-east-scotland",
+            "blurb": "The North East Scotland branch of the SOC, covering Aberdeen and the Grampian region."
+          }
+        ]
+      },
+      {
+        "name": "Orkney",
+        "groups": [
+          {
+            "name": "North Ronaldsay Bird Observatory",
+            "url": "https://www.nrbo.org.uk",
+            "blurb": "Studies migrant birds on Orkney's most northerly island, open all year with visitor accommodation."
+          }
+        ]
+      },
+      {
+        "name": "Shetland",
+        "groups": [
+          {
+            "name": "Shetland Bird Club",
+            "url": "https://www.nature-shetland.co.uk",
+            "blurb": "Founded in 1973 to promote, study and record the bird life of the Shetland Islands."
+          }
+        ]
+      },
+      {
+        "name": "Angus",
+        "groups": [
+          {
+            "name": "Angus and Dundee Bird Club",
+            "url": "https://www.angusbirding.com",
+            "blurb": "Founded in 1997, running a news forum, outings and indoor meetings for Angus and Dundee birders."
+          }
+        ]
+      },
+      {
+        "name": "Perth and Kinross",
+        "groups": [
+          {
+            "name": "Tay Ringing Group",
+            "url": "https://www.tayringinggroup.co.uk",
+            "blurb": "A volunteer bird ringing group promoting bird conservation through study across Tayside."
+          }
+        ]
+      },
+      {
+        "name": "Fair Isle",
+        "groups": [
+          {
+            "name": "Fair Isle Bird Observatory",
+            "url": "https://www.fairislebirdobs.co.uk",
+            "blurb": "A famous migration watchpoint and guest house on Fair Isle, reopened in 2025 after a fire."
+          }
+        ]
+      },
+      {
+        "name": "Isle of May",
+        "groups": [
+          {
+            "name": "Isle of May Bird Observatory",
+            "url": "https://isleofmaybirdobs.org",
+            "blurb": "Scotland's oldest bird observatory, founded in 1934, run by volunteer observers each season."
+          }
+        ]
+      },
+      {
+        "name": "Jersey",
+        "groups": [
+          {
+            "name": "Societe Jersiaise, Ornithology Section",
+            "url": "https://societe.je/our-sections/ornithology/",
+            "blurb": "The bird recording section of Jersey's historic learned society, with fortnightly meetings."
+          }
+        ]
+      },
+      {
+        "name": "Guernsey",
+        "groups": [
+          {
+            "name": "Guernsey Birds",
+            "url": "https://www.guernseybirds.org.gg",
+            "blurb": "The ornithology section of La Societe Guernesiaise, with sightings dating back to 1990."
+          }
+        ]
+      },
+      {
+        "name": "Alderney",
+        "groups": [
+          {
+            "name": "Alderney Bird Observatory",
+            "url": "https://www.alderneybirdobservatory.org",
+            "blurb": "The only bird observatory in the Channel Islands, studying migration and seabirds since 2016."
+          }
+        ]
+      },
+      {
+        "name": "Isle of Man",
+        "groups": [
+          {
+            "name": "Manx BirdLife",
+            "url": "https://manxbirdlife.im",
+            "blurb": "The Isle of Man's bird conservation charity, monitoring wild birds and habitats since 1997."
+          }
+        ]
+      }
+    ]
   }
 ]
