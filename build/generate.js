@@ -64,8 +64,12 @@ countries.sort((a, b) => {
   return a.name.localeCompare(b.name, 'en');
 });
 
-const intl = countries.filter((c) => c.continent === 'International');
-const rest = countries.filter((c) => c.continent !== 'International');
+// Drop countries left with zero groups after de-duplication (e.g. a genuinely thin
+// country whose research found nothing of its own, documented in its `gaps` array
+// instead) — an empty button and section would just be dead UI.
+const nonEmpty = countries.filter((c) => c.regions.some((r) => r.groups.length));
+const intl = nonEmpty.filter((c) => c.continent === 'International');
+const rest = nonEmpty.filter((c) => c.continent !== 'International');
 
 const totalGroups = countries.reduce((n, c) => n + c.regions.reduce((m, r) => m + r.groups.length, 0), 0);
 
@@ -177,12 +181,34 @@ const script = `  <script>
       });
       search.addEventListener('input', function () { country = null; render(); });
       render();
+    })();
 
-      var v = document.getElementById('heroVideo');
-      if (v) {
-        var ready = function () { v.classList.add('ready'); };
-        if (v.readyState >= 2) ready(); else v.addEventListener('loadeddata', ready);
+    // Hero and footer video fade in once loaded; skipped entirely for reduced motion.
+    (function () {
+      var vids = document.querySelectorAll('.hero-video');
+      if (!vids.length) return;
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      vids.forEach(function (v) {
+        if (reduce) { v.remove(); return; }
+        v.addEventListener('loadeddata', function () { v.classList.add('ready'); });
+        var p = v.play();
+        if (p && p.catch) { p.catch(function () {}); }
+      });
+    })();
+
+    // Nav: transparent over the hero, solid once you scroll onto the page.
+    (function () {
+      var header = document.querySelector('header');
+      var hero = document.querySelector('.hero');
+      if (!header) return;
+      function update() {
+        var threshold = hero ? hero.offsetHeight - 80 : 120;
+        if (window.scrollY > threshold) header.classList.add('scrolled');
+        else header.classList.remove('scrolled');
       }
+      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      update();
     })();
   </script>`;
 

@@ -35,16 +35,30 @@
     .wrap { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
     .wordmark { font-family: var(--display); font-weight: 700; color: var(--green); letter-spacing: -0.3px; text-decoration: none; }
 
-    header { background: rgba(242,232,207,0.94); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 30; }
-    .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
-    .nav .wordmark { font-size: 24px; }
-    .nav a.back { text-decoration: none; font-weight: 800; color: var(--green); font-size: 15px; }
+    /* Header: fixed so it overlays the hero video (transparent), solid once scrolled */
+    header { position: fixed; top: 0; left: 0; right: 0; z-index: 30; background: transparent; border-bottom: 1px solid transparent; transition: background .28s ease, border-color .28s ease, backdrop-filter .28s ease; }
+    header.scrolled { background: rgba(242, 232, 207, 0.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 92px; }
+    .nav .wordmark { font-size: 25px; color: #fff; transition: color .28s ease; }
+    header.scrolled .nav .wordmark { color: var(--green); }
+    .nav-right { display: flex; align-items: center; gap: 24px; }
+    .nav-link { color: #fff; text-decoration: none; font-family: var(--display); font-weight: 600; font-size: 15px; transition: color .28s ease; }
+    header.scrolled .nav .nav-link { color: var(--green); }
+    @media (max-width: 520px) { .nav-link { display: none; } }
+    .btn { display: inline-block; font-family: var(--body); font-weight: 800; font-size: 16px; background: var(--green); color: #fff; text-decoration: none; padding: 14px 26px; border-radius: 999px; border: none; cursor: pointer; transition: background 0.15s ease, transform 0.05s ease; }
+    .btn:hover { background: var(--green-dark); }
+    .btn:active { transform: translateY(1px); }
+    .btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+    .nav .btn { background: #fff; color: var(--green); }
+    .nav .btn:hover { background: #F4EEDD; }
+    header.scrolled .nav .btn { background: var(--green); color: #fff; }
+    header.scrolled .nav .btn:hover { background: var(--green-dark); }
 
     .hero { position: relative; min-height: 42vh; display: flex; align-items: flex-end; overflow: hidden; background: linear-gradient(150deg, #2C5134 0%, #386641 45%, #4A7A3E 100%); }
     .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0; transition: opacity .9s ease; }
     .hero-video.ready { opacity: 1; }
     .hero::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(30,45,30,0.30) 0%, rgba(30,45,30,0.52) 60%, rgba(22,36,24,0.82) 100%); }
-    .hero-inner { position: relative; z-index: 2; color: #fff; padding: 64px 0 40px; }
+    .hero-inner { position: relative; z-index: 2; color: #fff; padding: 132px 0 40px; }
     .hero h1 { font-size: clamp(30px, 5vw, 46px); color: #fff; }
     .hero p { color: #EFE7D2; font-size: 18px; margin-top: 12px; max-width: 680px; }
     @media (prefers-reduced-motion: reduce) { .hero-video { transition: none; } }
@@ -86,18 +100,24 @@
     .cta p { color: rgba(255,255,255,0.9); margin: 10px auto 20px; max-width: 560px; }
     .cta a.btn { display: inline-block; background: var(--gold); color: #2E2A25; font-family: var(--display); font-weight: 700; text-decoration: none; border-radius: 999px; padding: 13px 26px; }
 
-    footer { background: var(--green-dark); color: #EAF1E4; margin-top: 40px; }
-    .foot { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; padding: 30px 28px; }
-    .foot .wordmark { color: #fff; font-size: 22px; }
-    .foot nav a { color: #EAF1E4; text-decoration: none; margin-left: 22px; font-weight: 700; }
-    .foot .copy { width: 100%; color: rgba(234,241,228,0.7); font-size: 13px; }
+    /* Footer: larger video band with a neutral scrim so more of the video shows */
+    footer { position: relative; overflow: hidden; padding: 120px 0; color: #fff; background: #1F281F; margin-top: 40px; }
+    footer::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(15,20,15,0.10) 0%, rgba(15,20,15,0.42) 100%); }
+    .foot { position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; text-shadow: 0 1px 6px rgba(0,0,0,0.45); }
+    .foot .wordmark { color: #fff; font-size: 24px; }
+    .foot nav a { color: #EAF1E4; text-decoration: none; margin-left: 26px; font-weight: 700; }
+    .foot nav a:hover { color: #fff; }
+    .foot .copy { color: #E3ECDD; font-size: 14px; width: 100%; }
   </style>
 </head>
 <body>
   <header>
     <div class="wrap nav">
       <a class="wordmark" href="/">BeakBrain</a>
-      <a class="back" href="/">&larr; Home</a>
+      <div class="nav-right">
+        <a class="nav-link" href="/">Home</a>
+        <a class="btn" href="/#waitlist">Join the waitlist</a>
+      </div>
     </div>
   </header>
 
@@ -123,17 +143,22 @@
       <button type="button" class="choice" data-cont="Africa">Africa</button>
       </div>
       <div class="chooser countries" id="countries">
+      <button type="button" class="choice" data-country="AD" data-continent="Europe" data-search="andorra ad andorra andorran">🇦🇩 Andorra</button>
       <button type="button" class="choice" data-country="AT" data-continent="Europe" data-search="austria at austria osterreich österreich austrian">🇦🇹 Austria</button>
       <button type="button" class="choice" data-country="BE" data-continent="Europe" data-search="belgium be belgium belgie belgië belgique belgien belgian">🇧🇪 Belgium</button>
+      <button type="button" class="choice" data-country="FR" data-continent="Europe" data-search="france fr france french">🇫🇷 France</button>
       <button type="button" class="choice" data-country="DE" data-continent="Europe" data-search="germany de germany deutschland german bundesrepublik deutschland">🇩🇪 Germany</button>
+      <button type="button" class="choice" data-country="GI" data-continent="Europe" data-search="gibraltar gi gibraltar">🇬🇮 Gibraltar</button>
       <button type="button" class="choice" data-country="LI" data-continent="Europe" data-search="liechtenstein li liechtenstein">🇱🇮 Liechtenstein</button>
       <button type="button" class="choice" data-country="LU" data-continent="Europe" data-search="luxembourg lu luxembourg luxemburg letzebuerg luxembourgish">🇱🇺 Luxembourg</button>
       <button type="button" class="choice" data-country="NL" data-continent="Europe" data-search="netherlands nl">🇳🇱 Netherlands</button>
+      <button type="button" class="choice" data-country="PT" data-continent="Europe" data-search="portugal pt portugal portuguese">🇵🇹 Portugal</button>
+      <button type="button" class="choice" data-country="ES" data-continent="Europe" data-search="spain es spain espana espana spanish">🇪🇸 Spain</button>
       <button type="button" class="choice" data-country="CH" data-continent="Europe" data-search="switzerland ch switzerland schweiz suisse svizzera swiss confoederatio helvetica">🇨🇭 Switzerland</button>
       <button type="button" class="choice" data-country="GB" data-continent="Europe" data-search="united kingdom gb united kingdom uk great britain britain gb england scotland wales northern ireland">🇬🇧 United Kingdom</button>
       <button type="button" class="choice" data-country="ZA" data-continent="Africa" data-search="south africa za">🇿🇦 South Africa</button>
       </div>
-      <p class="count-note">9 countries and territories, 273 groups. Pick one to see its clubs, societies and projects.</p>
+      <p class="count-note">14 countries and territories, 344 groups. Pick one to see its clubs, societies and projects.</p>
     </div>
     <p class="empty" id="empty" hidden>No match yet. Try another spelling, or tell us who is missing and we will add them.</p>
 
@@ -180,6 +205,16 @@
         <a class="card" href="https://globalbirdfair.org" target="_blank" rel="noopener"><div class="top"><h3>Global Birdfair</h3></div><p class="blurb">The largest annual gathering of birders, clubs and conservation projects from around the world.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.reddit.com/r/birding/" target="_blank" rel="noopener"><div class="top"><h3>r/birding on Reddit</h3></div><p class="blurb">A large open forum for birders everywhere to share sightings, questions and trip reports.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.reddit.com/r/whatsthisbird/" target="_blank" rel="noopener"><div class="top"><h3>r/whatsthisbird on Reddit</h3></div><p class="blurb">Post a photo from anywhere in the world and experienced birders will help you identify it.</p><div class="arrow">Visit →</div></a>
+      </div>
+    </section>
+
+    <!-- Andorra -->
+    <section class="country" data-country="AD" data-continent="Europe" data-search="andorra ad andorra andorran">
+      <h2 class="country-title">🇦🇩 Andorra</h2>
+      <div class="region-label">Countrywide</div>
+      <div class="grid">
+        <a class="card" href="https://www.facebook.com/adn.andorra/" target="_blank" rel="noopener"><div class="top"><h3>ADN</h3></div><p class="blurb">Andorra's nature protection association, active in bird conservation and monitoring since 1986.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.ornitho.ad" target="_blank" rel="noopener"><div class="top"><h3>Ornitho.ad</h3></div><p class="blurb">The citizen science portal for logging bird and wildlife sightings across Andorra.</p><div class="arrow">Visit →</div></a>
       </div>
     </section>
 
@@ -288,6 +323,85 @@
       </div>
     </section>
 
+    <!-- France -->
+    <section class="country" data-country="FR" data-continent="Europe" data-search="france fr france french">
+      <h2 class="country-title">🇫🇷 France</h2>
+      <div class="region-label">Countrywide</div>
+      <div class="grid">
+        <a class="card" href="https://www.lpo.fr" target="_blank" rel="noopener"><div class="top"><h3>LPO</h3></div><p class="blurb">France's national bird protection league and BirdLife partner, with local delegations across the country.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.seof.fr" target="_blank" rel="noopener"><div class="top"><h3>SEOF</h3></div><p class="blurb">The scientific ornithological society, based at the Natural History Museum, publisher of the journal Alauda.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.faune-france.org" target="_blank" rel="noopener"><div class="top"><h3>Faune France</h3></div><p class="blurb">The national sightings platform, run by around fifty French associations, for logging bird observations.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Auvergne Rhone Alpes</div>
+      <div class="grid">
+        <a class="card" href="https://auvergne-rhone-alpes.lpo.fr" target="_blank" rel="noopener"><div class="top"><h3>LPO Auvergne Rhone Alpes</h3></div><p class="blurb">Regional LPO branch running outings, counts and surveys across the region.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Bourgogne Franche Comte</div>
+      <div class="grid">
+        <a class="card" href="https://www.lpo.fr/lpo-locales/lpo-bourgogne-franche-comte" target="_blank" rel="noopener"><div class="top"><h3>LPO Bourgogne Franche Comte</h3></div><p class="blurb">Regional LPO branch coordinating bird surveys, ringing and outings across the region.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Bretagne</div>
+      <div class="grid">
+        <a class="card" href="https://www.bretagne-vivante.org" target="_blank" rel="noopener"><div class="top"><h3>Bretagne Vivante</h3></div><p class="blurb">The region's main nature association, running reserves, counts and outings across Brittany.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.lpo.fr/lpo-locales/lpo-bretagne" target="_blank" rel="noopener"><div class="top"><h3>LPO Bretagne</h3></div><p class="blurb">Regional LPO branch with local groups in Rennes, Morlaix and Vannes running walks and counts.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Centre Val de Loire</div>
+      <div class="grid">
+        <a class="card" href="https://www.lpo.fr/lpo-locales/lpo-centre-val-de-loire" target="_blank" rel="noopener"><div class="top"><h3>LPO Centre Val de Loire</h3></div><p class="blurb">Regional LPO branch running bird surveys and nature outings across the region.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Corse</div>
+      <div class="grid">
+        <a class="card" href="https://lpo-portovecchio.leia.corsica" target="_blank" rel="noopener"><div class="top"><h3>LPO Jean Paul de Rocca Serra</h3></div><p class="blurb">Local LPO delegation based in Porto Vecchio, running counts and outings in southern Corsica.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Grand Est</div>
+      <div class="grid">
+        <a class="card" href="https://alsace.lpo.fr" target="_blank" rel="noopener"><div class="top"><h3>LPO Alsace</h3></div><p class="blurb">Regional LPO branch running bird surveys, ringing and nature outings across Alsace.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://champagne-ardenne.lpo.fr" target="_blank" rel="noopener"><div class="top"><h3>LPO Champagne Ardenne</h3></div><p class="blurb">Regional LPO branch running counts and outings across Champagne Ardenne.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://meurthe-et-moselle.lpo.fr" target="_blank" rel="noopener"><div class="top"><h3>LPO Meurthe et Moselle</h3></div><p class="blurb">Departmental LPO branch running bird walks and surveys in Meurthe et Moselle.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://moselle-lpo.fr" target="_blank" rel="noopener"><div class="top"><h3>LPO Moselle</h3></div><p class="blurb">Departmental LPO branch running bird walks, counts and rescue services in Moselle.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Hauts de France</div>
+      <div class="grid">
+        <a class="card" href="https://gon.fr" target="_blank" rel="noopener"><div class="top"><h3>GON</h3></div><p class="blurb">The regional naturalist group studying and protecting wildlife across Hauts de France.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.picardie-nature.org" target="_blank" rel="noopener"><div class="top"><h3>Picardie Nature</h3></div><p class="blurb">A regional nature association running bird surveys, outings and a wildlife rescue centre in Picardy.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.lpo.fr/lpo-locales/region-hauts-de-france/lpo-hauts-de-france" target="_blank" rel="noopener"><div class="top"><h3>LPO Hauts de France</h3></div><p class="blurb">Regional LPO branch running counts and outings across Hauts de France.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Ile de France</div>
+      <div class="grid">
+        <a class="card" href="https://lpo-idf.fr" target="_blank" rel="noopener"><div class="top"><h3>LPO Ile de France</h3></div><p class="blurb">Regional LPO branch, formed with the former CORIF, running walks and counts across the Paris region.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Normandie</div>
+      <div class="grid">
+        <a class="card" href="https://www.gonm.org" target="_blank" rel="noopener"><div class="top"><h3>GONm</h3></div><p class="blurb">The Normandy bird group, studying and protecting birds and managing reserves across the five departments.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://normandie.lpo.fr" target="_blank" rel="noopener"><div class="top"><h3>LPO Normandie</h3></div><p class="blurb">Regional LPO branch running bird surveys and outings across Normandy.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Nouvelle Aquitaine</div>
+      <div class="grid">
+        <a class="card" href="https://www.lpo.fr/lpo-locales/la-lpo-en-nouvelle-aquitaine/lpo-aquitaine" target="_blank" rel="noopener"><div class="top"><h3>LPO Aquitaine</h3></div><p class="blurb">Territorial LPO delegation running counts and outings across the Aquitaine area.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.limousin-lpo.fr" target="_blank" rel="noopener"><div class="top"><h3>LPO Limousin</h3></div><p class="blurb">Territorial LPO delegation running bird surveys and outings across the Limousin area.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.lpo.fr/lpo-locales/la-lpo-en-nouvelle-aquitaine/lpo-poitou-charentes" target="_blank" rel="noopener"><div class="top"><h3>LPO Poitou Charentes</h3></div><p class="blurb">Territorial LPO delegation running counts and outings across Poitou Charentes.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Occitanie</div>
+      <div class="grid">
+        <a class="card" href="https://occitanie.lpo.fr" target="_blank" rel="noopener"><div class="top"><h3>LPO Occitanie</h3></div><p class="blurb">Regional LPO branch running bird surveys and outings across Occitanie.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.natureo.org/agir/groupe-ornithologique/" target="_blank" rel="noopener"><div class="top"><h3>Nature en Occitanie</h3></div><p class="blurb">A volunteer led ornithological group monitoring raptors and other birds across the region.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://cogard.org" target="_blank" rel="noopener"><div class="top"><h3>COGard</h3></div><p class="blurb">The Gard bird study centre, running surveys, ringing and public outings in the department.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.gor66.fr" target="_blank" rel="noopener"><div class="top"><h3>GOR</h3></div><p class="blurb">The Roussillon bird group, protecting wildlife and habitats across Pyrenees Orientales.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Pays de la Loire</div>
+      <div class="grid">
+        <a class="card" href="https://paysdelaloire.lpo.fr" target="_blank" rel="noopener"><div class="top"><h3>LPO Pays de la Loire</h3></div><p class="blurb">Regional LPO coordination running counts and outings across Pays de la Loire.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.lpo-anjou.org/lpo-anjou/" target="_blank" rel="noopener"><div class="top"><h3>LPO Anjou</h3></div><p class="blurb">Departmental LPO branch running bird walks and surveys in Anjou.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://loire-atlantique.lpo.fr" target="_blank" rel="noopener"><div class="top"><h3>LPO Loire Atlantique</h3></div><p class="blurb">Departmental LPO branch running bird walks and surveys in Loire Atlantique.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://sarthe.lpo.fr" target="_blank" rel="noopener"><div class="top"><h3>LPO Sarthe</h3></div><p class="blurb">Departmental LPO branch running bird walks and surveys in the Sarthe.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://vendee.lpo.fr" target="_blank" rel="noopener"><div class="top"><h3>LPO Vendee</h3></div><p class="blurb">Departmental LPO branch running bird walks, counts and nature protection in Vendee.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Provence Alpes Cote d'Azur</div>
+      <div class="grid">
+        <a class="card" href="https://paca.lpo.fr" target="_blank" rel="noopener"><div class="top"><h3>LPO PACA</h3></div><p class="blurb">Regional LPO branch running counts, ringing and outings across Provence Alpes Cote d'Azur.</p><div class="arrow">Visit →</div></a>
+      </div>
+    </section>
+
     <!-- Germany -->
     <section class="country" data-country="DE" data-continent="Europe" data-search="germany de germany deutschland german bundesrepublik deutschland">
       <h2 class="country-title">🇩🇪 Germany</h2>
@@ -374,6 +488,15 @@
       <div class="region-label">Thuringia</div>
       <div class="grid">
         <a class="card" href="https://ornithologen-thueringen.de" target="_blank" rel="noopener"><div class="top"><h3>Verein Thuringer Ornithologen</h3></div><p class="blurb">The Thuringian ornithologists association, founded in 1990 to research and protect local birds.</p><div class="arrow">Visit →</div></a>
+      </div>
+    </section>
+
+    <!-- Gibraltar -->
+    <section class="country" data-country="GI" data-continent="Europe" data-search="gibraltar gi gibraltar">
+      <h2 class="country-title">🇬🇮 Gibraltar</h2>
+      <div class="region-label">Countrywide</div>
+      <div class="grid">
+        <a class="card" href="https://www.gonhs.org" target="_blank" rel="noopener"><div class="top"><h3>GONHS</h3></div><p class="blurb">Gibraltar's nature society, running the Jews Gate migration watch point and bird ringing at Europa Point.</p><div class="arrow">Visit →</div></a>
       </div>
     </section>
 
@@ -472,6 +595,112 @@
         <a class="card" href="https://www.haagsevogels.nl" target="_blank" rel="noopener"><div class="top"><h3>Haagse Vogels (VWG Den Haag)</h3></div><p class="blurb">The bird working group for The Hague and its dunes and coast.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.vwgalphen.nl" target="_blank" rel="noopener"><div class="top"><h3>Vogelwerkgroep Alphen</h3></div><p class="blurb">For Alphen aan den Rijn and the surrounding Green Heart.</p><div class="arrow">Visit →</div></a>
         <a class="card" href="https://www.nvwk.nl" target="_blank" rel="noopener"><div class="top"><h3>Natuur- en Vogelwacht Krimpenerwaard</h3></div><p class="blurb">Birding and nature study in the Krimpenerwaard polders.</p><div class="arrow">Visit →</div></a>
+      </div>
+    </section>
+
+    <!-- Portugal -->
+    <section class="country" data-country="PT" data-continent="Europe" data-search="portugal pt portugal portuguese">
+      <h2 class="country-title">🇵🇹 Portugal</h2>
+      <div class="region-label">Countrywide</div>
+      <div class="grid">
+        <a class="card" href="https://spea.pt" target="_blank" rel="noopener"><div class="top"><h3>SPEA</h3></div><p class="blurb">Portugal's national bird society and BirdLife partner, running reserves, counts and volunteer programmes.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://ebird.org/region/PT" target="_blank" rel="noopener"><div class="top"><h3>PortugalAves eBird</h3></div><p class="blurb">The eBird portal SPEA recommends for Portuguese birders to log their sightings.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://apaapt.wixsite.com/apaa" target="_blank" rel="noopener"><div class="top"><h3>APAA</h3></div><p class="blurb">The national bird ringers association, bringing together ringers for research and conservation.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://aves.forumeiros.com" target="_blank" rel="noopener"><div class="top"><h3>Forum Aves</h3></div><p class="blurb">A long running discussion forum for birdwatching across mainland Portugal, the Azores and Madeira.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://spea.pt/censos/censo-aves-comuns/" target="_blank" rel="noopener"><div class="top"><h3>Censo de Aves Comuns</h3></div><p class="blurb">SPEA's long term common bird census, run with volunteer counters since 2004.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://spea.pt/censos/iii-atlas-aves-nidificantes/" target="_blank" rel="noopener"><div class="top"><h3>Atlas das Aves Nidificantes</h3></div><p class="blurb">The national breeding bird atlas project, mapping nesting species with volunteer fieldworkers.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Azores</div>
+      <div class="grid">
+        <a class="card" href="https://asasdomar.org" target="_blank" rel="noopener"><div class="top"><h3>Asas do Mar</h3></div><p class="blurb">An Azorean institute studying and protecting the islands' seabirds and marine ornithology.</p><div class="arrow">Visit →</div></a>
+      </div>
+    </section>
+
+    <!-- Spain -->
+    <section class="country" data-country="ES" data-continent="Europe" data-search="spain es spain espana espana spanish">
+      <h2 class="country-title">🇪🇸 Spain</h2>
+      <div class="region-label">Countrywide</div>
+      <div class="grid">
+        <a class="card" href="https://seo.org" target="_blank" rel="noopener"><div class="top"><h3>SEO BirdLife</h3></div><p class="blurb">Spain's national bird society and BirdLife partner, with delegations and over forty local groups.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://avesforum.seo.org" target="_blank" rel="noopener"><div class="top"><h3>AvesForum</h3></div><p class="blurb">SEO's long running discussion forum for identification, sightings and trip talk among Spanish birders.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Andalucia</div>
+      <div class="grid">
+        <a class="card" href="https://seo.org/andalucia" target="_blank" rel="noopener"><div class="top"><h3>SEO Andalucia</h3></div><p class="blurb">Regional SEO delegation running counts and outings across Andalucia.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://cocn.eu" target="_blank" rel="noopener"><div class="top"><h3>COCN</h3></div><p class="blurb">The Black Stork Ornithological Collective, running the Tarifa migration watch point at the Strait of Gibraltar.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Aragon</div>
+      <div class="grid">
+        <a class="card" href="https://seo.org/aragon" target="_blank" rel="noopener"><div class="top"><h3>SEO Aragon</h3></div><p class="blurb">Regional SEO delegation running counts and outings across Aragon.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.ansararagon.com" target="_blank" rel="noopener"><div class="top"><h3>ANSAR</h3></div><p class="blurb">The Aragon naturalist association, with an ornithology group running monthly bird outings.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Asturias</div>
+      <div class="grid">
+        <a class="card" href="https://seo.org/asturias" target="_blank" rel="noopener"><div class="top"><h3>SEO Asturias</h3></div><p class="blurb">Regional SEO delegation running counts and outings across Asturias.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Canarias</div>
+      <div class="grid">
+        <a class="card" href="https://seo.org/canarias" target="_blank" rel="noopener"><div class="top"><h3>SEO Canarias</h3></div><p class="blurb">Regional SEO delegation running counts and outings across the Canary Islands.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.gohnic.org" target="_blank" rel="noopener"><div class="top"><h3>GOHNIC</h3></div><p class="blurb">The Canary Islands ornithology and natural history group, researching and publishing on local birdlife.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Cantabria</div>
+      <div class="grid">
+        <a class="card" href="https://seo.org/cantabria" target="_blank" rel="noopener"><div class="top"><h3>SEO Cantabria</h3></div><p class="blurb">Regional SEO delegation running counts and outings across Cantabria.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Castilla La Mancha</div>
+      <div class="grid">
+        <a class="card" href="https://sao.albacete.org" target="_blank" rel="noopener"><div class="top"><h3>Sociedad Albacetense de Ornitologia</h3></div><p class="blurb">The Albacete bird society, studying and defending birds and habitats in the province since 1988.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://seo-ciudadreal.blogspot.com" target="_blank" rel="noopener"><div class="top"><h3>SEO Ciudad Real</h3></div><p class="blurb">Local SEO group running bird outings and counts in Ciudad Real province.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Castilla y Leon</div>
+      <div class="grid">
+        <a class="card" href="https://seo-salamanca.blogspot.com" target="_blank" rel="noopener"><div class="top"><h3>SEO Salamanca</h3></div><p class="blurb">Local SEO group in Salamanca, running monthly bird walks and species censuses since 1997.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Cataluna</div>
+      <div class="grid">
+        <a class="card" href="https://ornitologia.org" target="_blank" rel="noopener"><div class="top"><h3>Institut Catala d'Ornitologia</h3></div><p class="blurb">The Catalan ornithological institute, coordinating bird monitoring, atlases and ringing across Catalonia.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.ornitho.cat" target="_blank" rel="noopener"><div class="top"><h3>Ornitho.cat</h3></div><p class="blurb">The citizen science portal Catalan birders use to log bird and wildlife sightings.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://seo.org/catalunya" target="_blank" rel="noopener"><div class="top"><h3>SEO Catalunya</h3></div><p class="blurb">Regional SEO delegation running counts and outings across Catalonia.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Comunidad Valenciana</div>
+      <div class="grid">
+        <a class="card" href="https://svornitologia.org" target="_blank" rel="noopener"><div class="top"><h3>Societat Valenciana d'Ornitologia</h3></div><p class="blurb">The Valencian ornithological society, working for wild birds and their habitats across the region.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://seo.org/seobirdlife-en-comunidad-valenciana" target="_blank" rel="noopener"><div class="top"><h3>SEO Comunidad Valenciana</h3></div><p class="blurb">Regional SEO delegation running counts and outings across the Valencian Community.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Extremadura</div>
+      <div class="grid">
+        <a class="card" href="https://seo.org/extremadura" target="_blank" rel="noopener"><div class="top"><h3>SEO Extremadura</h3></div><p class="blurb">Regional SEO delegation running counts and outings across Extremadura.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.adenex.org" target="_blank" rel="noopener"><div class="top"><h3>ADENEX</h3></div><p class="blurb">A pioneering Extremadura nature association with a long record of bird surveys and species protection.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Galicia</div>
+      <div class="grid">
+        <a class="card" href="https://www.sgosgo.org" target="_blank" rel="noopener"><div class="top"><h3>Sociedade Galega de Ornitoloxia</h3></div><p class="blurb">Galicia's ornithological society, running its rarities committee and bird surveys across the region.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Islas Baleares</div>
+      <div class="grid">
+        <a class="card" href="https://www.gobmenorca.com" target="_blank" rel="noopener"><div class="top"><h3>GOB Menorca</h3></div><p class="blurb">The Menorca branch of the Balearic ornithology and nature group, running outings and reserves.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">La Rioja</div>
+      <div class="grid">
+        <a class="card" href="https://gorioja.blogspot.com" target="_blank" rel="noopener"><div class="top"><h3>Grupo Ornitologico de La Rioja</h3></div><p class="blurb">A volunteer bird group running quarterly excursions across La Rioja since 1997.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Madrid</div>
+      <div class="grid">
+        <a class="card" href="https://seomonticola.org" target="_blank" rel="noopener"><div class="top"><h3>SEO Monticola</h3></div><p class="blurb">Madrid's SEO local group and ringing team, publishing the annual Madrid bird report since 1996.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Murcia</div>
+      <div class="grid">
+        <a class="card" href="https://www.asociacionanse.org" target="_blank" rel="noopener"><div class="top"><h3>ANSE</h3></div><p class="blurb">The southeast naturalists association, running bird conservation projects across the Murcia region.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Navarra</div>
+      <div class="grid">
+        <a class="card" href="https://www.gorosti.org" target="_blank" rel="noopener"><div class="top"><h3>Gorosti</h3></div><p class="blurb">Navarra's natural sciences society, with an ornithology section publishing the region's bird yearbook.</p><div class="arrow">Visit →</div></a>
+      </div>
+      <div class="region-label">Pais Vasco</div>
+      <div class="grid">
+        <a class="card" href="https://www.aranzadi.eus/ornitologia" target="_blank" rel="noopener"><div class="top"><h3>Aranzadi Ornitologia</h3></div><p class="blurb">The Aranzadi science society's ornithology department, running ringing and bird atlases across Euskadi.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://www.aranzadi-ornito.eus" target="_blank" rel="noopener"><div class="top"><h3>Ornitho Euskadi</h3></div><p class="blurb">The citizen science portal Basque birders use to log bird sightings.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://seo.org/euskadi" target="_blank" rel="noopener"><div class="top"><h3>SEO Euskadi</h3></div><p class="blurb">Regional SEO delegation running counts and outings across the Basque Country.</p><div class="arrow">Visit →</div></a>
       </div>
     </section>
 
@@ -909,7 +1138,10 @@
   </main>
 
   <footer>
-    <div class="foot">
+    <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/video/hero-poster.jpg">
+      <source src="assets/video/hero.mp4" type="video/mp4" />
+    </video>
+    <div class="wrap foot">
       <span class="wordmark">BeakBrain</span>
       <nav>
         <a href="/">Home</a>
@@ -976,12 +1208,34 @@
       });
       search.addEventListener('input', function () { country = null; render(); });
       render();
+    })();
 
-      var v = document.getElementById('heroVideo');
-      if (v) {
-        var ready = function () { v.classList.add('ready'); };
-        if (v.readyState >= 2) ready(); else v.addEventListener('loadeddata', ready);
+    // Hero and footer video fade in once loaded; skipped entirely for reduced motion.
+    (function () {
+      var vids = document.querySelectorAll('.hero-video');
+      if (!vids.length) return;
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      vids.forEach(function (v) {
+        if (reduce) { v.remove(); return; }
+        v.addEventListener('loadeddata', function () { v.classList.add('ready'); });
+        var p = v.play();
+        if (p && p.catch) { p.catch(function () {}); }
+      });
+    })();
+
+    // Nav: transparent over the hero, solid once you scroll onto the page.
+    (function () {
+      var header = document.querySelector('header');
+      var hero = document.querySelector('.hero');
+      if (!header) return;
+      function update() {
+        var threshold = hero ? hero.offsetHeight - 80 : 120;
+        if (window.scrollY > threshold) header.classList.add('scrolled');
+        else header.classList.remove('scrolled');
       }
+      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      update();
     })();
   </script>
 </body>

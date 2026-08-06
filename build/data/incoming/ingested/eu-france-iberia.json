@@ -1,0 +1,619 @@
+[
+  {
+    "code": "FR",
+    "name": "France",
+    "flag": "🇫🇷",
+    "continent": "Europe",
+    "aka": [
+      "france",
+      "french"
+    ],
+    "gaps": [
+      "Corsica: no independent islandwide bird club found, only the LPO Jean Paul de Rocca Serra delegation covering the south of the island.",
+      "CRBPO, the national ringing and bird atlas centre at the Natural History Museum, blocks automated verification (persistent 403) so its link is left out despite being a real, active body."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "LPO",
+            "url": "https://www.lpo.fr",
+            "blurb": "France's national bird protection league and BirdLife partner, with local delegations across the country."
+          },
+          {
+            "name": "SEOF",
+            "url": "https://www.seof.fr",
+            "blurb": "The scientific ornithological society, based at the Natural History Museum, publisher of the journal Alauda."
+          },
+          {
+            "name": "Faune France",
+            "url": "https://www.faune-france.org",
+            "blurb": "The national sightings platform, run by around fifty French associations, for logging bird observations."
+          }
+        ]
+      },
+      {
+        "name": "Auvergne Rhone Alpes",
+        "groups": [
+          {
+            "name": "LPO Auvergne Rhone Alpes",
+            "url": "https://auvergne-rhone-alpes.lpo.fr",
+            "blurb": "Regional LPO branch running outings, counts and surveys across the region."
+          }
+        ]
+      },
+      {
+        "name": "Bourgogne Franche Comte",
+        "groups": [
+          {
+            "name": "LPO Bourgogne Franche Comte",
+            "url": "https://www.lpo.fr/lpo-locales/lpo-bourgogne-franche-comte",
+            "blurb": "Regional LPO branch coordinating bird surveys, ringing and outings across the region."
+          }
+        ]
+      },
+      {
+        "name": "Bretagne",
+        "groups": [
+          {
+            "name": "Bretagne Vivante",
+            "url": "https://www.bretagne-vivante.org",
+            "blurb": "The region's main nature association, running reserves, counts and outings across Brittany."
+          },
+          {
+            "name": "LPO Bretagne",
+            "url": "https://www.lpo.fr/lpo-locales/lpo-bretagne",
+            "blurb": "Regional LPO branch with local groups in Rennes, Morlaix and Vannes running walks and counts."
+          }
+        ]
+      },
+      {
+        "name": "Centre Val de Loire",
+        "groups": [
+          {
+            "name": "LPO Centre Val de Loire",
+            "url": "https://www.lpo.fr/lpo-locales/lpo-centre-val-de-loire",
+            "blurb": "Regional LPO branch running bird surveys and nature outings across the region."
+          }
+        ]
+      },
+      {
+        "name": "Corse",
+        "groups": [
+          {
+            "name": "LPO Jean Paul de Rocca Serra",
+            "url": "https://lpo-portovecchio.leia.corsica",
+            "blurb": "Local LPO delegation based in Porto Vecchio, running counts and outings in southern Corsica."
+          }
+        ]
+      },
+      {
+        "name": "Grand Est",
+        "groups": [
+          {
+            "name": "LPO Alsace",
+            "url": "https://alsace.lpo.fr",
+            "blurb": "Regional LPO branch running bird surveys, ringing and nature outings across Alsace."
+          },
+          {
+            "name": "LPO Champagne Ardenne",
+            "url": "https://champagne-ardenne.lpo.fr",
+            "blurb": "Regional LPO branch running counts and outings across Champagne Ardenne."
+          },
+          {
+            "name": "LPO Meurthe et Moselle",
+            "url": "https://meurthe-et-moselle.lpo.fr",
+            "blurb": "Departmental LPO branch running bird walks and surveys in Meurthe et Moselle."
+          },
+          {
+            "name": "LPO Moselle",
+            "url": "https://moselle-lpo.fr",
+            "blurb": "Departmental LPO branch running bird walks, counts and rescue services in Moselle."
+          }
+        ]
+      },
+      {
+        "name": "Hauts de France",
+        "groups": [
+          {
+            "name": "GON",
+            "url": "https://gon.fr",
+            "blurb": "The regional naturalist group studying and protecting wildlife across Hauts de France."
+          },
+          {
+            "name": "Picardie Nature",
+            "url": "https://www.picardie-nature.org",
+            "blurb": "A regional nature association running bird surveys, outings and a wildlife rescue centre in Picardy."
+          },
+          {
+            "name": "LPO Hauts de France",
+            "url": "https://www.lpo.fr/lpo-locales/region-hauts-de-france/lpo-hauts-de-france",
+            "blurb": "Regional LPO branch running counts and outings across Hauts de France."
+          }
+        ]
+      },
+      {
+        "name": "Ile de France",
+        "groups": [
+          {
+            "name": "LPO Ile de France",
+            "url": "https://lpo-idf.fr",
+            "blurb": "Regional LPO branch, formed with the former CORIF, running walks and counts across the Paris region."
+          }
+        ]
+      },
+      {
+        "name": "Normandie",
+        "groups": [
+          {
+            "name": "GONm",
+            "url": "https://www.gonm.org",
+            "blurb": "The Normandy bird group, studying and protecting birds and managing reserves across the five departments."
+          },
+          {
+            "name": "LPO Normandie",
+            "url": "https://normandie.lpo.fr",
+            "blurb": "Regional LPO branch running bird surveys and outings across Normandy."
+          }
+        ]
+      },
+      {
+        "name": "Nouvelle Aquitaine",
+        "groups": [
+          {
+            "name": "LPO Aquitaine",
+            "url": "https://www.lpo.fr/lpo-locales/la-lpo-en-nouvelle-aquitaine/lpo-aquitaine",
+            "blurb": "Territorial LPO delegation running counts and outings across the Aquitaine area."
+          },
+          {
+            "name": "LPO Limousin",
+            "url": "https://www.limousin-lpo.fr",
+            "blurb": "Territorial LPO delegation running bird surveys and outings across the Limousin area."
+          },
+          {
+            "name": "LPO Poitou Charentes",
+            "url": "https://www.lpo.fr/lpo-locales/la-lpo-en-nouvelle-aquitaine/lpo-poitou-charentes",
+            "blurb": "Territorial LPO delegation running counts and outings across Poitou Charentes."
+          }
+        ]
+      },
+      {
+        "name": "Occitanie",
+        "groups": [
+          {
+            "name": "LPO Occitanie",
+            "url": "https://occitanie.lpo.fr",
+            "blurb": "Regional LPO branch running bird surveys and outings across Occitanie."
+          },
+          {
+            "name": "Nature en Occitanie",
+            "url": "https://www.natureo.org/agir/groupe-ornithologique/",
+            "blurb": "A volunteer led ornithological group monitoring raptors and other birds across the region."
+          },
+          {
+            "name": "COGard",
+            "url": "https://cogard.org",
+            "blurb": "The Gard bird study centre, running surveys, ringing and public outings in the department."
+          },
+          {
+            "name": "GOR",
+            "url": "https://www.gor66.fr",
+            "blurb": "The Roussillon bird group, protecting wildlife and habitats across Pyrenees Orientales."
+          }
+        ]
+      },
+      {
+        "name": "Pays de la Loire",
+        "groups": [
+          {
+            "name": "LPO Pays de la Loire",
+            "url": "https://paysdelaloire.lpo.fr",
+            "blurb": "Regional LPO coordination running counts and outings across Pays de la Loire."
+          },
+          {
+            "name": "LPO Anjou",
+            "url": "https://www.lpo-anjou.org/lpo-anjou/",
+            "blurb": "Departmental LPO branch running bird walks and surveys in Anjou."
+          },
+          {
+            "name": "LPO Loire Atlantique",
+            "url": "https://loire-atlantique.lpo.fr",
+            "blurb": "Departmental LPO branch running bird walks and surveys in Loire Atlantique."
+          },
+          {
+            "name": "LPO Sarthe",
+            "url": "https://sarthe.lpo.fr",
+            "blurb": "Departmental LPO branch running bird walks and surveys in the Sarthe."
+          },
+          {
+            "name": "LPO Vendee",
+            "url": "https://vendee.lpo.fr",
+            "blurb": "Departmental LPO branch running bird walks, counts and nature protection in Vendee."
+          }
+        ]
+      },
+      {
+        "name": "Provence Alpes Cote d'Azur",
+        "groups": [
+          {
+            "name": "LPO PACA",
+            "url": "https://paca.lpo.fr",
+            "blurb": "Regional LPO branch running counts, ringing and outings across Provence Alpes Cote d'Azur."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "ES",
+    "name": "Spain",
+    "flag": "🇪🇸",
+    "continent": "Europe",
+    "aka": [
+      "spain",
+      "espana",
+      "espana",
+      "spanish"
+    ],
+    "gaps": [
+      "GOB Mallorca, the well known Balearic conservation group, blocks automated verification on its own domain (persistent 403), so GOB Menorca is listed for the Balearics instead.",
+      "No local group with its own site was found for Ceuta or Melilla.",
+      "Coverage for Castilla y Leon and Castilla La Mancha relies on single province level SEO groups (Salamanca, Ciudad Real, Albacete) rather than a regionwide body.",
+      "Federations calling themselves ornithological, such as FOCDE, turned out to be cage bird and canary breeding federations and were excluded as out of scope."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "SEO BirdLife",
+            "url": "https://seo.org",
+            "blurb": "Spain's national bird society and BirdLife partner, with delegations and over forty local groups."
+          },
+          {
+            "name": "AvesForum",
+            "url": "https://avesforum.seo.org",
+            "blurb": "SEO's long running discussion forum for identification, sightings and trip talk among Spanish birders."
+          }
+        ]
+      },
+      {
+        "name": "Andalucia",
+        "groups": [
+          {
+            "name": "SEO Andalucia",
+            "url": "https://seo.org/andalucia",
+            "blurb": "Regional SEO delegation running counts and outings across Andalucia."
+          },
+          {
+            "name": "COCN",
+            "url": "https://cocn.eu",
+            "blurb": "The Black Stork Ornithological Collective, running the Tarifa migration watch point at the Strait of Gibraltar."
+          }
+        ]
+      },
+      {
+        "name": "Aragon",
+        "groups": [
+          {
+            "name": "SEO Aragon",
+            "url": "https://seo.org/aragon",
+            "blurb": "Regional SEO delegation running counts and outings across Aragon."
+          },
+          {
+            "name": "ANSAR",
+            "url": "https://www.ansararagon.com",
+            "blurb": "The Aragon naturalist association, with an ornithology group running monthly bird outings."
+          }
+        ]
+      },
+      {
+        "name": "Asturias",
+        "groups": [
+          {
+            "name": "SEO Asturias",
+            "url": "https://seo.org/asturias",
+            "blurb": "Regional SEO delegation running counts and outings across Asturias."
+          }
+        ]
+      },
+      {
+        "name": "Islas Baleares",
+        "groups": [
+          {
+            "name": "GOB Menorca",
+            "url": "https://www.gobmenorca.com",
+            "blurb": "The Menorca branch of the Balearic ornithology and nature group, running outings and reserves."
+          }
+        ]
+      },
+      {
+        "name": "Canarias",
+        "groups": [
+          {
+            "name": "SEO Canarias",
+            "url": "https://seo.org/canarias",
+            "blurb": "Regional SEO delegation running counts and outings across the Canary Islands."
+          },
+          {
+            "name": "GOHNIC",
+            "url": "https://www.gohnic.org",
+            "blurb": "The Canary Islands ornithology and natural history group, researching and publishing on local birdlife."
+          }
+        ]
+      },
+      {
+        "name": "Cantabria",
+        "groups": [
+          {
+            "name": "SEO Cantabria",
+            "url": "https://seo.org/cantabria",
+            "blurb": "Regional SEO delegation running counts and outings across Cantabria."
+          }
+        ]
+      },
+      {
+        "name": "Castilla y Leon",
+        "groups": [
+          {
+            "name": "SEO Salamanca",
+            "url": "https://seo-salamanca.blogspot.com",
+            "blurb": "Local SEO group in Salamanca, running monthly bird walks and species censuses since 1997."
+          }
+        ]
+      },
+      {
+        "name": "Castilla La Mancha",
+        "groups": [
+          {
+            "name": "Sociedad Albacetense de Ornitologia",
+            "url": "https://sao.albacete.org",
+            "blurb": "The Albacete bird society, studying and defending birds and habitats in the province since 1988."
+          },
+          {
+            "name": "SEO Ciudad Real",
+            "url": "https://seo-ciudadreal.blogspot.com",
+            "blurb": "Local SEO group running bird outings and counts in Ciudad Real province."
+          }
+        ]
+      },
+      {
+        "name": "Cataluna",
+        "groups": [
+          {
+            "name": "Institut Catala d'Ornitologia",
+            "url": "https://ornitologia.org",
+            "blurb": "The Catalan ornithological institute, coordinating bird monitoring, atlases and ringing across Catalonia."
+          },
+          {
+            "name": "Ornitho.cat",
+            "url": "https://www.ornitho.cat",
+            "blurb": "The citizen science portal Catalan birders use to log bird and wildlife sightings."
+          },
+          {
+            "name": "SEO Catalunya",
+            "url": "https://seo.org/catalunya",
+            "blurb": "Regional SEO delegation running counts and outings across Catalonia."
+          }
+        ]
+      },
+      {
+        "name": "Comunidad Valenciana",
+        "groups": [
+          {
+            "name": "Societat Valenciana d'Ornitologia",
+            "url": "https://svornitologia.org",
+            "blurb": "The Valencian ornithological society, working for wild birds and their habitats across the region."
+          },
+          {
+            "name": "SEO Comunidad Valenciana",
+            "url": "https://seo.org/seobirdlife-en-comunidad-valenciana",
+            "blurb": "Regional SEO delegation running counts and outings across the Valencian Community."
+          }
+        ]
+      },
+      {
+        "name": "Extremadura",
+        "groups": [
+          {
+            "name": "SEO Extremadura",
+            "url": "https://seo.org/extremadura",
+            "blurb": "Regional SEO delegation running counts and outings across Extremadura."
+          },
+          {
+            "name": "ADENEX",
+            "url": "https://www.adenex.org",
+            "blurb": "A pioneering Extremadura nature association with a long record of bird surveys and species protection."
+          }
+        ]
+      },
+      {
+        "name": "Galicia",
+        "groups": [
+          {
+            "name": "Sociedade Galega de Ornitoloxia",
+            "url": "https://www.sgosgo.org",
+            "blurb": "Galicia's ornithological society, running its rarities committee and bird surveys across the region."
+          }
+        ]
+      },
+      {
+        "name": "Madrid",
+        "groups": [
+          {
+            "name": "SEO Monticola",
+            "url": "https://seomonticola.org",
+            "blurb": "Madrid's SEO local group and ringing team, publishing the annual Madrid bird report since 1996."
+          }
+        ]
+      },
+      {
+        "name": "Murcia",
+        "groups": [
+          {
+            "name": "ANSE",
+            "url": "https://www.asociacionanse.org",
+            "blurb": "The southeast naturalists association, running bird conservation projects across the Murcia region."
+          }
+        ]
+      },
+      {
+        "name": "Navarra",
+        "groups": [
+          {
+            "name": "Gorosti",
+            "url": "https://www.gorosti.org",
+            "blurb": "Navarra's natural sciences society, with an ornithology section publishing the region's bird yearbook."
+          }
+        ]
+      },
+      {
+        "name": "Pais Vasco",
+        "groups": [
+          {
+            "name": "Aranzadi Ornitologia",
+            "url": "https://www.aranzadi.eus/ornitologia",
+            "blurb": "The Aranzadi science society's ornithology department, running ringing and bird atlases across Euskadi."
+          },
+          {
+            "name": "Ornitho Euskadi",
+            "url": "https://www.aranzadi-ornito.eus",
+            "blurb": "The citizen science portal Basque birders use to log bird sightings."
+          },
+          {
+            "name": "SEO Euskadi",
+            "url": "https://seo.org/euskadi",
+            "blurb": "Regional SEO delegation running counts and outings across the Basque Country."
+          }
+        ]
+      },
+      {
+        "name": "La Rioja",
+        "groups": [
+          {
+            "name": "Grupo Ornitologico de La Rioja",
+            "url": "https://gorioja.blogspot.com",
+            "blurb": "A volunteer bird group running quarterly excursions across La Rioja since 1997."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "PT",
+    "name": "Portugal",
+    "flag": "🇵🇹",
+    "continent": "Europe",
+    "aka": [
+      "portugal",
+      "portuguese"
+    ],
+    "gaps": [
+      "No independent bird clubs with their own sites were found for mainland districts such as Porto, Algarve or Coimbra, or for Madeira, beyond SPEA's national programmes; a Madeira group using the ornithological name turned out to be a cage bird show organiser and was excluded.",
+      "Active public Facebook groups for Portuguese birders (Aves de Portugal, Aves de Portugal Continental 2.0, Aves Silvestres de Portugal) were found but Facebook blocks automated verification, so no unverified Facebook link is included here.",
+      "The eBird Portugal portal returns a bot check page to automated requests even though it is the platform SPEA itself recommends for logging sightings, so treat that link as needing a manual sanity check."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "SPEA",
+            "url": "https://spea.pt",
+            "blurb": "Portugal's national bird society and BirdLife partner, running reserves, counts and volunteer programmes."
+          },
+          {
+            "name": "PortugalAves eBird",
+            "url": "https://ebird.org/region/PT",
+            "blurb": "The eBird portal SPEA recommends for Portuguese birders to log their sightings."
+          },
+          {
+            "name": "APAA",
+            "url": "https://apaapt.wixsite.com/apaa",
+            "blurb": "The national bird ringers association, bringing together ringers for research and conservation."
+          },
+          {
+            "name": "Forum Aves",
+            "url": "https://aves.forumeiros.com",
+            "blurb": "A long running discussion forum for birdwatching across mainland Portugal, the Azores and Madeira."
+          },
+          {
+            "name": "Censo de Aves Comuns",
+            "url": "https://spea.pt/censos/censo-aves-comuns/",
+            "blurb": "SPEA's long term common bird census, run with volunteer counters since 2004."
+          },
+          {
+            "name": "Atlas das Aves Nidificantes",
+            "url": "https://spea.pt/censos/iii-atlas-aves-nidificantes/",
+            "blurb": "The national breeding bird atlas project, mapping nesting species with volunteer fieldworkers."
+          }
+        ]
+      },
+      {
+        "name": "Azores",
+        "groups": [
+          {
+            "name": "Asas do Mar",
+            "url": "https://asasdomar.org",
+            "blurb": "An Azorean institute studying and protecting the islands' seabirds and marine ornithology."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "AD",
+    "name": "Andorra",
+    "flag": "🇦🇩",
+    "continent": "Europe",
+    "aka": [
+      "andorra",
+      "andorran"
+    ],
+    "gaps": [
+      "Andorra has no dedicated national bird society; the two entries below are the nature association and citizen science portal that cover birds."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "ADN",
+            "url": "https://www.facebook.com/adn.andorra/",
+            "blurb": "Andorra's nature protection association, active in bird conservation and monitoring since 1986."
+          },
+          {
+            "name": "Ornitho.ad",
+            "url": "https://www.ornitho.ad",
+            "blurb": "The citizen science portal for logging bird and wildlife sightings across Andorra."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "GI",
+    "name": "Gibraltar",
+    "flag": "🇬🇮",
+    "continent": "Europe",
+    "aka": [
+      "gibraltar"
+    ],
+    "gaps": [
+      "Only one active organised birding body was found for Gibraltar. Migration counts at the Strait are also covered from the Spanish side by COCN in Tarifa, already listed under Spain."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "GONHS",
+            "url": "https://www.gonhs.org",
+            "blurb": "Gibraltar's nature society, running the Jews Gate migration watch point and bird ringing at Europa Point."
+          }
+        ]
+      }
+    ]
+  }
+]

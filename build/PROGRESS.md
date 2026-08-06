@@ -18,19 +18,33 @@ commit/push have ALL completed for it. A file merely landing in `data/incoming/`
   research by Sonnet agent, 2 URL fixes during ingest (http to https, and a meta-refresh landing page
   swapped for its real target), BirdGuides/BBRC kept despite curl 403 (Cloudflare "Just a moment"
   bot challenge on two unambiguous, well known live UK institutions, same class of false positive as
-  the Facebook family) — commit pending in this session, see below.
+  the Facebook family) — commit 27d2758.
+- France (32), Spain (29), Portugal (7), Andorra (2), Gibraltar (1) — research by Sonnet agent (this
+  one survived the 2026-08-06 session-limit wall that killed the other 3 wave 1 agents, since it had
+  already written its file before the wall hit). Monaco was researched but found to have zero
+  findable birding community of its own (only France's cross-border LPO PACA/Faune PACA serve it);
+  dropped from output rather than publish an empty country page, gap note preserved in git history.
+  5 URL fixes during ingest (4 http to https, one Facebook swap for a group whose https connection
+  hung on TLS). `generate.js` now drops any country left with zero groups after de-dup, so this can't
+  silently produce a broken empty section again. Commit pending, see below.
 
-Total live after UK merge: 273 groups across 9 countries + International.
+Also this session: **community.html header, hero and footer now match beakbrain.com's main page** —
+fixed transparent-over-video header that solidifies on scroll, same nav-right/btn styling, footer
+video band replacing the old solid-color footer (it had no video at all before). Changes in
+`build/template.html` and `build/generate.js`; regenerated `community.html` reflects both this and
+the France/Iberia merge. Commit pending, see below.
+
+Total live after UK + France/Iberia merge: 344 groups across 14 countries + International.
 
 ## In progress
 
 ### Europe wave 1 — launched 2026-08-06, 4 agents in background
 | Batch | Countries | Output file | Status |
 |---|---|---|---|
-| UK | United Kingdom (GB) | `data/incoming/eu-uk.json` | done, merged and generated, commit pending |
-| France/Iberia | France, Spain, Portugal, Andorra, Gibraltar, Monaco (FR, ES, PT, AD, GI, MC) | `data/incoming/eu-france-iberia.json` | launched |
-| Nordics | Denmark, Norway, Sweden, Finland, Iceland, Faroe Islands (DK, NO, SE, FI, IS, FO) + Greenland (GL, continent North America) | `data/incoming/eu-nordics.json` | launched |
-| Ireland/Italy | Ireland, Italy, Malta, San Marino (IE, IT, MT, SM) | `data/incoming/eu-ireland-italy.json` | launched |
+| UK | United Kingdom (GB) | `data/incoming/eu-uk.json` | done — commit 27d2758 |
+| France/Iberia | France, Spain, Portugal, Andorra, Gibraltar, Monaco (FR, ES, PT, AD, GI, MC) | `data/incoming/eu-france-iberia.json` | done, merged and generated, commit pending |
+| Nordics | Denmark, Norway, Sweden, Finland, Iceland, Faroe Islands (DK, NO, SE, FI, IS, FO) + Greenland (GL, continent North America) | `data/incoming/eu-nordics.json` | failed, session limit, no file written — needs relaunch |
+| Ireland/Italy | Ireland, Italy, Malta, San Marino (IE, IT, MT, SM) | `data/incoming/eu-ireland-italy.json` | failed, session limit, no file written — needs relaunch |
 
 **If this session dies before this table is updated to "ingested":** check
 `build/data/incoming/*.json` for anything actually written before assuming any of these four batches
