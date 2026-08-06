@@ -43,8 +43,17 @@ Total live after UK + France/Iberia merge: 344 groups across 14 countries + Inte
 |---|---|---|---|
 | UK | United Kingdom (GB) | `data/incoming/eu-uk.json` | done — commit 27d2758 |
 | France/Iberia | France, Spain, Portugal, Andorra, Gibraltar, Monaco (FR, ES, PT, AD, GI, MC) | `data/incoming/eu-france-iberia.json` | done, merged and generated, commit pending |
-| Nordics | Denmark, Norway, Sweden, Finland, Iceland, Faroe Islands (DK, NO, SE, FI, IS, FO) + Greenland (GL, continent North America) | `data/incoming/eu-nordics.json` | failed, session limit, no file written — needs relaunch |
-| Ireland/Italy | Ireland, Italy, Malta, San Marino (IE, IT, MT, SM) | `data/incoming/eu-ireland-italy.json` | failed, session limit, no file written — needs relaunch |
+| Nordics | Denmark, Norway, Sweden, Finland, Iceland, Faroe Islands (DK, NO, SE, FI, IS, FO) + Greenland (GL, continent North America) | `data/incoming/eu-nordics.json` | relaunched on Haiku after session-limit failure |
+| Ireland/Italy | Ireland, Italy, Malta, San Marino (IE, IT, MT, SM) | `data/incoming/eu-ireland-italy.json` | relaunched on Haiku after session-limit failure |
+
+### Europe wave 2 (partial, started same session once quota reset) — launched 2026-08-06, Haiku
+| Batch | Countries | Output file | Status |
+|---|---|---|---|
+| Central Europe/Baltics | Poland, Czechia, Slovakia, Hungary, Estonia, Latvia, Lithuania (PL, CZ, SK, HU, EE, LV, LT) | `data/incoming/eu-central-baltics.json` | launched |
+| Balkans/Greece/Turkey | Greece, Cyprus, Turkey, Bulgaria, Romania, Serbia, Croatia, Slovenia, Bosnia, Albania, North Macedonia, Montenegro, Kosovo (GR, CY, TR, BG, RO, RS, HR, SI, BA, AL, MK, ME, XK) | `data/incoming/eu-balkans-turkey.json` | launched |
+
+Still queued from the original wave 2 plan: Russia, Ukraine, Belarus, Moldova, Georgia, Armenia,
+Azerbaijan — launch once one of the four above lands, to keep the in-flight count at 3 to 4.
 
 **If this session dies before this table is updated to "ingested":** check
 `build/data/incoming/*.json` for anything actually written before assuming any of these four batches
