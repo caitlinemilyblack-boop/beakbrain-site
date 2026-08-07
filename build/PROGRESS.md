@@ -192,7 +192,10 @@ leave it as the honest record.
 **The chooser is now one search box plus one dropdown.** The continent tabs and the row of every
 country button are gone: that row was already unwieldy at 76 countries and would be unusable at 190.
 `#cpick` is a `<select>` grouped by continent with "Choose your location" as its default option, so the
-International section is what you see before choosing anything.
+International section is what you see before choosing anything. International is also a named option
+of its own (`INT`, above the continent groups): the dropdown picks exactly one section, so choosing a
+country replaces the international list rather than sitting under it, and that option is how you get
+back to it.
 
 **Search covers regions and groups, not just country names.** Each region now renders inside a
 `<div class="region" data-search="...">` carrying its own name plus every group name in it. A

@@ -136,6 +136,7 @@
         <div class="select-row">
           <select class="cselect" id="cpick" aria-label="Pick a country or territory">
             <option value="">Choose your location</option>
+            <option value="INT">International and global</option>
           <optgroup label="Europe">
             <option value="AL">Albania</option>
             <option value="AD">Andorra</option>
@@ -3513,7 +3514,9 @@
             });
           } else {
             regions.forEach(function (r) { r.hidden = false; });
-            on = isIntl || (!!code && s.getAttribute('data-country') === code);
+            // The dropdown picks exactly one section. Nothing picked means the international
+            // one, which is also selectable by name to get back to it from a country.
+            on = code ? s.getAttribute('data-country') === code : isIntl;
           }
 
           if (on) visible++;

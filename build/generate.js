@@ -112,6 +112,12 @@ for (const c of rest) {
   if (!byContinent.has(c.continent)) byContinent.set(c.continent, []);
   byContinent.get(c.continent).push(c);
 }
+// The international section leads the list as a picker option of its own, so you can get
+// back to it after looking at a country without reaching for the browser's back button.
+const intlOpts = intl
+  .map((c) => `            <option value="${c.code}">${esc(c.name)}</option>`)
+  .join('\n');
+
 const optgroups = CONTINENT_ORDER.filter((k) => byContinent.has(k))
   .map((k) => {
     const opts = byContinent
@@ -130,6 +136,7 @@ const chooser = `    <div class="finder">
         <div class="select-row">
           <select class="cselect" id="cpick" aria-label="Pick a country or territory">
             <option value="">Choose your location</option>
+${intlOpts}
 ${optgroups}
           </select>
         </div>
@@ -170,7 +177,9 @@ const script = `  <script>
             });
           } else {
             regions.forEach(function (r) { r.hidden = false; });
-            on = isIntl || (!!code && s.getAttribute('data-country') === code);
+            // The dropdown picks exactly one section. Nothing picked means the international
+            // one, which is also selectable by name to get back to it from a country.
+            on = code ? s.getAttribute('data-country') === code : isIntl;
           }
 
           if (on) visible++;
