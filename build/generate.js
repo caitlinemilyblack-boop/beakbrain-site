@@ -129,7 +129,7 @@ const chooser = `    <div class="finder">
         </div>
         <div class="select-row">
           <select class="cselect" id="cpick" aria-label="Pick a country or territory">
-            <option value="">Worldwide groups</option>
+            <option value="">Choose your location</option>
 ${optgroups}
           </select>
         </div>

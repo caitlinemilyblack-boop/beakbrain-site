@@ -191,7 +191,7 @@ leave it as the honest record.
 
 **The chooser is now one search box plus one dropdown.** The continent tabs and the row of every
 country button are gone: that row was already unwieldy at 76 countries and would be unusable at 190.
-`#cpick` is a `<select>` grouped by continent with "Worldwide groups" as its default option, so the
+`#cpick` is a `<select>` grouped by continent with "Choose your location" as its default option, so the
 International section is what you see before choosing anything.
 
 **Search covers regions and groups, not just country names.** Each region now renders inside a
