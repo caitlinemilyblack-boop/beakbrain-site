@@ -187,11 +187,42 @@ before ingest.
 correctly found no community of its own. `generate.js` drops zero group countries, so it is harmless;
 leave it as the honest record.
 
+## Page rebuild, 2026-08-07: finder and emojis (commit d0bc997)
+
+**The chooser is now one search box plus one dropdown.** The continent tabs and the row of every
+country button are gone: that row was already unwieldy at 76 countries and would be unusable at 190.
+`#cpick` is a `<select>` grouped by continent with "Worldwide groups" as its default option, so the
+International section is what you see before choosing anything.
+
+**Search covers regions and groups, not just country names.** Each region now renders inside a
+`<div class="region" data-search="...">` carrying its own name plus every group name in it. A
+country-level match opens the whole country; a region or group match opens that country with only the
+matching regions showing. "Bavaria", "Texas" and "Brookline Bird Club" all land somewhere useful.
+**If you change the section markup, keep the `.region` wrapper** or region search silently stops working.
+
+**No emojis anywhere on the page**, at Cat's request. Flags are gone from country headings and from
+the dropdown, and the search box and default option carry no icons. The `flag` field stays in the JSON
+(the schema and `ingest.js` still expect it), `generate.js` just no longer renders it, so keep filling
+it in new batches. The only non-alphanumeric glyph left is the `→` in each card's "Visit" link.
+
+## In progress: South America, wave 1 (launched 2026-08-07)
+
+Four Haiku agents, one per batch, same rules as North America. **Nothing is done until it has been
+through ingest/verify/manual-spot-check/generate/commit.**
+
+| Batch | Countries | Status |
+|---|---|---|
+| sa-brazil | BR | running |
+| sa-andes | CO, EC, PE, BO, VE | running |
+| sa-southern | AR, CL, UY, PY | running |
+| sa-guianas | GY, SR, GF, FK | running |
+
+French Guiana is its own `GF` entry rather than part of France; the France batch never picked it up
+(checked before launching), so there is nothing to de-duplicate against `FR`. The Falkland Islands
+were added to the Guianas batch as the only other South Atlantic entry worth its own code.
+
 ## Queued (not started)
 
-- South America: Brazil, Argentina, Colombia, Peru, Ecuador, Chile, Venezuela, Bolivia, Paraguay,
-  Uruguay, Guyana, Suriname, French Guiana (check for duplicates against France's overseas territories
-  first, in case the France batch already picked one up)
 - Africa: South Africa done; Kenya, Tanzania, Uganda, Ethiopia, Ghana, Nigeria, Namibia, Botswana,
   Zambia, Zimbabwe, Morocco, Egypt, and the rest
 - Asia: India, Japan, Sri Lanka, Thailand, Philippines, Indonesia, Malaysia, Singapore, China, Taiwan,
