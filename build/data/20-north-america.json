@@ -1,5 +1,637 @@
 [
   {
+    "code": "AI",
+    "name": "Anguilla",
+    "flag": "🇦🇮",
+    "continent": "North America",
+    "aka": [
+      "anguilla"
+    ],
+    "gaps": [
+      "No dedicated local birding club or ornithological society found; birding activity primarily through informal guides and commercial tour operators."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": []
+      }
+    ]
+  },
+  {
+    "code": "AG",
+    "name": "Antigua and Barbuda",
+    "flag": "🇦🇬",
+    "continent": "North America",
+    "aka": [
+      "antigua",
+      "barbuda"
+    ],
+    "gaps": [],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Environmental Awareness Group",
+            "url": "https://eagantigua.net/",
+            "blurb": "NGO established 1989 working with birders on education, conservation and island restoration, with active Facebook community engagement."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "AW",
+    "name": "Aruba",
+    "flag": "🇦🇼",
+    "continent": "North America",
+    "aka": [
+      "aruba"
+    ],
+    "gaps": [],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Aruba Birdlife Conservation",
+            "url": "https://www.facebook.com/arubabirdlifeconservation/",
+            "blurb": "Nature conservation foundation founded 2010, protecting endemic and migratory bird species through education and habitat preservation projects."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "BS",
+    "name": "Bahamas",
+    "flag": "🇧🇸",
+    "continent": "North America",
+    "aka": [
+      "bahamas",
+      "bahamian"
+    ],
+    "gaps": [],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Bahamas National Trust",
+            "url": "https://bnt.bs/",
+            "blurb": "National park authority managing 32 protected areas and delivering birding tours, training local guides and supporting citizen science."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "BB",
+    "name": "Barbados",
+    "flag": "🇧🇧",
+    "continent": "North America",
+    "aka": [
+      "barbados"
+    ],
+    "gaps": [
+      "Barbados Wildfowl and Wetland Trust is mentioned in conservation discussions but has no independently verifiable website."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Barbados National Trust",
+            "url": "https://barbadosnationaltrust.com/",
+            "blurb": "Heritage and nature conservation organisation managing reserves and historic sites, with active birding and wetlands conservation programmes."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "BZ",
+    "name": "Belize",
+    "flag": "🇧🇿",
+    "continent": "North America",
+    "aka": [
+      "belize"
+    ],
+    "gaps": [],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Belize Audubon Society",
+            "url": "https://belizeaudubon.org/",
+            "blurb": "The national BirdLife partner managing seven protected areas and promoting bird conservation and education."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "BM",
+    "name": "Bermuda",
+    "flag": "🇧🇲",
+    "continent": "North America",
+    "aka": [
+      "bermuda"
+    ],
+    "gaps": [],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Bermuda Audubon Society",
+            "url": "https://audubon.bm/",
+            "blurb": "Volunteer led society providing bird identification resources, BirdTrax tracking website and seasonal birding information for island residents."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "VG",
+    "name": "British Virgin Islands",
+    "flag": "🇻🇬",
+    "continent": "North America",
+    "aka": [
+      "british virgin islands"
+    ],
+    "gaps": [
+      "No dedicated local birding club found; National Parks Trust manages bird habitats but does not operate as a membership birding community."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": []
+      }
+    ]
+  },
+  {
+    "code": "CA",
+    "name": "Canada",
+    "flag": "🇨🇦",
+    "continent": "North America",
+    "aka": [
+      "canada",
+      "canadian"
+    ],
+    "gaps": [
+      "Northwest Territories: No identifiable birding clubs with public websites.",
+      "Nunavut: No identifiable birding clubs with public websites."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Birds Canada",
+            "url": "https://www.birdscanada.org",
+            "blurb": "The national bird conservation organization coordinating citizen science and research programs across Canada."
+          },
+          {
+            "name": "Society of Canadian Ornithologists",
+            "url": "https://www.sco-soc.ca/",
+            "blurb": "Canada's leading professional ornithological society advancing research and conservation of wild birds."
+          },
+          {
+            "name": "Christmas Bird Count",
+            "url": "https://www.birdscanada.org/bird-science/christmas-bird-count",
+            "blurb": "North America's longest running citizen science project engaging thousands of volunteers annually."
+          },
+          {
+            "name": "Project NestWatch",
+            "url": "https://www.birdscanada.org/bird-science/project-nestwatch",
+            "blurb": "Citizen science program collecting nest monitoring data to track breeding bird health across Canada."
+          },
+          {
+            "name": "Canadian Lakes Loon Survey",
+            "url": "https://www.birdscanada.org/bird-science/canadian-lakes-loon-survey",
+            "blurb": "Volunteers monitor loon reproduction on thousands of Canadian lakes to track water quality and bird health."
+          },
+          {
+            "name": "eBird Canada",
+            "url": "https://www.birdscanada.org/bird-science/ebird-canada",
+            "blurb": "Regional sightings platform where Canadian birders log and share observations for collective bird tracking."
+          },
+          {
+            "name": "Canadian Migration Monitoring Network",
+            "url": "https://www.birdscanada.org/bird-science/canadian-migration-monitoring-network-cmmn",
+            "blurb": "Coalition of 30 bird observatories providing vital data on migration patterns and population trends."
+          }
+        ]
+      },
+      {
+        "name": "Alberta",
+        "groups": [
+          {
+            "name": "Beaverhill Bird Observatory",
+            "url": "https://www.beaverhillbirds.com/",
+            "blurb": "Research and education station near Tofield monitoring migratory birds and hosting field programs since 1984."
+          },
+          {
+            "name": "Lesser Slave Lake Bird Observatory",
+            "url": "https://www.lslbo.org/",
+            "blurb": "Boreal migration monitoring station with a 30 year history collecting banding and observation data."
+          },
+          {
+            "name": "Edmonton Nature Club",
+            "url": "https://www.edmontonnatureclub.org/",
+            "blurb": "Local naturalists organizing weekly walks, bird studies and the long running Edmonton Christmas Bird Count."
+          },
+          {
+            "name": "Nature Calgary",
+            "url": "https://naturecalgary.com/",
+            "blurb": "70 year old naturalists club with a dedicated Bird Study Group organizing monthly meetings and field trips."
+          },
+          {
+            "name": "Nature Lethbridge",
+            "url": "https://naturelethbridge.org/",
+            "blurb": "Community nature club promoting birding field trips, citizen science and monthly speaker programs."
+          }
+        ]
+      },
+      {
+        "name": "British Columbia",
+        "groups": [
+          {
+            "name": "British Columbia Field Ornithologists",
+            "url": "https://bcfo.ca/",
+            "blurb": "Chartered in 1991, the largest birding organization in BC with quarterly publications and regular field events."
+          },
+          {
+            "name": "Nature Vancouver",
+            "url": "https://naturevancouver.ca/",
+            "blurb": "Founded 1918 as the Vancouver Natural History Society, offering field trips and Birders' Night monthly programs."
+          },
+          {
+            "name": "Victoria Natural History Society",
+            "url": "https://www.vicnhs.bc.ca/",
+            "blurb": "Formed 1944 with 750 members offering monthly field trips and presentations on natural history and birds."
+          },
+          {
+            "name": "Rocky Point Bird Observatory",
+            "url": "https://rpbo.org/",
+            "blurb": "Migration monitoring station since 1994 on Vancouver Island, part of the Canadian Migration Monitoring Network."
+          },
+          {
+            "name": "Vancouver Avian Research Centre",
+            "url": "https://www.birdvancouver.com/",
+            "blurb": "Registered charity dedicated to wild bird research and conservation through banding and public education."
+          },
+          {
+            "name": "BC Nature",
+            "url": "https://bcnature.org/",
+            "blurb": "Federation of over 60 local nature clubs with 6500 members protecting BC's biodiversity and natural areas."
+          }
+        ]
+      },
+      {
+        "name": "Manitoba",
+        "groups": [
+          {
+            "name": "Nature Manitoba",
+            "url": "https://www.naturemanitoba.ca/",
+            "blurb": "Conservation organization with an active bird committee coordinating field trips and monitoring projects."
+          },
+          {
+            "name": "Delta Marsh Bird Observatory",
+            "url": "https://dmbo.ca/",
+            "blurb": "Migration monitoring station since 1992, now at Oak Hammock Marsh, and Manitoba's only CMMN member observatory."
+          }
+        ]
+      },
+      {
+        "name": "New Brunswick",
+        "groups": [
+          {
+            "name": "Nature NB",
+            "url": "https://www.naturenb.ca/",
+            "blurb": "Umbrella organization for nature clubs across the province supporting bird conservation and education."
+          },
+          {
+            "name": "Saint John Naturalists Club",
+            "url": "https://saintjohnnaturalistsclub.org/",
+            "blurb": "Established 1962, a registered charity promoting study and enjoyment of nature through field outings."
+          }
+        ]
+      },
+      {
+        "name": "Newfoundland and Labrador",
+        "groups": [
+          {
+            "name": "Nature Newfoundland and Labrador",
+            "url": "https://naturenl.ca/",
+            "blurb": "Oldest conservation charity in the province hosting monthly talks and outdoor events since 1910."
+          }
+        ]
+      },
+      {
+        "name": "Nova Scotia",
+        "groups": [
+          {
+            "name": "Cape Breton Naturalists Society",
+            "url": "https://cbnaturalists.ca/",
+            "blurb": "Cape Breton naturalists club welcoming all ages to discover and appreciate local wildlife and nature."
+          },
+          {
+            "name": "HaliFlocks",
+            "url": "https://www.haliflocks.ca/",
+            "blurb": "Growing Halifax birding community hub organizing expeditions and connecting local birders and enthusiasts."
+          }
+        ]
+      },
+      {
+        "name": "Ontario",
+        "groups": [
+          {
+            "name": "Ontario Field Ornithologists",
+            "url": "http://www.ofo.ca/",
+            "blurb": "Provincial ornithological society with over 1000 members organizing field trips and publishing Ontario Birds journal."
+          },
+          {
+            "name": "Ottawa Field Naturalists Club",
+            "url": "https://ofnc.ca/",
+            "blurb": "Canada's oldest field naturalist club founded 1863 hosting birding walks and Christmas Bird Counts since 1920."
+          },
+          {
+            "name": "Toronto Ornithological Club",
+            "url": "https://www.torontobirding.ca/",
+            "blurb": "Formed 1934, non profit with monthly meetings and field trips exploring Toronto's diverse birding communities."
+          },
+          {
+            "name": "Toronto Field Naturalists",
+            "url": "https://torontofieldnaturalists.org/",
+            "blurb": "Volunteer run non profit founded 1923 offering over 100 guided nature walks and managing 170 hectares of reserves."
+          },
+          {
+            "name": "Hamilton Naturalists Club",
+            "url": "https://hamiltonnature.org/",
+            "blurb": "Founded 1919 as the Bird Protection Society, 400 member club coordinating monthly meetings and field trips."
+          },
+          {
+            "name": "Kingston Field Naturalists",
+            "url": "https://kingstonfieldnaturalists.org/",
+            "blurb": "Active since 1949, nature club coordinating field trips and conservation efforts with focus on birding."
+          },
+          {
+            "name": "Peterborough Field Naturalists",
+            "url": "https://peterboroughnature.org/",
+            "blurb": "Registered charity founded 1940, 400 members offering monthly programs, field trips and youth nature programs."
+          },
+          {
+            "name": "Ontario Nature",
+            "url": "https://ontarionature.org/",
+            "blurb": "Umbrella organization founded 1931 representing 150 member groups and 9500 members across Ontario."
+          }
+        ]
+      },
+      {
+        "name": "Prince Edward Island",
+        "groups": [
+          {
+            "name": "Nature PEI",
+            "url": "https://naturepei.ca/",
+            "blurb": "Island nature organization maintaining 50 years of bird records and coordinating community birding programs."
+          }
+        ]
+      },
+      {
+        "name": "Quebec",
+        "groups": [
+          {
+            "name": "Bird Protection Quebec",
+            "url": "https://birdprotectionquebec.org/",
+            "blurb": "Oldest bird conservation charity in Canada founded 1917, managing reserves and offering field trips and courses."
+          },
+          {
+            "name": "Regroupement QuébecOiseaux",
+            "url": "https://www.quebecoiseaux.org/",
+            "blurb": "Umbrella organization bringing together 30 bird clubs and 5000 members across Quebec since 1981."
+          },
+          {
+            "name": "Club des ornithologues de Québec",
+            "url": "https://www.coq.qc.ca/",
+            "blurb": "Founded 1955, established ornithology club in Quebec City offering ID courses and seasonal bird activities."
+          },
+          {
+            "name": "Club des ornithologues de Châteauguay",
+            "url": "https://clubcoc.ca/",
+            "blurb": "Non profit founded 1992 dedicated to studying, observing and protecting birds in the Châteauguay region."
+          },
+          {
+            "name": "Club des ornithologues de l'Outaouais",
+            "url": "https://www.coo.qc.ca/",
+            "blurb": "Active since 1978 with nearly 400 members studying birds across the Outaouais region and La Vérendrye Wildlife Park."
+          }
+        ]
+      },
+      {
+        "name": "Saskatchewan",
+        "groups": [
+          {
+            "name": "Nature Saskatchewan",
+            "url": "https://www.naturesask.ca/",
+            "blurb": "Conservation organization founded 1949 with 600 members supporting research and bird education statewide."
+          },
+          {
+            "name": "Saskatoon Nature Society",
+            "url": "https://saskatoonnature.org/",
+            "blurb": "Registered charity founded 1955 organizing birding field trips, ID classes and natural history programs."
+          }
+        ]
+      },
+      {
+        "name": "Yukon",
+        "groups": [
+          {
+            "name": "Yukon Bird Club",
+            "url": "https://yukonbirds.ca/",
+            "blurb": "Charitable organization founded 1993 coordinating Christmas Bird Counts and field trips across Yukon."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "KY",
+    "name": "Cayman Islands",
+    "flag": "🇰🇾",
+    "continent": "North America",
+    "aka": [
+      "cayman islands"
+    ],
+    "gaps": [],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "National Trust for the Cayman Islands",
+            "url": "https://nationaltrust.org.ky/",
+            "blurb": "Biodiversity and heritage conservation charity established 1987, managing sanctuaries and operating Tuesday morning Focus on Birding walks."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "CR",
+    "name": "Costa Rica",
+    "flag": "🇨🇷",
+    "continent": "North America",
+    "aka": [
+      "costa rica"
+    ],
+    "gaps": [],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Asociación Ornitológica de Costa Rica",
+            "url": "https://www.aocr.app/",
+            "blurb": "The national ornithological society promoting research, conservation and birding education throughout Costa Rica."
+          },
+          {
+            "name": "Unión de Ornitólogos de Costa Rica",
+            "url": "https://www.facebook.com/unionornitologoscr/",
+            "blurb": "Ornithological research and conservation organization with field work across the country."
+          },
+          {
+            "name": "The Birding Club of Costa Rica",
+            "url": "https://birdingclubcr.org/",
+            "blurb": "Private club conducting bird observation trips throughout Costa Rica for over twenty years."
+          },
+          {
+            "name": "Costa Rica Birding",
+            "url": "https://www.facebook.com/groups/costaricabirding",
+            "blurb": "Public Facebook birding community for observers sharing sightings and birding information."
+          }
+        ]
+      },
+      {
+        "name": "South Pacific",
+        "groups": [
+          {
+            "name": "San Vito Bird Club",
+            "url": "https://sanvitobirdclub.org/",
+            "blurb": "Southern Costa Rica club offering free weekly bird walks and promoting local endemic species awareness."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "CU",
+    "name": "Cuba",
+    "flag": "🇨🇺",
+    "continent": "North America",
+    "aka": [
+      "cuba",
+      "cuban"
+    ],
+    "gaps": [
+      "Sociedad Cubana de Zoología has an Ornithology Section and publishes the Anuario Ornitológico de Cuba but has no direct website."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": []
+      }
+    ]
+  },
+  {
+    "code": "CW",
+    "name": "Curaçao",
+    "flag": "🇨🇼",
+    "continent": "North America",
+    "aka": [
+      "curacao"
+    ],
+    "gaps": [],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Bird Watching Curaçao",
+            "url": "https://birdwatchingcuracao.com/",
+            "blurb": "Volunteer project recording island sightings on eBird, running birding hikes and school education programmes."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "DM",
+    "name": "Dominica",
+    "flag": "🇩🇲",
+    "continent": "North America",
+    "aka": [
+      "dominica"
+    ],
+    "gaps": [
+      "No dedicated local birding club or ornithological society found with independent operations; conservation work led by international partners like Rare Species Conservatory Foundation."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": []
+      }
+    ]
+  },
+  {
+    "code": "DO",
+    "name": "Dominican Republic",
+    "flag": "🇩🇴",
+    "continent": "North America",
+    "aka": [
+      "dominican republic"
+    ],
+    "gaps": [
+      "Sociedad Ornitológica de la Hispaniola operates across both Haiti and Dominican Republic but has no independently verifiable website."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Grupo Jaragua",
+            "url": "https://www.grupojaragua.org.do/",
+            "blurb": "Biodiversity conservation organisation founded 1987, managing the Jaragua, Bahoruco and Enriquillo Biosphere Reserve with research and community programmes."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "SV",
+    "name": "El Salvador",
+    "flag": "🇸🇻",
+    "continent": "North America",
+    "aka": [
+      "el salvador"
+    ],
+    "gaps": [],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "SalvaNATURA",
+            "url": "https://www.facebook.com/salvanatura/",
+            "blurb": "The BirdLife partner and leading conservation organization managing El Impossible National Park."
+          }
+        ]
+      }
+    ]
+  },
+  {
     "code": "GL",
     "name": "Greenland",
     "flag": "🇬🇱",
@@ -15,6 +647,1129 @@
       {
         "name": "Countrywide",
         "groups": []
+      }
+    ]
+  },
+  {
+    "code": "GD",
+    "name": "Grenada",
+    "flag": "🇬🇩",
+    "continent": "North America",
+    "aka": [
+      "grenada"
+    ],
+    "gaps": [],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Gaea Conservation Network",
+            "url": "https://www.facebook.com/gaeaconservation/",
+            "blurb": "Conservation organisation running the Grenada Birding Club, organising field trips, workshops and citizen science monitoring across the island."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "GT",
+    "name": "Guatemala",
+    "flag": "🇬🇹",
+    "continent": "North America",
+    "aka": [
+      "guatemala"
+    ],
+    "gaps": [],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Sociedad Guatemalteca de Ornitología",
+            "url": "https://www.avesdeguatemala.org/",
+            "blurb": "The national ornithological society dedicated to the study and protection of Guatemala's bird fauna."
+          },
+          {
+            "name": "FUNDAECO",
+            "url": "https://fundaeco.org.gt/",
+            "blurb": "Foundation for ecodevelopment and conservation, running the longest bird banding project in Latin America."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "HT",
+    "name": "Haiti",
+    "flag": "🇭🇹",
+    "continent": "North America",
+    "aka": [
+      "haiti",
+      "haitian"
+    ],
+    "gaps": [
+      "Audubon Society of Haiti and Sociedad Ornitológica de la Hispaniola both operate in Haiti but lack easily accessible websites; the latter primarily coordinates from Dominican Republic."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": []
+      }
+    ]
+  },
+  {
+    "code": "HN",
+    "name": "Honduras",
+    "flag": "🇭🇳",
+    "continent": "North America",
+    "aka": [
+      "honduras"
+    ],
+    "gaps": [],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Asociación Hondureña de Ornitología",
+            "url": "https://aveshonduras.org/",
+            "blurb": "The national bird conservation organization promoting scientific research, birding tourism and environmental education."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "JM",
+    "name": "Jamaica",
+    "flag": "🇯🇲",
+    "continent": "North America",
+    "aka": [
+      "jamaica",
+      "jamaican"
+    ],
+    "gaps": [],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "BirdLife Jamaica",
+            "url": "https://www.birdlifejamaica.com/",
+            "blurb": "The BirdLife International partner and national bird society, formerly the Gosse Bird Club, promoting bird conservation through fieldwork and education."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "MX",
+    "name": "Mexico",
+    "flag": "🇲🇽",
+    "continent": "North America",
+    "aka": [
+      "mexico",
+      "mexican",
+      "mejico"
+    ],
+    "gaps": [
+      "Dzibabán club in Quintana Roo is login gated; some northern states underrepresented"
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "CIPAMEX",
+            "url": "https://cipamex.org/",
+            "blurb": "The national ornithological society and BirdLife partner, dedicated to study and conservation of Mexican birds."
+          },
+          {
+            "name": "Pronatura México",
+            "url": "https://pronatura.org.mx/",
+            "blurb": "The largest bird conservation organization, with regional chapters and national programs across Mexico."
+          },
+          {
+            "name": "aVerAves",
+            "url": "https://avesmx.conabio.gob.mx/",
+            "blurb": "Mexico's citizen science bird observation portal, integrated with eBird for national bird monitoring."
+          }
+        ]
+      },
+      {
+        "name": "Baja California",
+        "groups": [
+          {
+            "name": "Pronatura Noroeste",
+            "url": "https://pronatura-noroeste.org/",
+            "blurb": "Regional conservation organization for northwestern Mexico, managing bird surveys and shorebird programs."
+          }
+        ]
+      },
+      {
+        "name": "Chiapas",
+        "groups": [
+          {
+            "name": "Pronatura Sur",
+            "url": "https://pronatura-sur.org/",
+            "blurb": "Regional conservation office for Chiapas, focused on tropical forest bird conservation."
+          },
+          {
+            "name": "Chiapas Birding Club",
+            "url": "https://www.facebook.com/chiapasbirdingclub/",
+            "blurb": "San Cristóbal based club organizing field trips and bird observation activities in Chiapas."
+          }
+        ]
+      },
+      {
+        "name": "Guanajuato",
+        "groups": [
+          {
+            "name": "ROACOMX",
+            "url": "https://roacomx.org/",
+            "blurb": "Red de Observadores de Aves del Centro Occidente de México, birding network coordinating central west Mexico observers."
+          }
+        ]
+      },
+      {
+        "name": "Jalisco",
+        "groups": [
+          {
+            "name": "Lake Chapala Birders",
+            "url": "https://chapalabirders.org/",
+            "blurb": "Ajijic based club conducting free bird walks and counts around Lake Chapala and surrounding areas."
+          }
+        ]
+      },
+      {
+        "name": "Oaxaca",
+        "groups": [
+          {
+            "name": "Red de Observadores de Aves de Oaxaca",
+            "url": "https://www.facebook.com/RedDeObservadoresDeAvesDeOaxaca/",
+            "blurb": "Oaxaca bird observer network promoting avian observation and appreciation across the biodiversity rich state."
+          }
+        ]
+      },
+      {
+        "name": "Veracruz",
+        "groups": [
+          {
+            "name": "Pronatura Veracruz",
+            "url": "https://www.facebook.com/PronaturaVeracruz/",
+            "blurb": "Regional conservation office managing raptor monitoring, hawk counts and bird conservation in Veracruz."
+          },
+          {
+            "name": "COAX",
+            "url": "https://www.facebook.com/COAvesXalapa",
+            "blurb": "Xalapa bird observer club conducting Christmas bird counts and regular field outings in Veracruz."
+          }
+        ]
+      },
+      {
+        "name": "Yucatan Peninsula",
+        "groups": [
+          {
+            "name": "Pronatura Península de Yucatán",
+            "url": "https://pronatura-ppy.org.mx/",
+            "blurb": "Regional conservation organization for the Yucatan Peninsula, managing protected areas and bird monitoring."
+          }
+        ]
+      },
+      {
+        "name": "Northeast",
+        "groups": [
+          {
+            "name": "Pronatura Noreste",
+            "url": "https://pronaturanoreste.org/",
+            "blurb": "Regional conservation organization for northeastern Mexico, coordinating research and conservation activities."
+          }
+        ]
+      },
+      {
+        "name": "Sonora",
+        "groups": [
+          {
+            "name": "Observadores de Aves del Pitic",
+            "url": "https://www.facebook.com/AvesHMOSO",
+            "blurb": "Hermosillo based bird observer group conducting field trips and community birding activities."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "MS",
+    "name": "Montserrat",
+    "flag": "🇲🇸",
+    "continent": "North America",
+    "aka": [
+      "montserrat"
+    ],
+    "gaps": [],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Montserrat National Trust",
+            "url": "https://montserratnationaltrust.ms/",
+            "blurb": "Environmental and heritage conservation organisation managing protected areas and coordinates guided walks for birders seeking endemic Montserrat Oriole."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "NI",
+    "name": "Nicaragua",
+    "flag": "🇳🇮",
+    "continent": "North America",
+    "aka": [
+      "nicaragua"
+    ],
+    "gaps": [
+      "Limited formal birding club infrastructure; most activity through university researchers and conservation projects"
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Fundación Cocibolca",
+            "url": "https://x.com/fcocibolca",
+            "blurb": "Environmental conservation foundation with twenty years of bird monitoring work in protected areas."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "PA",
+    "name": "Panama",
+    "flag": "🇵🇦",
+    "continent": "North America",
+    "aka": [
+      "panama"
+    ],
+    "gaps": [],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Panama Audubon Society",
+            "url": "https://audubonpanama.org/",
+            "blurb": "The BirdLife partner promoting bird appreciation and conservation through education and research for fifty years."
+          },
+          {
+            "name": "Fundación Avifauna Eugene Eisenmann",
+            "url": "https://www.avifauna.org.pa/",
+            "blurb": "Foundation for bird conservation operating the Panama Rainforest Discovery Center for bird research and education."
+          },
+          {
+            "name": "ANCON",
+            "url": "https://ancon.org/en/",
+            "blurb": "Asociación Nacional para la Conservación de la Naturaleza, managing the Punta Patiño Natural Reserve and conservation projects."
+          },
+          {
+            "name": "Panama Wildlife Conservation",
+            "url": "https://panamawildlife.org/",
+            "blurb": "Nonprofit scientific organisation running field research and community conservation projects for endangered species."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "PR",
+    "name": "Puerto Rico",
+    "flag": "🇵🇷",
+    "continent": "North America",
+    "aka": [
+      "puerto rico",
+      "puertorriquena"
+    ],
+    "gaps": [],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Sociedad Ornitológica Puertorriqueña",
+            "url": "https://www.sopipr.org/",
+            "blurb": "BirdLife partner founded 1995, dedicated to bird conservation with public workshops, field walks and the Cambalache Forest Ornithological Center."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "KN",
+    "name": "Saint Kitts and Nevis",
+    "flag": "🇰🇳",
+    "continent": "North America",
+    "aka": [
+      "saint kitts",
+      "nevis"
+    ],
+    "gaps": [],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Birds of St. Kitts and Nevis",
+            "url": "https://birdsofstkittsnevis.com/",
+            "blurb": "Community birding resource by amateur birders documenting local species and trip reports, facilitating shared sightings and field guide information."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "LC",
+    "name": "Saint Lucia",
+    "flag": "🇱🇨",
+    "continent": "North America",
+    "aka": [
+      "saint lucia"
+    ],
+    "gaps": [
+      "No independent local birding club or conservation society found; birding activity primarily through commercial tour operators."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": []
+      }
+    ]
+  },
+  {
+    "code": "VC",
+    "name": "Saint Vincent and the Grenadines",
+    "flag": "🇻🇨",
+    "continent": "North America",
+    "aka": [
+      "saint vincent",
+      "grenadines"
+    ],
+    "gaps": [
+      "Saint Vincent National Trust manages heritage but no dedicated birding club or ornithological society found with public membership."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": []
+      }
+    ]
+  },
+  {
+    "code": "TT",
+    "name": "Trinidad and Tobago",
+    "flag": "🇹🇹",
+    "continent": "North America",
+    "aka": [
+      "trinidad",
+      "tobago"
+    ],
+    "gaps": [],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Trinidad and Tobago Field Naturalists Club",
+            "url": "https://ttfnc.org/",
+            "blurb": "Natural history society founded in 1891, with 250 members organising monthly field excursions and publishing the journal Living World."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TC",
+    "name": "Turks and Caicos Islands",
+    "flag": "🇹🇨",
+    "continent": "North America",
+    "aka": [
+      "turks and caicos"
+    ],
+    "gaps": [],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Turks and Caicos National Trust",
+            "url": "https://turksandcaicosnationaltrust.com/",
+            "blurb": "Heritage conservation body established 1992, managing national parks and protecting natural resources including bird habitats and sanctuaries."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "US",
+    "name": "United States",
+    "flag": "🇺🇸",
+    "continent": "North America",
+    "aka": [
+      "united states",
+      "usa",
+      "us",
+      "america"
+    ],
+    "gaps": [],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "American Birding Association",
+            "url": "https://www.aba.org/",
+            "blurb": "National recreational birding organization with publications, conferences and community networks."
+          },
+          {
+            "name": "National Audubon Society",
+            "url": "https://www.audubon.org/",
+            "blurb": "The national bird conservation organization with local chapters across the country running field trips and counts."
+          },
+          {
+            "name": "American Bird Conservancy",
+            "url": "https://abcbirds.org/",
+            "blurb": "National nonprofit focused on wild bird conservation across the Americas with research and field programs."
+          },
+          {
+            "name": "American Ornithological Society",
+            "url": "https://americanornithology.org/",
+            "blurb": "Scientific society advancing ornithological research and conservation with scholarly publications and annual meetings."
+          },
+          {
+            "name": "Cornell Lab of Ornithology",
+            "url": "https://www.birds.cornell.edu/",
+            "blurb": "Research and education hub at Cornell University running major citizen science programs and bird education initiatives."
+          },
+          {
+            "name": "Hawk Migration Association of North America",
+            "url": "https://www.hawkmigration.org/",
+            "blurb": "Organization dedicated to raptor research and conservation through citizen science hawk monitoring and data."
+          },
+          {
+            "name": "North American Bluebird Society",
+            "url": "https://www.nabluebirdsociety.org/",
+            "blurb": "Conservation and research organization promoting bluebird recovery through nestbox programs and education."
+          },
+          {
+            "name": "Project FeederWatch",
+            "url": "https://feederwatch.org/",
+            "blurb": "Cornell and Bird Studies Canada winter bird monitoring program tracking backyard feeder birds November through April."
+          },
+          {
+            "name": "NestWatch",
+            "url": "https://nestwatch.org/",
+            "blurb": "Cornell monitoring program tracking breeding bird nesting success and reproductive biology across the United States."
+          },
+          {
+            "name": "Christmas Bird Count",
+            "url": "https://www.audubon.org/community-science/christmas-bird-count",
+            "blurb": "Annual Audubon December to January community science census of birds across 2,500 count circles for 126 years."
+          },
+          {
+            "name": "Great Backyard Bird Count",
+            "url": "https://www.birdcount.org/",
+            "blurb": "Global bird count in February organized by Cornell Lab, Audubon and Birds Canada with millions of participants."
+          },
+          {
+            "name": "HawkCount",
+            "url": "https://hawkcount.org/",
+            "blurb": "Hawk Migration Association database centralizing raptor migration data from over 200 hawkwatch sites."
+          },
+          {
+            "name": "Breeding Bird Survey",
+            "url": "https://www.pwrc.usgs.gov/bbs/",
+            "blurb": "USGS roadside survey tracking status and trends of North American breeding birds since 1966."
+          }
+        ]
+      },
+      {
+        "name": "Alabama",
+        "groups": [
+          {
+            "name": "Alabama Ornithological Society",
+            "url": "https://www.aosbirds.org/",
+            "blurb": "Founded 1952, running field trips and promoting bird knowledge across Alabama and northwest Florida."
+          }
+        ]
+      },
+      {
+        "name": "Alaska",
+        "groups": [
+          {
+            "name": "Mat-Su Birders",
+            "url": "https://www.matsubirders.org/",
+            "blurb": "Birding club in southcentral Alaska organising field trips and bird monitoring in the Matanuska Susitna Valley."
+          }
+        ]
+      },
+      {
+        "name": "Arizona",
+        "groups": [
+          {
+            "name": "Arizona Field Ornithologists",
+            "url": "https://www.azfo.org/",
+            "blurb": "Statewide ornithological society supporting study and protection of Arizona's birdlife through research and education."
+          },
+          {
+            "name": "Tucson Audubon Society",
+            "url": "https://www.tucsonaudubon.org/",
+            "blurb": "Regional Arizona chapter focused on Sonoran Desert bird conservation and field trips in southern Arizona."
+          }
+        ]
+      },
+      {
+        "name": "Arkansas",
+        "groups": [
+          {
+            "name": "Audubon Society of Central Arkansas",
+            "url": "https://www.ascabird.org/",
+            "blurb": "Central Arkansas chapter running field trips, counts and conservation programs in the Little Rock area."
+          }
+        ]
+      },
+      {
+        "name": "California",
+        "groups": [
+          {
+            "name": "Monterey Audubon Society",
+            "url": "https://www.montereyaudubon.org/",
+            "blurb": "Monterey Peninsula chapter conducting bird surveys and field trips on California's central coast."
+          },
+          {
+            "name": "Santa Barbara Audubon Society",
+            "url": "https://santabarbaraaudubon.org/",
+            "blurb": "Central Coast chapter coordinating birding walks, education and habitat restoration in Santa Barbara County."
+          }
+        ]
+      },
+      {
+        "name": "Colorado",
+        "groups": [
+          {
+            "name": "Colorado Field Ornithologists",
+            "url": "https://www.cfo-link.org",
+            "blurb": "Statewide ornithological society organizing field trips, counts and bird research across Colorado."
+          }
+        ]
+      },
+      {
+        "name": "Connecticut",
+        "groups": [
+          {
+            "name": "Connecticut Ornithological Association",
+            "url": "https://www.ctbirding.org/",
+            "blurb": "Statewide birding organization running field trips, Christmas counts and bird conservation efforts."
+          }
+        ]
+      },
+      {
+        "name": "Delaware",
+        "groups": [
+          {
+            "name": "Delmarva Ornithological Society",
+            "url": "https://www.dosbirds.org",
+            "blurb": "Delaware Valley birding society for Delaware, Maryland and Pennsylvania running field trips and bird surveys."
+          }
+        ]
+      },
+      {
+        "name": "District of Columbia",
+        "groups": [
+          {
+            "name": "DC Bird Alliance",
+            "url": "https://dcbirdalliance.org/",
+            "blurb": "Washington DC birding community organizing field trips, walks and conservation in the Nation's Capital."
+          }
+        ]
+      },
+      {
+        "name": "Florida",
+        "groups": [
+          {
+            "name": "Florida Ornithological Society",
+            "url": "https://fosbirds.org/",
+            "blurb": "Statewide ornithological society running field trips and bird surveys across Florida since 1927."
+          },
+          {
+            "name": "Tropical Audubon Society",
+            "url": "https://www.tropicalaudubon.org/",
+            "blurb": "South Florida chapter based in Miami conducting bird walks and conservation in the tropical region."
+          }
+        ]
+      },
+      {
+        "name": "Georgia",
+        "groups": [
+          {
+            "name": "Georgia Ornithological Society",
+            "url": "https://www.gos.org/",
+            "blurb": "Statewide society coordinating bird research, field trips and conservation across Georgia."
+          }
+        ]
+      },
+      {
+        "name": "Hawaii",
+        "groups": [
+          {
+            "name": "Hawaii Audubon Society",
+            "url": "https://hiaudubon.org/",
+            "blurb": "Statewide organization focused on Hawaiian endemic and native bird conservation and education."
+          }
+        ]
+      },
+      {
+        "name": "Idaho",
+        "groups": [
+          {
+            "name": "Golden Eagle Audubon Society",
+            "url": "https://www.goldeneagleaudubon.org/",
+            "blurb": "Southwest Idaho Audubon chapter based in Boise offering birding trips, education and conservation programs."
+          }
+        ]
+      },
+      {
+        "name": "Illinois",
+        "groups": [
+          {
+            "name": "Illinois Ornithological Society",
+            "url": "https://www.illinoisbirds.org/",
+            "blurb": "Statewide society running field trips, bird counts and research across Illinois since 1897."
+          },
+          {
+            "name": "Chicago Ornithological Society",
+            "url": "https://chicagobirder.org/",
+            "blurb": "Chicago area birding club organizing weekly field trips and maintaining bird records for the region."
+          }
+        ]
+      },
+      {
+        "name": "Indiana",
+        "groups": [
+          {
+            "name": "Indiana Audubon Society",
+            "url": "https://indianaaudubon.org/",
+            "blurb": "Statewide Audubon chapter coordinating conservation, bird walks and education across Indiana."
+          }
+        ]
+      },
+      {
+        "name": "Iowa",
+        "groups": [
+          {
+            "name": "Iowa Ornithologists' Union",
+            "url": "https://www.iowabirds.org",
+            "blurb": "Statewide ornithological society organizing field trips, bird surveys and conservation since 1905."
+          }
+        ]
+      },
+      {
+        "name": "Kansas",
+        "groups": [
+          {
+            "name": "Kansas Ornithological Society",
+            "url": "https://ksbirds.org/",
+            "blurb": "Statewide society coordinating bird research, field trips and conservation across Kansas."
+          }
+        ]
+      },
+      {
+        "name": "Kentucky",
+        "groups": [
+          {
+            "name": "Kentucky Ornithological Society",
+            "url": "https://birdky.org/",
+            "blurb": "Statewide society since 1923 dedicated to bird interest and conservation across Kentucky."
+          }
+        ]
+      },
+      {
+        "name": "Louisiana",
+        "groups": [
+          {
+            "name": "Louisiana Ornithological Society",
+            "url": "http://losbird.org",
+            "blurb": "Statewide society organizing field trips and bird monitoring across Louisiana since 1905."
+          },
+          {
+            "name": "Baton Rouge Audubon Society",
+            "url": "https://www.braudubon.org/",
+            "blurb": "Capital region chapter running field trips and bird conservation programs in the Baton Rouge area."
+          }
+        ]
+      },
+      {
+        "name": "Maine",
+        "groups": [
+          {
+            "name": "Maine Audubon",
+            "url": "https://maineaudubon.org/",
+            "blurb": "Statewide Audubon organization with regional chapters running field trips and conservation across Maine."
+          }
+        ]
+      },
+      {
+        "name": "Maryland",
+        "groups": [
+          {
+            "name": "Maryland Ornithological Society",
+            "url": "https://www.MDBirds.org/",
+            "blurb": "Statewide society coordinating bird surveys, field trips and conservation across Maryland."
+          }
+        ]
+      },
+      {
+        "name": "Massachusetts",
+        "groups": [
+          {
+            "name": "Massachusetts Audubon Society",
+            "url": "https://www.massaudubon.org",
+            "blurb": "Statewide Audubon organization with sanctuaries and chapters running field trips and conservation education."
+          },
+          {
+            "name": "Brookline Bird Club",
+            "url": "https://brooklinebirdclub.org/",
+            "blurb": "Greater Boston club organizing field trips and maintaining bird records for the Boston area and region."
+          }
+        ]
+      },
+      {
+        "name": "Michigan",
+        "groups": [
+          {
+            "name": "Michigan Audubon",
+            "url": "https://www.michiganaudubon.org",
+            "blurb": "Statewide Audubon chapter coordinating bird conservation, education and field trips across Michigan."
+          }
+        ]
+      },
+      {
+        "name": "Minnesota",
+        "groups": [
+          {
+            "name": "Minnesota Ornithologists' Union",
+            "url": "https://moumn.org/",
+            "blurb": "Statewide ornithological society organizing field trips, bird counts and research across Minnesota."
+          }
+        ]
+      },
+      {
+        "name": "Mississippi",
+        "groups": [
+          {
+            "name": "Mississippi Ornithological Society",
+            "url": "https://www.missbird.org",
+            "blurb": "Statewide society coordinating bird surveys, field trips and conservation across Mississippi."
+          }
+        ]
+      },
+      {
+        "name": "Missouri",
+        "groups": [
+          {
+            "name": "Missouri Birding Society",
+            "url": "https://mobirds.org/",
+            "blurb": "Statewide ornithological society since 1901 dedicated to bird preservation and conservation across Missouri."
+          }
+        ]
+      },
+      {
+        "name": "Montana",
+        "groups": [
+          {
+            "name": "Montana Audubon",
+            "url": "https://mtaudubon.org/",
+            "blurb": "Statewide conservation organization promoting appreciation and protection of Montana's native birds and habitats."
+          }
+        ]
+      },
+      {
+        "name": "Nebraska",
+        "groups": [
+          {
+            "name": "Nebraska Ornithologists' Union",
+            "url": "https://noubirds.org/",
+            "blurb": "Statewide society organizing field trips, bird surveys and research across Nebraska since 1899."
+          }
+        ]
+      },
+      {
+        "name": "Nevada",
+        "groups": [
+          {
+            "name": "Great Basin Bird Observatory",
+            "url": "https://www.gbbo.org/",
+            "blurb": "Bird observatory conducting population studies and bird monitoring across the Great Basin region."
+          }
+        ]
+      },
+      {
+        "name": "New Hampshire",
+        "groups": [
+          {
+            "name": "New Hampshire Audubon",
+            "url": "https://nhaudubon.org/",
+            "blurb": "Independent statewide organization dedicated to wildlife conservation and habitat protection in New Hampshire."
+          }
+        ]
+      },
+      {
+        "name": "New Jersey",
+        "groups": [
+          {
+            "name": "New Jersey Audubon Society",
+            "url": "https://www.njaudubon.org/",
+            "blurb": "Statewide Audubon organization with sanctuaries and chapters running field trips and bird education."
+          }
+        ]
+      },
+      {
+        "name": "New Mexico",
+        "groups": [
+          {
+            "name": "New Mexico Ornithological Society",
+            "url": "https://www.nmbirds.org/",
+            "blurb": "Volunteer nonprofit dedicated to bird observation and conservation in New Mexico since 1949."
+          }
+        ]
+      },
+      {
+        "name": "New York",
+        "groups": [
+          {
+            "name": "The Linnaean Society of New York",
+            "url": "https://linnaeannewyork.org/",
+            "blurb": "New York City naturalists' club running field trips and maintaining bird records since 1788."
+          },
+          {
+            "name": "New York State Ornithological Association",
+            "url": "https://nybirds.org/",
+            "blurb": "Statewide ornithological association coordinating bird research, field trips and conservation since 1946."
+          }
+        ]
+      },
+      {
+        "name": "North Carolina",
+        "groups": [
+          {
+            "name": "Carolina Bird Club",
+            "url": "https://www.carolinabirdclub.org/",
+            "blurb": "Statewide club for North and South Carolina organizing field trips and bird surveys since 1937."
+          }
+        ]
+      },
+      {
+        "name": "North Dakota",
+        "groups": [
+          {
+            "name": "Audubon Great Plains",
+            "url": "https://greatplains.audubon.org/",
+            "blurb": "Regional Audubon office serving the Dakotas with bird conservation programs and field trips."
+          }
+        ]
+      },
+      {
+        "name": "Ohio",
+        "groups": [
+          {
+            "name": "Ohio Ornithological Society",
+            "url": "https://ohiobirds.org/",
+            "blurb": "Statewide ornithological society organizing field trips, bird surveys and research across Ohio."
+          },
+          {
+            "name": "Ohio Young Birders Club",
+            "url": "https://www.ohioyoungbirders.org",
+            "blurb": "Birding organization for young people engaging members in field trips and bird monitoring across Ohio."
+          }
+        ]
+      },
+      {
+        "name": "Oklahoma",
+        "groups": [
+          {
+            "name": "Oklahoma Ornithological Society",
+            "url": "https://www.okbirds.org/",
+            "blurb": "Nonprofit ornithological society since 1951 dedicated to bird observation and conservation across Oklahoma."
+          }
+        ]
+      },
+      {
+        "name": "Oregon",
+        "groups": [
+          {
+            "name": "Oregon Birding Association",
+            "url": "https://oregonbirding.org/",
+            "blurb": "Statewide birding community organizing field trips and maintaining bird records across Oregon."
+          }
+        ]
+      },
+      {
+        "name": "Pennsylvania",
+        "groups": [
+          {
+            "name": "Pennsylvania Society for Ornithology",
+            "url": "https://pabirds.org/",
+            "blurb": "Statewide ornithological society organizing field trips, counts and research across Pennsylvania."
+          }
+        ]
+      },
+      {
+        "name": "Rhode Island",
+        "groups": [
+          {
+            "name": "Ocean State Bird Club",
+            "url": "https://www.oceanstatebirdclub.org/",
+            "blurb": "Rhode Island club organizing field trips and maintaining bird records for the state."
+          }
+        ]
+      },
+      {
+        "name": "South Carolina",
+        "groups": [
+          {
+            "name": "Charleston Natural History Society",
+            "url": "https://charlestonnaturalhistorysociety.org/",
+            "blurb": "South Carolina Audubon chapter since 1905 serving coastal lowcountry with conservation and education."
+          }
+        ]
+      },
+      {
+        "name": "South Dakota",
+        "groups": [
+          {
+            "name": "South Dakota Ornithologists' Union",
+            "url": "https://sdou.org/",
+            "blurb": "Statewide society organizing field trips, bird counts and research across South Dakota."
+          }
+        ]
+      },
+      {
+        "name": "Tennessee",
+        "groups": [
+          {
+            "name": "Tennessee Ornithological Society",
+            "url": "https://www.tnbirds.org",
+            "blurb": "Statewide society organizing field trips, bird surveys and conservation efforts across Tennessee."
+          }
+        ]
+      },
+      {
+        "name": "Texas",
+        "groups": [
+          {
+            "name": "Texas Ornithological Society",
+            "url": "https://www.texasbirds.org",
+            "blurb": "Statewide ornithological society organizing field trips and bird research across Texas since 1949."
+          },
+          {
+            "name": "Houston Audubon",
+            "url": "https://www.houstonaudubon.org",
+            "blurb": "Southeast Texas chapter running field trips, counts and bird education in the Houston region."
+          }
+        ]
+      },
+      {
+        "name": "Utah",
+        "groups": [
+          {
+            "name": "Utah Ornithological Society",
+            "url": "http://utahbirds.org/",
+            "blurb": "Statewide society organizing field trips, bird surveys and conservation research across Utah."
+          }
+        ]
+      },
+      {
+        "name": "Vermont",
+        "groups": [
+          {
+            "name": "Audubon Vermont",
+            "url": "https://vt.audubon.org/",
+            "blurb": "Statewide Audubon chapter with local groups running field trips and bird conservation across Vermont."
+          }
+        ]
+      },
+      {
+        "name": "Virginia",
+        "groups": [
+          {
+            "name": "Virginia Society of Ornithology",
+            "url": "https://www.virginiabirds.org/",
+            "blurb": "Statewide ornithological society organizing field trips and bird research across Virginia."
+          }
+        ]
+      },
+      {
+        "name": "Washington",
+        "groups": [
+          {
+            "name": "Washington Ornithological Society",
+            "url": "https://www.wos.org",
+            "blurb": "Statewide ornithological society organizing field trips and bird surveys across Washington."
+          }
+        ]
+      },
+      {
+        "name": "West Virginia",
+        "groups": [
+          {
+            "name": "The Brooks Bird Club",
+            "url": "https://www.brooksbirdclub.org",
+            "blurb": "Historic West Virginia bird club since 1924 organizing field trips and bird surveys in the Appalachians."
+          }
+        ]
+      },
+      {
+        "name": "Wisconsin",
+        "groups": [
+          {
+            "name": "Wisconsin Society for Ornithology",
+            "url": "https://www.wsobirds.org/",
+            "blurb": "Statewide ornithological society organizing field trips and bird surveys across Wisconsin."
+          }
+        ]
+      },
+      {
+        "name": "Wyoming",
+        "groups": [
+          {
+            "name": "Murie Audubon Society",
+            "url": "https://www.murieaudubon.org/",
+            "blurb": "Central Wyoming Audubon chapter running field trips and conservation programs across the state."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "VI",
+    "name": "United States Virgin Islands",
+    "flag": "🇻🇮",
+    "continent": "North America",
+    "aka": [
+      "united states virgin islands",
+      "us virgin islands"
+    ],
+    "gaps": [],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Virgin Islands Audubon Society",
+            "url": "https://www.facebook.com/VIAudubonSociety/",
+            "blurb": "Audubon chapter based on St. John providing conservation education, organising Christmas Bird Counts and coordinating breeding bird surveys."
+          }
+        ]
       }
     ]
   }

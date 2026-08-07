@@ -15,6 +15,18 @@ const FILE_FOR = {
   Oceania: '60-oceania.json',
 };
 
+// Hosts that genuinely serve no https at all, checked by hand: https times out or fails to
+// resolve on every variant (bare domain, www, alternate domain), while http returns the real
+// site. These are real, active organisations and dropping them would leave a province, a state
+// or a whole country with no entry, so the http link is better for a visitor than nothing.
+// Re-test occasionally and delete the entry once a host gets a certificate.
+const HTTP_ONLY_OK = new Set([
+  'www.ofo.ca',   // Ontario Field Ornithologists, Ontario's provincial society
+  'losbird.org',  // Louisiana Ornithological Society
+  'utahbirds.org',// Utah Birds, the only group covering Utah
+]);
+const hostOf = (u) => { try { return new URL(u).host; } catch { return ''; } };
+
 const dry = process.argv.includes('--dry');
 const problems = [];
 const incoming = [];
@@ -42,7 +54,9 @@ for (const f of fs.readdirSync(IN).filter((f) => f.endsWith('.json')).sort()) {
       for (const g of r.groups) {
         const where = `${f} ${c.code}/${r.name}/${g.name || '?'}`;
         if (!g.name || !g.url || !g.blurb) { problems.push(`${where}: missing name/url/blurb`); continue; }
-        if (!/^https:\/\//.test(g.url)) problems.push(`${where}: url is not https (${g.url})`);
+        if (!/^https:\/\//.test(g.url) && !HTTP_ONLY_OK.has(hostOf(g.url))) {
+          problems.push(`${where}: url is not https (${g.url})`);
+        }
         if (/[-–—]/.test(g.blurb)) problems.push(`${where}: DASH in blurb -> ${g.blurb}`);
         if (g.blurb.length > 170) problems.push(`${where}: blurb too long (${g.blurb.length})`);
       }

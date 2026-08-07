@@ -23,7 +23,13 @@ directory at beakbrain.com/community.html. Output is a JSON file. Read this whol
 ## Never include
 - Any PLACE: reserves, sanctuaries, hides, hotspots, national parks, observatories that are only a site
   (a bird OBSERVATORY that has a membership / volunteer community IS fine)
-- Tour operators, guides, lodges, hotels, travel companies
+- Tour operators, guides, lodges, hotels, travel companies. **"Sells trips commercially" is the test,
+  not the word "trip".** A volunteer group that runs birding hikes, walks, outings or field trips is a
+  community and belongs in the list; that is the main thing most bird clubs actually do. Read what the
+  organisation IS before excluding it: a volunteer or educational project that happens to mention trips
+  stays in, a business whose product is a paid trip goes out. Bird Watching Curacao was nearly dropped
+  from this project on the word "trips" alone when it is in fact a volunteer eBird recording and school
+  education project. When genuinely unsure, keep it and flag it in `gaps` rather than dropping it.
 - Shops, optics retailers, book sellers
 - Government agencies with no public membership or volunteer programme
 - Dead, dormant (no activity in ~3 years) or pure-archive sites
@@ -60,6 +66,26 @@ directory at beakbrain.com/community.html. Output is a JSON file. Read this whol
    **Do not put a URL in the output that you have not personally curl-verified in this session.**
    `build/verify.js` re-checks everything again after ingest, so your job here is to catch obvious
    dead or parked links before they're written, not to achieve perfect certainty.
+
+   **Print the status code AND the title together, and actually read both.** Use this exact form, so
+   a soft 404 (a real site serving its "page not found" page with a 200, or a 404 you skimmed past)
+   cannot slip through:
+   ```bash
+   for u in "https://url1" "https://url2"; do
+     echo "$u -> $(curl -s -m 20 -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36" -o /tmp/chk.html -w "%{http_code}" -L "$u") $(grep -o -i '<title>[^<]*' /tmp/chk.html | head -1)"
+   done
+   ```
+
+   **Never guess a URL from a pattern.** Do not infer one org's URL from another's shape. A real
+   failure in this project: an agent invented `audubon.org/chapter/az`, `/chapter/id`, `/chapter/mt`
+   and six more from a pattern that does not exist, and every one of them 404s. National Audubon's
+   state offices are on their own subdomains (`vt.audubon.org`). If you have not seen a URL in a
+   search result or on the organisation's own page, you do not have it yet; go and find it.
+
+   **Never report verification you did not perform.** Saying "all URLs verified, HTTP 200" when they
+   were not checked is worse than reporting a gap, because it defeats every downstream check that
+   trusts your report. If you ran out of budget to verify some links, say exactly which ones are
+   unverified and leave them out of the file.
 
 4. **Prefer a stable canonical URL.** Homepage over a deep page. Avoid URLs with session ids or
    query strings. Avoid `http://`; use `https://` where it works.

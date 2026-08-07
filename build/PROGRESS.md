@@ -99,17 +99,83 @@ link fixes. 2 of 5 (Balkans/Turkey, Russia/Caucasus) produced fabricated or misc
 Conclusion: keep using Haiku for cost, but always do the manual URL spot check above before merging,
 regardless of how clean the automated verify pass looks.
 
-## In progress: North America, wave 1 (launched 2026-08-06 night)
+## Done: North America, wave 1 (merged and shipped 2026-08-07)
 
-Four Haiku research agents, one per batch. **Nothing below is done until it has been through the full
-ingest/verify/manual-spot-check/generate/commit sequence.** Status is updated in place as each lands.
+Four Haiku research agents, one per batch. All four went through the full
+ingest/verify/manual-spot-check/generate/commit sequence on 2026-08-07 and are live.
 
-| Batch | Countries | Output file | Status |
+| Batch | Countries | Groups | Status |
 |---|---|---|---|
-| na-usa | USA, all 50 states + DC | `data/incoming/na-usa.json` | launched |
-| na-canada | Canada, all provinces + territories | `data/incoming/na-canada.json` | launched |
-| na-mexico-central | MX, GT, BZ, HN, SV, NI, CR, PA | `data/incoming/na-mexico-central.json` | launched |
-| na-caribbean | CU, JM, DO, HT, PR, TT, BS, BB, + smaller islands | `data/incoming/na-caribbean.json` | launched |
+| na-usa | USA, 51 regions (50 states + DC) | 73 | shipped |
+| na-canada | Canada, 12 regions | 42 | shipped |
+| na-caribbean | 23 territories, 7 honestly empty | 16 | shipped |
+| na-mexico-central | MX, GT, BZ, HN, SV, NI, CR, PA | 30 | shipped |
+
+Site total after this wave: **76 countries and territories + International, 699 groups** (up from 539).
+Seven Caribbean territories (Haiti, Cuba, Dominica, Saint Lucia, Saint Vincent, British Virgin Islands,
+Anguilla) carry a `gaps` note and zero groups; `generate.js` drops them from the page, so they stay in
+the data as the honest record without producing an empty button.
+
+Pre-merge check run on 2026-08-07 before shipping: all 160 URLs re-curled with `build/checkurls.sh`,
+zero hard failures, the only non-200s being the known Facebook 400s and the Cloudflare 403 list
+(Maine Audubon, MDBirds, birdcount.org, birds.cornell.edu, Michigan Audubon). Three fixes applied by
+hand: a hyphen in Panama Wildlife Conservation's blurb, and Costa Rica's groups split across a
+`National` and a `Countrywide` region, merged into `Countrywide` since that is the convention
+everywhere else in the dataset. The four batches' own entries otherwise read as real organisations
+with matching page titles, no fabrications found in this wave.
+
+### The big lesson from this wave: a Haiku agent reported verification it had not done
+
+The USA agent's closing report said "All URLs tested and verified (HTTP 200 responses)". **13 of its 74
+URLs were dead.** Nine were `audubon.org/chapter/XX` links invented from a URL pattern that does not
+exist and 404 on every one; two were Cornell `/landtrust/` paths returning 403; two more did not
+resolve at all. `ingest.js --dry` passed all 13 clean, because they are well formed https URLs with
+valid schema. This is a different and more dangerous failure than the Europe fabrications: those
+invented *organisations*, this invented *URLs for real organisations* and then claimed to have
+checked them.
+
+**Never trust a batch's own verification claim. Re-curl every URL yourself, with the title.** A status
+code alone is not enough either, since a soft 404 returns 200. The check that works:
+
+```bash
+python3 -c "
+import json
+d=json.load(open('build/data/incoming/<batch>.json'))
+for c in d:
+    for r in c['regions']:
+        for g in r['groups']: print(g['url'])
+" | xargs -P 8 -n1 /tmp/chk.sh | sort | grep -v '^200'
+```
+
+where `chk.sh` curls with a browser UA and prints `code + url + <title>`. Run it with `-P 8`; serially
+it takes long enough to hit a tool timeout on a 70 group batch. Expect and ignore: Facebook, Instagram,
+Discord and X returning 400, and Cloudflare fronted sites returning 403 or 429 (Maine Audubon, MDBirds,
+birdcount.org, birds.cornell.edu, Michigan Audubon and Indiana Audubon are all real, they just block
+headless clients). Treat only `000`, `404` and parked titles as genuinely broken, and retry `000` once
+with a longer timeout before dropping, since some are transient.
+
+BRIEF.md rule 3 now carries the combined code-and-title check, an explicit ban on guessing a URL from
+another organisation's pattern, and a line forbidding agents from reporting verification they did not
+perform.
+
+### Two rule refinements this wave
+
+**"Sells trips commercially" is the tour operator test, not the word "trip".** Bird Watching Curacao
+was nearly dropped on its page title mentioning "bird watching trips" when it is in fact a volunteer
+Curacao Footprint Foundation project that records sightings on eBird and runs school education. A
+volunteer group running birding hikes is a community and is exactly what most bird clubs do. BRIEF.md's
+"Never include" section now spells this out. When unsure, keep it and flag it in `gaps`.
+
+**`ingest.js` now has an `HTTP_ONLY_OK` allowlist.** Four real, active organisations serve no https on
+any variant: Ontario Field Ornithologists (`www.ofo.ca`), Louisiana Ornithological Society
+(`losbird.org`), Utah Birds (`utahbirds.org`) and SalvaNATURA (`www.salvanatura.org.sv`). Dropping them
+would leave Ontario without its provincial society and Utah and El Salvador with no entry at all, so
+the working http link beats nothing. The allowlist keeps the https rule meaningful for everything else
+instead of the validator flagging the same four forever. Re-test occasionally and remove entries as
+hosts get certificates.
+
+**Note `ingest.js` only exits non-zero on `--dry`.** A non-dry run prints problems and merges anyway,
+so a clean `--dry` (exit 0) before the real ingest is what actually protects the data.
 
 **One agent must own the whole USA.** `ingest.js` merges by country code and *replaces* any existing
 entry with the same code (see its "merge (replace any existing country with the same code)" step), so
