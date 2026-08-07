@@ -77,18 +77,27 @@ function card(g) {
   return `        <a class="card" href="${g.url}" target="_blank" rel="noopener"><div class="top"><h3>${esc(g.name)}</h3></div><p class="blurb">${esc(g.blurb)}</p><div class="arrow">Visit →</div></a>`;
 }
 
+// Search index for one element: lowercased, quotes stripped so it is safe inside a
+// double-quoted attribute.
+function index(parts) {
+  return esc(parts.join(' ').toLowerCase().replace(/"/g, ''));
+}
+
 function section(c) {
   const cont = c.continent === 'International' ? 'INT' : c.continent;
-  const search = [c.name, c.code, ...(c.aka || [])].join(' ').toLowerCase();
   const lines = [
     `    <!-- ${c.name} -->`,
-    `    <section class="country" data-country="${c.code}" data-continent="${esc(cont)}" data-search="${esc(search)}">`,
-    `      <h2 class="country-title">${c.flag} ${esc(c.name)}</h2>`,
+    `    <section class="country" data-country="${c.code}" data-continent="${esc(cont)}" data-search="${index([c.name, c.code, ...(c.aka || [])])}">`,
+    `      <h2 class="country-title">${esc(c.name)}</h2>`,
   ];
   for (const r of c.regions) {
-    lines.push(`      <div class="region-label">${esc(r.name)}</div>`);
-    lines.push('      <div class="grid">');
+    // Region carries its own index (region name + every group name in it) so a search for
+    // "Bavaria" or "Brookline Bird Club" can open the right country at the right region.
+    lines.push(`      <div class="region" data-search="${index([r.name, ...r.groups.map((g) => g.name)])}">`);
+    lines.push(`        <div class="region-label">${esc(r.name)}</div>`);
+    lines.push('        <div class="grid">');
     for (const g of r.groups) lines.push(card(g));
+    lines.push('        </div>');
     lines.push('      </div>');
   }
   lines.push('    </section>');
@@ -96,31 +105,36 @@ function section(c) {
 }
 
 // ---- chooser ----
-const continents = CONTINENT_ORDER.filter((k) => k !== 'International' && rest.some((c) => c.continent === k));
-const contBtns = [
-  `      <button type="button" class="choice active" data-cont="all">🌍 Everywhere</button>`,
-  ...continents.map((k) => `      <button type="button" class="choice" data-cont="${esc(k)}">${esc(k)}</button>`),
-].join('\n');
-
-const countryBtns = rest
-  .map(
-    (c) =>
-      `      <button type="button" class="choice" data-country="${c.code}" data-continent="${esc(c.continent)}" data-search="${esc([c.name, c.code, ...(c.aka || [])].join(' ').toLowerCase())}">${c.flag} ${esc(c.name)}</button>`
-  )
+// One dropdown, grouped by continent, in place of the old continent tabs plus a row of
+// every country button: that row stopped being usable well before 190 countries.
+const byContinent = new Map();
+for (const c of rest) {
+  if (!byContinent.has(c.continent)) byContinent.set(c.continent, []);
+  byContinent.get(c.continent).push(c);
+}
+const optgroups = CONTINENT_ORDER.filter((k) => byContinent.has(k))
+  .map((k) => {
+    const opts = byContinent
+      .get(k)
+      .map((c) => `            <option value="${c.code}">${esc(c.name)}</option>`)
+      .join('\n');
+    return `          <optgroup label="${esc(k)}">\n${opts}\n          </optgroup>`;
+  })
   .join('\n');
 
 const chooser = `    <div class="finder">
-      <div class="search-row">
-        <span class="search-icon">🔎</span>
-        <input class="search" id="csearch" type="search" autocomplete="off" placeholder="Search a country or territory" aria-label="Search a country or territory" />
+      <div class="finder-row">
+        <div class="search-row">
+          <input class="search" id="csearch" type="search" autocomplete="off" placeholder="Search a country, region or group" aria-label="Search a country, region or group" />
+        </div>
+        <div class="select-row">
+          <select class="cselect" id="cpick" aria-label="Pick a country or territory">
+            <option value="">Worldwide groups</option>
+${optgroups}
+          </select>
+        </div>
       </div>
-      <div class="chooser continents" id="continents">
-${contBtns}
-      </div>
-      <div class="chooser countries" id="countries">
-${countryBtns}
-      </div>
-      <p class="count-note">${rest.length} countries and territories, ${totalGroups} groups. Pick one to see its clubs, societies and projects.</p>
+      <p class="count-note">${rest.length} countries and territories, ${totalGroups} groups. Search by country, region or group name, or pick a country to jump straight to it.</p>
     </div>
     <p class="empty" id="empty" hidden>No match yet. Try another spelling, or tell us who is missing and we will add them.</p>`;
 
@@ -128,58 +142,56 @@ const sections = [...intl.map(section), ...rest.map(section)].join('\n\n');
 
 const script = `  <script>
     (function () {
-      var contBtns = Array.prototype.slice.call(document.querySelectorAll('#continents .choice'));
-      var cBtns = Array.prototype.slice.call(document.querySelectorAll('#countries .choice'));
       var secs = Array.prototype.slice.call(document.querySelectorAll('.country'));
       var search = document.getElementById('csearch');
+      var pick = document.getElementById('cpick');
       var empty = document.getElementById('empty');
-      var cont = 'all';
-      var country = null;
 
+      // No query and no country picked: the worldwide section is what you see.
+      // A query matches a country's own name, any region name, or any group name; when the
+      // match is a region or a group, only the regions that matched stay open.
       function render() {
         var q = (search.value || '').trim().toLowerCase();
+        var code = pick.value;
         var visible = 0;
-        cBtns.forEach(function (b) {
-          var okCont = cont === 'all' || b.getAttribute('data-continent') === cont;
-          var okQ = !q || b.getAttribute('data-search').indexOf(q) > -1;
-          var show = okCont && okQ;
-          b.hidden = !show;
-          if (show) visible++;
-          b.classList.toggle('active', country === b.getAttribute('data-country'));
-        });
-        contBtns.forEach(function (b) { b.classList.toggle('active', b.getAttribute('data-cont') === cont); });
-        empty.hidden = visible !== 0;
 
         secs.forEach(function (s) {
-          var code = s.getAttribute('data-country');
-          if (s.getAttribute('data-continent') === 'INT') { s.style.display = ''; return; }
-          var show;
-          if (country) show = code === country;
-          else if (q) show = s.getAttribute('data-search').indexOf(q) > -1 && (cont === 'all' || s.getAttribute('data-continent') === cont);
-          else show = false;
-          s.style.display = show ? '' : 'none';
+          var regions = Array.prototype.slice.call(s.querySelectorAll('.region'));
+          var isIntl = s.getAttribute('data-continent') === 'INT';
+          var on;
+
+          if (q) {
+            var whole = s.getAttribute('data-search').indexOf(q) > -1;
+            on = whole;
+            regions.forEach(function (r) {
+              var hit = whole || r.getAttribute('data-search').indexOf(q) > -1;
+              r.hidden = !hit;
+              if (hit) on = true;
+            });
+          } else {
+            regions.forEach(function (r) { r.hidden = false; });
+            on = isIntl || (!!code && s.getAttribute('data-country') === code);
+          }
+
+          if (on) visible++;
+          s.style.display = on ? '' : 'none';
         });
+
+        empty.hidden = !(q && visible === 0);
       }
 
-      contBtns.forEach(function (b) {
-        b.addEventListener('click', function () {
-          cont = b.getAttribute('data-cont');
-          country = null;
-          render();
-        });
+      search.addEventListener('input', function () {
+        if (search.value.trim()) pick.value = '';
+        render();
       });
-      cBtns.forEach(function (b) {
-        b.addEventListener('click', function () {
-          var code = b.getAttribute('data-country');
-          country = country === code ? null : code;
-          render();
-          if (country) {
-            var s = document.querySelector('.country[data-country="' + code + '"]');
-            if (s) s.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        });
+      pick.addEventListener('change', function () {
+        search.value = '';
+        render();
+        if (pick.value) {
+          var s = document.querySelector('.country[data-country="' + pick.value + '"]');
+          if (s) s.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       });
-      search.addEventListener('input', function () { country = null; render(); });
       render();
     })();
 
