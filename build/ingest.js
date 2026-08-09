@@ -27,10 +27,14 @@ const HTTP_ONLY_OK = new Set([
 ]);
 const hostOf = (u) => { try { return new URL(u).host; } catch { return ''; } };
 
-// A worldwide platform's per country view is that platform, not a community you can join locally.
-// eBird, iNaturalist, Observation.org and Fatbirder each appear ONCE, in the International section;
-// "eBird Croatia" under Croatia is just eBird again. Allowed inside INT only.
-const PLATFORM_REGION_URL = /^https?:\/\/(?:www\.)?(?:ebird\.org\/(?:region|hotspot|alert)\b|inaturalist\.org\/places\b|observation\.org\/region\b|fatbirder\.com\/world-birding\b)/i;
+// A worldwide platform is that platform, not a community you can join locally, whichever of its
+// pages you point at. eBird, iNaturalist, Observation.org, Xeno-canto and Fatbirder each appear
+// ONCE, in the International section; "eBird Croatia" under Croatia is just eBird again, and so is
+// "eBird Brasil" pointing at ebird.org/about/portals. Matching the whole host rather than the
+// /region/ path is deliberate: the first version of this rule only caught /region/XX and a batch
+// walked straight through it with a different eBird path the same day.
+const PLATFORM_HOSTS = /(?:^|\.)(?:ebird\.org|inaturalist\.org|observation\.org|waarneming\.nl|xeno-canto\.org|fatbirder\.com)$/i;
+const PLATFORM_REGION_URL = (url) => { const h = hostOf(url); return !!h && PLATFORM_HOSTS.test(h); };
 
 // A rolling feed or a dated announcement post is not an organisation's home page, and a year in the
 // path means the link is stale next year. Link the programme's permanent landing page instead.
@@ -77,7 +81,7 @@ for (const f of fs.readdirSync(IN).filter((f) => f.endsWith('.json')).sort()) {
 
         // A global platform's per country page is that platform, not a local community. Those
         // platforms are listed once under International. See BRIEF.md "Never include".
-        if (c.code !== 'INT' && PLATFORM_REGION_URL.test(g.url)) {
+        if (c.code !== 'INT' && PLATFORM_REGION_URL(g.url)) {
           problems.push(`${where}: PLATFORM REGION PAGE, not a community -> ${g.url}`);
         }
 
