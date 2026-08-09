@@ -402,8 +402,13 @@ Two traps this audit surfaced, both now fixed:
 
 **112 of 160 countries carry a single `Countrywide` region.** For Andorra, Malta, Iceland and the
 Pacific islands that is simply correct. But the same list catches countries that are under covered
-rather than small, and these are the best remaining targets: **Chile (2 groups), Romania (3),
-Tanzania (4), Ghana (4), Peru (4), Greece (5), South Korea (5), Uganda (6)**.
+rather than small, and at the time of the audit the best remaining targets were **Chile (2 groups),
+Romania (3), Tanzania (4), Ghana (4), Peru (4), Greece (5), South Korea (5), Uganda (6)**.
+
+**All eight have since been worked** (see the thin countries wave below). Romania, Greece, Peru,
+Tanzania and Thailand gained real regions; Chile, South Korea, Ghana and Uganda stayed single region
+because the research says they genuinely are, which is the useful outcome of running the audit rather
+than assuming. Re run `node build/regioncheck.js --thin` before picking the next batch.
 
 ## What Brazil and India taught about the honest zero
 
@@ -433,17 +438,79 @@ plausibly, so Facebook answering for one is decent evidence by itself. A VANITY 
 as any other: a search result quoting a member count, a post, or independent press. Judge the two
 differently.
 
+## Done: thin countries and Southeast Asia (2026-08-09, commit 8ea2682)
+
+**1,045 to 1,070 groups.** Cleared queued items 3 and 4. Done in the MAIN session rather than by
+subagents, so the per agent search cap never came into it.
+
+| Country | Groups | Regions | What it gained |
+|---|---|---|---|
+| Romania | 3 to 8 | 1 to 6 | SOR's own branch pages for Bucharest, Cluj, Iasi, Brasov, Maramures |
+| Malaysia | 0 to 6 | 0 to 5 | MNS national, Selangor branch + its PiedFantail bird group, Perak, Sabah, Sarawak |
+| Indonesia | 1 to 5 | 1 to 3 | Jakarta Birdwatcher's Society, and PPBJ, Kutilang and BIONIC UNY in Yogyakarta |
+| South Korea | 5 to 7 | 1 | Ornithological Society of Korea, Saerang community platform |
+| Greece | 5 to 7 | 1 to 2 | Hellenic Bird Ringing Centre, Kalloni centre on Lesvos |
+| Peru | 4 to 5 | 1 to 2 | PAU Arequipa |
+| Tanzania | 4 to 5 | 1 to 2 | Kilombero Valley Ornithological Centre |
+| Chile | 2 to 4 | 1 | breeding bird atlas, neotropical waterbird census |
+| Philippines | 1 to 2 | 1 | Wild Bird Club of the Philippines |
+| Thailand | 1 to 2 | 1 to 2 | EcoThailand Birdwatching Club |
+
+Ghana and Uganda were re researched and gained nothing. Both are honestly covered already: Ghana's
+regional structure is school wildlife clubs under GWS rather than independent bird clubs, and
+NatureUganda's university branches have named coordinators but no pages of their own.
+
+**`ingest --dry` passed clean on the first run**, the second batch ever to do so after Oceania.
+
+### The parked domain that a browser caught and curl could not
+
+**REDAVES**, the Coquimbo region bird network, is real: it runs the neotropical waterbird census on
+three Coquimbo Bay wetlands and monitors American Oystercatcher nesting, all covered in the Chilean
+press. Its domain behaves like this:
+
+- `https://redaves.cl/` serves **BirdVancouver.com**, an unrelated site on a shared certificate.
+- `http://redaves.cl/` returns **200 with the title `redaves.cl`** and a JavaScript loading spinner.
+- Rendered in a browser, that spinner resolves to **"This domain is registered at Dynadot.com.
+  Website coming soon."**
+
+The `<title>` check in BRIEF.md rule 3 does not catch this, because the title is the bare domain
+rather than a recognisable parking brand. **A JavaScript shell that renders to a parking page is the
+same class of problem as an invented Instagram handle: only a browser can see it.** Add a bare domain
+name as the whole title to the list of things worth opening.
+
+**COAP Cusco** was dropped on the vanity URL rule: `facebook.com/groups/coapcusco/` answers behind a
+login wall with no `og:title`, no member count and no press or search result quoting its content.
+That is exactly the case the Africa and India waves said needs corroboration and does not have it.
+
+### Two link repairs found while gap filling, worth looking for elsewhere
+
+- **Romania's SOR entry pointed at `birdlife.org/partners/romania-...`**, the partner directory page,
+  rather than at `sor.ro`. A national society linked via its umbrella's directory rather than its own
+  site passes every automated check and is still the wrong link.
+- **Ornitodata pointed at `sor.ro/ornitodata-e-online/`**, the "Ornitodata is online" announcement
+  post, rather than at `pasaridinromania.sor.ro`, the platform itself. This is rule 4's news article
+  ban, shipped before the guard existed. **Grep the older Europe batches for other announcement URLs.**
+
+`sor.ro`, `mns.my` and `mnsselangorbranch.org` all serve 403 to non browser clients. Every one of
+their pages here was confirmed by opening it: the five SOR branch pages each carry a named branch
+contact and address, so they are real pages and not a soft 404 behind the block.
+
 ## Queued (not started)
 
 1. **India**, 16 states still empty. Several are genuine (Bird Count India itself reports zero walks in
    Haryana), but Assam, Punjab, Odisha and the Northeast are worth another pass.
 2. **Brazil**, 12 states, blocked on those clubs having no web presence rather than on research.
-3. **Thin countries with real birding cultures**: Chile, Peru, Romania, Greece, Tanzania, Ghana,
-   Uganda, South Korea (see the `--thin` list above).
-4. **Southeast Asia**: 5 groups only. Malaysia, the Philippines, Indonesia, Thailand's regional clubs.
-5. **Japan deeper**: WBSJ has about 85 branches against the 20 listed.
-6. **China**: retry the city societies, whose domains were unreachable from this network.
-7. **The nine thin Balkan/Turkey countries**; Kosovo has zero groups and does not render at all.
+3. **Japan deeper**: WBSJ has about 85 branches against the 20 listed.
+4. **China**: retry the city societies, whose domains were unreachable from this network.
+5. **The nine thin Balkan/Turkey countries**; Kosovo has zero groups and does not render at all.
+6. **Indonesia and Malaysia deeper.** Both now have a spine but not a network. Indonesia is reported
+   to have around fifty local birding communities across Sumatra, Java and Kalimantan, most of them on
+   WhatsApp and closed groups; Malaysia has MNS branches in every state and only five are listed.
+   Note `burung-nusantara.org`, which used to carry a directory of Indonesian groups, no longer
+   resolves, so that roster shortcut is gone.
+7. **Pre existing breakages unrelated to this wave**, from `verify.js`: Hong Kong Bird Watching
+   Society (`hkbws.org.hk`) and HawkCount (`hawkcount.org`) both return 000, and Xiamen Bird Watching
+   Society returns 502.
 
 ## Wave discipline
 
@@ -453,6 +520,13 @@ calls are expensive per agent. See `~/.claude/commands/birding-community.md`'s "
 to subagents" section and `build/BRIEF.md` for the full mechanics (both tightened 2026-08-06 to cut
 searches/curls per agent and to ban the eBird-alert and unverifiable-entity patterns above).
 
-**Model:** use `model: "haiku"` for research agents (see the Haiku vs Sonnet note above for why, and
-for the mandatory manual spot check that goes with it). Fall back to Sonnet for a batch if Haiku's
-output shows weak judgment beyond what the spot check and normal ingest/verify pass catch.
+**Model: use Sonnet.** This line used to say Haiku for cost, and the evidence since then has gone the
+other way hard enough to reverse it. Haiku failed in **two opposite directions**: South America
+*fabricated* (7 of 11 Instagram handles did not exist, 14 Brazilian "clubs" all pointing at one
+directory URL), and Africa then *under reported* (Kenya 3 groups, 21 West and Central African
+countries returned empty, eleven of which a Sonnet pass then filled). Every Sonnet batch since has
+been clean or near clean, and Oceania passed `ingest --dry` first time. The token saving does not
+survive the repair time, and the repairs are the kind the automated checks cannot make for you.
+
+The Haiku vs Sonnet note in the Europe section is kept as the record of how this was learned, not as
+current advice.
