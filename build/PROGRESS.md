@@ -380,18 +380,70 @@ http, so always test the variants rather than allowlisting on the agent's word.
 Every social link in these batches was browser confirmed by `og:title`: all three in Oceania, all four
 in East Asia and the Middle East. Nothing fabricated in any of the four.
 
+## Region coverage audit (2026-08-09) — `node build/regioncheck.js`
+
+"The country is done" and "every region of that country is covered" are different claims, and only
+the first shows up in a group count. Brazil sat 8th on total groups while missing 12 of its 27 states.
+`build/regioncheck.js` audits the countries where a regional split is expected; `--thin` lists every
+country carrying only one region.
+
+**Complete:** United States 51/51, United Kingdom 72, Australia 8/8, Germany 16/16, Netherlands 12/12,
+South Africa 9/9, Spain 17/17, New Zealand 16/16.
+**Near complete:** Canada 12/13 (Nunavut confirmed genuinely empty), Italy 17/20.
+**Still open:** India 18/34, Brazil 15/27.
+
+Two traps this audit surfaced, both now fixed:
+- **Naming, not gaps.** The first run reported Germany 8/16 and Spain 16/17 purely because batches
+  used English exonyms (Bavaria for Bayern) and local forms (Islas Baleares). Both were already
+  complete. The script is alias aware; add to `ALIAS` rather than "fixing" the data.
+- **A country listed by its own convention is not a gap.** Japan is split by the Wild Bird Society's
+  seven regional blocks rather than 47 prefectures. That is reasonable, so Japan is not audited
+  against a prefecture list.
+
+**112 of 160 countries carry a single `Countrywide` region.** For Andorra, Malta, Iceland and the
+Pacific islands that is simply correct. But the same list catches countries that are under covered
+rather than small, and these are the best remaining targets: **Chile (2 groups), Romania (3),
+Tanzania (4), Ghana (4), Peru (4), Greece (5), South Korea (5), Uganda (6)**.
+
+## What Brazil and India taught about the honest zero
+
+Both gap filling batches ran on Sonnet and both produced results worth more than their group counts.
+
+**Brazil gained no cards at all, and that was correct.** Real club level organising exists in three of
+the twelve missing states and none of it is linkable: COAPA in Pará (founded 2024, about 280 members,
+covered by Diário do Pará), COA/RR in Roraima (2019, about 41 members, two independent papers), and
+Vem Passarinhar Manaus in Amazonas (a UEA university extension project). Two Instagram handles for
+these surfaced and were deliberately left out because neither would return real bio or follower
+content. **This also corrected an earlier claim in this file** that Amazonas and Pará are "tourism and
+guide based, not club based": the clubs exist, they have no findable page yet.
+
+**India went 4 to 34 groups across 19 states** by working the social route, which its own earlier run
+had correctly identified as the only route that works there. Two near misses were caught by the agent:
+`bsap.in`, the old Birdwatchers Society of Andhra Pradesh domain, **has been hijacked and now redirects
+to a Vietnamese gambling site** (replaced with the org's real current site, `deccanbirders.org`), and
+`jorbeer.com`, offered as "Bikaner Bird Club", is a commercial safari operator.
+
+Two more were caught by the mandatory browser pass, which is the argument for keeping it: **Odisha
+Nature and Wildlife was dead** (Facebook serving "content isn't available") and **UP Birds could not be
+corroborated** by any search result quoting its real content. Both dropped.
+
+**A refinement to the social verification rule.** A numeric `/groups/<id>/` URL cannot be fabricated
+plausibly, so Facebook answering for one is decent evidence by itself. A VANITY URL
+(`/groups/UPBirds/`) can be fabricated exactly like a page handle, so it needs the same corroboration
+as any other: a search result quoting a member count, a post, or independent press. Judge the two
+differently.
+
 ## Queued (not started)
 
-1. **India in depth.** Still only 4 groups against a 40 to 70 target. Its own agent found the reason:
-   most Indian state and city bird clubs run on Facebook and WhatsApp rather than their own sites, so
-   this needs the browser-verified social route rather than curl.
-2. **Southeast Asia re-pass**: 5 groups only. Malaysia (Malaysian Nature Society branches), the
-   Philippines (Wild Bird Club of the Philippines chapters), Indonesia, Thailand's regional clubs.
-3. **Japan deeper**: WBSJ has ~85 branches against the 20 listed.
-4. **China**: retry the city societies; their domains may resolve from a different network.
-5. **The nine thin Balkan/Turkey countries** left after the eBird placeholders came out. Kosovo has
-   zero groups and does not appear on the page at all.
-6. **Sri Lanka, Nepal, Bangladesh, Pakistan** are on one group each.
+1. **India**, 16 states still empty. Several are genuine (Bird Count India itself reports zero walks in
+   Haryana), but Assam, Punjab, Odisha and the Northeast are worth another pass.
+2. **Brazil**, 12 states, blocked on those clubs having no web presence rather than on research.
+3. **Thin countries with real birding cultures**: Chile, Peru, Romania, Greece, Tanzania, Ghana,
+   Uganda, South Korea (see the `--thin` list above).
+4. **Southeast Asia**: 5 groups only. Malaysia, the Philippines, Indonesia, Thailand's regional clubs.
+5. **Japan deeper**: WBSJ has about 85 branches against the 20 listed.
+6. **China**: retry the city societies, whose domains were unreachable from this network.
+7. **The nine thin Balkan/Turkey countries**; Kosovo has zero groups and does not render at all.
 
 ## Wave discipline
 

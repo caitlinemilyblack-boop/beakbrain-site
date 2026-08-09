@@ -1,0 +1,292 @@
+[
+  {
+    "code": "IN",
+    "name": "India",
+    "flag": "🇮🇳",
+    "continent": "Asia",
+    "aka": [
+      "india",
+      "indian",
+      "bharata"
+    ],
+    "gaps": [
+      "Bihar: only lead found was a Nalanda nature walk group whose own blog now redirects to a generic WordPress.com landing page, so no live link could be confirmed.",
+      "Chhattisgarh: a biodiversity research group was mentioned in a national directory but its own site could not be read well enough to confirm it is a volunteer group rather than a guided trail business, so it was left out rather than guessed at.",
+      "Haryana: Bird Count India's own events page states it has received no reports of organised bird walks in Haryana, and no standalone club or page could be found for Gurgaon or Faridabad.",
+      "Himachal Pradesh: the one dedicated resource, the Himachal Birds blog, has had no posts since around 2017 and reads as dormant, so it was left out under the three year activity rule.",
+      "Jharkhand: a Facebook group called Birds of Jharkhand exists but no search result quoted its member count, bio or a real post, so it could not be verified to the required standard.",
+      "Manipur, Meghalaya, Mizoram, Nagaland, Sikkim and Tripura: no state level bird club or verifiable public group page could be found for any of these six states.",
+      "Punjab: birding activity around Amritsar and Ludhiana is real but no dedicated club or page distinct from the Chandigarh Bird Club could be confirmed.",
+      "Puducherry: an informal WhatsApp based bird walk group was mentioned in a national directory but has no public link to verify.",
+      "Andaman and Nicobar Islands: no birding club or public group could be found; birding there appears to run through tour operators and the forest department rather than a community group.",
+      "Dropped on a browser check 2026-08-09: UP Birds (Uttar Pradesh): could not be corroborated: no search result quotes its real content; Odisha Nature and Wildlife (Odisha): dead, Facebook serves \"content isn't available\""
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Bombay Natural History Society",
+            "url": "https://www.bnhs.org",
+            "blurb": "India's premier ornithological research organization since 1883. BirdLife International partner."
+          },
+          {
+            "name": "Wildlife Trust of India",
+            "url": "https://www.wti.org.in",
+            "blurb": "National conservation organization working on species recovery, protected areas, and wildlife rescue across India."
+          },
+          {
+            "name": "Bird Count India",
+            "url": "https://birdcount.in",
+            "blurb": "National citizen science collective coordinating bird atlases, counts and monitoring projects across every state."
+          },
+          {
+            "name": "Bird Alliance",
+            "url": "https://birdalliance.in",
+            "blurb": "Nationwide collective connecting birders, educators and researchers, with a directory of local groups across India."
+          }
+        ]
+      },
+      {
+        "name": "Tamil Nadu",
+        "groups": [
+          {
+            "name": "SACON (Salim Ali Centre for Ornithology and Natural History)",
+            "url": "https://sacon.in",
+            "blurb": "National research institute for ornithology and conservation science. Conducts bird research, maintains ornithological databank."
+          },
+          {
+            "name": "Madras Naturalists' Society",
+            "url": "https://www.blackbuck.org.in",
+            "blurb": "Chennai naturalist society since 1978, running nature walks, talks and long running bird surveys."
+          },
+          {
+            "name": "Tamilbirds",
+            "url": "https://groups.google.com/g/tamilbirds",
+            "blurb": "Long running discussion group for Tamil Nadu birders, sharing sightings, identification help and trip reports."
+          },
+          {
+            "name": "Salem Ornithological Foundation",
+            "url": "https://www.sof-life.org",
+            "blurb": "Salem based foundation studying and conserving birds across the surrounding landscapes of Tamil Nadu."
+          },
+          {
+            "name": "Endangered Wildlife and Environmental Trust",
+            "url": "https://ewet.in",
+            "blurb": "Thanjavur based trust running bird surveys, education and conservation work across the Kaveri delta."
+          }
+        ]
+      },
+      {
+        "name": "Delhi",
+        "groups": [
+          {
+            "name": "Bird Atlas Delhi",
+            "url": "https://birdatlas.in",
+            "blurb": "Systematic bird monitoring and survey project tracking bird populations across Delhi's ecosystems and protected areas."
+          },
+          {
+            "name": "delhibird Foundation",
+            "url": "https://delhibirdfoundation.org",
+            "blurb": "Delhi's long running birdwatching network, running Sunday bird walks and citizen science projects across the city."
+          },
+          {
+            "name": "Delhi Bird Photographers Meetup",
+            "url": "https://www.meetup.com/delhibirdphotographers/",
+            "blurb": "Weekend meetup for bird photographers of all levels at Delhi's parks, wetlands and sanctuaries."
+          }
+        ]
+      },
+      {
+        "name": "Karnataka",
+        "groups": [
+          {
+            "name": "BlrBirders (Birdwatchers' Field Club of Bangalore)",
+            "url": "https://blrbirders.com",
+            "blurb": "Bengaluru's birdwatchers field club, running monthly outings since the 1970s with no membership fee."
+          },
+          {
+            "name": "Kaiga Birders",
+            "url": "https://kaigabirders.wordpress.com",
+            "blurb": "Birding community around Kaiga and Karwar on Karnataka's coast, sharing sightings and trip notes."
+          }
+        ]
+      },
+      {
+        "name": "Telangana",
+        "groups": [
+          {
+            "name": "Deccan Birders",
+            "url": "https://deccanbirders.org",
+            "blurb": "Hyderabad society, formerly the Birdwatchers Society of Andhra Pradesh, running field trips and counts since 1980."
+          }
+        ]
+      },
+      {
+        "name": "Andhra Pradesh",
+        "groups": [
+          {
+            "name": "Vizag Birders",
+            "url": "https://www.facebook.com/groups/vizagbirders/",
+            "blurb": "Visakhapatnam birding group organising local walks and sharing sightings across coastal Andhra Pradesh."
+          }
+        ]
+      },
+      {
+        "name": "Kerala",
+        "groups": [
+          {
+            "name": "Malabar Natural History Society",
+            "url": "https://malabarnhs.in",
+            "blurb": "Kozhikode based natural history society running bird surveys and nature education across north Kerala."
+          },
+          {
+            "name": "Cochin Natural History Society",
+            "url": "https://cochinnaturalhistorysociety.blogspot.com",
+            "blurb": "Kochi based society of amateur naturalists running bird walks and biodiversity documentation."
+          },
+          {
+            "name": "Bird Diversity Kerala",
+            "url": "https://www.facebook.com/p/Bird-Diversity-Kerala-100064973621054/",
+            "blurb": "Kerala wide page sharing bird sightings, identification help and photos from across the state."
+          }
+        ]
+      },
+      {
+        "name": "West Bengal",
+        "groups": [
+          {
+            "name": "Nature Mates",
+            "url": "https://naturematesindia.org",
+            "blurb": "Kolkata based conservation group running bird and wider biodiversity projects across West Bengal."
+          },
+          {
+            "name": "Birdwatchers' Society",
+            "url": "https://birdwatcherssociety.org",
+            "blurb": "West Bengal group of over 300 birdwatchers running counts, monitoring and a quarterly newsletter."
+          }
+        ]
+      },
+      {
+        "name": "Goa",
+        "groups": [
+          {
+            "name": "Goa Bird Conservation Network",
+            "url": "https://www.gbcn.in",
+            "blurb": "Goa wide network running monthly public bird walks and conservation research since 2010."
+          }
+        ]
+      },
+      {
+        "name": "Gujarat",
+        "groups": [
+          {
+            "name": "Bird Conservation Society, Gujarat",
+            "url": "https://bcsg.co.in",
+            "blurb": "Statewide network of birdwatchers and conservationists researching and protecting Gujarat's birds and wetlands."
+          }
+        ]
+      },
+      {
+        "name": "Maharashtra",
+        "groups": [
+          {
+            "name": "Maharashtra Pakshimitra",
+            "url": "https://www.pakshimitra.org",
+            "blurb": "Statewide network of bird lovers running counts, education and conservation projects across Maharashtra."
+          },
+          {
+            "name": "Mumbai Birdwatchers Club",
+            "url": "https://www.facebook.com/groups/mumbaibirdwatchersclub/",
+            "blurb": "Mumbai's birdwatching community, organising walks around the city and nearby wetlands."
+          },
+          {
+            "name": "Pune Birdwatching Meetup Group",
+            "url": "https://www.meetup.com/pune-birdwatching-meetup-group/",
+            "blurb": "Open meetup for birders in and around Pune, helping members find local birding spots."
+          }
+        ]
+      },
+      {
+        "name": "Rajasthan",
+        "groups": [
+          {
+            "name": "Indian Birding Fair Group",
+            "url": "https://www.birdfair.org",
+            "blurb": "Jaipur based conservation charity running an annual birding fair and field conservation work since 1997."
+          }
+        ]
+      },
+      {
+        "name": "Madhya Pradesh",
+        "groups": [
+          {
+            "name": "Indore Birding Club",
+            "url": "https://www.facebook.com/groups/533426130474604/",
+            "blurb": "Indore based club of enthusiasts, photographers and conservationists sharing sightings and meetups."
+          }
+        ]
+      },
+      {
+        "name": "Uttar Pradesh",
+        "groups": [
+          {
+            "name": "Indian Biodiversity Conservation Society",
+            "url": "https://ibcsforall.com",
+            "blurb": "Jhansi based non profit studying and conserving wildlife and birds across Uttar Pradesh."
+          }
+        ]
+      },
+      {
+        "name": "Uttarakhand",
+        "groups": [
+          {
+            "name": "Titli Trust",
+            "url": "https://titlitrust.org",
+            "blurb": "Dehradun based conservation trust documenting the birds, butterflies and biodiversity of Uttarakhand."
+          }
+        ]
+      },
+      {
+        "name": "Chandigarh",
+        "groups": [
+          {
+            "name": "Chandigarh Bird Club",
+            "url": "https://www.chandigarhbirdclub.com",
+            "blurb": "Registered club of local birdwatchers recording avifauna and raising awareness across the Tricity."
+          }
+        ]
+      },
+      {
+        "name": "Ladakh",
+        "groups": [
+          {
+            "name": "Ladakh Bird Life",
+            "url": "https://www.facebook.com/Ladakhbirdlife",
+            "blurb": "Leh based community page for sharing bird photos and sightings from across Ladakh."
+          }
+        ]
+      },
+      {
+        "name": "Jammu and Kashmir",
+        "groups": [
+          {
+            "name": "Kashmir Birdwatch",
+            "url": "https://www.facebook.com/groups/kashmirbirdwatch/",
+            "blurb": "Kashmir's largest birdwatching group, with photography outings and citizen science across the valley."
+          }
+        ]
+      },
+      {
+        "name": "Arunachal Pradesh",
+        "groups": [
+          {
+            "name": "Birds of Arunachal Pradesh",
+            "url": "https://www.facebook.com/birdsofarunachal700/",
+            "blurb": "Page raising awareness of Arunachal Pradesh's rich bird life and sharing sightings from the state."
+          }
+        ]
+      }
+    ]
+  }
+]
