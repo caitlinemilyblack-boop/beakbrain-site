@@ -1,5 +1,729 @@
 [
   {
+    "code": "AO",
+    "name": "Angola",
+    "flag": "🇦🇴",
+    "continent": "Africa",
+    "aka": [
+      "angola"
+    ],
+    "gaps": [
+      "No BirdLife International partner."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Birds Angola",
+            "url": "https://www.birdsangola.org/",
+            "blurb": "Ornithological organization supporting research and conservation of Angolan birds. Provides expertise to birders, researchers and conservation professionals."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "BJ",
+    "name": "Benin",
+    "flag": "🇧🇯",
+    "continent": "Africa",
+    "aka": [
+      "benin"
+    ],
+    "gaps": [
+      "Searched for bird clubs and ornithological societies but no findable local organizations with verified websites."
+    ],
+    "regions": []
+  },
+  {
+    "code": "BW",
+    "name": "Botswana",
+    "flag": "🇧🇼",
+    "continent": "Africa",
+    "aka": [
+      "botswana"
+    ],
+    "gaps": [
+      "No regional bird club structure with separate websites. BirdLife Botswana coordinates with community groups but specific local clubs are not listed on their public site."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "BirdLife Botswana",
+            "url": "https://www.birdlifebotswana.org.bw/",
+            "blurb": "The national BirdLife partner, formerly the Botswana Bird Club. Runs education, research and community mobilization for bird conservation."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "BF",
+    "name": "Burkina Faso",
+    "flag": "🇧🇫",
+    "continent": "Africa",
+    "aka": [
+      "burkina faso"
+    ],
+    "gaps": [
+      "Association Nature et Développement (NATUDEV), AGEREF-CL, ACTAG-PRW, and Wildlife Angel mentioned on ABC page but websites not verified or currently offline. West African Bird DataBase (WABDaB) excluded as it is a global bird recording platform not a local community."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "NATURAMA",
+            "url": "https://naturama.bf",
+            "blurb": "The national BirdLife partner, coordinating Site Support Groups around Important Bird Areas."
+          },
+          {
+            "name": "Les Anges-Gardiens de la Nature",
+            "url": "https://agn-burkinafaso.com",
+            "blurb": "Association of ecoguards working on wildlife and environmental protection across Burkina Faso."
+          },
+          {
+            "name": "L'Homme et l'environnement",
+            "url": "https://www.homme-environnement.org",
+            "blurb": "Environmental conservation and sustainable development organization working in the region."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "BI",
+    "name": "Burundi",
+    "flag": "🇧🇮",
+    "continent": "Africa",
+    "aka": [
+      "burundi"
+    ],
+    "gaps": [
+      "No birding communities with verifiable online presence found. Limited organised birding infrastructure identified."
+    ],
+    "regions": []
+  },
+  {
+    "code": "CM",
+    "name": "Cameroon",
+    "flag": "🇨🇲",
+    "continent": "Africa",
+    "aka": [
+      "cameroon"
+    ],
+    "gaps": [
+      "Cameroon Wildlife Conservation Society (CWCS), Environment and Rural Development Foundation (ERuDeF), Cameroon Biodiversity Conservation Society (CBCS), African Nature and Conservation (ANC), and Voice of Nature (VoNat) all mentioned on ABC page but no verified independent websites found. Cameroon has no current BirdLife partner organization listed. Organizations appear to exist but lack findable online presence."
+    ],
+    "regions": []
+  },
+  {
+    "code": "CV",
+    "name": "Cape Verde",
+    "flag": "🇨🇻",
+    "continent": "Africa",
+    "aka": [
+      "cape verde"
+    ],
+    "gaps": [
+      "Searched for bird clubs and ornithological societies but no findable local organizations with verified websites."
+    ],
+    "regions": []
+  },
+  {
+    "code": "CF",
+    "name": "Central African Republic",
+    "flag": "🇨🇫",
+    "continent": "Africa",
+    "aka": [
+      "central african republic"
+    ],
+    "gaps": [
+      "Searched for bird clubs and ornithological societies but no findable local organizations with verified websites."
+    ],
+    "regions": []
+  },
+  {
+    "code": "TD",
+    "name": "Chad",
+    "flag": "🇹🇩",
+    "continent": "Africa",
+    "aka": [
+      "chad"
+    ],
+    "gaps": [
+      "Searched for bird clubs and ornithological societies but no findable local organizations with verified websites."
+    ],
+    "regions": []
+  },
+  {
+    "code": "KM",
+    "name": "Comoros",
+    "flag": "🇰🇲",
+    "continent": "Africa",
+    "aka": [
+      "comoros"
+    ],
+    "gaps": [
+      "No BirdLife International partner. Conservation organizations (Dahari, Blue Ventures) focus on marine and habitat conservation rather than community birding. No findable birding community."
+    ],
+    "regions": []
+  },
+  {
+    "code": "CI",
+    "name": "Côte d'Ivoire",
+    "flag": "🇨🇮",
+    "continent": "Africa",
+    "aka": [
+      "ivory coast",
+      "cote d'ivoire"
+    ],
+    "gaps": [
+      "Searched for bird clubs and ornithological societies but no findable local organizations with verified websites. No verifiable birding community groups found."
+    ],
+    "regions": []
+  },
+  {
+    "code": "DJ",
+    "name": "Djibouti",
+    "flag": "🇩🇯",
+    "continent": "Africa",
+    "aka": [
+      "djibouti"
+    ],
+    "gaps": [
+      "No birding communities with verifiable online presence found. Small country with minimal organised birding structure."
+    ],
+    "regions": []
+  },
+  {
+    "code": "CD",
+    "name": "DR Congo",
+    "flag": "🇨🇩",
+    "continent": "Africa",
+    "aka": [
+      "democratic republic of congo",
+      "congo kinshasa"
+    ],
+    "gaps": [
+      "Searched for bird clubs and ornithological societies but no findable local organizations with verified websites."
+    ],
+    "regions": []
+  },
+  {
+    "code": "GQ",
+    "name": "Equatorial Guinea",
+    "flag": "🇬🇶",
+    "continent": "Africa",
+    "aka": [
+      "equatorial guinea"
+    ],
+    "gaps": [
+      "Searched for bird clubs and ornithological societies but no findable local organizations with verified websites."
+    ],
+    "regions": []
+  },
+  {
+    "code": "ER",
+    "name": "Eritrea",
+    "flag": "🇪🇷",
+    "continent": "Africa",
+    "aka": [
+      "eritrea"
+    ],
+    "gaps": [
+      "No birding communities with verifiable online presence found. Limited access to information due to political conditions."
+    ],
+    "regions": []
+  },
+  {
+    "code": "SZ",
+    "name": "Eswatini",
+    "flag": "🇸🇿",
+    "continent": "Africa",
+    "aka": [
+      "eswatini",
+      "swaziland"
+    ],
+    "gaps": [
+      "No BirdLife International partner. The Natural History Society of Eswatini mentioned regionally but no confirmed public website or verified current activity."
+    ],
+    "regions": []
+  },
+  {
+    "code": "ET",
+    "name": "Ethiopia",
+    "flag": "🇪🇹",
+    "continent": "Africa",
+    "aka": [
+      "ethiopia"
+    ],
+    "gaps": [
+      "Most regional birding groups lack their own websites. Local guides and clubs exist throughout Ethiopia's birdwatching regions but cannot be independently verified online."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Ethiopian Wildlife and Natural History Society",
+            "url": "https://www.ewnhs.org.et",
+            "blurb": "National natural history society supporting wildlife conservation and research across Ethiopia."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "GA",
+    "name": "Gabon",
+    "flag": "🇬🇦",
+    "continent": "Africa",
+    "aka": [
+      "gabon"
+    ],
+    "gaps": [
+      "Searched for bird clubs and ornithological societies but no findable local organizations with verified websites."
+    ],
+    "regions": []
+  },
+  {
+    "code": "GH",
+    "name": "Ghana",
+    "flag": "🇬🇭",
+    "continent": "Africa",
+    "aka": [
+      "ghana"
+    ],
+    "gaps": [
+      "Multiple conservation organizations listed on ABC page (A Rocha Ghana, THRESCOAL, NCRC, Friends of the Nation) but no independent verified websites found. Wildlife Clubs of Ghana (junior wing of GWS) mentioned but no standalone presence verified."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Ghana Wildlife Society",
+            "url": "https://ghanawildlifesociety.org",
+            "blurb": "The national bird society and BirdLife partner, organizing monthly public birdwalks and conservation work."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "GN",
+    "name": "Guinea",
+    "flag": "🇬🇳",
+    "continent": "Africa",
+    "aka": [
+      "guinea"
+    ],
+    "gaps": [
+      "Searched for bird clubs and ornithological societies but no findable local organizations with verified websites."
+    ],
+    "regions": []
+  },
+  {
+    "code": "GW",
+    "name": "Guinea-Bissau",
+    "flag": "🇬🇼",
+    "continent": "Africa",
+    "aka": [
+      "guinea bissau"
+    ],
+    "gaps": [
+      "Searched for bird clubs and ornithological societies but no findable local organizations with verified websites."
+    ],
+    "regions": []
+  },
+  {
+    "code": "KE",
+    "name": "Kenya",
+    "flag": "🇰🇪",
+    "continent": "Africa",
+    "aka": [
+      "kenya"
+    ],
+    "gaps": [
+      "Most regional clubs lack their own websites. Lake Baringo Birding Club, Mount Kenya region groups, and Laikipia guides exist but have no verifiable online presence. Nairobi Ringing Group meets Tuesdays but has no standalone website."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Nature Kenya",
+            "url": "https://www.naturekenya.org",
+            "blurb": "East Africa's oldest environmental society and BirdLife partner, running Wednesday morning birdwalks and bird monitoring."
+          },
+          {
+            "name": "Kenya Bird Map",
+            "url": "https://kenya.birdmap.africa",
+            "blurb": "Citizen science bird atlas project tracking distribution and status of Kenya's 1065 bird species."
+          }
+        ]
+      },
+      {
+        "name": "Coast",
+        "groups": [
+          {
+            "name": "A Rocha Kenya",
+            "url": "https://www.arocha.or.ke",
+            "blurb": "Conservation organisation working in Arabuko Sokoke coastal forest and coastal Kenya habitats."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "LS",
+    "name": "Lesotho",
+    "flag": "🇱🇸",
+    "continent": "Africa",
+    "aka": [
+      "lesotho"
+    ],
+    "gaps": [
+      "No BirdLife International partner. BirdLife Lesotho mentioned on regional pages but current activity and independent web presence could not be verified."
+    ],
+    "regions": []
+  },
+  {
+    "code": "LR",
+    "name": "Liberia",
+    "flag": "🇱🇷",
+    "continent": "Africa",
+    "aka": [
+      "liberia"
+    ],
+    "gaps": [
+      "Searched for bird clubs and ornithological societies but no findable local organizations with verified websites."
+    ],
+    "regions": []
+  },
+  {
+    "code": "MG",
+    "name": "Madagascar",
+    "flag": "🇲🇬",
+    "continent": "Africa",
+    "aka": [
+      "madagascar"
+    ],
+    "gaps": [
+      "Asity Madagascar's direct website unavailable. Madagascar Birding Association mentioned regionally but could not be independently verified with published content."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Asity Madagascar",
+            "url": "https://www.birdlife.org/partners/madagascar-asity-madagascar/",
+            "blurb": "The national BirdLife partner and 100 percent Malagasy organization protecting endemic birds through environmental education and community conservation."
+          },
+          {
+            "name": "The Peregrine Fund Madagascar",
+            "url": "https://peregrinefund.org/madagascar-program",
+            "blurb": "Community conservation program that rediscovered four presumed extinct bird species and has fostered over 30 community associations around protected areas."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "MW",
+    "name": "Malawi",
+    "flag": "🇲🇼",
+    "continent": "Africa",
+    "aka": [
+      "malawi"
+    ],
+    "gaps": [
+      "Regional branches (Balaka, Blantyre, Dwangwa, Lilongwe, Monkeybay, Mulanje, Mzuza, Nkhatabay, Zomba) have limited individual web presence and operate through the main WESM site and affiliated wildlife clubs."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Wildlife and Environmental Society of Malawi",
+            "url": "https://wesm.mw/",
+            "blurb": "The national BirdLife partner, founded 1947. Operates through nine regional branches and over 1500 community wildlife clubs."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "ML",
+    "name": "Mali",
+    "flag": "🇲🇱",
+    "continent": "Africa",
+    "aka": [
+      "mali"
+    ],
+    "gaps": [
+      "Searched for bird clubs and ornithological societies but no findable local organizations with verified websites."
+    ],
+    "regions": []
+  },
+  {
+    "code": "MR",
+    "name": "Mauritania",
+    "flag": "🇲🇷",
+    "continent": "Africa",
+    "aka": [
+      "mauritania"
+    ],
+    "gaps": [
+      "Searched for bird clubs and ornithological societies. Nature Mauritanie mentioned in research notes but no verified website found."
+    ],
+    "regions": []
+  },
+  {
+    "code": "MU",
+    "name": "Mauritius",
+    "flag": "🇲🇺",
+    "continent": "Africa",
+    "aka": [
+      "mauritius"
+    ],
+    "gaps": [
+      "Council for Nature Conservation mentioned regionally but not independently verified. No bird atlas or structured citizen science scheme found."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Mauritian Wildlife Foundation",
+            "url": "https://www.mauritian-wildlife.org/",
+            "blurb": "The national BirdLife partner and largest conservation NGO in Mauritius. Renowned for saving endemic birds from extinction through research and conservation."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "MZ",
+    "name": "Mozambique",
+    "flag": "🇲🇿",
+    "continent": "Africa",
+    "aka": [
+      "mozambique"
+    ],
+    "gaps": [
+      "No BirdLife International partner. Birds Mozambique and AACEM mentioned in regional resources but no independently verified online presence. No findable community for local birders."
+    ],
+    "regions": []
+  },
+  {
+    "code": "NA",
+    "name": "Namibia",
+    "flag": "🇳🇦",
+    "continent": "Africa",
+    "aka": [
+      "namibia"
+    ],
+    "gaps": [
+      "Namibia has no BirdLife International partner organization. The Namibia Crane Working Group is supported by the Namibia Nature Foundation but details are unavailable for independent verification."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Namibia Bird Club",
+            "url": "https://www.namibiabirdclub.org/",
+            "blurb": "Ornithological society founded in 1962, running guided walks and surveys. Publishes journal Lanioturdus and newsletter Bird Call."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "NE",
+    "name": "Niger",
+    "flag": "🇳🇪",
+    "continent": "Africa",
+    "aka": [
+      "niger"
+    ],
+    "gaps": [
+      "Searched for bird clubs and ornithological societies but no findable local organizations with verified websites."
+    ],
+    "regions": []
+  },
+  {
+    "code": "NG",
+    "name": "Nigeria",
+    "flag": "🇳🇬",
+    "continent": "Africa",
+    "aka": [
+      "nigeria"
+    ],
+    "gaps": [
+      "Ibadan Bird Club and Lekki Bird Club mentioned in searches but only Lekki has verified presence through NCF site. Nigerian Bird Atlas Project operates as Facebook group only. West African Ornithological Society mentioned as BirdLife partner but website not verified. Other regional clubs exist but lack findable independent web presence."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Nigerian Conservation Foundation",
+            "url": "https://ncfnigeria.org",
+            "blurb": "The national bird society and BirdLife partner, coordinating conservation and education."
+          },
+          {
+            "name": "NCF Bird Club",
+            "url": "https://ncfnigeria.org/bird-club/",
+            "blurb": "Volunteer led birding group running walks, field trips and conservation projects across Nigeria."
+          },
+          {
+            "name": "A.P. Leventis Ornithological Research Institute",
+            "url": "https://www.aplori.org",
+            "blurb": "Research and training centre for ornithology and bird conservation at University of Jos."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "CG",
+    "name": "Republic of the Congo",
+    "flag": "🇨🇬",
+    "continent": "Africa",
+    "aka": [
+      "congo",
+      "republic of congo"
+    ],
+    "gaps": [
+      "Searched for bird clubs and ornithological societies but no findable local organizations with verified websites."
+    ],
+    "regions": []
+  },
+  {
+    "code": "RE",
+    "name": "Réunion",
+    "flag": "🇷🇪",
+    "continent": "Africa",
+    "aka": [
+      "reunion",
+      "reunion island"
+    ],
+    "gaps": [],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "SEOR",
+            "url": "https://www.seor.fr/",
+            "blurb": "Ornithological society founded 1997, studying and conserving Reunion's endemic birds. Operates wildlife rescue center with 20 staff and 250 active members."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "RW",
+    "name": "Rwanda",
+    "flag": "🇷🇼",
+    "continent": "Africa",
+    "aka": [
+      "rwanda"
+    ],
+    "gaps": [
+      "Association pour la Conservation de la Nature au Rwanda (ACNR), the presumed BirdLife partner, has no verifiable website. No regional birding clubs with accessible online presence found."
+    ],
+    "regions": []
+  },
+  {
+    "code": "ST",
+    "name": "São Tomé and Príncipe",
+    "flag": "🇸🇹",
+    "continent": "Africa",
+    "aka": [
+      "sao tome and principe"
+    ],
+    "gaps": [
+      "Searched for bird clubs and ornithological societies but no findable local organizations with verified websites."
+    ],
+    "regions": []
+  },
+  {
+    "code": "SN",
+    "name": "Senegal",
+    "flag": "🇸🇳",
+    "continent": "Africa",
+    "aka": [
+      "senegal"
+    ],
+    "gaps": [
+      "Nature-Communautés-Développement is the BirdLife partner but website not verified. APALIS and GÉPOC are Casamance ornithological groups, Oceanium de Dakar is mentioned as active, but no independent verified websites located. CSE (Centre de Suivi Ecologique) is an environmental monitoring center focused on coastal and ecological issues, not a birding community. Groups appear to operate but lack findable web presence with public birding participation."
+    ],
+    "regions": []
+  },
+  {
+    "code": "SC",
+    "name": "Seychelles",
+    "flag": "🇸🇨",
+    "continent": "Africa",
+    "aka": [
+      "seychelles"
+    ],
+    "gaps": [
+      "Seychelles Bird Records Committee exists but independent website not found. Island Conservation Society mentioned regionally but current status unverified."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Nature Seychelles",
+            "url": "https://natureseychelles.org/",
+            "blurb": "The national BirdLife partner managing conservation of endemic species. Manages Cousin Island Special Reserve and runs island restoration and seabird protection."
+          },
+          {
+            "name": "Seychelles Islands Foundation",
+            "url": "https://www.sif.sc/",
+            "blurb": "Manages UNESCO World Heritage sites Aldabra Atoll and Vallée de Mai, protecting endemic and seabird populations including the Seychelles black parrot."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "SL",
+    "name": "Sierra Leone",
+    "flag": "🇸🇱",
+    "continent": "Africa",
+    "aka": [
+      "sierra leone"
+    ],
+    "gaps": [
+      "Searched for bird clubs and ornithological societies but no findable local organizations with verified websites."
+    ],
+    "regions": []
+  },
+  {
+    "code": "SO",
+    "name": "Somalia",
+    "flag": "🇸🇴",
+    "continent": "Africa",
+    "aka": [
+      "somalia"
+    ],
+    "gaps": [
+      "No birding communities with verifiable online presence found. Limited civil infrastructure for organised birding."
+    ],
+    "regions": []
+  },
+  {
     "code": "ZA",
     "name": "South Africa",
     "flag": "🇿🇦",
@@ -257,6 +981,146 @@
             "name": "BirdLife Worcester",
             "url": "https://www.birdlife.org.za/support-us/join-us/join-a-bird-club/western-cape/birdlife-worcester/",
             "blurb": "Breede River valley and the Karoo edge."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "SS",
+    "name": "South Sudan",
+    "flag": "🇸🇸",
+    "continent": "Africa",
+    "aka": [
+      "south sudan"
+    ],
+    "gaps": [
+      "No birding communities with verifiable online presence found. Ongoing instability limits organisational development."
+    ],
+    "regions": []
+  },
+  {
+    "code": "TZ",
+    "name": "Tanzania",
+    "flag": "🇹🇿",
+    "continent": "Africa",
+    "aka": [
+      "tanzania"
+    ],
+    "gaps": [
+      "Tanzania Bird Atlas project exists but website not accessible online. Regional bird clubs throughout the country lack their own websites. No verified regional group websites found."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Wildlife Conservation Society of Tanzania",
+            "url": "https://tanzania.wcs.org",
+            "blurb": "Independent conservation organisation founded 1988, BirdLife partner, supporting wildlife conservation across Tanzania."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "GM",
+    "name": "The Gambia",
+    "flag": "🇬🇲",
+    "continent": "Africa",
+    "aka": [
+      "gambia"
+    ],
+    "gaps": [
+      "Gambia Bird Guide Association mentioned as operating in the country with a real birding-guide culture, but no verified independent website found. Professional guide services exist but fell outside community scope."
+    ],
+    "regions": []
+  },
+  {
+    "code": "TG",
+    "name": "Togo",
+    "flag": "🇹🇬",
+    "continent": "Africa",
+    "aka": [
+      "togo"
+    ],
+    "gaps": [
+      "Searched for bird clubs and ornithological societies but no findable local organizations with verified websites."
+    ],
+    "regions": []
+  },
+  {
+    "code": "UG",
+    "name": "Uganda",
+    "flag": "🇺🇬",
+    "continent": "Africa",
+    "aka": [
+      "uganda"
+    ],
+    "gaps": [
+      "Uganda Young Birders Club and Uganda Bird Guides Club exist but have no verifiable websites. Regional clubs based in Kampala, western and eastern Uganda regions lack online presence."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "NatureUganda",
+            "url": "https://www.natureuganda.org",
+            "blurb": "BirdLife partner promoting understanding and conservation of nature, coordinating birding activities across Uganda."
+          },
+          {
+            "name": "Uganda Women Birders",
+            "url": "https://ugandawomenbirders.wordpress.com",
+            "blurb": "Inclusive birding community founded 2013 to increase women's participation in bird guiding and birding."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "ZM",
+    "name": "Zambia",
+    "flag": "🇿🇲",
+    "continent": "Africa",
+    "aka": [
+      "zambia"
+    ],
+    "gaps": [
+      "BirdWatch Zambia is the only birding organization with significant public presence. Other groups (African Cuckoos, Zambia Barn Swallow Project) focus on research rather than community birding activities."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "BirdWatch Zambia",
+            "url": "https://www.birdwatchzambia.org/",
+            "blurb": "The national BirdLife partner founded 1969. Runs monthly bird walks, citizen science and monitoring of 42 Important Bird and Biodiversity Areas."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "ZW",
+    "name": "Zimbabwe",
+    "flag": "🇿🇼",
+    "continent": "Africa",
+    "aka": [
+      "zimbabwe"
+    ],
+    "gaps": [
+      "BirdLife Zimbabwe works with Site Support Groups and local branches but specific regional branch details are not listed on their public site. A Birdlife Youth Club Zimbabwe and Everyday Birds Zimbabwe Facebook group are mentioned regionally but could not be independently verified."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "BirdLife Zimbabwe",
+            "url": "https://www.birdlifezimbabwe.org/",
+            "blurb": "The national bird society and BirdLife partner, founded 1951. Coordinates branches and citizen science atlassing and bird record submission."
           }
         ]
       }

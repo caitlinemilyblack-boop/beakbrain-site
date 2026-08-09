@@ -1,0 +1,196 @@
+[
+  {
+    "code": "KE",
+    "name": "Kenya",
+    "flag": "🇰🇪",
+    "continent": "Africa",
+    "aka": [
+      "kenya"
+    ],
+    "gaps": [
+      "Most regional clubs lack their own websites. Lake Baringo Birding Club, Mount Kenya region groups, and Laikipia guides exist but have no verifiable online presence. Nairobi Ringing Group meets Tuesdays but has no standalone website."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Nature Kenya",
+            "url": "https://www.naturekenya.org",
+            "blurb": "East Africa's oldest environmental society and BirdLife partner, running Wednesday morning birdwalks and bird monitoring."
+          },
+          {
+            "name": "Kenya Bird Map",
+            "url": "https://kenya.birdmap.africa",
+            "blurb": "Citizen science bird atlas project tracking distribution and status of Kenya's 1065 bird species."
+          }
+        ]
+      },
+      {
+        "name": "Coast",
+        "groups": [
+          {
+            "name": "A Rocha Kenya",
+            "url": "https://www.arocha.or.ke",
+            "blurb": "Conservation organisation working in Arabuko Sokoke coastal forest and coastal Kenya habitats."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TZ",
+    "name": "Tanzania",
+    "flag": "🇹🇿",
+    "continent": "Africa",
+    "aka": [
+      "tanzania"
+    ],
+    "gaps": [
+      "Tanzania Bird Atlas project exists but website not accessible online. Regional bird clubs throughout the country lack their own websites. No verified regional group websites found."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Wildlife Conservation Society of Tanzania",
+            "url": "https://tanzania.wcs.org",
+            "blurb": "Independent conservation organisation founded 1988, BirdLife partner, supporting wildlife conservation across Tanzania."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "UG",
+    "name": "Uganda",
+    "flag": "🇺🇬",
+    "continent": "Africa",
+    "aka": [
+      "uganda"
+    ],
+    "gaps": [
+      "Uganda Young Birders Club and Uganda Bird Guides Club exist but have no verifiable websites. Regional clubs based in Kampala, western and eastern Uganda regions lack online presence."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "NatureUganda",
+            "url": "https://www.natureuganda.org",
+            "blurb": "BirdLife partner promoting understanding and conservation of nature, coordinating birding activities across Uganda."
+          },
+          {
+            "name": "Uganda Women Birders",
+            "url": "https://ugandawomenbirders.wordpress.com",
+            "blurb": "Inclusive birding community founded 2013 to increase women's participation in bird guiding and birding."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "RW",
+    "name": "Rwanda",
+    "flag": "🇷🇼",
+    "continent": "Africa",
+    "aka": [
+      "rwanda"
+    ],
+    "gaps": [
+      "Association pour la Conservation de la Nature au Rwanda (ACNR), the presumed BirdLife partner, has no verifiable website. No regional birding clubs with accessible online presence found."
+    ],
+    "regions": []
+  },
+  {
+    "code": "ET",
+    "name": "Ethiopia",
+    "flag": "🇪🇹",
+    "continent": "Africa",
+    "aka": [
+      "ethiopia"
+    ],
+    "gaps": [
+      "Most regional birding groups lack their own websites. Local guides and clubs exist throughout Ethiopia's birdwatching regions but cannot be independently verified online."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Ethiopian Wildlife and Natural History Society",
+            "url": "https://www.ewnhs.org.et",
+            "blurb": "National natural history society supporting wildlife conservation and research across Ethiopia."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "BI",
+    "name": "Burundi",
+    "flag": "🇧🇮",
+    "continent": "Africa",
+    "aka": [
+      "burundi"
+    ],
+    "gaps": [
+      "No birding communities with verifiable online presence found. Limited organised birding infrastructure identified."
+    ],
+    "regions": []
+  },
+  {
+    "code": "SS",
+    "name": "South Sudan",
+    "flag": "🇸🇸",
+    "continent": "Africa",
+    "aka": [
+      "south sudan"
+    ],
+    "gaps": [
+      "No birding communities with verifiable online presence found. Ongoing instability limits organisational development."
+    ],
+    "regions": []
+  },
+  {
+    "code": "SO",
+    "name": "Somalia",
+    "flag": "🇸🇴",
+    "continent": "Africa",
+    "aka": [
+      "somalia"
+    ],
+    "gaps": [
+      "No birding communities with verifiable online presence found. Limited civil infrastructure for organised birding."
+    ],
+    "regions": []
+  },
+  {
+    "code": "DJ",
+    "name": "Djibouti",
+    "flag": "🇩🇯",
+    "continent": "Africa",
+    "aka": [
+      "djibouti"
+    ],
+    "gaps": [
+      "No birding communities with verifiable online presence found. Small country with minimal organised birding structure."
+    ],
+    "regions": []
+  },
+  {
+    "code": "ER",
+    "name": "Eritrea",
+    "flag": "🇪🇷",
+    "continent": "Africa",
+    "aka": [
+      "eritrea"
+    ],
+    "gaps": [
+      "No birding communities with verifiable online presence found. Limited access to information due to political conditions."
+    ],
+    "regions": []
+  }
+]
