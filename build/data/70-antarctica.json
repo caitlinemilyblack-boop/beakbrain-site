@@ -1,0 +1,49 @@
+[
+  {
+    "code": "AQ",
+    "name": "Antarctica",
+    "flag": "🇦🇶",
+    "continent": "Antarctica",
+    "aka": [
+      "the antarctic",
+      "antarctic continent",
+      "antarctic peninsula"
+    ],
+    "gaps": [
+      "Antarctica has no resident population and no bird clubs. This list is the bodies that actually organise people around Antarctic and subantarctic birds: a science coordination group, a long running penguin census, a conservation coalition, a seabird science network and two public citizen science projects.",
+      "Searched for the Australasian Wader Studies Group and the Agreement on the Conservation of Albatrosses and Petrels (ACAP). AWSG's work centres on the East Asian Australasian Flyway in Australia and New Zealand rather than Antarctica itself, and ACAP is an intergovernmental treaty secretariat with country Parties rather than a public membership or volunteer programme, so neither is listed."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "SCAR Expert Group on Birds and Marine Mammals",
+            "url": "https://www.scar.org/science/eg-bamm/home/",
+            "blurb": "The international scientific network coordinating research on Antarctic seabirds and marine mammals."
+          },
+          {
+            "name": "Oceanites, Antarctic Site Inventory",
+            "url": "https://www.oceanites.org/",
+            "blurb": "Runs the long running Antarctic Site Inventory penguin census, with seasonal counters and citizen observers."
+          },
+          {
+            "name": "Antarctic and Southern Ocean Coalition",
+            "url": "https://www.asoc.org/",
+            "blurb": "Coalition of conservation groups advocating for Antarctic and Southern Ocean wildlife, including seabirds."
+          },
+          {
+            "name": "World Seabird Union",
+            "url": "https://worldseabirdunion.org/",
+            "blurb": "Global network of seabird scientists and conservation groups, working across the Southern Ocean."
+          },
+          {
+            "name": "Albatrosses from Space",
+            "url": "https://www.bas.ac.uk/project/wildlife-from-space/albatrosses-from-space/",
+            "blurb": "British Antarctic Survey and RSPB project where volunteers spot wandering albatrosses in satellite images."
+          }
+        ]
+      }
+    ]
+  }
+]

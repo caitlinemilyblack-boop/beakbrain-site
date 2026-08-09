@@ -12,6 +12,7 @@ const CONTINENT_ORDER = [
   'Africa',
   'Asia',
   'Oceania',
+  'Antarctica',
 ];
 
 function esc(s) {

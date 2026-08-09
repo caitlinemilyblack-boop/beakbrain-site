@@ -13,6 +13,7 @@ const FILE_FOR = {
   Africa: '40-africa.json',
   Asia: '50-asia.json',
   Oceania: '60-oceania.json',
+  Antarctica: '70-antarctica.json',
 };
 
 // Hosts that genuinely serve no https at all, checked by hand: https times out or fails to
@@ -25,6 +26,15 @@ const HTTP_ONLY_OK = new Set([
   'losbird.org',  // Louisiana Ornithological Society
   'utahbirds.org',// Utah Birds, the only group covering Utah
   'tanzaniabirdatlas.net', // Tanzania Bird Atlas; https times out on every variant, http is the real site
+  // East Asian societies on older hosting that never got a certificate. Checked by hand
+  // 2026-08-09: https times out on every variant, http serves the real site.
+  'www.wbsj-okhotsk.org', // Wild Bird Society of Japan, Okhotsk chapter
+  'www.offeco.com',       // WBSJ Iriomote chapter
+  'www.cycwbs.org.tw',    // Chiayi City Wild Bird Society
+  'www.birdskorea.org',   // Birds Korea, the country's main birding body
+  'www.szbird.org.cn',    // Shenzhen Bird Watching Society
+  'www.natureiraq.org',   // Nature Iraq, the country's only findable birding body
+  'www.uzspb.uz',         // Uzbekistan Society for the Protection of Birds
 ]);
 const hostOf = (u) => { try { return new URL(u).host; } catch { return ''; } };
 

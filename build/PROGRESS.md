@@ -343,23 +343,55 @@ Recorded gaps say the same thing India's agent found: most Indian state and city
 Facebook and WhatsApp rather than their own sites. That is a real finding, not an excuse, and it
 means India's remaining coverage needs the browser-verified social route rather than curl.
 
-## Queued (not started), in the order they are worth spending a fresh search budget on
+## Done: Oceania, East Asia, Antarctica, Middle East and Central Asia (2026-08-09)
 
-1. **East Asia**: Japan, Taiwan, China, South Korea, Hong Kong, Mongolia. Nothing merged at all yet.
-   Search in Japanese (野鳥の会, 探鳥会), Chinese (賞鳥 / 观鸟协会) and Korean (탐조), not English.
-2. **India, properly**: a batch of its own, targeting the state and city clubs, accepting that many
-   are Facebook groups and verifying those in a browser.
-3. **Oceania**: Australia (BirdLife Australia has many branches, treat by state), New Zealand (Birds
-   New Zealand has regional branches), Papua New Guinea, Fiji, the smaller Pacific nations.
-4. **Antarctica**: `AQ` plus the subantarctic territories. Expect national Antarctic programmes,
-   research stations and the seabird societies rather than clubs; a short honest list is correct.
-5. **Southeast Asia re-pass**: Malaysia (Malaysian Nature Society branches), Philippines (Wild Bird
-   Club of the Philippines chapters), Indonesia, Thailand's regional clubs.
-6. **Africa deepening**: Kenya, Tanzania, Uganda, Zimbabwe, Ghana, Nigeria, the Gambia, Senegal.
-7. **Middle East and Central Asia**: Israel (a serious birding country), Turkey is already listed but
-   thin, UAE, Oman, Jordan, Kazakhstan, Georgia, Armenia.
-8. **The nine thin Balkan/Turkey countries** left after the eBird placeholders came out; Kosovo has
+All four came back from **Sonnet** agents and **none of them hit a search limit**, which is what
+settled the budget question above.
+
+- **Oceania** (12 countries, 70 groups): Australia 47 across all 8 states and territories, New Zealand
+  13 across 12 regions, then one group each for Fiji, New Caledonia, French Polynesia, Vanuatu, Samoa,
+  Micronesia, Marshall Islands, Palau, Guam and the Cook Islands. Papua New Guinea, Solomon Islands,
+  Tonga, Kiribati, Nauru and Tuvalu are honest zeros. This batch passed `ingest.js --dry` clean on the
+  first run, the only one in the whole project to do so.
+- **East Asia** (42 groups): Japan 20 (Wild Bird Society of Japan branches across all 7 regional
+  blocks; WBSJ actually has about 85, so this is a representative sample and there is room to go
+  deeper), Taiwan 10 city and county societies, South Korea 5, China 4, Hong Kong 2, Mongolia 1.
+  Macau and North Korea are honest zeros. China is the weak spot: real groups exist for Beijing,
+  Shanghai, Guangzhou, Chengdu and a dozen more, but their domains were unreachable or serving
+  placeholders from here, all logged individually in `gaps`.
+- **Antarctica** (5 groups): a new continent bucket, `70-antarctica.json`. There are no clubs on a
+  continent with no residents, so this is the bodies that actually organise people around Antarctic
+  birds: SCAR's Expert Group on Birds and Marine Mammals, Oceanites / the Antarctic Site Inventory,
+  the Antarctic and Southern Ocean Coalition, the World Seabird Union and Albatrosses from Space.
+  Penguin Watch was removed at Cat's request.
+- **Middle East and Central Asia** (36 groups): Israel 8, UAE 6, Jordan 4, Kuwait and Lebanon 2 each,
+  then Oman, Qatar, Iraq, Iran, Kazakhstan, Uzbekistan, Kyrgyzstan and Tajikistan. Saudi Arabia,
+  Bahrain, Yemen, Syria, Turkmenistan and Afghanistan are honest zeros with the reasoning recorded.
+
+**Adding a continent takes two edits**, both done: `CONTINENT_ORDER` in `generate.js` and `FILE_FOR`
+in `ingest.js`. Miss either and the batch fails validation with `bad continent`.
+
+Twelve more hosts joined `HTTP_ONLY_OK` after checking every https variant by hand. Older Japanese,
+Taiwanese, Korean and Central Asian society sites frequently never got a certificate, and dropping
+them would leave Korea, Shenzhen, Chiayi, Okhotsk, Iriomote, Iraq and Uzbekistan with nothing. Note
+that **5 of the 10 http URLs in the East Asia batch DID have working https** and the agent simply used
+http, so always test the variants rather than allowlisting on the agent's word.
+
+Every social link in these batches was browser confirmed by `og:title`: all three in Oceania, all four
+in East Asia and the Middle East. Nothing fabricated in any of the four.
+
+## Queued (not started)
+
+1. **India in depth.** Still only 4 groups against a 40 to 70 target. Its own agent found the reason:
+   most Indian state and city bird clubs run on Facebook and WhatsApp rather than their own sites, so
+   this needs the browser-verified social route rather than curl.
+2. **Southeast Asia re-pass**: 5 groups only. Malaysia (Malaysian Nature Society branches), the
+   Philippines (Wild Bird Club of the Philippines chapters), Indonesia, Thailand's regional clubs.
+3. **Japan deeper**: WBSJ has ~85 branches against the 20 listed.
+4. **China**: retry the city societies; their domains may resolve from a different network.
+5. **The nine thin Balkan/Turkey countries** left after the eBird placeholders came out. Kosovo has
    zero groups and does not appear on the page at all.
+6. **Sri Lanka, Nepal, Bangladesh, Pakistan** are on one group each.
 
 ## Wave discipline
 
