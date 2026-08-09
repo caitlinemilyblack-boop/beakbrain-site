@@ -128,8 +128,17 @@ function noteUrls(country, src) {
     }
   }
 }
+// A country in incoming/ REPLACES the stored one, so its stored version must be left out of the
+// comparison. Otherwise every gap-filling batch (which has to carry over the existing groups, or
+// the merge deletes them) reports its whole carry-over as duplicates against itself, burying any
+// genuine cross-country duplicate in the noise and making `--dry` exit non-zero for a clean batch.
+// That is exactly what happened on the Brazil states batch: 33 "duplicates", none of them real.
+const replacing = new Set(incoming.map(({ country }) => country.code));
 for (const f of fs.readdirSync(DATA).filter((f) => f.endsWith('.json'))) {
-  for (const c of JSON.parse(fs.readFileSync(path.join(DATA, f), 'utf8'))) noteUrls(c, `${f}:${c.code}`);
+  for (const c of JSON.parse(fs.readFileSync(path.join(DATA, f), 'utf8'))) {
+    if (replacing.has(c.code)) continue;
+    noteUrls(c, `${f}:${c.code}`);
+  }
 }
 for (const { file, country } of incoming) noteUrls(country, `${file}:${country.code}`);
 

@@ -135,19 +135,27 @@
     "aka": [
       "brasil",
       "brazilian",
-      "brasil",
       "brasileira"
     ],
     "gaps": [
       "WikiAves (citizen science platform) could not be URL-verified due to Cloudflare access restrictions, though it is clearly active and is the primary birding platform in Brazil.",
-      "Pará and Amazonas have limited findable local bird clubs with public websites; birdwatching activity is primarily tourism and guide-based rather than organized clubs.",
-      "Amapá: no local bird clubs with independent online presence found.",
-      "Maranhão and Piauí: no local bird clubs with independent online presence found.",
       "Several regional clubs lack active websites and maintain only social media presence (e.g., COA Santos on Instagram, COACGR on Facebook).",
       "Some older URLs from ABOA directory (Multiply, Yahoo Groups, Geocities) are no longer accessible.",
       "Dropped for having no presence of their own, each pointing at the same national COA directory rather than a page of its own: Vem Passarinhar Sampa (São Paulo); Observadores de Aves de Ubatuba (São Paulo); COA Foz do Iguaçu (Paraná); OAA (Paraná); COAVE (Santa Catarina); Santa Catarina Birdwatching (Santa Catarina); Projeto Charão (Rio Grande do Sul); Projeto Cardeal Amarelo (Rio Grande do Sul); Avis Vigilanti (Minas Gerais); COA-JF (Minas Gerais); S.O.S. Falconiformes (Minas Gerais); Amigos das Aves (Rio de Janeiro); Clube de Observadores de Aves da Bahia (Bahia); ANO (Bahia)",
       "Dropped as a global platform rather than a local community (listed once under International): eBird Brasil",
-      "Dropped, link dead when checked on 2026-08-09: COAB (São Paulo)"
+      "Dropped, link dead when checked on 2026-08-09: COAB (São Paulo)",
+      "Amazonas: tested directly rather than assumed. Vem Passarinhar Manaus is a real bird walk programme run by the Universidade do Estado do Amazonas with a named coordinator and Global Big Day participation, but it only has dated news posts on the university's site, no landing page of its own, and an Instagram handle whose bio and follower count could not be independently confirmed in any search result, so no card was added.",
+      "Para: tested directly rather than assumed. Clube de Observacao de Aves do Para (COAPA), founded 2024 with about 280 members and covered by Diario do Para, has no findable website or independently verifiable social page. A related Bora Passarinhar guide training project at UFOPA in Santarem, working toward a Tapajos bird club, is also real but has no confirmable page of its own. Both states show genuine club level activity forming, contradicting the earlier assumption that it is purely tourism and guide based, but neither has a verifiable link to publish yet.",
+      "Roraima: Clube de Observacao de Aves de Roraima (COA/RR), founded 2019 with about 41 members and led by Ronilson Moura Cavalcante, is confirmed real by independent press (Folha BV, Norte Extremo) but has no findable website or verifiable social page of its own.",
+      "Rondonia: no bird club or group found. Porto Velho markets itself as a birdwatching and sport fishing destination, but this is municipal tourism promotion, not a club or community with its own page.",
+      "Acre: no bird club or group with an independent online presence found, despite real ecotourism potential in the state's avifauna being discussed in local press.",
+      "Amapa: no bird club or group with an independent online presence found.",
+      "Maranhao: no bird club or group with an independent online presence found. UFMA runs birdwatching tourism training in local communities, but this is a training course, not a membership club.",
+      "Piaui: only a one off event, Bora Passarinhar Teresina at UFPI (first edition), was found; no ongoing club, group page or second edition turned up in search.",
+      "Paraiba: Clube Ornitologico da Paraiba (COPB) has its own site but is a captive breeding club for native species (Azulao, Curio, Trinca ferro and similar), regulated aviculture rather than birdwatching, so it was excluded as out of scope.",
+      "Alagoas: no bird club or group with an independent online presence found beyond a passing news mention of a general Sociedade Ornitologica de Alagoas with no verifiable page.",
+      "Sergipe: no bird club or group with an independent online presence found.",
+      "Tocantins: no bird club or group with an independent online presence found, despite Palmas and the Araguaia and Jalapao regions being recognised birding destinations with an active WikiAves observer base."
     ],
     "regions": [
       {
