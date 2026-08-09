@@ -59,3 +59,17 @@ fi
 
 bad=$(printf '%s\n' "$out" | grep -cE '^(000|404)' || true)
 echo "--- $total urls checked, $bad hard failures (000/404); 400/403/429 above are expected noise"
+
+# Social links are NOT verified by anything above and must never be reported as "checked". Instagram
+# and Facebook serve a JavaScript shell to curl, so a handle that does not exist comes back looking
+# exactly like one that does. On 2026-08-09 seven of eleven Instagram profiles in one batch were
+# invented and every one of them "passed" this script. Only a real browser can tell them apart.
+social=$(printf '%s\n' "$urls" | grep -Ei 'instagram\.com|facebook\.com|discord|x\.com|twitter\.com' || true)
+nsocial=$(printf '%s\n' "$social" | grep -c . || true)
+if [ "$nsocial" -gt 0 ]; then
+  echo
+  echo "!!! $nsocial social links NOT verified by this script. Open each in a real browser and confirm"
+  echo "!!! it shows the group's real name plus a follower/member count. Dead tells: Instagram"
+  echo "!!! \"Profile isn't available\", Facebook \"This content isn't available at the moment\", no og:title."
+  printf '%s\n' "$social" | sed 's/^/    /'
+fi

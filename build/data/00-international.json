@@ -25,9 +25,14 @@
             "blurb": "The worldwide platform for logging what you see. Your lists feed real science and connect you to birders near you."
           },
           {
-            "name": "Global Big Day and October Big Day",
-            "url": "https://ebird.org/news",
-            "blurb": "Two days a year when tens of thousands of birders in every country count together. Anyone can join with a single checklist."
+            "name": "Global Big Day",
+            "url": "https://ebird.org/globalbigday",
+            "blurb": "One day each May when tens of thousands of birders in almost every country count together. Anyone can join with a single checklist."
+          },
+          {
+            "name": "October Big Day",
+            "url": "https://ebird.org/octoberbigday",
+            "blurb": "The autumn counterpart to Global Big Day, held each October to catch the southbound migration. Free to join from anywhere."
           },
           {
             "name": "iNaturalist",

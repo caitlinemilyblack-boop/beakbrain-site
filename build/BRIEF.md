@@ -33,6 +33,15 @@ directory at beakbrain.com/community.html. Output is a JSON file. Read this whol
 - Shops, optics retailers, book sellers
 - Government agencies with no public membership or volunteer programme
 - Dead, dormant (no activity in ~3 years) or pure-archive sites
+- **A global platform's per country page.** `ebird.org/region/XX`, an iNaturalist place page, an
+  Observation.org region page or a Fatbirder country page is a filtered view of a worldwide database,
+  not a community anyone can join locally. eBird, iNaturalist, Observation.org and Xeno-canto are each
+  listed ONCE in the International section and that is where they belong. "eBird Croatia" is not a
+  Croatian birding group; it is eBird. A country with only a platform page has no findable community
+  and should say so in `gaps` rather than carry a placeholder. The narrow exception is a genuine
+  national portal with its own identity, staff and local brand that happens to be hosted on a platform
+  (Turkey's eKuşbank, run by Doğa Derneği, is the pattern) — and only if you can confirm that identity
+  from the organisation's own pages, not from the platform page itself.
 
 ## The rules (non-negotiable)
 
@@ -87,8 +96,33 @@ directory at beakbrain.com/community.html. Output is a JSON file. Read this whol
    trusts your report. If you ran out of budget to verify some links, say exactly which ones are
    unverified and leave them out of the file.
 
+   **A curl check CANNOT verify an Instagram or Facebook link.** Those sites serve a JavaScript shell
+   to any non browser client, so a handle that does not exist still returns a normal looking page. On
+   2026-08-09 a batch shipped eleven Instagram profiles for Argentine and Uruguayan clubs: seven of
+   them did not exist, and every one had "passed" a curl sweep. Do not invent a plausible handle from a
+   club's name, ever. Only list a social page you have actually seen in a search result that quotes its
+   real content (follower count, recent post, bio text). If a search will not produce the handle, the
+   group has no findable social presence, so leave it out and record it in `gaps`. Never construct
+   `instagram.com/<clubname>` or `facebook.com/<clubname>` yourself and assume it resolves.
+
+   Tells that a social link is dead, none of which curl can see: Instagram serving
+   "Profile isn't available", Facebook serving "This content isn't available at the moment", or the
+   page having no `og:title`. A live page shows the group's real name, a follower or member count and
+   recent posts.
+
 4. **Prefer a stable canonical URL.** Homepage over a deep page. Avoid URLs with session ids or
    query strings. Avoid `http://`; use `https://` where it works.
+
+   **Never link a news feed or a dated news article as a group's URL.** `ebird.org/news` is a rolling
+   feed, and `ebird.org/news/global-big-day-2026` is out of date the following May. Link the programme's
+   own permanent landing page (`ebird.org/globalbigday`, `ebird.org/octoberbigday`). If a thing only
+   ever exists as an announcement post and has no landing page of its own, it is an event write up, not
+   a community, and it does not belong in the list. The same goes for a one off blog post, a press
+   release or a PDF newsletter standing in for an organisation's home page.
+
+   **One entry per thing.** Do not bundle two separate programmes, events or organisations into a
+   single card ("Global Big Day and October Big Day"). They get one card each, with their own URL and
+   their own blurb, or the entry is describing nothing precisely.
 
 5. **No dashes in any copy.** Brand rule. Blurbs and names must not contain "-", "–" or "—".
    Use commas, "and", or full stops instead. (Hyphenated proper names like "Wallonie-Bruxelles" in an
@@ -97,6 +131,13 @@ directory at beakbrain.com/community.html. Output is a JSON file. Read this whol
 6. **Blurbs: one concrete line.** Who they are and where they operate. Max about 120 characters.
    English, even when the group is not English speaking. Good: "The national bird society, with
    forty local branches running walks and counts." Bad: "A great club for bird lovers."
+
+   **Never put contact details in a blurb.** No email addresses, no phone numbers, no postal addresses,
+   no "Contact: ...", no "email them at ...", no social handles. The card already links to the group,
+   and their own page is where their current contact route lives. Published addresses go stale, invite
+   scraping, and are not ours to republish. A blurb that ends in an email is describing the group badly
+   as well: say what they do instead. If a group's ONLY presence is an email address, it has no link
+   worth listing, so leave it out and record it in `gaps`.
 
 7. **De-duplicate.** One card per group. Never repeat a URL, in this file or across regions.
 

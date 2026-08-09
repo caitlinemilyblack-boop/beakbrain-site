@@ -27,6 +27,15 @@ const HTTP_ONLY_OK = new Set([
 ]);
 const hostOf = (u) => { try { return new URL(u).host; } catch { return ''; } };
 
+// A worldwide platform's per country view is that platform, not a community you can join locally.
+// eBird, iNaturalist, Observation.org and Fatbirder each appear ONCE, in the International section;
+// "eBird Croatia" under Croatia is just eBird again. Allowed inside INT only.
+const PLATFORM_REGION_URL = /^https?:\/\/(?:www\.)?(?:ebird\.org\/(?:region|hotspot|alert)\b|inaturalist\.org\/places\b|observation\.org\/region\b|fatbirder\.com\/world-birding\b)/i;
+
+// A rolling feed or a dated announcement post is not an organisation's home page, and a year in the
+// path means the link is stale next year. Link the programme's permanent landing page instead.
+const NEWS_URL = /^https?:\/\/[^/]+\/news\/?(?:$|\?)|\/news\/[^/]*\b20\d\d\b/i;
+
 const dry = process.argv.includes('--dry');
 const problems = [];
 const incoming = [];
@@ -59,6 +68,34 @@ for (const f of fs.readdirSync(IN).filter((f) => f.endsWith('.json')).sort()) {
         }
         if (/[-–—]/.test(g.blurb)) problems.push(`${where}: DASH in blurb -> ${g.blurb}`);
         if (g.blurb.length > 170) problems.push(`${where}: blurb too long (${g.blurb.length})`);
+
+        // Contact details never belong in a blurb: the card already links to the group, published
+        // addresses go stale and invite scraping. See BRIEF.md rule 6.
+        if (/[\w.+-]+@[\w.-]+\.\w{2,}|\[email[^\]]*\]|\bcontact\s*:/i.test(g.blurb)) {
+          problems.push(`${where}: CONTACT DETAILS in blurb -> ${g.blurb}`);
+        }
+
+        // A global platform's per country page is that platform, not a local community. Those
+        // platforms are listed once under International. See BRIEF.md "Never include".
+        if (c.code !== 'INT' && PLATFORM_REGION_URL.test(g.url)) {
+          problems.push(`${where}: PLATFORM REGION PAGE, not a community -> ${g.url}`);
+        }
+
+        // A rolling news feed or a dated announcement is not an organisation's home page.
+        if (NEWS_URL.test(g.url)) {
+          problems.push(`${where}: NEWS FEED/ARTICLE used as a group url -> ${g.url}`);
+        }
+
+        // Two parallel titles joined by "and" is two things crammed into one card, e.g. "Global Big
+        // Day and October Big Day". Both halves ending in the same noun is the giveaway; a name that
+        // merely contains "and" ("Society for Birds and Nature Protection") is left alone.
+        const halves = g.name.split(/\s+(?:and|&)\s+/i);
+        if (halves.length === 2) {
+          const tail = (s) => (s.trim().match(/(\w[\w']*)\W*$/) || [, ''])[1].toLowerCase();
+          if (tail(halves[0]) && tail(halves[0]) === tail(halves[1])) {
+            problems.push(`${where}: BUNDLED ENTRY, split into one card each -> ${g.name}`);
+          }
+        }
       }
     }
     incoming.push({ file: f, country: c });

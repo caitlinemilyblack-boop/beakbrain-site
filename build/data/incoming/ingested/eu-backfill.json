@@ -1,0 +1,251 @@
+[
+  {
+    "code": "BA",
+    "name": "Bosnia and Herzegovina",
+    "flag": "🇧🇦",
+    "continent": "Europe",
+    "aka": [
+      "bosnian",
+      "herzegovina"
+    ],
+    "gaps": [
+      "Limited online presence for local clubs; Naše ptice is the only independently verifiable organisation with its own website. No regional club roster found despite searches in local language."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Ornithological Society Naše ptice",
+            "url": "https://www.ptice.ba/",
+            "blurb": "A nonprofit ornithological society running bird ringing, monitoring and habitat protection since 2003."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "HR",
+    "name": "Croatia",
+    "flag": "🇭🇷",
+    "continent": "Europe",
+    "aka": [
+      "croatian",
+      "hrvatska"
+    ],
+    "gaps": [
+      "Limited local club presence beyond BIOM. Searches in Croatian for regional clubs (udruga za zaštitu ptica, promatranje ptica) did not yield independently verifiable local clubs with their own sites."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "BIOM (Association BIOM)",
+            "url": "https://www.biom.hr/en/",
+            "blurb": "The national bird society and BirdLife partner, leading conservation NGO organising annual ornithological camps."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "XK",
+    "name": "Kosovo",
+    "flag": "🇽🇰",
+    "continent": "Europe",
+    "aka": [
+      "kosovar"
+    ],
+    "gaps": [
+      "No independently confirmed national ornithological society or local birding club was found for Kosovo. GAIA Kosovo organises bird watching activities but is primarily an environmental education NGO, not a dedicated birding community. An alleged LinkedIn listing for Kosovo Ornithological Society could not be corroborated and was dropped as unverified. eBird has a Kosovo region portal but is a global platform, not a local community."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": []
+      }
+    ]
+  },
+  {
+    "code": "ME",
+    "name": "Montenegro",
+    "flag": "🇲🇪",
+    "continent": "Europe",
+    "aka": [
+      "montenegrin",
+      "црна гора"
+    ],
+    "gaps": [
+      "Limited findable clubs beyond CZIP. Searches in local languages (posmatranje ptica, društvo za zaštitu ptica) did not yield additional independently verifiable organisations with their own websites."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Center for Protection and Research of Birds (CZIP)",
+            "url": "https://czip.me/en/",
+            "blurb": "Established 2000, BirdLife partner running bird ringing programs and biodiversity monitoring across Montenegro."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "MK",
+    "name": "North Macedonia",
+    "flag": "🇲🇰",
+    "continent": "Europe",
+    "aka": [
+      "macedonian",
+      "македонија"
+    ],
+    "gaps": [
+      "Limited findable clubs beyond MES. Searches for regional clubs and the Macedonian Bird Ringing Scheme did not yield independently verifiable organisations with their own public websites."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Macedonian Ecological Society (MES)",
+            "url": "https://mes.org.mk/en/",
+            "blurb": "Founded 1972, the oldest environmental organisation in North Macedonia focusing on biodiversity conservation."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "RO",
+    "name": "Romania",
+    "flag": "🇷🇴",
+    "continent": "Europe",
+    "aka": [
+      "romanian",
+      "românia"
+    ],
+    "gaps": [
+      "Extensive regional bird club network exists but few maintain independent websites; most activities documented through SOR and Milvus Group branches rather than standalone local club sites."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Romanian Ornithological Society (SOR)",
+            "url": "https://www.birdlife.org/partners/romania-romanian-ornithological-society-sor-birdlife-romania/",
+            "blurb": "The national bird society and BirdLife partner since 1997, operating from Bucharest, Cluj Napoca and Tulcea."
+          },
+          {
+            "name": "Milvus Group",
+            "url": "https://milvus.ro/en/",
+            "blurb": "Bird and nature protection association specialising in raptor conservation and bird ringing research."
+          },
+          {
+            "name": "Ornitodata",
+            "url": "https://www.sor.ro/ornitodata-e-online/",
+            "blurb": "Citizen science platform run by SOR for collecting bird observations across Romania, now surpassing 2 million public observations."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "RS",
+    "name": "Serbia",
+    "flag": "🇷🇸",
+    "continent": "Europe",
+    "aka": [
+      "serbian",
+      "србија"
+    ],
+    "gaps": [
+      "Limited regional club presence beyond national organisations. Searches for local clubs in cities like Belgrade, Novi Sad and other provinces did not yield independently verifiable organisations with their own websites."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Bird Protection and Study Society of Serbia (BPSSS)",
+            "url": "https://pticesrbije.rs/en/pocetna-english/",
+            "blurb": "The national bird society and BirdLife partner since 2010, running conservation, monitoring and public outreach programmes."
+          },
+          {
+            "name": "Birdwatching Serbia",
+            "url": "http://www.birdwatchserbia.rs/",
+            "blurb": "Community-oriented birding resource and tour coordination site featuring bird watching guides and citizen science participation."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "SI",
+    "name": "Slovenia",
+    "flag": "🇸🇮",
+    "continent": "Europe",
+    "aka": [
+      "slovenian",
+      "slovenija"
+    ],
+    "gaps": [
+      "DOPPS has five regional sections but specific local club independent websites were not found. Bird ringing is well established but the Ringing Centre operates under museum oversight rather than as a standalone club."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "DOPPS (Društvo za Opazovanje in Proučevanje Ptic Slovenije)",
+            "url": "https://ptice.si/en/",
+            "blurb": "The national bird society and BirdLife partner founded 1979, largest conservation NGO in Slovenia with five regional sections."
+          },
+          {
+            "name": "Slovenian Bird Ringing Center",
+            "url": "https://www.pms-lj.si/en/museum-and-nature/animals/vertebrates/birds/slovenian-bird-ringing-center/",
+            "blurb": "Operates within the Natural History Museum Ljubljana with 60 coworkers ringing 60,000 to 100,000 birds annually and running the European Bird Ringing scheme database."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TR",
+    "name": "Turkey",
+    "flag": "🇹🇷",
+    "continent": "Europe",
+    "aka": [
+      "türkiye",
+      "turkish",
+      "turkiye"
+    ],
+    "gaps": [
+      "Active regional birding community exists with numerous groups but most operate informally; Doğa Derneği runs annual bird training schools in Izmir and supports development of informal birding groups across provinces."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Doğa Derneği (Nature Society)",
+            "url": "https://dogadernegi.org/en/",
+            "blurb": "The national bird society and BirdLife partner, working on species protection and bird conservation across Turkey."
+          }
+        ]
+      },
+      {
+        "name": "Northeastern Turkey",
+        "groups": [
+          {
+            "name": "KuzeyDoga (Northeastern Nature)",
+            "url": "https://kuzeydoga.net/en/homepage/",
+            "blurb": "Conservation NGO based in Kars conducting bird research and community education in northeastern provinces."
+          }
+        ]
+      }
+    ]
+  }
+]

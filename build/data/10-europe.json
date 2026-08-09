@@ -464,7 +464,7 @@
       "herzegovina"
     ],
     "gaps": [
-      "Limited online presence for Naše ptice; organisation confirmed active with bird ringing programs and annual Ornitofestival"
+      "Limited online presence for local clubs; Naše ptice is the only independently verifiable organisation with its own website. No regional club roster found despite searches in local language."
     ],
     "regions": [
       {
@@ -474,11 +474,6 @@
             "name": "Ornithological Society Naše ptice",
             "url": "https://www.ptice.ba/",
             "blurb": "A nonprofit ornithological society running bird ringing, monitoring and habitat protection since 2003."
-          },
-          {
-            "name": "eBird Bosnia and Herzegovina",
-            "url": "https://ebird.org/region/BA/",
-            "blurb": "Citizen science platform for recording bird sightings throughout Bosnia and Herzegovina."
           }
         ]
       }
@@ -536,7 +531,9 @@
       "croatian",
       "hrvatska"
     ],
-    "gaps": [],
+    "gaps": [
+      "Limited local club presence beyond BIOM. Searches in Croatian for regional clubs (udruga za zaštitu ptica, promatranje ptica) did not yield independently verifiable local clubs with their own sites."
+    ],
     "regions": [
       {
         "name": "Countrywide",
@@ -545,11 +542,6 @@
             "name": "BIOM (Association BIOM)",
             "url": "https://www.biom.hr/en/",
             "blurb": "The national bird society and BirdLife partner, leading conservation NGO organising annual ornithological camps."
-          },
-          {
-            "name": "eBird Croatia",
-            "url": "https://ebird.org/region/HR/",
-            "blurb": "Citizen science platform for recording bird sightings and distribution across Croatia."
           }
         ]
       }
@@ -834,7 +826,7 @@
           {
             "name": "Faroese Ornithological Society",
             "url": "https://www.birdlife.org/partners/faroe-islands-faroese-ornithological-society/",
-            "blurb": "National bird ringing and research society active in seabird monitoring and bird protection work. Contact: [email protected]"
+            "blurb": "National bird ringing and research society active in seabird monitoring and bird protection work."
           }
         ]
       }
@@ -2125,18 +2117,12 @@
       "kosovar"
     ],
     "gaps": [
-      "No independently confirmed national ornithological society was found for Kosovo; a LinkedIn listing under this name could not be corroborated as a real organisation and was dropped rather than published unverified. eBird Kosovo is listed as the best available public option."
+      "No independently confirmed national ornithological society or local birding club was found for Kosovo. GAIA Kosovo organises bird watching activities but is primarily an environmental education NGO, not a dedicated birding community. An alleged LinkedIn listing for Kosovo Ornithological Society could not be corroborated and was dropped as unverified. eBird has a Kosovo region portal but is a global platform, not a local community."
     ],
     "regions": [
       {
         "name": "Countrywide",
-        "groups": [
-          {
-            "name": "eBird Kosovo",
-            "url": "https://ebird.org/region/XK/",
-            "blurb": "Citizen science platform for recording Kosovo bird observations and sightings."
-          }
-        ]
+        "groups": []
       }
     ]
   },
@@ -2289,7 +2275,7 @@
       "moldavian"
     ],
     "gaps": [
-      "Society for Birds and Nature Protection (SPPN) lacks a public website; contact via email sppn.moldova@gmail.com. No dedicated regional clubs or public birding communities found online. Organised birding primarily through national monitoring and tour operators."
+      "Society for Birds and Nature Protection (SPPN) lacks a public website. No dedicated regional clubs or public birding communities found online. Organised birding primarily through national monitoring and tour operators."
     ],
     "regions": [
       {
@@ -2313,7 +2299,9 @@
       "montenegrin",
       "црна гора"
     ],
-    "gaps": [],
+    "gaps": [
+      "Limited findable clubs beyond CZIP. Searches in local languages (posmatranje ptica, društvo za zaštitu ptica) did not yield additional independently verifiable organisations with their own websites."
+    ],
     "regions": [
       {
         "name": "Countrywide",
@@ -2322,11 +2310,6 @@
             "name": "Center for Protection and Research of Birds (CZIP)",
             "url": "https://czip.me/en/",
             "blurb": "Established 2000, BirdLife partner running bird ringing programs and biodiversity monitoring across Montenegro."
-          },
-          {
-            "name": "eBird Montenegro",
-            "url": "https://ebird.org/region/ME/",
-            "blurb": "Citizen science platform for recording Montenegro bird sightings and observations."
           }
         ]
       }
@@ -2590,7 +2573,7 @@
       "македонија"
     ],
     "gaps": [
-      "Limited findable clubs beyond national organisation; SOR operates with branches but specific regional clubs not publicly listed"
+      "Limited findable clubs beyond MES. Searches for regional clubs and the Macedonian Bird Ringing Scheme did not yield independently verifiable organisations with their own public websites."
     ],
     "regions": [
       {
@@ -2600,11 +2583,6 @@
             "name": "Macedonian Ecological Society (MES)",
             "url": "https://mes.org.mk/en/",
             "blurb": "Founded 1972, the oldest environmental organisation in North Macedonia focusing on biodiversity conservation."
-          },
-          {
-            "name": "eBird North Macedonia",
-            "url": "https://ebird.org/region/MK/",
-            "blurb": "Citizen science platform for recording bird observations in North Macedonia."
           }
         ]
       }
@@ -2932,7 +2910,8 @@
     "gaps": [
       "No independent bird clubs with their own sites were found for mainland districts such as Porto, Algarve or Coimbra, or for Madeira, beyond SPEA's national programmes; a Madeira group using the ornithological name turned out to be a cage bird show organiser and was excluded.",
       "Active public Facebook groups for Portuguese birders (Aves de Portugal, Aves de Portugal Continental 2.0, Aves Silvestres de Portugal) were found but Facebook blocks automated verification, so no unverified Facebook link is included here.",
-      "The eBird Portugal portal returns a bot check page to automated requests even though it is the platform SPEA itself recommends for logging sightings, so treat that link as needing a manual sanity check."
+      "The eBird Portugal portal returns a bot check page to automated requests even though it is the platform SPEA itself recommends for logging sightings, so treat that link as needing a manual sanity check.",
+      "Removed: PortugalAves eBird (a platform region page, or an http only page reading as a commercial tour site)."
     ],
     "regions": [
       {
@@ -2942,11 +2921,6 @@
             "name": "SPEA",
             "url": "https://spea.pt",
             "blurb": "Portugal's national bird society and BirdLife partner, running reserves, counts and volunteer programmes."
-          },
-          {
-            "name": "PortugalAves eBird",
-            "url": "https://ebird.org/region/PT",
-            "blurb": "The eBird portal SPEA recommends for Portuguese birders to log their sightings."
           },
           {
             "name": "APAA",
@@ -2991,7 +2965,9 @@
       "romanian",
       "românia"
     ],
-    "gaps": [],
+    "gaps": [
+      "Extensive regional bird club network exists but few maintain independent websites; most activities documented through SOR and Milvus Group branches rather than standalone local club sites."
+    ],
     "regions": [
       {
         "name": "Countrywide",
@@ -3007,9 +2983,9 @@
             "blurb": "Bird and nature protection association specialising in raptor conservation and bird ringing research."
           },
           {
-            "name": "eBird Romania",
-            "url": "https://ebird.org/region/RO/",
-            "blurb": "Citizen science sighting platform documenting Romanian bird distribution and abundance."
+            "name": "Ornitodata",
+            "url": "https://www.sor.ro/ornitodata-e-online/",
+            "blurb": "Citizen science platform run by SOR for collecting bird observations across Romania, now surpassing 2 million public observations."
           }
         ]
       }
@@ -3099,25 +3075,18 @@
       "serbian",
       "србија"
     ],
-    "gaps": [],
+    "gaps": [
+      "Limited regional club presence beyond national organisations. Searches for local clubs in cities like Belgrade, Novi Sad and other provinces did not yield independently verifiable organisations with their own websites.",
+      "Removed: Birdwatching Serbia (a platform region page, or an http only page reading as a commercial tour site)."
+    ],
     "regions": [
       {
         "name": "Countrywide",
         "groups": [
           {
             "name": "Bird Protection and Study Society of Serbia (BPSSS)",
-            "url": "https://www.birdlife.org/partners/serbia-bird-protection-and-study-society-of-serbia/",
-            "blurb": "The national bird society and BirdLife partner since 2010, working on targeted species conservation."
-          },
-          {
-            "name": "Bird Protection and Study Society of Serbia",
             "url": "https://pticesrbije.rs/en/pocetna-english/",
-            "blurb": "The national bird society and BirdLife partner, running conservation, monitoring and public outreach programmes."
-          },
-          {
-            "name": "eBird Serbia",
-            "url": "https://ebird.org/region/RS/",
-            "blurb": "Citizen science sighting platform for recording bird observations across Serbia."
+            "blurb": "The national bird society and BirdLife partner since 2010, running conservation, monitoring and public outreach programmes."
           }
         ]
       }
@@ -3157,7 +3126,9 @@
       "slovenian",
       "slovenija"
     ],
-    "gaps": [],
+    "gaps": [
+      "DOPPS has five regional sections but specific local club independent websites were not found. Bird ringing is well established but the Ringing Centre operates under museum oversight rather than as a standalone club."
+    ],
     "regions": [
       {
         "name": "Countrywide",
@@ -3168,14 +3139,9 @@
             "blurb": "The national bird society and BirdLife partner founded 1979, largest conservation NGO in Slovenia with five regional sections."
           },
           {
-            "name": "DOPPS Facebook",
-            "url": "https://www.facebook.com/pticeDOPPS/",
-            "blurb": "Public Facebook group for bird watching community in Slovenia."
-          },
-          {
-            "name": "eBird Slovenia",
-            "url": "https://ebird.org/region/SI/",
-            "blurb": "Citizen science platform for recording Slovenian bird sightings and observations."
+            "name": "Slovenian Bird Ringing Center",
+            "url": "https://www.pms-lj.si/en/museum-and-nature/animals/vertebrates/birds/slovenian-bird-ringing-center/",
+            "blurb": "Operates within the Natural History Museum Ljubljana with 60 coworkers ringing 60,000 to 100,000 birds annually and running the European Bird Ringing scheme database."
           }
         ]
       }
@@ -3840,7 +3806,9 @@
       "turkish",
       "turkiye"
     ],
-    "gaps": [],
+    "gaps": [
+      "Active regional birding community exists with numerous groups but most operate informally; Doğa Derneği runs annual bird training schools in Izmir and supports development of informal birding groups across provinces."
+    ],
     "regions": [
       {
         "name": "Countrywide",
@@ -3849,11 +3817,6 @@
             "name": "Doğa Derneği (Nature Society)",
             "url": "https://dogadernegi.org/en/",
             "blurb": "The national bird society and BirdLife partner, working on species protection and bird conservation across Turkey."
-          },
-          {
-            "name": "eKuşbank (eBird Turkey)",
-            "url": "https://ebird.org/region/TR",
-            "blurb": "Citizen science platform and bird sighting database integrated with global eBird network since 2015."
           }
         ]
       },
