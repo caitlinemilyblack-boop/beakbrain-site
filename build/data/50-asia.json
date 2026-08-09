@@ -1,1 +1,435 @@
-[]
+[
+  {
+    "code": "BD",
+    "name": "Bangladesh",
+    "flag": "🇧🇩",
+    "continent": "Asia",
+    "aka": [
+      "bangladesh",
+      "bengal"
+    ],
+    "gaps": [
+      "Bangladesh Bird Club and IUCN Bangladesh mentioned in literature but independent websites not located within research budget.",
+      "Limited web presence for birding organizations in country.",
+      "No verified independent bird watching clubs or citizen science networks found."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": []
+      }
+    ]
+  },
+  {
+    "code": "BT",
+    "name": "Bhutan",
+    "flag": "🇧🇹",
+    "continent": "Asia",
+    "aka": [
+      "bhutan",
+      "bhutanese"
+    ],
+    "gaps": [
+      "Limited organized birding culture with primarily governmental and royal patronage structures.",
+      "Few independent birding clubs or citizen science networks outside RSPN umbrella."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Royal Society for Protection of Nature",
+            "url": "https://www.rspnbhutan.org",
+            "blurb": "Bhutan's leading environmental NGO with royal patronage. Runs black necked crane and white bellied heron conservation programs across 20 districts."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "BN",
+    "name": "Brunei",
+    "flag": "🇧🇳",
+    "continent": "Asia",
+    "aka": [
+      "brunei",
+      "brunei darussalam"
+    ],
+    "gaps": [
+      "No independent birding community or ornithological society with web presence found. Brunei's limited tourism infrastructure and small expat population may account for thin community presence."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": []
+      }
+    ]
+  },
+  {
+    "code": "KH",
+    "name": "Cambodia",
+    "flag": "🇰🇭",
+    "continent": "Asia",
+    "aka": [
+      "cambodia",
+      "khmer"
+    ],
+    "gaps": [
+      "No BirdLife partner with independent web presence found. Wildlife Conservation Society (WCS) operates in Cambodia but is not a local membership community. Cambodian birding clubs and community organisations lack verifiable online presence."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": []
+      }
+    ]
+  },
+  {
+    "code": "IN",
+    "name": "India",
+    "flag": "🇮🇳",
+    "continent": "Asia",
+    "aka": [
+      "india",
+      "indian",
+      "bharata"
+    ],
+    "gaps": [
+      "Research budget exhausted at 200 WebSearch calls. Unable to locate individual websites for most state and city-level bird clubs (Delhi, Bangalore, Kolkata, Mumbai, Coimbatore, Hyderabad, Jaipur, etc.). These groups exist but have no independently verifiable standalone URLs, Facebook pages, or Meetup groups detectable via search. Suggested approach: contact BNHS or Bird Count India for complete state club roster.",
+      "Madras Naturalists' Society (Chennai) historically significant but no current website found.",
+      "Bird Count India and similar citizen science networks lack independent verification despite being mentioned as coordinating state groups.",
+      "Many regional bird atlases and monitoring schemes exist but lack dedicated websites or are internal projects without public URLs."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Bombay Natural History Society",
+            "url": "https://www.bnhs.org",
+            "blurb": "India's premier ornithological research organization since 1883. BirdLife International partner."
+          },
+          {
+            "name": "Wildlife Trust of India",
+            "url": "https://www.wti.org.in",
+            "blurb": "National conservation organization working on species recovery, protected areas, and wildlife rescue across India."
+          }
+        ]
+      },
+      {
+        "name": "Tamil Nadu",
+        "groups": [
+          {
+            "name": "SACON (Salim Ali Centre for Ornithology and Natural History)",
+            "url": "https://sacon.in",
+            "blurb": "National research institute for ornithology and conservation science. Conducts bird research, maintains ornithological databank."
+          }
+        ]
+      },
+      {
+        "name": "Delhi",
+        "groups": [
+          {
+            "name": "Bird Atlas Delhi",
+            "url": "https://birdatlas.in",
+            "blurb": "Systematic bird monitoring and survey project tracking bird populations across Delhi's ecosystems and protected areas."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "ID",
+    "name": "Indonesia",
+    "flag": "🇮🇩",
+    "continent": "Asia",
+    "aka": [
+      "indonesia",
+      "indonesian"
+    ],
+    "gaps": [
+      "Only Burung Indonesia confirmed as BirdLife partner. Indonesian Ornithologists' Union (ISU) and local pengamat burung groups throughout the archipelago require WebSearch discovery."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Burung Indonesia",
+            "url": "https://www.burung.org",
+            "blurb": "Indonesia's BirdLife partner founded 2002, tracking 1834 bird species including 538 endemics, running citizen science and regional conservation."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "LA",
+    "name": "Laos",
+    "flag": "🇱🇦",
+    "continent": "Asia",
+    "aka": [
+      "laos",
+      "lao"
+    ],
+    "gaps": [
+      "No BirdLife partner with findable independent website. WCS operates but not a community. Lao birding clubs lack verifiable online presence."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": []
+      }
+    ]
+  },
+  {
+    "code": "MY",
+    "name": "Malaysia",
+    "flag": "🇲🇾",
+    "continent": "Asia",
+    "aka": [
+      "malaysia",
+      "malaysian"
+    ],
+    "gaps": [
+      "Malaysian Nature Society (BirdLife partner) exists but domain blocks headless verification (returns 403). Wild Bird Club Malaysia domain parked. Regional branches across Peninsular Malaysia, Sabah and Sarawak lack verifiable independent web presence. Research incomplete; batch requires full WebSearch pass."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": []
+      }
+    ]
+  },
+  {
+    "code": "MV",
+    "name": "Maldives",
+    "flag": "🇲🇻",
+    "continent": "Asia",
+    "aka": [
+      "maldives"
+    ],
+    "gaps": [
+      "Minimal organized birding culture. Tourism and resort focus rather than community birding.",
+      "No independent birding organizations or clubs found with verifiable URLs.",
+      "Limited suitable habitat for birding relative to marine focus of country."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": []
+      }
+    ]
+  },
+  {
+    "code": "MM",
+    "name": "Myanmar",
+    "flag": "🇲🇲",
+    "continent": "Asia",
+    "aka": [
+      "myanmar",
+      "burma",
+      "burmese"
+    ],
+    "gaps": [
+      "Biodiversity and Nature Conservation Association mentioned in brief as possible group but requires verification. No other findable community with independent web presence."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": []
+      }
+    ]
+  },
+  {
+    "code": "NP",
+    "name": "Nepal",
+    "flag": "🇳🇵",
+    "continent": "Asia",
+    "aka": [
+      "nepal",
+      "nepali"
+    ],
+    "gaps": [
+      "Bird Conservation Nepal and related organizations mentioned in literature but independent websites not located within research budget.",
+      "Kosi Bird Observatory mentioned but verification incomplete."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Himalayan Nature",
+            "url": "https://www.himalayannature.org",
+            "blurb": "Scientific conservation institute operating Asian Waterbird Census, bird monitoring networks, and research on Himalayan biodiversity and species recovery."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "PK",
+    "name": "Pakistan",
+    "flag": "🇵🇰",
+    "continent": "Asia",
+    "aka": [
+      "pakistan",
+      "pakistani"
+    ],
+    "gaps": [
+      "Ornithological societies mentioned in literature but independent websites not located within research budget.",
+      "No verified organized birding clubs or networks found with accessible URLs."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": []
+      }
+    ]
+  },
+  {
+    "code": "PH",
+    "name": "Philippines",
+    "flag": "🇵🇭",
+    "continent": "Asia",
+    "aka": [
+      "philippines",
+      "philippine",
+      "tagalog"
+    ],
+    "gaps": [
+      "Only Haribon Foundation confirmed. Wild Bird Club of the Philippines exists but wbcp.org.ph redirects and original domain unverifiable. WBCP regional chapters and other local clubs require WebSearch to locate working URLs."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Haribon Foundation",
+            "url": "https://haribon.org.ph",
+            "blurb": "Founded 1972, Philippines' BirdLife partner championing biodiversity conservation with community partner sites nationwide."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "SG",
+    "name": "Singapore",
+    "flag": "🇸🇬",
+    "continent": "Asia",
+    "aka": [
+      "singapore",
+      "singaporean"
+    ],
+    "gaps": [],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Nature Society Singapore Bird Group",
+            "url": "https://www.nss.org.sg",
+            "blurb": "Singapore's leading biodiversity advocacy organisation with dedicated Bird Group running the annual Singapore Bird Race since 1984."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "LK",
+    "name": "Sri Lanka",
+    "flag": "🇱🇰",
+    "continent": "Asia",
+    "aka": [
+      "sri lanka",
+      "ceylon"
+    ],
+    "gaps": [
+      "Field Ornithology Group of Sri Lanka historically significant but no current independent website found.",
+      "Wildlife and Nature Protection Society and other groups mentioned in literature but websites not located within research budget.",
+      "Limited ability to verify additional regional groups due to WebSearch budget exhaustion."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Ceylon Bird Club",
+            "url": "https://www.ceylonbirdclub.org",
+            "blurb": "Sri Lanka's ornithological society founded 1943. Runs breeding bird surveys, maintains rarities committee, publishes Ceylon Bird Club Notes."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TH",
+    "name": "Thailand",
+    "flag": "🇹🇭",
+    "continent": "Asia",
+    "aka": [
+      "thailand",
+      "thai"
+    ],
+    "gaps": [
+      "WebSearch budget exhausted during discovery phase. Only BCST confirmed; Siam Society, Thai Ornithological Society and regional clubs await proper research in a follow-up session."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Bird Conservation Society of Thailand",
+            "url": "https://www.bcst.or.th",
+            "blurb": "Thailand's BirdLife partner and national ornithological society, running bird monitoring, education and conservation initiatives."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "TL",
+    "name": "Timor-Leste",
+    "flag": "🇹🇱",
+    "continent": "Asia",
+    "aka": [
+      "timor leste",
+      "east timor"
+    ],
+    "gaps": [
+      "No independent birding community with verifiable web presence found. Young nation with limited organised birding infrastructure."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": []
+      }
+    ]
+  },
+  {
+    "code": "VN",
+    "name": "Vietnam",
+    "flag": "🇻🇳",
+    "continent": "Asia",
+    "aka": [
+      "vietnam",
+      "vietnamese"
+    ],
+    "gaps": [
+      "Only Viet Nature confirmed as BirdLife partner. Vietnam Birdwatching Club and other local birding communities require WebSearch."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Viet Nature",
+            "url": "https://vietnature.org.vn",
+            "blurb": "BirdLife partner conservation center in Hanoi protecting Vietnam's biodiversity through species, habitat and community livelihood programs."
+          }
+        ]
+      }
+    ]
+  }
+]

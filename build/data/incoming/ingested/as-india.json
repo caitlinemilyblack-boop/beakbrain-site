@@ -1,0 +1,196 @@
+[
+  {
+    "code": "IN",
+    "name": "India",
+    "flag": "🇮🇳",
+    "continent": "Asia",
+    "aka": [
+      "india",
+      "indian",
+      "bharata"
+    ],
+    "gaps": [
+      "Research budget exhausted at 200 WebSearch calls. Unable to locate individual websites for most state and city-level bird clubs (Delhi, Bangalore, Kolkata, Mumbai, Coimbatore, Hyderabad, Jaipur, etc.). These groups exist but have no independently verifiable standalone URLs, Facebook pages, or Meetup groups detectable via search. Suggested approach: contact BNHS or Bird Count India for complete state club roster.",
+      "Madras Naturalists' Society (Chennai) historically significant but no current website found.",
+      "Bird Count India and similar citizen science networks lack independent verification despite being mentioned as coordinating state groups.",
+      "Many regional bird atlases and monitoring schemes exist but lack dedicated websites or are internal projects without public URLs."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Bombay Natural History Society",
+            "url": "https://www.bnhs.org",
+            "blurb": "India's premier ornithological research organization since 1883. BirdLife International partner."
+          },
+          {
+            "name": "Wildlife Trust of India",
+            "url": "https://www.wti.org.in",
+            "blurb": "National conservation organization working on species recovery, protected areas, and wildlife rescue across India."
+          }
+        ]
+      },
+      {
+        "name": "Tamil Nadu",
+        "groups": [
+          {
+            "name": "SACON (Salim Ali Centre for Ornithology and Natural History)",
+            "url": "https://sacon.in",
+            "blurb": "National research institute for ornithology and conservation science. Conducts bird research, maintains ornithological databank."
+          }
+        ]
+      },
+      {
+        "name": "Delhi",
+        "groups": [
+          {
+            "name": "Bird Atlas Delhi",
+            "url": "https://birdatlas.in",
+            "blurb": "Systematic bird monitoring and survey project tracking bird populations across Delhi's ecosystems and protected areas."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "LK",
+    "name": "Sri Lanka",
+    "flag": "🇱🇰",
+    "continent": "Asia",
+    "aka": [
+      "sri lanka",
+      "ceylon"
+    ],
+    "gaps": [
+      "Field Ornithology Group of Sri Lanka historically significant but no current independent website found.",
+      "Wildlife and Nature Protection Society and other groups mentioned in literature but websites not located within research budget.",
+      "Limited ability to verify additional regional groups due to WebSearch budget exhaustion."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Ceylon Bird Club",
+            "url": "https://www.ceylonbirdclub.org",
+            "blurb": "Sri Lanka's ornithological society founded 1943. Runs breeding bird surveys, maintains rarities committee, publishes Ceylon Bird Club Notes."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "NP",
+    "name": "Nepal",
+    "flag": "🇳🇵",
+    "continent": "Asia",
+    "aka": [
+      "nepal",
+      "nepali"
+    ],
+    "gaps": [
+      "Bird Conservation Nepal and related organizations mentioned in literature but independent websites not located within research budget.",
+      "Kosi Bird Observatory mentioned but verification incomplete."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Himalayan Nature",
+            "url": "https://www.himalayannature.org",
+            "blurb": "Scientific conservation institute operating Asian Waterbird Census, bird monitoring networks, and research on Himalayan biodiversity and species recovery."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "BT",
+    "name": "Bhutan",
+    "flag": "🇧🇹",
+    "continent": "Asia",
+    "aka": [
+      "bhutan",
+      "bhutanese"
+    ],
+    "gaps": [
+      "Limited organized birding culture with primarily governmental and royal patronage structures.",
+      "Few independent birding clubs or citizen science networks outside RSPN umbrella."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": [
+          {
+            "name": "Royal Society for Protection of Nature",
+            "url": "https://www.rspnbhutan.org",
+            "blurb": "Bhutan's leading environmental NGO with royal patronage. Runs black necked crane and white bellied heron conservation programs across 20 districts."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "BD",
+    "name": "Bangladesh",
+    "flag": "🇧🇩",
+    "continent": "Asia",
+    "aka": [
+      "bangladesh",
+      "bengal"
+    ],
+    "gaps": [
+      "Bangladesh Bird Club and IUCN Bangladesh mentioned in literature but independent websites not located within research budget.",
+      "Limited web presence for birding organizations in country.",
+      "No verified independent bird watching clubs or citizen science networks found."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": []
+      }
+    ]
+  },
+  {
+    "code": "PK",
+    "name": "Pakistan",
+    "flag": "🇵🇰",
+    "continent": "Asia",
+    "aka": [
+      "pakistan",
+      "pakistani"
+    ],
+    "gaps": [
+      "Ornithological societies mentioned in literature but independent websites not located within research budget.",
+      "No verified organized birding clubs or networks found with accessible URLs."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": []
+      }
+    ]
+  },
+  {
+    "code": "MV",
+    "name": "Maldives",
+    "flag": "🇲🇻",
+    "continent": "Asia",
+    "aka": [
+      "maldives"
+    ],
+    "gaps": [
+      "Minimal organized birding culture. Tourism and resort focus rather than community birding.",
+      "No independent birding organizations or clubs found with verifiable URLs.",
+      "Limited suitable habitat for birding relative to marine focus of country."
+    ],
+    "regions": [
+      {
+        "name": "Countrywide",
+        "groups": []
+      }
+    ]
+  }
+]

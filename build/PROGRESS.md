@@ -252,25 +252,74 @@ one http-only entry reading as a commercial tour site, which was dropped. **Thos
 still thin and want a proper pass, ideally on Sonnet** — Kosovo currently has zero groups and so does
 not appear on the page at all.
 
-## In progress: Africa, wave 1 (launched 2026-08-09)
+## Done: Africa, wave 1 (2026-08-09) — thin, wants a second pass
 
-| Batch | Countries | Status |
-|---|---|---|
-| af-east | KE, TZ, UG, RW, ET, BI, SS, SO, DJ, ER | running |
-| af-southern | NA, BW, ZW, ZM, MW, MZ, MG, MU, SC, RE, KM, LS, SZ, AO | running |
-| af-west | NG, GH, SN, CM and 20 more West/Central states | running |
+17 countries beyond South Africa, 26 groups: Kenya 3, Tanzania 1, Uganda 2, Ethiopia 1, Nigeria 3,
+Ghana 1, Burkina Faso 3, Namibia 1, Botswana 1, Zimbabwe 1, Zambia 1, Malawi 1, Madagascar 2,
+Mauritius 1, Seychelles 2, Réunion 1, Angola 1. All 26 URLs re-checked by hand, all 200 with matching
+titles, no social links, nothing fabricated.
 
-South Africa (41 groups) is already done and was explicitly excluded from af-southern's brief,
-because ingest replaces a country wholesale by code and a partial `ZA` object would delete it.
+**These batches failed in the OPPOSITE direction to South America's.** Where Brazil and Argentina
+invented clubs and social handles, these three under-reported: Kenya came back with three groups when
+Nature Kenya alone runs many branches, and 21 West and Central African countries came back empty.
+Some of those zeros are real; the Gambia's birding-guide culture and Senegal's BirdLife partner are
+not. Tightening the anti-fabrication rules seems to have made a cheap model timid as well as honest.
+**Budget a deepening pass on Sonnet for any continent where a Haiku wave returns one group per
+country.**
 
-## Queued (not started)
+## BLOCKED: the WebSearch budget is account wide and it ran out (2026-08-09)
 
-- Asia: India (deep, treat like UK/USA), Japan, Sri Lanka, Thailand, Philippines, Indonesia,
-  Malaysia, Singapore, China, Taiwan, South Korea, Israel, Middle East states
-- Oceania: Australia (by state), New Zealand, Papua New Guinea, Fiji, smaller Pacific nations
-- Antarctica: `AQ` plus the subantarctic territories. Expect research stations, national Antarctic
-  programmes and the seabird societies rather than clubs; an honest short list is the right answer
-- Europe re-pass for the nine thin Balkan/Turkey countries above
+All three Asia agents in the next wave died the same way: **"WebSearch budget exhausted (200/200
+calls)"**. This is a per session, account wide cap shared by every agent AND the main session, not a
+per agent one. It is a different wall from the session-limit one that stopped the 2026-08-05 waves,
+and it arrives much sooner: roughly 5 to 6 research agents' worth of work, whatever the model.
+
+What this means for planning, and it is the single most useful thing on this page:
+
+- **A session gets about 5 to 6 research batches, full stop.** Not 15. Wave discipline (3 to 4 at a
+  time) controls quota burn RATE and session limits, but it cannot buy more searches.
+- Spend them on the countries that will actually yield. A batch covering 24 thin West African states
+  costs the same 200-call budget as India, and India is worth 40 to 70 groups.
+- The failure is silent until an agent reports it. Agents that hit it mid-run still write a file, so
+  **check the counts against the target before merging**: as-india came back with 4 groups against a
+  40 to 70 target, which is the signature of the wall, not of India being empty.
+
+## Done: Asia, wave 1 (2026-08-09) — PARTIAL, national bodies only
+
+Merged because every entry is a real, verified national organisation and they are better on the page
+than absent, but **Asia is nowhere near done**: 12 groups across 9 countries.
+
+India 4 (Bombay Natural History Society, Wildlife Trust of India, SACON, Bird Atlas India),
+Sri Lanka 1 (Ceylon Bird Club), Nepal 1 (Himalayan Nature), Bhutan 1 (RSPN), Thailand 1 (BCST),
+Singapore 1 (Nature Society Singapore), Philippines 1 (Haribon), Indonesia 1 (Burung Indonesia),
+Vietnam 1 (Viet Nature). All 12 URLs re-checked, all 200 with matching titles.
+
+**East Asia (Japan, Taiwan, China, South Korea, Hong Kong, Mongolia) returned nothing at all** — that
+agent hit the search wall before its first query. Japan and Taiwan in particular have very deep club
+networks (prefectural branches of the Wild Bird Society of Japan, city societies under the Taiwan
+Wild Bird Federation) and are worth a full batch each on a fresh budget.
+
+Recorded gaps say the same thing India's agent found: most Indian state and city bird clubs run on
+Facebook and WhatsApp rather than their own sites. That is a real finding, not an excuse, and it
+means India's remaining coverage needs the browser-verified social route rather than curl.
+
+## Queued (not started), in the order they are worth spending a fresh search budget on
+
+1. **East Asia**: Japan, Taiwan, China, South Korea, Hong Kong, Mongolia. Nothing merged at all yet.
+   Search in Japanese (野鳥の会, 探鳥会), Chinese (賞鳥 / 观鸟协会) and Korean (탐조), not English.
+2. **India, properly**: a batch of its own, targeting the state and city clubs, accepting that many
+   are Facebook groups and verifying those in a browser.
+3. **Oceania**: Australia (BirdLife Australia has many branches, treat by state), New Zealand (Birds
+   New Zealand has regional branches), Papua New Guinea, Fiji, the smaller Pacific nations.
+4. **Antarctica**: `AQ` plus the subantarctic territories. Expect national Antarctic programmes,
+   research stations and the seabird societies rather than clubs; a short honest list is correct.
+5. **Southeast Asia re-pass**: Malaysia (Malaysian Nature Society branches), Philippines (Wild Bird
+   Club of the Philippines chapters), Indonesia, Thailand's regional clubs.
+6. **Africa deepening**: Kenya, Tanzania, Uganda, Zimbabwe, Ghana, Nigeria, the Gambia, Senegal.
+7. **Middle East and Central Asia**: Israel (a serious birding country), Turkey is already listed but
+   thin, UAE, Oman, Jordan, Kazakhstan, Georgia, Armenia.
+8. **The nine thin Balkan/Turkey countries** left after the eBird placeholders came out; Kosovo has
+   zero groups and does not appear on the page at all.
 
 ## Wave discipline
 
