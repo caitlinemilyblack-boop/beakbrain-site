@@ -208,29 +208,69 @@ the dropdown, and the search box and default option carry no icons. The `flag` f
 (the schema and `ingest.js` still expect it), `generate.js` just no longer renders it, so keep filling
 it in new batches. The only non-alphanumeric glyph left is the `→` in each card's "Visit" link.
 
-## In progress: South America, wave 1 (launched 2026-08-07)
+## Done: South America (2026-08-09)
 
-Four Haiku agents, one per batch, same rules as North America. **Nothing is done until it has been
-through ingest/verify/manual-spot-check/generate/commit.**
+**Brazil 33 (16 states), Colombia 18, Argentina 8, Uruguay 2, Chile 2, Paraguay 3, Ecuador 4,
+Peru 4, Bolivia 3, Venezuela 4, Guyana 2, Suriname 2, French Guiana 2, Falklands 3.**
+Site total after this continent: **90 countries and territories + International, 780 groups.**
+
+Every South America batch arrived needing the same repair, so treat this as the expected shape of
+a Haiku batch rather than bad luck:
+
+| Batch | Claimed | Shipped | What was wrong |
+|---|---|---|---|
+| sa-southern | 32 | 15 | 7 of 11 Instagram handles invented; 6 clubs sharing their umbrella's URL; 1 dead Facebook page; 4 eBird region pages |
+| sa-brazil | 49 | 33 | 14 clubs all pointing at the same national COA directory; 1 eBird page; dashes and over-length blurbs |
+| sa-andes | 35 | 33 | 2 dead sites; otherwise clean, the best batch so far |
+| sa-guianas | 9 | 9 | clean |
+
+**The new failure mode, and it is the worst one yet: invented social handles.** Instagram and
+Facebook serve a JavaScript shell to any non browser client, so `instagram.com/<made-up-club>`
+returns a normal looking 200 to curl and passes `checkurls.sh` exactly like a real profile. Seven of
+eleven Instagram profiles in the southern-cone batch did not exist. **Only a real browser can tell
+these apart** — open each one and look for the group's actual name plus a follower or member count.
+`checkurls.sh` now prints every social link under an explicit "NOT verified by this script" banner
+so this cannot be quietly skipped again.
+
+**The second recurring shape: region rows sharing one URL.** An agent lists ten regional clubs and
+gives all ten the national body's club-directory page. They have no presence of their own, so they
+are `gaps` entries, not cards. `ingest.js`'s duplicate-URL check catches this, but only if you
+actually read its output: it fires once per pair, so ten clubs produce a wall of near-identical
+lines that is easy to skim past.
+
+**Guards added this session** (all in `ingest.js`, so they fail a `--dry` run rather than relying on
+anyone remembering): contact details in a blurb; a platform URL under a country, matched by HOST
+(`ebird.org`, `inaturalist.org`, `observation.org`, `xeno-canto.org`, `fatbirder.com`) rather than by
+path, because the first path-based version was walked through by `ebird.org/about/portals` within
+hours; a news feed or dated article used as a group URL; and two parallel titles bundled into one
+card. BRIEF.md carries all of them in prose as well.
+
+**Europe repair, same session.** Ten `ebird.org/region/XX` placeholders were removed from Bosnia,
+Croatia, Kosovo, Montenegro, North Macedonia, Portugal, Romania, Serbia, Slovenia and Turkey. A
+backfill agent sent to find real replacements for them found essentially nothing new and introduced
+one http-only entry reading as a commercial tour site, which was dropped. **Those nine countries are
+still thin and want a proper pass, ideally on Sonnet** — Kosovo currently has zero groups and so does
+not appear on the page at all.
+
+## In progress: Africa, wave 1 (launched 2026-08-09)
 
 | Batch | Countries | Status |
 |---|---|---|
-| sa-brazil | BR | running |
-| sa-andes | CO, EC, PE, BO, VE | running |
-| sa-southern | AR, CL, UY, PY | running |
-| sa-guianas | GY, SR, GF, FK | running |
+| af-east | KE, TZ, UG, RW, ET, BI, SS, SO, DJ, ER | running |
+| af-southern | NA, BW, ZW, ZM, MW, MZ, MG, MU, SC, RE, KM, LS, SZ, AO | running |
+| af-west | NG, GH, SN, CM and 20 more West/Central states | running |
 
-French Guiana is its own `GF` entry rather than part of France; the France batch never picked it up
-(checked before launching), so there is nothing to de-duplicate against `FR`. The Falkland Islands
-were added to the Guianas batch as the only other South Atlantic entry worth its own code.
+South Africa (41 groups) is already done and was explicitly excluded from af-southern's brief,
+because ingest replaces a country wholesale by code and a partial `ZA` object would delete it.
 
 ## Queued (not started)
 
-- Africa: South Africa done; Kenya, Tanzania, Uganda, Ethiopia, Ghana, Nigeria, Namibia, Botswana,
-  Zambia, Zimbabwe, Morocco, Egypt, and the rest
-- Asia: India, Japan, Sri Lanka, Thailand, Philippines, Indonesia, Malaysia, Singapore, China, Taiwan,
-  South Korea, Israel, Middle East states
+- Asia: India (deep, treat like UK/USA), Japan, Sri Lanka, Thailand, Philippines, Indonesia,
+  Malaysia, Singapore, China, Taiwan, South Korea, Israel, Middle East states
 - Oceania: Australia (by state), New Zealand, Papua New Guinea, Fiji, smaller Pacific nations
+- Antarctica: `AQ` plus the subantarctic territories. Expect research stations, national Antarctic
+  programmes and the seabird societies rather than clubs; an honest short list is the right answer
+- Europe re-pass for the nine thin Balkan/Turkey countries above
 
 ## Wave discipline
 
