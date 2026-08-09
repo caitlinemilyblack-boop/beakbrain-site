@@ -296,22 +296,32 @@ not. Tightening the anti-fabrication rules seems to have made a cheap model timi
 **Budget a deepening pass on Sonnet for any continent where a Haiku wave returns one group per
 country.**
 
-## BLOCKED: the WebSearch budget is account wide and it ran out (2026-08-09)
+## The WebSearch budget: what is actually known (corrected 2026-08-09)
 
-All three Asia agents in the next wave died the same way: **"WebSearch budget exhausted (200/200
-calls)"**. This is a per session, account wide cap shared by every agent AND the main session, not a
-per agent one. It is a different wall from the session-limit one that stopped the 2026-08-05 waves,
-and it arrives much sooner: roughly 5 to 6 research agents' worth of work, whatever the model.
+Three Asia agents stopped reporting `WebSearch budget exhausted (200/200 calls)`. **An earlier version
+of this section said that budget is account wide and that a session therefore gets only 5 to 6
+research batches. That was wrong, and it was wrong in a way that would have stopped work
+unnecessarily.** Immediately after all three agents reported exhaustion, a WebSearch from the MAIN
+session succeeded on the first try. So it is not one global pool covering the session.
 
-What this means for planning, and it is the single most useful thing on this page:
+What the evidence actually supports:
 
-- **A session gets about 5 to 6 research batches, full stop.** Not 15. Wave discipline (3 to 4 at a
-  time) controls quota burn RATE and session limits, but it cannot buy more searches.
-- Spend them on the countries that will actually yield. A batch covering 24 thin West African states
-  costs the same 200-call budget as India, and India is worth 40 to 70 groups.
-- The failure is silent until an agent reports it. Agents that hit it mid-run still write a file, so
-  **check the counts against the target before merging**: as-india came back with 4 groups against a
-  40 to 70 target, which is the signature of the wall, not of India being empty.
+- **The cap is per agent, not shared with the main session.** The main thread kept searching fine.
+- **The India agent probably did hit it honestly.** It ran 62 tool calls against a country needing
+  40 to 70 groups across 25 states; 200 searches is a plausible spend there.
+- **The East Asia agent almost certainly did NOT.** It reported the budget was "exhausted before
+  starting this batch" after **9 tool calls and 32k tokens**, then stopped and asked questions
+  instead of writing a file. That reads as an agent bailing out and misattributing why. This project
+  already has a documented history of agents reporting things they did not do (the USA batch claimed
+  "all URLs verified, HTTP 200" for 13 dead links), so **treat an agent's account of why it stopped
+  with the same suspicion as its account of what it verified.**
+- **Unknown:** whether concurrently running agents share a pool, and the reset semantics. Not
+  established either way, so do not plan around a guess.
+
+**What to do when an agent reports this:** relaunch the batch rather than concluding the session is
+over. Add to the prompt: "if you hit a hard search limit, write whatever you have verified to the
+output file before stopping, and say how many searches you got through" — an agent that stops without
+writing a file wastes the entire batch, which is what happened to East Asia the first time.
 
 ## Done: Asia, wave 1 (2026-08-09) — PARTIAL, national bodies only
 
@@ -323,8 +333,9 @@ Sri Lanka 1 (Ceylon Bird Club), Nepal 1 (Himalayan Nature), Bhutan 1 (RSPN), Tha
 Singapore 1 (Nature Society Singapore), Philippines 1 (Haribon), Indonesia 1 (Burung Indonesia),
 Vietnam 1 (Viet Nature). All 12 URLs re-checked, all 200 with matching titles.
 
-**East Asia (Japan, Taiwan, China, South Korea, Hong Kong, Mongolia) returned nothing at all** — that
-agent hit the search wall before its first query. Japan and Taiwan in particular have very deep club
+**East Asia (Japan, Taiwan, China, South Korea, Hong Kong, Mongolia) returned nothing at all** on its
+first attempt, from an agent that stopped after 9 tool calls claiming an exhausted budget (see the
+section above for why that claim does not hold up). Relaunched on Sonnet. Japan and Taiwan in particular have very deep club
 networks (prefectural branches of the Wild Bird Society of Japan, city societies under the Taiwan
 Wild Bird Federation) and are worth a full batch each on a fresh budget.
 
