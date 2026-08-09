@@ -510,7 +510,10 @@
       "indonesian"
     ],
     "gaps": [
-      "Only Burung Indonesia confirmed as BirdLife partner. Indonesian Ornithologists' Union (ISU) and local pengamat burung groups throughout the archipelago require WebSearch discovery."
+      "Around fifty local birdwatching communities are reported across Sumatra, Java and Kalimantan, but most organise on WhatsApp and closed groups; only those with a public page of their own are listed here.",
+      "Pertemuan Pengamat Burung Indonesia, the national birders' gathering, has no permanent site of its own and appears only as event coverage, so it was left out.",
+      "Yayasan Kutilang Indonesia's old domain kutilangindonesia.or.id no longer resolves; its working presence is the blog listed here.",
+      "burung-nusantara.org, which used to carry a directory of Indonesian birding groups, no longer resolves."
     ],
     "regions": [
       {
@@ -519,7 +522,37 @@
           {
             "name": "Burung Indonesia",
             "url": "https://www.burung.org",
-            "blurb": "Indonesia's BirdLife partner founded 2002, tracking 1834 bird species including 538 endemics, running citizen science and regional conservation."
+            "blurb": "The BirdLife partner in Indonesia, with membership, surveys and conservation work across the archipelago."
+          }
+        ]
+      },
+      {
+        "name": "Jakarta",
+        "groups": [
+          {
+            "name": "Jakarta Birdwatcher's Society",
+            "url": "https://www.instagram.com/burung.jakarta/",
+            "blurb": "Active since 2005, monitoring Jakarta's city birds and running naturalist walks in the capital's green spaces."
+          }
+        ]
+      },
+      {
+        "name": "Yogyakarta",
+        "groups": [
+          {
+            "name": "Paguyuban Pengamat Burung Jogja",
+            "url": "https://www.instagram.com/ppbj.yogyakarta/",
+            "blurb": "Umbrella community for Yogyakarta's bird observers, running the monthly Jogja Bird Walk and ringing sessions."
+          },
+          {
+            "name": "Yayasan Kutilang Indonesia",
+            "url": "https://kutilangjogja.wordpress.com/",
+            "blurb": "Grew out of Indonesia's first birdwatching club, now a bird conservation foundation based in Yogyakarta."
+          },
+          {
+            "name": "KPB BIONIC UNY",
+            "url": "https://bionicuny.blogspot.com/",
+            "blurb": "Student bird study group at Yogyakarta State University, running expeditions, raptor watches and surveys."
           }
         ]
       }
@@ -999,12 +1032,66 @@
       "malaysian"
     ],
     "gaps": [
-      "Malaysian Nature Society (BirdLife partner) exists but domain blocks headless verification (returns 403). Wild Bird Club Malaysia domain parked. Regional branches across Peninsular Malaysia, Sabah and Sarawak lack verifiable independent web presence. Research incomplete; batch requires full WebSearch pass."
+      "MNS Johor Branch is listed by the society at mnsj.org.my, but that domain does not resolve, so the branch is not listed here.",
+      "MNS Penang Branch is active but has no website or public page of its own that could be found, only a postal address.",
+      "Sandakan Borneo Bird Club is real and works with Sabah Tourism on birding guides, but has no findable page of its own.",
+      "mns.my and mnsselangorbranch.org sit behind Cloudflare and return 403 to non browser clients; both were confirmed by opening them."
     ],
     "regions": [
       {
         "name": "Countrywide",
-        "groups": []
+        "groups": [
+          {
+            "name": "Malaysian Nature Society",
+            "url": "https://mns.my/",
+            "blurb": "Founded in 1940, the country's oldest nature society and BirdLife partner, with branches in every state."
+          }
+        ]
+      },
+      {
+        "name": "Selangor",
+        "groups": [
+          {
+            "name": "MNS Selangor Branch",
+            "url": "https://www.mnsselangorbranch.org/",
+            "blurb": "The society's largest branch, running outings and nature activities across Kuala Lumpur and Selangor."
+          },
+          {
+            "name": "MNS Bird Group",
+            "url": "https://piedfantail.wixsite.com/piedfantail",
+            "blurb": "The Selangor branch birdwatching group, known as PiedFantail, with a regular programme of bird walks."
+          }
+        ]
+      },
+      {
+        "name": "Perak",
+        "groups": [
+          {
+            "name": "MNS Perak Branch",
+            "url": "https://mnsperak.wordpress.com/",
+            "blurb": "Ipoh based branch safeguarding Perak's natural heritage, with birding and nature outings."
+          }
+        ]
+      },
+      {
+        "name": "Sabah",
+        "groups": [
+          {
+            "name": "Sabah Birdwatchers Association",
+            "url": "https://sabahbirdwatchers.com/",
+            "blurb": "Kota Kinabalu association running shorebird and raptor workshops, field trips and bird fairs."
+          }
+        ]
+      },
+      {
+        "name": "Sarawak",
+        "groups": [
+          {
+            "name": "MNS Miri Branch",
+            "url": "https://www.facebook.com/MiriMNS/",
+            "blurb": "The society's Miri branch in northern Sarawak, posting outings and nature activities for members."
+          }
+        ]
       }
     ]
   },
@@ -1174,7 +1261,7 @@
       "tagalog"
     ],
     "gaps": [
-      "Only Haribon Foundation confirmed. Wild Bird Club of the Philippines exists but wbcp.org.ph redirects and original domain unverifiable. WBCP regional chapters and other local clubs require WebSearch to locate working URLs."
+      "The Wild Bird Club of the Philippines runs nationally from birdwatch.ph rather than through chartered local chapters, so no separate regional club pages were found for Cebu, Davao or Negros."
     ],
     "regions": [
       {
@@ -1183,7 +1270,12 @@
           {
             "name": "Haribon Foundation",
             "url": "https://haribon.org.ph",
-            "blurb": "Founded 1972, Philippines' BirdLife partner championing biodiversity conservation with community partner sites nationwide."
+            "blurb": "The BirdLife partner in the Philippines, with member volunteers working on forests and birds."
+          },
+          {
+            "name": "Wild Bird Club of the Philippines",
+            "url": "https://birdwatch.ph/",
+            "blurb": "Nationwide club of birdwatchers running guided trips, the national checklist and the Philippine Bird Festival."
           }
         ]
       }
@@ -1267,7 +1359,7 @@
       "hanguk"
     ],
     "gaps": [
-      "No regional or city level birding clubs with their own live websites could be verified; South Korean birding activity concentrates in a small number of national bodies and platforms rather than a local club network."
+      "No city or provincial birding club with its own live website could be verified; Korean birding organises around a few national bodies and online communities rather than a local club network."
     ],
     "regions": [
       {
@@ -1276,27 +1368,37 @@
           {
             "name": "Birds Korea",
             "url": "http://www.birdskorea.org/BK-Startpage.shtml",
-            "blurb": "Conservation group researching and protecting birds and habitats across Korea and the Yellow Sea."
+            "blurb": "Busan based conservation organisation working on birds and habitats of the Yellow Sea eco region."
+          },
+          {
+            "name": "Ornithological Society of Korea",
+            "url": "https://osk.jams.or.kr/",
+            "blurb": "The national ornithological society, publishing the Korean Journal of Ornithology twice a year."
+          },
+          {
+            "name": "Saerang",
+            "url": "https://saerang.life/",
+            "blurb": "Korean birdwatching community and records platform, with sightings, a species guide and local birders."
           },
           {
             "name": "Korean Birding Association",
             "url": "https://www.koreabirdingassociation.org/",
-            "blurb": "Nationwide birding culture association running birdwatching festivals and community events."
+            "blurb": "Association promoting birdwatching in Korea, with outings, records and identification resources."
           },
           {
             "name": "Korea Wild Bird Association",
             "url": "https://bird.or.kr/",
-            "blurb": "National wild bird protection association promoting conservation and birdwatching."
+            "blurb": "Long running wild bird association running surveys, protection work and member activities."
           },
           {
             "name": "Bird Research Center, Korea National Park Service",
             "url": "https://www.knps.or.kr/bird/main.do",
-            "blurb": "Research center studying migratory birds at Heuksan, Taean and Geoje with public survey work."
+            "blurb": "National park service centre running ringing and migration monitoring that volunteers take part in."
           },
           {
             "name": "Nationwide Bird Watching",
             "url": "https://www.naturing.net/m/3163/card",
-            "blurb": "Countrywide citizen science project for logging bird sightings on Korea's Naturing platform."
+            "blurb": "Open nature recording mission where Korean birders log their sightings together."
           }
         ]
       }
@@ -1495,7 +1597,8 @@
       "thai"
     ],
     "gaps": [
-      "WebSearch budget exhausted during discovery phase. Only BCST confirmed; Siam Society, Thai Ornithological Society and regional clubs await proper research in a follow-up session."
+      "The Thailand Birding Club runs inside BCST rather than as a separate body with its own page, so it is covered by the BCST entry.",
+      "No provincial bird club with a page of its own was found for Chiang Mai, Phuket or the northeast; the birding sites there are personal guides and trip report blogs rather than clubs."
     ],
     "regions": [
       {
@@ -1504,7 +1607,17 @@
           {
             "name": "Bird Conservation Society of Thailand",
             "url": "https://www.bcst.or.th",
-            "blurb": "Thailand's BirdLife partner and national ornithological society, running bird monitoring, education and conservation initiatives."
+            "blurb": "The BirdLife partner, founded as the Bangkok Bird Club, running trips, records and the national bird list."
+          }
+        ]
+      },
+      {
+        "name": "Surat Thani",
+        "groups": [
+          {
+            "name": "EcoThailand Birdwatching Club",
+            "url": "https://ecothailand.org/ecothailand-birdwatching-club/",
+            "blurb": "Foundation run club on Koh Phangan, taking students and residents out on island bird counts."
           }
         ]
       }

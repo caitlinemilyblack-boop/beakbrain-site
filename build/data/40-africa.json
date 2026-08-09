@@ -1231,6 +1231,7 @@
     ],
     "gaps": [
       "Zanzibar Birdwatching Society (ZABISO) is a real, community based group but its domain zabiso.org now serves a parked, ad injected redirect page, so no working link was found for it.",
+      "Kilombero Valley Ornithological Centre's older domain kvoc.co.uk no longer resolves; the working link is its current site.",
       "No independent bird club with its own site or verifiable social presence found for Arusha, Dar es Salaam or Zanzibar beyond the countrywide Birding Tanzania Facebook group; Nature Tanzania's own site describes itself as the only bird focused conservation NGO in the country.",
       "Tanzania Bird Atlas's site only resolves over plain http, not https."
     ],
@@ -1241,22 +1242,32 @@
           {
             "name": "Wildlife Conservation Society of Tanzania",
             "url": "https://tanzania.wcs.org",
-            "blurb": "Independent conservation organisation founded 1988, BirdLife partner, supporting wildlife conservation across Tanzania."
+            "blurb": "Membership conservation society that has long run weekend bird walks around Dar es Salaam."
           },
           {
             "name": "Nature Tanzania",
             "url": "https://naturetanzania.or.tz",
-            "blurb": "The BirdLife partner and only bird focused conservation NGO in Tanzania, running research and outreach programmes."
+            "blurb": "The country's bird focused conservation NGO, working with local groups on surveys and education."
           },
           {
             "name": "Tanzania Bird Atlas",
             "url": "http://tanzaniabirdatlas.net",
-            "blurb": "Citizen science project mapping the distribution of Tanzania's bird species by region."
+            "blurb": "The national atlas, mapping distribution from records sent in by observers across Tanzania."
           },
           {
             "name": "Birding Tanzania",
             "url": "https://www.facebook.com/groups/241108492733888/",
-            "blurb": "Public Facebook community for birders across Tanzania sharing sightings, trip reports and identification help."
+            "blurb": "Public group where Tanzanian birders post sightings, photographs and identification queries."
+          }
+        ]
+      },
+      {
+        "name": "Morogoro",
+        "groups": [
+          {
+            "name": "Kilombero Valley Ornithological Centre",
+            "url": "https://kilomberoornithology.wixsite.com/kvoc",
+            "blurb": "Community based centre in Ifakara running bird surveys and conservation projects in the Kilombero valley."
           }
         ]
       }

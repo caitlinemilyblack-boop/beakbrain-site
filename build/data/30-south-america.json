@@ -415,6 +415,7 @@
       "chilean"
     ],
     "gaps": [
+      "REDAVES, the Coquimbo region bird observation and conservation network, is real and covered in the Chilean press, but redaves.cl is now a parked Dynadot domain serving a \"website coming soon\" page, so no working link exists for it.",
       "Regional nuclei beyond Valparaíso, Metropolitan, and Los Lagos have limited online documentation. Atacama, Coquimbo, Bio Bio, Araucania, and southern regions lack identified club websites or Facebook pages with current activity.",
       "Dropped for lack of a presence of their own: eBird Chile (eBird region page, not a community); Núcleo ROC Valparaíso in Valparaíso (no presence of its own, shares the national umbrella's URL); Núcleo ROC RM in Metropolitan Region (no presence of its own, shares the national umbrella's URL); Núcleo ROC Los Lagos in Los Lagos (no presence of its own, shares the national umbrella's URL)",
       "Dropped, the social page cited did not exist (soft 404 behind a 200): Grupo de Ornitólogos del Maule"
@@ -426,12 +427,22 @@
           {
             "name": "Red de Observadores de Aves y Vida Silvestre",
             "url": "https://www.redobservadores.cl",
-            "blurb": "The national bird and wildlife observer network and BirdLife partner, coordinating citizen science and conservation across Chile."
+            "blurb": "The national birdwatching network, open to amateurs and scientists alike, and eBird's Chilean partner."
           },
           {
             "name": "Unión de Ornitólogos de Chile",
             "url": "https://aveschile.cl",
-            "blurb": "Professional ornithological union promoting bird conservation, publishing the Revista Chilena de Ornitología."
+            "blurb": "The Chilean ornithologists' union, publishing the country's ornithological journal and records."
+          },
+          {
+            "name": "Atlas de las Aves Nidificantes de Chile",
+            "url": "https://www.redobservadores.cl/proyectos/atlas-de-las-aves-nidificantes-de-chile/",
+            "blurb": "The national breeding bird atlas, mapped by volunteer observers across every region of Chile."
+          },
+          {
+            "name": "Censo Neotropical de Aves Acuáticas",
+            "url": "https://www.redobservadores.cl/proyectos/censo-neotropical-de-aves-acuaticas-cnaa-2/",
+            "blurb": "Chile's arm of the neotropical waterbird census, counted twice a year by volunteers at wetland sites."
           }
         ]
       }
@@ -790,6 +801,7 @@
       "republica del peru"
     ],
     "gaps": [
+      "COAP Cusco runs a Facebook group at facebook.com/groups/coapcusco, but it is a vanity group URL sitting behind a login wall with no visible name or member count, and no press or search result quoting its content was found, so it was left out rather than listed unverified.",
       "Regional ornithology clubs operate mainly through Facebook and informal networks rather than dedicated websites. COAP has Lima and Cusco chapters but no central site."
     ],
     "regions": [
@@ -799,22 +811,32 @@
           {
             "name": "CORBIDI",
             "url": "https://www.corbidi.org",
-            "blurb": "Major research organization promoting bird observation and inclusive birdwatching, maintaining Peru's bird records committee."
+            "blurb": "Biodiversity research centre whose ornithology division runs Peru's bird records committee."
           },
           {
             "name": "Unión de Ornitólogos del Perú (UNOP)",
             "url": "https://sites.google.com/site/boletinunop",
-            "blurb": "Nonprofit advancing ornithology through congresses, training, and publishing peer reviewed research on Peruvian birds."
+            "blurb": "The Peruvian ornithologists' union, publishing a peer reviewed bulletin for the country's bird research."
           },
           {
             "name": "Club de Observadores de Aves del Perú (COAP)",
             "url": "https://www.instagram.com/coapperu",
-            "blurb": "Nationwide network of regional birdwatching clubs with chapters in Lima, Cusco and other regions promoting citizen science."
+            "blurb": "National birdwatching club with chapters in Lima and Cusco, organising outings and counts."
           },
           {
             "name": "Grupo Aves del Perú",
-            "url": "https://www.facebook.com/GrupoAvesDelPeru",
-            "blurb": "Civil nonprofit institution dedicated to research and conservation of Peru's wild birds through community engagement."
+            "url": "https://grupoavesdelperu.org/",
+            "blurb": "Association founded in 1995 for the study and conservation of Peru's wild birds."
+          }
+        ]
+      },
+      {
+        "name": "Arequipa",
+        "groups": [
+          {
+            "name": "PAU Arequipa",
+            "url": "https://www.pauarequipa.com/",
+            "blurb": "The urban birds programme in Arequipa, monitoring city birds with students, birders and residents."
           }
         ]
       }

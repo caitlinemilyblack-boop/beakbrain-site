@@ -1741,7 +1741,10 @@
       "greek",
       "ελλάδα"
     ],
-    "gaps": [],
+    "gaps": [
+      "Crete has an active birding scene but no club with a page of its own was found, only site guides and tour listings.",
+      "The Hellenic Ornithological Society coordinates roughly sixty trained volunteer monitors nationally rather than through named local branches, so most regions are covered by the national entry."
+    ],
     "regions": [
       {
         "name": "Countrywide",
@@ -1749,27 +1752,42 @@
           {
             "name": "Hellenic Ornithological Society (HOS)",
             "url": "https://ornithologiki.gr/en/",
-            "blurb": "The national bird society and BirdLife partner, working since 1982 to conserve birds and habitats across Greece."
+            "blurb": "The national bird society and BirdLife partner, the only Greek NGO working solely on wild birds."
+          },
+          {
+            "name": "Hellenic Bird Ringing Centre",
+            "url": "https://www.facebook.com/p/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CF%8C-%CE%9A%CE%AD%CE%BD%CF%84%CF%81%CE%BF-%CE%94%CE%B1%CE%BA%CF%84%CF%85%CE%BB%CE%AF%CF%89%CF%83%CE%B7%CF%82-%CE%A0%CE%BF%CF%85%CE%BB%CE%B9%CF%8E%CE%BD-Hellenic-Bird-Ringing-Centre-100067165973783/",
+            "blurb": "The national ringing scheme, independent since 1989, with about sixty active ringers and trainees."
           },
           {
             "name": "BirdWING (BirdWatching In Northern Greece)",
             "url": "https://birdwing.eu/",
-            "blurb": "Community group raising awareness of birds in northern Greece with over 600 international members."
+            "blurb": "Birdwatching network for northern Greece, with site guides, records and volunteer projects."
           },
           {
             "name": "Antikythira Bird Observatory",
             "url": "https://ornithologiki.gr/en/our-work/conservation-scientific-research/bird-monitoring/1299-ornithologikos-stathmos-antikythiron",
-            "blurb": "Research station operated by HOS monitoring migratory bird species in the Aegean Sea."
+            "blurb": "The society's migration monitoring station, staffed each season by volunteers and ringers."
           },
           {
             "name": "Birding in Greece",
             "url": "https://www.facebook.com/birdingingreece/",
-            "blurb": "Public Facebook group for bird watching enthusiasts in Athens and central Greece."
+            "blurb": "Public group where Greek birders share sightings, photographs and identification help."
+          }
+        ]
+      },
+      {
+        "name": "Lesvos",
+        "groups": [
+          {
+            "name": "Kalloni Environmental Information Center",
+            "url": "https://www.lesvosbirds.gr/en/",
+            "blurb": "Lesvos birding centre at Kalloni, running walks, ringing sessions and events on the island."
           },
           {
             "name": "Lesvos Birdwatching",
             "url": "https://www.facebook.com/lesvosbirdwatching/",
-            "blurb": "Community group organising guided birdwatching and photography on Lesvos Island."
+            "blurb": "Island birding community sharing sightings and news from one of Europe's best migration spots."
           }
         ]
       }
@@ -3011,7 +3029,8 @@
       "românia"
     ],
     "gaps": [
-      "Extensive regional bird club network exists but few maintain independent websites; most activities documented through SOR and Milvus Group branches rather than standalone local club sites."
+      "SOR reports 19 branches and two school groups nationally; only five carry a branch page of their own on sor.ro, so the rest are covered by the national society entry rather than listed separately.",
+      "sor.ro serves a 403 to non browser clients, so its pages were confirmed by opening them rather than by curl."
     ],
     "regions": [
       {
@@ -3019,18 +3038,68 @@
         "groups": [
           {
             "name": "Romanian Ornithological Society (SOR)",
-            "url": "https://www.birdlife.org/partners/romania-romanian-ornithological-society-sor-birdlife-romania/",
-            "blurb": "The national bird society and BirdLife partner since 1997, operating from Bucharest, Cluj Napoca and Tulcea."
+            "url": "https://www.sor.ro/",
+            "blurb": "The national bird society and BirdLife partner, with nineteen branches and school groups across the country."
           },
           {
             "name": "Milvus Group",
             "url": "https://milvus.ro/en/",
-            "blurb": "Bird and nature protection association specialising in raptor conservation and bird ringing research."
+            "blurb": "Bird and nature protection association running surveys, ringing and volunteer field work from Targu Mures."
           },
           {
             "name": "Ornitodata",
-            "url": "https://www.sor.ro/ornitodata-e-online/",
-            "blurb": "Citizen science platform run by SOR for collecting bird observations across Romania, now surpassing 2 million public observations."
+            "url": "https://pasaridinromania.sor.ro/",
+            "blurb": "SOR's national sightings platform, where birders in Romania log and browse their records."
+          }
+        ]
+      },
+      {
+        "name": "Bucharest",
+        "groups": [
+          {
+            "name": "SOR Bucuresti",
+            "url": "https://www.sor.ro/sucursala/bucuresti/",
+            "blurb": "The society's Bucharest branch, running local outings, counts and volunteer projects in the capital."
+          }
+        ]
+      },
+      {
+        "name": "Cluj",
+        "groups": [
+          {
+            "name": "SOR Cluj",
+            "url": "https://www.sor.ro/sucursala/cluj/",
+            "blurb": "The society's Cluj territorial office and branch, one of its two main national bases."
+          }
+        ]
+      },
+      {
+        "name": "Iasi",
+        "groups": [
+          {
+            "name": "SOR Iasi",
+            "url": "https://www.sor.ro/sucursala/iasi/",
+            "blurb": "The Iasi branch, based at the biology faculty of Alexandru Ioan Cuza University."
+          }
+        ]
+      },
+      {
+        "name": "Brasov",
+        "groups": [
+          {
+            "name": "SOR Brasov",
+            "url": "https://www.sor.ro/sucursala/brasov/",
+            "blurb": "The society's Brasov branch, organising local bird monitoring and outings in the southern Carpathians."
+          }
+        ]
+      },
+      {
+        "name": "Maramures",
+        "groups": [
+          {
+            "name": "Cercul de Ornitologie Baia Mare",
+            "url": "https://www.sor.ro/sucursala/maramures/",
+            "blurb": "SOR's Maramures branch, an ornithology and environment circle based at the Baia Mare children's palace."
           }
         ]
       }
