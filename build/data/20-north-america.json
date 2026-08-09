@@ -181,8 +181,7 @@
       "canadian"
     ],
     "gaps": [
-      "Northwest Territories: No identifiable birding clubs with public websites.",
-      "Nunavut: No identifiable birding clubs with public websites."
+      "Nunavut: no birding club, naturalist society or public social media group was found. The historic NWT/Nunavut Bird Checklist Survey folded into eBird Canada in 2012 so it is no longer its own community, and the Nunavut Wildlife Management Board's Community Based Monitoring Network is a general wildlife harvest programme for Inuit harvesters, not a joinable birding community."
     ],
     "regions": [
       {
@@ -331,6 +330,16 @@
         ]
       },
       {
+        "name": "Northwest Territories",
+        "groups": [
+          {
+            "name": "Yellowknife Bird Arrivals",
+            "url": "https://www.facebook.com/groups/YKBirdArrivals/",
+            "blurb": "Public Facebook group where Yellowknife area birders share sightings and photos of arriving species."
+          }
+        ]
+      },
+      {
         "name": "Nova Scotia",
         "groups": [
           {
@@ -344,6 +353,10 @@
             "blurb": "Growing Halifax birding community hub organizing expeditions and connecting local birders and enthusiasts."
           }
         ]
+      },
+      {
+        "name": "Nunavut",
+        "groups": []
       },
       {
         "name": "Ontario",

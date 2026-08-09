@@ -1928,7 +1928,10 @@
     ],
     "gaps": [
       "LIPU has approximately 100 local sections across Italy. This list includes sections with verified websites; most smaller delegations lack standalone websites but operate through the main LIPU organization. Additional independent ornithological societies exist (S.O.I., SROPU, ASOIM) but are specialized research organizations.",
-      "LIPU Vibo (Calabria, Vibo Valentia): the delegazione's domain has lapsed and is now a for sale parking page, and no Facebook page of its own was findable, so it was dropped rather than published broken."
+      "LIPU Vibo (Calabria, Vibo Valentia): the delegazione's domain has lapsed and is now a for sale parking page, and no Facebook page of its own was findable, so it was dropped rather than published broken.",
+      "Basilicata: no independent birding club, LIPU delegazione or ornithological society with its own website or Facebook page was found. The region is only covered by LIPU's joint Puglia e Basilicata coordination based in Foggia, so no standalone card is honest here.",
+      "Umbria: Centro Studi Ornitologici Antonio Valli da Todi has a website but its most recent post is from 2020, so it reads as dormant rather than active and was left out. No other Umbria specific birding group was found.",
+      "Valle d'Aosta: LIPU only opened a delegazione there in January 2026, presented publicly on 16 January, and it has no website or Facebook page of its own yet, only a contact email through lipu.it."
     ],
     "regions": [
       {
@@ -1992,7 +1995,13 @@
       },
       {
         "name": "Trentino-Alto Adige",
-        "groups": []
+        "groups": [
+          {
+            "name": "Arbeitsgemeinschaft für Vogelkunde und Vogelschutz Südtirol",
+            "url": "https://www.vogelschutz-suedtirol.it/",
+            "blurb": "South Tyrol's bird study and protection association, running surveys, excursions and education for almost fifty years."
+          }
+        ]
       },
       {
         "name": "Veneto",
@@ -2036,7 +2045,13 @@
       },
       {
         "name": "Toscana",
-        "groups": []
+        "groups": [
+          {
+            "name": "Centro Ornitologico Toscano Paolo Savi",
+            "url": "https://www.centrornitologicotoscano.org/",
+            "blurb": "Independent Tuscan ornithological centre based in Livorno, running bird research and conservation projects across the region."
+          }
+        ]
       },
       {
         "name": "Umbria",
@@ -2044,7 +2059,13 @@
       },
       {
         "name": "Marche",
-        "groups": []
+        "groups": [
+          {
+            "name": "Ornitologi Marchigiani",
+            "url": "https://ornitologimarchigiani.it/",
+            "blurb": "Independent association of ornithologists, birdwatchers and nature photographers studying birdlife across the Marche region."
+          }
+        ]
       },
       {
         "name": "Lazio",
@@ -2058,15 +2079,33 @@
       },
       {
         "name": "Abruzzo",
-        "groups": []
+        "groups": [
+          {
+            "name": "Stazione Ornitologica Abruzzese",
+            "url": "https://soabruzzo.it/",
+            "blurb": "Independent ornithological group founded 1996, studying and monitoring Abruzzo's birdlife through citizen science projects."
+          }
+        ]
       },
       {
         "name": "Molise",
-        "groups": []
+        "groups": [
+          {
+            "name": "LIPU Molise",
+            "url": "https://www.lipumolise.altervista.org/",
+            "blurb": "Molise delegazione of LIPU, managing the Bosco Casale reserve and coordinating local conservation activities."
+          }
+        ]
       },
       {
         "name": "Campania",
-        "groups": []
+        "groups": [
+          {
+            "name": "LIPU Salerno",
+            "url": "https://www.facebook.com/LipuSalernoodv/",
+            "blurb": "Salerno delegazione of LIPU based in Agropoli, running conservation, rescue and education activities across the province."
+          }
+        ]
       },
       {
         "name": "Puglia",
@@ -2104,7 +2143,13 @@
       },
       {
         "name": "Sardegna",
-        "groups": []
+        "groups": [
+          {
+            "name": "Gruppo Ornitologico Sardo",
+            "url": "https://gruppoornitologicosardo.blogspot.com/",
+            "blurb": "Independent, volunteer run group founded 1997, the only ornithological society on the island, publishing Aves Ichnusae."
+          }
+        ]
       }
     ]
   },

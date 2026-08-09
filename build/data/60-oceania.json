@@ -497,7 +497,7 @@
     ],
     "gaps": [
       "The New Zealand Bird Atlas is run through eBird's atlasnz portal, so as a global platform page it is not listed here even though it is the count NZ birders actually use.",
-      "Birds New Zealand has branches in several more regions (Far North, South Auckland, Gisborne/Wairoa, Taranaki, Whanganui, Wairarapa, Marlborough, West Coast) beyond the ones listed, each reachable from the society's own find your region page."
+      "Birds New Zealand also has branches in a few more areas without their own findable page yet: Far North, South Auckland, Whanganui and Wairarapa, each reachable from the society's own find your region page."
     ],
     "regions": [
       {
@@ -541,6 +541,16 @@
         ]
       },
       {
+        "name": "Gisborne",
+        "groups": [
+          {
+            "name": "Birds New Zealand Gisborne/Wairoa",
+            "url": "https://www.birdsnz.org.nz/find-your-region/gisborne-wairoa/",
+            "blurb": "Regional branch covering Gisborne and Wairoa, with local meetings and bird recording."
+          }
+        ]
+      },
+      {
         "name": "Hawke's Bay",
         "groups": [
           {
@@ -557,6 +567,16 @@
             "name": "Birds New Zealand Manawatu",
             "url": "https://www.birdsnz.org.nz/find-your-region/manawatu/",
             "blurb": "Regional branch covering the Manawatu district."
+          }
+        ]
+      },
+      {
+        "name": "Marlborough",
+        "groups": [
+          {
+            "name": "Birds New Zealand Marlborough",
+            "url": "https://www.birdsnz.org.nz/find-your-region/marlborough/",
+            "blurb": "Regional branch running monthly outings to Marlborough wetlands, coastal sites and beach patrols."
           }
         ]
       },
@@ -601,6 +621,26 @@
         ]
       },
       {
+        "name": "Taranaki",
+        "groups": [
+          {
+            "name": "Birds New Zealand Taranaki",
+            "url": "https://www.birdsnz.org.nz/find-your-region/taranaki/",
+            "blurb": "Regional branch holding monthly evening meetings in New Plymouth with a field trip the following Sunday."
+          }
+        ]
+      },
+      {
+        "name": "Tasman",
+        "groups": [
+          {
+            "name": "Forest and Bird Nelson Tasman",
+            "url": "https://www.forestandbird.org.nz/branches/nelson-tasman",
+            "blurb": "Volunteer branch covering Nelson and Tasman from Pelorus Bridge to Golden Bay, running walks and conservation projects."
+          }
+        ]
+      },
+      {
         "name": "Waikato",
         "groups": [
           {
@@ -622,6 +662,16 @@
             "name": "Birds New Zealand Wellington",
             "url": "https://www.birdsnz.org.nz/find-your-region/wellington/",
             "blurb": "Regional branch covering greater Wellington, with local meetings and bird recording."
+          }
+        ]
+      },
+      {
+        "name": "West Coast",
+        "groups": [
+          {
+            "name": "Birds New Zealand West Coast",
+            "url": "https://www.birdsnz.org.nz/find-your-region/west-coast/",
+            "blurb": "Branch covering the West Coast under the Canterbury regional representative, with local bird recording."
           }
         ]
       }
