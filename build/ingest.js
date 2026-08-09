@@ -24,6 +24,7 @@ const HTTP_ONLY_OK = new Set([
   'www.ofo.ca',   // Ontario Field Ornithologists, Ontario's provincial society
   'losbird.org',  // Louisiana Ornithological Society
   'utahbirds.org',// Utah Birds, the only group covering Utah
+  'tanzaniabirdatlas.net', // Tanzania Bird Atlas; https times out on every variant, http is the real site
 ]);
 const hostOf = (u) => { try { return new URL(u).host; } catch { return ''; } };
 

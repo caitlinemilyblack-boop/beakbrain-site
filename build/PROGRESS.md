@@ -252,7 +252,36 @@ one http-only entry reading as a commercial tour site, which was dropped. **Thos
 still thin and want a proper pass, ideally on Sonnet** — Kosovo currently has zero groups and so does
 not appear on the page at all.
 
-## Done: Africa, wave 1 (2026-08-09) — thin, wants a second pass
+## Done: Africa (2026-08-09), after a Sonnet deepening pass
+
+**29 countries, 104 groups.** Wave 1 (Haiku) returned 26 groups across 17 countries; a deepening pass
+on **Sonnet** took that to 104 across 29, and the difference is entirely judgment rather than budget:
+Kenya 3 to 10, Uganda 2 to 6, Nigeria 3 to 7, Ghana 1 to 4, Tanzania 1 to 4, and **eleven countries
+Haiku had returned empty turned out to have real communities** (the Gambia, Senegal, Cameroon, Côte
+d'Ivoire, Benin, Sierra Leone, Liberia, Cape Verde, São Tomé, Rwanda, Mozambique). Gabon and DR Congo
+were confirmed genuinely empty, with the reasoning recorded.
+
+The Sonnet run also did the thing the cheap runs never do: it reported its own rejections and one
+deliberate deviation. It rejected Zanzibar Birdwatching Society (domain now parked), Nature Palace
+Foundation and Kalahari Conservation Society (general environmental NGOs, not birding communities) and
+Namibia's REST (rebranded away from birds), and it flagged that it had added SABAP2 to four countries
+on purpose. That last one still broke the one-URL-per-card rule, so SABAP2 now appears once, under
+South Africa, with a `gaps` note in the other four. **This is the argument for Sonnet on any continent
+where the cheap pass returns about one group per country.**
+
+`tanzaniabirdatlas.net` joins the `HTTP_ONLY_OK` allowlist: https times out on every variant, http
+serves the real Tanzania Bird Atlas.
+
+**Five Facebook GROUP links in this batch are merged but not browser confirmed.** Facebook switched to
+a logged-out login wall partway through the check. Two things worth knowing for next time: **a login
+wall is NOT a dead tell** (the dead tells are the literal "This content isn't available" / "Profile
+isn't available" strings), and **a numeric `/groups/<id>/` URL cannot be fabricated the way a vanity
+handle can** — an invented number does not resolve at all, so a numeric id that Facebook answers for
+is decent evidence on its own. Recheck when Facebook is cooperative:
+`groups/241108492733888`, `groups/959678370808457`, `groups/653034744862182`,
+`groups/489513973165744`, `groups/aacem`.
+
+### Superseded: Africa wave 1 (Haiku) notes
 
 17 countries beyond South Africa, 26 groups: Kenya 3, Tanzania 1, Uganda 2, Ethiopia 1, Nigeria 3,
 Ghana 1, Burkina Faso 3, Namibia 1, Botswana 1, Zimbabwe 1, Zambia 1, Malawi 1, Madagascar 2,
