@@ -67,13 +67,30 @@
     header { position: fixed; top: 0; left: 0; right: 0; z-index: 30; background: transparent; border-bottom: 1px solid transparent; transition: background .28s ease, border-color .28s ease, backdrop-filter .28s ease; }
     [id] { scroll-margin-top: 88px; }
     header.scrolled { background: rgba(242, 232, 207, 0.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
-    .nav { display: flex; align-items: center; justify-content: space-between; height: 92px; }
-    .nav .wordmark { font-size: 25px; color: #fff; transition: color .28s ease; }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 80px; }
+    .nav .wordmark { font-size: 24px; color: #fff; transition: color .28s ease; }
     header.scrolled .nav .wordmark { color: var(--green); }
     .nav-right { display: flex; align-items: center; gap: 24px; }
-    .nav-link { color: #fff; text-decoration: none; font-family: var(--display); font-weight: 600; font-size: 15px; transition: color .28s ease; }
+    .nav-link { color: #fff; text-decoration: none; font-family: var(--display); font-weight: 600; font-size: 15px; transition: color .28s ease; white-space: nowrap; }
     header.scrolled .nav .nav-link { color: var(--green); }
-    @media (max-width: 520px) { .nav-link { display: none; } }
+    .nav .btn { white-space: nowrap; }
+    /* Narrow widths: shorten labels, shrink, then drop the waitlist button (the hero
+       repeats it right below) — the section links stay visible at every width. */
+    .lbl-short { display: none; }
+    @media (max-width: 760px) {
+      .nav-right { gap: 14px; }
+      .nav-link { font-size: 14px; }
+      .nav .btn { font-size: 14px; padding: 10px 16px; }
+    }
+    @media (max-width: 700px) {
+      .lbl-full { display: none; }
+      .lbl-short { display: inline; }
+    }
+    @media (max-width: 540px) {
+      .nav { height: 64px; }
+      .nav .wordmark { font-size: 20px; }
+      .nav .btn { display: none; }
+    }
     .nav .btn { background: #fff; color: var(--green); }
     .nav .btn:hover { background: #F4EEDD; }
     header.scrolled .nav .btn { background: var(--green); color: #fff; }
@@ -112,8 +129,11 @@
     .stat b { font-family: var(--display); font-weight: 700; font-size: clamp(26px, 3.4vw, 38px); display: block; }
     .stat span { color: #CFE0C6; font-size: 15px; }
 
-    /* How it works */
-    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    /* How it works: steps sit in cards on a surface band so the section reads as
+       one grounded unit instead of floating copy. */
+    #how { background: var(--surface-alt); }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .step { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 30px 28px; box-shadow: var(--shadow); }
     .step .bead { width: 56px; height: 56px; border-radius: 50%; background: var(--green); color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow); margin-bottom: 22px; }
     .step .bead svg { width: 27px; height: 27px; stroke: #fff; fill: none; stroke-width: 2; }
     .step .num { font-family: var(--display); font-weight: 600; font-size: 13px; letter-spacing: 1.5px; color: var(--gold-deep); text-transform: uppercase; }
@@ -135,6 +155,14 @@
 
     /* Full-width video band: same slot as photo-break, but a muted looping clip. Source is not
        fetched until the band nears the viewport (see lazy-load script), so it costs nothing at page load. */
+    .guide-band { position: relative; overflow: hidden; background: var(--ink); }
+    .guide-band .bg-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .guide-band::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, rgba(22,36,24,0.82) 0%, rgba(22,36,24,0.50) 55%, rgba(22,36,24,0.22) 100%); }
+    .guide-band .inner { position: relative; z-index: 2; max-width: 1080px; margin: 0 auto; padding: 96px 28px; color: #fff; }
+    .guide-band h2 { font-size: clamp(28px, 4vw, 40px); color: #fff; margin-top: 12px; }
+    .guide-band p { color: #E4EEDC; font-size: 18px; margin-top: 14px; max-width: 54ch; }
+    .guide-band .web-more { font-size: 15px; color: #CFE0C6; margin-top: 22px; max-width: 64ch; }
+    .guide-band .web-more a { color: #F2D98A; font-weight: 800; }
     .video-break { height: 340px; overflow: hidden; background: var(--ink); }
     .video-break video { width: 100%; height: 100%; object-fit: cover; display: block; }
     @media (max-width: 640px) { .video-break { height: 220px; } }
@@ -218,7 +246,10 @@
     <div class="wrap nav">
       <a class="wordmark" href="#top">BeakBrain</a>
       <div class="nav-right">
-        <a class="nav-link" href="community.html">Find Your Community</a>
+        <a class="nav-link" href="birds/">Bird Guide</a>
+        <a class="nav-link" href="daily/">Daily Bird</a>
+        <a class="nav-link" href="cams/">Cams</a>
+        <a class="nav-link" href="community.html">Community</a>
         <a class="btn" href="#waitlist">Join the waitlist</a>
       </div>
     </div>
@@ -245,7 +276,7 @@
   <!-- Stat band -->
   <section class="wrap" style="padding-top: 72px;">
     <div class="stats">
-      <div class="stat"><b>10,900+</b><span>species you can learn</span></div>
+      <div class="stat"><b>9,500+</b><span>species you can learn</span></div>
       <div class="stat"><b>Every country</b><span>ranked by what is common there</span></div>
       <div class="stat"><b>Photos and calls</b><span>for sight and sound</span></div>
       <div class="stat"><b>Each month</b><span>tuned to when you travel</span></div>
@@ -255,7 +286,7 @@
   <!-- How it works -->
   <!-- Screenshots -->
   <section class="wrap" id="screens" style="padding-top: 40px; padding-bottom: 8px;">
-    <p class="eyebrow">See it in action</p>
+    <p class="eyebrow">Inside the app</p>
     <h2 class="shots-title">A quick look inside</h2>
     <div class="shots">
       <figure class="shot"><img src="assets/screens/screen-1.png" alt="Onboarding, pick your country" loading="lazy" /><figcaption>Pick your country</figcaption></figure>
@@ -270,6 +301,7 @@
   <section class="section" id="how">
     <div class="wrap">
       <div class="section-head">
+        <span class="eyebrow">The app</span>
         <h2>Short daily rounds that build real knowledge</h2>
       </div>
       <div class="steps">
@@ -295,17 +327,25 @@
     </div>
   </section>
 
-  <!-- Video break -->
-  <div class="video-break">
-    <video class="bg-video" muted loop playsinline preload="none" poster="assets/video/bar-2-poster.jpg" aria-label="A black-collared barbet feeding on figs">
-      <source data-src="assets/video/bar-2.mp4" type="video/mp4" />
+  <!-- Bird guide, over video -->
+  <div class="guide-band">
+    <video class="bg-video" muted loop playsinline preload="none" poster="assets/video/guide-band-poster.jpg" aria-label="A little ringed plover on its gravel nest">
+      <source data-src="assets/video/guide-band.mp4" type="video/mp4" />
     </video>
+    <div class="inner">
+      <p class="eyebrow" style="color: #F2D98A;">Free on the web, no app needed</p>
+      <h2>Look up any bird in the world</h2>
+      <p>Our free Bird Guide covers 9,500+ species with photos, calls, identification tips, lookalikes, range maps and the best months to see them. Filter by country, national park, time of year and conservation status. It works in any browser, right now.</p>
+      <p style="margin-top: 24px;"><a class="btn" style="background: var(--gold); color: #2E2A25;" href="birds/">Open the Bird Guide</a></p>
+      <p class="web-more">Also free on the web: <a href="daily/">Daily Bird</a>, a mystery bird to guess every day · <a href="cams/">Live cams</a> from nests and waterholes worldwide · <a href="community.html">Community</a>, clubs and counts near you</p>
+    </div>
   </div>
 
   <!-- Everything inside -->
   <section class="section features">
     <div class="wrap">
       <div class="section-head">
+        <span class="eyebrow">The app</span>
         <h2>A full birding classroom in your pocket</h2>
         <p>Real photos and recordings, a learning path for every country, and quick games that make practice a habit.</p>
       </div>
@@ -510,12 +550,14 @@
   </section>
 
   <footer>
-    <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/video/hero-poster.jpg">
-      <source src="assets/video/hero.mp4" type="video/mp4" />
+    <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/video/site-footer-poster.jpg" aria-label="A weaver at its hanging nest">
+      <source src="assets/video/site-footer.mp4" type="video/mp4" />
     </video>
     <div class="wrap foot">
       <span class="wordmark">BeakBrain</span>
       <nav>
+        <a href="birds/">Bird Guide</a>
+        <a href="cams/">Live Cams</a>
         <a href="community.html">Find Your Community</a>
         <a href="mailto:hello@beakbrain.com">Contact</a>
         <a href="privacy.html">Privacy</a>

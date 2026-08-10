@@ -94,7 +94,7 @@ function section(c) {
   for (const r of c.regions) {
     // Region carries its own index (region name + every group name in it) so a search for
     // "Bavaria" or "Brookline Bird Club" can open the right country at the right region.
-    lines.push(`      <div class="region" data-search="${index([r.name, ...r.groups.map((g) => g.name)])}">`);
+    lines.push(`      <div class="region" data-search="${index([r.name, ...r.groups.map((g) => g.name), ...r.groups.map((g) => g.blurb || '')])}">`);
     lines.push(`        <div class="region-label">${esc(r.name)}</div>`);
     lines.push('        <div class="grid">');
     for (const g of r.groups) lines.push(card(g));
@@ -142,7 +142,7 @@ ${optgroups}
           </select>
         </div>
       </div>
-      <p class="count-note">${rest.length} countries and territories, ${totalGroups} groups. Search by country, region or group name, or pick a country to jump straight to it.</p>
+      <p class="count-note">${rest.length} countries \u00b7 ${totalGroups} groups</p>
     </div>
     <p class="empty" id="empty" hidden>No match yet. Try another spelling, or tell us who is missing and we will add them.</p>`;
 

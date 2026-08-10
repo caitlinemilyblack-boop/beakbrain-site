@@ -1,1 +1,4 @@
 build/verify-report.txt
+# generated species directory: deployed, never committed (git bloat)
+/birds/
+/sitemap*.xml

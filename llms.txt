@@ -1,0 +1,34 @@
+# BeakBrain
+
+> BeakBrain is a bird learning app and reference site. The species directory at
+> https://beakbrain.com/birds/ covers 9,516 bird species worldwide with photos,
+> field recordings, identification tips, range by country, seasonality and
+> conservation status. All media is openly licensed (CC0, CC BY, CC BY-SA)
+> and credited to its author on every page. Species data updated 2026-08-10.
+
+## Browse
+
+- [All species](https://beakbrain.com/birds/): search and A to Z
+- [By country](https://beakbrain.com/birds/): 235 country checklists, e.g. [Birds of the Netherlands](https://beakbrain.com/birds/country/nl/)
+- [By family](https://beakbrain.com/birds/): 251 family guides
+
+## Facts per species page
+
+Each species page carries a concise summary, size and weight, diet, habitat,
+nest type, countries of occurrence, best months to see it, lookalike species,
+IUCN Red List status, photos with photographer credit, and field recordings
+with recordist credit via xeno-canto.
+
+## Live cams
+
+- [Live bird cams](https://beakbrain.com/cams/): worldwide directory of 118 bird cams with hosts, locations, species links and best months to watch, live and seasonal cams both labelled
+- [Daily Bird](https://beakbrain.com/daily/): a free daily quiz, guess the species from its photo and call, a new bird every day
+
+## Community
+
+- [Find a birding club](https://beakbrain.com/community.html): worldwide directory of bird clubs and societies
+- [Contribute](https://beakbrain.com/contribute.html): how to add photos and recordings to the open commons
+
+## App
+
+- [BeakBrain](https://beakbrain-app.pages.dev): learn birds by photo and call, free to play

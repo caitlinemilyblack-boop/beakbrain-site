@@ -28,6 +28,8 @@
       --shadow: 0 14px 34px rgba(46, 42, 37, 0.09);
     }
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    [id] { scroll-margin-top: 90px; }
     body { margin: 0; font-family: var(--body); color: var(--ink); background: var(--bg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
     h1, h2, h3 { font-family: var(--display); font-weight: 700; line-height: 1.14; margin: 0; }
     p { margin: 0; }
@@ -38,13 +40,25 @@
     /* Header: fixed so it overlays the hero video (transparent), solid once scrolled */
     header { position: fixed; top: 0; left: 0; right: 0; z-index: 30; background: transparent; border-bottom: 1px solid transparent; transition: background .28s ease, border-color .28s ease, backdrop-filter .28s ease; }
     header.scrolled { background: rgba(242, 232, 207, 0.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
-    .nav { display: flex; align-items: center; justify-content: space-between; height: 92px; }
-    .nav .wordmark { font-size: 25px; color: #fff; transition: color .28s ease; }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 80px; }
+    .nav .wordmark { font-size: 24px; color: #fff; transition: color .28s ease; }
     header.scrolled .nav .wordmark { color: var(--green); }
     .nav-right { display: flex; align-items: center; gap: 24px; }
-    .nav-link { color: #fff; text-decoration: none; font-family: var(--display); font-weight: 600; font-size: 15px; transition: color .28s ease; }
+    .nav-link { color: #fff; text-decoration: none; font-family: var(--display); font-weight: 600; font-size: 15px; transition: color .28s ease; white-space: nowrap; }
     header.scrolled .nav .nav-link { color: var(--green); }
-    @media (max-width: 520px) { .nav-link { display: none; } }
+    .nav .btn { white-space: nowrap; }
+    /* Narrow widths: shrink, then drop the waitlist button (the page-end CTA repeats
+       it) — the section links stay visible at every width. */
+    @media (max-width: 760px) {
+      .nav-right { gap: 14px; }
+      .nav-link { font-size: 14px; }
+      .nav .btn { font-size: 14px; padding: 10px 16px; }
+    }
+    @media (max-width: 540px) {
+      .nav { height: 64px; }
+      .nav .wordmark { font-size: 20px; }
+      .nav .btn { display: none; }
+    }
     .btn { display: inline-block; font-family: var(--body); font-weight: 800; font-size: 16px; background: var(--green); color: #fff; text-decoration: none; padding: 14px 26px; border-radius: 999px; border: none; cursor: pointer; transition: background 0.15s ease, transform 0.05s ease; }
     .btn:hover { background: var(--green-dark); }
     .btn:active { transform: translateY(1px); }
@@ -64,6 +78,8 @@
     .hero-inner { position: relative; z-index: 2; width: 100%; color: #fff; padding: 128px 28px 56px; }
     .hero h1 { font-size: clamp(34px, 5.4vw, 54px); color: #fff; letter-spacing: -0.5px; }
     .hero p { color: #EFE7D2; font-size: clamp(17px, 2vw, 20px); margin-top: 20px; max-width: 46ch; }
+    .hero-jump { display: inline-block; font-family: var(--display); font-weight: 600; font-size: 15px; color: #fff; text-decoration: none; border: 1.5px solid rgba(255,255,255,0.55); border-radius: 999px; padding: 10px 20px; transition: background .2s ease; }
+    .hero-jump:hover { background: rgba(255,255,255,0.14); }
     @media (prefers-reduced-motion: reduce) { .hero-video { transition: none; } }
 
     .finder { margin: 26px 0 4px; }
@@ -95,6 +111,22 @@
     .cta { background: var(--green); color: #fff; border-radius: 20px; padding: 34px; margin: 40px 0 20px; text-align: center; box-shadow: var(--shadow); }
     .cta h2 { color: #fff; font-size: 24px; }
     .cta p { color: rgba(255,255,255,0.9); margin: 10px auto 20px; max-width: 560px; }
+    .cal-title { font-family: var(--display); font-weight: 700; font-size: clamp(24px, 4vw, 32px); color: var(--green-dark); margin: 44px 0 6px; }
+    .ygrid-wrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--shadow); padding: 16px; margin: 14px 0 22px; }
+    .ygrid { display: grid; grid-template-columns: minmax(170px, 1.9fr) repeat(12, minmax(22px, 1fr)); gap: 3px; min-width: 580px; align-items: center; }
+    .yh { font-family: var(--display); font-weight: 600; font-size: 11px; color: var(--muted); text-align: center; padding: 2px 0; }
+    .yl { font-size: 12.5px; font-weight: 700; color: var(--green-dark); padding-right: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .yl a { text-decoration: none; color: inherit; }
+    .yl a:hover { color: var(--green); }
+    .yc { border-radius: 5px; background: var(--bg); height: 20px; }
+    .yc.on { background: var(--sage); }
+    .cal-sub { color: var(--muted); font-size: 16px; margin-bottom: 18px; max-width: 62ch; }
+    .event { display: flex; gap: 18px; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 18px 22px; box-shadow: var(--shadow); margin: 12px 0; }
+    .event .when { flex: 0 0 92px; font-family: var(--display); font-weight: 700; font-size: 14px; color: var(--gold-deep); background: var(--surface-alt); border-radius: 12px; padding: 8px 10px; text-align: center; align-self: flex-start; }
+    .event h3 { font-size: 17px; color: var(--green-dark); }
+    .event p { color: var(--muted); font-size: 15px; margin-top: 4px; }
+    .event a { font-weight: 800; }
+    .event .where { font-size: 12.5px; font-weight: 800; color: var(--sage); text-transform: uppercase; letter-spacing: 1px; }
     .cta a.btn { display: inline-block; background: var(--gold); color: #2E2A25; font-family: var(--display); font-weight: 700; text-decoration: none; border-radius: 999px; padding: 13px 26px; }
 
     /* Footer: larger video band with a neutral scrim so more of the video shows */
@@ -112,6 +144,10 @@
     <div class="wrap nav">
       <a class="wordmark" href="/">BeakBrain</a>
       <div class="nav-right">
+        <a class="nav-link" href="/birds/">Bird Guide</a>
+        <a class="nav-link" href="/daily/">Daily Bird</a>
+        <a class="nav-link" href="/cams/">Cams</a>
+        <a class="nav-link" href="/community.html">Community</a>
         <a class="btn" href="/#waitlist">Join the waitlist</a>
       </div>
     </div>
@@ -123,7 +159,8 @@
     </video>
     <div class="wrap hero-inner">
       <h1>Find Your Community</h1>
-      <p>Bird societies, local clubs and citizen science projects, listed by country and region. Find people to bird with near home or on your next trip.</p>
+      <p>Bird clubs, societies and counts, by country and region.</p>
+      <p style="margin-top: 22px;"><a class="hero-jump" href="#calendar">See the citizen science calendar</a></p>
     </div>
   </section>
 
@@ -131,6 +168,179 @@
 <!--CHOOSER-->
 
 <!--SECTIONS-->
+
+    <section id="calendar">
+      <h2 class="cal-title">The citizen science year</h2>
+      <p class="cal-sub">18 counts · every continent · all year</p>
+      <div class="ygrid-wrap" role="img" aria-label="Year calendar of citizen science bird counts, one row per event with its months marked">
+        <div class="ygrid">
+        <span class="yl" aria-hidden="true"></span><span class="yh">J</span><span class="yh">F</span><span class="yh">M</span><span class="yh">A</span><span class="yh">M</span><span class="yh">J</span><span class="yh">J</span><span class="yh">A</span><span class="yh">S</span><span class="yh">O</span><span class="yh">N</span><span class="yh">D</span>
+        <span class="yl"><a href="#ev-sdw">Stunde der Wintervögel</a></span><span class="yc on"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span>
+        <span class="yl"><a href="#ev-awc">International Waterbird Census</a></span><span class="yc on"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span>
+        <span class="yl"><a href="#ev-bgbw">Big Garden Birdwatch</a></span><span class="yc on"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span>
+        <span class="yl"><a href="#ev-tuinvogel">Nationale Tuinvogeltelling</a></span><span class="yc on"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span>
+        <span class="yl"><a href="#ev-vogelweekend">Het Grote Vogelweekend</a></span><span class="yc on"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span>
+        <span class="yl"><a href="#ev-vinterfaglar">Vinterfåglar inpå knuten</a></span><span class="yc on"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span>
+        <span class="yl"><a href="#ev-gbbc">Great Backyard Bird Count</a></span><span class="yc"></span><span class="yc on"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span>
+        <span class="yl"><a href="#ev-springalive">Spring Alive</a></span><span class="yc"></span><span class="yc on"></span><span class="yc on"></span><span class="yc on"></span><span class="yc on"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span>
+        <span class="yl"><a href="#ev-cnc">City Nature Challenge</a></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc on"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span>
+        <span class="yl"><a href="#ev-gbd">Global Big Day</a></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc on"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span>
+        <span class="yl"><a href="#ev-sdg">Stunde der Gartenvögel</a></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc on"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span>
+        <span class="yl"><a href="#ev-nzgbs">NZ Garden Bird Survey</a></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc on"></span><span class="yc on"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span>
+        <span class="yl"><a href="#ev-euro">EuroBirdwatch</a></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc on"></span><span class="yc"></span><span class="yc"></span>
+        <span class="yl"><a href="#ev-aussie">Aussie Bird Count</a></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc on"></span><span class="yc"></span><span class="yc"></span>
+        <span class="yl"><a href="#ev-obd">October Big Day</a></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc on"></span><span class="yc"></span><span class="yc"></span>
+        <span class="yl"><a href="#ev-feederwatch">Project FeederWatch</a></span><span class="yc on"></span><span class="yc on"></span><span class="yc on"></span><span class="yc on"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc on"></span><span class="yc on"></span>
+        <span class="yl"><a href="#ev-igbs">Irish Garden Bird Survey</a></span><span class="yc on"></span><span class="yc on"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc on"></span>
+        <span class="yl"><a href="#ev-cbc">Christmas Bird Count</a></span><span class="yc on"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc"></span><span class="yc on"></span>
+        </div>
+      </div>
+      <div class="event" id="ev-sdw">
+        <div class="when">Early January</div>
+        <div>
+          <span class="where">Germany</span>
+          <h3>Stunde der Wintervögel</h3>
+          <p>NABU's hour of winter birds: count at the feeder, garden or balcony for one hour and report what lands. <a href="https://www.nabu.de/tiere-und-pflanzen/aktionen-und-projekte/stunde-der-wintervoegel/index.html" target="_blank" rel="noopener">Join via NABU</a>.</p>
+        </div>
+      </div>
+      <div class="event" id="ev-awc">
+        <div class="when">January</div>
+        <div>
+          <span class="where">Asia Pacific and worldwide</span>
+          <h3>International Waterbird Census</h3>
+          <p>Every January, volunteers count waterbirds at wetlands across the world; in Asia and Australasia it runs as the Asian Waterbird Census, coordinated by Wetlands International. <a href="https://eaaflyway.net/asian-waterbird-census/" target="_blank" rel="noopener">Find your national count</a>.</p>
+        </div>
+      </div>
+      <div class="event" id="ev-bgbw">
+        <div class="when">Late January</div>
+        <div>
+          <span class="where">United Kingdom</span>
+          <h3>Big Garden Birdwatch</h3>
+          <p>The world's largest garden wildlife survey, run by the RSPB. One hour, your garden or balcony, count what lands. <a href="https://www.rspb.org.uk/birdwatch" target="_blank" rel="noopener">Sign up with the RSPB</a>.</p>
+        </div>
+      </div>
+      <div class="event" id="ev-tuinvogel">
+        <div class="when">Late January</div>
+        <div>
+          <span class="where">Netherlands</span>
+          <h3>Nationale Tuinvogeltelling</h3>
+          <p>The Dutch garden bird count, run by Vogelbescherming Nederland. Half an hour of counting from your window. <a href="https://www.vogelbescherming.nl/tuinvogeltelling" target="_blank" rel="noopener">Doe mee</a>.</p>
+        </div>
+      </div>
+      <div class="event" id="ev-vogelweekend">
+        <div class="when">Late January</div>
+        <div>
+          <span class="where">Belgium</span>
+          <h3>Het Grote Vogelweekend</h3>
+          <p>Flanders counts its garden birds with Natuurpunt the same weekend. A quarter hour and a tally sheet is all it takes. <a href="https://www.natuurpunt.be/het-grote-vogelweekend" target="_blank" rel="noopener">Tel mee</a>.</p>
+        </div>
+      </div>
+      <div class="event" id="ev-vinterfaglar">
+        <div class="when">Late January</div>
+        <div>
+          <span class="where">Sweden</span>
+          <h3>Vinterfåglar inpå knuten</h3>
+          <p>Sweden's biggest bird count: around 20,000 households report the birds at their winter feeders to BirdLife Sverige. <a href="https://vinterfaglar.se/" target="_blank" rel="noopener">Räkna med</a>.</p>
+        </div>
+      </div>
+      <div class="event" id="ev-gbbc">
+        <div class="when">Mid February</div>
+        <div>
+          <span class="where">Worldwide</span>
+          <h3>Great Backyard Bird Count</h3>
+          <p>Four days, any country, as little as 15 minutes. Run by Cornell and Audubon, and a perfect first count for a new birder. India joins in force with the Campus Bird Count through <a href="https://birdcount.in/counts/gbbc/" target="_blank" rel="noopener">Bird Count India</a>. <a href="https://www.birdcount.org" target="_blank" rel="noopener">Join the count</a>.</p>
+        </div>
+      </div>
+      <div class="event" id="ev-springalive">
+        <div class="when">February to June</div>
+        <div>
+          <span class="where">Europe, Asia and Africa</span>
+          <h3>Spring Alive</h3>
+          <p>Children and families record their first stork, swallow, swift, cuckoo, sand martin and bee-eater of spring with BirdLife; African children track the same birds from September. <a href="https://www.springalive.net" target="_blank" rel="noopener">Record a first sighting</a>.</p>
+        </div>
+      </div>
+      <div class="event" id="ev-cnc">
+        <div class="when">Late April</div>
+        <div>
+          <span class="where">Worldwide</span>
+          <h3>City Nature Challenge</h3>
+          <p>Cities compete to record the most wild species in four days, birds very much included, through iNaturalist. <a href="https://www.citynaturechallenge.org" target="_blank" rel="noopener">Find your city</a>.</p>
+        </div>
+      </div>
+      <div class="event" id="ev-gbd">
+        <div class="when">May</div>
+        <div>
+          <span class="where">Worldwide</span>
+          <h3>Global Big Day</h3>
+          <p>The biggest single day of birding on Earth, on World Migratory Bird Day in May. Every checklist counts, from a garden list to a dawn marathon. <a href="https://ebird.org/globalbigday" target="_blank" rel="noopener">Read how it works on eBird</a>.</p>
+        </div>
+      </div>
+      <div class="event" id="ev-sdg">
+        <div class="when">Early May</div>
+        <div>
+          <span class="where">Germany</span>
+          <h3>Stunde der Gartenvögel</h3>
+          <p>NABU's spring twin to the winter count: an hour for the birds breeding around you, every second weekend of May. <a href="https://www.nabu.de/tiere-und-pflanzen/aktionen-und-projekte/stunde-der-gartenvoegel/index.html" target="_blank" rel="noopener">Join via NABU</a>.</p>
+        </div>
+      </div>
+      <div class="event" id="ev-nzgbs">
+        <div class="when">Late June to early July</div>
+        <div>
+          <span class="where">New Zealand</span>
+          <h3>NZ Garden Bird Survey</h3>
+          <p>Aotearoa's longest running citizen science project, run by Manaaki Whenua Landcare Research: one hour in the garden, count the highest number of each species. <a href="https://form-gardenbirdsurvey.landcareresearch.co.nz/" target="_blank" rel="noopener">Take part</a>.</p>
+        </div>
+      </div>
+      <div class="event" id="ev-euro">
+        <div class="when">First weekend of October</div>
+        <div>
+          <span class="where">Europe and Central Asia</span>
+          <h3>EuroBirdwatch</h3>
+          <p>BirdLife partners run hundreds of migration watchpoints in one weekend as millions of birds stream south. <a href="https://www.eurobirdwatch.eu" target="_blank" rel="noopener">Find an event</a>.</p>
+        </div>
+      </div>
+      <div class="event" id="ev-aussie">
+        <div class="when">Late October</div>
+        <div>
+          <span class="where">Australia</span>
+          <h3>Aussie Bird Count</h3>
+          <p>BirdLife Australia's Bird Week count: 20 minutes in the backyard with the count app, Australia's largest citizen science event. <a href="https://aussiebirdcount.org.au" target="_blank" rel="noopener">Register to count</a>.</p>
+        </div>
+      </div>
+      <div class="event" id="ev-obd">
+        <div class="when">October</div>
+        <div>
+          <span class="where">Worldwide</span>
+          <h3>October Big Day</h3>
+          <p>Global Big Day's autumn twin, timed for peak migration in October. <a href="https://ebird.org/octoberbigday" target="_blank" rel="noopener">Details on eBird</a>.</p>
+        </div>
+      </div>
+      <div class="event" id="ev-feederwatch">
+        <div class="when">November to April</div>
+        <div>
+          <span class="where">US and Canada</span>
+          <h3>Project FeederWatch</h3>
+          <p>Count the birds at your feeder through the whole winter, at your own pace. Decades of FeederWatch data track how winter birds are faring. <a href="https://feederwatch.org" target="_blank" rel="noopener">Join FeederWatch</a>.</p>
+        </div>
+      </div>
+      <div class="event" id="ev-igbs">
+        <div class="when">December to February</div>
+        <div>
+          <span class="where">Ireland</span>
+          <h3>Irish Garden Bird Survey</h3>
+          <p>Ireland's longest running citizen science survey, with BirdWatch Ireland: a weekly garden tally through the 13 weeks of winter. <a href="https://birdwatchireland.ie/our-work/surveys-research/research-surveys/irish-garden-bird-survey/" target="_blank" rel="noopener">Take part</a>.</p>
+        </div>
+      </div>
+      <div class="event" id="ev-cbc">
+        <div class="when">Dec 14 to Jan 5</div>
+        <div>
+          <span class="where">Americas</span>
+          <h3>Christmas Bird Count</h3>
+          <p>Audubon's count is the longest running citizen science project in the world, in its second century. Join a local count circle and bird with your community. <a href="https://www.audubon.org/community-science/christmas-bird-count" target="_blank" rel="noopener">Find a circle</a>.</p>
+        </div>
+      </div>
+      <p class="count-note">Year round: <a href="https://ebird.org" target="_blank" rel="noopener">eBird</a> · <a href="https://www.inaturalist.org" target="_blank" rel="noopener">iNaturalist</a> · <a href="https://xeno-canto.org" target="_blank" rel="noopener">xeno-canto</a> · <a href="https://www.birdmap.africa" target="_blank" rel="noopener">BirdMap Africa</a></p>
+    </section>
 
     <section class="cta">
       <h2>Know a group we should add?</h2>
@@ -140,13 +350,15 @@
   </main>
 
   <footer>
-    <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/video/hero-poster.jpg">
-      <source src="assets/video/hero.mp4" type="video/mp4" />
+    <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/video/site-footer-poster.jpg" aria-label="A weaver at its hanging nest">
+      <source src="assets/video/site-footer.mp4" type="video/mp4" />
     </video>
     <div class="wrap foot">
       <span class="wordmark">BeakBrain</span>
       <nav>
         <a href="/">Home</a>
+        <a href="/birds/">Bird Guide</a>
+        <a href="/cams/">Live Cams</a>
         <a href="mailto:hello@beakbrain.com">Contact</a>
         <a href="privacy.html">Privacy</a>
         <a href="terms.html">Terms</a>

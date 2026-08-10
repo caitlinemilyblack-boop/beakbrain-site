@@ -1,0 +1,592 @@
+{
+ "big-bear-eagles": {
+  "lat": 34.2441,
+  "lon": -116.9102,
+  "src": "nominatim"
+ },
+ "superbeaks-eagles": {
+  "lat": 28.5996,
+  "lon": -81.1971,
+  "src": "nominatim"
+ },
+ "knf-eagles": {
+  "lat": 32.6723,
+  "lon": -93.2881,
+  "src": "nominatim"
+ },
+ "dulles-eagles": {
+  "lat": 39.1155,
+  "lon": -77.5646,
+  "src": "nominatim"
+ },
+ "glacier-gardens-eagles": {
+  "lat": 58.302,
+  "lon": -134.4197,
+  "src": "nominatim"
+ },
+ "hancock-eagles": {
+  "lat": 55.0013,
+  "lon": -125.0024,
+  "src": "nominatim"
+ },
+ "hays-eagles": {
+  "lat": 40.4407,
+  "lon": -80.0026,
+  "src": "nominatim"
+ },
+ "uss-hawks": {
+  "lat": 40.4407,
+  "lon": -80.0026,
+  "src": "nominatim"
+ },
+ "cornell-hawks": {
+  "lat": 42.4374,
+  "lon": -76.5484,
+  "src": "nominatim"
+ },
+ "decorah-eagles": {
+  "lat": 43.3042,
+  "lon": -91.7859,
+  "src": "nominatim"
+ },
+ "decorah-north-eagles": {
+  "lat": 43.3042,
+  "lon": -91.7859,
+  "src": "nominatim"
+ },
+ "trempealeau-eagles": {
+  "lat": 44.2782,
+  "lon": -91.3829,
+  "src": "nominatim"
+ },
+ "catalina-eagles": {
+  "lat": 33.3889,
+  "lon": -118.4239,
+  "src": "nominatim"
+ },
+ "swfl-eagles": {
+  "lat": 26.7107,
+  "lon": -81.813,
+  "src": "nominatim"
+ },
+ "redding-eagles": {
+  "lat": 40.5864,
+  "lon": -122.3917,
+  "src": "nominatim"
+ },
+ "dale-hollow-eagles": {
+  "lat": 36.5655,
+  "lon": -85.3894,
+  "src": "nominatim"
+ },
+ "berry-college-eagles": {
+  "lat": 34.257,
+  "lon": -85.1647,
+  "src": "nominatim"
+ },
+ "window-to-wildlife": {
+  "lat": 27.7568,
+  "lon": -81.464,
+  "src": "nominatim"
+ },
+ "selati-black-eagles": {
+  "lat": -23.9955,
+  "lon": 30.7525,
+  "src": "nominatim"
+ },
+ "philippine-eagles": {
+  "lat": 7.3886,
+  "lon": 125.3454,
+  "src": "nominatim"
+ },
+ "san-simeon-condors": {
+  "lat": 35.6175,
+  "lon": -121.1405,
+  "src": "nominatim"
+ },
+ "latvia-white-tailed-eagles": {
+  "lat": 56.586,
+  "lon": 21.3727,
+  "src": "nominatim"
+ },
+ "poland-white-tailed-eagles": {
+  "lat": 50.7172,
+  "lon": 16.8827,
+  "src": "nominatim"
+ },
+ "estonia-golden-eagles": {
+  "lat": 58.7524,
+  "lon": 25.3319,
+  "src": "nominatim"
+ },
+ "estonia-spotted-eagles": {
+  "lat": 58.7524,
+  "lon": 25.3319,
+  "src": "nominatim"
+ },
+ "rspb-goshawk": {
+  "lat": 57.228,
+  "lon": -3.6472,
+  "src": "nominatim"
+ },
+ "hellgate-ospreys": {
+  "lat": 46.8701,
+  "lon": -113.9953,
+  "src": "nominatim"
+ },
+ "charlo-ospreys": {
+  "lat": 47.4386,
+  "lon": -114.1724,
+  "src": "nominatim"
+ },
+ "chesapeake-ospreys": {
+  "lat": 38.2281,
+  "lon": -76.2629,
+  "src": "nominatim"
+ },
+ "moraine-ospreys": {
+  "lat": 40.9593,
+  "lon": -80.0588,
+  "src": "nominatim"
+ },
+ "superbeaks-ospreys": {
+  "lat": 28.5996,
+  "lon": -81.1971,
+  "src": "nominatim"
+ },
+ "rogers-place-ospreys": {
+  "lat": 53.5462,
+  "lon": -113.4912,
+  "src": "nominatim"
+ },
+ "savannah-ospreys": {
+  "lat": 32.079,
+  "lon": -81.0921,
+  "src": "nominatim"
+ },
+ "loch-of-the-lowes-ospreys": {
+  "lat": 56.7662,
+  "lon": -3.3391,
+  "src": "nominatim:Perthshire, Scotland, UK"
+ },
+ "loch-arkaig-ospreys": {
+  "lat": 56.5674,
+  "lon": -2.6449,
+  "src": "nominatim:Lochaber, Scotland, UK"
+ },
+ "loch-garten-ospreys": {
+  "lat": 56.3327,
+  "lon": -3.3116,
+  "src": "nominatim"
+ },
+ "dyfi-ospreys": {
+  "lat": 52.5905,
+  "lon": -3.8518,
+  "src": "nominatim"
+ },
+ "glaslyn-ospreys": {
+  "lat": 52.9256,
+  "lon": -4.1297,
+  "src": "nominatim"
+ },
+ "rutland-ospreys": {
+  "lat": 52.6556,
+  "lon": -0.6223,
+  "src": "nominatim"
+ },
+ "poole-harbour-ospreys": {
+  "lat": 50.6992,
+  "lon": -1.9811,
+  "src": "nominatim"
+ },
+ "loch-doon-ospreys": {
+  "lat": 55.2447,
+  "lon": -4.3658,
+  "src": "nominatim"
+ },
+ "taipalsaari-ospreys": {
+  "lat": 61.1599,
+  "lon": 28.0604,
+  "src": "nominatim"
+ },
+ "poland-ospreys": {
+  "lat": 53.5298,
+  "lon": 20.7268,
+  "src": "nominatim"
+ },
+ "port-lincoln-ospreys": {
+  "lat": -34.7212,
+  "lon": 135.8592,
+  "src": "nominatim"
+ },
+ "cal-falcons": {
+  "lat": 37.8708,
+  "lon": -122.2729,
+  "src": "nominatim"
+ },
+ "chesapeake-falcons": {
+  "lat": 38.2281,
+  "lon": -76.2629,
+  "src": "nominatim"
+ },
+ "great-spirit-bluff-falcons": {
+  "lat": 43.828,
+  "lon": -91.304,
+  "src": "nominatim"
+ },
+ "cornell-kestrels": {
+  "lat": 43.0519,
+  "lon": -91.141,
+  "src": "nominatim"
+ },
+ "latvia-kestrels": {
+  "lat": 56.6477,
+  "lon": 25.1197,
+  "src": "nominatim"
+ },
+ "israel-kestrels": {
+  "lat": 32.0853,
+  "lon": 34.7818,
+  "src": "nominatim"
+ },
+ "fuller-fotherdale": {
+  "lat": 54.0391,
+  "lon": -0.7158,
+  "src": "nominatim"
+ },
+ "fuller-ash-wood": {
+  "lat": 53.9825,
+  "lon": -1.3853,
+  "src": "nominatim"
+ },
+ "farmer-derek-owls": {
+  "lat": 38.2731,
+  "lon": -98.5822,
+  "src": "nominatim"
+ },
+ "israel-barn-owls": {
+  "lat": 30.8124,
+  "lon": 34.8595,
+  "src": "nominatim"
+ },
+ "israel-little-owls": {
+  "lat": 30.8124,
+  "lon": 34.8595,
+  "src": "nominatim"
+ },
+ "florida-barn-owls": {
+  "lat": 29.652,
+  "lon": -82.325,
+  "src": "nominatim"
+ },
+ "latvia-eagle-owls": {
+  "lat": 56.9494,
+  "lon": 24.1052,
+  "src": "nominatim"
+ },
+ "umatilla-burrowing-owls": {
+  "lat": 45.6417,
+  "lon": -118.7671,
+  "src": "nominatim"
+ },
+ "long-eared-owl-cam": {
+  "lat": 46.8648,
+  "lon": -113.9981,
+  "src": "nominatim"
+ },
+ "snowy-owl-cam": {
+  "lat": 71.2905,
+  "lon": -156.7884,
+  "src": "nominatim"
+ },
+ "great-gray-owl-cam": {
+  "lat": 47.3753,
+  "lon": -109.6388,
+  "src": "nominatim"
+ },
+ "charlo-great-horned-owls": {
+  "lat": 47.4386,
+  "lon": -114.1724,
+  "src": "nominatim"
+ },
+ "barred-owl-cam": {
+  "lat": 39.7683,
+  "lon": -86.1584,
+  "src": "nominatim"
+ },
+ "austin-great-horned-owls": {
+  "lat": 30.2711,
+  "lon": -97.7437,
+  "src": "nominatim"
+ },
+ "cornell-feederwatch": {
+  "lat": 42.4374,
+  "lon": -76.5484,
+  "src": "nominatim"
+ },
+ "ontario-feederwatch": {
+  "lat": 49.1215,
+  "lon": -85.8384,
+  "src": "nominatim"
+ },
+ "pixcams-feeder": {
+  "lat": 40.4284,
+  "lon": -79.6975,
+  "src": "nominatim"
+ },
+ "purple-martin-house": {
+  "lat": 40.9593,
+  "lon": -80.0588,
+  "src": "nominatim"
+ },
+ "ash-canyon-feeders": {
+  "lat": 34.3953,
+  "lon": -111.7633,
+  "src": "nominatim:Arizona, USA"
+ },
+ "west-texas-hummingbirds": {
+  "lat": 30.5892,
+  "lon": -103.895,
+  "src": "nominatim"
+ },
+ "simi-valley-hummingbirds": {
+  "lat": 34.2677,
+  "lon": -118.7538,
+  "src": "nominatim"
+ },
+ "rspb-swifts": {
+  "lat": 54.7024,
+  "lon": -3.2766,
+  "src": "nominatim"
+ },
+ "farmer-derek-feeder": {
+  "lat": 38.2731,
+  "lon": -98.5822,
+  "src": "nominatim"
+ },
+ "beleef-de-lente": {
+  "lat": 52.2435,
+  "lon": 5.6343,
+  "src": "nominatim"
+ },
+ "panama-fruit-feeders": {
+  "lat": 8.6025,
+  "lon": -80.1216,
+  "src": "nominatim"
+ },
+ "panama-hummingbirds": {
+  "lat": 8.5596,
+  "lon": -81.1308,
+  "src": "nominatim:Panama"
+ },
+ "sachatamia-hummingbirds": {
+  "lat": -0.0529,
+  "lon": -78.7747,
+  "src": "nominatim"
+ },
+ "peru-hummingbirds": {
+  "lat": -6.87,
+  "lon": -75.0459,
+  "src": "nominatim"
+ },
+ "birdsouls-colombia": {
+  "lat": 4.0999,
+  "lon": -72.9088,
+  "src": "nominatim"
+ },
+ "toucan-tv": {
+  "lat": 10.2736,
+  "lon": -84.0739,
+  "src": "nominatim"
+ },
+ "macaw-feeders": {
+  "lat": 10.2736,
+  "lon": -84.0739,
+  "src": "nominatim"
+ },
+ "macaw-nest": {
+  "lat": 10.4872,
+  "lon": -83.9957,
+  "src": "nominatim"
+ },
+ "lance-tailed-manakins": {
+  "lat": 8.2114,
+  "lon": -82.2821,
+  "src": "nominatim"
+ },
+ "royal-albatross": {
+  "lat": -45.7751,
+  "lon": 170.7283,
+  "src": "nominatim"
+ },
+ "puffin-loafing-ledge": {
+  "lat": 43.7081,
+  "lon": -69.8319,
+  "src": "nominatim"
+ },
+ "puffin-burrow": {
+  "lat": 43.7081,
+  "lon": -69.8319,
+  "src": "nominatim"
+ },
+ "guillemot-burrow": {
+  "lat": 43.7081,
+  "lon": -69.8319,
+  "src": "nominatim"
+ },
+ "stony-point-penguins": {
+  "lat": -34.3536,
+  "lon": 18.9178,
+  "src": "nominatim"
+ },
+ "magellanic-penguins": {
+  "lat": -45.0961,
+  "lon": -66.0018,
+  "src": "nominatim"
+ },
+ "giant-petrels": {
+  "lat": -34.9965,
+  "lon": -64.9673,
+  "src": "nominatim:Argentina"
+ },
+ "imperial-cormorants": {
+  "lat": -45.1112,
+  "lon": -65.9493,
+  "src": "nominatim"
+ },
+ "bermuda-petrels": {
+  "lat": 32.3471,
+  "lon": -64.664,
+  "src": "nominatim"
+ },
+ "bermuda-tropicbirds": {
+  "lat": 32.3471,
+  "lon": -64.664,
+  "src": "nominatim"
+ },
+ "mississippi-flyway": {
+  "lat": 43.6743,
+  "lon": -91.2302,
+  "src": "nominatim"
+ },
+ "sacramento-refuge": {
+  "lat": 38.5851,
+  "lon": -121.501,
+  "src": "nominatim"
+ },
+ "chesapeake-herons": {
+  "lat": 38.2281,
+  "lon": -76.2629,
+  "src": "nominatim"
+ },
+ "rowe-cranes": {
+  "lat": 40.918,
+  "lon": -100.1667,
+  "src": "nominatim"
+ },
+ "decorah-geese": {
+  "lat": 43.3042,
+  "lon": -91.7859,
+  "src": "nominatim"
+ },
+ "kamfers-flamingos": {
+  "lat": -28.7383,
+  "lon": 24.7642,
+  "src": "nominatim"
+ },
+ "okaukuejo-waterhole": {
+  "lat": -18.9913,
+  "lon": 15.7461,
+  "src": "nominatim"
+ },
+ "namib-desert-cam": {
+  "lat": -24.9095,
+  "lon": 15.332,
+  "src": "nominatim"
+ },
+ "kalahari-cam": {
+  "lat": -22.5725,
+  "lon": 17.0678,
+  "src": "nominatim"
+ },
+ "kwando-river-cam": {
+  "lat": -17.6913,
+  "lon": 24.1377,
+  "src": "nominatim:Zambezi Region, Namibia"
+ },
+ "tembe-waterhole": {
+  "lat": -26.9651,
+  "lon": 32.4652,
+  "src": "nominatim"
+ },
+ "nkorho-cam": {
+  "lat": -24.8213,
+  "lon": 31.4412,
+  "src": "nominatim"
+ },
+ "deteema-springs": {
+  "lat": -19.189,
+  "lon": 26.7401,
+  "src": "nominatim"
+ },
+ "angama-mara": {
+  "lat": -1.0959,
+  "lon": 35.8566,
+  "src": "nominatim"
+ },
+ "tortilis-amboseli": {
+  "lat": -2.6411,
+  "lon": 37.2362,
+  "src": "nominatim"
+ },
+ "latvia-black-storks": {
+  "lat": 56.9494,
+  "lon": 24.1052,
+  "src": "nominatim"
+ },
+ "estonia-black-storks": {
+  "lat": 58.7524,
+  "lon": 25.3319,
+  "src": "nominatim"
+ },
+ "poland-black-storks": {
+  "lat": 52.3979,
+  "lon": 16.1192,
+  "src": "nominatim"
+ },
+ "latvia-white-storks": {
+  "lat": 56.967,
+  "lon": 23.1525,
+  "src": "nominatim"
+ },
+ "knepp-storks": {
+  "lat": 51,
+  "lon": -0.4167,
+  "src": "nominatim"
+ },
+ "grossefehn-storks": {
+  "lat": 53.3726,
+  "lon": 7.4392,
+  "src": "nominatim:Ostfriesland, Germany"
+ },
+ "ornis-rollers": {
+  "lat": 42.6384,
+  "lon": 12.6743,
+  "src": "nominatim"
+ },
+ "bella-hummingbird": {
+  "lat": 34.1008,
+  "lon": -117.7678,
+  "src": "nominatim"
+ },
+ "titmouse-nest": {
+  "lat": 31.2639,
+  "lon": -98.5456,
+  "src": "nominatim"
+ },
+ "sydney-sea-eagles": {
+  "lat": -33.8429,
+  "lon": 151.0725,
+  "src": "nominatim"
+ }
+}

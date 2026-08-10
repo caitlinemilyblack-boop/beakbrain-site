@@ -1,0 +1,2907 @@
+[
+ {
+  "id": "big-bear-eagles",
+  "name": "Big Bear Bald Eagle Nest",
+  "host": "Friends of Big Bear Valley",
+  "location": "Big Bear Lake, California, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "eagles",
+  "status": "live",
+  "species": [
+   {
+    "name": "Bald Eagle",
+    "slug": "bald-eagle"
+   }
+  ],
+  "seasonText": "Eggs in January, chicks through June, and the pair visits the nest all year.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "B4-L2nfGcuE",
+   "channelUrl": "https://www.youtube.com/@FOBBVCAM"
+  },
+  "blurb": "Home of Jackie and Shadow, the most famous eagle pair on the internet, on a Jeffrey pine high above Big Bear Lake."
+ },
+ {
+  "id": "superbeaks-eagles",
+  "name": "SuperBeaks Bald Eagle Nest",
+  "host": "SuperBeaks",
+  "location": "Central Florida, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "eagles",
+  "status": "live",
+  "species": [
+   {
+    "name": "Bald Eagle",
+    "slug": "bald-eagle"
+   }
+  ],
+  "seasonText": "Florida eagles nest early: eggs from November, eaglets fledge by spring.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "oMo3svJeKLk",
+   "channelUrl": "https://www.youtube.com/@SuperBeaks"
+  },
+  "blurb": "Pepe and Muhlady raise some of the earliest eaglets in the country in a longleaf pine, with alligators and sandhill cranes in the pasture below."
+ },
+ {
+  "id": "knf-eagles",
+  "name": "Kisatchie National Forest Eagle Cams",
+  "host": "KNF Cams / US Forest Service",
+  "location": "Kisatchie National Forest, Louisiana, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "eagles",
+  "status": "live",
+  "species": [
+   {
+    "name": "Bald Eagle",
+    "slug": "bald-eagle"
+   }
+  ],
+  "seasonText": "Nesting October to May; canopy cams stream the forest all year.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "A3pJIBKMqFI",
+   "channelUrl": "https://www.youtube.com/@KNFcams"
+  },
+  "blurb": "Two wild nests deep in a Louisiana pine forest, with nest and canopy views and a devoted chat community."
+ },
+ {
+  "id": "dulles-eagles",
+  "name": "Dulles Greenway Eagle Cam",
+  "host": "Dulles Greenway",
+  "location": "Leesburg, Virginia, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "eagles",
+  "status": "live",
+  "species": [
+   {
+    "name": "Bald Eagle",
+    "slug": "bald-eagle"
+   }
+  ],
+  "seasonText": "Eggs in February, fledging by June; the nest stays on camera all year.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "c65X8HpnySY",
+   "channelUrl": "https://www.youtube.com/@DullesGreenwayEagleCam"
+  },
+  "blurb": "A wetlands nest beside the Dulles Greenway toll road, streaming in HD with one of the longest running eagle pairs in Virginia."
+ },
+ {
+  "id": "glacier-gardens-eagles",
+  "name": "Glacier Gardens Bald Eagle Cam",
+  "host": "Glacier Gardens",
+  "location": "Juneau, Alaska, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "eagles",
+  "status": "live",
+  "species": [
+   {
+    "name": "Bald Eagle",
+    "slug": "bald-eagle"
+   }
+  ],
+  "seasonText": "Nesting April to August in the Tongass rainforest.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "1hzqgzwAuHE",
+   "channelUrl": "https://www.youtube.com/@GlacierGardens"
+  },
+  "blurb": "A wild nest in the mossy canopy of the Tongass, the world's largest temperate rainforest, from a botanical garden outside Juneau."
+ },
+ {
+  "id": "hancock-eagles",
+  "name": "Hancock Wildlife Eagle Cams",
+  "host": "Hancock Wildlife Foundation",
+  "location": "British Columbia, Canada",
+  "flag": "\ud83c\udde8\ud83c\udde6",
+  "region": "North America",
+  "category": "eagles",
+  "status": "live",
+  "species": [
+   {
+    "name": "Bald Eagle",
+    "slug": "bald-eagle"
+   }
+  ],
+  "seasonText": "Eggs in March, fledging by August, on nests across the Fraser Valley.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "vLFKzuV-pgw",
+   "channelUrl": "https://www.youtube.com/@HancockWildlifeFoundation"
+  },
+  "blurb": "The foundation that pioneered eagle streaming in Canada, rotating between wild nests around Vancouver and the Fraser Valley."
+ },
+ {
+  "id": "hays-eagles",
+  "name": "Glen Hazel (Hays) Bald Eagle Cam",
+  "host": "PixCams",
+  "location": "Pittsburgh, Pennsylvania, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "eagles",
+  "status": "live",
+  "species": [
+   {
+    "name": "Bald Eagle",
+    "slug": "bald-eagle"
+   }
+  ],
+  "seasonText": "Eggs in February, chicks through June; the pair guards the nest all year.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "yPq9aNukckQ",
+   "channelUrl": "https://www.youtube.com/@PixCams"
+  },
+  "blurb": "City eagles above the Monongahela River, proof that bald eagles came back to Pittsburgh after a century away."
+ },
+ {
+  "id": "uss-hawks",
+  "name": "U.S. Steel Red-tailed Hawk Nest",
+  "host": "PixCams",
+  "location": "Pittsburgh, Pennsylvania, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "eagles",
+  "status": "live",
+  "species": [
+   {
+    "name": "Red-tailed Hawk",
+    "slug": "red-tailed-hawk"
+   }
+  ],
+  "seasonText": "Eggs in March, young on the nest into June.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "jUS-CaVPNYU",
+   "channelUrl": "https://www.youtube.com/@PixCams"
+  },
+  "blurb": "A red-tailed hawk pair nesting on U.S. Steel's Edgar Thomson plant, industry and wildness sharing one frame."
+ },
+ {
+  "id": "cornell-hawks",
+  "name": "Cornell Red-tailed Hawks",
+  "host": "Cornell Lab Bird Cams",
+  "location": "Ithaca, New York, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "eagles",
+  "status": "live",
+  "species": [
+   {
+    "name": "Red-tailed Hawk",
+    "slug": "red-tailed-hawk"
+   }
+  ],
+  "seasonText": "Eggs in March, fledging in June, above the Cornell campus.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "afsaYKQ3vac",
+   "channelUrl": "https://www.youtube.com/@CornellBirdCams"
+  },
+  "blurb": "The famous #CornellHawks nest on a light pole overlooking Cornell's athletic fields, streamed since 2012."
+ },
+ {
+  "id": "decorah-eagles",
+  "name": "Decorah Eagles",
+  "host": "Raptor Resource Project on explore.org",
+  "location": "Decorah, Iowa, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "eagles",
+  "status": "live",
+  "species": [
+   {
+    "name": "Bald Eagle",
+    "slug": "bald-eagle"
+   }
+  ],
+  "seasonText": "Eggs in February, eaglets fledge by July; eagles visit the nest all year.",
+  "watch": {
+   "type": "link",
+   "url": "https://explore.org/livecams/birds/decorah-eagles"
+  },
+  "blurb": "The nest that started the eagle cam phenomenon, watched by hundreds of millions since 2011 beside a trout hatchery in Iowa."
+ },
+ {
+  "id": "decorah-north-eagles",
+  "name": "Decorah North Eagles",
+  "host": "Raptor Resource Project on explore.org",
+  "location": "Decorah, Iowa, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "eagles",
+  "status": "live",
+  "species": [
+   {
+    "name": "Bald Eagle",
+    "slug": "bald-eagle"
+   }
+  ],
+  "seasonText": "Eggs in February, fledging by July.",
+  "watch": {
+   "type": "link",
+   "url": "https://explore.org/livecams/birds/decorah-eagles-north-nest"
+  },
+  "blurb": "The second Decorah nest, in a white oak above a trout stream on a private farm north of town."
+ },
+ {
+  "id": "trempealeau-eagles",
+  "name": "Trempealeau Eagles",
+  "host": "Raptor Resource Project on explore.org",
+  "location": "Trempealeau, Wisconsin, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "eagles",
+  "status": "live",
+  "species": [
+   {
+    "name": "Bald Eagle",
+    "slug": "bald-eagle"
+   }
+  ],
+  "seasonText": "Eggs in February, eaglets through June, above the Mississippi River.",
+  "watch": {
+   "type": "link",
+   "url": "https://explore.org/livecams/birds/trempealeau-eagles"
+  },
+  "blurb": "A bluff country nest on the Upper Mississippi, with river traffic and waterfowl drifting past below."
+ },
+ {
+  "id": "catalina-eagles",
+  "name": "West End Bald Eagles, Catalina Island",
+  "host": "Institute for Wildlife Studies on explore.org",
+  "location": "Catalina Island, California, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "eagles",
+  "status": "live",
+  "species": [
+   {
+    "name": "Bald Eagle",
+    "slug": "bald-eagle"
+   }
+  ],
+  "seasonText": "Eggs in February, fledging by June, on sea cliffs above the Pacific.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "aT1adgYSfbc",
+   "channelUrl": "https://explore.org/livecams/birds/bald-eagle-west-end-catalina"
+  },
+  "blurb": "Eagles restored to the Channel Islands after DDT wiped them out, nesting on cliffs with the ocean glittering behind."
+ },
+ {
+  "id": "swfl-eagles",
+  "name": "Southwest Florida Eagle Cam",
+  "host": "Pritchett Real Estate",
+  "location": "North Fort Myers, Florida, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "eagles",
+  "status": "seasonal",
+  "returns": "October",
+  "species": [
+   {
+    "name": "Bald Eagle",
+    "slug": "bald-eagle"
+   }
+  ],
+  "seasonText": "Streams October to May; eggs in November and eaglets fledge by April.",
+  "watch": {
+   "type": "link",
+   "url": "https://www.youtube.com/@SouthwestFloridaEagleCam"
+  },
+  "blurb": "One of the most watched nests on Earth, home of the late Harriet's dynasty in a Fort Myers pasture."
+ },
+ {
+  "id": "redding-eagles",
+  "name": "Redding Bald Eagles (Guardian and Liberty)",
+  "host": "Friends of the Redding Eagles",
+  "location": "Redding, California, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "eagles",
+  "status": "seasonal",
+  "returns": "February",
+  "species": [
+   {
+    "name": "Bald Eagle",
+    "slug": "bald-eagle"
+   }
+  ],
+  "seasonText": "Streams during nesting, roughly February to June.",
+  "watch": {
+   "type": "link",
+   "url": "https://www.youtube.com/@FriendsoftheReddingEagles"
+  },
+  "blurb": "Liberty, one of the oldest known breeding eagles in the wild, raises chicks in a cottonwood beside the Sacramento River."
+ },
+ {
+  "id": "dale-hollow-eagles",
+  "name": "Dale Hollow Eagle Cam",
+  "host": "Dale Hollow Eagle Camera",
+  "location": "Dale Hollow Lake, Tennessee, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "eagles",
+  "status": "seasonal",
+  "returns": "February",
+  "species": [
+   {
+    "name": "Bald Eagle",
+    "slug": "bald-eagle"
+   }
+  ],
+  "seasonText": "Streams during nesting, February to June, above a clear highland reservoir.",
+  "watch": {
+   "type": "link",
+   "url": "https://www.youtube.com/@DaleHollowEagleCamera"
+  },
+  "blurb": "A lakeside nest on the Tennessee and Kentucky border, famous for dramatic seasons and loyal chat mods."
+ },
+ {
+  "id": "berry-college-eagles",
+  "name": "Berry College Eagles",
+  "host": "Berry College",
+  "location": "Rome, Georgia, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "eagles",
+  "status": "seasonal",
+  "returns": "November",
+  "species": [
+   {
+    "name": "Bald Eagle",
+    "slug": "bald-eagle"
+   }
+  ],
+  "seasonText": "Streams November to May; eggs in January on the world's largest college campus.",
+  "watch": {
+   "type": "link",
+   "url": "https://www.berry.edu/eaglecam/"
+  },
+  "blurb": "A campus nest in tall pines watched by students and half the state of Georgia every winter."
+ },
+ {
+  "id": "window-to-wildlife",
+  "name": "Window to Wildlife Cams",
+  "host": "Window to Wildlife",
+  "location": "Florida, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "eagles",
+  "status": "seasonal",
+  "returns": "December",
+  "species": [
+   {
+    "name": "Bald Eagle",
+    "slug": "bald-eagle"
+   },
+   {
+    "name": "Great Horned Owl",
+    "slug": "great-horned-owl"
+   }
+  ],
+  "seasonText": "Multiple Florida nests stream through the winter breeding season.",
+  "watch": {
+   "type": "link",
+   "url": "https://www.youtube.com/@WindowToWildlife"
+  },
+  "blurb": "A network of Florida nest cams, eagles and great horned owls, run with high production care."
+ },
+ {
+  "id": "selati-black-eagles",
+  "name": "Black Eagles of Selati",
+  "host": "Selati Wilderness Foundation on explore.org",
+  "location": "Selati Game Reserve, South Africa",
+  "flag": "\ud83c\uddff\ud83c\udde6",
+  "region": "Africa",
+  "category": "eagles",
+  "status": "live",
+  "species": [
+   {
+    "name": "Verreaux's Eagle",
+    "slug": "verreaux-s-eagle"
+   }
+  ],
+  "seasonText": "Eggs April to June, chicks through spring; the cliff is active all year.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "_xhLV-TJpd8",
+   "channelUrl": "https://explore.org/livecams/birds/black-eagle"
+  },
+  "blurb": "Verreaux's eagles on a granite cliff in the South African bushveld, one of very few African raptor nest cams anywhere."
+ },
+ {
+  "id": "philippine-eagles",
+  "name": "Philippine Eagle Cam",
+  "host": "Philippine Eagle Foundation on explore.org",
+  "location": "Davao, Mindanao, Philippines",
+  "flag": "\ud83c\uddf5\ud83c\udded",
+  "region": "Asia & Middle East",
+  "category": "eagles",
+  "status": "live",
+  "species": [
+   {
+    "name": "Philippine Eagle",
+    "slug": "philippine-eagle"
+   }
+  ],
+  "seasonText": "Streams year round from the Philippine Eagle Center.",
+  "watch": {
+   "type": "link",
+   "url": "https://explore.org/livecams/philippine-eagles/philippine-eagles"
+  },
+  "blurb": "The critically endangered national bird of the Philippines, one of the largest and rarest eagles on Earth, on camera at its conservation center."
+ },
+ {
+  "id": "san-simeon-condors",
+  "name": "California Condor Sanctuary Cam",
+  "host": "Ventana Wildlife Society on explore.org",
+  "location": "San Simeon, California, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "eagles",
+  "status": "live",
+  "species": [
+   {
+    "name": "California Condor"
+   }
+  ],
+  "seasonText": "Condors visit the sanctuary ridge all year.",
+  "watch": {
+   "type": "link",
+   "url": "https://explore.org/livecams/birds/condor-san-simeon"
+  },
+  "blurb": "Wild California condors, back from a population of just 22 birds, soaring and squabbling on a Big Sur coast ridge."
+ },
+ {
+  "id": "latvia-white-tailed-eagles",
+  "name": "White-tailed Eagle Nest, Durbe",
+  "host": "Latvian Fund for Nature",
+  "location": "Durbe, Latvia",
+  "flag": "\ud83c\uddf1\ud83c\uddfb",
+  "region": "Europe",
+  "category": "eagles",
+  "status": "live",
+  "species": [
+   {
+    "name": "White-tailed Eagle",
+    "slug": "white-tailed-eagle"
+   }
+  ],
+  "seasonText": "Eggs in March, fledging in July; the pair visits the nest all winter.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "3wSd4iXrCw0",
+   "channelUrl": "https://www.youtube.com/@LatvijasDabasfondsOnline"
+  },
+  "blurb": "Europe's biggest eagle on a wild forest nest in western Latvia, with sound from the surrounding woods."
+ },
+ {
+  "id": "poland-white-tailed-eagles",
+  "name": "White-tailed Eagle Nest, Piotrk\u00f3w",
+  "host": "Eagle Conservation Committee (KOO)",
+  "location": "Piotrk\u00f3w, Poland",
+  "flag": "\ud83c\uddf5\ud83c\uddf1",
+  "region": "Europe",
+  "category": "eagles",
+  "status": "live",
+  "species": [
+   {
+    "name": "White-tailed Eagle",
+    "slug": "white-tailed-eagle"
+   }
+  ],
+  "seasonText": "Eggs in February, young fledge by July.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "wwgHnneuKAg",
+   "channelUrl": "https://www.youtube.com/@komitetochronyoroweaglecon1326"
+  },
+  "blurb": "Poland's Eagle Conservation Committee streams this forest nest as part of the country's remarkable eagle recovery."
+ },
+ {
+  "id": "estonia-golden-eagles",
+  "name": "Golden Eagle Nest, Estonia",
+  "host": "Kotkaklubi (Eagle Club Estonia)",
+  "location": "Estonia",
+  "flag": "\ud83c\uddea\ud83c\uddea",
+  "region": "Europe",
+  "category": "eagles",
+  "status": "live",
+  "species": [
+   {
+    "name": "Golden Eagle",
+    "slug": "golden-eagle"
+   }
+  ],
+  "seasonText": "Eggs in March, fledging in July; eagles attend the nest in winter too.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "EPUnXf1GQLU",
+   "channelUrl": "https://www.youtube.com/channel/UCCvBXTVqksM0wSaqd19N0Sg"
+  },
+  "blurb": "A wild golden eagle nest in an Estonian bog forest, from the club that has streamed protected raptors since 2007."
+ },
+ {
+  "id": "estonia-spotted-eagles",
+  "name": "Lesser Spotted Eagle Nest, Estonia",
+  "host": "Kotkaklubi (Eagle Club Estonia)",
+  "location": "Estonia",
+  "flag": "\ud83c\uddea\ud83c\uddea",
+  "region": "Europe",
+  "category": "eagles",
+  "status": "live",
+  "species": [
+   {
+    "name": "Lesser Spotted Eagle"
+   }
+  ],
+  "seasonText": "On the nest April to August, then away to African winter grounds.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "djOFxXiaXLU",
+   "channelUrl": "https://www.youtube.com/channel/UCCvBXTVqksM0wSaqd19N0Sg"
+  },
+  "blurb": "One of the world's only streamed nests of this secretive migratory eagle, deep in Estonian farmland forest."
+ },
+ {
+  "id": "rspb-goshawk",
+  "name": "RSPB Goshawk Nest Camera",
+  "host": "RSPB",
+  "location": "Abernethy Forest, Scotland, UK",
+  "flag": "\ud83c\uddec\ud83c\udde7",
+  "region": "Europe",
+  "category": "eagles",
+  "status": "live",
+  "species": [
+   {
+    "name": "Eurasian Goshawk"
+   }
+  ],
+  "seasonText": "Nesting March to July in ancient Caledonian pinewood.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "rXb9kA7Tv4s",
+   "channelUrl": "https://www.youtube.com/@RSPBvideo"
+  },
+  "blurb": "The phantom of the forest on a rare public nest camera in the old pines of Abernethy."
+ },
+ {
+  "id": "hellgate-ospreys",
+  "name": "Hellgate Ospreys",
+  "host": "Cornell Lab Bird Cams / University of Montana",
+  "location": "Missoula, Montana, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "ospreys",
+  "status": "live",
+  "species": [
+   {
+    "name": "Osprey",
+    "slug": "osprey"
+   }
+  ],
+  "seasonText": "On the nest April to September, then away south for the winter.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "-qvYCbvbeN8",
+   "channelUrl": "https://www.youtube.com/@CornellBirdCams"
+  },
+  "blurb": "Iris, the world's oldest known wild osprey, has fished the Clark Fork River from this nest for decades."
+ },
+ {
+  "id": "charlo-ospreys",
+  "name": "Charlo Osprey Nest",
+  "host": "Owl Research Institute on explore.org",
+  "location": "Charlo, Montana, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "ospreys",
+  "status": "live",
+  "species": [
+   {
+    "name": "Osprey",
+    "slug": "osprey"
+   }
+  ],
+  "seasonText": "On the nest April to September beneath the Mission Mountains.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "3VVoYO-ZFPE",
+   "channelUrl": "https://explore.org/livecams/birds/charlo-montana-osprey-nest"
+  },
+  "blurb": "An osprey platform with the snowcapped Mission Mountains behind, one of the prettiest backdrops in cam land."
+ },
+ {
+  "id": "chesapeake-ospreys",
+  "name": "Chesapeake Conservancy Osprey Cam",
+  "host": "Chesapeake Conservancy on explore.org",
+  "location": "Chesapeake Bay, Maryland, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "ospreys",
+  "status": "live",
+  "species": [
+   {
+    "name": "Osprey",
+    "slug": "osprey"
+   }
+  ],
+  "seasonText": "Tom and Audrey return in March and fledge young by August.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "M9pA4F7J1Go",
+   "channelUrl": "https://explore.org/livecams/birds/osprey-cam-chesapeake-conservancy"
+  },
+  "blurb": "The bay with the highest breeding osprey density on Earth, watched from a waterfront platform on Kent Island."
+ },
+ {
+  "id": "moraine-ospreys",
+  "name": "Moraine State Park Osprey Cam",
+  "host": "Moraine Preservation Fund / PixCams",
+  "location": "Moraine State Park, Pennsylvania, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "ospreys",
+  "status": "live",
+  "species": [
+   {
+    "name": "Osprey",
+    "slug": "osprey"
+   }
+  ],
+  "seasonText": "On the nest April to September over Lake Arthur.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "5DlywACQ9qM",
+   "channelUrl": "https://www.youtube.com/@PixCams"
+  },
+  "blurb": "A reintroduction success story: ospreys nesting again over a lake where the species vanished for decades."
+ },
+ {
+  "id": "superbeaks-ospreys",
+  "name": "SuperBeaks Osprey Nest",
+  "host": "SuperBeaks",
+  "location": "Central Florida, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "ospreys",
+  "status": "live",
+  "species": [
+   {
+    "name": "Osprey",
+    "slug": "osprey"
+   }
+  ],
+  "seasonText": "Florida ospreys stay year round; eggs come as early as December.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "8AtRJpORh5A",
+   "channelUrl": "https://www.youtube.com/@SuperBeaks"
+  },
+  "blurb": "Felix and Margareet on a Florida platform where the fishing never stops and the season starts before the new year."
+ },
+ {
+  "id": "rogers-place-ospreys",
+  "name": "Rogers Place Osprey and Goose Nest",
+  "host": "explore.org",
+  "location": "Edmonton, Alberta, Canada",
+  "flag": "\ud83c\udde8\ud83c\udde6",
+  "region": "North America",
+  "category": "ospreys",
+  "status": "live",
+  "species": [
+   {
+    "name": "Osprey",
+    "slug": "osprey"
+   },
+   {
+    "name": "Canada Goose",
+    "slug": "canada-goose"
+   }
+  ],
+  "seasonText": "Ospreys May to September; a Canada goose often claims the platform first in spring.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "NcA6CWW8ysY",
+   "channelUrl": "https://explore.org/livecams/birds/rogers-place-nest-camera"
+  },
+  "blurb": "A downtown Edmonton platform with an annual osprey versus goose real estate drama above the hockey arena."
+ },
+ {
+  "id": "savannah-ospreys",
+  "name": "Savannah Osprey Nest",
+  "host": "Cornell Lab Bird Cams / Skidaway Audubon",
+  "location": "Savannah, Georgia, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "ospreys",
+  "status": "seasonal",
+  "returns": "March",
+  "species": [
+   {
+    "name": "Osprey",
+    "slug": "osprey"
+   }
+  ],
+  "seasonText": "Streams during nesting, March to July, in the Lowcountry live oaks.",
+  "watch": {
+   "type": "link",
+   "url": "https://www.allaboutbirds.org/cams/savannah-ospreys/"
+  },
+  "blurb": "An osprey nest draped in Spanish moss on Skidaway Island, with painted buntings in the marsh nearby."
+ },
+ {
+  "id": "loch-of-the-lowes-ospreys",
+  "name": "Loch of the Lowes Osprey Cam",
+  "host": "Scottish Wildlife Trust",
+  "location": "Dunkeld, Perthshire, Scotland, UK",
+  "flag": "\ud83c\uddec\ud83c\udde7",
+  "region": "Europe",
+  "category": "ospreys",
+  "status": "live",
+  "species": [
+   {
+    "name": "Osprey",
+    "slug": "osprey"
+   }
+  ],
+  "seasonText": "On the nest late March to early September, then off to West Africa.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "Vx0RDsmLYDk",
+   "channelUrl": "https://www.youtube.com/channel/UCXtGlMSjKYfGoPggHcAZYbQ"
+  },
+  "blurb": "A Perthshire loch nest streamed since the days of the legendary female Lady of the Loch, 24 hours with night vision."
+ },
+ {
+  "id": "loch-arkaig-ospreys",
+  "name": "Loch Arkaig Osprey Cam",
+  "host": "Woodland Trust",
+  "location": "Loch Arkaig, Lochaber, Scotland, UK",
+  "flag": "\ud83c\uddec\ud83c\udde7",
+  "region": "Europe",
+  "category": "ospreys",
+  "status": "live",
+  "species": [
+   {
+    "name": "Osprey",
+    "slug": "osprey"
+   }
+  ],
+  "seasonText": "Louis and Dorcha hold the nest April to early September.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "--l_qKzu2kE",
+   "channelUrl": "https://www.youtube.com/@WoodlandTrust"
+  },
+  "blurb": "A Caledonian pinewood nest in the western Highlands, one of the best loved osprey streams in Britain."
+ },
+ {
+  "id": "loch-garten-ospreys",
+  "name": "RSPB Loch Garten Osprey Cam",
+  "host": "RSPB",
+  "location": "Abernethy, Scotland, UK",
+  "flag": "\ud83c\uddec\ud83c\udde7",
+  "region": "Europe",
+  "category": "ospreys",
+  "status": "live",
+  "species": [
+   {
+    "name": "Osprey",
+    "slug": "osprey"
+   }
+  ],
+  "seasonText": "On the nest April to early September.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "VDXNDR1SjsQ",
+   "channelUrl": "https://www.youtube.com/@RSPBvideo"
+  },
+  "blurb": "The nest where ospreys famously returned to breed in Britain in 1954, still streaming from the same forest."
+ },
+ {
+  "id": "dyfi-ospreys",
+  "name": "Dyfi Osprey Project",
+  "host": "Montgomeryshire Wildlife Trust",
+  "location": "Machynlleth, Wales, UK",
+  "flag": "\ud83c\uddec\ud83c\udde7",
+  "region": "Europe",
+  "category": "ospreys",
+  "status": "live",
+  "species": [
+   {
+    "name": "Osprey",
+    "slug": "osprey"
+   }
+  ],
+  "seasonText": "Idris and Telyn breed April to early September on the Dyfi estuary.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "jRyUtPUcFCw",
+   "channelUrl": "https://www.youtube.com/@DyfiOspreyProject"
+  },
+  "blurb": "Wales's flagship osprey nest in 4K, with some of the best commentary and science communication in the cam world."
+ },
+ {
+  "id": "glaslyn-ospreys",
+  "name": "Glaslyn Osprey Cam",
+  "host": "Bywyd Gwyllt Glaslyn Wildlife",
+  "location": "Porthmadog, Wales, UK",
+  "flag": "\ud83c\uddec\ud83c\udde7",
+  "region": "Europe",
+  "category": "ospreys",
+  "status": "live",
+  "species": [
+   {
+    "name": "Osprey",
+    "slug": "osprey"
+   }
+  ],
+  "seasonText": "On the nest late March to September beneath Snowdonia.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "cJ71sDZ7WGY",
+   "channelUrl": "https://www.youtube.com/@bywydgwylltglaslynwildlife687"
+  },
+  "blurb": "The longest occupied osprey nest in Wales, guarded around the clock by volunteers in the Glaslyn valley."
+ },
+ {
+  "id": "rutland-ospreys",
+  "name": "Rutland Water Ospreys, Manton Bay",
+  "host": "Leicestershire and Rutland Wildlife Trust",
+  "location": "Rutland Water, England, UK",
+  "flag": "\ud83c\uddec\ud83c\udde7",
+  "region": "Europe",
+  "category": "ospreys",
+  "status": "live",
+  "species": [
+   {
+    "name": "Osprey",
+    "slug": "osprey"
+   }
+  ],
+  "seasonText": "On the nest late March to September.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "V08ET209nvU",
+   "channelUrl": "https://www.youtube.com/@RutlandOspreyProject"
+  },
+  "blurb": "The nest at the heart of England's osprey reintroduction, source of the birds now breeding in Wales and Poole."
+ },
+ {
+  "id": "poole-harbour-ospreys",
+  "name": "Poole Harbour Osprey Cam",
+  "host": "Birds of Poole Harbour",
+  "location": "Poole Harbour, England, UK",
+  "flag": "\ud83c\uddec\ud83c\udde7",
+  "region": "Europe",
+  "category": "ospreys",
+  "status": "live",
+  "species": [
+   {
+    "name": "Osprey",
+    "slug": "osprey"
+   }
+  ],
+  "seasonText": "CJ7 and 022 breed April to early September.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "pLOUQ0xFgyw",
+   "channelUrl": "https://www.youtube.com/@birdsofpooleharbour"
+  },
+  "blurb": "The first ospreys to breed on England's south coast in almost 200 years, with aerial and landscape views."
+ },
+ {
+  "id": "loch-doon-ospreys",
+  "name": "Loch Doon Osprey Cam",
+  "host": "East Ayrshire Leisure",
+  "location": "Loch Doon, Ayrshire, Scotland, UK",
+  "flag": "\ud83c\uddec\ud83c\udde7",
+  "region": "Europe",
+  "category": "ospreys",
+  "status": "seasonal",
+  "returns": "April",
+  "species": [
+   {
+    "name": "Osprey",
+    "slug": "osprey"
+   }
+  ],
+  "seasonText": "Streams while the nest is active, April to early September.",
+  "watch": {
+   "type": "link",
+   "url": "https://eastayrshireleisure.com/countryside-outdoor/osprey-cam/"
+  },
+  "blurb": "A quieter Scottish nest on a moorland loch, streamed by the local council's countryside team."
+ },
+ {
+  "id": "taipalsaari-ospreys",
+  "name": "Taipalsaari Osprey Cam",
+  "host": "Taipalsaaren s\u00e4\u00e4kset",
+  "location": "Taipalsaari, Finland",
+  "flag": "\ud83c\uddeb\ud83c\uddee",
+  "region": "Europe",
+  "category": "ospreys",
+  "status": "live",
+  "species": [
+   {
+    "name": "Osprey",
+    "slug": "osprey"
+   }
+  ],
+  "seasonText": "On the nest April to late August above the Saimaa lakeland.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "mV7M4BJ6aLE",
+   "channelUrl": "https://www.youtube.com/@Taipalsaarens%C3%A4%C3%A4kset"
+  },
+  "blurb": "A Finnish lakeland nest under the midnight sun, where the fishing grounds stretch across Lake Saimaa."
+ },
+ {
+  "id": "poland-ospreys",
+  "name": "Osprey Nest, Jedwabno",
+  "host": "Eagle Conservation Committee (KOO)",
+  "location": "Jedwabno, Poland",
+  "flag": "\ud83c\uddf5\ud83c\uddf1",
+  "region": "Europe",
+  "category": "ospreys",
+  "status": "live",
+  "species": [
+   {
+    "name": "Osprey",
+    "slug": "osprey"
+   }
+  ],
+  "seasonText": "On the nest April to early September.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "82Mj76mCqFQ",
+   "channelUrl": "https://www.youtube.com/@komitetochronyoroweaglecon1326"
+  },
+  "blurb": "One of Poland's few remaining osprey pairs, part of a national effort to bring the species back from the brink."
+ },
+ {
+  "id": "port-lincoln-ospreys",
+  "name": "Port Lincoln Osprey Cam",
+  "host": "Port Lincoln Osprey Project",
+  "location": "Port Lincoln, South Australia",
+  "flag": "\ud83c\udde6\ud83c\uddfa",
+  "region": "Australia & New Zealand",
+  "category": "ospreys",
+  "status": "live",
+  "species": [
+   {
+    "name": "Osprey",
+    "slug": "osprey"
+   }
+  ],
+  "seasonText": "Eggs in September, chicks fledge by January; the pair stays all year.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "xW1YcHVp7Ko",
+   "channelUrl": "https://www.youtube.com/@PortLincolnOsprey"
+  },
+  "blurb": "Australia's famous osprey barge nest, streaming a southern hemisphere season that runs opposite to the north."
+ },
+ {
+  "id": "cal-falcons",
+  "name": "Cal Falcons, UC Berkeley Campanile",
+  "host": "Cal Falcons",
+  "location": "Berkeley, California, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "falcons",
+  "status": "live",
+  "species": [
+   {
+    "name": "Peregrine Falcon",
+    "slug": "peregrine-falcon"
+   }
+  ],
+  "seasonText": "Eggs in March, chicks fledge in June; falcons roost on the tower all year.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "CO4lgqL7Fhg",
+   "channelUrl": "https://www.youtube.com/@calfalcons"
+  },
+  "blurb": "Peregrines on the bell tower at UC Berkeley, the cam that made Annie the falcon a Bay Area celebrity."
+ },
+ {
+  "id": "chesapeake-falcons",
+  "name": "Chesapeake Peregrine Falcon Cam",
+  "host": "Chesapeake Conservancy on explore.org",
+  "location": "Chesapeake Bay, Maryland, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "falcons",
+  "status": "live",
+  "species": [
+   {
+    "name": "Peregrine Falcon",
+    "slug": "peregrine-falcon"
+   }
+  ],
+  "seasonText": "Eggs in March, fledging by June.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "1_BdSTneH3s",
+   "channelUrl": "https://explore.org/livecams/birds/peregrine-falcon-chesapeake-conservancy"
+  },
+  "blurb": "A peregrine eyrie above the Chesapeake, from the conservancy that also streams the bay's ospreys and herons."
+ },
+ {
+  "id": "great-spirit-bluff-falcons",
+  "name": "Great Spirit Bluff Falcons",
+  "host": "Raptor Resource Project on explore.org",
+  "location": "La Crescent, Minnesota, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "falcons",
+  "status": "live",
+  "species": [
+   {
+    "name": "Peregrine Falcon",
+    "slug": "peregrine-falcon"
+   }
+  ],
+  "seasonText": "Nesting March to July on a cliff above the Mississippi; highlights play off season.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "w-Vjv7Cr9Ss",
+   "channelUrl": "https://explore.org/livecams/birds/falcon-nest-cam"
+  },
+  "blurb": "Wild peregrines on a river bluff, complete with dramatic flycatcher neighbours and cliff swallow flybys."
+ },
+ {
+  "id": "cornell-kestrels",
+  "name": "American Kestrel Nest Box",
+  "host": "Cornell Lab Bird Cams",
+  "location": "Prairie du Chien, Wisconsin, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "falcons",
+  "status": "seasonal",
+  "returns": "April",
+  "species": [
+   {
+    "name": "American Kestrel",
+    "slug": "american-kestrel"
+   }
+  ],
+  "seasonText": "Streams during nesting, April to July.",
+  "watch": {
+   "type": "link",
+   "url": "https://www.allaboutbirds.org/cams/american-kestrels/"
+  },
+  "blurb": "North America's smallest falcon raising a family inside a prairie nest box, in partnership with kestrel researchers."
+ },
+ {
+  "id": "latvia-kestrels",
+  "name": "Common Kestrel Nest, Skr\u012bveri",
+  "host": "Latvian Fund for Nature",
+  "location": "Skr\u012bveri, Latvia",
+  "flag": "\ud83c\uddf1\ud83c\uddfb",
+  "region": "Europe",
+  "category": "falcons",
+  "status": "live",
+  "species": [
+   {
+    "name": "Common Kestrel",
+    "slug": "common-kestrel"
+   }
+  ],
+  "seasonText": "Eggs in May, young fledge by August.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "r_39wQTjnmg",
+   "channelUrl": "https://www.youtube.com/@LatvijasDabasfondsOnline"
+  },
+  "blurb": "A Latvian kestrel box with the country's typical mix of crisp picture, forest sound and patient chat regulars."
+ },
+ {
+  "id": "israel-kestrels",
+  "name": "Common Kestrel Cam, Tel Aviv",
+  "host": "Charter Group of Wildlife Ecology",
+  "location": "Tel Aviv, Israel",
+  "flag": "\ud83c\uddee\ud83c\uddf1",
+  "region": "Asia & Middle East",
+  "category": "falcons",
+  "status": "live",
+  "species": [
+   {
+    "name": "Common Kestrel",
+    "slug": "common-kestrel"
+   },
+   {
+    "name": "Rock Dove",
+    "slug": "rock-dove"
+   }
+  ],
+  "seasonText": "Kestrels nest February to June; the ledge stays busy all year.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "zXzxcGi9KY4",
+   "channelUrl": "https://www.youtube.com/@CharterGroupBirdcams"
+  },
+  "blurb": "Urban kestrels on a school ledge in Tel Aviv, part of Israel's remarkable Charter Group cam network."
+ },
+ {
+  "id": "fuller-fotherdale",
+  "name": "Robert E Fuller: Fotherdale Cams",
+  "host": "Robert E Fuller",
+  "location": "Thixendale, Yorkshire, England, UK",
+  "flag": "\ud83c\uddec\ud83c\udde7",
+  "region": "Europe",
+  "category": "owls",
+  "status": "live",
+  "species": [
+   {
+    "name": "Western Barn Owl",
+    "slug": "western-barn-owl"
+   },
+   {
+    "name": "Tawny Owl",
+    "slug": "tawny-owl"
+   },
+   {
+    "name": "Common Kestrel",
+    "slug": "common-kestrel"
+   }
+  ],
+  "seasonText": "Streams all year; owl nesting peaks March to July.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "1PHylxad21s",
+   "channelUrl": "https://www.youtube.com/@RobertEFuller"
+  },
+  "blurb": "The wildlife artist's Yorkshire valley, wired with dozens of cameras: barn owls, kestrels, tawny owls and the odd stoat."
+ },
+ {
+  "id": "fuller-ash-wood",
+  "name": "Robert E Fuller: Ash Wood Cams",
+  "host": "Robert E Fuller",
+  "location": "Yorkshire, England, UK",
+  "flag": "\ud83c\uddec\ud83c\udde7",
+  "region": "Europe",
+  "category": "owls",
+  "status": "live",
+  "species": [
+   {
+    "name": "Tawny Owl",
+    "slug": "tawny-owl"
+   },
+   {
+    "name": "Common Buzzard",
+    "slug": "common-buzzard"
+   }
+  ],
+  "seasonText": "Streams all year; tawny owls call and court through autumn and winter.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "m2M_GBwzrGc",
+   "channelUrl": "https://www.youtube.com/@RobertEFuller"
+  },
+  "blurb": "A second Fuller valley of cameras in a Yorkshire wood, with tawny owls, buzzards and badgers sharing the stage."
+ },
+ {
+  "id": "farmer-derek-owls",
+  "name": "Bonnie and Clyde, Great Horned Owls",
+  "host": "Farmer Derek",
+  "location": "Kansas, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "owls",
+  "status": "live",
+  "species": [
+   {
+    "name": "Great Horned Owl",
+    "slug": "great-horned-owl"
+   }
+  ],
+  "seasonText": "Eggs in February, owlets through May; the box is watched all year.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "MRMzzjyumHs",
+   "channelUrl": "https://www.youtube.com/@klingpossum"
+  },
+  "blurb": "The viral Kansas farm owl box where Bonnie and Clyde raise owlets above the wheat fields."
+ },
+ {
+  "id": "israel-barn-owls",
+  "name": "Barn Owl 4K Cam, Israel",
+  "host": "Charter Group of Wildlife Ecology",
+  "location": "Israel",
+  "flag": "\ud83c\uddee\ud83c\uddf1",
+  "region": "Asia & Middle East",
+  "category": "owls",
+  "status": "live",
+  "species": [
+   {
+    "name": "Western Barn Owl",
+    "slug": "western-barn-owl"
+   }
+  ],
+  "seasonText": "Nesting February to July; owls roost in the box year round.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "FefBhyyUo60",
+   "channelUrl": "https://www.youtube.com/@CharterGroupBirdcams"
+  },
+  "blurb": "Israel uses barn owls instead of rodent poison across its farmland, and this 4K box shows the program's stars up close."
+ },
+ {
+  "id": "israel-little-owls",
+  "name": "Little Owl and Jackdaw Cam, Israel",
+  "host": "Charter Group of Wildlife Ecology",
+  "location": "Israel",
+  "flag": "\ud83c\uddee\ud83c\uddf1",
+  "region": "Asia & Middle East",
+  "category": "owls",
+  "status": "live",
+  "species": [
+   {
+    "name": "Little Owl",
+    "slug": "little-owl"
+   },
+   {
+    "name": "Western Jackdaw",
+    "slug": "western-jackdaw"
+   }
+  ],
+  "seasonText": "Little owls nest March to June and use the site all year.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "lem74i_cJw4",
+   "channelUrl": "https://www.youtube.com/@CharterGroupBirdcams"
+  },
+  "blurb": "A stone ruin shared by little owls and jackdaws, with the owls' glare doing most of the talking."
+ },
+ {
+  "id": "florida-barn-owls",
+  "name": "American Barn Owl Cam, Florida",
+  "host": "Charter Group / University of Florida",
+  "location": "Gainesville, Florida, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "owls",
+  "status": "live",
+  "species": [
+   {
+    "name": "American Barn Owl",
+    "slug": "american-barn-owl"
+   }
+  ],
+  "seasonText": "Florida barn owls can nest in any month; winter is busiest.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "RbPzFQiZ-Sc",
+   "channelUrl": "https://www.youtube.com/@CharterGroupBirdcams"
+  },
+  "blurb": "The Israeli barn owl research network's American outpost, streamed with the University of Florida."
+ },
+ {
+  "id": "latvia-eagle-owls",
+  "name": "Eurasian Eagle-Owl Cam, Riga",
+  "host": "Latvian Fund for Nature",
+  "location": "Riga, Latvia",
+  "flag": "\ud83c\uddf1\ud83c\uddfb",
+  "region": "Europe",
+  "category": "owls",
+  "status": "live",
+  "species": [
+   {
+    "name": "Eurasian Eagle-Owl",
+    "slug": "eurasian-eagle-owl"
+   }
+  ],
+  "seasonText": "Eggs in March, owlets through June; the owls hold territory all year.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "bbgoN8Hoigg",
+   "channelUrl": "https://www.youtube.com/@LatvijasDabasfondsOnline"
+  },
+  "blurb": "Europe's largest owl breeding in the forests on Riga's edge, huge orange eyes glowing on the night camera."
+ },
+ {
+  "id": "umatilla-burrowing-owls",
+  "name": "Burrowing Owls at Umatilla",
+  "host": "Global Owl Project on explore.org",
+  "location": "Umatilla, Oregon, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "owls",
+  "status": "live",
+  "species": [
+   {
+    "name": "Burrowing Owl",
+    "slug": "burrowing-owl"
+   }
+  ],
+  "seasonText": "Owls at the burrows March to September.",
+  "watch": {
+   "type": "link",
+   "url": "https://explore.org/livecams/birds/burrowing-owls"
+  },
+  "blurb": "A colony of burrowing owls on a former army depot, bobbing and glaring at ground level."
+ },
+ {
+  "id": "long-eared-owl-cam",
+  "name": "Long-eared Owl Nest",
+  "host": "Owl Research Institute on explore.org",
+  "location": "Missoula Valley, Montana, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "owls",
+  "status": "live",
+  "species": [
+   {
+    "name": "Long-eared Owl",
+    "slug": "long-eared-owl"
+   }
+  ],
+  "seasonText": "Nesting March to June; the institute keeps a camera on the site year round.",
+  "watch": {
+   "type": "link",
+   "url": "https://explore.org/livecams/birds/long-eared-owl-cam"
+  },
+  "blurb": "One of the world's only long-eared owl cams, from the researchers who know this secretive species best."
+ },
+ {
+  "id": "snowy-owl-cam",
+  "name": "Arctic Snowy Owl Nest Cam",
+  "host": "Owl Research Institute on explore.org",
+  "location": "Utqia\u0121vik (Barrow), Alaska, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "owls",
+  "status": "seasonal",
+  "returns": "June",
+  "species": [
+   {
+    "name": "Snowy Owl",
+    "slug": "snowy-owl"
+   }
+  ],
+  "seasonText": "Streams June to August, while the tundra nest is active under 24 hour daylight.",
+  "watch": {
+   "type": "link",
+   "url": "https://explore.org/livecams/birds/arctic-snowy-owl-nesting-cam"
+  },
+  "blurb": "A snowy owl nest on the Arctic tundra at the northern tip of Alaska, one of the rarest views in the cam world."
+ },
+ {
+  "id": "great-gray-owl-cam",
+  "name": "Great Gray Owl Nest",
+  "host": "Owl Research Institute on explore.org",
+  "location": "Montana, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "owls",
+  "status": "seasonal",
+  "returns": "April",
+  "species": [
+   {
+    "name": "Great Grey Owl",
+    "slug": "great-grey-owl"
+   }
+  ],
+  "seasonText": "Streams April to July while the phantom of the north is nesting.",
+  "watch": {
+   "type": "link",
+   "url": "https://explore.org/livecams/birds/great-gray-owl-nest"
+  },
+  "blurb": "The tallest owl in North America on a broken topped snag in Montana conifer forest."
+ },
+ {
+  "id": "charlo-great-horned-owls",
+  "name": "Charlo Great Horned Owl Cam",
+  "host": "Owl Research Institute on explore.org",
+  "location": "Charlo, Montana, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "owls",
+  "status": "seasonal",
+  "returns": "March",
+  "species": [
+   {
+    "name": "Great Horned Owl",
+    "slug": "great-horned-owl"
+   }
+  ],
+  "seasonText": "Streams during nesting, March to June.",
+  "watch": {
+   "type": "link",
+   "url": "https://explore.org/livecams/birds/great-horned-owl-cam"
+  },
+  "blurb": "Great horned owls nesting near the osprey platform at Charlo, often on camera before the snow melts."
+ },
+ {
+  "id": "barred-owl-cam",
+  "name": "Barred Owl Nest Box",
+  "host": "Cornell Lab Bird Cams / Wild Birds Unlimited",
+  "location": "Indianapolis, Indiana, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "owls",
+  "status": "seasonal",
+  "returns": "March",
+  "species": [
+   {
+    "name": "Barred Owl",
+    "slug": "barred-owl"
+   }
+  ],
+  "seasonText": "Streams during nesting, March to May.",
+  "watch": {
+   "type": "link",
+   "url": "https://www.allaboutbirds.org/cams/barred-owls/"
+  },
+  "blurb": "A suburban backyard nest box where barred owls raise fluffy grey owlets on camera each spring."
+ },
+ {
+  "id": "austin-great-horned-owls",
+  "name": "Wildflower Center Great Horned Owls",
+  "host": "Cornell Lab Bird Cams / Lady Bird Johnson Wildflower Center",
+  "location": "Austin, Texas, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "owls",
+  "status": "seasonal",
+  "returns": "February",
+  "species": [
+   {
+    "name": "Great Horned Owl",
+    "slug": "great-horned-owl"
+   }
+  ],
+  "seasonText": "Streams during nesting, February to May, in a planter on a public building.",
+  "watch": {
+   "type": "link",
+   "url": "https://www.allaboutbirds.org/cams/wildflower-great-horned-owls/"
+  },
+  "blurb": "Athena the great horned owl nests in a wall planter at a busy botanic garden, unbothered by the visitors below."
+ },
+ {
+  "id": "cornell-feederwatch",
+  "name": "Cornell Lab FeederWatch Cam",
+  "host": "Cornell Lab Bird Cams",
+  "location": "Ithaca, New York, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "feeders",
+  "status": "live",
+  "species": [
+   {
+    "name": "Black-capped Chickadee",
+    "slug": "black-capped-chickadee"
+   },
+   {
+    "name": "Blue Jay",
+    "slug": "blue-jay"
+   },
+   {
+    "name": "Northern Cardinal",
+    "slug": "northern-cardinal"
+   },
+   {
+    "name": "Red-bellied Woodpecker",
+    "slug": "red-bellied-woodpecker"
+   }
+  ],
+  "seasonText": "Streams all year; winter brings the biggest feeder crowds.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "x10vL6_47Dw",
+   "channelUrl": "https://www.youtube.com/@CornellBirdCams"
+  },
+  "blurb": "The classic feeder cam at Sapsucker Woods, the easiest place on the internet to learn eastern North American backyard birds."
+ },
+ {
+  "id": "ontario-feederwatch",
+  "name": "Ontario FeederWatch Cam",
+  "host": "Cornell Lab Bird Cams / Perky-Pet",
+  "location": "Manitouwadge, Ontario, Canada",
+  "flag": "\ud83c\udde8\ud83c\udde6",
+  "region": "North America",
+  "category": "feeders",
+  "status": "seasonal",
+  "returns": "November",
+  "species": [
+   {
+    "name": "Evening Grosbeak",
+    "slug": "evening-grosbeak"
+   },
+   {
+    "name": "Canada Jay",
+    "slug": "canada-jay"
+   },
+   {
+    "name": "Pine Grosbeak",
+    "slug": "pine-grosbeak"
+   }
+  ],
+  "seasonText": "Streams November to April, when boreal finches mob the feeders in the snow.",
+  "watch": {
+   "type": "link",
+   "url": "https://www.allaboutbirds.org/cams/ontario-feederwatch/"
+  },
+  "blurb": "A deep snow Canadian feeder where grosbeaks, redpolls and Canada jays crowd the trays at 40 below."
+ },
+ {
+  "id": "pixcams-feeder",
+  "name": "Pennsylvania Bird Feeder Cam",
+  "host": "PixCams",
+  "location": "Murrysville, Pennsylvania, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "feeders",
+  "status": "live",
+  "species": [
+   {
+    "name": "Northern Cardinal",
+    "slug": "northern-cardinal"
+   },
+   {
+    "name": "Tufted Titmouse",
+    "slug": "tufted-titmouse"
+   },
+   {
+    "name": "White-breasted Nuthatch",
+    "slug": "white-breasted-nuthatch"
+   },
+   {
+    "name": "Downy Woodpecker",
+    "slug": "downy-woodpecker"
+   }
+  ],
+  "seasonText": "Streams all year with feeders topped daily.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "6--SErd7u4o",
+   "channelUrl": "https://www.youtube.com/@PixCams"
+  },
+  "blurb": "A busy Pennsylvania feeder array in HD, with chat regulars who can name every returning bird."
+ },
+ {
+  "id": "purple-martin-house",
+  "name": "Purple Martin House Cam",
+  "host": "PixCams / Moraine Preservation Fund",
+  "location": "Moraine State Park, Pennsylvania, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "feeders",
+  "status": "live",
+  "species": [
+   {
+    "name": "Purple Martin",
+    "slug": "purple-martin"
+   }
+  ],
+  "seasonText": "Martins occupy the colony April to August, then leave for Brazil.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "2fk5Ot_HI7g",
+   "channelUrl": "https://www.youtube.com/@PixCams"
+  },
+  "blurb": "Inside a purple martin colony house, North America's most people dependent songbird raising young in an apartment block."
+ },
+ {
+  "id": "ash-canyon-feeders",
+  "name": "Ash Canyon Bird Sanctuary",
+  "host": "Southeastern Arizona Bird Observatory on explore.org",
+  "location": "Huachuca Mountains, Arizona, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "feeders",
+  "status": "live",
+  "species": [
+   {
+    "name": "Rivoli's Hummingbird",
+    "slug": "rivoli-s-hummingbird"
+   },
+   {
+    "name": "Lucifer Sheartail",
+    "slug": "lucifer-sheartail"
+   },
+   {
+    "name": "Mexican Jay",
+    "slug": "mexican-jay"
+   }
+  ],
+  "seasonText": "Streams all year; hummingbird variety peaks April to September.",
+  "watch": {
+   "type": "link",
+   "url": "https://explore.org/livecams/birds/sabo-viewing-area"
+  },
+  "blurb": "A legendary sky island feeding station where fifteen hummingbird species have appeared in a single year."
+ },
+ {
+  "id": "west-texas-hummingbirds",
+  "name": "West Texas Hummingbird Feeders",
+  "host": "Cornell Lab Bird Cams / West Texas Avian Research",
+  "location": "Fort Davis, Texas, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "feeders",
+  "status": "seasonal",
+  "returns": "spring",
+  "species": [
+   {
+    "name": "Broad-tailed Hummingbird",
+    "slug": "broad-tailed-hummingbird"
+   },
+   {
+    "name": "Rufous Hummingbird",
+    "slug": "rufous-hummingbird"
+   }
+  ],
+  "seasonText": "Busiest March to October, when a dozen hummingbird species pass through the Davis Mountains.",
+  "watch": {
+   "type": "link",
+   "url": "https://www.allaboutbirds.org/cams/west-texas-hummingbirds/"
+  },
+  "blurb": "Two dozen feeders in the West Texas mountains, a hummingbird migration highway in miniature."
+ },
+ {
+  "id": "simi-valley-hummingbirds",
+  "name": "Simi Valley Hummingbird Cam",
+  "host": "Hummingbird Spot",
+  "location": "Simi Valley, California, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "feeders",
+  "status": "live",
+  "species": [
+   {
+    "name": "Anna's Hummingbird",
+    "slug": "anna-s-hummingbird"
+   },
+   {
+    "name": "Allen's Hummingbird",
+    "slug": "allen-s-hummingbird"
+   }
+  ],
+  "seasonText": "Streams all year; Anna's hummingbirds never leave southern California.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "pXe8MpU7uzk",
+   "channelUrl": "https://www.youtube.com/@HummingbirdSpot"
+  },
+  "blurb": "Carole Turek's home feeder station, headquarters of a channel devoted to filming every hummingbird species on Earth."
+ },
+ {
+  "id": "rspb-swifts",
+  "name": "RSPB Swift Nest Camera",
+  "host": "RSPB",
+  "location": "United Kingdom",
+  "flag": "\ud83c\uddec\ud83c\udde7",
+  "region": "Europe",
+  "category": "feeders",
+  "status": "live",
+  "species": [
+   {
+    "name": "Common Swift",
+    "slug": "common-swift"
+   }
+  ],
+  "seasonText": "Swifts occupy the nest May to early August, then fly to Africa without landing for months.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "eAaBgV2kgro",
+   "channelUrl": "https://www.youtube.com/@RSPBvideo"
+  },
+  "blurb": "Inside a swift nest box, a close view of a bird that eats, sleeps and mates on the wing."
+ },
+ {
+  "id": "farmer-derek-feeder",
+  "name": "Farmer Derek Feeder Cam",
+  "host": "Farmer Derek",
+  "location": "Kansas, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "feeders",
+  "status": "live",
+  "species": [
+   {
+    "name": "Northern Cardinal",
+    "slug": "northern-cardinal"
+   },
+   {
+    "name": "Blue Jay",
+    "slug": "blue-jay"
+   },
+   {
+    "name": "House Finch",
+    "slug": "house-finch"
+   }
+  ],
+  "seasonText": "Streams all year on the farm.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "6U6rkcN9HzI",
+   "channelUrl": "https://www.youtube.com/@klingpossum"
+  },
+  "blurb": "The feeder end of the viral Kansas owl farm, prairie birds against a backdrop of wheat and weather."
+ },
+ {
+  "id": "beleef-de-lente",
+  "name": "Beleef de Lente (Experience Spring)",
+  "host": "Vogelbescherming Nederland",
+  "location": "Netherlands",
+  "flag": "\ud83c\uddf3\ud83c\uddf1",
+  "region": "Europe",
+  "category": "feeders",
+  "status": "seasonal",
+  "returns": "March",
+  "species": [
+   {
+    "name": "White Stork",
+    "slug": "white-stork"
+   },
+   {
+    "name": "Western Barn Owl",
+    "slug": "western-barn-owl"
+   },
+   {
+    "name": "Common Kestrel",
+    "slug": "common-kestrel"
+   }
+  ],
+  "seasonText": "Ten nest cams stream March to July every spring.",
+  "watch": {
+   "type": "link",
+   "url": "https://www.vogelbescherming.nl/beleefdelente"
+  },
+  "blurb": "The Netherlands' beloved spring tradition: storks, owls, kestrels and songbirds nesting live across ten cameras."
+ },
+ {
+  "id": "panama-fruit-feeders",
+  "name": "Panama Fruit Feeder Cam",
+  "host": "Cornell Lab Bird Cams / Canopy Lodge",
+  "location": "El Valle de Ant\u00f3n, Panama",
+  "flag": "\ud83c\uddf5\ud83c\udde6",
+  "region": "Central & South America",
+  "category": "tropical",
+  "status": "live",
+  "species": [
+   {
+    "name": "Grey-headed Chachalaca",
+    "slug": "grey-headed-chachalaca"
+   },
+   {
+    "name": "Clay-colored Thrush",
+    "slug": "clay-colored-thrush"
+   },
+   {
+    "name": "Blue-grey Tanager",
+    "slug": "blue-grey-tanager"
+   },
+   {
+    "name": "Collared Aracari",
+    "slug": "collared-aracari"
+   }
+  ],
+  "seasonText": "Streams all year; fresh fruit goes out every morning.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "WtoxxHADnGk",
+   "channelUrl": "https://www.youtube.com/@CornellBirdCams"
+  },
+  "blurb": "A banana buffet in a Panamanian mountain valley where tanagers, aracaris and chachalacas parade all day."
+ },
+ {
+  "id": "panama-hummingbirds",
+  "name": "Panama Hummingbird Feeder Cam",
+  "host": "Cornell Lab Bird Cams / Canopy Tower",
+  "location": "Soberan\u00eda National Park, Panama",
+  "flag": "\ud83c\uddf5\ud83c\udde6",
+  "region": "Central & South America",
+  "category": "tropical",
+  "status": "live",
+  "species": [
+   {
+    "name": "White-necked Jacobin",
+    "slug": "white-necked-jacobin"
+   },
+   {
+    "name": "Rufous-tailed Hummingbird",
+    "slug": "rufous-tailed-hummingbird"
+   },
+   {
+    "name": "Crowned Woodnymph",
+    "slug": "crowned-woodnymph"
+   }
+  ],
+  "seasonText": "Streams all year in rainforest at the edge of the Panama Canal.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "0xFARCdZ3vA",
+   "channelUrl": "https://www.youtube.com/@CornellBirdCams"
+  },
+  "blurb": "Jewel colored hummingbirds swarming feeders beside the Panama Canal, a dozen species on a good morning."
+ },
+ {
+  "id": "sachatamia-hummingbirds",
+  "name": "Sachatamia Lodge Hummingbird Cam",
+  "host": "Hummingbird Spot",
+  "location": "Mindo, Ecuador",
+  "flag": "\ud83c\uddea\ud83c\udde8",
+  "region": "Central & South America",
+  "category": "tropical",
+  "status": "live",
+  "species": [
+   {
+    "name": "Violet-tailed Sylph",
+    "slug": "violet-tailed-sylph"
+   },
+   {
+    "name": "Fawn-breasted Brilliant",
+    "slug": "fawn-breasted-brilliant"
+   }
+  ],
+  "seasonText": "Streams all year in Andean cloud forest.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "c3KfiiBTIvA",
+   "channelUrl": "https://www.youtube.com/@HummingbirdSpot"
+  },
+  "blurb": "Cloud forest feeders in the world hummingbird capital, sylphs and brilliants flashing through the mist."
+ },
+ {
+  "id": "peru-hummingbirds",
+  "name": "Peru High Andes Hummingbird Cam",
+  "host": "Hummingbird Spot",
+  "location": "Peru",
+  "flag": "\ud83c\uddf5\ud83c\uddea",
+  "region": "Central & South America",
+  "category": "tropical",
+  "status": "live",
+  "species": [
+   {
+    "name": "Giant Hummingbird",
+    "slug": "giant-hummingbird"
+   },
+   {
+    "name": "Sword-billed Hummingbird",
+    "slug": "sword-billed-hummingbird"
+   },
+   {
+    "name": "Shining Sunbeam",
+    "slug": "shining-sunbeam"
+   }
+  ],
+  "seasonText": "Streams all year high in the Andes.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "nllueA0D7TY",
+   "channelUrl": "https://www.youtube.com/@HummingbirdSpot"
+  },
+  "blurb": "The giant hummingbird, the sword-billed and the shining sunbeam at one Andean feeder, three of the strangest hummingbirds alive."
+ },
+ {
+  "id": "birdsouls-colombia",
+  "name": "BirdSouls Colombia Feeder Cam",
+  "host": "BirdSouls / PixCams",
+  "location": "Colombia",
+  "flag": "\ud83c\udde8\ud83c\uddf4",
+  "region": "Central & South America",
+  "category": "tropical",
+  "status": "live",
+  "species": [
+   {
+    "name": "Blue-grey Tanager",
+    "slug": "blue-grey-tanager"
+   },
+   {
+    "name": "Bananaquit",
+    "slug": "bananaquit"
+   },
+   {
+    "name": "Red-legged Honeycreeper",
+    "slug": "red-legged-honeycreeper"
+   }
+  ],
+  "seasonText": "Streams all year from the world's birdiest country.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "nhffONcy8Eg",
+   "channelUrl": "https://www.youtube.com/@PixCams"
+  },
+  "blurb": "A fruit feeder in Colombia, the country with more bird species than any other on Earth."
+ },
+ {
+  "id": "toucan-tv",
+  "name": "Toucan TV",
+  "host": "explore.org",
+  "location": "Costa Rica",
+  "flag": "\ud83c\udde8\ud83c\uddf7",
+  "region": "Central & South America",
+  "category": "tropical",
+  "status": "live",
+  "species": [
+   {
+    "name": "Yellow-throated Toucan",
+    "slug": "yellow-throated-toucan"
+   },
+   {
+    "name": "Keel-billed Toucan",
+    "slug": "keel-billed-toucan"
+   }
+  ],
+  "seasonText": "Streams all year in rainforest canopy.",
+  "watch": {
+   "type": "link",
+   "url": "https://explore.org/livecams/birds/toucan-tv"
+  },
+  "blurb": "Toucans at eye level in the Costa Rican canopy, exactly as ridiculous and wonderful as that sounds."
+ },
+ {
+  "id": "macaw-feeders",
+  "name": "Macaw Recovery Network Feeder",
+  "host": "Macaw Recovery Network on explore.org",
+  "location": "Costa Rica",
+  "flag": "\ud83c\udde8\ud83c\uddf7",
+  "region": "Central & South America",
+  "category": "tropical",
+  "status": "live",
+  "species": [
+   {
+    "name": "Scarlet Macaw",
+    "slug": "scarlet-macaw"
+   },
+   {
+    "name": "Great Green Macaw",
+    "slug": "great-green-macaw"
+   }
+  ],
+  "seasonText": "Streams all year at a macaw conservation site.",
+  "watch": {
+   "type": "link",
+   "url": "https://explore.org/livecams/birds/macaw-high"
+  },
+  "blurb": "Wild macaws crashing a conservation feeder in full colour, from the team restoring Costa Rica's great green macaws."
+ },
+ {
+  "id": "macaw-nest",
+  "name": "Great Green Macaw Nest",
+  "host": "Macaw Recovery Network on explore.org",
+  "location": "Sarapiqu\u00ed, Costa Rica",
+  "flag": "\ud83c\udde8\ud83c\uddf7",
+  "region": "Central & South America",
+  "category": "tropical",
+  "status": "live",
+  "species": [
+   {
+    "name": "Great Green Macaw",
+    "slug": "great-green-macaw"
+   }
+  ],
+  "seasonText": "Nesting December to June; the cavity is monitored year round.",
+  "watch": {
+   "type": "link",
+   "url": "https://explore.org/livecams/birds/macaw-nest"
+  },
+  "blurb": "A nest cavity of one of the world's rarest macaws, fewer than a thousand of which remain in the wild."
+ },
+ {
+  "id": "lance-tailed-manakins",
+  "name": "Lance-tailed Manakin Cam",
+  "host": "Cornell Lab Bird Cams",
+  "location": "Isla Boca Brava, Panama",
+  "flag": "\ud83c\uddf5\ud83c\udde6",
+  "region": "Central & South America",
+  "category": "tropical",
+  "status": "seasonal",
+  "returns": "February",
+  "species": [
+   {
+    "name": "Lance-tailed Manakin",
+    "slug": "lance-tailed-manakin"
+   }
+  ],
+  "seasonText": "Streams February to July, when males dance in pairs on their display perch.",
+  "watch": {
+   "type": "link",
+   "url": "https://www.allaboutbirds.org/cams/lance-tailed-manakins/"
+  },
+  "blurb": "Two male manakins performing synchronized leapfrog dances for females, one of nature's strangest duets."
+ },
+ {
+  "id": "royal-albatross",
+  "name": "Royal Albatross Cam (Royal Cam)",
+  "host": "NZ Department of Conservation / Cornell Lab",
+  "location": "Taiaroa Head, Dunedin, New Zealand",
+  "flag": "\ud83c\uddf3\ud83c\uddff",
+  "region": "Australia & New Zealand",
+  "category": "seabirds",
+  "status": "live",
+  "species": [
+   {
+    "name": "Northern Royal Albatross",
+    "slug": "northern-royal-albatross"
+   }
+  ],
+  "seasonText": "Eggs in November, chicks on camera from late January until they fledge in September.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "Mm_zVDDUeNA",
+   "channelUrl": "https://www.youtube.com/@CornellBirdCams"
+  },
+  "blurb": "The world's only mainland royal albatross colony, following one nest through a whole year from egg to fledging."
+ },
+ {
+  "id": "puffin-loafing-ledge",
+  "name": "Puffin Loafing Ledge",
+  "host": "Audubon Seabird Institute on explore.org",
+  "location": "Seal Island, Maine, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "seabirds",
+  "status": "live",
+  "species": [
+   {
+    "name": "Atlantic Puffin",
+    "slug": "atlantic-puffin"
+   },
+   {
+    "name": "Black Guillemot",
+    "slug": "black-guillemot"
+   },
+   {
+    "name": "Common Murre",
+    "slug": "common-murre"
+   }
+  ],
+  "seasonText": "Puffins crowd the ledge April to August, then head out to sea for winter.",
+  "watch": {
+   "type": "link",
+   "url": "https://explore.org/livecams/birds/puffin-loafing-ledge-cam"
+  },
+  "blurb": "Dozens of puffins loafing on a Maine ledge, on the island where Project Puffin brought the species back."
+ },
+ {
+  "id": "puffin-burrow",
+  "name": "Puffin Burrow Cam",
+  "host": "Audubon Seabird Institute on explore.org",
+  "location": "Seal Island, Maine, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "seabirds",
+  "status": "live",
+  "species": [
+   {
+    "name": "Atlantic Puffin",
+    "slug": "atlantic-puffin"
+   }
+  ],
+  "seasonText": "A pufflin grows up on camera June to August.",
+  "watch": {
+   "type": "link",
+   "url": "https://explore.org/livecams/birds/puffin-burrow-cam"
+  },
+  "blurb": "Inside a puffin burrow, watching a single chick from hatch to its nighttime dash for the sea."
+ },
+ {
+  "id": "guillemot-burrow",
+  "name": "Guillemot Burrow Cam",
+  "host": "Audubon Seabird Institute on explore.org",
+  "location": "Seal Island, Maine, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "seabirds",
+  "status": "live",
+  "species": [
+   {
+    "name": "Black Guillemot",
+    "slug": "black-guillemot"
+   }
+  ],
+  "seasonText": "Chicks in the burrow June to August.",
+  "watch": {
+   "type": "link",
+   "url": "https://explore.org/livecams/birds/guillemot-cam"
+  },
+  "blurb": "The puffin's crimson footed cousin raising chicks under the boulders of Seal Island."
+ },
+ {
+  "id": "stony-point-penguins",
+  "name": "Stony Point Penguin Colony",
+  "host": "explore.org",
+  "location": "Betty's Bay, South Africa",
+  "flag": "\ud83c\uddff\ud83c\udde6",
+  "region": "Africa",
+  "category": "seabirds",
+  "status": "live",
+  "species": [
+   {
+    "name": "African Penguin",
+    "slug": "african-penguin"
+   }
+  ],
+  "seasonText": "Penguins are in the colony all year; chicks peak March to August.",
+  "watch": {
+   "type": "link",
+   "url": "https://explore.org/livecams/birds/penguin-colony"
+  },
+  "blurb": "One of the largest land based colonies of the endangered African penguin, braying and waddling on the Cape coast."
+ },
+ {
+  "id": "magellanic-penguins",
+  "name": "Magellanic Penguin Nest, Patagonia",
+  "host": "Rewilding Argentina on explore.org",
+  "location": "Isla Tova, Chubut, Argentina",
+  "flag": "\ud83c\udde6\ud83c\uddf7",
+  "region": "Central & South America",
+  "category": "seabirds",
+  "status": "seasonal",
+  "returns": "October",
+  "species": [
+   {
+    "name": "Magellanic Penguin",
+    "slug": "magellanic-penguin"
+   }
+  ],
+  "seasonText": "Streams October to February, the Patagonian breeding season.",
+  "watch": {
+   "type": "link",
+   "url": "https://explore.org/livecams/birds/rewilding-penguin-nest"
+  },
+  "blurb": "A burrow nest on a wild Patagonian island, from the team rewilding Argentina's coastal steppe."
+ },
+ {
+  "id": "giant-petrels",
+  "name": "Southern Giant Petrel Colony",
+  "host": "Rewilding Argentina on explore.org",
+  "location": "Isla Gran Robredo, Argentina",
+  "flag": "\ud83c\udde6\ud83c\uddf7",
+  "region": "Central & South America",
+  "category": "seabirds",
+  "status": "seasonal",
+  "returns": "November",
+  "species": [
+   {
+    "name": "Southern Giant Petrel",
+    "slug": "southern-giant-petrel"
+   }
+  ],
+  "seasonText": "Streams November to March while the colony raises chicks.",
+  "watch": {
+   "type": "link",
+   "url": "https://explore.org/livecams/birds/rewilding-petral"
+  },
+  "blurb": "The vulture of the Southern Ocean nesting on a bare Patagonian island few humans ever visit."
+ },
+ {
+  "id": "imperial-cormorants",
+  "name": "Imperial Cormorant Colony",
+  "host": "Rewilding Argentina on explore.org",
+  "location": "Isla Tovita, Argentina",
+  "flag": "\ud83c\udde6\ud83c\uddf7",
+  "region": "Central & South America",
+  "category": "seabirds",
+  "status": "seasonal",
+  "returns": "November",
+  "species": [
+   {
+    "name": "Imperial Shag",
+    "slug": "imperial-shag"
+   }
+  ],
+  "seasonText": "Streams November to February at the height of the colony.",
+  "watch": {
+   "type": "link",
+   "url": "https://explore.org/livecams/birds/rewilding-cormorant"
+  },
+  "blurb": "Hundreds of blue eyed imperial cormorants packed onto a Patagonian islet, a seabird city in miniature."
+ },
+ {
+  "id": "bermuda-petrels",
+  "name": "Bermuda Petrel (Cahow) Cam",
+  "host": "Cornell Lab Bird Cams / Nonsuch Expeditions",
+  "location": "Nonsuch Island, Bermuda",
+  "flag": "\ud83c\udde7\ud83c\uddf2",
+  "region": "North America",
+  "category": "seabirds",
+  "status": "seasonal",
+  "returns": "January",
+  "species": [
+   {
+    "name": "Bermuda Petrel",
+    "slug": "bermuda-petrel"
+   }
+  ],
+  "seasonText": "Streams January to June, inside the burrow of a bird once thought extinct for 300 years.",
+  "watch": {
+   "type": "link",
+   "url": "https://www.allaboutbirds.org/cams/bermuda-petrels/"
+  },
+  "blurb": "The cahow, rediscovered in 1951 after three centuries presumed extinct, raises a single chick on camera each spring."
+ },
+ {
+  "id": "bermuda-tropicbirds",
+  "name": "White-tailed Tropicbird Cam",
+  "host": "Cornell Lab Bird Cams / Nonsuch Expeditions",
+  "location": "Nonsuch Island, Bermuda",
+  "flag": "\ud83c\udde7\ud83c\uddf2",
+  "region": "North America",
+  "category": "seabirds",
+  "status": "seasonal",
+  "returns": "May",
+  "species": [
+   {
+    "name": "White-tailed Tropicbird",
+    "slug": "white-tailed-tropicbird"
+   }
+  ],
+  "seasonText": "Streams May to September while the longtail chick is in the nest.",
+  "watch": {
+   "type": "link",
+   "url": "https://www.allaboutbirds.org/cams/white-tailed-tropicbird/"
+  },
+  "blurb": "Bermuda's beloved longtail nesting in a cliff hole above turquoise water."
+ },
+ {
+  "id": "mississippi-flyway",
+  "name": "Mississippi River Flyway Cam",
+  "host": "Raptor Resource Project on explore.org",
+  "location": "Upper Mississippi River, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "wetlands",
+  "status": "live",
+  "species": [
+   {
+    "name": "Bald Eagle",
+    "slug": "bald-eagle"
+   },
+   {
+    "name": "American White Pelican",
+    "slug": "american-white-pelican"
+   },
+   {
+    "name": "Tundra Swan",
+    "slug": "tundra-swan"
+   }
+  ],
+  "seasonText": "Streams all year; spring and autumn migration bring tens of thousands of birds.",
+  "watch": {
+   "type": "link",
+   "url": "https://explore.org/livecams/birds/mississippi-river-flyway-cam"
+  },
+  "blurb": "A camera on America's greatest bird highway, where pelicans, swans and eagles pour through on migration."
+ },
+ {
+  "id": "sacramento-refuge",
+  "name": "Sacramento National Wildlife Refuge Cam",
+  "host": "US Fish and Wildlife Service on explore.org",
+  "location": "Sacramento Valley, California, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "wetlands",
+  "status": "live",
+  "species": [
+   {
+    "name": "Snow Goose",
+    "slug": "snow-goose"
+   },
+   {
+    "name": "Northern Pintail",
+    "slug": "northern-pintail"
+   }
+  ],
+  "seasonText": "Streams all year; winter floods the refuge with a million waterfowl.",
+  "watch": {
+   "type": "link",
+   "url": "https://explore.org/livecams/birds/sacramento-wildlife-refuge-cam"
+  },
+  "blurb": "Central Valley wetlands that host one of the great waterfowl spectacles in North America every winter."
+ },
+ {
+  "id": "chesapeake-herons",
+  "name": "Great Blue Heron Nest",
+  "host": "Chesapeake Conservancy on explore.org",
+  "location": "Chesapeake Bay, Maryland, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "wetlands",
+  "status": "live",
+  "species": [
+   {
+    "name": "Great Blue Heron",
+    "slug": "great-blue-heron"
+   }
+  ],
+  "seasonText": "Nesting March to July in a waterfront colony.",
+  "watch": {
+   "type": "link",
+   "url": "https://explore.org/livecams/birds/great-blue-herons-chesapeake-conservancy"
+  },
+  "blurb": "Gangly heron chicks growing up in a treetop nest over the Chesapeake."
+ },
+ {
+  "id": "rowe-cranes",
+  "name": "Rowe Sanctuary Crane Cam",
+  "host": "Audubon on explore.org",
+  "location": "Platte River, Nebraska, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "wetlands",
+  "status": "seasonal",
+  "returns": "February",
+  "species": [
+   {
+    "name": "Sandhill Crane"
+   },
+   {
+    "name": "Whooping Crane",
+    "slug": "whooping-crane"
+   }
+  ],
+  "seasonText": "Streams February to April, when half a million sandhill cranes roost on the Platte.",
+  "watch": {
+   "type": "link",
+   "url": "https://explore.org/livecams/birds/crane-camera"
+  },
+  "blurb": "The largest crane gathering on Earth, a river of birds at dawn that people travel continents to see."
+ },
+ {
+  "id": "decorah-geese",
+  "name": "Decorah Goose Cam",
+  "host": "Raptor Resource Project on explore.org",
+  "location": "Decorah, Iowa, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "wetlands",
+  "status": "seasonal",
+  "returns": "March",
+  "species": [
+   {
+    "name": "Canada Goose",
+    "slug": "canada-goose"
+   }
+  ],
+  "seasonText": "Streams March to May, ending with the goslings' famous leap from the nest.",
+  "watch": {
+   "type": "link",
+   "url": "https://explore.org/livecams/birds/decorah-goose-cam"
+  },
+  "blurb": "A Canada goose nesting high in a hollow tree, and one day each spring the goslings jump."
+ },
+ {
+  "id": "kamfers-flamingos",
+  "name": "Lesser Flamingos at Kamfers Dam",
+  "host": "explore.org",
+  "location": "Kimberley, South Africa",
+  "flag": "\ud83c\uddff\ud83c\udde6",
+  "region": "Africa",
+  "category": "wetlands",
+  "status": "live",
+  "species": [
+   {
+    "name": "Lesser Flamingo",
+    "slug": "lesser-flamingo"
+   }
+  ],
+  "seasonText": "Flamingos are present most of the year; breeding follows the rains.",
+  "watch": {
+   "type": "link",
+   "url": "https://explore.org/livecams/birds/flamingo-cam"
+  },
+  "blurb": "Tens of thousands of lesser flamingos turning a South African dam pink, one of only a few breeding sites in the world."
+ },
+ {
+  "id": "okaukuejo-waterhole",
+  "name": "Okaukuejo Waterhole, Etosha",
+  "host": "NamibiaCam",
+  "location": "Etosha National Park, Namibia",
+  "flag": "\ud83c\uddf3\ud83c\udde6",
+  "region": "Africa",
+  "category": "wetlands",
+  "status": "live",
+  "species": [
+   {
+    "name": "Southern Red-billed Hornbill",
+    "slug": "southern-red-billed-hornbill"
+   },
+   {
+    "name": "Namaqua Sandgrouse",
+    "slug": "namaqua-sandgrouse"
+   },
+   {
+    "name": "Common Ostrich",
+    "slug": "common-ostrich"
+   }
+  ],
+  "seasonText": "Streams all year; the dry season, May to November, packs the waterhole.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "AeMUdOPFcXI",
+   "channelUrl": "https://www.youtube.com/@NamibiaCam"
+  },
+  "blurb": "Etosha's famous floodlit waterhole, where sandgrouse and hornbills share the water with elephants and rhinos."
+ },
+ {
+  "id": "namib-desert-cam",
+  "name": "Namib Desert Waterhole",
+  "host": "NamibiaCam / Gondwana Collection",
+  "location": "Namib Desert, Namibia",
+  "flag": "\ud83c\uddf3\ud83c\udde6",
+  "region": "Africa",
+  "category": "wetlands",
+  "status": "live",
+  "species": [
+   {
+    "name": "Sociable Weaver",
+    "slug": "sociable-weaver"
+   },
+   {
+    "name": "Ruppell's Korhaan",
+    "slug": "ruppell-s-korhaan"
+   }
+  ],
+  "seasonText": "Streams all year; mornings and evenings are busiest at the water.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "ydYDqZQpim8",
+   "channelUrl": "https://www.youtube.com/@NamibiaCam"
+  },
+  "blurb": "A desert waterhole near Sossusvlei where weavers, korhaans and oryx appear out of an ocean of sand."
+ },
+ {
+  "id": "kalahari-cam",
+  "name": "Kalahari Desert Cam",
+  "host": "NamibiaCam",
+  "location": "Kalahari, Namibia",
+  "flag": "\ud83c\uddf3\ud83c\udde6",
+  "region": "Africa",
+  "category": "wetlands",
+  "status": "live",
+  "species": [
+   {
+    "name": "Sociable Weaver",
+    "slug": "sociable-weaver"
+   },
+   {
+    "name": "Crimson-breasted Shrike",
+    "slug": "crimson-breasted-shrike"
+   }
+  ],
+  "seasonText": "Streams all year in the red dunes.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "ME0dPuBtzug",
+   "channelUrl": "https://www.youtube.com/@NamibiaCam"
+  },
+  "blurb": "Red sand, camelthorn trees and the constant chatter of sociable weavers at their haystack nests."
+ },
+ {
+  "id": "kwando-river-cam",
+  "name": "Kwando River Cam",
+  "host": "NamibiaCam",
+  "location": "Kwando River, Zambezi Region, Namibia",
+  "flag": "\ud83c\uddf3\ud83c\udde6",
+  "region": "Africa",
+  "category": "wetlands",
+  "status": "live",
+  "species": [
+   {
+    "name": "Pied Kingfisher",
+    "slug": "pied-kingfisher"
+   },
+   {
+    "name": "African Jacana",
+    "slug": "african-jacana"
+   },
+   {
+    "name": "Hamerkop",
+    "slug": "hamerkop"
+   }
+  ],
+  "seasonText": "Streams all year on a lush Caprivi riverbank.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "pH9zeWqhwTA",
+   "channelUrl": "https://www.youtube.com/@NamibiaCam"
+  },
+  "blurb": "A green riverside corner of Namibia alive with kingfishers, jacanas, bee-eaters and drinking elephants."
+ },
+ {
+  "id": "tembe-waterhole",
+  "name": "Tembe Elephant Park Waterhole",
+  "host": "Africam",
+  "location": "Tembe Elephant Park, KwaZulu-Natal, South Africa",
+  "flag": "\ud83c\uddff\ud83c\udde6",
+  "region": "Africa",
+  "category": "wetlands",
+  "status": "live",
+  "species": [
+   {
+    "name": "African Grey Hornbill",
+    "slug": "african-grey-hornbill"
+   },
+   {
+    "name": "Helmeted Guineafowl",
+    "slug": "helmeted-guineafowl"
+   },
+   {
+    "name": "Egyptian Goose",
+    "slug": "egyptian-goose"
+   }
+  ],
+  "seasonText": "Streams all year with sound; over 340 bird species live in the park.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "0P_LBKqVbfs",
+   "channelUrl": null
+  },
+  "blurb": "The classic African waterhole cam, hornbills and guineafowl threading between the biggest tusked elephants in Africa."
+ },
+ {
+  "id": "nkorho-cam",
+  "name": "Nkorho Bush Lodge Cam",
+  "host": "Africam",
+  "location": "Sabi Sand, South Africa",
+  "flag": "\ud83c\uddff\ud83c\udde6",
+  "region": "Africa",
+  "category": "wetlands",
+  "status": "live",
+  "species": [
+   {
+    "name": "Lilac-breasted Roller",
+    "slug": "lilac-breasted-roller"
+   },
+   {
+    "name": "Fork-tailed Drongo",
+    "slug": "fork-tailed-drongo"
+   },
+   {
+    "name": "Magpie Shrike",
+    "slug": "magpie-shrike"
+   }
+  ],
+  "seasonText": "Streams all year beside the Kruger ecosystem.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "sQAhSkjRKGk",
+   "channelUrl": "https://www.youtube.com/@Africamvideos"
+  },
+  "blurb": "A Sabi Sand pan where rollers and drongos work the foreground while lions and leopards pass behind."
+ },
+ {
+  "id": "deteema-springs",
+  "name": "Deteema Springs Cam",
+  "host": "Africam",
+  "location": "Hwange National Park, Zimbabwe",
+  "flag": "\ud83c\uddff\ud83c\uddfc",
+  "region": "Africa",
+  "category": "wetlands",
+  "status": "live",
+  "species": [
+   {
+    "name": "Yellow-billed Oxpecker",
+    "slug": "yellow-billed-oxpecker"
+   },
+   {
+    "name": "Marabou Stork",
+    "slug": "marabou-stork"
+   }
+  ],
+  "seasonText": "Streams all year; the dry months, July to October, bring constant traffic.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "m4cAV-_7YpY",
+   "channelUrl": "https://www.youtube.com/@Africamvideos"
+  },
+  "blurb": "A remote Hwange spring where storks, vultures and oxpeckers attend the great herds."
+ },
+ {
+  "id": "angama-mara",
+  "name": "Angama Mara Cam",
+  "host": "Africam / Angama",
+  "location": "Maasai Mara, Kenya",
+  "flag": "\ud83c\uddf0\ud83c\uddea",
+  "region": "Africa",
+  "category": "wetlands",
+  "status": "live",
+  "species": [
+   {
+    "name": "Superb Starling",
+    "slug": "superb-starling"
+   },
+   {
+    "name": "Grey Crowned Crane",
+    "slug": "grey-crowned-crane"
+   }
+  ],
+  "seasonText": "Streams all year above the Mara; the wildebeest migration passes July to October.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "Njur5IV7icE",
+   "channelUrl": "https://www.youtube.com/@Africamvideos"
+  },
+  "blurb": "The view from the Oloololo escarpment across the Maasai Mara, crowned cranes and starlings in the foreground."
+ },
+ {
+  "id": "tortilis-amboseli",
+  "name": "Tortilis Camp Waterhole, Amboseli",
+  "host": "Africam / Elewana",
+  "location": "Amboseli, Kenya",
+  "flag": "\ud83c\uddf0\ud83c\uddea",
+  "region": "Africa",
+  "category": "wetlands",
+  "status": "live",
+  "species": [
+   {
+    "name": "Grey Crowned Crane",
+    "slug": "grey-crowned-crane"
+   },
+   {
+    "name": "White-faced Whistling Duck",
+    "slug": "white-faced-whistling-duck"
+   }
+  ],
+  "seasonText": "Streams all year with Mount Kilimanjaro on clear mornings.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "XyPU5-pNg5E",
+   "channelUrl": "https://www.youtube.com/@Africamvideos"
+  },
+  "blurb": "A waterhole under Kilimanjaro where cranes and whistling ducks feed beneath the mountain's snows."
+ },
+ {
+  "id": "latvia-black-storks",
+  "name": "Black Stork Nest, Riga Forests",
+  "host": "Latvian Fund for Nature",
+  "location": "Riga, Latvia",
+  "flag": "\ud83c\uddf1\ud83c\uddfb",
+  "region": "Europe",
+  "category": "wetlands",
+  "status": "live",
+  "species": [
+   {
+    "name": "Black Stork",
+    "slug": "black-stork"
+   }
+  ],
+  "seasonText": "On the nest April to August, then away to Africa.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "TGEfJtHf8aE",
+   "channelUrl": "https://www.youtube.com/@LatvijasDabasfondsOnline"
+  },
+  "blurb": "Europe's shyest stork nesting in old growth forest, a bird most birders never see in the wild."
+ },
+ {
+  "id": "estonia-black-storks",
+  "name": "Black Stork Nest, Estonia",
+  "host": "Kotkaklubi (Eagle Club Estonia)",
+  "location": "Estonia",
+  "flag": "\ud83c\uddea\ud83c\uddea",
+  "region": "Europe",
+  "category": "wetlands",
+  "status": "live",
+  "species": [
+   {
+    "name": "Black Stork",
+    "slug": "black-stork"
+   }
+  ],
+  "seasonText": "On the nest April to August.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "GvdF0EL1_kI",
+   "channelUrl": "https://www.youtube.com/channel/UCCvBXTVqksM0wSaqd19N0Sg"
+  },
+  "blurb": "The legendary Estonian black stork cams, streamed from wild forest since 2007 and narrated by a devoted forum."
+ },
+ {
+  "id": "poland-black-storks",
+  "name": "Black Stork Nest, Bolewice",
+  "host": "Eagle Conservation Committee (KOO)",
+  "location": "Bolewice, Poland",
+  "flag": "\ud83c\uddf5\ud83c\uddf1",
+  "region": "Europe",
+  "category": "wetlands",
+  "status": "live",
+  "species": [
+   {
+    "name": "Black Stork",
+    "slug": "black-stork"
+   }
+  ],
+  "seasonText": "On the nest April to August.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "2eNqPqzD4Dw",
+   "channelUrl": "https://www.youtube.com/@komitetochronyoroweaglecon1326"
+  },
+  "blurb": "A Polish forest nest of the secretive black stork, streamed by the national eagle conservation committee."
+ },
+ {
+  "id": "latvia-white-storks",
+  "name": "White Stork Nest, Tukums",
+  "host": "Latvian Fund for Nature",
+  "location": "Tukums, Latvia",
+  "flag": "\ud83c\uddf1\ud83c\uddfb",
+  "region": "Europe",
+  "category": "wetlands",
+  "status": "live",
+  "species": [
+   {
+    "name": "White Stork",
+    "slug": "white-stork"
+   }
+  ],
+  "seasonText": "On the nest April to August, bill clattering included.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "S0oEvktgur4",
+   "channelUrl": "https://www.youtube.com/@LatvijasDabasfondsOnline"
+  },
+  "blurb": "The classic European village stork nest, clattering greetings on a Latvian rooftop."
+ },
+ {
+  "id": "knepp-storks",
+  "name": "Knepp White Stork Cam",
+  "host": "Knepp Wildland (Kneppflix)",
+  "location": "West Sussex, England, UK",
+  "flag": "\ud83c\uddec\ud83c\udde7",
+  "region": "Europe",
+  "category": "wetlands",
+  "status": "seasonal",
+  "returns": "April",
+  "species": [
+   {
+    "name": "White Stork",
+    "slug": "white-stork"
+   }
+  ],
+  "seasonText": "Streams April to August, when the storks nest in the rewilded oaks.",
+  "watch": {
+   "type": "link",
+   "url": "https://www.youtube.com/@kneppflix2180"
+  },
+  "blurb": "The first white storks to breed in Britain in 600 years, on the famous Knepp rewilding estate."
+ },
+ {
+  "id": "grossefehn-storks",
+  "name": "Storchennest Gro\u00dfefehn",
+  "host": "Storchennest Gro\u00dfefehn",
+  "location": "Gro\u00dfefehn, Ostfriesland, Germany",
+  "flag": "\ud83c\udde9\ud83c\uddea",
+  "region": "Europe",
+  "category": "wetlands",
+  "status": "seasonal",
+  "returns": "March",
+  "species": [
+   {
+    "name": "White Stork",
+    "slug": "white-stork"
+   }
+  ],
+  "seasonText": "Streams March to August while the pair raises chicks.",
+  "watch": {
+   "type": "link",
+   "url": "https://www.youtube.com/@storchennestgroefehn2316"
+  },
+  "blurb": "A village stork nest in East Frisia, part of Germany's dense network of local stork cameras."
+ },
+ {
+  "id": "ornis-rollers",
+  "name": "European Roller Nest Box",
+  "host": "Ornis Italica on explore.org",
+  "location": "Italy",
+  "flag": "\ud83c\uddee\ud83c\uddf9",
+  "region": "Europe",
+  "category": "wetlands",
+  "status": "live",
+  "species": [
+   {
+    "name": "European Roller",
+    "slug": "european-roller"
+   }
+  ],
+  "seasonText": "Rollers occupy the box May to August, then migrate to Africa.",
+  "watch": {
+   "type": "link",
+   "url": "https://explore.org/livecams/birds/ornis-roller-inside"
+  },
+  "blurb": "Italy's turquoise jewel of farmland, nesting in a research box with inside and outside views."
+ },
+ {
+  "id": "bella-hummingbird",
+  "name": "Bella Hummingbird Nest",
+  "host": "explore.org",
+  "location": "La Verne, California, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "feeders",
+  "status": "seasonal",
+  "returns": "October",
+  "species": [
+   {
+    "name": "Allen's Hummingbird",
+    "slug": "allen-s-hummingbird"
+   }
+  ],
+  "seasonText": "Bella nests October to May; between broods the cam plays calming highlights.",
+  "watch": {
+   "type": "link",
+   "url": "https://explore.org/livecams/birds/bella-hummingbird-nest"
+  },
+  "blurb": "A hummingbird nest the size of a golf ball, and the most soothing close up in the cam world."
+ },
+ {
+  "id": "titmouse-nest",
+  "name": "Texas Titmouse Nest Box",
+  "host": "Texas Backyard Wildlife on explore.org",
+  "location": "Texas, USA",
+  "flag": "\ud83c\uddfa\ud83c\uddf8",
+  "region": "North America",
+  "category": "feeders",
+  "status": "seasonal",
+  "returns": "March",
+  "species": [
+   {
+    "name": "Black-crested Titmouse",
+    "slug": "black-crested-titmouse"
+   }
+  ],
+  "seasonText": "Streams during nesting, March to June.",
+  "watch": {
+   "type": "link",
+   "url": "https://explore.org/livecams/birds/tbw-bird-cams"
+  },
+  "blurb": "Inside a Texas nest box from egg to fledge, part of a backyard wired for wildlife."
+ },
+ {
+  "id": "sydney-sea-eagles",
+  "name": "Sydney Sea-EagleCAM",
+  "host": "BirdLife Australia",
+  "location": "Sydney Olympic Park, Australia",
+  "flag": "\ud83c\udde6\ud83c\uddfa",
+  "region": "Australia & New Zealand",
+  "category": "eagles",
+  "status": "live",
+  "species": [
+   {
+    "name": "White-bellied Sea-Eagle"
+   }
+  ],
+  "seasonText": "Eggs in June, chicks fledge by November; the pair visits year round.",
+  "watch": {
+   "type": "youtube",
+   "videoId": "nw4pdgy3-U0",
+   "channelUrl": "https://www.youtube.com/@SeaEagleCAM4"
+  },
+  "blurb": "White-bellied sea-eagles nesting in an ironbark forest inside Sydney, streamed by BirdLife Australia since 2009."
+ }
+]

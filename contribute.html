@@ -35,20 +35,37 @@
     .wrap { max-width: 860px; margin: 0 auto; padding: 0 28px; }
     .wordmark { font-family: var(--display); font-weight: 700; color: var(--green); letter-spacing: -0.3px; text-decoration: none; }
 
-    header { background: rgba(242,232,207,0.94); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 30; }
-    .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
-    .nav .wordmark { font-size: 24px; }
-    .nav a.back { text-decoration: none; font-weight: 800; color: var(--green); font-size: 15px; }
+    header { position: fixed; top: 0; left: 0; right: 0; z-index: 30; background: transparent; border-bottom: 1px solid transparent; transition: background .28s ease, border-color .28s ease; }
+    header.scrolled { background: rgba(242,232,207,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 80px; }
+    .nav .wordmark { font-size: 24px; color: #fff; transition: color .28s ease; }
+    header.scrolled .nav .wordmark { color: var(--green); }
+    .nav-links a { text-decoration: none; font-family: var(--display); font-weight: 600; color: #fff; font-size: 15px; margin-left: 18px; white-space: nowrap; transition: color .28s ease; }
+    header.scrolled .nav-links a { color: var(--green); }
+    @media (max-width: 640px) { .nav .wordmark { font-size: 20px; } .nav-links a { font-size: 12.5px; margin-left: 11px; } }
 
-    .hero { padding: 48px 0 6px; }
-    .hero h1 { font-size: clamp(30px, 5vw, 46px); }
-    .hero p { color: var(--muted); font-size: 18px; margin-top: 12px; }
+    .hero { position: relative; margin: 0; min-height: 300px; display: flex; align-items: flex-end; overflow: hidden; background: linear-gradient(150deg, #2C5134, #386641); }
+    .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0; transition: opacity .9s ease; }
+    .hero-video.ready { opacity: 1; }
+    .hero::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(30,45,30,.24) 0%, rgba(30,45,30,.44) 55%, rgba(22,36,24,.78) 100%); }
+    .hero-inner { position: relative; z-index: 2; width: 100%; color: #fff; padding: 100px 0 26px; }
+    .hero h1 { font-size: clamp(30px, 5vw, 46px); color: #fff; }
+    .hero p { color: #EFE7D2; font-size: 18px; margin-top: 12px; max-width: 60ch; }
+    @media (prefers-reduced-motion: reduce) { .hero-video { transition: none; } }
 
     .step { display: flex; gap: 18px; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 22px 24px; box-shadow: var(--shadow); margin: 16px 0; }
     .step .n { flex: 0 0 auto; width: 40px; height: 40px; border-radius: 50%; background: var(--green); color: #fff; font-family: var(--display); font-weight: 700; font-size: 20px; display: flex; align-items: center; justify-content: center; }
     .step h3 { font-size: 19px; color: var(--green-dark); }
     .step p { color: var(--muted); font-size: 15.5px; margin-top: 6px; }
     .step a { font-weight: 800; }
+    .cal-title { font-family: var(--display); font-weight: 700; font-size: clamp(24px, 4vw, 32px); color: var(--green-dark); margin: 44px 0 6px; }
+    .cal-sub { color: var(--muted); font-size: 16px; margin-bottom: 18px; max-width: 62ch; }
+    .event { display: flex; gap: 18px; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 18px 22px; box-shadow: var(--shadow); margin: 12px 0; }
+    .event .when { flex: 0 0 92px; font-family: var(--display); font-weight: 700; font-size: 14px; color: var(--gold-deep); background: var(--surface-alt); border-radius: 12px; padding: 8px 10px; text-align: center; align-self: flex-start; }
+    .event h3 { font-size: 17px; color: var(--green-dark); }
+    .event p { color: var(--muted); font-size: 15px; margin-top: 4px; }
+    .event a { font-weight: 800; }
+    .event .where { font-size: 12.5px; font-weight: 800; color: var(--sage); text-transform: uppercase; letter-spacing: 1px; }
 
     .note { color: var(--muted); font-size: 15px; margin: 26px 0; }
 
@@ -57,8 +74,10 @@
     .cta p { color: rgba(255,255,255,0.9); margin: 10px auto 20px; max-width: 560px; }
     .cta a.btn { display: inline-block; background: var(--gold); color: #2E2A25; font-family: var(--display); font-weight: 700; text-decoration: none; border-radius: 999px; padding: 13px 26px; }
 
-    footer { background: var(--green-dark); color: #EAF1E4; margin-top: 40px; }
-    .foot { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; padding: 30px 28px; max-width: 1080px; margin: 0 auto; }
+    footer { position: relative; overflow: hidden; background: var(--green-dark); color: #EAF1E4; margin-top: 40px; padding: 70px 0; }
+    footer .bg-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    footer::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(15,20,15,.16) 0%, rgba(15,20,15,.55) 100%); }
+    .foot { position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; padding: 0 28px; max-width: 1080px; margin: 0 auto; text-shadow: 0 1px 6px rgba(0,0,0,.45); }
     .foot .wordmark { color: #fff; font-size: 22px; }
     .foot nav a { color: #EAF1E4; text-decoration: none; margin-left: 22px; font-weight: 700; }
     .foot .copy { width: 100%; color: rgba(234,241,228,0.7); font-size: 13px; }
@@ -68,15 +87,26 @@
   <header>
     <div class="wrap nav">
       <a class="wordmark" href="/">BeakBrain</a>
-      <a class="back" href="/">&larr; Home</a>
+      <nav class="nav-links">
+        <a href="/birds/">Bird Guide</a>
+        <a href="/daily/">Daily Bird</a>
+        <a href="/cams/">Cams</a>
+        <a href="/community.html">Community</a>
+      </nav>
     </div>
   </header>
 
-  <main class="wrap">
-    <section class="hero">
+  <section class="hero">
+    <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="auto" poster="assets/video/contribute-hero-poster.jpg" aria-label="A bulbul feeding chicks at the nest">
+      <source src="assets/video/contribute-hero.mp4" type="video/mp4" />
+    </video>
+    <div class="wrap hero-inner">
       <h1>Add a Photo or Recording</h1>
       <p>BeakBrain learns from open, community-sourced media. When a bird is missing a photo or a call, you can help fill the gap so everyone can learn it by sight and sound.</p>
-    </section>
+    </div>
+  </section>
+
+  <main class="wrap">
 
     <div class="step">
       <div class="n">1</div>
@@ -104,6 +134,8 @@
 
     <p class="note">Spotted a wrong or blurry photo in the app? Tap "Report this photo" on the bird's page. Those reports come straight to us so we can swap it out.</p>
 
+    <p class="note">Looking for the big counts, from the Great Backyard Bird Count to Global Big Day? The <a href="community.html#calendar">citizen science year</a> lives on the Community page.</p>
+
     <section class="cta">
       <h2>Every bird, by sight and sound</h2>
       <p>Thousands of species still need a good photo or a clean recording. Your sightings help complete the picture.</p>
@@ -112,10 +144,14 @@
   </main>
 
   <footer>
+    <video class="bg-video" autoplay muted loop playsinline preload="none" poster="assets/video/site-footer-poster.jpg" aria-label="A weaver at its hanging nest">
+      <source src="assets/video/site-footer.mp4" type="video/mp4" />
+    </video>
     <div class="foot">
       <span class="wordmark">BeakBrain</span>
       <nav>
         <a href="/">Home</a>
+        <a href="birds/">Bird Guide</a>
         <a href="community.html">Community</a>
         <a href="mailto:hello@beakbrain.com">Contact</a>
         <a href="privacy.html">Privacy</a>
@@ -123,5 +159,16 @@
       <div class="copy">Greet every bird by name. &copy; 2026 BeakBrain.</div>
     </div>
   </footer>
+  <script>
+    (function () {
+      var v = document.getElementById('heroVideo');
+      if (v) { var mk = function () { v.classList.add('ready'); }; if (v.readyState >= 2) mk(); else v.addEventListener('loadeddata', mk); }
+      var hdr = document.querySelector('header');
+      var onS = function () { hdr.classList.toggle('scrolled', window.scrollY > 40); };
+      window.addEventListener('scroll', onS, { passive: true }); onS();
+      var fv = document.querySelector('footer .bg-video');
+      if (fv) fv.play && fv.play().catch(function () {});
+    })();
+  </script>
 </body>
 </html>
