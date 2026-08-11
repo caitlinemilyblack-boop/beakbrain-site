@@ -153,6 +153,30 @@ const hasPlate = (id) => Boolean(plateMeta[id]);
 // Shared world-map geometry every card <use>s, declared once per page.
 const BASEMAP_DEF = `<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><path id="basemap" d="${MAPDATA.world}" fill="${CARD.layout.palette.mapBase}"/></defs></svg>`;
 
+// The card's eBird-style presence calendar, redrawn for the light page
+// background: one bar per month, peak = tallest AND widest, absent = faint
+// dash, month letters beneath in the mark colour (card.layout.json bottom
+// .calendar spec; ink marks are the card's own light-background branch).
+function calendarSvg(s) {
+  const C = CARD.layout.bottom.calendar;
+  const ink = CARD.layout.palette.mapOn;
+  const W = 12 * C.tickW + 11 * C.monthGap;
+  const letterH = C.letterSize + C.letterBaselinePad + 3;
+  const H = C.peakTickH + 6 + letterH;
+  let out = '';
+  for (let i = 1; i <= 12; i++) {
+    const x = (i - 1) * (C.tickW + C.monthGap);
+    const present = (s.months || []).includes(i);
+    const peak = s.peakMonth === i;
+    const w = peak ? C.tickW + 6 : C.tickW;
+    const xx = peak ? x - 3 : x;
+    const h = peak ? C.peakTickH : present ? C.tickH : C.offTickH;
+    out += `<rect x="${xx}" y="${C.peakTickH - h}" width="${w}" height="${h}" rx="2" fill="${ink}"${present || peak ? '' : ' opacity=".45"'}/>`;
+    out += `<text x="${x + C.tickW / 2}" y="${C.peakTickH + 6 + C.letterSize}" font-family="Nunito" font-weight="700" font-size="${C.letterSize}" fill="${ink}" text-anchor="middle">${'JFMAMJJASOND'[i - 1]}</text>`;
+  }
+  return `<svg viewBox="0 -4 ${W} ${H + 4}" xmlns="http://www.w3.org/2000/svg">${out}</svg>`;
+}
+
 // Darken a hex colour (for the hero gradient's deep end).
 function shade(hex, f) {
   const v = hex.replace('#', '');
@@ -513,10 +537,13 @@ main.wrap{padding-top:10px}
 .cambadge.seasonal{background:rgba(0,0,0,.6)}
 .camframe{aspect-ratio:16/9}
 .camframe iframe{width:100%;height:100%;border:0;display:block}
-.mcal{display:grid;grid-template-columns:repeat(12,1fr);gap:4px;max-width:600px;margin-bottom:8px}
-.mc{text-align:center;font-family:var(--display);font-weight:600;font-size:12px;padding:9px 0;border-radius:8px;background:var(--surface);border:1px solid var(--border);color:var(--muted)}
-.mc.on{background:var(--sage);border-color:var(--sage);color:#fff}
-.mc.peak{background:var(--green);border-color:var(--green);color:#fff;box-shadow:0 0 0 2px var(--gold)}
+.mcal{max-width:430px;margin-bottom:8px}
+.mcal svg{width:100%;height:auto;display:block}
+/* Card-style chip furniture: the IUCN disc and the habitat diamond, exactly
+   as the collector card draws them. */
+.sdisc{width:23px;height:23px;border-radius:50%;color:#fff;font-family:var(--display);font-weight:600;font-size:10px;display:inline-flex;align-items:center;justify-content:center;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.92);flex:none}
+.hdia{width:21px;height:21px;border-radius:5px;transform:rotate(45deg);display:inline-flex;align-items:center;justify-content:center;flex:none;margin:0 2px}
+.hdia svg{transform:rotate(-45deg);width:12px;height:12px;color:#fff}
 .lead{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:18px 20px;margin:18px 0;box-shadow:var(--shadow);font-size:16.5px}
 section{margin:36px 0}
 main>section+section{border-top:1px solid var(--border);padding-top:30px}
@@ -589,9 +616,11 @@ footer::after{content:"";position:absolute;inset:0;z-index:1;background:linear-g
 .confcard .tip{display:block;font-size:14px;color:var(--muted);line-height:1.5}
 .rangemap{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:10px;box-shadow:var(--shadow)}
 .rangemap svg{width:100%;height:auto;display:block}
-.mp{fill:#E4D5AC;stroke:#fff;stroke-width:.5}
-.mp.in{fill:var(--green)}
-.mp.vg{fill:var(--sage)}
+/* Range map wears the card's own map palette: quiet stone continents with a
+   near-black hairline, charcoal range fill — the same read as the card band. */
+.mp{fill:${CARD.layout.palette.mapBase};stroke:${CARD.layout.palette.mapOnStroke};stroke-width:.3}
+.mp.in{fill:${CARD.layout.palette.mapOn};stroke:${CARD.layout.palette.mapOnStroke};stroke-width:.6}
+.mp.vg{fill:#8A8880}
 .maplegend{font-size:12.5px;color:var(--muted);display:flex;gap:16px;padding:8px 4px 0;margin-bottom:12px}
 .maplegend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
 .gallery figure{position:relative;cursor:zoom-in}
@@ -813,7 +842,7 @@ ${d.descriptionSource ? `<p class="src">Text from <a href="${esc(d.descriptionSo
 <section id="where">
 <h2>Where to see the ${esc(s.name)}</h2>
 <div class="rangemap" data-cc="${residents.join(' ')}"${vagrants.length ? ` data-vg="${vagrants.join(' ')}"` : ''} aria-label="Range map of the ${esc(s.name)}"></div>
-<div class="maplegend"><span><i style="background:var(--green)"></i>Regular range</span>${vagrants.length ? '<span><i style="background:var(--sage)"></i>Rare visitor</span>' : ''}</div>
+<div class="maplegend"><span><i style="background:${CARD.layout.palette.mapOn}"></i>Regular range</span>${vagrants.length ? '<span><i style="background:#8A8880"></i>Rare visitor</span>' : ''}</div>
 <div class="cols">
 ${residents.map((c) => `<a href="/birds/country/${c.toLowerCase()}/">${esc(COUNTRY[c] || c)}</a>`).join('\n')}
 </div>
@@ -825,7 +854,7 @@ ${vagrants.length ? `<p class="note" style="margin-top:10px">Recorded as a rare 
 <section id="when">
 <h2>When to see the ${esc(s.name)}</h2>
 <div class="mcal" role="img" aria-label="${s.months.length === 12 ? 'Present all year round' : `Present in ${esc(monthRange(s.months))}`}${s.peakMonth ? `, peak in ${MONTHS[s.peakMonth - 1]}` : ''}">
-${MONTHS.map((name, i) => `<span class="mc${s.months.includes(i + 1) ? ' on' : ''}${s.peakMonth === i + 1 ? ' peak' : ''}" title="${name}${s.peakMonth === i + 1 ? ' (peak)' : ''}">${name.slice(0, 1)}</span>`).join('')}
+${calendarSvg(s)}
 </div>
 <p class="note">${[s.peakMonth ? `Peak activity in ${MONTHS[s.peakMonth - 1]}` : '', s.seasonTag ? `${s.seasonTag === 'resident' ? 'a resident species' : `a ${esc(s.seasonTag)} species`} across most of its range` : ''].filter(Boolean).join(' \u00b7 ') || (s.months.length === 12 ? 'Seen all year round.' : `Best months: ${esc(monthRange(s.months))}.`)}</p>
 </section>` : '';
@@ -882,11 +911,14 @@ ${myPairs.length ? `<p class="note" style="margin-top:10px">Side by side: ${myPa
   const habT = HABITAT_TRAIT[traits.habitat];
   const sizeBits = [SIZE_TRAIT[traits.size], traits.massG ? massLabel(traits.massG) : ''].filter(Boolean).join(' \u00b7 ');
   const stColor = STATUS_COLORS[s.iucn] || STATUS_COLORS.NE;
+  // Chips wear the card's own furniture: the IUCN status disc with its
+  // two-letter code, the coloured habitat diamond, and the card's exact
+  // glyphs for diet, nest and size.
   const chips = [
-    s.iucn && IUCN[s.iucn] ? `<span class="chip iucn" style="background:${stColor}${s.iucn === 'DD' ? ';color:#2E2A25' : ''}">${ICONS.shield}${IUCN[s.iucn]}</span>` : '',
+    s.iucn && IUCN[s.iucn] ? `<span class="chip"><span class="sdisc" style="background:${stColor}${s.iucn === 'DD' ? ';color:#2E2A25' : ''}">${s.iucn}</span>${IUCN[s.iucn]}</span>` : '',
     s.regions.length === 1 ? `<span class="chip">${ICONS['map-pin']}Endemic</span>` : '',
     dietT ? `<span class="chip">${ICONS[dietT[0]]}${dietT[1]}</span>` : '',
-    habT ? `<span class="chip">${ICONS[habT[0]]}${habT[1]}</span>` : '',
+    habT ? `<span class="chip"><span class="hdia" style="background:${CARD.layout.habitatColors[traits.habitat] || '#6A994E'}">${ICONS[habT[0]]}</span>${habT[1]}</span>` : '',
     NEST_TRAIT[traits.nest] ? `<span class="chip">${ICONS.egg}${NEST_TRAIT[traits.nest]}</span>` : '',
     sizeBits ? `<span class="chip">${ICONS[traits.massG ? 'weight' : 'ruler']}${sizeBits}</span>` : '',
   ].filter(Boolean).join('');
