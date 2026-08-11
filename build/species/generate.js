@@ -489,15 +489,15 @@ header.scrolled{background:rgba(242,232,207,.92);backdrop-filter:blur(10px);bord
 .nav{display:flex;align-items:center;justify-content:space-between;height:80px}
 .wordmark{font-family:var(--display);font-weight:700;color:#fff;letter-spacing:-.3px;text-decoration:none;font-size:24px;transition:color .28s ease}
 header.scrolled .wordmark{color:var(--green)}
-.nav>nav{display:flex;align-items:center}
-.nav-link{color:#fff;text-decoration:none;font-family:var(--display);font-weight:600;font-size:15px;margin-left:18px;white-space:nowrap;transition:color .28s ease}
+.nav>nav{display:flex;align-items:center;gap:24px}
+.nav-link{color:#fff;text-decoration:none;font-family:var(--display);font-weight:600;font-size:15px;white-space:nowrap;transition:color .28s ease}
 header.scrolled .nav-link{color:var(--green)}
 .lbl-short{display:none}
-.btn{display:inline-block;font-family:var(--body);font-weight:800;font-size:15px;background:#fff;color:var(--green);text-decoration:none;padding:11px 20px;border-radius:999px;white-space:nowrap;transition:background .28s ease,color .28s ease;margin-left:18px}
+.btn{display:inline-block;font-family:var(--body);font-weight:800;font-size:15px;background:#fff;color:var(--green);text-decoration:none;padding:11px 20px;border-radius:999px;white-space:nowrap;transition:background .28s ease,color .28s ease}
 header.scrolled .nav .btn{background:var(--green);color:#fff}
-@media(max-width:760px){.nav .btn{font-size:13.5px;padding:9px 15px;margin-left:12px}}
+@media(max-width:760px){.nav>nav{gap:14px}.nav .btn{font-size:13.5px;padding:9px 15px}}
 @media(max-width:540px){.nav .btn{display:none}}
-@media(max-width:600px){.nav{height:64px}.wordmark{font-size:20px}.nav-link{font-size:13px;margin-left:12px}.lbl-full{display:none}.lbl-short{display:inline}}
+@media(max-width:600px){.nav{height:64px}.wordmark{font-size:20px}.nav-link{font-size:14px}.lbl-full{display:none}.lbl-short{display:inline}}
 /* Narrow screens: the inline nav collapses into an obvious Menu dropdown. */
 .mnav{display:none;position:relative}
 .mnav summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:7px;font-family:var(--display);font-weight:700;font-size:15px;color:#fff;background:rgba(0,0,0,.22);border:1.5px solid rgba(255,255,255,.55);border-radius:999px;padding:8px 16px;transition:color .28s ease,border-color .28s ease,background .28s ease}
