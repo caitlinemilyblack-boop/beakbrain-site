@@ -75,12 +75,25 @@ function parseStringMap(name) {
   }
   return map;
 }
-const SUPER_GROUP_OF = parseStringMap('SUPER_GROUP_OF');
-const PASSERINE_GROUP_OF = parseStringMap('PASSERINE_GROUP_OF');
-const ORDER_NAMES = parseStringMap('ORDER_NAMES');
+// Browse groups switched to Merlin's scheme (Cat, 2026-08-11): one group per
+// FAMILY, labelled with its common name and listed in taxonomic sequence —
+// exactly how Merlin's species list buckets birds. The family sequence comes
+// from AviList row order in the pipeline's 01_base.csv (AviList is published
+// in taxonomic order). The app's coarser super-groups are no longer used here;
+// the app itself is a follow-up.
+const FAMILY_SEQ = (() => {
+  const seq = new Map();
+  const csv = fs.readFileSync(path.join(PIPELINE, '01_base.csv'), 'utf8').split('\n');
+  const head = csv[0].split(',');
+  const iFam = head.indexOf('family_common');
+  for (const line of csv.slice(1)) {
+    const fam = line.split(',')[iFam];
+    if (fam && !seq.has(fam)) seq.set(fam, seq.size);
+  }
+  return seq;
+})();
 function majorGroupOf(s) {
-  if (s.order === 'Passeriformes') return PASSERINE_GROUP_OF[s.family] || 'Other Songbirds';
-  return SUPER_GROUP_OF[s.order] || ORDER_NAMES[s.order] || s.order;
+  return s.family;
 }
 
 // National parks (GBIF occurrence packs from the app). Same agency filter the
@@ -284,7 +297,8 @@ for (const s of species) for (const c of s.regions) {
 }
 
 // Browse buckets + park lists, shared by the /birds/ index and the data files.
-const GROUPS = [...new Set(species.map(majorGroupOf))].sort();
+const GROUPS = [...new Set(species.map(majorGroupOf))]
+  .sort((a, b) => (FAMILY_SEQ.get(a) ?? 999) - (FAMILY_SEQ.get(b) ?? 999) || a.localeCompare(b));
 const groupIdx = new Map(GROUPS.map((g, i) => [g, i]));
 const TIERS = ['common', 'uncommon', 'rare', 'legendary'];
 const knownIds = new Set(species.map((s) => s.id));
