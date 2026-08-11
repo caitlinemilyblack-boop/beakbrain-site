@@ -1393,7 +1393,7 @@ header.scrolled .nav .wordmark,header.scrolled .nav .nav-link{color:var(--green)
 .ftab{display:block;width:100%;background:none;border:none;padding:0;cursor:pointer;text-align:left;font-family:var(--body)}
 .ftab:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:12px}
 .ftab .tab{display:inline-block;max-width:min(78%,540px);background-color:var(--fb);background-image:var(--ftex);padding:6px 30px 3px 18px;border-radius:10px 16px 0 0;clip-path:polygon(0 0,calc(100% - 18px) 0,100% 100%,0 100%);box-shadow:0 -1px 2px rgba(46,42,37,.12)}
-.ftab .fname{font-family:'Dancing Script','Comic Sans MS',cursive;font-weight:700;font-size:clamp(20px,2.8vw,25px);line-height:1.25;color:#191512;text-shadow:0 0 .4px #191512;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
+.ftab .fname{font-family:var(--display);font-weight:600;font-size:clamp(16px,2.2vw,20px);line-height:1.4;color:#191512;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
 .ftab .fbar{display:flex;align-items:center;justify-content:flex-end;gap:10px;background-color:var(--fb);background-image:var(--ftex);border-radius:0 12px 12px 12px;padding:9px 14px;box-shadow:0 2px 5px rgba(46,42,37,.16),0 1px 0 rgba(255,255,255,.22) inset;transition:filter .15s ease}
 .ftab:hover .fbar{filter:brightness(1.05)}
 .ftab .fcount{font-size:13px;font-weight:800;color:#33291D;opacity:.85}
