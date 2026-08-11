@@ -128,10 +128,11 @@ for (let d = 0; d < DAYS_AHEAD; d++) {
 }
 
 const CSS = `
-@font-face{font-family:'Kollektif';font-weight:400;font-display:swap;src:url('/fonts/Kollektif-400.woff') format('woff')}
-@font-face{font-family:'Kollektif';font-weight:700;font-display:swap;src:url('/fonts/Kollektif-700.woff') format('woff')}
-@font-face{font-family:'Gidole';font-weight:400;font-display:swap;src:url('/fonts/Gidole-400.woff') format('woff')}
-:root{--bg:#F2E8CF;--surface:#fff;--surface-alt:#E7D9B4;--ink:#2E2A25;--muted:#6B6155;--border:#DDCBA0;--green:#386641;--green-dark:#2C5134;--sage:#6A994E;--gold:#EBB93C;--gold-deep:#8C6410;--display:'Kollektif','Trebuchet MS',system-ui,sans-serif;--body:'Gidole',system-ui,-apple-system,sans-serif;--shadow:0 14px 34px rgba(46,42,37,.09)}
+@font-face{font-family:'Fredoka';font-weight:700;font-display:swap;src:url('/fonts/Fredoka-700.woff') format('woff')}
+@font-face{font-family:'Fredoka';font-weight:600;font-display:swap;src:url('/fonts/Fredoka-600.woff') format('woff')}
+@font-face{font-family:'Nunito';font-weight:400;font-display:swap;src:url('/fonts/Nunito-400.woff') format('woff')}
+@font-face{font-family:'Nunito';font-weight:700;font-display:swap;src:url('/fonts/Nunito-700.woff') format('woff')}
+:root{--bg:#F2E8CF;--surface:#fff;--surface-alt:#E7D9B4;--ink:#2E2A25;--muted:#6B6155;--border:#DDCBA0;--green:#386641;--green-dark:#2C5134;--sage:#6A994E;--gold:#EBB93C;--gold-deep:#8C6410;--display:'Fredoka','Trebuchet MS',system-ui,sans-serif;--body:'Nunito',system-ui,-apple-system,sans-serif;--shadow:0 14px 34px rgba(46,42,37,.09)}
 *{box-sizing:border-box}body{margin:0;font-family:var(--body);color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
 h1,h2{font-family:var(--display);font-weight:700;line-height:1.14;margin:0}p{margin:0}a{color:var(--green)}
 .wrap{max-width:560px;margin:0 auto;padding:0 20px}
@@ -142,6 +143,7 @@ header.scrolled{background:rgba(242,232,207,.92);backdrop-filter:blur(10px);bord
 .nav{display:flex;align-items:center;justify-content:space-between;height:80px}
 .wordmark{font-family:var(--display);font-weight:700;color:#fff;letter-spacing:-.3px;text-decoration:none;font-size:24px;transition:color .28s ease}
 header.scrolled .wordmark{color:var(--green)}
+.nav>nav{display:flex;align-items:center}
 .nav a.lnk{color:#fff;text-decoration:none;font-family:var(--display);font-weight:600;font-size:15px;margin-left:16px;white-space:nowrap;transition:color .28s ease}
 header.scrolled .nav a.lnk{color:var(--green)}
 .lbl-short{display:none}

@@ -12,16 +12,19 @@
   <meta property="og:url" content="https://beakbrain.com/contribute.html" />
 
   <style>
-    @font-face { font-family: 'Kollektif'; font-weight: 400; font-display: swap; src: url('fonts/Kollektif-400.woff') format('woff'); }
-    @font-face { font-family: 'Kollektif'; font-weight: 700; font-display: swap; src: url('fonts/Kollektif-700.woff') format('woff'); }
-    @font-face { font-family: 'Gidole'; font-weight: 400; font-display: swap; src: url('fonts/Gidole-400.woff') format('woff'); }
+    @font-face { font-family: 'Fredoka'; font-weight: 500; font-display: swap; src: url('fonts/Fredoka-500.woff') format('woff'); }
+    @font-face { font-family: 'Fredoka'; font-weight: 600; font-display: swap; src: url('fonts/Fredoka-600.woff') format('woff'); }
+    @font-face { font-family: 'Fredoka'; font-weight: 700; font-display: swap; src: url('fonts/Fredoka-700.woff') format('woff'); }
+    @font-face { font-family: 'Nunito'; font-weight: 400; font-display: swap; src: url('fonts/Nunito-400.woff') format('woff'); }
+    @font-face { font-family: 'Nunito'; font-weight: 700; font-display: swap; src: url('fonts/Nunito-700.woff') format('woff'); }
+    @font-face { font-family: 'Nunito'; font-weight: 800; font-display: swap; src: url('fonts/Nunito-800.woff') format('woff'); }
 
     :root {
       --bg: #F2E8CF; --surface: #FFFFFF; --surface-alt: #E7D9B4; --ink: #2E2A25;
       --muted: #6B6155; --border: #DDCBA0; --green: #386641; --green-dark: #2C5134;
       --sage: #6A994E; --gold: #EBB93C; --gold-deep: #8C6410;
-      --display: 'Kollektif', 'Trebuchet MS', system-ui, sans-serif;
-      --body: 'Gidole', system-ui, -apple-system, sans-serif;
+      --display: 'Fredoka', 'Trebuchet MS', system-ui, sans-serif;
+      --body: 'Nunito', system-ui, -apple-system, sans-serif;
       --shadow: 0 14px 34px rgba(46, 42, 37, 0.09);
     }
     * { box-sizing: border-box; }
@@ -38,6 +41,7 @@
     .nav { display: flex; align-items: center; justify-content: space-between; height: 80px; }
     .nav .wordmark { font-size: 24px; color: #fff; transition: color .28s ease; }
     header.scrolled .nav .wordmark { color: var(--green); }
+    .nav-links { display: flex; align-items: center; }
     .nav-links a { text-decoration: none; font-family: var(--display); font-weight: 600; color: #fff; font-size: 15px; margin-left: 18px; white-space: nowrap; transition: color .28s ease; }
     header.scrolled .nav-links a { color: var(--green); }
     @media (max-width: 640px) { .nav .wordmark { font-size: 20px; } .nav-links a { font-size: 12.5px; margin-left: 11px; } }

@@ -77,7 +77,7 @@ for (const s of world.species) {
   // Budget raised 56 -> 110 KB on 2026-08-11: every species page now inlines
   // its collector-card SVG (hero + lightbox share one rendering; the world-map
   // geometry is a shared cached script, not page weight).
-  if (html.length > 150 * 1024) fail(`${slugs[s.id]}: ${(html.length / 1024).toFixed(1)} KB over 150 KB cap`);
+  if (html.length > 152 * 1024) fail(`${slugs[s.id]}: ${(html.length / 1024).toFixed(1)} KB over 152 KB cap (nav dropdown 2026-08-12: was 150)`);
 
   for (const m of html.matchAll(/href="(\/birds\/[^"#?]*)"/g)) {
     // Card sprites and group fragments are files, not pages.

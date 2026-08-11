@@ -162,7 +162,7 @@ function calendarSvg(s) {
     const xx = peak ? x - 3 : x;
     const h = peak ? C.peakTickH : present ? C.tickH : C.offTickH;
     out += `<rect x="${xx}" y="${C.peakTickH - h}" width="${w}" height="${h}" rx="2" fill="${ink}"${present || peak ? '' : ' opacity=".45"'}/>`;
-    out += `<text x="${x + C.tickW / 2}" y="${C.peakTickH + 6 + C.letterSize}" font-family="Gidole" font-weight="700" font-size="${C.letterSize}" fill="${ink}" text-anchor="middle">${'JFMAMJJASOND'[i - 1]}</text>`;
+    out += `<text x="${x + C.tickW / 2}" y="${C.peakTickH + 6 + C.letterSize}" font-family="Nunito" font-weight="700" font-size="${C.letterSize}" fill="${ink}" text-anchor="middle">${'JFMAMJJASOND'[i - 1]}</text>`;
   }
   return `<svg viewBox="0 -4 ${W} ${H + 4}" xmlns="http://www.w3.org/2000/svg">${out}</svg>`;
 }
@@ -469,10 +469,13 @@ for (const pair of comparePairs) {
 
 // ---------------------------------------------------------------- chrome
 const CSS = `
-@font-face{font-family:'Kollektif';font-weight:400;font-display:swap;src:url('/fonts/Kollektif-400.woff') format('woff')}
-@font-face{font-family:'Kollektif';font-weight:700;font-display:swap;src:url('/fonts/Kollektif-700.woff') format('woff')}
-@font-face{font-family:'Gidole';font-weight:400;font-display:swap;src:url('/fonts/Gidole-400.woff') format('woff')}
-:root{--bg:#F2E8CF;--surface:#fff;--surface-alt:#E7D9B4;--ink:#2E2A25;--muted:#6B6155;--border:#DDCBA0;--green:#386641;--green-dark:#2C5134;--sage:#6A994E;--gold:#EBB93C;--gold-deep:#8C6410;--display:'Kollektif','Trebuchet MS',system-ui,sans-serif;--body:'Gidole',system-ui,-apple-system,sans-serif;--shadow:0 14px 34px rgba(46,42,37,.09)}
+@font-face{font-family:'Fredoka';font-weight:700;font-display:swap;src:url('/fonts/Fredoka-700.woff') format('woff')}
+@font-face{font-family:'Fredoka';font-weight:600;font-display:swap;src:url('/fonts/Fredoka-600.woff') format('woff')}
+@font-face{font-family:'Nunito';font-weight:400;font-display:swap;src:url('/fonts/Nunito-400.woff') format('woff')}
+@font-face{font-family:'Nunito';font-weight:700;font-display:swap;src:url('/fonts/Nunito-700.woff') format('woff')}
+@font-face{font-family:'Fredoka';font-weight:500;font-display:swap;src:url('/fonts/Fredoka-500.woff') format('woff')}
+@font-face{font-family:'Nunito';font-weight:800;font-display:swap;src:url('/fonts/Nunito-800.woff') format('woff')}
+:root{--bg:#F2E8CF;--surface:#fff;--surface-alt:#E7D9B4;--ink:#2E2A25;--muted:#6B6155;--border:#DDCBA0;--green:#386641;--green-dark:#2C5134;--sage:#6A994E;--gold:#EBB93C;--gold-deep:#8C6410;--display:'Fredoka','Trebuchet MS',system-ui,sans-serif;--body:'Nunito',system-ui,-apple-system,sans-serif;--shadow:0 14px 34px rgba(46,42,37,.09)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:var(--body);color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
 [id]{scroll-margin-top:76px}
 h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.14;margin:0}p{margin:0}a{color:var(--green)}
@@ -486,6 +489,7 @@ header.scrolled{background:rgba(242,232,207,.92);backdrop-filter:blur(10px);bord
 .nav{display:flex;align-items:center;justify-content:space-between;height:80px}
 .wordmark{font-family:var(--display);font-weight:700;color:#fff;letter-spacing:-.3px;text-decoration:none;font-size:24px;transition:color .28s ease}
 header.scrolled .wordmark{color:var(--green)}
+.nav>nav{display:flex;align-items:center}
 .nav-link{color:#fff;text-decoration:none;font-family:var(--display);font-weight:600;font-size:15px;margin-left:18px;white-space:nowrap;transition:color .28s ease}
 header.scrolled .nav-link{color:var(--green)}
 .lbl-short{display:none}
@@ -1342,7 +1346,9 @@ ${shared.length > 24 ? `<p class="note" style="margin-top:8px">And ${shared.leng
   // Kraft-paper folder browns (Cat, 2026-08-11): the groups no longer wear
   // team colours — they are folders in a drawer, in varying shades of brown,
   // hand-lettered in the cards' Dancing Script.
-  const FOLDER_BROWNS = ['#A9855D', '#97764F', '#B29067', '#8B6B47', '#A07D54'];
+  // Lightened 2026-08-12 (Cat): paler kraft so the near-black tab lettering
+  // reads clearly (all five now ≥7:1 against #191512).
+  const FOLDER_BROWNS = ['#C4A67F', '#B69974', '#CBB08C', '#AE9169', '#BFA078'];
   const nTotal = species.length.toLocaleString();
   const PARKN = Object.fromEntries([...parksByCountry].map(([c, l]) => [c, l.length]));
   const chev = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>';
