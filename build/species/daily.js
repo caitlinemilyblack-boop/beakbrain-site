@@ -136,6 +136,7 @@ const CSS = `
 *{box-sizing:border-box}body{margin:0;font-family:var(--body);color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
 h1,h2{font-family:var(--display);font-weight:700;line-height:1.14;margin:0}p{margin:0}a{color:var(--green)}
 .wrap{max-width:560px;margin:0 auto;padding:0 20px}
+header .wrap{max-width:1080px;padding:0 28px}
 .wrap-wide{max-width:1080px;margin:0 auto;padding:0 28px}
 header{position:fixed;top:0;left:0;right:0;z-index:30;background:transparent;border-bottom:1px solid transparent;transition:background .28s ease,border-color .28s ease}
 header.scrolled{background:rgba(242,232,207,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
@@ -287,7 +288,16 @@ pb.style.cursor='zoom-in';
 function close(){lb.classList.remove('open');document.body.style.overflow=''}
 document.getElementById('lbx').addEventListener('click',close);
 lb.addEventListener('click',function(e){if(e.target===lb)close()});
-li.addEventListener('click',function(){lb.classList.toggle('zoomed')});
+// Zoom in on the spot you clicked, not the top-left corner: keep the clicked
+// image point under the cursor once the full-size render lands.
+li.addEventListener('click',function(e){
+var w=li.parentElement,zin=!lb.classList.contains('zoomed');
+var r=li.getBoundingClientRect(),fx=(e.clientX-r.left)/r.width,fy=(e.clientY-r.top)/r.height;
+lb.classList.toggle('zoomed');
+if(zin)requestAnimationFrame(function(){var wr=w.getBoundingClientRect();
+w.scrollLeft=fx*li.clientWidth-(e.clientX-wr.left);
+w.scrollTop=fy*li.clientHeight-(e.clientY-wr.top)});
+});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
 ${SB ? `var rep=document.getElementById('lbrep');
 if(rep)rep.addEventListener('click',function(){

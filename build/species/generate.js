@@ -75,25 +75,15 @@ function parseStringMap(name) {
   }
   return map;
 }
-// Browse groups switched to Merlin's scheme (Cat, 2026-08-11): one group per
-// FAMILY, labelled with its common name and listed in taxonomic sequence —
-// exactly how Merlin's species list buckets birds. The family sequence comes
-// from AviList row order in the pipeline's 01_base.csv (AviList is published
-// in taxonomic order). The app's coarser super-groups are no longer used here;
-// the app itself is a follow-up.
-const FAMILY_SEQ = (() => {
-  const seq = new Map();
-  const csv = fs.readFileSync(path.join(PIPELINE, '01_base.csv'), 'utf8').split('\n');
-  const head = csv[0].split(',');
-  const iFam = head.indexOf('family_common');
-  for (const line of csv.slice(1)) {
-    const fam = line.split(',')[iFam];
-    if (fam && !seq.has(fam)) seq.set(fam, seq.size);
-  }
-  return seq;
-})();
+// Browse groups: back to the app's SUPER-GROUPS (Cat, 2026-08-11 evening —
+// reverting the same-day Merlin family experiment). Parsed from data.ts so
+// the web guide buckets species exactly the way the app's Browse tab does.
+const SUPER_GROUP_OF = parseStringMap('SUPER_GROUP_OF');
+const PASSERINE_GROUP_OF = parseStringMap('PASSERINE_GROUP_OF');
+const ORDER_NAMES = parseStringMap('ORDER_NAMES');
 function majorGroupOf(s) {
-  return s.family;
+  if (s.order === 'Passeriformes') return PASSERINE_GROUP_OF[s.family] || 'Other Songbirds';
+  return SUPER_GROUP_OF[s.order] || ORDER_NAMES[s.order] || s.order;
 }
 
 // ---------------------------------------------------------------- cards
@@ -388,8 +378,7 @@ for (const s of species) for (const c of s.regions) {
 }
 
 // Browse buckets + park lists, shared by the /birds/ index and the data files.
-const GROUPS = [...new Set(species.map(majorGroupOf))]
-  .sort((a, b) => (FAMILY_SEQ.get(a) ?? 999) - (FAMILY_SEQ.get(b) ?? 999) || a.localeCompare(b));
+const GROUPS = [...new Set(species.map(majorGroupOf))].sort();
 const groupIdx = new Map(GROUPS.map((g, i) => [g, i]));
 const TIERS = ['common', 'uncommon', 'rare', 'legendary'];
 const knownIds = new Set(species.map((s) => s.id));
@@ -489,6 +478,10 @@ const CSS = `
 [id]{scroll-margin-top:76px}
 h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.14;margin:0}p{margin:0}a{color:var(--green)}
 .wrap{max-width:920px;margin:0 auto;padding:0 22px}
+/* The top bar sits in the same place on every page of the site (home,
+   community and cams use a 1080px/28px shell), whatever width the page
+   content below runs at. */
+header .wrap{max-width:1080px;padding:0 28px}
 header{position:fixed;top:0;left:0;right:0;z-index:30;background:transparent;border-bottom:1px solid transparent;transition:background .28s ease,border-color .28s ease}
 header.scrolled{background:rgba(242,232,207,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:80px}
@@ -1065,7 +1058,14 @@ function close(){lb.classList.remove('open');document.body.style.overflow=''}
 figs.forEach(function(f,i){f.setAttribute('tabindex','0');f.setAttribute('role','button');f.setAttribute('aria-label','View larger photo');
 f.addEventListener('click',function(){show(i)});
 f.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();show(i)}})});
-im.addEventListener('click',function(){lb.classList.toggle('zoomed')});
+im.addEventListener('click',function(e){
+var w=im.parentElement,zin=!lb.classList.contains('zoomed');
+var r=im.getBoundingClientRect(),fx=(e.clientX-r.left)/r.width,fy=(e.clientY-r.top)/r.height;
+lb.classList.toggle('zoomed');
+if(zin)requestAnimationFrame(function(){var wr=w.getBoundingClientRect();
+w.scrollLeft=fx*im.clientWidth-(e.clientX-wr.left);
+w.scrollTop=fy*im.clientHeight-(e.clientY-wr.top)});
+});
 document.getElementById('lbx').addEventListener('click',close);
 if(p)p.addEventListener('click',function(){show(cur-1)});
 if(n)n.addEventListener('click',function(){show(cur+1)});
@@ -1434,7 +1434,7 @@ header.scrolled .nav .wordmark,header.scrolled .nav .nav-link{color:var(--green)
   </video>
   <div class="wrap hero-inner">
     <h1>The Bird Guide</h1>
-    <p>${nTotal} species \u00b7 photos \u00b7 calls \u00b7 ID tips \u00b7 range maps</p>
+    <p>${nTotal} species</p>
   </div>
 </section>
 <main class="wrap">
@@ -1474,8 +1474,8 @@ ${MONTHS.map((m, i) => `    <button class="fchip" data-m="${i + 1}">${m.slice(0,
 </section>
 ${BASEMAP_DEF}
 <div id="groupwrap">
-<h2 style="margin:26px 0 2px">All birds, by family</h2>
-<p class="note" style="margin-bottom:4px">Open a folder to lay out its species cards. Every bird has a card; the ones still waiting on an antique illustration show their family silhouette.</p>
+<h2 style="margin:26px 0 2px">All birds, by group</h2>
+<p class="note" style="margin-bottom:4px">Open a folder to list its species.</p>
 ${GROUPS.map((g, i) => {
     const fb = FOLDER_BROWNS[i % FOLDER_BROWNS.length];
     return `<div class="folder" data-g="${i}" style="--fb:${fb};--fbd:${shade(fb, -0.16)}"><button class="ftab" data-g="${i}" aria-expanded="false" aria-controls="fbody${i}"><span class="tab"><span class="fname">${esc(g)}</span></span><span class="fbar"><span class="fcount">${groupCounts[i].toLocaleString()}<span class="gw"> species</span></span><span class="fchev">${chev}</span></span></button>
@@ -1496,6 +1496,9 @@ var IUCN_LABEL=${JSON.stringify({ ...IUCN, T: 'Threatened' })};
 var state={q:'',cc:'',ccName:'',park:null,parkName:'',iucn:'',tier:-1,month:0};
 var CNAME={};(function(){var o=$('fcountry').options;for(var i=0;i<o.length;i++)if(o[i].value)CNAME[o[i].value]=o[i].getAttribute('data-n')})();
 var DATA=null,pending=null,parkCache={},expanded={};
+// The first folder with species opens by itself — on page load and again
+// after every filter change — until the visitor toggles folders by hand.
+var autoOpen=true;
 function $(id){return document.getElementById(id)}
 function esch(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;')}
 function fmt(n){return n.toLocaleString('en')}
@@ -1553,6 +1556,11 @@ function apply(){
     $('hits').innerHTML=hits.map(rowHtml).join('');
   }else{
     $('results').hidden=true;$('groupwrap').hidden=false;
+    if(autoOpen){
+      expanded={};
+      for(i=0;i<GROUPS.length;i++){if(buckets[i].length){expanded[i]=true;break}}
+      autoOpen=false;
+    }
     var folders=document.querySelectorAll('.folder');
     for(i=0;i<folders.length;i++){
       var g=+folders[i].getAttribute('data-g');
@@ -1599,11 +1607,11 @@ function openFolder(g,rows){
     grid.onclick=function(){grid.onclick=null;openFolder(g,rows)}});
 }
 function refresh(){ensure().then(apply)}
-$('q').addEventListener('input',function(){state.q=this.value;refresh()});
+$('q').addEventListener('input',function(){state.q=this.value;if(!this.value.trim())autoOpen=true;refresh()});
 $('fcountry').addEventListener('change',function(){
   var opt=this.options[this.selectedIndex];
   state.cc=this.value;state.ccName=this.value?opt.getAttribute('data-n'):'';
-  state.park=null;state.parkName='';
+  state.park=null;state.parkName='';autoOpen=true;
   var row=$('parkRow');
   if(state.cc&&PARKN[state.cc]){
     row.hidden=false;
@@ -1635,9 +1643,10 @@ $('fpark').addEventListener('change',function(){
     var set={};for(var i=0;i<p.species.length;i++)set[p.species[i]]=1;
     state.park=set;state.parkName=p.name;
   }
+  autoOpen=true;
   refresh();
 });
-$('fiucn').addEventListener('change',function(){state.iucn=this.value;refresh()});
+$('fiucn').addEventListener('change',function(){state.iucn=this.value;autoOpen=true;refresh()});
 function wireChips(id,attr,setter){
   $(id).addEventListener('click',function(e){
     var b=e.target.closest('.fchip');if(!b)return;
@@ -1646,7 +1655,7 @@ function wireChips(id,attr,setter){
     setter(+b.getAttribute(attr));refresh();
   });
 }
-wireChips('monthChips','data-m',function(v){state.month=v});
+wireChips('monthChips','data-m',function(v){state.month=v;autoOpen=true});
 $('placehits').addEventListener('click',function(e){
   var b=e.target.closest('.fchip');if(!b)return;
   var cc=b.getAttribute('data-cc'),pk=b.getAttribute('data-park');
@@ -1657,8 +1666,10 @@ $('placehits').addEventListener('click',function(e){
 document.getElementById('groupwrap').addEventListener('click',function(e){
   var h=e.target.closest('.ftab');if(!h)return;
   var g=+h.getAttribute('data-g');
-  ensure().then(function(){expanded[g]=!expanded[g];apply()});
+  ensure().then(function(){autoOpen=false;expanded[g]=!expanded[g];apply()});
 });
+// First paint: load the dataset and open the first folder straight away.
+ensure().then(apply);
 // Hero video fade-in + solid header once scrolled, as on the home page.
 var v=$('heroVideo');
 if(v){var mark=function(){v.classList.add('ready')};if(v.readyState>=2)mark();else v.addEventListener('loadeddata',mark)}
