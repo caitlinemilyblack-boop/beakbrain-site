@@ -96,6 +96,70 @@ function majorGroupOf(s) {
   return s.family;
 }
 
+// ---------------------------------------------------------------- cards
+// The species card renderer, required straight from the app repo (same
+// single-source rule as world.json). Card art is served by the separate
+// beakbrain-cards Pages project: this site sits near the 20,000-file Pages
+// cap, so plates never join this deploy. snapshot-plates.js refreshes that
+// project from the pipeline manifest; cards-manifest.json is its ledger and
+// the only plate index this generator reads.
+const CARD = require(path.join(os.homedir(), 'Developer', 'Birding-Quiz-App', 'build', 'species', 'card.js'));
+const MAPDATA = require(path.join(os.homedir(), 'Developer', 'Birding-Quiz-App', 'build', 'species', 'card.worldmap.json'));
+const CARDS_HOST = 'https://beakbrain-cards.pages.dev';
+const plateMeta = JSON.parse(fs.readFileSync(
+  path.join(os.homedir(), 'Developer', 'beakbrain-cards', 'cards-manifest.json'), 'utf8')).plates;
+const STATUS_COLORS = CARD.layout.status.colors;
+
+// Every card embeds the same ~30 sprite data-URIs (silhouettes, art assets).
+// Hoist each distinct one to a cached file, as render-browse.js does, so a
+// 300-card group fragment stays a few hundred KB instead of tens of MB.
+const crypto = require('crypto');
+const SPRITEDIR = () => path.join(OUTROOT, 'assets', 'sprites');
+const spriteSeen = new Map();
+function hoistSprites(svg) {
+  return svg.replace(/"data:image\/(webp|svg\+xml);base64,([A-Za-z0-9+\/=]+)"/g, (m, kind, b64) => {
+    if (!spriteSeen.has(b64)) {
+      const ext = kind === 'webp' ? 'webp' : 'svg';
+      const name = crypto.createHash('md5').update(b64).digest('hex').slice(0, 12) + '.' + ext;
+      fs.mkdirSync(SPRITEDIR(), { recursive: true });
+      fs.writeFileSync(path.join(SPRITEDIR(), name), Buffer.from(b64, 'base64'));
+      spriteSeen.set(b64, `/birds/assets/sprites/${name}`);
+    }
+    return '"' + spriteSeen.get(b64) + '"';
+  });
+}
+
+function cardSvg(s, width) {
+  const d = detail.get(s.id) || {};
+  const m = plateMeta[s.id];
+  const model = CARD.buildModel(s, d, {
+    countryNames: COUNTRY,
+    rung: m ? m.rung : undefined,
+    plate: m ? {
+      href: `${CARDS_HOST}/${m.file}`, w: m.w, h: m.h,
+      artist: m.artist, title: m.title, year: m.year,
+      license: m.licence, sourceUrl: m.source_url,
+    } : undefined,
+  });
+  // Gradient defs (band/sheen/wash) vary by tier but share ids; suffix them
+  // per species so hundreds of inline cards on one page keep their own frame.
+  const svg = CARD.renderCard(model, { width, sharedMap: true })
+    .replace(/id="(band|sheen|wash)"/g, `id="$1-${s.id}"`)
+    .replace(/url\(#(band|sheen|wash)\)/g, `url(#$1-${s.id})`);
+  return hoistSprites(svg);
+}
+const hasPlate = (id) => Boolean(plateMeta[id]);
+
+// Shared world-map geometry every card <use>s, declared once per page.
+const BASEMAP_DEF = `<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><path id="basemap" d="${MAPDATA.world}" fill="${CARD.layout.palette.mapBase}"/></defs></svg>`;
+
+// Darken a hex colour (for the hero gradient's deep end).
+function shade(hex, f) {
+  const v = hex.replace('#', '');
+  const c = (i) => Math.max(0, Math.min(255, Math.round(parseInt(v.slice(i, i + 2), 16) * (1 + f))));
+  return `#${[c(0), c(2), c(4)].map((x) => x.toString(16).padStart(2, '0')).join('')}`;
+}
+
 // National parks (GBIF occurrence packs from the app). Same agency filter the
 // app applies: management bodies tagged as parks on Wikidata are dropped.
 const parksRaw = JSON.parse(fs.readFileSync(path.join(APP, 'assets', 'parks.json'), 'utf8')).parks;
@@ -242,8 +306,8 @@ function lucideSvg(name) {
 const ICONS = {};
 for (const n of ['bug', 'paw-print', 'fish', 'cherry', 'flower-2', 'wheat', 'leaf', 'bone',
   'utensils', 'trees', 'tree-pine', 'shrub', 'sprout', 'droplets', 'waves-horizontal', 'sun',
-  'mountain', 'building-2', 'egg', 'ruler', 'shield', 'star', 'map-pin',
-  'zoom-in', 'x', 'chevron-left', 'chevron-right', 'chevron-up']) ICONS[n] = lucideSvg(n);
+  'mountain', 'building-2', 'egg', 'ruler', 'shield', 'star', 'map-pin', 'shell', 'spline',
+  'weight', 'zoom-in', 'x', 'chevron-left', 'chevron-right', 'chevron-up']) ICONS[n] = lucideSvg(n);
 
 // The app's trait chip mapping (TraitBadges.tsx), icon name + label per value.
 const DIET_TRAIT = {
@@ -252,11 +316,14 @@ const DIET_TRAIT = {
   seeds: ['wheat', 'Seeds'], plants: ['leaf', 'Plants'], scavenger: ['bone', 'Scavenger'],
   omnivore: ['utensils', 'Omnivore'],
 };
+// Habitat icons mirror the CARD's traitMaps exactly (card.layout.json):
+// coastal wears the shell and riverine the spline, the collision fix the
+// cards made — the site follows the cards, per Cat's consistency rule.
 const HABITAT_TRAIT = {
   forest: ['trees', 'Forest'], woodland: ['tree-pine', 'Woodland'], shrubland: ['shrub', 'Shrubland'],
-  grassland: ['sprout', 'Grassland'], wetland: ['droplets', 'Wetland'], coastal: ['waves-horizontal', 'Coastal'],
+  grassland: ['sprout', 'Grassland'], wetland: ['droplets', 'Wetland'], coastal: ['shell', 'Coastal'],
   marine: ['waves-horizontal', 'Marine'], desert: ['sun', 'Desert'], rock: ['mountain', 'Rocky'],
-  riverine: ['waves-horizontal', 'Riverine'], human: ['building-2', 'Urban'],
+  riverine: ['spline', 'Riverine'], human: ['building-2', 'Urban'],
 };
 const NEST_TRAIT = {
   cavity: 'Cavity nest', dome: 'Domed nest', cup: 'Cup nest', platform: 'Platform nest',
@@ -546,9 +613,49 @@ footer::after{content:"";position:absolute;inset:0;z-index:1;background:linear-g
 .lb .pv{left:12px;top:50%;transform:translateY(-50%)}
 .lb .nx{right:12px;top:50%;transform:translateY(-50%)}
 @media(max-width:600px){.lb .pv,.lb .nx{top:auto;bottom:14px;transform:none}.lb .pv{left:14px}.lb .nx{right:14px}}
+@font-face{font-family:'Fredoka';font-weight:500;font-display:swap;src:url('/fonts/Fredoka-500.woff') format('woff')}
+@font-face{font-family:'Nunito';font-weight:800;font-display:swap;src:url('/fonts/Nunito-800.woff') format('woff')}
+@font-face{font-family:'Dancing Script';font-weight:500 700;font-display:swap;src:url('/fonts/DancingScript.ttf') format('truetype')}
+/* Species cards: real-card presence — paper shadow at rest, lift on hover. */
+.scard{display:block;line-height:0}
+.scard svg{width:100%;height:auto;border-radius:12px;filter:drop-shadow(0 1px 2px rgba(46,42,37,.18)) drop-shadow(0 6px 14px rgba(46,42,37,.16))}
+a.scard{text-decoration:none;transition:transform .18s ease}
+@media(hover:hover){
+a.scard:hover{transform:translateY(-6px) scale(1.045)}
+a.scard:hover svg{filter:drop-shadow(0 2px 3px rgba(46,42,37,.2)) drop-shadow(0 16px 30px rgba(46,42,37,.28))}
+}
+a.scard:focus-visible{outline:3px solid var(--gold);outline-offset:4px;border-radius:12px;transform:translateY(-6px) scale(1.045)}
+@media (prefers-reduced-motion: reduce){a.scard,a.scard:hover{transform:none;transition:none}}
+/* The card tucked in the species-page hero, with its magnifier. */
+.pherorow{display:flex;align-items:flex-end;justify-content:space-between;gap:18px}
+.pherotext{min-width:0}
+.herocard{position:relative;flex:0 0 clamp(132px,22vw,216px);margin-bottom:-2px;cursor:zoom-in;border:none;background:none;padding:0}
+.herocard svg{width:100%;height:auto;border-radius:10px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.28)) drop-shadow(0 12px 26px rgba(0,0,0,.3))}
+.cardmag{position:absolute;top:8px;right:8px;width:32px;height:32px;border-radius:50%;border:none;background:rgba(31,40,31,.55);color:#fff;display:flex;align-items:center;justify-content:center;cursor:zoom-in;pointer-events:none}
+.cardmag svg{width:16px;height:16px}
+.statusline{font-family:var(--display);font-weight:600;font-size:13.5px;color:rgba(255,255,255,.92);margin-top:8px;text-shadow:0 1px 6px rgba(0,0,0,.35)}
+/* Status-coloured heroes keep the colour honest: a whisper of depth, not the
+   video hero's heavy gradient. DD is the one light band and takes dark ink. */
+.phero.flat::after{background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.16) 100%)}
+.phero.dark-ink h1,.phero.dark-ink .statusline{color:#2E2A25;text-shadow:none}
+.phero.dark-ink .sci{color:#4A463F;text-shadow:none}
+.phero.dark-ink .backlink{color:rgba(46,42,37,.78)}
+.phero.dark-ink .backlink:hover{color:#2E2A25}
+/* Card lightbox: the same dialog pattern as the photo viewer. */
+.cardlb{position:fixed;inset:0;z-index:70;background:rgba(20,26,20,.92);display:none;flex-direction:column;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+.cardlb.open{display:flex}
+.cardlb .cwrap{width:min(92vw,54vh);cursor:default}
+.cardlb .cwrap svg{width:100%;height:auto;border-radius:14px;filter:drop-shadow(0 4px 8px rgba(0,0,0,.4)) drop-shadow(0 24px 60px rgba(0,0,0,.45))}
+.cardlb .cap{color:#EAF1E4;font-size:13px;margin-top:14px;text-align:center;max-width:70ch}
+.cardlb .x{top:16px;right:16px}
+@media(max-width:640px){
+.pherorow{align-items:flex-end}
+.herocard{flex-basis:clamp(112px,30vw,150px)}
+.cardlb .cwrap{width:min(92vw,60vh)}
+}
 `.trim();
 
-function page({ title, desc, canonical, body, jsonld, noindex, ogImage, heroHtml, noChromeVideo }) {
+function page({ title, desc, canonical, body, jsonld, noindex, ogImage, heroHtml, noChromeVideo, heroStyle, heroClass }) {
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -569,7 +676,7 @@ ${jsonld ? `<script type="application/ld+json">${JSON.stringify(jsonld)}</script
   <a class="wordmark" href="/">BeakBrain</a>
   <nav><a class="nav-link" href="/birds/">Bird Guide</a><a class="nav-link" href="/daily/">Daily Bird</a><a class="nav-link" href="/cams/">Cams</a><a class="nav-link" href="/community.html">Community</a><a class="btn nav-cta" href="${CTA_HREF}">${CTA_LABEL}</a></nav>
 </div></header>
-<section class="phero">
+<section class="phero${heroClass ? ` ${heroClass}` : ''}"${heroStyle ? ` style="${heroStyle}"` : ''}>
 ${noChromeVideo ? '' : `  <video class="hero-video" id="pheroVideo" autoplay muted loop playsinline preload="auto" poster="/assets/video/species-hero-poster.jpg" aria-label="White storks on their nest">
     <source src="/assets/video/species-hero.mp4" type="video/mp4" />
   </video>`}
@@ -774,13 +881,14 @@ ${myPairs.length ? `<p class="note" style="margin-top:10px">Side by side: ${myPa
   const dietT = DIET_TRAIT[traits.diet];
   const habT = HABITAT_TRAIT[traits.habitat];
   const sizeBits = [SIZE_TRAIT[traits.size], traits.massG ? massLabel(traits.massG) : ''].filter(Boolean).join(' \u00b7 ');
+  const stColor = STATUS_COLORS[s.iucn] || STATUS_COLORS.NE;
   const chips = [
-    s.iucn && IUCN[s.iucn] ? `<span class="chip iucn${['VU', 'EN', 'CR'].includes(s.iucn) ? ' threat' : ''}">${ICONS.shield}${IUCN[s.iucn]}</span>` : '',
+    s.iucn && IUCN[s.iucn] ? `<span class="chip iucn" style="background:${stColor}${s.iucn === 'DD' ? ';color:#2E2A25' : ''}">${ICONS.shield}${IUCN[s.iucn]}</span>` : '',
     s.regions.length === 1 ? `<span class="chip">${ICONS['map-pin']}Endemic</span>` : '',
     dietT ? `<span class="chip">${ICONS[dietT[0]]}${dietT[1]}</span>` : '',
     habT ? `<span class="chip">${ICONS[habT[0]]}${habT[1]}</span>` : '',
     NEST_TRAIT[traits.nest] ? `<span class="chip">${ICONS.egg}${NEST_TRAIT[traits.nest]}</span>` : '',
-    sizeBits ? `<span class="chip">${ICONS.ruler}${sizeBits}</span>` : '',
+    sizeBits ? `<span class="chip">${ICONS[traits.massG ? 'weight' : 'ruler']}${sizeBits}</span>` : '',
   ].filter(Boolean).join('');
 
   const jsonld = {
@@ -840,9 +948,21 @@ ${myPairs.length ? `<p class="note" style="margin-top:10px">Side by side: ${myPa
   const title = `${s.name} (${s.sci}) | Photos, Calls and ID | BeakBrain`;
   const desc = (answer.length > 155 ? answer.slice(0, 152).replace(/\s+\S*$/, '') + '…' : answer);
 
-  const heroHtml = `<a class="backlink" href="/birds/">${ICONS['chevron-left']}Bird Guide</a>
+  // The hero wears the species' conservation-status colour — the same colour
+  // its card's band and disc wear — with the card itself tucked into the right
+  // corner. DD is the one light band; it takes dark ink instead of white.
+  const heroCard = cardSvg(s, 300);
+  const heroDark = s.iucn === 'DD';
+  const heroStyle = `background:linear-gradient(150deg,${shade(stColor, -0.22)},${stColor})`;
+  const heroHtml = `<div class="pherorow">
+<div class="pherotext">
+<a class="backlink" href="/birds/">${ICONS['chevron-left']}Bird Guide</a>
 <h1>${esc(s.name)}</h1>
-<p class="sci">${esc(s.sci)}</p>`;
+<p class="sci">${esc(s.sci)}</p>
+${s.iucn && IUCN[s.iucn] ? `<p class="statusline">${esc(IUCN[s.iucn])} · IUCN Red List</p>` : ''}
+</div>
+<button class="herocard" id="herocard" type="button" aria-label="View the ${esc(s.name)} collector card larger" aria-haspopup="dialog">${heroCard}<span class="cardmag">${ICONS['zoom-in']}</span></button>
+</div>`;
   const jumps = [
     imgs.length ? ['photos', 'Photos'] : null,
     audioSec ? ['sound', 'Sound'] : null,
@@ -854,6 +974,24 @@ ${myPairs.length ? `<p class="note" style="margin-top:10px">Side by side: ${myPa
     camsSec ? ['cams', 'Cams'] : null,
   ].filter(Boolean);
   const body = `
+<script src="/birds/assets/cardmap.js" defer></script>
+<div class="cardlb" id="cardlb" role="dialog" aria-modal="true" aria-label="${esc(s.name)} collector card">
+<button class="lbbtn x" id="cardlbx" aria-label="Close card view">${ICONS.x}</button>
+<div class="cwrap">${heroCard}</div>
+<div class="cap">The ${esc(s.name)} collector card. Master this bird in the BeakBrain app to add it to your collection.</div>
+</div>
+<script>
+(function(){
+var hc=document.getElementById('herocard'),lb=document.getElementById('cardlb');
+if(!hc||!lb)return;
+function open(){lb.classList.add('open');document.body.style.overflow='hidden';document.getElementById('cardlbx').focus()}
+function close(){lb.classList.remove('open');document.body.style.overflow='';hc.focus()}
+hc.addEventListener('click',open);
+document.getElementById('cardlbx').addEventListener('click',close);
+lb.addEventListener('click',function(e){if(!e.target.closest('.cwrap'))close()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('open'))close()});
+})();
+</script>
 <div class="chips" style="margin-top:16px">${chips}</div>
 ${jumps.length > 2 ? `<nav class="jumpnav" aria-label="On this page">${jumps.map(([jid, jl]) => `<a href="#${jid}">${jl}</a>`).join('')}</nav>` : ''}
 ${banner}
@@ -924,7 +1062,7 @@ sendFlag(b.getAttribute('data-orig'),function(ok){b.textContent=ok?'Thanks, repo
 })();
 </script>` : ''}
 `;
-  return { html: page({ title, desc, canonical, body, jsonld, noindex, ogImage: imgs[0]?.url, heroHtml, noChromeVideo: true }), noindex };
+  return { html: page({ title, desc, canonical, body, jsonld, noindex, ogImage: imgs[0]?.url, heroHtml, noChromeVideo: true, heroStyle, heroClass: `flat${heroDark ? ' dark-ink' : ''}` }), noindex };
 }
 
 // ---------------------------------------------------------------- hubs
@@ -1152,12 +1290,16 @@ ${shared.length > 24 ? `<p class="note" style="margin-top:8px">And ${shared.leng
     .map((c) => ({ code: c, name: COUNTRY[c] || c, n: countrySpecies.get(c).length }))
     .sort((a, b) => a.name.localeCompare(b.name));
   const groupCounts = GROUPS.map(() => 0);
-  for (const s of species) groupCounts[groupIdx.get(majorGroupOf(s))]++;
-  const groupTop = GROUPS.map((g) => species
-    .filter((sp) => majorGroupOf(sp) === g && thumbOf(sp.id))
-    .sort((a, b) => b.commonness - a.commonness).slice(0, 3)
-    .map((sp) => thumbOf(sp.id)));
-  const GROUP_COLORS = ['#386641', '#6A994E', '#8C6410', '#B4562E', '#2C5134'];
+  const groupIllus = GROUPS.map(() => 0);
+  for (const s of species) {
+    const gi = groupIdx.get(majorGroupOf(s));
+    groupCounts[gi]++;
+    if (hasPlate(s.id)) groupIllus[gi]++;
+  }
+  // Kraft-paper folder browns (Cat, 2026-08-11): the groups no longer wear
+  // team colours — they are folders in a drawer, in varying shades of brown,
+  // hand-lettered in the cards' Dancing Script.
+  const FOLDER_BROWNS = ['#A9855D', '#97764F', '#B29067', '#8B6B47', '#A07D54'];
   const nTotal = species.length.toLocaleString();
   const PARKN = Object.fromEntries([...parksByCountry].map(([c, l]) => [c, l.length]));
   const chev = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>';
@@ -1212,22 +1354,33 @@ header.scrolled .nav .wordmark,header.scrolled .nav .nav-link{color:var(--green)
 .fchip{font-family:var(--body);font-weight:700;font-size:13.5px;border-radius:999px;padding:7px 14px;background:var(--bg);border:1px solid var(--border);cursor:pointer;color:var(--ink)}
 .fchip.on{background:var(--green);border-color:var(--green);color:#fff}
 .count-note{color:var(--muted);font-size:13.5px;margin-top:14px}
-.ghead{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;border:none;cursor:pointer;border-radius:14px;padding:9px 16px 9px 10px;margin-top:10px;color:#fff;font-family:var(--display);font-weight:600;font-size:17px;text-align:left;transition:filter .15s ease,transform .12s ease}
-.ghead:hover{filter:brightness(1.08)}
-.ghead:active{transform:scale(.995)}
-.ghead:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
-.ghead .gleft{display:flex;align-items:center;gap:12px;min-width:0}
-.ghead .face{display:flex;flex:none}
-.ghead .face img{width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.85);background:var(--surface-alt)}
-.ghead .face img+img{margin-left:-11px}
-.ghead .gname{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.ghead .gright{display:flex;align-items:center;gap:10px;flex:none}
-.ghead .gcount{font-size:13px;font-weight:800;opacity:.9}
-.ghead .gchev{width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;flex:none}
-.ghead svg{transition:transform .2s ease}
-.ghead.open svg{transform:rotate(180deg)}
+/* Folders: each group is a kraft folder — hand-lettered tab, textured front,
+   card grid inside when open. --fb folder brown, --fbd its darker interior. */
+:root{--ftex:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.055 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E")}
+.folder{margin-top:20px}
+.ftab{display:block;width:100%;background:none;border:none;padding:0;cursor:pointer;text-align:left;font-family:var(--body)}
+.ftab:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:12px}
+.ftab .tab{display:inline-block;max-width:min(78%,540px);background-color:var(--fb);background-image:var(--ftex);padding:6px 30px 3px 18px;border-radius:10px 16px 0 0;clip-path:polygon(0 0,calc(100% - 18px) 0,100% 100%,0 100%);box-shadow:0 -1px 2px rgba(46,42,37,.12)}
+.ftab .fname{font-family:'Dancing Script','Comic Sans MS',cursive;font-weight:700;font-size:clamp(20px,2.8vw,25px);line-height:1.25;color:#191512;text-shadow:0 0 .4px #191512;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
+.ftab .fbar{display:flex;align-items:center;justify-content:flex-end;gap:10px;background-color:var(--fb);background-image:var(--ftex);border-radius:0 12px 12px 12px;padding:9px 14px;box-shadow:0 2px 5px rgba(46,42,37,.16),0 1px 0 rgba(255,255,255,.22) inset;transition:filter .15s ease}
+.ftab:hover .fbar{filter:brightness(1.05)}
+.ftab .fcount{font-size:13px;font-weight:800;color:#33291D;opacity:.85}
+.ftab .fchev{width:30px;height:30px;border-radius:50%;background:rgba(25,21,18,.16);display:flex;align-items:center;justify-content:center;flex:none}
+.ftab .fchev svg{transition:transform .2s ease;stroke:#191512}
+.folder.open .fchev svg{transform:rotate(180deg)}
+.folder.open .ftab .fbar{border-radius:0 12px 0 0}
+.fbody{background-color:var(--fbd);background-image:var(--ftex);border-radius:0 0 14px 14px;box-shadow:0 10px 22px rgba(46,42,37,.18),0 3px 10px rgba(25,21,18,.28) inset;padding:4px 0 2px}
+.fbody[hidden]{display:none}
+.fnote{font-size:13px;color:#F3EADB;padding:12px 18px 0;text-shadow:0 1px 2px rgba(25,21,18,.4)}
+.fnote a{color:#F3EADB}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(186px,1fr));gap:26px 20px;padding:18px}
+@media(max-width:480px){.cardgrid{grid-template-columns:repeat(2,1fr);gap:18px 12px;padding:14px}}
+.floading{color:#F3EADB;font-weight:700;padding:18px;text-align:center}
+.cardgrid a.scard{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease,filter .18s ease}
+.cardgrid a.scard.in{opacity:1;transform:none}
+@media(hover:hover){.cardgrid a.scard.in:hover{transform:translateY(-6px) scale(1.045)}}
+@media (prefers-reduced-motion: reduce){.cardgrid a.scard{opacity:1;transform:none;transition:none}.cardgrid a.scard.in:hover{transform:none}}
 @media(max-width:460px){.gw{display:none}}
-@media(max-width:480px){.ghead{font-size:15px}.ghead .face img{width:30px;height:30px}}
 .slist{list-style:none;padding:10px;margin:8px 0 18px;background:var(--surface);border:1px solid var(--border);border-radius:14px;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:2px 10px}
 .slist[hidden]{display:none}
 .slist a{display:flex;align-items:center;gap:10px;padding:5px 8px;border-radius:10px;text-decoration:none;color:var(--green-dark);font-weight:700;font-size:14.5px}
@@ -1287,11 +1440,15 @@ ${MONTHS.map((m, i) => `    <button class="fchip" data-m="${i + 1}">${m.slice(0,
   <ul class="slist" id="hits"></ul>
   <p class="note" id="resNote" hidden>Showing the first 150 matches. Keep typing to narrow it down.</p>
 </section>
+${BASEMAP_DEF}
 <div id="groupwrap">
-<h2 style="margin:26px 0 2px">All birds, by group</h2>
-<p class="note" style="margin-bottom:4px">Open a group to list its species.</p>
-${GROUPS.map((g, i) => `<button class="ghead" data-g="${i}" style="background:${GROUP_COLORS[i % GROUP_COLORS.length]}" aria-expanded="false"><span class="gleft"><span class="face">${groupTop[i].map((t) => `<img src="${esc(t)}" alt="" loading="lazy" decoding="async" />`).join('')}</span><span class="gname">${esc(g)}</span></span><span class="gright"><span class="gcount">${groupCounts[i].toLocaleString()}<span class="gw"> species</span></span><span class="gchev">${chev}</span></span></button>
-<ul class="slist" data-list="${i}" hidden></ul>`).join('\n')}
+<h2 style="margin:26px 0 2px">All birds, by family</h2>
+<p class="note" style="margin-bottom:4px">Open a folder to lay out its species cards. Every bird has a card; the ones still waiting on an antique illustration show their family silhouette.</p>
+${GROUPS.map((g, i) => {
+    const fb = FOLDER_BROWNS[i % FOLDER_BROWNS.length];
+    return `<div class="folder" data-g="${i}" style="--fb:${fb};--fbd:${shade(fb, -0.16)}"><button class="ftab" data-g="${i}" aria-expanded="false" aria-controls="fbody${i}"><span class="tab"><span class="fname">${esc(g)}</span></span><span class="fbar"><span class="fcount">${groupCounts[i].toLocaleString()}<span class="gw"> species</span></span><span class="fchev">${chev}</span></span></button>
+<div class="fbody" id="fbody${i}" hidden><p class="fnote">${groupCounts[i].toLocaleString()} species · ${groupIllus[i].toLocaleString()} illustrated card${groupIllus[i] === 1 ? '' : 's'} so far</p><div class="cardgrid" data-list="${i}"></div></div></div>`;
+  }).join('\n')}
 </div>
 <section class="cta">
 <h2>Learn these birds in the BeakBrain App</h2>
@@ -1364,24 +1521,50 @@ function apply(){
     $('hits').innerHTML=hits.map(rowHtml).join('');
   }else{
     $('results').hidden=true;$('groupwrap').hidden=false;
-    var heads=document.querySelectorAll('.ghead');
-    for(i=0;i<heads.length;i++){
-      var g=+heads[i].getAttribute('data-g');
-      var list=document.querySelector('[data-list="'+g+'"]');
+    var folders=document.querySelectorAll('.folder');
+    for(i=0;i<folders.length;i++){
+      var g=+folders[i].getAttribute('data-g');
       var rows=buckets[g];
-      heads[i].hidden=!rows.length;
-      heads[i].querySelector('.gcount').innerHTML=fmt(rows.length)+'<span class="gw"> species</span>';
+      folders[i].hidden=!rows.length;
+      folders[i].querySelector('.fcount').innerHTML=fmt(rows.length)+'<span class="gw"> species</span>';
       var open=!!expanded[g]&&rows.length>0;
-      heads[i].classList.toggle('open',open);
-      heads[i].setAttribute('aria-expanded',open?'true':'false');
-      list.hidden=!open;
-      if(open){
-        rows.sort(function(a,b){return a[0]<b[0]?-1:a[0]>b[0]?1:0});
-        list.innerHTML=rows.map(rowHtml).join('');
-      }else{list.innerHTML=''}
+      folders[i].classList.toggle('open',open);
+      folders[i].querySelector('.ftab').setAttribute('aria-expanded',open?'true':'false');
+      var body=document.getElementById('fbody'+g);
+      body.hidden=!open;
+      if(open)openFolder(g,rows);
     }
   }
   summarize(total);
+}
+// Card folders: each group's card grid is a pre-rendered fragment, fetched
+// the first time its folder opens; filters then show or hide cards in place.
+var io=('IntersectionObserver' in window)&&!matchMedia('(prefers-reduced-motion: reduce)').matches
+  ?new IntersectionObserver(function(es){for(var k=0;k<es.length;k++)if(es[k].isIntersecting){es[k].target.classList.add('in');io.unobserve(es[k].target)}},{rootMargin:'120px'})
+  :null;
+var fragLoaded={},fragPending={};
+function watchCards(grid){
+  var cards=grid.querySelectorAll('a.scard');
+  for(var k=0;k<cards.length;k++){if(io)io.observe(cards[k]);else cards[k].classList.add('in')}
+}
+function filterCards(g,rows){
+  var grid=document.querySelector('.cardgrid[data-list="'+g+'"]');
+  if(!grid||!fragLoaded[g])return;
+  var ok={};for(var k=0;k<rows.length;k++)ok[rows[k][8]]=1;
+  var cards=grid.querySelectorAll('a.scard');
+  for(k=0;k<cards.length;k++)cards[k].style.display=ok[cards[k].getAttribute('data-id')]?'':'none';
+}
+function openFolder(g,rows){
+  var grid=document.querySelector('.cardgrid[data-list="'+g+'"]');
+  if(fragLoaded[g]){filterCards(g,rows);return}
+  if(fragPending[g])return;
+  fragPending[g]=1;
+  grid.innerHTML='<p class="floading">Opening the folder…</p>';
+  fetch('/birds/groups/'+g+'.html').then(function(r){if(!r.ok)throw 0;return r.text()}).then(function(h){
+    grid.innerHTML=h;fragLoaded[g]=1;fragPending[g]=0;
+    filterCards(g,rows);watchCards(grid);
+  }).catch(function(){fragPending[g]=0;grid.innerHTML='<p class="floading">Could not load this folder. Tap to retry.</p>';
+    grid.onclick=function(){grid.onclick=null;openFolder(g,rows)}});
 }
 function refresh(){ensure().then(apply)}
 $('q').addEventListener('input',function(){state.q=this.value;refresh()});
@@ -1440,7 +1623,7 @@ $('placehits').addEventListener('click',function(e){
   var fc=$('fcountry');fc.value=cc;fc.dispatchEvent(new Event('change'));
 });
 document.getElementById('groupwrap').addEventListener('click',function(e){
-  var h=e.target.closest('.ghead');if(!h)return;
+  var h=e.target.closest('.ftab');if(!h)return;
   var g=+h.getAttribute('data-g');
   ensure().then(function(){expanded[g]=!expanded[g];apply()});
 });
@@ -1482,6 +1665,32 @@ if(fv&&'IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: r
 </body>
 </html>`;
   write('', html);
+}
+
+// Per-group card-grid fragments for the Bird Guide folders: one HTML partial
+// per family group, fetched when its folder first opens. Cards link to their
+// species page; the shared basemap + hoisted sprites keep each partial small.
+// The 25 KB shared basemap geometry ships once as a cached script instead of
+// inline on every one of 9,5xx species pages: it injects the <defs> every
+// card's <use href="#basemap"> resolves against. The /birds/ index inlines
+// the def directly (one page) so its folders need no script round-trip.
+fs.mkdirSync(path.join(OUTROOT, 'assets'), { recursive: true });
+fs.writeFileSync(path.join(OUTROOT, 'assets', 'cardmap.js'),
+  `(function(){var d=document.createElement('div');d.setAttribute('aria-hidden','true');d.style.cssText='position:absolute;width:0;height:0;overflow:hidden';d.innerHTML=${JSON.stringify(BASEMAP_DEF)};document.body.appendChild(d);})();`);
+
+{
+  fs.mkdirSync(path.join(OUTROOT, 'groups'), { recursive: true });
+  const byGroup = GROUPS.map(() => []);
+  for (const s of species) byGroup[groupIdx.get(majorGroupOf(s))].push(s);
+  let fragBytes = 0;
+  byGroup.forEach((list, i) => {
+    list.sort((a, b) => a.name.localeCompare(b.name));
+    const html = list.map((s) =>
+      `<a class="scard" data-id="${s.id}" href="/birds/${slugs[s.id]}/" aria-label="${esc(s.name)} — view species page">${cardSvg(s, 320)}</a>`).join('\n');
+    fragBytes += html.length;
+    fs.writeFileSync(path.join(OUTROOT, 'groups', `${i}.html`), html);
+  });
+  console.log(`group card fragments: ${GROUPS.length} (${(fragBytes / 1048576).toFixed(1)} MB total)`);
 }
 
 // slug index for client-side search + the app's deep links
