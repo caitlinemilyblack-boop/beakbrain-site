@@ -731,7 +731,7 @@ if(history.length>1&&document.referrer&&document.referrer.indexOf(location.origi
 });
 var hdr=document.querySelector('header');
 var tt=document.getElementById('totop');
-var onS=function(){hdr.classList.toggle('scrolled',window.scrollY>40);if(tt)tt.classList.toggle('show',window.scrollY>900)};
+var onS=function(){hdr.classList.toggle('scrolled',window.scrollY>40);if(tt)tt.classList.toggle('show',window.scrollY>500)};
 window.addEventListener('scroll',onS,{passive:true});onS();
 if(tt)tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
 var fv=document.querySelector('footer .bg-video');
@@ -797,7 +797,10 @@ function speciesPage(s) {
   const residents = s.regions.filter((c) => !(s.vagrantRegions || []).includes(c));
   const vagrants = (s.vagrantRegions || []).filter((c) => s.regions.includes(c));
 
-  const video = (videos[s.id] || [])[0];
+  // Curated picks where the first Commons clip is a dud (osprey: clip 0 is
+  // mostly a warship hull; clip 1 is a close perched portrait - Cat, 2026-08-11).
+  const VIDEO_PICKS = { osprey: 1 };
+  const video = (videos[s.id] || [])[VIDEO_PICKS[s.id] ?? 0];
   const banner = video ? `
 <section class="banner" aria-label="Video">
 <video controls muted autoplay loop playsinline preload="metadata"${video.poster ? ` poster="${esc(video.poster)}"` : ''} src="${esc(video.url)}"></video>
@@ -1003,7 +1006,12 @@ ${s.iucn && IUCN[s.iucn] ? `<p class="statusline">${esc(IUCN[s.iucn])} · IUCN R
 <div class="cardlb" id="cardlb" role="dialog" aria-modal="true" aria-label="${esc(s.name)} collector card">
 <button class="lbbtn x" id="cardlbx" aria-label="Close card view">${ICONS.x}</button>
 <div class="cwrap">${heroCard}</div>
-<div class="cap">The ${esc(s.name)} collector card. Master this bird in the BeakBrain app to add it to your collection.</div>
+<div class="cap">The ${esc(s.name)} collector card.${(() => {
+  const pm = plateMeta[s.id];
+  if (!pm) return '';
+  const c = CARD.creditFor({ id: s.id, name: s.name, sci: s.sci, rung: 1, plate: { ...pm, href: 'x' } });
+  return c ? ` Illustration: ${esc(c)}.` : '';
+})()} Master this bird in the BeakBrain app to add it to your collection.</div>
 </div>
 <script>
 (function(){
@@ -1479,7 +1487,7 @@ ${BASEMAP_DEF}
 ${GROUPS.map((g, i) => {
     const fb = FOLDER_BROWNS[i % FOLDER_BROWNS.length];
     return `<div class="folder" data-g="${i}" style="--fb:${fb};--fbd:${shade(fb, -0.16)}"><button class="ftab" data-g="${i}" aria-expanded="false" aria-controls="fbody${i}"><span class="tab"><span class="fname">${esc(g)}</span></span><span class="fbar"><span class="fcount">${groupCounts[i].toLocaleString()}<span class="gw"> species</span></span><span class="fchev">${chev}</span></span></button>
-<div class="fbody" id="fbody${i}" hidden><p class="fnote">${groupCounts[i].toLocaleString()} species · ${groupIllus[i].toLocaleString()} illustrated card${groupIllus[i] === 1 ? '' : 's'} so far</p><div class="cardgrid" data-list="${i}"></div></div></div>`;
+<div class="fbody" id="fbody${i}" hidden><div class="cardgrid" data-list="${i}"></div></div></div>`;
   }).join('\n')}
 </div>
 <section class="cta">
@@ -1679,7 +1687,7 @@ if(history.length>1&&document.referrer&&document.referrer.indexOf(location.origi
 });
 var hdr=document.querySelector('header');
 var tt=document.getElementById('totop');
-var onS=function(){hdr.classList.toggle('scrolled',window.scrollY>40);if(tt)tt.classList.toggle('show',window.scrollY>900)};
+var onS=function(){hdr.classList.toggle('scrolled',window.scrollY>40);if(tt)tt.classList.toggle('show',window.scrollY>500)};
 window.addEventListener('scroll',onS,{passive:true});onS();
 if(tt)tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
 var fv=document.querySelector('footer .bg-video');
@@ -1727,7 +1735,7 @@ fs.writeFileSync(path.join(OUTROOT, 'assets', 'cardmap.js'),
   for (const s of species) byGroup[groupIdx.get(majorGroupOf(s))].push(s);
   let fragBytes = 0;
   byGroup.forEach((list, i) => {
-    list.sort((a, b) => a.name.localeCompare(b.name));
+    list.sort((a, b) => b.commonness - a.commonness);
     const html = list.map((s) =>
       `<a class="scard" data-id="${s.id}" href="/birds/${slugs[s.id]}/" aria-label="${esc(s.name)} — view species page">${cardSvg(s, 320)}</a>`).join('\n');
     fragBytes += html.length;
