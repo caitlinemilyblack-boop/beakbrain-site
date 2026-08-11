@@ -12,19 +12,16 @@
   <meta property="og:url" content="https://beakbrain.com/community.html" />
 
   <style>
-    @font-face { font-family: 'Fredoka'; font-weight: 500; font-display: swap; src: url('fonts/Fredoka-500.woff') format('woff'); }
-    @font-face { font-family: 'Fredoka'; font-weight: 600; font-display: swap; src: url('fonts/Fredoka-600.woff') format('woff'); }
-    @font-face { font-family: 'Fredoka'; font-weight: 700; font-display: swap; src: url('fonts/Fredoka-700.woff') format('woff'); }
-    @font-face { font-family: 'Nunito'; font-weight: 400; font-display: swap; src: url('fonts/Nunito-400.woff') format('woff'); }
-    @font-face { font-family: 'Nunito'; font-weight: 700; font-display: swap; src: url('fonts/Nunito-700.woff') format('woff'); }
-    @font-face { font-family: 'Nunito'; font-weight: 800; font-display: swap; src: url('fonts/Nunito-800.woff') format('woff'); }
+    @font-face { font-family: 'Kollektif'; font-weight: 400; font-display: swap; src: url('fonts/Kollektif-400.woff') format('woff'); }
+    @font-face { font-family: 'Kollektif'; font-weight: 700; font-display: swap; src: url('fonts/Kollektif-700.woff') format('woff'); }
+    @font-face { font-family: 'Gidole'; font-weight: 400; font-display: swap; src: url('fonts/Gidole-400.woff') format('woff'); }
 
     :root {
       --bg: #F2E8CF; --surface: #FFFFFF; --surface-alt: #E7D9B4; --ink: #2E2A25;
       --muted: #6B6155; --border: #DDCBA0; --green: #386641; --green-dark: #2C5134;
       --sage: #6A994E; --gold: #EBB93C; --gold-deep: #8C6410;
-      --display: 'Fredoka', 'Trebuchet MS', system-ui, sans-serif;
-      --body: 'Nunito', system-ui, -apple-system, sans-serif;
+      --display: 'Kollektif', 'Trebuchet MS', system-ui, sans-serif;
+      --body: 'Gidole', system-ui, -apple-system, sans-serif;
       --shadow: 0 14px 34px rgba(46, 42, 37, 0.09);
     }
     * { box-sizing: border-box; }
@@ -137,7 +134,19 @@
     .foot nav a { color: #EAF1E4; text-decoration: none; margin-left: 26px; font-weight: 700; }
     .foot nav a:hover { color: #fff; }
     .foot .copy { color: #E3ECDD; font-size: 14px; width: 100%; }
-  </style>
+  
+/* Narrow screens: the inline nav collapses into an obvious Menu dropdown. */
+.mnav{display:none;position:relative}
+.mnav summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:7px;font-family:var(--display);font-weight:700;font-size:15px;color:#fff;background:rgba(0,0,0,.22);border:1.5px solid rgba(255,255,255,.55);border-radius:999px;padding:8px 16px;transition:color .28s ease,border-color .28s ease,background .28s ease}
+.mnav summary::-webkit-details-marker{display:none}
+.mnav summary::after{content:"";width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:6px solid currentColor;transition:transform .2s ease}
+.mnav[open] summary::after{transform:rotate(180deg)}
+header.scrolled .mnav summary{color:var(--green);border-color:var(--green);background:transparent}
+.mnav .navdrop{position:absolute;right:0;top:calc(100% + 10px);min-width:220px;background:var(--surface,#fff);border:1px solid var(--border,#DDCBA0);border-radius:14px;box-shadow:0 18px 40px rgba(46,42,37,.22);padding:8px;z-index:60}
+.mnav .navdrop a{display:block;margin:0;padding:12px 14px;border-radius:9px;color:var(--green-dark,#2C5134);background:none;text-decoration:none;font-family:var(--display);font-weight:600;font-size:15.5px;white-space:nowrap}
+.mnav .navdrop a:hover{background:var(--surface-alt,#E7D9B4)}
+@media(max-width:640px){.nav>nav,.nav .nav-right{display:none}.mnav{display:block}}
+</style>
 </head>
 <body>
   <header>
@@ -150,6 +159,7 @@
         <a class="nav-link" href="/community.html">Community</a>
         <a class="btn" href="/#waitlist">Join the waitlist</a>
       </div>
+<details class="mnav"><summary aria-label="Site menu">Menu</summary><div class="navdrop"><a href="/birds/">Bird Guide</a><a href="/daily/">Daily Bird</a><a href="/cams/">Cams</a><a href="/community.html">Community</a><a href="/#waitlist">Join the waitlist</a></div></details>
     </div>
   </header>
 

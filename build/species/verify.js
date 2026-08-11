@@ -124,7 +124,7 @@ if (urlCount('sitemap-wave1.xml') > 500) fail('wave1 sitemap over 500 urls');
 
 const mean = totalBytes / nSpecies / 1024;
 console.log(`pages: ${pages.size} | species: ${nSpecies} | mean ${mean.toFixed(1)} KB | max ${(worst / 1024).toFixed(1)} KB`);
-if (mean > 62) fail(`mean species page ${mean.toFixed(1)} KB over 62 KB budget (card era: was 40)`);
+if (mean > 64) fail(`mean species page ${mean.toFixed(1)} KB over 64 KB budget (nav dropdown added 2026-08-12: was 62; card era: was 40)`);
 
 if (failures) {
   console.error(`\n${failures} failure(s)`);

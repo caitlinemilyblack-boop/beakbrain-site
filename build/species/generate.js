@@ -149,7 +149,7 @@ const BASEMAP_DEF = `<svg width="0" height="0" style="position:absolute" aria-hi
 // .calendar spec; ink marks are the card's own light-background branch).
 function calendarSvg(s) {
   const C = CARD.layout.bottom.calendar;
-  const ink = CARD.layout.palette.mapOn;
+  const ink = '#386641'; // page --green (Cat, 2026-08-12: green, not card ink)
   const W = 12 * C.tickW + 11 * C.monthGap;
   const letterH = C.letterSize + C.letterBaselinePad + 3;
   const H = C.peakTickH + 6 + letterH;
@@ -162,7 +162,7 @@ function calendarSvg(s) {
     const xx = peak ? x - 3 : x;
     const h = peak ? C.peakTickH : present ? C.tickH : C.offTickH;
     out += `<rect x="${xx}" y="${C.peakTickH - h}" width="${w}" height="${h}" rx="2" fill="${ink}"${present || peak ? '' : ' opacity=".45"'}/>`;
-    out += `<text x="${x + C.tickW / 2}" y="${C.peakTickH + 6 + C.letterSize}" font-family="Nunito" font-weight="700" font-size="${C.letterSize}" fill="${ink}" text-anchor="middle">${'JFMAMJJASOND'[i - 1]}</text>`;
+    out += `<text x="${x + C.tickW / 2}" y="${C.peakTickH + 6 + C.letterSize}" font-family="Gidole" font-weight="700" font-size="${C.letterSize}" fill="${ink}" text-anchor="middle">${'JFMAMJJASOND'[i - 1]}</text>`;
   }
   return `<svg viewBox="0 -4 ${W} ${H + 4}" xmlns="http://www.w3.org/2000/svg">${out}</svg>`;
 }
@@ -469,11 +469,10 @@ for (const pair of comparePairs) {
 
 // ---------------------------------------------------------------- chrome
 const CSS = `
-@font-face{font-family:'Fredoka';font-weight:700;font-display:swap;src:url('/fonts/Fredoka-700.woff') format('woff')}
-@font-face{font-family:'Fredoka';font-weight:600;font-display:swap;src:url('/fonts/Fredoka-600.woff') format('woff')}
-@font-face{font-family:'Nunito';font-weight:400;font-display:swap;src:url('/fonts/Nunito-400.woff') format('woff')}
-@font-face{font-family:'Nunito';font-weight:700;font-display:swap;src:url('/fonts/Nunito-700.woff') format('woff')}
-:root{--bg:#F2E8CF;--surface:#fff;--surface-alt:#E7D9B4;--ink:#2E2A25;--muted:#6B6155;--border:#DDCBA0;--green:#386641;--green-dark:#2C5134;--sage:#6A994E;--gold:#EBB93C;--gold-deep:#8C6410;--display:'Fredoka','Trebuchet MS',system-ui,sans-serif;--body:'Nunito',system-ui,-apple-system,sans-serif;--shadow:0 14px 34px rgba(46,42,37,.09)}
+@font-face{font-family:'Kollektif';font-weight:400;font-display:swap;src:url('/fonts/Kollektif-400.woff') format('woff')}
+@font-face{font-family:'Kollektif';font-weight:700;font-display:swap;src:url('/fonts/Kollektif-700.woff') format('woff')}
+@font-face{font-family:'Gidole';font-weight:400;font-display:swap;src:url('/fonts/Gidole-400.woff') format('woff')}
+:root{--bg:#F2E8CF;--surface:#fff;--surface-alt:#E7D9B4;--ink:#2E2A25;--muted:#6B6155;--border:#DDCBA0;--green:#386641;--green-dark:#2C5134;--sage:#6A994E;--gold:#EBB93C;--gold-deep:#8C6410;--display:'Kollektif','Trebuchet MS',system-ui,sans-serif;--body:'Gidole',system-ui,-apple-system,sans-serif;--shadow:0 14px 34px rgba(46,42,37,.09)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:var(--body);color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
 [id]{scroll-margin-top:76px}
 h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.14;margin:0}p{margin:0}a{color:var(--green)}
@@ -495,7 +494,17 @@ header.scrolled .nav .btn{background:var(--green);color:#fff}
 @media(max-width:760px){.nav .btn{font-size:13.5px;padding:9px 15px;margin-left:12px}}
 @media(max-width:540px){.nav .btn{display:none}}
 @media(max-width:600px){.nav{height:64px}.wordmark{font-size:20px}.nav-link{font-size:13px;margin-left:12px}.lbl-full{display:none}.lbl-short{display:inline}}
-@media(max-width:430px){.nav{height:auto;flex-wrap:wrap;padding-top:9px;padding-bottom:7px;row-gap:2px}.nav nav{display:flex;flex-wrap:wrap;gap:4px 12px}.nav-link{margin-left:0}}
+/* Narrow screens: the inline nav collapses into an obvious Menu dropdown. */
+.mnav{display:none;position:relative}
+.mnav summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:7px;font-family:var(--display);font-weight:700;font-size:15px;color:#fff;background:rgba(0,0,0,.22);border:1.5px solid rgba(255,255,255,.55);border-radius:999px;padding:8px 16px;transition:color .28s ease,border-color .28s ease,background .28s ease}
+.mnav summary::-webkit-details-marker{display:none}
+.mnav summary::after{content:"";width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:6px solid currentColor;transition:transform .2s ease}
+.mnav[open] summary::after{transform:rotate(180deg)}
+header.scrolled .mnav summary{color:var(--green);border-color:var(--green);background:transparent}
+.mnav .navdrop{position:absolute;right:0;top:calc(100% + 10px);min-width:220px;background:var(--surface);border:1px solid var(--border);border-radius:14px;box-shadow:0 18px 40px rgba(46,42,37,.22);padding:8px;z-index:60}
+.mnav .navdrop a{display:block;margin:0;padding:12px 14px;border-radius:9px;color:var(--green-dark);background:none;text-decoration:none;font-family:var(--display);font-weight:600;font-size:15.5px;white-space:nowrap}
+.mnav .navdrop a:hover{background:var(--surface-alt)}
+@media(max-width:640px){.nav>nav{display:none}.mnav{display:block}}
 .phero{position:relative;margin:0;min-height:250px;display:flex;align-items:flex-end;overflow:hidden;background:linear-gradient(150deg,#2C5134,#386641)}
 .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:0;transition:opacity .9s ease}
 .hero-video.ready{opacity:1}
@@ -609,11 +618,11 @@ footer::after{content:"";position:absolute;inset:0;z-index:1;background:linear-g
 .confcard .tip{display:block;font-size:14px;color:var(--muted);line-height:1.5}
 .rangemap{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:10px;box-shadow:var(--shadow)}
 .rangemap svg{width:100%;height:auto;display:block}
-/* Range map wears the card's own map palette: quiet stone continents with a
-   near-black hairline, charcoal range fill — the same read as the card band. */
-.mp{fill:${CARD.layout.palette.mapBase};stroke:${CARD.layout.palette.mapOnStroke};stroke-width:.3}
-.mp.in{fill:${CARD.layout.palette.mapOn};stroke:${CARD.layout.palette.mapOnStroke};stroke-width:.6}
-.mp.vg{fill:#8A8880}
+/* Range map in the page's own greens (Cat, 2026-08-12: back from the card's
+   charcoal palette): parchment continents, green range, sage vagrants. */
+.mp{fill:#E4D5AC;stroke:#fff;stroke-width:.5}
+.mp.in{fill:var(--green)}
+.mp.vg{fill:var(--sage)}
 .maplegend{font-size:12.5px;color:var(--muted);display:flex;gap:16px;padding:8px 4px 0;margin-bottom:12px}
 .maplegend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
 .gallery figure{position:relative;cursor:zoom-in}
@@ -635,8 +644,6 @@ footer::after{content:"";position:absolute;inset:0;z-index:1;background:linear-g
 .lb .pv{left:12px;top:50%;transform:translateY(-50%)}
 .lb .nx{right:12px;top:50%;transform:translateY(-50%)}
 @media(max-width:600px){.lb .pv,.lb .nx{top:auto;bottom:14px;transform:none}.lb .pv{left:14px}.lb .nx{right:14px}}
-@font-face{font-family:'Fredoka';font-weight:500;font-display:swap;src:url('/fonts/Fredoka-500.woff') format('woff')}
-@font-face{font-family:'Nunito';font-weight:800;font-display:swap;src:url('/fonts/Nunito-800.woff') format('woff')}
 @font-face{font-family:'Dancing Script';font-weight:500 700;font-display:swap;src:url('/fonts/DancingScript.ttf') format('truetype')}
 /* Species cards: real-card presence — paper shadow at rest, lift on hover. */
 .scard{display:block;line-height:0}
@@ -697,6 +704,7 @@ ${jsonld ? `<script type="application/ld+json">${JSON.stringify(jsonld)}</script
 <header><div class="wrap nav">
   <a class="wordmark" href="/">BeakBrain</a>
   <nav><a class="nav-link" href="/birds/">Bird Guide</a><a class="nav-link" href="/daily/">Daily Bird</a><a class="nav-link" href="/cams/">Cams</a><a class="nav-link" href="/community.html">Community</a><a class="btn nav-cta" href="${CTA_HREF}">${CTA_LABEL}</a></nav>
+  <details class="mnav"><summary aria-label="Site menu">Menu</summary><div class="navdrop"><a href="/birds/">Bird Guide</a><a href="/daily/">Daily Bird</a><a href="/cams/">Cams</a><a href="/community.html">Community</a><a href="${CTA_HREF}">${CTA_LABEL}</a></div></details>
 </div></header>
 <section class="phero${heroClass ? ` ${heroClass}` : ''}"${heroStyle ? ` style="${heroStyle}"` : ''}>
 ${noChromeVideo ? '' : `  <video class="hero-video" id="pheroVideo" autoplay muted loop playsinline preload="auto" poster="/assets/video/species-hero-poster.jpg" aria-label="White storks on their nest">
@@ -838,7 +846,7 @@ ${d.descriptionSource ? `<p class="src">Text from <a href="${esc(d.descriptionSo
 <section id="where">
 <h2>Where to see the ${esc(s.name)}</h2>
 <div class="rangemap" data-cc="${residents.join(' ')}"${vagrants.length ? ` data-vg="${vagrants.join(' ')}"` : ''} aria-label="Range map of the ${esc(s.name)}"></div>
-<div class="maplegend"><span><i style="background:${CARD.layout.palette.mapOn}"></i>Regular range</span>${vagrants.length ? '<span><i style="background:#8A8880"></i>Rare visitor</span>' : ''}</div>
+<div class="maplegend"><span><i style="background:var(--green)"></i>Regular range</span>${vagrants.length ? '<span><i style="background:var(--sage)"></i>Rare visitor</span>' : ''}</div>
 <div class="cols">
 ${residents.map((c) => `<a href="/birds/country/${c.toLowerCase()}/">${esc(COUNTRY[c] || c)}</a>`).join('\n')}
 </div>
@@ -994,10 +1002,10 @@ ${s.iucn && IUCN[s.iucn] ? `<p class="statusline">${esc(IUCN[s.iucn])} · IUCN R
   const jumps = [
     imgs.length ? ['photos', 'Photos'] : null,
     audioSec ? ['sound', 'Sound'] : null,
-    aboutSec ? ['about', 'About'] : null,
+    tipSec ? ['id', 'ID tip'] : null,
     whenSec ? ['when', 'When'] : null,
     whereSec ? ['where', 'Where'] : null,
-    tipSec ? ['id', 'ID tip'] : null,
+    aboutSec ? ['about', 'About'] : null,
     confSec ? ['similar', 'Lookalikes'] : null,
     camsSec ? ['cams', 'Cams'] : null,
   ].filter(Boolean);
@@ -1006,12 +1014,7 @@ ${s.iucn && IUCN[s.iucn] ? `<p class="statusline">${esc(IUCN[s.iucn])} · IUCN R
 <div class="cardlb" id="cardlb" role="dialog" aria-modal="true" aria-label="${esc(s.name)} collector card">
 <button class="lbbtn x" id="cardlbx" aria-label="Close card view">${ICONS.x}</button>
 <div class="cwrap">${heroCard}</div>
-<div class="cap">The ${esc(s.name)} collector card.${(() => {
-  const pm = plateMeta[s.id];
-  if (!pm) return '';
-  const c = CARD.creditFor({ id: s.id, name: s.name, sci: s.sci, rung: 1, plate: { ...pm, href: 'x' } });
-  return c ? ` Illustration: ${esc(c)}.` : '';
-})()} Master this bird in the BeakBrain app to add it to your collection.</div>
+<div class="cap">Master this bird in the BeakBrain app to add it to your collection.</div>
 </div>
 <script>
 (function(){
@@ -1030,10 +1033,10 @@ ${jumps.length > 2 ? `<nav class="jumpnav" aria-label="On this page">${jumps.map
 ${banner}
 ${gallery}
 ${audioSec}
-${aboutSec}
+${tipSec}
 ${whenSec}
 ${whereSec}
-${tipSec}
+${aboutSec}
 ${confSec}
 ${camsSec}
 <section class="cta">
@@ -1477,8 +1480,8 @@ ${MONTHS.map((m, i) => `    <button class="fchip" data-m="${i + 1}">${m.slice(0,
 <section id="results" hidden>
   <div class="chip-row" id="placehits" hidden style="margin:0 0 12px"></div>
   <h2 id="resTitle"></h2>
-  <ul class="slist" id="hits"></ul>
-  <p class="note" id="resNote" hidden>Showing the first 150 matches. Keep typing to narrow it down.</p>
+  <div class="cardgrid" id="hits" style="padding:14px 0"></div>
+  <p class="note" id="resNote" hidden>Showing the first matches as cards. Keep typing to narrow it down.</p>
 </section>
 ${BASEMAP_DEF}
 <div id="groupwrap">
@@ -1529,7 +1532,32 @@ function pass(r){
   else if(state.iucn&&r[5]!==state.iucn)return false;
   return true;
 }
-function rowHtml(r){return '<li><a href="/birds/'+r[2]+'/">'+(r[9]?'<img class="th" src="'+r[9]+'" alt="" loading="lazy" decoding="async" />':'<span class="th"></span>')+'<span class="txt">'+esch(r[0])+'<span class="sub">'+esch(r[1])+'</span></span></a></li>'}
+// Search hits render as the same collector cards the folders use: each hit's
+// card node is cloned out of its group fragment (fetched on demand, cached).
+var HIT_CAP=36,fragDom={},fragDomPending={},hitToken=0;
+function fragCards(g){
+  if(fragDom[g])return Promise.resolve(fragDom[g]);
+  if(!fragDomPending[g])fragDomPending[g]=fetch('/birds/groups/'+g+'.html')
+    .then(function(r){if(!r.ok)throw 0;return r.text()})
+    .then(function(h){var d=document.createElement('div');d.innerHTML=h;
+      var map={},cs=d.querySelectorAll('a.scard');
+      for(var k=0;k<cs.length;k++)map[cs[k].getAttribute('data-id')]=cs[k];
+      fragDom[g]=map;fragDomPending[g]=null;return map})
+    .catch(function(){fragDomPending[g]=null;return {}});
+  return fragDomPending[g];
+}
+function showHitCards(hits){
+  var tok=++hitToken,grid=$('hits');
+  var groups={};for(var k=0;k<hits.length;k++)groups[hits[k][3]]=1;
+  Promise.all(Object.keys(groups).map(fragCards)).then(function(){
+    if(tok!==hitToken)return;
+    grid.innerHTML='';
+    for(var k=0;k<hits.length;k++){
+      var r=hits[k],map=fragDom[r[3]]||{},node=map[r[8]];
+      if(node){var c=node.cloneNode(true);c.classList.add('in');grid.appendChild(c)}
+    }
+  });
+}
 function summarize(n){
   var bits=[fmt(n)+' species',state.parkName||state.ccName||'Worldwide'];
   if(state.month)bits.push(MONTHS[state.month-1]);
@@ -1546,7 +1574,7 @@ function apply(){
     if(!pass(r))continue;
     total++;
     if(q.length>=2){
-      if(r[0].toLowerCase().indexOf(q)>-1||r[1].toLowerCase().indexOf(q)>-1){nq++;if(hits.length<150)hits.push(r)}
+      if(r[0].toLowerCase().indexOf(q)>-1||r[1].toLowerCase().indexOf(q)>-1){nq++;if(hits.length<HIT_CAP)hits.push(r)}
     }else{buckets[r[3]].push(r)}
   }
   if(q.length>=2){
@@ -1560,8 +1588,8 @@ function apply(){
     $('placehits').hidden=!ph.length;
     $('placehits').innerHTML=ph.length?'<span class="note" style="width:100%">Places</span>'+ph.join(''):'';
     $('resTitle').textContent=fmt(nq)+(nq===1?' match':' matches');
-    $('resNote').hidden=nq<=150;
-    $('hits').innerHTML=hits.map(rowHtml).join('');
+    $('resNote').hidden=nq<=HIT_CAP;
+    showHitCards(hits);
   }else{
     $('results').hidden=true;$('groupwrap').hidden=false;
     if(autoOpen){
