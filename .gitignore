@@ -1,7 +1,17 @@
-build/verify-report.txt
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+
+# Cloudflare account identifiers cached by wrangler; this repo is public
+.wrangler/
+
+# The build pipeline lives in its own PRIVATE repo, checked out here:
+#   git@github.com:caitlinemilyblack-boop/beakbrain-site-build.git
+# It must stay at this path because the generators write to ../../<section>/index.html.
+# This repo holds the deployed site only.
+/build/
+
 # generated species directory: deployed, never committed (git bloat)
 /birds/
 /sitemap*.xml
-
-# trips build: staging data + rescued third-party HTML, local only
-build/trips/staging/
