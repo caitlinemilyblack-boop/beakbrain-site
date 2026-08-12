@@ -484,6 +484,11 @@ h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.14;margin:0}p{
    community and cams use a 1080px/28px shell), whatever width the page
    content below runs at. */
 header .wrap{max-width:1080px;padding:0 28px}
+/* The Bird Guide index is a grid page like home, cams and community, so it
+   runs at their 1080px/28px too. Species pages keep the narrower 920px/22px
+   reading column — a page of prose, a map and a card does not want to be as
+   wide as a card grid. (Cat asked why the Guide's margins looked different.) */
+main.wrap.guide{max-width:1080px;padding:0 28px}
 header{position:fixed;top:0;left:0;right:0;z-index:30;background:transparent;border-bottom:1px solid transparent;transition:background .28s ease,border-color .28s ease}
 header.scrolled{background:rgba(242,232,207,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:80px}
@@ -1460,7 +1465,7 @@ header.scrolled .nav .wordmark,header.scrolled .nav .nav-link{color:var(--green)
     <p>${nTotal} species &middot; <a class="hero-link" href="/symbols/">what the card symbols mean</a></p>
   </div>
 </section>
-<main class="wrap">
+<main class="wrap guide">
 <div class="finder">
   <div class="frow">
     <input class="search" id="q" type="search" placeholder="Search ${nTotal} species by name" aria-label="Search species" autocomplete="off" />
