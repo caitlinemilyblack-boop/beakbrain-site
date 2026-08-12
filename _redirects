@@ -1,0 +1,9 @@
+# Cloudflare Pages routing rules.
+
+# Guard: build/ is the PRIVATE pipeline repo that sits inside this one. Deploying the
+# repo root with `wrangler pages deploy .` uploads it, which published
+# build/README.md and build/verify-report.txt on 2026-08-12. Redirect rules are
+# followed whether or not an asset matches, so this keeps those paths unreachable
+# even when the files are uploaded by mistake. Deploy with ./deploy.sh, which stages
+# a clean tree; this line is the second layer.
+/build/* / 301

@@ -54,4 +54,4 @@ print "verifying"
 for p in / /trips/ /cams/ /birds/; do
   print "  $(curl -s -m 25 -o /dev/null -w '%{http_code}' "https://beakbrain.com$p")  $p"
 done
-print "  $(curl -s -m 20 -o /dev/null -w '%{http_code} %{content_type}' "https://beakbrain.com/build/README.md")  /build/README.md (want the HTML fallback, never text/markdown)"
+print "  $(curl -s -m 20 -o /dev/null -w '%{http_code}' "https://beakbrain.com/build/README.md")  /build/README.md (want 301 from the _redirects guard, never 200 text/markdown)"
