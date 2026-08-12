@@ -2,3 +2,6 @@ build/verify-report.txt
 # generated species directory: deployed, never committed (git bloat)
 /birds/
 /sitemap*.xml
+
+# trips build: staging data + rescued third-party HTML, local only
+build/trips/staging/

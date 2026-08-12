@@ -680,6 +680,10 @@ a.scard:focus-visible{outline:3px solid var(--gold);outline-offset:4px;border-ra
 .cardlb .cwrap{width:min(92vw,54vh);cursor:default}
 .cardlb .cwrap svg{width:100%;height:auto;border-radius:14px;filter:drop-shadow(0 4px 8px rgba(0,0,0,.4)) drop-shadow(0 24px 60px rgba(0,0,0,.45))}
 .cardlb .cap{color:#EAF1E4;font-size:13px;margin-top:14px;text-align:center;max-width:70ch}
+.cardlb .cap a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+.hero-inner .hero-link{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.hero-inner .hero-link:hover{color:var(--gold)}
+.cardlb .cap a:hover{color:var(--gold)}
 .cardlb .x{top:16px;right:16px}
 @media(max-width:640px){
 .pherorow{align-items:flex-end}
@@ -1018,7 +1022,7 @@ ${s.iucn && IUCN[s.iucn] ? `<p class="statusline">${esc(IUCN[s.iucn])} · IUCN R
 <div class="cardlb" id="cardlb" role="dialog" aria-modal="true" aria-label="${esc(s.name)} collector card">
 <button class="lbbtn x" id="cardlbx" aria-label="Close card view">${ICONS.x}</button>
 <div class="cwrap">${heroCard}</div>
-<div class="cap">Master this bird in the BeakBrain app to add it to your collection.</div>
+<div class="cap">Master this bird in the BeakBrain app to add it to your collection.<br><a href="/symbols/" target="_blank" rel="noopener">Learn what every symbol on the card means.</a></div>
 </div>
 <script>
 (function(){
@@ -1409,7 +1413,7 @@ header.scrolled .nav .wordmark,header.scrolled .nav .nav-link{color:var(--green)
 .folder{margin-top:20px}
 .ftab{display:block;width:100%;background:none;border:none;padding:0;cursor:pointer;text-align:left;font-family:var(--body)}
 .ftab:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:12px}
-.ftab .tab{display:inline-block;max-width:min(78%,540px);background-color:var(--fb);background-image:var(--ftex);padding:6px 30px 3px 18px;border-radius:10px 16px 0 0;clip-path:polygon(0 0,calc(100% - 18px) 0,100% 100%,0 100%);box-shadow:0 -1px 2px rgba(46,42,37,.12)}
+.ftab .tab{display:inline-block;max-width:min(78%,540px);background-color:var(--fb);background-image:var(--ftex);padding:6px 30px 3px 18px;border-radius:10px 14px 0 0;box-shadow:0 -1px 2px rgba(46,42,37,.12)}
 .ftab .fname{font-family:var(--display);font-weight:600;font-size:clamp(16px,2.2vw,20px);line-height:1.4;color:#191512;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
 .ftab .fbar{display:flex;align-items:center;justify-content:flex-end;gap:10px;background-color:var(--fb);background-image:var(--ftex);border-radius:0 12px 12px 12px;padding:9px 14px;box-shadow:0 2px 5px rgba(46,42,37,.16),0 1px 0 rgba(255,255,255,.22) inset;transition:filter .15s ease}
 .ftab:hover .fbar{filter:brightness(1.05)}
@@ -1418,13 +1422,15 @@ header.scrolled .nav .wordmark,header.scrolled .nav .nav-link{color:var(--green)
 .ftab .fchev svg{transition:transform .2s ease;stroke:#191512}
 .folder.open .fchev svg{transform:rotate(180deg)}
 .folder.open .ftab .fbar{border-radius:0 12px 0 0}
-.fbody{background-color:var(--fbd);background-image:var(--ftex);border-radius:0 0 14px 14px;box-shadow:0 10px 22px rgba(46,42,37,.18),0 3px 10px rgba(25,21,18,.28) inset;padding:4px 0 2px}
+.folder.open .fbody{border-left:0;border-right:0}
+.fbody{padding:0}
+.ffoot{height:14px;background-color:var(--fbd);background-image:var(--ftex);border-radius:0 0 14px 14px;box-shadow:0 8px 18px rgba(46,42,37,.16)}
 .fbody[hidden]{display:none}
-.fnote{font-size:13px;color:#F3EADB;padding:12px 18px 0;text-shadow:0 1px 2px rgba(25,21,18,.4)}
-.fnote a{color:#F3EADB}
+.fnote{font-size:13px;color:var(--muted);padding:12px 18px 0}
+.fnote a{color:var(--green)}
 .cardgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(186px,1fr));gap:26px 20px;padding:18px}
 @media(max-width:480px){.cardgrid{grid-template-columns:repeat(2,1fr);gap:18px 12px;padding:14px}}
-.floading{color:#F3EADB;font-weight:700;padding:18px;text-align:center}
+.floading{color:var(--muted);font-weight:700;padding:18px;text-align:center}
 .cardgrid a.scard{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease,filter .18s ease}
 .cardgrid a.scard.in{opacity:1;transform:none}
 @media(hover:hover){.cardgrid a.scard.in:hover{transform:translateY(-6px) scale(1.045)}}
@@ -1451,7 +1457,7 @@ header.scrolled .nav .wordmark,header.scrolled .nav .nav-link{color:var(--green)
   </video>
   <div class="wrap hero-inner">
     <h1>The Bird Guide</h1>
-    <p>${nTotal} species</p>
+    <p>${nTotal} species &middot; <a class="hero-link" href="/symbols/">what the card symbols mean</a></p>
   </div>
 </section>
 <main class="wrap">
@@ -1496,7 +1502,7 @@ ${BASEMAP_DEF}
 ${GROUPS.map((g, i) => {
     const fb = FOLDER_BROWNS[i % FOLDER_BROWNS.length];
     return `<div class="folder" data-g="${i}" style="--fb:${fb};--fbd:${shade(fb, -0.16)}"><button class="ftab" data-g="${i}" aria-expanded="false" aria-controls="fbody${i}"><span class="tab"><span class="fname">${esc(g)}</span></span><span class="fbar"><span class="fcount">${groupCounts[i].toLocaleString()}<span class="gw"> species</span></span><span class="fchev">${chev}</span></span></button>
-<div class="fbody" id="fbody${i}" hidden><div class="cardgrid" data-list="${i}"></div></div></div>`;
+<div class="fbody" id="fbody${i}" hidden><div class="cardgrid" data-list="${i}"></div><div class="ffoot"></div></div></div>`;
   }).join('\n')}
 </div>
 <section class="cta">
