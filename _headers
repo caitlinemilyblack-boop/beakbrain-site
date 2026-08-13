@@ -7,11 +7,13 @@
 # Rules are additive and every matching block applies, so /* carries the security
 # headers for the whole site and the path blocks below add caching on top.
 #
-# NOTE ON CACHE LIFETIMES: nothing on this site has a content-hashed filename, so
-# no rule here may use `immutable`. A year-long immutable cache on /assets/hero.mp4
-# would pin the old file on every returning visitor's machine with no way to bust
-# it short of renaming. The app (beakbrain-app) does hash its filenames and does use
-# immutable — see birding-app/scripts/pwa-patch.mjs.
+# NOTE ON CACHE LIFETIMES: almost nothing on this site has a content-hashed filename,
+# so almost no rule here may use `immutable`. A year-long immutable cache on
+# /assets/hero.mp4 would pin the old file on every returning visitor's machine with no
+# way to bust it short of renaming. The one exception is /birds/assets/site.<hash>.css,
+# whose name IS its content, added 2026-08-13 when the Bird Guide stylesheet stopped
+# being inlined into every page. The app (beakbrain-app) hashes its filenames
+# throughout and uses immutable there too — see birding-app/scripts/pwa-patch.mjs.
 #
 # NOT SET HERE: Content-Security-Policy. It needs testing against the inline styles
 # and scripts on these pages, the Google Maps iframe embeds on community.html, and
@@ -33,3 +35,9 @@
 # in reasonable time given these names are not hashed.
 /assets/*
   Cache-Control: public, max-age=604800
+
+# The Bird Guide stylesheet, fetched once for a whole crawl instead of inlined into
+# every page. Its filename is a hash of its content, so it can never go stale: editing
+# the CSS changes the name. This is the only immutable rule on the site.
+/birds/assets/*.css
+  Cache-Control: public, max-age=31536000, immutable
