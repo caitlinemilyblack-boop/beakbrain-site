@@ -36,6 +36,19 @@ if [[ -e "$STAGE/build" ]]; then
   exit 1
 fi
 
+# The share card is composed from the app's mark and the site's screenshots, so it
+# goes stale silently when either moves. This repo has no CI, so the deploy is the
+# only gate there is. Skipped rather than fatal when Pillow is absent, because a
+# missing local dependency should not block a copy fix at midnight.
+if python3 -c 'import PIL' 2>/dev/null; then
+  python3 "$SRC/build/make-og-image.py" --check || {
+    print -u2 "ABORT: assets/og-card.png is stale. Run: python3 build/make-og-image.py"
+    exit 1
+  }
+else
+  print "skipping the og-card check (no Pillow: pip3 install Pillow)"
+fi
+
 FILES=$(find "$STAGE" -type f | wc -l | tr -d ' ')
 print "staged $FILES files (Cloudflare Pages free plan allows 20,000)"
 
