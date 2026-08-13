@@ -179,8 +179,19 @@
     .who-list .row b { font-family: var(--display); color: var(--green); font-size: 18px; white-space: nowrap; }
     .who-list .row span { color: var(--muted); }
 
+    /* Data-source strip: quiet, in one line on desktop, wrapping on a phone. */
+    .sources { padding-top: 56px; text-align: center; }
+    .sources-lead { font-family: var(--display); font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 2px; color: var(--gold-deep); margin-bottom: 16px; }
+    .sources-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 30px; }
+    .sources-list li { display: flex; align-items: baseline; gap: 7px; }
+    .sources-list a { font-family: var(--display); font-weight: 700; font-size: 17px; color: var(--green); text-decoration: none; border-bottom: 2px solid transparent; }
+    .sources-list a:hover { border-bottom-color: var(--gold); }
+    .sources-list span { font-size: 13.5px; color: var(--muted); }
+    .sources-note { font-size: 13.5px; color: var(--muted); margin-top: 16px; }
+
     /* Founder */
     .founder { background: linear-gradient(150deg, #2C5134, #386641); color: #fff; }
+    .founder .founder-cta { margin-top: 22px; margin-bottom: 0; }
     .founder .inner { display: grid; grid-template-columns: 200px 1fr; gap: 48px; align-items: center; max-width: 940px; margin: 0 auto; }
     .founder .photo { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 4px solid rgba(255,255,255,0.25); }
     .founder .photo-fallback { width: 200px; height: 200px; border-radius: 50%; background: rgba(255,255,255,0.14); border: 4px solid rgba(255,255,255,0.25); display: flex; align-items: center; justify-content: center; font-family: var(--display); font-weight: 700; font-size: 60px; color: #F2D98A; }
@@ -289,6 +300,23 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
       </div>
       <p class="note">Free, no account, works in your browser. Coming soon to iPhone and Android.</p>
     </div>
+  </section>
+
+  <!-- Where the data comes from. For this audience these five names ARE the social
+       proof, and they answer the "is this AI slop" reflex before it forms. They were
+       buried in a collapsed FAQ two thirds down the page (panel review, 2026-08-12).
+       Named rather than logo-walled: a birder reads AviList and GBIF and knows exactly
+       what the app is built on. -->
+  <section class="wrap sources" aria-label="Data sources">
+    <p class="sources-lead">Built on the open data birders already trust</p>
+    <ul class="sources-list">
+      <li><a href="https://www.avilist.org" target="_blank" rel="noopener">AviList</a> <span>taxonomy</span></li>
+      <li><a href="https://www.gbif.org" target="_blank" rel="noopener">GBIF</a> <span>range and season</span></li>
+      <li><a href="https://xeno-canto.org" target="_blank" rel="noopener">Xeno-canto</a> <span>calls and song</span></li>
+      <li><a href="https://commons.wikimedia.org" target="_blank" rel="noopener">Wikimedia Commons</a> <span>photos and plates</span></li>
+      <li><a href="https://www.inaturalist.org" target="_blank" rel="noopener">iNaturalist</a> <span>photos</span></li>
+    </ul>
+    <p class="sources-note">Every photo and recording names the person who made it and its licence.</p>
   </section>
 
   <!-- Stat band -->
@@ -474,6 +502,9 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <h2>Built by Dr Cat Black</h2>
           <p>BeakBrain is built by Dr Cat Black, a behavioural ecologist and conservation scientist who earned her PhD at the University of Oxford. She has studied house finches and swallow-tailed kites in the US, penguins in the Antarctic, and backyard biodiversity in Amsterdam, using bioacoustics, camera trapping, and traditional field methods.</p>
           <p>She made BeakBrain to share the joy of birding and help people learn the birds they will meet wherever they travel.</p>
+          <!-- The section used to end here, on a full stop, at the point a reader is
+               most persuaded and has nowhere to go (panel review, 2026-08-12). -->
+          <p class="founder-cta"><a class="btn btn-light" href="daily/">Try the first round she built</a></p>
         </div>
       </div>
     </div>
