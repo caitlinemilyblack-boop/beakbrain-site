@@ -1,0 +1,35 @@
+# Cloudflare Pages response headers for beakbrain.com.
+#
+# Added 2026-08-13 after the pre-launch panel review found the site serving only
+# x-content-type-options and referrer-policy: no HSTS, no framing protection, no
+# Permissions-Policy, and no cache policy of our own.
+#
+# Rules are additive and every matching block applies, so /* carries the security
+# headers for the whole site and the path blocks below add caching on top.
+#
+# NOTE ON CACHE LIFETIMES: nothing on this site has a content-hashed filename, so
+# no rule here may use `immutable`. A year-long immutable cache on /assets/hero.mp4
+# would pin the old file on every returning visitor's machine with no way to bust
+# it short of renaming. The app (beakbrain-app) does hash its filenames and does use
+# immutable — see birding-app/scripts/pwa-patch.mjs.
+#
+# NOT SET HERE: Content-Security-Policy. It needs testing against the inline styles
+# and scripts on these pages, the Google Maps iframe embeds on community.html, and
+# Cloudflare's email-obfuscation script before it can ship without breaking the
+# site. Tracked as a separate item in the app repo's CRITIQUE-ACTION-TRACKER.md.
+
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+
+# Fonts are self-hosted and effectively never change under the same filename.
+/fonts/*
+  Cache-Control: public, max-age=2592000
+
+# Images, video and the site CSS/JS. A week, so a correction still reaches people
+# in reasonable time given these names are not hashed.
+/assets/*
+  Cache-Control: public, max-age=604800

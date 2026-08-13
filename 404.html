@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Page Not Found | BeakBrain</title>
+  <meta name="description" content="That page has moved or flown. Find your way back to the Bird Guide, the Daily Bird, the live cams, birding communities and birding trips." />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="/assets/favicon.png" />
+
+  <!--
+    Cloudflare Pages serves this file, with a 404 status, for any path that
+    matches nothing. Without it every unknown URL answered with the homepage at
+    status 200, so a broken link looked healthy to a visitor and read as a
+    duplicate homepage to a search engine.
+
+    Every path here is absolute, because this page renders at whatever depth the
+    missing URL had: a relative href would resolve against /birds/something/ and
+    break a second time. It carries no video and no script for the same reason,
+    so it stays light on a page nobody meant to land on.
+  -->
+  <style>
+    @font-face { font-family: 'Fredoka'; font-weight: 600; font-display: swap; src: url('/fonts/Fredoka-600.woff') format('woff'); }
+    @font-face { font-family: 'Fredoka'; font-weight: 700; font-display: swap; src: url('/fonts/Fredoka-700.woff') format('woff'); }
+    @font-face { font-family: 'Nunito'; font-weight: 400; font-display: swap; src: url('/fonts/Nunito-400.woff') format('woff'); }
+    @font-face { font-family: 'Nunito'; font-weight: 700; font-display: swap; src: url('/fonts/Nunito-700.woff') format('woff'); }
+
+    :root {
+      --bg: #F2E8CF; --surface: #FFFFFF; --surface-alt: #E7D9B4; --ink: #2E2A25;
+      --muted: #6B6155; --border: #DDCBA0; --green: #386641; --green-dark: #2C5134;
+      --sage: #6A994E; --gold: #EBB93C; --gold-deep: #8C6410;
+      --display: 'Fredoka', 'Trebuchet MS', system-ui, sans-serif;
+      --body: 'Nunito', system-ui, -apple-system, sans-serif;
+      --shadow: 0 14px 34px rgba(46, 42, 37, 0.09);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: var(--body); color: var(--ink); background: var(--bg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3 { font-family: var(--display); font-weight: 700; line-height: 1.14; margin: 0; }
+    p { margin: 0; }
+    a { color: var(--green); }
+    .wrap { max-width: 860px; margin: 0 auto; padding: 0 28px; }
+    .wordmark { font-family: var(--display); font-weight: 700; color: var(--green); letter-spacing: -0.3px; text-decoration: none; }
+
+    header .wrap { max-width: 1080px; padding: 0 28px; }
+    header { position: absolute; top: 0; left: 0; right: 0; z-index: 30; }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 80px; }
+    .nav .wordmark { font-size: 24px; color: #fff; }
+    .nav-links { display: flex; align-items: center; gap: 24px; }
+    .nav-links a { color: #fff; text-decoration: none; font-family: var(--display); font-weight: 600; font-size: 15px; white-space: nowrap; }
+    @media (max-width: 640px) { .nav .wordmark { font-size: 20px; } .nav-links { display: none; } }
+
+    /* The green gradient the other heroes fall back to before their video
+       arrives, used here on its own. */
+    .hero { position: relative; margin: 0; min-height: 300px; display: flex; align-items: flex-end; overflow: hidden; background: linear-gradient(150deg, #2C5134, #386641); }
+    .hero-inner { position: relative; z-index: 2; width: 100%; color: #fff; padding: 118px 28px 30px; }
+    .hero h1 { font-size: clamp(30px, 5vw, 46px); color: #fff; }
+    .hero p { color: #EFE7D2; font-size: 18px; margin-top: 12px; max-width: 60ch; }
+
+    main { padding-bottom: 20px; }
+    .lead { color: var(--muted); font-size: 16.5px; margin: 34px 0 22px; max-width: 62ch; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin-bottom: 8px; }
+    .card { display: block; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 20px 22px; box-shadow: var(--shadow); text-decoration: none; }
+    .card h2 { font-family: var(--display); font-weight: 700; font-size: 18px; color: var(--green-dark); }
+    .card p { color: var(--muted); font-size: 15px; margin-top: 6px; }
+    .card:hover { border-color: var(--sage); }
+    .back { display: inline-block; margin: 26px 0 0; font-weight: 700; }
+
+    footer { background: var(--green-dark); color: #EAF1E4; margin-top: 46px; padding: 46px 0; }
+    .foot { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; padding: 0 28px; max-width: 1080px; margin: 0 auto; }
+    .foot .wordmark { color: #fff; font-size: 22px; }
+    .foot nav { display: flex; flex-wrap: wrap; gap: 18px; }
+    .foot a { color: #EAF1E4; text-decoration: none; font-size: 14.5px; }
+    .foot a:hover { color: var(--gold); }
+    .foot .copy { width: 100%; color: rgba(234,241,228,0.7); font-size: 13px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="wordmark" href="/">BeakBrain</a>
+      <nav class="nav-links">
+        <a href="/birds/">Bird Guide</a>
+        <a href="/daily/">Daily Bird</a>
+        <a href="/cams/">Cams</a>
+        <a href="/community.html">Community</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <h1>This page has flown</h1>
+      <p>The link may have changed, or the page may have moved somewhere new. Everything below is still here.</p>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <p class="lead">If you were looking for a particular species, the Bird Guide holds every one of them and searches by name.</p>
+
+    <div class="cards">
+      <a class="card" href="/birds/">
+        <h2>Bird Guide</h2>
+        <p>Every species in the world, searchable by common or scientific name.</p>
+      </a>
+      <a class="card" href="/daily/">
+        <h2>Daily Bird</h2>
+        <p>One species a day, with its call, its range and its story.</p>
+      </a>
+      <a class="card" href="/cams/">
+        <h2>Live Cams</h2>
+        <p>Nest and feeder cameras streaming from around the world.</p>
+      </a>
+      <a class="card" href="/community.html">
+        <h2>Community</h2>
+        <p>Bird clubs, walks and local groups near you.</p>
+      </a>
+      <a class="card" href="/contribute.html">
+        <h2>Contribute</h2>
+        <p>Add a photo or a recording, and help fill the gaps.</p>
+      </a>
+      <a class="card" href="/symbols/">
+        <h2>Interpreting the Bird Cards</h2>
+        <p>What every symbol on a species card means, and where the data comes from.</p>
+      </a>
+    </div>
+
+    <a class="back" href="/">Back to BeakBrain</a>
+  </main>
+
+  <footer>
+    <div class="foot">
+      <span class="wordmark">BeakBrain</span>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/birds/">Bird Guide</a>
+        <a href="/community.html">Community</a>
+        <a href="/contribute.html">Contribute</a>
+        <a href="mailto:hello@beakbrain.com">Contact</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+      </nav>
+      <div class="copy">Greet every bird by name. &copy; 2026 BeakBrain.</div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -31,7 +31,7 @@
   <main>
     <a class="back" href="index.html">Back to BeakBrain</a>
     <h1>Privacy Policy</h1>
-    <p class="muted">Last updated: 18 July 2026</p>
+    <p class="muted">Last updated: 13 August 2026</p>
 
     <p>This policy explains what personal data BeakBrain collects, why, and the rights you have over it.
       It is written to meet the UK and EU General Data Protection Regulation (GDPR). We collect as
@@ -57,20 +57,25 @@
       <tr><td>Email address (account)</td><td>To create your account and sign you in</td><td>Performance of a contract</td></tr>
       <tr><td>Learning progress, saved trips, collections (account)</td><td>To sync your progress across your devices</td><td>Performance of a contract</td></tr>
       <tr><td>Email address (waitlist)</td><td>To email you when the app launches</td><td>Consent, which you can withdraw at any time</td></tr>
+      <tr><td>Product usage and crash diagnostics</td><td>To see which parts of the app are used, and to find and fix faults</td><td>Legitimate interests in operating and improving the app</td></tr>
     </table>
-    <p>We do not collect location, contacts, advertising identifiers, or analytics about your behaviour.</p>
+    <p>We do not collect your location, your contacts, or advertising identifiers, we never sell your
+      data, and we never use it for advertising. We do record how the app is used, in aggregate, along
+      with crash diagnostics. Both are described under <a href="#processors">Who processes your data</a>.</p>
 
-    <h2>Guest use, no data collected</h2>
-    <p>You can use BeakBrain without an account. In that case everything you do, your progress, streak,
-      saved trips, and collections, stays on your device. Nothing is uploaded, and we collect no
-      personal information.</p>
+    <h2>Guest use</h2>
+    <p>You can use BeakBrain without an account. In that case everything you learn, your progress,
+      streak, saved trips, and collections, stays on your device and is never uploaded, and we hold no
+      account or contact details for you at all. The usage and crash reporting described below still
+      runs, so we can tell that a round was played and see any error it hit. It is not tied to a name
+      or an email address.</p>
 
     <h2>If you create an account</h2>
     <p>If you sign up, we store your email address and sync your learning progress, saved trips, and
-      collections so they follow you across your devices. That is the only personal data we hold, and
-      we use it solely to operate the app.</p>
+      collections so they follow you across your devices. Apart from the usage and crash diagnostics
+      described below, that is the only personal data we hold, and we use it solely to operate the app.</p>
 
-    <h2>Who processes your data</h2>
+    <h2 id="processors">Who processes your data</h2>
     <p>We use a small number of processors, each acting only on our instructions under a data processing
       agreement:</p>
     <ul>
@@ -80,13 +85,18 @@
         used in aggregate and improve it. We do not use it for advertising, and we do not sell your data.</li>
       <li><strong>Sentry</strong> provides crash and error reporting, so we can find and fix bugs. Reports
         contain technical diagnostic information rather than your learning content.</li>
+      <li><strong>Cloudflare</strong> hosts and serves this website and the app. Like any web host it
+        processes the IP address and request details of every visit in order to deliver the page and to
+        keep the service secure.</li>
     </ul>
 
     <h2>Where your data is stored</h2>
-    <p>Your data is hosted within the European Economic Area: Supabase in its EU region (Ireland), and
-      PostHog and Sentry in their EU regions. We do not transfer it outside the EEA. If that ever changes,
-      any transfer would be protected by appropriate safeguards, such as the Standard Contractual Clauses
-      approved by the European Commission.</p>
+    <p>Your account data and diagnostics are held within the European Economic Area: Supabase in its EU
+      region (Ireland), and PostHog and Sentry in their EU regions. Cloudflare serves the site from a
+      global network, so a request is answered by whichever location is nearest you, and its request
+      logs are handled under Cloudflare's own data protection terms. Any transfer outside the EEA is
+      protected by appropriate safeguards, such as the Standard Contractual Clauses approved by the
+      European Commission.</p>
 
     <h2>How long we keep it</h2>
     <ul>
@@ -116,9 +126,13 @@
       In the EU it is the supervisory authority in your country. We would appreciate the chance to
       resolve your concern first, so please do contact us.</p>
 
-    <h2>Cookies and tracking</h2>
-    <p>Our website and app use no advertising cookies and no tracking technologies. We set no
-      non-essential cookies, so there is nothing to consent to.</p>
+    <h2>Cookies and local storage</h2>
+    <p>We set no cookies at all, no advertising cookies, and nothing that follows you to other sites.
+      The product analytics described above are configured to keep nothing on your device: no
+      identifier is stored, so nothing persists after you close the app, and there is no tag that
+      could be used to recognise you later or anywhere else. If you sign in, your events are
+      associated with your account for as long as you have one, which is how we can tell whether
+      people keep coming back.</p>
 
     <h2>Security</h2>
     <p>Data in your account is protected by row-level security, so each account can only ever read and
@@ -129,8 +143,8 @@
     <p>BeakBrain is suitable for all ages, and children are welcome to learn with it. This section is a
       legal note about data, not about content. BeakBrain is not directed at children under 13, and we
       do not knowingly collect personal information from anyone under 13. This keeps us clear of
-      children's data-protection rules such as COPPA. A child can use guest mode, which collects no
-      personal data at all.</p>
+      children's data-protection rules such as COPPA. A child can use guest mode, which needs no account
+      and holds no name, email address, or contact details.</p>
 
     <h2>Media and data credits</h2>
     <p>Bird photos and recordings are used under open licences (CC0, CC BY, CC BY-SA) from Wikimedia

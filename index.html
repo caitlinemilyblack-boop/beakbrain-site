@@ -278,18 +278,23 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
     <div class="wrap hero-inner">
       <h1>Greet every bird by name</h1>
       <p class="lede">BeakBrain teaches you to identify birds before your trip. Pick a country and it builds a learning path from the most common birds up to the rarities, tuned to the time of year you travel.</p>
+      <!-- The primary action offers the product instead of asking for an email. This
+           page linked the live, playable app zero times while its only conversion
+           path was a waitlist for something a visitor could be playing in four
+           seconds (panel review, 2026-08-12). The waitlist survives as the secondary
+           action, which is where a waitlist belongs once a playable product exists. -->
       <div class="hero-cta">
-        <a class="btn btn-light" href="#waitlist">Join the waitlist</a>
-        <a class="btn btn-ghost" href="#how" style="color:#fff;border-color:rgba(255,255,255,0.5);">See how it works</a>
+        <a class="btn btn-light" href="daily/">Play a round now, free</a>
+        <a class="btn btn-ghost" href="#waitlist" style="color:#fff;border-color:rgba(255,255,255,0.5);">Join the waitlist</a>
       </div>
-      <p class="note">Free to start. No account needed. Coming soon to iPhone and Android.</p>
+      <p class="note">Free, no account, works in your browser. Coming soon to iPhone and Android.</p>
     </div>
   </section>
 
   <!-- Stat band -->
   <section class="wrap" style="padding-top: 72px;">
     <div class="stats">
-      <div class="stat"><b>9,500+</b><span>species you can learn</span></div>
+      <div class="stat"><b>9,516</b><span>species you can learn</span></div>
       <div class="stat"><b>Every country</b><span>ranked by what is common there</span></div>
       <div class="stat"><b>Photos and calls</b><span>for sight and sound</span></div>
       <div class="stat"><b>Each month</b><span>tuned to when you travel</span></div>
@@ -346,7 +351,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
     </video>
     <div class="inner">
       <h2>Look up any bird in the world</h2>
-      <p>Our free Bird Guide covers 9,500+ species with photos, calls, identification tips, lookalikes, range maps and the best months to see them. Filter by country, national park, time of year and conservation status. It works in any browser, right now.</p>
+      <p>Our free Bird Guide covers 9,516 species with photos, calls, identification tips, lookalikes, range maps and the best months to see them. Filter by country, national park, time of year and conservation status. It works in any browser, right now.</p>
       <p style="margin-top: 24px;"><a class="btn" style="background: var(--gold); color: #2E2A25;" href="birds/">Open the Bird Guide</a></p>
       <p class="web-more">Also free on the web: <a href="daily/">Daily Bird</a>, a mystery bird to guess every day · <a href="cams/">Live cams</a> from nests and waterholes worldwide · <a href="community.html">Community</a>, clubs and counts near you</p>
     </div>
@@ -404,7 +409,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
         <div class="feat">
           <div class="ico"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div>
           <h3>Browse the whole world</h3>
-          <p>Explore more than 10,900 species by family and group, each with photos, calls, and a plain-language identification tip.</p>
+          <p>Explore 9,516 species by family and group, each with photos, calls, and a plain-language identification tip.</p>
         </div>
       </div>
     </div>
@@ -513,7 +518,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
       <div class="faq">
         <details open>
           <summary>Which birds does BeakBrain cover?</summary>
-          <p>More than 10,900 species, which is close to every bird you can see in the wild anywhere on Earth. For any country you pick, the birds are ranked by how common each one actually is there, from the everyday garden birds right up to the rarities and endemics. Each species comes with real photos, a call where one exists, its family and lookalikes, and a plain-language identification tip. Seasonality is built in too, so a pack can show only the birds present in the month you travel.</p>
+          <p>9,516 species, which is close to every bird you can see in the wild anywhere on Earth. For any country you pick, the birds are ranked by how common each one actually is there, from the everyday garden birds right up to the rarities and endemics. Each species comes with real photos, a call where one exists, its family and lookalikes, and a plain-language identification tip. Seasonality is built in too, so a pack can show only the birds present in the month you travel.</p>
         </details>
         <details>
           <summary>How does it actually help me learn?</summary>
@@ -561,8 +566,12 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
   </section>
 
   <footer>
-    <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/video/site-footer-poster.jpg" aria-label="A weaver at its hanging nest">
-      <source src="assets/video/site-footer.mp4" type="video/mp4" />
+    <!-- Below the fold, so it lazy-loads like the two in-page bands rather than
+         pulling 1.6MB into the initial network queue (panel review, 2026-08-12).
+         Keeps .hero-video for its cover/fade styling; bg-video routes it through the
+         IntersectionObserver below. -->
+    <video class="hero-video bg-video" muted loop playsinline preload="none" poster="assets/video/site-footer-poster.jpg" aria-label="A weaver at its hanging nest">
+      <source data-src="assets/video/site-footer.mp4" type="video/mp4" />
     </video>
     <div class="wrap foot">
       <span class="wordmark">BeakBrain</span>
@@ -570,6 +579,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
         <a href="birds/">Bird Guide</a>
         <a href="cams/">Live Cams</a>
         <a href="community.html">Find Your Community</a>
+        <a href="contribute.html">Contribute a Photo or Recording</a>
         <a href="mailto:hello@beakbrain.com">Contact</a>
         <a href="privacy.html">Privacy</a>
         <a href="terms.html">Terms</a>
@@ -581,7 +591,9 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
   <script>
     // Hero background loop: one stitched clip, 3 seconds from each source video.
     (function () {
-      var vids = document.querySelectorAll('.hero-video');
+      // :not(.bg-video) leaves the footer clip to the lazy loader below — it is
+      // below the fold and should not be fetched or played on page load.
+      var vids = document.querySelectorAll('.hero-video:not(.bg-video)');
       if (!vids.length) return;
       var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       vids.forEach(function (v) {
@@ -600,25 +612,27 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
       var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if (reduce) return; // poster image stays put as a static fallback
 
+      // .hero-video sits at opacity 0 until .ready lands on it, so anything carrying
+      // that class needs the same loadeddata hook the hero script gives its own
+      // videos, or it would lazy-load and then never become visible.
+      function activate(v) {
+        v.addEventListener('loadeddata', function () { v.classList.add('ready'); });
+        var source = v.querySelector('source[data-src]');
+        if (source) { source.src = source.dataset.src; v.load(); }
+        var p = v.play();
+        if (p && p.catch) { p.catch(function () {}); }
+      }
+
       if (!('IntersectionObserver' in window)) {
-        lazyVids.forEach(function (v) {
-          var source = v.querySelector('source[data-src]');
-          if (source) { source.src = source.dataset.src; v.load(); }
-          var p = v.play();
-          if (p && p.catch) { p.catch(function () {}); }
-        });
+        lazyVids.forEach(activate);
         return;
       }
 
       var io = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (!entry.isIntersecting) return;
-          var v = entry.target;
-          var source = v.querySelector('source[data-src]');
-          if (source) { source.src = source.dataset.src; v.load(); }
-          var p = v.play();
-          if (p && p.catch) { p.catch(function () {}); }
-          io.unobserve(v);
+          activate(entry.target);
+          io.unobserve(entry.target);
         });
       }, { rootMargin: '200px' });
 
