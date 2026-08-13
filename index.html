@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>BeakBrain, greet every bird by name</title>
+  <title>BeakBrain: learn to identify birds by sight and sound</title>
   <meta name="description" content="Learn to identify birds by sight and sound. Pick any country and BeakBrain builds a learning path from the most common birds up to the rarities, tuned to the month you travel." />
   <link rel="icon" href="assets/favicon.png" />
 
@@ -179,6 +179,9 @@
     .who-list .row b { font-family: var(--display); color: var(--green); font-size: 18px; white-space: nowrap; }
     .who-list .row span { color: var(--muted); }
 
+    /* Founder credential, above the fold. Quieter than the lede, louder than the note. */
+    .credential { margin-top: 14px; font-family: var(--display); font-weight: 600; font-size: 15px; color: #F2D98A; }
+
     /* Data-source strip: quiet, in one line on desktop, wrapping on a phone. */
     .sources { padding-top: 56px; text-align: center; }
     .sources-lead { font-family: var(--display); font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 2px; color: var(--gold-deep); margin-bottom: 16px; }
@@ -288,7 +291,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
     </video>
     <div class="wrap hero-inner">
       <h1>Greet every bird by name</h1>
-      <p class="lede">BeakBrain teaches you to identify birds before your trip. Pick a country and it builds a learning path from the most common birds up to the rarities, tuned to the time of year you travel.</p>
+      <p class="lede">Short daily rounds teach you the birds where you live, and the birds you will meet on your next trip, by sight and by sound. Anywhere in the world, tuned to the month you are there.</p>
       <!-- The primary action offers the product instead of asking for an email. This
            page linked the live, playable app zero times while its only conversion
            path was a waitlist for something a visitor could be playing in four
@@ -299,6 +302,10 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
         <a class="btn btn-ghost" href="#waitlist" style="color:#fff;border-color:rgba(255,255,255,0.5);">Join the waitlist</a>
       </div>
       <p class="note">Free, no account, works in your browser. Coming soon to iPhone and Android.</p>
+      <!-- The credential sat 80% down the page, after nine feature cards. It answers
+           the trust question the rest of the page is implicitly arguing, so it belongs
+           where the question is first asked (panel review, 2026-08-12). -->
+      <p class="credential">Built by a working field ecologist, with a doctorate from Oxford.</p>
     </div>
   </section>
 
@@ -322,10 +329,12 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
   <!-- Stat band -->
   <section class="wrap" style="padding-top: 72px;">
     <div class="stats">
-      <div class="stat"><b>9,516</b><span>species you can learn</span></div>
-      <div class="stat"><b>Every country</b><span>ranked by what is common there</span></div>
-      <div class="stat"><b>Photos and calls</b><span>for sight and sound</span></div>
-      <div class="stat"><b>Each month</b><span>tuned to when you travel</span></div>
+      <div class="stat"><b>9,516</b><span>species, close to every bird on Earth</span></div>
+      <div class="stat"><b>235</b><span>countries, each ranked by what is common there</span></div>
+      <div class="stat"><b>12</b><span>months, so a pack matches when you travel</span></div>
+      <!-- The fourth breaks the number pattern rather than pretending: "2 ways to know a
+           bird" was a stretch, and free-to-start is the more useful thing to say. -->
+      <div class="stat"><b>Free</b><span>to start, no account needed</span></div>
     </div>
   </section>
 
@@ -588,8 +597,8 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
     <div class="wrap">
       <div class="cta-band">
         <div class="cta-content">
-        <h2>Be first to know</h2>
-        <p>Join the waitlist and we will email you the day BeakBrain is ready.</p>
+        <h2>Start learning your first ten birds tonight</h2>
+        <p><a href="daily/" style="color:#F2D98A;font-weight:800;">Play a round now</a>, free and with no account. Join the waitlist too and we will email you the day the app lands on iPhone and Android.</p>
         <form class="waitlist" id="waitlistForm">
           <input type="email" name="email" id="waitlistEmail" placeholder="Your email address" aria-label="Your email address" required />
           <button class="btn btn-light" type="submit">Join the waitlist</button>
