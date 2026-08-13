@@ -34,11 +34,7 @@
     p { margin: 0; }
     a { color: var(--green); }
     .wrap { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
-    .wordmark { font-family: var(--display); font-weight: 700; color: var(--green); letter-spacing: -0.3px; text-decoration: none; display: inline-flex; align-items: center; gap: .42em; }
-    /* The mark is sized in em so it tracks the wordmark at every breakpoint, and
-       carries alt="" because the link text beside it already says BeakBrain. */
-    .wordmark .mark { height: 1.8em; width: auto; max-width: none; }
-    header:not(.scrolled) .wordmark .mark { filter: drop-shadow(0 0 3px rgba(255,255,255,.55)); }
+    .wordmark { font-family: var(--display); font-weight: 700; color: var(--green); letter-spacing: -0.3px; text-decoration: none; }
 
     header { position: fixed; top: 0; left: 0; right: 0; z-index: 30; background: transparent; border-bottom: 1px solid transparent; transition: background .28s ease, border-color .28s ease, backdrop-filter .28s ease; }
     header.scrolled { background: rgba(242, 232, 207, 0.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
@@ -200,7 +196,7 @@
 <body>
   <header>
     <div class="wrap nav">
-      <a class="wordmark" href="/"><img class="mark" src="/assets/puffin-mark.png" alt="" width="123" height="96" />BeakBrain</a>
+      <a class="wordmark" href="/">BeakBrain</a>
       <div class="nav-right">
         <a class="nav-link" href="/birds/">Bird Guide</a>
         <a class="nav-link" href="/daily/">Daily Bird</a>

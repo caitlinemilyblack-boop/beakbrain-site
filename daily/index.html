@@ -25,9 +25,7 @@ header .wrap{max-width:1080px;padding:0 28px}
 header{position:fixed;top:0;left:0;right:0;z-index:30;background:transparent;border-bottom:1px solid transparent;transition:background .28s ease,border-color .28s ease}
 header.scrolled{background:rgba(242,232,207,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:80px}
-.wordmark{font-family:var(--display);font-weight:700;color:#fff;letter-spacing:-.3px;text-decoration:none;font-size:24px;transition:color .28s ease;display:inline-flex;align-items:center;gap:.42em}
-.wordmark .mark{height:1.8em;width:auto;max-width:none}
-header:not(.scrolled) .wordmark .mark{filter:drop-shadow(0 0 3px rgba(255,255,255,.55))}
+.wordmark{font-family:var(--display);font-weight:700;color:#fff;letter-spacing:-.3px;text-decoration:none;font-size:24px;transition:color .28s ease}
 header.scrolled .wordmark{color:var(--green)}
 .nav>nav{display:flex;align-items:center;gap:24px}
 .nav a.lnk{color:#fff;text-decoration:none;font-family:var(--display);font-weight:600;font-size:15px;white-space:nowrap;transition:color .28s ease}
@@ -110,7 +108,7 @@ footer::after{content:"";position:absolute;inset:0;z-index:1;background:linear-g
 </head>
 <body>
 <header><div class="wrap-wide nav">
-  <a class="wordmark" href="/"><img class="mark" src="/assets/puffin-mark.png" alt="" width="123" height="96" />BeakBrain</a>
+  <a class="wordmark" href="/">BeakBrain</a>
   <nav><a class="lnk" href="/birds/">Bird Guide</a><a class="lnk" href="/daily/"><span class="lbl-full">Daily Bird</span><span class="lbl-short">Daily</span></a><a class="lnk" href="/cams/">Cams</a><a class="lnk" href="/community.html">Community</a><a class="btn" href="/#waitlist">Join the waitlist</a></nav>
   <details class="mnav"><summary aria-label="Site menu">Menu</summary><div class="navdrop"><a href="/birds/">Bird Guide</a><a href="/daily/">Daily Bird</a><a href="/cams/">Cams</a><a href="/community.html">Community</a><a href="/#waitlist">Join the waitlist</a></div></details>
 </div></header>

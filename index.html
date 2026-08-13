@@ -52,14 +52,7 @@
     a { color: var(--green); }
     img { max-width: 100%; display: block; }
 
-    .wordmark { font-family: var(--display); font-weight: 700; color: var(--green); letter-spacing: -0.3px; text-decoration: none; display: inline-flex; align-items: center; gap: .42em; }
-    /* The mark is sized in em so it tracks the wordmark at every breakpoint, and
-       carries alt="" because the link text beside it already says BeakBrain. */
-    .wordmark .mark { height: 1.8em; width: auto; max-width: none; }
-    /* Over the hero video the header is transparent and the puffin's black nape
-       merges into dark footage, so it gets a soft light lift until the header
-       goes solid. */
-    header:not(.scrolled) .wordmark .mark { filter: drop-shadow(0 0 3px rgba(255,255,255,.55)); }
+    .wordmark { font-family: var(--display); font-weight: 700; color: var(--green); letter-spacing: -0.3px; text-decoration: none; }
     .wrap { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
     .section { padding: 100px 0; }
     .eyebrow { font-family: var(--display); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; font-size: 13px; color: var(--gold-deep); }
@@ -263,7 +256,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
 <body>
   <header>
     <div class="wrap nav">
-      <a class="wordmark" href="#top"><img class="mark" src="/assets/puffin-mark.png" alt="" width="123" height="96" />BeakBrain</a>
+      <a class="wordmark" href="#top">BeakBrain</a>
       <div class="nav-right">
         <a class="nav-link" href="birds/">Bird Guide</a>
         <a class="nav-link" href="daily/">Daily Bird</a>
