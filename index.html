@@ -236,6 +236,10 @@
     .waitlist { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 30px; }
     .waitlist input { font-family: var(--body); font-size: 16px; padding: 15px 22px; border-radius: 999px; border: none; background: #fff; color: var(--ink); min-width: 300px; }
     .waitlist input:focus { outline: 3px solid var(--gold); outline-offset: 2px; }
+    /* The challenge takes the whole row under the field and the button, so it can
+       never squeeze either on a narrow phone. Zero height while unconfigured. */
+    .waitlist .turnstile { flex-basis: 100%; display: flex; justify-content: center; }
+    .waitlist .turnstile:empty { display: none; }
     .form-note { font-size: 14px; color: #C6D9BC; margin-top: 18px; }
     .form-done { font-family: var(--display); font-weight: 600; font-size: 20px; color: #fff; margin-top: 26px; }
 
@@ -609,6 +613,9 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
         <form class="waitlist" id="waitlistForm">
           <input type="email" name="email" id="waitlistEmail" placeholder="Your email address" aria-label="Your email address" required />
           <button class="btn btn-light" type="submit">Join the waitlist</button>
+          <!-- Turnstile mounts here, and only when TURNSTILE_SITE_KEY is set below.
+               Empty until then, so the row keeps its current two-item layout. -->
+          <div id="waitlistTurnstile" class="turnstile"></div>
         </form>
         <p class="form-note" id="waitlistNote">By joining you agree we can email you when the app launches. No spam, and you can unsubscribe any time. See our <a href="privacy.html" style="color:#F2D98A;">Privacy Policy</a>.</p>
         </div>
@@ -722,18 +729,85 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
 
     // Waitlist: log each signup to Supabase so the list is one place you can read in
     // the dashboard. The key below is the public, publishable key (safe in a browser).
+    //
+    // TWO ROADS, and which one is taken depends on ONE line.
+    //
+    // Set TURNSTILE_SITE_KEY to the site key of a Turnstile widget and the form
+    // routes through /api/waitlist (functions/api/waitlist.js), which redeems the
+    // token against siteverify with a secret the browser never holds, and answers
+    // the same 200 whether or not the address was already on the list — so the
+    // endpoint stops being a way to ask whether somebody signed up.
+    //
+    // Leave it empty and everything below behaves exactly as it did: a direct POST
+    // to Supabase. That is deliberate. The widget has to be created in the
+    // Cloudflare dashboard and two environment variables set on the Pages project,
+    // and none of that can happen from a commit. A form that breaks the moment this
+    // file ships would be worse than one that is not yet protected.
+    //
+    // The setup steps are written out at the top of functions/api/waitlist.js.
+    // The last of them is migration 0015, which revokes the anon INSERT that makes
+    // this direct road possible — until it runs, the road is still open to a script
+    // and Turnstile is a closed door beside an open one.
     (function () {
+      var TURNSTILE_SITE_KEY = '';
       var SUPABASE_URL = 'https://gvmrwlywoiygjfdqmmem.supabase.co';
       var SUPABASE_KEY = 'sb_publishable_2xvrrXvs9LXPDSA2wyL9rg_csttOyd7';
       var form = document.getElementById('waitlistForm');
       var note = document.getElementById('waitlistNote');
       if (!form) return;
+      var btn = form.querySelector('button');
+      var widgetId = null;
+
+      function fail(msg) {
+        btn.disabled = false; btn.textContent = 'Join the waitlist';
+        note.textContent = msg || 'Something went wrong. Please email hello@beakbrain.com and we will add you.';
+      }
+      function done(already) {
+        form.style.display = 'none';
+        note.className = 'form-done';
+        note.textContent = already
+          ? 'You are already on the list. We will be in touch.'
+          : 'Thank you. You are on the list, and we will email you when the app is live.';
+      }
+
+      if (TURNSTILE_SITE_KEY) {
+        var s = document.createElement('script');
+        s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+        s.async = true; s.defer = true;
+        s.onload = function () {
+          widgetId = window.turnstile.render('#waitlistTurnstile', {
+            sitekey: TURNSTILE_SITE_KEY,
+            theme: 'light',
+            action: 'waitlist'
+          });
+        };
+        document.head.appendChild(s);
+      }
+
       form.addEventListener('submit', function (e) {
         e.preventDefault();
         var email = document.getElementById('waitlistEmail').value.trim();
         if (!email) return;
-        var btn = form.querySelector('button');
         btn.disabled = true; btn.textContent = 'Joining';
+
+        if (TURNSTILE_SITE_KEY) {
+          var token = widgetId !== null && window.turnstile ? window.turnstile.getResponse(widgetId) : '';
+          if (!token) { fail('Please complete the check above, then try again.'); return; }
+          fetch('/api/waitlist', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: email, token: token })
+          }).then(function (res) {
+            // The server does not say whether the address was already there, and
+            // neither does this: one message, one meaning.
+            if (res.ok) { done(false); return; }
+            // A used token cannot be redeemed twice, so a retry needs a fresh one.
+            if (window.turnstile && widgetId !== null) window.turnstile.reset(widgetId);
+            fail(res.status === 403 ? 'That check did not pass. Please try again.' : null);
+          }).catch(function () { fail(); });
+          return;
+        }
+
         fetch(SUPABASE_URL + '/rest/v1/waitlist', {
           method: 'POST',
           headers: {
@@ -744,20 +818,9 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           },
           body: JSON.stringify({ email: email, source: 'beakbrain.com' })
         }).then(function (res) {
-          if (res.ok || res.status === 409) {
-            form.style.display = 'none';
-            note.className = 'form-done';
-            note.textContent = res.status === 409
-              ? 'You are already on the list. We will be in touch.'
-              : 'Thank you. You are on the list, and we will email you when the app is live.';
-          } else {
-            btn.disabled = false; btn.textContent = 'Join the waitlist';
-            note.textContent = 'Something went wrong. Please email hello@beakbrain.com and we will add you.';
-          }
-        }).catch(function () {
-          btn.disabled = false; btn.textContent = 'Join the waitlist';
-          note.textContent = 'Something went wrong. Please email hello@beakbrain.com and we will add you.';
-        });
+          if (res.ok || res.status === 409) { done(res.status === 409); }
+          else { fail(); }
+        }).catch(function () { fail(); });
       });
     })();
   </script>
