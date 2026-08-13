@@ -1,4 +1,17 @@
 /**
+ * UNUSED SINCE 2026-08-14, and kept deliberately.
+ *
+ * Cat closed the waitlist: the beta goes to the App Store and Play within days, so a
+ * list whose whole job was "we will tell you when it launches" had days left to live.
+ * The homepage form is gone, so nothing calls this and nothing on beakbrain.com
+ * collects personal data any more.
+ *
+ * It stays because it is finished, tested and inert (no TURNSTILE_SECRET means 503,
+ * and no caller means not even that), and because the next thing that needs a
+ * human-checked form on this site can use it as it stands. Migration 0015 revokes the
+ * anon INSERT this replaced, and with the form gone it is now safe to run at any time
+ * after the site deploy that removes the form.
+ *
  * POST /api/waitlist — the only path a waitlist signup should take.
  *
  * WHY THIS EXISTS

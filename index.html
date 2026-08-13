@@ -81,7 +81,7 @@
     .nav-link { color: #fff; text-decoration: none; font-family: var(--display); font-weight: 600; font-size: 15px; transition: color .28s ease; white-space: nowrap; }
     header.scrolled .nav .nav-link { color: var(--green); }
     .nav .btn { white-space: nowrap; }
-    /* Narrow widths: shorten labels, shrink, then drop the waitlist button (the hero
+    /* Narrow widths: shorten labels, shrink, then drop the nav CTA (the hero
        repeats it right below) — the section links stay visible at every width. */
     .lbl-short { display: none; }
     @media (max-width: 760px) {
@@ -223,13 +223,8 @@
     .cta-band { background: linear-gradient(150deg, #2C5134, #386641); border-radius: 30px; padding: 66px 40px; text-align: center; color: #fff; }
     .cta-band h2 { font-size: clamp(26px, 3.6vw, 36px); color: #fff; }
     .cta-band p { color: #DCEAD4; margin-top: 14px; font-size: 19px; }
-    .waitlist { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 30px; }
-    .waitlist input { font-family: var(--body); font-size: 16px; padding: 15px 22px; border-radius: 999px; border: none; background: #fff; color: var(--ink); min-width: 300px; }
-    .waitlist input:focus { outline: 3px solid var(--gold); outline-offset: 2px; }
     /* The challenge takes the whole row under the field and the button, so it can
        never squeeze either on a narrow phone. Zero height while unconfigured. */
-    .waitlist .turnstile { flex-basis: 100%; display: flex; justify-content: center; }
-    .waitlist .turnstile:empty { display: none; }
     .form-note { font-size: 14px; color: #C6D9BC; margin-top: 18px; }
     .form-done { font-family: var(--display); font-weight: 600; font-size: 20px; color: #fff; margin-top: 26px; }
 
@@ -277,9 +272,9 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
         <a class="nav-link" href="daily/">Daily Bird</a>
         <a class="nav-link" href="cams/">Cams</a>
         <a class="nav-link" href="community.html">Community</a>
-        <a class="btn" href="#waitlist">Join the waitlist</a>
+        <a class="btn" href="#get">Get the app</a>
       </div>
-<details class="mnav"><summary aria-label="Site menu">Menu</summary><div class="navdrop"><a href="birds/">Bird Guide</a><a href="daily/">Daily Bird</a><a href="cams/">Cams</a><a href="community.html">Community</a><a href="#waitlist">Join the waitlist</a></div></details>
+<details class="mnav"><summary aria-label="Site menu">Menu</summary><div class="navdrop"><a href="birds/">Bird Guide</a><a href="daily/">Daily Bird</a><a href="cams/">Cams</a><a href="community.html">Community</a><a href="#get">Get the app</a></div></details>
     </div>
   </header>
 
@@ -304,11 +299,12 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
       <!-- The primary action offers the product instead of asking for an email. This
            page linked the live, playable app zero times while its only conversion
            path was a waitlist for something a visitor could be playing in four
-           seconds (panel review, 2026-08-12). The waitlist survives as the secondary
-           action, which is where a waitlist belongs once a playable product exists. -->
+           seconds (panel review, 2026-08-12). The secondary action was that waitlist
+           until 2026-08-14, when the store beta made it pointless: both CTAs now offer
+           the product, one to play immediately and one to install. -->
       <div class="hero-cta">
         <a class="btn btn-light" href="daily/">Play a round now, free</a>
-        <a class="btn btn-ghost" href="#waitlist" style="color:#fff;border-color:rgba(255,255,255,0.5);">Join the waitlist</a>
+        <a class="btn btn-ghost" href="#get" style="color:#fff;border-color:rgba(255,255,255,0.5);">Get the app</a>
       </div>
       <p class="note">Free, no account, works in your browser. Coming soon to iPhone and Android.</p>
       <!-- The credential sat 80% down the page, below what were then nine feature
@@ -564,11 +560,11 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
         </details>
         <details>
           <summary>Is it on iPhone and Android?</summary>
-          <p>BeakBrain is coming to both. Join the waitlist and we will email you the day it is ready to download.</p>
+          <p>The beta is arriving on both. Until it lands you can play the full thing in any browser, on a phone or a laptop, with nothing to install.</p>
         </details>
         <details>
           <summary>Is there a dark mode?</summary>
-          <p>Dark mode is on the way, and it sits high on the list. BeakBrain opens in one warm cream theme today, picked so that photographs and painted plates hold their true colour on any screen. Dawn and dusk are the best hours to be out with the birds, so a proper dark theme belongs here and it is coming. Join the waitlist and we will tell you the day it arrives.</p>
+          <p>Dark mode is on the way, and it sits high on the list. BeakBrain opens in one warm cream theme today, picked so that photographs and painted plates hold their true colour on any screen. Dawn and dusk are the best hours to be out with the birds, so a proper dark theme belongs here and it is coming.</p>
         </details>
         <details>
           <summary>Where do the photos and sounds come from?</summary>
@@ -578,21 +574,30 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
     </div>
   </section>
 
-  <!-- Waitlist CTA -->
-  <section class="section" id="waitlist">
+  <!-- Launch CTA -->
+  <!-- Was the waitlist. Cat's call, 2026-08-14: the beta goes to the App Store and
+       Play within days, so an email list whose entire job is "we will tell you when
+       it launches" has days left to live and costs more than it earns. It was also
+       the only thing on this site collecting personal data, which took a Turnstile
+       widget, two migrations and a Pages Function to defend.
+
+       STORE_IOS and STORE_ANDROID below are empty until the listings are live. While
+       they are empty this section offers the browser version, which is real and
+       playable today, and says the apps are days away. Filling them in switches it to
+       the two store buttons. Same pattern the Turnstile key used, for the same reason:
+       the copy that ships must never point at a link that does not exist yet. -->
+  <section class="section" id="get">
     <div class="wrap">
       <div class="cta-band">
         <div class="cta-content">
         <h2>Start learning your first ten birds tonight</h2>
-        <p><a href="daily/" style="color:#F2D98A;font-weight:800;">Play a round now</a>, free and with no account. Join the waitlist too and we will email you the day the app lands on iPhone and Android.</p>
-        <form class="waitlist" id="waitlistForm">
-          <input type="email" name="email" id="waitlistEmail" placeholder="Your email address" aria-label="Your email address" required />
-          <button class="btn btn-light" type="submit">Join the waitlist</button>
-          <!-- Turnstile mounts here, and only when TURNSTILE_SITE_KEY is set below.
-               Empty until then, so the row keeps its current two-item layout. -->
-          <div id="waitlistTurnstile" class="turnstile"></div>
-        </form>
-        <p class="form-note" id="waitlistNote">By joining you agree we can email you when the app launches. No spam, and you can unsubscribe any time. See our <a href="privacy.html" style="color:#F2D98A;">Privacy Policy</a>.</p>
+        <p id="getLede">Play a round right now in your browser, free and with no account. The iPhone and Android beta lands in the next few days.</p>
+        <div class="hero-cta" style="justify-content:center;margin-top:26px;">
+          <a class="btn btn-light" href="daily/">Play a round now, free</a>
+          <a class="btn btn-ghost" id="getIos" href="https://app.beakbrain.com/" style="color:#fff;border-color:rgba(255,255,255,0.5);display:none;">Get it on iPhone</a>
+          <a class="btn btn-ghost" id="getAndroid" href="https://app.beakbrain.com/" style="color:#fff;border-color:rgba(255,255,255,0.5);display:none;">Get it on Android</a>
+        </div>
+        <p class="form-note" id="getNote">Works in any browser today. No account, no email, nothing to sign up for.</p>
         </div>
       </div>
     </div>
@@ -702,101 +707,23 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
       img.src = 'assets/cat.jpg';
     })();
 
-    // Waitlist: log each signup to Supabase so the list is one place you can read in
-    // the dashboard. The key below is the public, publishable key (safe in a browser).
-    //
-    // TWO ROADS, and which one is taken depends on ONE line.
-    //
-    // Set TURNSTILE_SITE_KEY to the site key of a Turnstile widget and the form
-    // routes through /api/waitlist (functions/api/waitlist.js), which redeems the
-    // token against siteverify with a secret the browser never holds, and answers
-    // the same 200 whether or not the address was already on the list — so the
-    // endpoint stops being a way to ask whether somebody signed up.
-    //
-    // Leave it empty and everything below behaves exactly as it did: a direct POST
-    // to Supabase. That is deliberate. The widget has to be created in the
-    // Cloudflare dashboard and two environment variables set on the Pages project,
-    // and none of that can happen from a commit. A form that breaks the moment this
-    // file ships would be worse than one that is not yet protected.
-    //
-    // The setup steps are written out at the top of functions/api/waitlist.js.
-    // The last of them is migration 0015, which revokes the anon INSERT that makes
-    // this direct road possible — until it runs, the road is still open to a script
-    // and Turnstile is a closed door beside an open one.
+    // The two store listings. Empty until they exist, and the section above reads
+    // correctly in both states rather than promising a link that 404s. Fill these in
+    // on launch day and nothing else on the page needs touching.
     (function () {
-      var TURNSTILE_SITE_KEY = '';
-      var SUPABASE_URL = 'https://gvmrwlywoiygjfdqmmem.supabase.co';
-      var SUPABASE_KEY = 'sb_publishable_2xvrrXvs9LXPDSA2wyL9rg_csttOyd7';
-      var form = document.getElementById('waitlistForm');
-      var note = document.getElementById('waitlistNote');
-      if (!form) return;
-      var btn = form.querySelector('button');
-      var widgetId = null;
-
-      function fail(msg) {
-        btn.disabled = false; btn.textContent = 'Join the waitlist';
-        note.textContent = msg || 'Something went wrong. Please email hello@beakbrain.com and we will add you.';
+      var STORE_IOS = '';
+      var STORE_ANDROID = '';
+      var ios = document.getElementById('getIos');
+      var android = document.getElementById('getAndroid');
+      var lede = document.getElementById('getLede');
+      var note = document.getElementById('getNote');
+      if (!ios || !android) return;
+      if (STORE_IOS) { ios.href = STORE_IOS; ios.style.display = ''; }
+      if (STORE_ANDROID) { android.href = STORE_ANDROID; android.style.display = ''; }
+      if (STORE_IOS || STORE_ANDROID) {
+        lede.textContent = 'Download the beta, or play a round right now in your browser. Free either way, with no account.';
+        note.textContent = 'Free to start. The browser version works everywhere, including on a laptop.';
       }
-      function done(already) {
-        form.style.display = 'none';
-        note.className = 'form-done';
-        note.textContent = already
-          ? 'You are already on the list. We will be in touch.'
-          : 'Thank you. You are on the list, and we will email you when the app is live.';
-      }
-
-      if (TURNSTILE_SITE_KEY) {
-        var s = document.createElement('script');
-        s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
-        s.async = true; s.defer = true;
-        s.onload = function () {
-          widgetId = window.turnstile.render('#waitlistTurnstile', {
-            sitekey: TURNSTILE_SITE_KEY,
-            theme: 'light',
-            action: 'waitlist'
-          });
-        };
-        document.head.appendChild(s);
-      }
-
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var email = document.getElementById('waitlistEmail').value.trim();
-        if (!email) return;
-        btn.disabled = true; btn.textContent = 'Joining';
-
-        if (TURNSTILE_SITE_KEY) {
-          var token = widgetId !== null && window.turnstile ? window.turnstile.getResponse(widgetId) : '';
-          if (!token) { fail('Please complete the check above, then try again.'); return; }
-          fetch('/api/waitlist', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email: email, token: token })
-          }).then(function (res) {
-            // The server does not say whether the address was already there, and
-            // neither does this: one message, one meaning.
-            if (res.ok) { done(false); return; }
-            // A used token cannot be redeemed twice, so a retry needs a fresh one.
-            if (window.turnstile && widgetId !== null) window.turnstile.reset(widgetId);
-            fail(res.status === 403 ? 'That check did not pass. Please try again.' : null);
-          }).catch(function () { fail(); });
-          return;
-        }
-
-        fetch(SUPABASE_URL + '/rest/v1/waitlist', {
-          method: 'POST',
-          headers: {
-            'apikey': SUPABASE_KEY,
-            'Authorization': 'Bearer ' + SUPABASE_KEY,
-            'Content-Type': 'application/json',
-            'Prefer': 'return=minimal'
-          },
-          body: JSON.stringify({ email: email, source: 'beakbrain.com' })
-        }).then(function (res) {
-          if (res.ok || res.status === 409) { done(res.status === 409); }
-          else { fail(); }
-        }).catch(function () { fail(); });
-      });
     })();
   </script>
 </body>
