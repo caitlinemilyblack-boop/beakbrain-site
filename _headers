@@ -31,8 +31,15 @@
 /fonts/*
   Cache-Control: public, max-age=2592000
 
-# Images, video and the site CSS/JS. A week, so a correction still reaches people
-# in reasonable time given these names are not hashed.
+# The app screenshots, whose names ARE their content (build/hash-screens.py). This
+# rule must come before /assets/* below to win. Added 2026-08-14: replacing the six
+# screenshots under fixed names shipped the files and changed nothing anybody saw,
+# because the week-long cache below kept serving the old bytes from the same URL.
+/assets/screens/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Everything else under assets: images, video and the site CSS/JS. A week, so a
+# correction still reaches people in reasonable time given these names are not hashed.
 /assets/*
   Cache-Control: public, max-age=604800
 

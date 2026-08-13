@@ -96,9 +96,6 @@
     .shot { flex: 0 0 auto; width: 208px; margin: 0; scroll-snap-align: center; text-align: center; }
     .shot img { width: 100%; height: auto; display: block; border-radius: 30px; border: 7px solid var(--ink); box-shadow: 0 14px 34px rgba(46,42,37,0.20); background: var(--bg); }
     .shot figcaption { font-family: var(--display); font-weight: 600; font-size: 15px; color: var(--muted); margin-top: 15px; }
-    /* Says out loud that there is more to the right, because a strip that is cut off
-       by the container edge with no scrollbar in view reads as a layout accident. */
-    .shots-hint { font-size: 13.5px; color: var(--muted); margin-top: 12px; }
     @media (prefers-reduced-motion: reduce) { .shots { scroll-snap-type: none; } }
 
     /* Header: fixed so it overlays the hero video (transparent), solid once scrolled */
@@ -351,25 +348,23 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
     </div>
   </section>
 
-  <!-- Where the data comes from. For this audience these five names ARE the social
-       proof, and they answer the "is this AI slop" reflex before it forms. They were
-       buried in a collapsed FAQ two thirds down the page (panel review, 2026-08-12).
-       Named rather than logo-walled: a birder reads AviList and GBIF and knows exactly
-       what the app is built on. -->
-  <section class="wrap sources" aria-label="Data sources">
-    <div class="sources-panel">
-      <p class="sources-eyebrow">The data</p>
-      <h2 class="sources-lead">Built on the open data birders already trust</h2>
-      <ul class="sources-list">
-        <li><a href="https://www.avilist.org" target="_blank" rel="noopener"><b>AviList</b> <span>Taxonomy</span></a></li>
-        <li><a href="https://www.gbif.org" target="_blank" rel="noopener"><b>GBIF</b> <span>Range and season</span></a></li>
-        <li><a href="https://xeno-canto.org" target="_blank" rel="noopener"><b>Xeno-canto</b> <span>Calls and song</span></a></li>
-        <li><a href="https://commons.wikimedia.org" target="_blank" rel="noopener"><b>Wikimedia Commons</b> <span>Photos and plates</span></a></li>
-        <li><a href="https://www.inaturalist.org" target="_blank" rel="noopener"><b>iNaturalist</b> <span>Photos</span></a></li>
-      </ul>
-      <p class="sources-note">Every photo and recording names the person who made it and its licence.</p>
-    </div>
-  </section>
+  <!-- The data-sources band stood here and is deleted, 2026-08-14 (Cat) — the whole
+       section, not just the styling it had been given an hour earlier.
+
+       It named AviList, GBIF, Xeno-canto, Wikimedia Commons and iNaturalist, and the
+       argument for it was that for a birding audience those five names are the social
+       proof and answer the "is this AI slop" reflex before it forms (panel review,
+       2026-08-12). What the panel did not weigh is that the section spends the reader's
+       attention, immediately after the hero, on five outbound links to other websites —
+       four of which are places you could go and look a bird up instead. That is an odd
+       thing to put directly under a promise to teach you.
+
+       The claim itself is not lost. The Bird Guide band still says the data is real and
+       is free to check, and every photo, plate and recording on the site and in the app
+       still carries its author and licence under the media it belongs to, which is a
+       stronger form of the same argument than a list of logos: it is the receipt rather
+       than the assertion. If it ever comes back, it belongs low on the page near the
+       FAQ, not above the stat band. -->
 
   <!-- Stat band -->
   <section class="wrap" style="padding-top: 72px;">
@@ -406,17 +401,23 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
          old shot predated the card and still carried the retired "I know this"
          button.
 
-         build/make-og-image.py composes the share card from screen-2, so re-run it
-         after touching these (deploy.sh --check will refuse the deploy otherwise). -->
+         The filenames carry a content hash, added 2026-08-14 after the first attempt
+         at this change appeared to work and did not. /assets/* is cached for a week
+         and these names were fixed, so the new PNGs uploaded to Cloudflare and every
+         edge and every browser went on serving the old bytes from cache under the
+         same URL. Verifying the markup said the change had landed; the bytes said it
+         had not. A hashed name cannot do that: different image, different URL, and
+         nothing to purge. Rehash with build/hash-screens.py after replacing any of
+         them, and re-run build/make-og-image.py, which composes the share card from
+         screen-2 (deploy.sh --check refuses the deploy if it is stale). -->
     <div class="shots">
-      <figure class="shot"><img src="assets/screens/screen-1.png" alt="The Play hub: a twelve day streak, achievements, quick games and the countries you are learning" loading="lazy" /><figcaption>Your daily round</figcaption></figure>
-      <figure class="shot"><img src="assets/screens/screen-2.png" alt="A photo question answered correctly, naming the Great Tit" loading="lazy" /><figcaption>Learn by sight</figcaption></figure>
-      <figure class="shot"><img src="assets/screens/screen-3.png" alt="A call question answered correctly, naming the Great Egret" loading="lazy" /><figcaption>Learn by ear</figcaption></figure>
-      <figure class="shot"><img src="assets/screens/screen-4.png" alt="The learning path for the Netherlands, with a map and the Starter Pack" loading="lazy" /><figcaption>Your learning path</figcaption></figure>
-      <figure class="shot"><img src="assets/screens/screen-5.png" alt="A Turkey Vulture collector card with its range, months and status" loading="lazy" /><figcaption>A card for every bird</figcaption></figure>
-      <figure class="shot"><img src="assets/screens/screen-6.png" alt="Browsing birds by family, as folders in a drawer" loading="lazy" /><figcaption>Browse every family</figcaption></figure>
+      <figure class="shot"><img src="assets/screens/screen-1.2160c9cf0f.png" alt="The Play hub: a twelve day streak, achievements, quick games and the countries you are learning" loading="lazy" /><figcaption>Your daily round</figcaption></figure>
+      <figure class="shot"><img src="assets/screens/screen-2.290ec76e1b.png" alt="A photo question answered correctly, naming the Great Tit" loading="lazy" /><figcaption>Learn by sight</figcaption></figure>
+      <figure class="shot"><img src="assets/screens/screen-3.e0c5f657cd.png" alt="A call question answered correctly, naming the Great Egret" loading="lazy" /><figcaption>Learn by ear</figcaption></figure>
+      <figure class="shot"><img src="assets/screens/screen-4.8726f9cc7b.png" alt="The learning path for the Netherlands, with a map and the Starter Pack" loading="lazy" /><figcaption>Your learning path</figcaption></figure>
+      <figure class="shot"><img src="assets/screens/screen-5.5d29af31c8.png" alt="A Turkey Vulture collector card with its range, months and status" loading="lazy" /><figcaption>A card for every bird</figcaption></figure>
+      <figure class="shot"><img src="assets/screens/screen-6.10c458386a.png" alt="Browsing birds by family, as folders in a drawer" loading="lazy" /><figcaption>Browse every family</figcaption></figure>
     </div>
-    <p class="shots-hint">Scroll sideways for more.</p>
   </section>
 
   <section class="section" id="how">
