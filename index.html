@@ -602,7 +602,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
         </details>
         <details>
           <summary>Is it on iPhone and Android?</summary>
-          <p>The beta is arriving on both. Until it lands you can play the full thing in any browser, on a phone or a laptop, with nothing to install.</p>
+          <p>The beta is arriving on both. Until it lands you can <a href="https://app.beakbrain.com/">play the full thing in any browser</a>, on a phone or a laptop, with nothing to install.</p>
         </details>
         <details>
           <summary>Is there a dark mode?</summary>
@@ -633,9 +633,16 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
       <div class="cta-band">
         <div class="cta-content">
         <h2>Start learning your first ten birds tonight</h2>
-        <p id="getLede">Play a round right now in your browser, free and with no account. The iPhone and Android beta lands in the next few days.</p>
+        <p id="getLede">Play right now in your browser, free and with no account. Take today's bird, or open the full app. The iPhone and Android beta lands in the next few days.</p>
         <div class="hero-cta" style="justify-content:center;margin-top:26px;">
           <a class="btn btn-light" href="daily/">Play a round now, free</a>
+          <!-- The only always-visible link to the app on the whole site. Everything
+               else here goes to /daily/, so until the store buttons appear this is
+               how a reader reaches the thing the page spends 600 lines describing —
+               it was reachable only by typing the subdomain (live review, 2026-08-14).
+               It stays visible after launch too: the browser version is a real
+               answer for a laptop, and the FAQ promises it. -->
+          <a class="btn btn-ghost" id="getWeb" href="https://app.beakbrain.com/" style="color:#fff;border-color:rgba(255,255,255,0.5);">Open the full app in your browser</a>
           <a class="btn btn-ghost" id="getIos" href="https://app.beakbrain.com/" style="color:#fff;border-color:rgba(255,255,255,0.5);display:none;">Get it on iPhone</a>
           <a class="btn btn-ghost" id="getAndroid" href="https://app.beakbrain.com/" style="color:#fff;border-color:rgba(255,255,255,0.5);display:none;">Get it on Android</a>
         </div>
@@ -759,12 +766,16 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
       var android = document.getElementById('getAndroid');
       var lede = document.getElementById('getLede');
       var note = document.getElementById('getNote');
+      // The browser app. Visible in both states; on launch day the store buttons
+      // lead and this one steps back into a shorter label beside them.
+      var web = document.getElementById('getWeb');
       if (!ios || !android) return;
       if (STORE_IOS) { ios.href = STORE_IOS; ios.style.display = ''; }
       if (STORE_ANDROID) { android.href = STORE_ANDROID; android.style.display = ''; }
       if (STORE_IOS || STORE_ANDROID) {
-        lede.textContent = 'Download the beta, or play a round right now in your browser. Free either way, with no account.';
+        lede.textContent = 'Download the beta, or play right now in your browser. Free either way, with no account.';
         note.textContent = 'Free to start. The browser version works everywhere, including on a laptop.';
+        if (web) web.textContent = 'Play in your browser';
       }
     })();
   </script>
