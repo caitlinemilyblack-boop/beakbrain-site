@@ -52,8 +52,11 @@
     .nav-right { display: flex; align-items: center; gap: 24px; }
     .nav-link { color: #fff; text-decoration: none; font-family: var(--display); font-weight: 600; font-size: 15px; transition: color .28s ease; white-space: nowrap; }
     header.scrolled .nav .nav-link { color: var(--green); }
-    .nav .btn { white-space: nowrap; }
-    @media (max-width: 860px) {
+    /* See the note on the same rule in cams/index.html: the pill sizes itself
+       rather than inheriting page leading, and shrinks at the sitewide 760px
+       rather than at 860px. */
+    .nav .btn { white-space: nowrap; line-height: 1.6; }
+    @media (max-width: 760px) {
       .nav-right { gap: 14px; }
       .nav-link { font-size: 13.5px; }
       .nav .btn { font-size: 14px; padding: 10px 16px; }

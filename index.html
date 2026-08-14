@@ -108,7 +108,9 @@
     .nav-right { display: flex; align-items: center; gap: 24px; }
     .nav-link { color: #fff; text-decoration: none; font-family: var(--display); font-weight: 600; font-size: 15px; transition: color .28s ease; white-space: nowrap; }
     header.scrolled .nav .nav-link { color: var(--green); }
-    .nav .btn { white-space: nowrap; }
+    /* The pill sets its own leading rather than inheriting this page's 1.65 body
+       line-height, which made it 0.8px taller here than on every other page. */
+    .nav .btn { white-space: nowrap; line-height: 1.6; }
     /* Narrow widths: shorten labels, shrink, then drop the nav CTA (the hero
        repeats it right below) — the section links stay visible at every width. */
     .lbl-short { display: none; }
@@ -394,12 +396,12 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
          them, and re-run build/make-og-image.py, which composes the share card from
          screen-2 (deploy.sh --check refuses the deploy if it is stale). -->
     <div class="shots">
-      <figure class="shot"><img src="assets/screens/screen-1.2160c9cf0f.png" alt="The Play hub: a twelve day streak, achievements, quick games and the countries you are learning" loading="lazy" /><figcaption>Your daily round</figcaption></figure>
+      <figure class="shot"><img src="assets/screens/screen-1.39a06b3df9.png" alt="The Play hub: a twelve day streak, achievements, quick games, and Iceland in progress at twelve birds mastered" loading="lazy" /><figcaption>Your daily round</figcaption></figure>
       <figure class="shot"><img src="assets/screens/screen-2.290ec76e1b.png" alt="A photo question answered correctly, naming the Great Tit" loading="lazy" /><figcaption>Learn by sight</figcaption></figure>
-      <figure class="shot"><img src="assets/screens/screen-3.e0c5f657cd.png" alt="A call question answered correctly, naming the Great Egret" loading="lazy" /><figcaption>Learn by ear</figcaption></figure>
-      <figure class="shot"><img src="assets/screens/screen-4.8726f9cc7b.png" alt="The learning path for the Netherlands, with a map and the Starter Pack" loading="lazy" /><figcaption>Your learning path</figcaption></figure>
-      <figure class="shot"><img src="assets/screens/screen-5.5d29af31c8.png" alt="A Turkey Vulture collector card with its range, months and status" loading="lazy" /><figcaption>A card for every bird</figcaption></figure>
-      <figure class="shot"><img src="assets/screens/screen-6.10c458386a.png" alt="Browsing birds by family, as folders in a drawer" loading="lazy" /><figcaption>Browse every family</figcaption></figure>
+      <figure class="shot"><img src="assets/screens/screen-3.1d0fe635a6.png" alt="A call question answered correctly, naming the Atlantic Puffin, with Common Murre and Black Guillemot as the other choices" loading="lazy" /><figcaption>Learn by ear</figcaption></figure>
+      <figure class="shot"><img src="assets/screens/screen-4.314cf1f397.png" alt="The learning path for Iceland, with a map of its birding sites and the Starter Pack" loading="lazy" /><figcaption>Your learning path</figcaption></figure>
+      <figure class="shot"><img src="assets/screens/screen-5.0a9f739ada.png" alt="An Atlantic Puffin collector card with its range, months and conservation status" loading="lazy" /><figcaption>A card for every bird</figcaption></figure>
+      <figure class="shot"><img src="assets/screens/screen-6.2973def408.png" alt="Searching Browse for puffin, showing the Atlantic Puffin card among 23 results" loading="lazy" /><figcaption>Look up any bird</figcaption></figure>
     </div>
   </section>
 
@@ -520,7 +522,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
            much they already know. -->
       <div class="section-head center" style="margin-bottom:0;">
         <h2>Made for the birder who wants to know</h2>
-        <p>Whether this is your first spring paying attention or your fortieth, the job is the same: turning a bird you have seen into a bird you can name.</p>
+        <p>Whether this is your first spring paying attention or your 40th, the job is the same: turning a bird you have seen into a bird you can name.</p>
       </div>
     </div>
   </section>

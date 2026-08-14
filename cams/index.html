@@ -52,8 +52,15 @@
     .nav-right { display: flex; align-items: center; gap: 24px; }
     .nav-link { color: #fff; text-decoration: none; font-family: var(--display); font-weight: 600; font-size: 15px; transition: color .28s ease; white-space: nowrap; }
     header.scrolled .nav .nav-link { color: var(--green); }
-    .nav .btn { white-space: nowrap; }
-    @media (max-width: 860px) {
+    /* line-height is set here rather than inherited: the pill is the one piece of
+       furniture that appears on every page, and it was taking each page's own body
+       leading with it (the home page runs 1.65, everywhere else 1.6), so the same
+       button stood 54.4px tall there and 53.6px here. It sizes itself now.
+       The shrink breakpoint is 760px sitewide — this page and Trips fired at 860px,
+       which is why the CTA went small on Cams and Trips alone at laptop widths
+       (Cat, 2026-08-14). */
+    .nav .btn { white-space: nowrap; line-height: 1.6; }
+    @media (max-width: 760px) {
       .nav-right { gap: 14px; }
       .nav-link { font-size: 13.5px; }
       .nav .btn { font-size: 14px; padding: 10px 16px; }
