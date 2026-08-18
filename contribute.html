@@ -6,6 +6,9 @@
   <title>Contribute Photos & Recordings | BeakBrain</title>
   <meta name="description" content="Help fill the gaps in BeakBrain. Add your bird photos and call recordings so every species can be learned by sight and sound." />
   <link rel="icon" href="assets/favicon.png" />
+  <link rel="preload" as="image" href="assets/video/contribute-hero-poster.jpg" fetchpriority="high" />
+  <link rel="preload" as="font" type="font/woff" href="fonts/Fredoka-700.woff" crossorigin />
+  <link rel="preload" as="font" type="font/woff" href="fonts/Nunito-400.woff" crossorigin />
   <meta property="og:title" content="Contribute Photos & Recordings | BeakBrain" />
   <meta property="og:description" content="Add your bird photos and call recordings so every species can be learned by sight and sound." />
   <meta property="og:type" content="website" />
@@ -54,7 +57,7 @@
     header.scrolled .nav-links a { color: var(--green); }
     @media (max-width: 640px) { .nav .wordmark { font-size: 20px; } .nav-links { gap: 14px; } .nav-links a { font-size: 14px; } }
 
-    .hero { position: relative; margin: 0; min-height: 300px; display: flex; align-items: flex-end; overflow: hidden; background: linear-gradient(150deg, #2C5134, #386641); }
+    .hero { position: relative; margin: 0; min-height: 300px; display: flex; align-items: flex-end; overflow: hidden; background-color: #386641; background-image: url('assets/video/contribute-hero-poster.jpg'), linear-gradient(150deg, #2C5134, #386641); background-size: cover; background-position: center; }
     .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0; transition: opacity .9s ease; }
     .hero-video.ready { opacity: 1; }
     .hero::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(30,45,30,.24) 0%, rgba(30,45,30,.44) 55%, rgba(22,36,24,.78) 100%); }

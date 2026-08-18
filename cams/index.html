@@ -6,6 +6,9 @@
   <title>Live Bird Cams Around the World | BeakBrain</title>
   <meta name="description" content="A worldwide directory of live bird cams: eagle nests, osprey platforms, puffin burrows, feeders, waterholes and more. See what is streaming right now, what returns in season, which species to look for, and the best months to watch." />
   <link rel="icon" href="/assets/favicon.png" />
+  <link rel="preload" as="image" href="/assets/video/cams-hero-poster.jpg" fetchpriority="high" />
+  <link rel="preload" as="font" type="font/woff" href="/fonts/Fredoka-700.woff" crossorigin />
+  <link rel="preload" as="font" type="font/woff" href="/fonts/Nunito-400.woff" crossorigin />
   <link rel="canonical" href="https://beakbrain.com/cams/" />
   <meta property="og:title" content="Live Bird Cams Around the World | BeakBrain" />
   <meta property="og:description" content="Eagle nests, osprey platforms, puffin burrows, feeders and waterholes. What is live right now, what returns in season, and the species on every cam." />
@@ -79,7 +82,7 @@
     header.scrolled .nav .btn { background: var(--green); color: #fff; }
     header.scrolled .nav .btn:hover { background: var(--green-dark); }
 
-    .hero { position: relative; min-height: 46vh; display: flex; align-items: center; overflow: hidden; background: linear-gradient(150deg, #2C5134 0%, #386641 45%, #4A7A3E 100%); }
+    .hero { position: relative; min-height: 46vh; display: flex; align-items: center; overflow: hidden; background-color: #386641; background-image: url('/assets/video/cams-hero-poster.jpg'), linear-gradient(150deg, #2C5134 0%, #386641 45%, #4A7A3E 100%); background-size: cover; background-position: center; }
     .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0; transition: opacity .9s ease; }
     .hero-video.ready { opacity: 1; }
     .hero::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(30,45,30,0.30) 0%, rgba(30,45,30,0.52) 60%, rgba(22,36,24,0.82) 100%); }

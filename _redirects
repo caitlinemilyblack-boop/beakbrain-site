@@ -7,3 +7,11 @@
 # even when the files are uploaded by mistake. Deploy with ./deploy.sh, which stages
 # a clean tree; this line is the second layer.
 /build/* / 301
+
+# The plate bibliography was 27 letter pages until 2026-08-17 and is now a single
+# searchable document. The letter URLs were in sitemap-hubs.xml and were indexed,
+# so they are redirected rather than left to 404. The splat is scoped one level
+# below /symbols/plates/ so it cannot swallow /symbols/plates/ itself — a rule
+# that collides with a real filename is what 308-looped the fonts on 2026-08-14.
+/symbols/plates/:letter /symbols/plates/ 301
+/symbols/plates/:letter/* /symbols/plates/ 301

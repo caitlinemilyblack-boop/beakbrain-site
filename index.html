@@ -6,6 +6,9 @@
   <title>BeakBrain: learn to identify birds by sight and sound</title>
   <meta name="description" content="Learn to identify birds by sight and sound. Pick any country and BeakBrain builds a learning path from the most common birds up to the rarities, tuned to the month you travel." />
   <link rel="icon" href="assets/favicon.png" />
+  <link rel="preload" as="image" href="assets/video/hero-poster.jpg" fetchpriority="high" />
+  <link rel="preload" as="font" type="font/woff" href="fonts/Fredoka-700.woff" crossorigin />
+  <link rel="preload" as="font" type="font/woff" href="fonts/Nunito-400.woff" crossorigin />
 
   <meta property="og:title" content="BeakBrain, greet every bird by name" />
   <meta property="og:description" content="Short daily rounds that teach you the birds where you live, by sight and by sound, until you know them without looking them up." />
@@ -18,12 +21,12 @@
   <meta property="og:image" content="https://beakbrain.com/assets/og-card.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="BeakBrain: learn to identify birds by sight and sound. 9,516 species, 235 countries, free to start." />
+  <meta property="og:image:alt" content="BeakBrain: learn to identify birds by sight and sound. 10,927 species, 235 countries, free to start." />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="BeakBrain, greet every bird by name" />
   <meta name="twitter:description" content="Short daily rounds that teach you the birds where you live, by sight and by sound, until you know them without looking them up." />
   <meta name="twitter:image" content="https://beakbrain.com/assets/og-card.png" />
-  <meta name="twitter:image:alt" content="BeakBrain: learn to identify birds by sight and sound. 9,516 species, 235 countries, free to start." />
+  <meta name="twitter:image:alt" content="BeakBrain: learn to identify birds by sight and sound. 10,927 species, 235 countries, free to start." />
 
   <style>
     /* Real app fonts, self-hosted (subset to Latin). The same faces the app uses. */
@@ -142,7 +145,7 @@
     .btn-ghost:hover { background: var(--surface-alt); }
 
     /* Hero */
-    .hero { position: relative; min-height: 90vh; display: flex; align-items: center; overflow: hidden; background: linear-gradient(150deg, #2C5134 0%, #386641 45%, #4A7A3E 100%); }
+    .hero { position: relative; min-height: 90vh; display: flex; align-items: center; overflow: hidden; background-color: #386641; background-image: url('assets/video/hero-poster.jpg'), linear-gradient(150deg, #2C5134 0%, #386641 45%, #4A7A3E 100%); background-size: cover; background-position: center; }
     .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0; transition: opacity 0.9s ease; }
     .hero-video.ready { opacity: 1; }
     .hero::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(30,45,30,0.34) 0%, rgba(30,45,30,0.52) 55%, rgba(22,36,24,0.82) 100%); }
@@ -353,7 +356,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
   <!-- Stat band -->
   <section class="wrap" style="padding-top: 72px;">
     <div class="stats">
-      <div class="stat"><b>9,516</b><span>species, close to every bird on Earth</span></div>
+      <div class="stat"><b>10,927</b><span>species, close to every bird on Earth</span></div>
       <div class="stat"><b>235</b><span>countries, each ranked by what is common there</span></div>
       <div class="stat"><b>12</b><span>months, so a pack matches when you go birding</span></div>
       <!-- The fourth breaks the number pattern rather than pretending: "2 ways to know a
@@ -415,7 +418,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <div class="bead"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
           <div class="num">Step one</div>
           <h3>Pick your country</h3>
-          <p>Choose where you are birding, and every bird is ranked by how often it is actually seen there, so you start with the ones outside your window and work up to the rarities. All 9,516 species are there when you want them.</p>
+          <p>Choose where you are birding, and every bird is ranked by how often it is actually seen there, so you start with the ones outside your window and work up to the rarities. All 10,927 species are there when you want them.</p>
         </div>
         <div class="step">
           <div class="bead"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
@@ -441,13 +444,13 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
     <div class="inner">
       <!-- Was "Look up any bird in the world", which promised a rival product at the
            one point the page has just promised to teach you. The Guide keeps its
-           size, its CTA and its place: it is 9,516 pages of SEO, it is how a
+           size, its CTA and its place: it is 10,927 pages of SEO, it is how a
            stranger arrives at all, and it is free proof the data is real. This makes
            it the evidence behind the rounds rather than an alternative to them, and
            costs nothing in search terms because the paragraph below still carries
            the words a searcher types. -->
       <h2>The reference behind the rounds</h2>
-      <p>Our free Bird Guide covers 9,516 species with photos, calls, identification tips, lookalikes, range maps and the best months to see them. Filter by country, national park, time of year and conservation status. It works in any browser, right now.</p>
+      <p>Our free Bird Guide covers 10,927 species with photos, calls, identification tips, lookalikes, range maps and the best months to see them. Filter by country, national park, time of year and conservation status. It works in any browser, right now.</p>
       <p style="margin-top: 24px;"><a class="btn" style="background: var(--gold); color: #2E2A25;" href="birds/">Open the Bird Guide</a></p>
       <p class="web-more">Also free on the web: <a href="daily/">Daily Bird</a>, a mystery bird to guess every day · <a href="cams/">Live cams</a> from nests and waterholes worldwide · <a href="community.html">Community</a>, clubs and counts near you</p>
     </div>
@@ -583,7 +586,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
       <div class="faq">
         <details open>
           <summary>Which birds does BeakBrain cover?</summary>
-          <p>9,516 species, which is close to every bird you can see in the wild anywhere on Earth. For any country you pick, the birds are ranked by how common each one actually is there, from the everyday garden birds right up to the rarities and endemics. Each species comes with real photos, a call where one exists, its family and lookalikes, and a plain-language identification tip. Seasonality is built in too, so a pack can show only the birds present in the month you travel.</p>
+          <p>10,927 species, which is close to every bird you can see in the wild anywhere on Earth. For any country you pick, the birds are ranked by how common each one actually is there, from the everyday garden birds right up to the rarities and endemics. Each species comes with real photos, a call where one exists, its family and lookalikes, and a plain-language identification tip. Seasonality is built in too, so a pack can show only the birds present in the month you travel.</p>
         </details>
         <details>
           <summary>How does it actually help me learn?</summary>
