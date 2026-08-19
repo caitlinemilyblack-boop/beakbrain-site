@@ -15,3 +15,32 @@
 # that collides with a real filename is what 308-looped the fonts on 2026-08-14.
 /symbols/plates/:letter /symbols/plates/ 301
 /symbols/plates/:letter/* /symbols/plates/ 301
+
+# >>> generated: dropped compare pairs (do not edit by hand)
+/birds/compare/azara-s-spinetail-vs-pale-breasted-spinetail/ /birds/compare/ 301
+/birds/compare/banded-honeyeater-vs-orange-chat/ /birds/compare/ 301
+/birds/compare/banded-honeyeater-vs-regent-honeyeater/ /birds/compare/ 301
+/birds/compare/black-capped-becard-vs-cryptic-becard/ /birds/compare/ 301
+/birds/compare/black-capped-becard-vs-green-backed-becard/ /birds/compare/ 301
+/birds/compare/black-capped-becard-vs-grey-collared-becard/ /birds/compare/ 301
+/birds/compare/black-capped-becard-vs-one-colored-becard/ /birds/compare/ 301
+/birds/compare/black-capped-becard-vs-pink-throated-becard/ /birds/compare/ 301
+/birds/compare/black-spotted-bare-eye-vs-spot-winged-antshrike/ /birds/compare/ 301
+/birds/compare/black-striped-woodcreeper-vs-buff-throated-woodcreeper/ /birds/compare/ 301
+/birds/compare/buff-throated-woodcreeper-vs-cocoa-woodcreeper/ /birds/compare/ 301
+/birds/compare/buff-throated-woodcreeper-vs-ivory-billed-woodcreeper/ /birds/compare/ 301
+/birds/compare/buff-throated-woodcreeper-vs-lesser-woodcreeper/ /birds/compare/ 301
+/birds/compare/buff-throated-woodcreeper-vs-spotted-woodcreeper/ /birds/compare/ 301
+/birds/compare/chorister-robin-chat-vs-ruppell-s-robin-chat/ /birds/compare/ 301
+/birds/compare/dot-winged-antwren-vs-white-flanked-antwren/ /birds/compare/ 301
+/birds/compare/dusky-broadbill-vs-silver-breasted-broadbill/ /birds/compare/ 301
+/birds/compare/moustached-antwren-vs-spot-winged-antshrike/ /birds/compare/ 301
+/birds/compare/pacific-antwren-vs-white-flanked-antwren/ /birds/compare/ 301
+/birds/compare/pale-breasted-spinetail-vs-sooty-fronted-spinetail/ /birds/compare/ 301
+/birds/compare/pale-breasted-spinetail-vs-spix-s-spinetail/ /birds/compare/ 301
+/birds/compare/pygmy-antwren-vs-white-flanked-antwren/ /birds/compare/ 301
+/birds/compare/red-capped-robin-chat-vs-ruppell-s-robin-chat/ /birds/compare/ 301
+/birds/compare/slaty-antwren-vs-white-flanked-antwren/ /birds/compare/ 301
+/birds/compare/spot-winged-antshrike-vs-white-shouldered-antbird/ /birds/compare/ 301
+/birds/compare/spotted-bowerbird-vs-western-bowerbird/ /birds/compare/ 301
+# <<< generated: dropped compare pairs

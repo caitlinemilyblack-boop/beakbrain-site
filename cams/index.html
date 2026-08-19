@@ -6,22 +6,11 @@
   <title>Live Bird Cams Around the World | BeakBrain</title>
   <meta name="description" content="A worldwide directory of live bird cams: eagle nests, osprey platforms, puffin burrows, feeders, waterholes and more. See what is streaming right now, what returns in season, which species to look for, and the best months to watch." />
   <link rel="icon" href="/assets/favicon.png" />
-  <link rel="preload" as="image" href="/assets/video/cams-hero-poster.jpg" fetchpriority="high" />
-  <link rel="preload" as="font" type="font/woff" href="/fonts/Fredoka-700.woff" crossorigin />
-  <link rel="preload" as="font" type="font/woff" href="/fonts/Nunito-400.woff" crossorigin />
   <link rel="canonical" href="https://beakbrain.com/cams/" />
   <meta property="og:title" content="Live Bird Cams Around the World | BeakBrain" />
   <meta property="og:description" content="Eagle nests, osprey platforms, puffin burrows, feeders and waterholes. What is live right now, what returns in season, and the species on every cam." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://beakbrain.com/cams/" />
-  <!-- The composed share card (build/make-og-image.py). Without it this page
-       unfurled as a bare title on a blank rectangle. -->
-  <meta property="og:image" content="https://beakbrain.com/assets/og-card.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="BeakBrain: learn to identify birds by sight and sound." />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="https://beakbrain.com/assets/og-card.png" />
 
   <style>
     @font-face { font-family: 'Fredoka'; font-weight: 500; font-display: swap; src: url('/fonts/Fredoka-500.woff') format('woff'); }
@@ -34,7 +23,7 @@
     :root {
       --bg: #F2E8CF; --surface: #FFFFFF; --surface-alt: #E7D9B4; --ink: #2E2A25;
       --muted: #6B6155; --border: #DDCBA0; --green: #386641; --green-dark: #2C5134;
-      --sage: #6A994E; --gold: #EBB93C; --gold-deep: #8C6410; --live: #C0392B;
+      --sage: #6A994E; --gold: #EBB93C; --gold-deep: #7A5205; --live: #C0392B;
       --display: 'Fredoka', 'Trebuchet MS', system-ui, sans-serif;
       --body: 'Nunito', system-ui, -apple-system, sans-serif;
       --shadow: 0 14px 34px rgba(46, 42, 37, 0.09);
@@ -55,15 +44,8 @@
     .nav-right { display: flex; align-items: center; gap: 24px; }
     .nav-link { color: #fff; text-decoration: none; font-family: var(--display); font-weight: 600; font-size: 15px; transition: color .28s ease; white-space: nowrap; }
     header.scrolled .nav .nav-link { color: var(--green); }
-    /* line-height is set here rather than inherited: the pill is the one piece of
-       furniture that appears on every page, and it was taking each page's own body
-       leading with it (the home page runs 1.65, everywhere else 1.6), so the same
-       button stood 54.4px tall there and 53.6px here. It sizes itself now.
-       The shrink breakpoint is 760px sitewide — this page and Trips fired at 860px,
-       which is why the CTA went small on Cams and Trips alone at laptop widths
-       (Cat, 2026-08-14). */
-    .nav .btn { white-space: nowrap; line-height: 1.6; }
-    @media (max-width: 760px) {
+    .nav .btn { white-space: nowrap; }
+    @media (max-width: 860px) {
       .nav-right { gap: 14px; }
       .nav-link { font-size: 13.5px; }
       .nav .btn { font-size: 14px; padding: 10px 16px; }
@@ -82,7 +64,7 @@
     header.scrolled .nav .btn { background: var(--green); color: #fff; }
     header.scrolled .nav .btn:hover { background: var(--green-dark); }
 
-    .hero { position: relative; min-height: 46vh; display: flex; align-items: center; overflow: hidden; background-color: #386641; background-image: url('/assets/video/cams-hero-poster.jpg'), linear-gradient(150deg, #2C5134 0%, #386641 45%, #4A7A3E 100%); background-size: cover; background-position: center; }
+    .hero { position: relative; min-height: 46vh; display: flex; align-items: center; overflow: hidden; background: linear-gradient(150deg, #2C5134 0%, #386641 45%, #4A7A3E 100%); }
     .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0; transition: opacity .9s ease; }
     .hero-video.ready { opacity: 1; }
     .hero::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(30,45,30,0.30) 0%, rgba(30,45,30,0.52) 60%, rgba(22,36,24,0.82) 100%); }
@@ -221,10 +203,11 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
         <a class="nav-link" href="/birds/">Bird Guide</a>
         <a class="nav-link" href="/daily/">Daily Bird</a>
         <a class="nav-link" href="/cams/">Cams</a>
+        <a class="nav-link" href="/trips/">Trips</a>
         <a class="nav-link" href="/community.html">Community</a>
         <a class="btn" href="/#get">Get the app</a>
       </div>
-<details class="mnav"><summary aria-label="Site menu">Menu</summary><div class="navdrop"><a href="/birds/">Bird Guide</a><a href="/daily/">Daily Bird</a><a href="/cams/">Cams</a><a href="/community.html">Community</a><a href="/#get">Get the app</a></div></details>
+<details class="mnav"><summary aria-label="Site menu">Menu</summary><div class="navdrop"><a href="/birds/">Bird Guide</a><a href="/daily/">Daily Bird</a><a href="/cams/">Cams</a><a href="/trips/">Trips</a><a href="/community.html">Community</a><a href="/#get">Get the app</a></div></details>
     </div>
   </header>
 
