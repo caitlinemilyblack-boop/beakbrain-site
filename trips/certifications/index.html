@@ -147,7 +147,7 @@
     .lux svg { width: 12px; height: 12px; fill: var(--gold-deep); }
     .lux-off { display: inline-flex; gap: 1.5px; }
     .lux-off svg { fill: #DED4B6; }
-    .stayrule { font-family: var(--body); font-size: 13px; line-height: 1.55; color: var(--muted); margin: 0 2px 12px; }
+    .stayrule { font-family: var(--body); font-size: 13px; line-height: 1.55; color: var(--muted); margin: 0 2px 12px; max-width: 78ch; }
     .stayrule a { color: var(--green-dark); font-weight: 800; }
     .where.wildlife { color: var(--muted); }
     .where.wildlife b { color: var(--ink); }
@@ -201,6 +201,21 @@
     .mapbar .mkey-stay { border-radius: 50%; }
     .mapbar .mkey-go { transform: rotate(45deg); border-radius: 2px; }
     .mapbar .mkeynote { display: block; margin-top: 4px; }
+    /* Zoomed out, the region label is the thing worth reading and the markers sit behind
+       it. Zoomed in, the reader has picked a place and the markers come forward. */
+    .mlmark-region { z-index: 4; }
+    .mlmark-dot { z-index: 2; }
+    .mlmap.zoomed-in .mlmark-region { z-index: 2; }
+    .mlmap.zoomed-in .mlmark-dot { z-index: 4; }
+    /* A 15px map marker is under the 24px target floor on a phone. The dot keeps its size
+       and gains an invisible hit area around it, so the map does not turn into a wall of
+       overlapping circles at the zoom it opens on. */
+    @media (pointer: coarse) {
+      .mldot::after { content: ""; position: absolute; inset: -6px; border-radius: 50%; }
+      .mldot.mlgo::after { border-radius: 4px; }
+      .watch-link { min-height: 26px; display: inline-flex; align-items: center; }
+      .itinmap-btn { min-height: 34px; }
+    }
     .mldot.mlgo { border-radius: 3px; transform: rotate(45deg); }
     .mldot.mlgo:hover, .mldot.mlgo:focus-visible { transform: rotate(45deg) scale(1.25); }
     /* Region identity is a colour chip, not coloured text: six of the eleven region
@@ -372,7 +387,7 @@
     .rdot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: 8px; vertical-align: 0; }
     .lodge-group a { color: inherit; text-decoration: none; }
     .lodge-group a:hover { text-decoration: underline; }
-    .mintro { color: var(--muted); font-size: 14.5px; max-width: 90ch; margin-bottom: 16px; }
+    .mintro { color: var(--muted); font-size: 14.5px; max-width: 78ch; margin-bottom: 16px; }
 
     /* When to go: three season blocks, then one row per highlight bird. No chart,
        so no legend and nothing to decode. */
@@ -462,11 +477,17 @@
     .appcard-cta svg { transition: transform .12s ease; }
     @media (prefers-reduced-motion: reduce) { .appcard, .appcard-cta svg, .ccard { transition: none; } }
     .appcard-body { display: flex; flex-direction: column; gap: 5px; }
+    @media (max-width: 620px) {
+      .appcard { flex-direction: column; align-items: center; text-align: center; gap: 14px; padding: 24px 20px; }
+      .appcard-body { align-items: center; }
+      .appcard-cta { justify-content: center; }
+      .appcard-note { max-width: 34ch; }
+    }
     .appcard b { font-family: var(--display); font-weight: 700; font-size: 21px; }
     .appcard-note { font-size: 15px; color: rgba(255,255,255,.9); max-width: 62ch; }
     .appcard-cta { display: inline-flex; align-items: center; gap: 6px; margin-top: 6px; font-family: var(--body); font-weight: 800; font-size: 14.5px; color: var(--gold); }
     .appcard-cta svg { stroke: var(--gold); }
-    @media (max-width: 560px) { .appcard { flex-direction: column; align-items: flex-start; gap: 14px; } }
+
     /* Cat's ask: every in-page link should answer "where did that put me?" the way a
        map click already does. One rule, so it works on a region card, a lodge row, a
        tour, an operator or an FAQ entry alike. */

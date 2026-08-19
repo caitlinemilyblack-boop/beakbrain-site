@@ -165,7 +165,7 @@
     .lux svg { width: 12px; height: 12px; fill: var(--gold-deep); }
     .lux-off { display: inline-flex; gap: 1.5px; }
     .lux-off svg { fill: #DED4B6; }
-    .stayrule { font-family: var(--body); font-size: 13px; line-height: 1.55; color: var(--muted); margin: 0 2px 12px; }
+    .stayrule { font-family: var(--body); font-size: 13px; line-height: 1.55; color: var(--muted); margin: 0 2px 12px; max-width: 78ch; }
     .stayrule a { color: var(--green-dark); font-weight: 800; }
     .where.wildlife { color: var(--muted); }
     .where.wildlife b { color: var(--ink); }
@@ -219,6 +219,21 @@
     .mapbar .mkey-stay { border-radius: 50%; }
     .mapbar .mkey-go { transform: rotate(45deg); border-radius: 2px; }
     .mapbar .mkeynote { display: block; margin-top: 4px; }
+    /* Zoomed out, the region label is the thing worth reading and the markers sit behind
+       it. Zoomed in, the reader has picked a place and the markers come forward. */
+    .mlmark-region { z-index: 4; }
+    .mlmark-dot { z-index: 2; }
+    .mlmap.zoomed-in .mlmark-region { z-index: 2; }
+    .mlmap.zoomed-in .mlmark-dot { z-index: 4; }
+    /* A 15px map marker is under the 24px target floor on a phone. The dot keeps its size
+       and gains an invisible hit area around it, so the map does not turn into a wall of
+       overlapping circles at the zoom it opens on. */
+    @media (pointer: coarse) {
+      .mldot::after { content: ""; position: absolute; inset: -6px; border-radius: 50%; }
+      .mldot.mlgo::after { border-radius: 4px; }
+      .watch-link { min-height: 26px; display: inline-flex; align-items: center; }
+      .itinmap-btn { min-height: 34px; }
+    }
     .mldot.mlgo { border-radius: 3px; transform: rotate(45deg); }
     .mldot.mlgo:hover, .mldot.mlgo:focus-visible { transform: rotate(45deg) scale(1.25); }
     /* Region identity is a colour chip, not coloured text: six of the eleven region
@@ -390,7 +405,7 @@
     .rdot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: 8px; vertical-align: 0; }
     .lodge-group a { color: inherit; text-decoration: none; }
     .lodge-group a:hover { text-decoration: underline; }
-    .mintro { color: var(--muted); font-size: 14.5px; max-width: 90ch; margin-bottom: 16px; }
+    .mintro { color: var(--muted); font-size: 14.5px; max-width: 78ch; margin-bottom: 16px; }
 
     /* When to go: three season blocks, then one row per highlight bird. No chart,
        so no legend and nothing to decode. */
@@ -480,11 +495,17 @@
     .appcard-cta svg { transition: transform .12s ease; }
     @media (prefers-reduced-motion: reduce) { .appcard, .appcard-cta svg, .ccard { transition: none; } }
     .appcard-body { display: flex; flex-direction: column; gap: 5px; }
+    @media (max-width: 620px) {
+      .appcard { flex-direction: column; align-items: center; text-align: center; gap: 14px; padding: 24px 20px; }
+      .appcard-body { align-items: center; }
+      .appcard-cta { justify-content: center; }
+      .appcard-note { max-width: 34ch; }
+    }
     .appcard b { font-family: var(--display); font-weight: 700; font-size: 21px; }
     .appcard-note { font-size: 15px; color: rgba(255,255,255,.9); max-width: 62ch; }
     .appcard-cta { display: inline-flex; align-items: center; gap: 6px; margin-top: 6px; font-family: var(--body); font-weight: 800; font-size: 14.5px; color: var(--gold); }
     .appcard-cta svg { stroke: var(--gold); }
-    @media (max-width: 560px) { .appcard { flex-direction: column; align-items: flex-start; gap: 14px; } }
+
     /* Cat's ask: every in-page link should answer "where did that put me?" the way a
        map click already does. One rule, so it works on a region card, a lodge row, a
        tour, an operator or an FAQ entry alike. */
@@ -4896,7 +4917,7 @@
           <h4><a href="https://www.arenalmanoa.com" target="_blank" rel="noopener">Hotel Arenal Manoa</a></h4>
           <p class="meta">La Fortuna, San Carlos, Alajuela · <span class="lux" role="img" aria-label="Luxury level: Mid-luxury" title="Mid-luxury"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><span class="lux-off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg></span></span></p>
           <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/#scheme-cst" title="What Costa Rica CST means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="https://turismo-sostenible.co.cr/entidad-certificada/hotel-arenal-manoa/" target="_blank" rel="noopener" title="Certified: opens the registry evidence">Costa Rica CST Nivel Élite</a></span></div>
-          <p class="blurb"><a href="#lodge-hotel-arenal-manoa-costa-rica">Hotel Arenal Manoa</a> is a nature lodge in La Fortuna, San Carlos, Alajuela, Costa Rica, offering wellbeing focused stays alongside its CST Nivel Elite certification.</p>
+          <p class="blurb">Hotel Arenal Manoa is a nature lodge in La Fortuna, San Carlos, Alajuela, Costa Rica, offering wellbeing focused stays alongside its CST Nivel Elite certification.</p>
         </div>
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
@@ -4908,7 +4929,7 @@
           <h4><a href="https://www.hotelarenalspring.com" target="_blank" rel="noopener">Hotel Arenal Springs Resort &amp; Spa</a></h4>
           <p class="meta">La Fortuna, San Carlos, Alajuela · <span class="lux" role="img" aria-label="Luxury level: Mid-luxury" title="Mid-luxury"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><span class="lux-off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg></span></span></p>
           <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/#scheme-cst" title="What Costa Rica CST means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="https://turismo-sostenible.co.cr/entidad-certificada/hotel-arenal-springs-resort-spa/" target="_blank" rel="noopener" title="Certified: opens the registry evidence">Costa Rica CST Nivel Élite</a></span></div>
-          <p class="blurb"><a href="#lodge-hotel-arenal-springs-resort-spa-costa-rica">Hotel Arenal Springs Resort &amp; Spa</a> is a hot springs lodging property in La Fortuna, San Carlos, Alajuela, Costa Rica, operating since 2005 with an emphasis on local hospitality and respect for nature.</p>
+          <p class="blurb">Hotel Arenal Springs Resort &amp; Spa is a hot springs lodging property in La Fortuna, San Carlos, Alajuela, Costa Rica, operating since 2005 with an emphasis on local hospitality and respect for nature.</p>
         </div>
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
@@ -4920,7 +4941,7 @@
           <h4><a href="https://arenalvolcanoinn.com/es.index.html" target="_blank" rel="noopener">Hotel Arenal Volcano Inn</a></h4>
           <p class="meta">La Fortuna, San Carlos, Alajuela · <span class="lux" role="img" aria-label="Luxury level: Mid-luxury" title="Mid-luxury"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><span class="lux-off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg></span></span></p>
           <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/#scheme-cst" title="What Costa Rica CST means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="https://turismo-sostenible.co.cr/entidad-certificada/hotel-arenal-volcano-inn/" target="_blank" rel="noopener" title="Certified: opens the registry evidence">Costa Rica CST Nivel Élite</a></span></div>
-          <p class="blurb"><a href="#lodge-hotel-arenal-volcano-inn-costa-rica">Hotel Arenal Volcano Inn</a> is a lodging property in La Fortuna, San Carlos, Alajuela, Costa Rica, that emphasizes caring for its surroundings and reducing, reusing, and recycling as part of its operation.</p>
+          <p class="blurb">Hotel Arenal Volcano Inn is a lodging property in La Fortuna, San Carlos, Alajuela, Costa Rica, that emphasizes caring for its surroundings and reducing, reusing, and recycling as part of its operation.</p>
         </div>
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
@@ -4932,7 +4953,7 @@
           <h4><a href="https://www.royalcorin.com" target="_blank" rel="noopener">Hotel Royal Corin Wellness and Spa Resort</a></h4>
           <p class="meta">La Fortuna, San Carlos, Alajuela · <span class="lux" role="img" aria-label="Luxury level: Mid-luxury" title="Mid-luxury"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><span class="lux-off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg></span></span></p>
           <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/#scheme-cst" title="What Costa Rica CST means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="https://turismo-sostenible.co.cr/entidad-certificada/hotel-royal-corin-wellness-and-spa-resort/" target="_blank" rel="noopener" title="Certified: opens the registry evidence">Costa Rica CST Nivel Élite</a></span></div>
-          <p class="blurb"><a href="#lodge-hotel-royal-corin-wellness-and-spa-resort-costa-rica">Hotel Royal Corin Wellness and Spa Resort</a> is a thermal spa lodging property in San Carlos, Alajuela, Costa Rica.</p>
+          <p class="blurb">Hotel Royal Corin Wellness and Spa Resort is a thermal spa lodging property in San Carlos, Alajuela, Costa Rica.</p>
         </div>
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
@@ -5204,7 +5225,7 @@
           <h4><a href="https://www.guachipelin.com" target="_blank" rel="noopener">Hotel Hacienda Guachipelin</a></h4>
           <p class="meta">Liberia, Guanacaste · <span class="lux" role="img" aria-label="Luxury level: Mid-luxury" title="Mid-luxury"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><span class="lux-off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg></span></span></p>
           <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/#scheme-cst" title="What Costa Rica CST means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="https://turismo-sostenible.co.cr/entidad-certificada/hotel-hacienda-guachipelin/" target="_blank" rel="noopener" title="Certified: opens the registry evidence">Costa Rica CST Nivel Élite</a></span></div>
-          <p class="blurb"><a href="#lodge-hotel-hacienda-guachipelin-costa-rica">Hotel Hacienda Guachipelin</a> is a hacienda style lodging property in Liberia, Guanacaste, Costa Rica.</p>
+          <p class="blurb">Hotel Hacienda Guachipelin is a hacienda style lodging property in Liberia, Guanacaste, Costa Rica.</p>
         </div>
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
@@ -5216,7 +5237,7 @@
           <h4><a href="https://www.lagartalodge.com" target="_blank" rel="noopener">Hotel Lagarta Lodge</a></h4>
           <p class="meta">Nicoya, Guanacaste · <span class="lux" role="img" aria-label="Luxury level: Mid-luxury" title="Mid-luxury"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><span class="lux-off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg></span></span></p>
           <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/#scheme-cst" title="What Costa Rica CST means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="https://turismo-sostenible.co.cr/entidad-certificada/hotel-lagarta-lodge/" target="_blank" rel="noopener" title="Certified: opens the registry evidence">Costa Rica CST Nivel Élite</a></span></div>
-          <p class="blurb"><a href="#lodge-hotel-lagarta-lodge-costa-rica">Hotel Lagarta Lodge</a> is a lodge in Nicoya, Guanacaste, Costa Rica.</p>
+          <p class="blurb">Hotel Lagarta Lodge is a lodge in Nicoya, Guanacaste, Costa Rica.</p>
         </div>
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
@@ -5252,7 +5273,7 @@
           <h4><a href="https://www.elviejowetlands.com" target="_blank" rel="noopener">Hacienda El Viejo Wetlands</a></h4>
           <p class="meta">Carrillo, Guanacaste · <span class="lux" role="img" aria-label="Luxury level: Mid-luxury" title="Mid-luxury"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><span class="lux-off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg></span></span></p>
           <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/#scheme-cst" title="What Costa Rica CST means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="https://turismo-sostenible.co.cr/entidad-certificada/hacienda-el-viejo/" target="_blank" rel="noopener" title="Certified: opens the registry evidence">Costa Rica CST Nivel Básico</a></span></div>
-          <p class="blurb"><a href="#lodge-hacienda-el-viejo-wetlands-costa-rica">Hacienda El Viejo Wetlands</a> is a nature tourism property in Carrillo, Guanacaste, Costa Rica, built around its wetlands, with a stated focus on responsible practices and environmental education.</p>
+          <p class="blurb">Hacienda El Viejo Wetlands is a nature tourism property in Carrillo, Guanacaste, Costa Rica, built around its wetlands, with a stated focus on responsible practices and environmental education.</p>
         </div>
         <div class="trip-side">
           <p class="priceline"><span class="pmuted">Rate not published</span></p>
@@ -5264,7 +5285,7 @@
           <h4><a href="https://www.suitree.com" target="_blank" rel="noopener">Suitree Experience Hotel</a></h4>
           <p class="meta">Carrillo, Guanacaste</p>
           <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/#scheme-cst" title="What Costa Rica CST means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="https://turismo-sostenible.co.cr/entidad-certificada/suitree-experience-hotel/" target="_blank" rel="noopener" title="Certified: opens the registry evidence">Costa Rica CST Nivel Básico</a></span></div>
-          <p class="blurb"><a href="#lodge-suitree-experience-hotel-costa-rica">Suitree Experience Hotel</a> is a lodging property in Carrillo, Guanacaste, Costa Rica.</p>
+          <p class="blurb">Suitree Experience Hotel is a lodging property in Carrillo, Guanacaste, Costa Rica.</p>
         </div>
         <div class="trip-side">
           <p class="priceline"><span class="pmuted">Rate not published</span></p>
@@ -5353,7 +5374,7 @@
           <h4><a href="https://www.hotelpocoapoco.com" target="_blank" rel="noopener">Hotel Poco a Poco</a></h4>
           <p class="meta">Monteverde, Puntarenas · <span class="lux" role="img" aria-label="Luxury level: Mid-luxury" title="Mid-luxury"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><span class="lux-off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg></span></span></p>
           <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/#scheme-cst" title="What Costa Rica CST means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="https://turismo-sostenible.co.cr/entidad-certificada/hotel-poco-a-poco/" target="_blank" rel="noopener" title="Certified: opens the registry evidence">Costa Rica CST Nivel Élite</a></span></div>
-          <p class="blurb"><a href="#lodge-hotel-poco-a-poco-costa-rica">Hotel Poco a Poco</a> is a lodging property in Monteverde, Puntarenas, Costa Rica.</p>
+          <p class="blurb">Hotel Poco a Poco is a lodging property in Monteverde, Puntarenas, Costa Rica.</p>
         </div>
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
@@ -5365,7 +5386,7 @@
           <h4><a href="https://www.sendamonteverde.com" target="_blank" rel="noopener">Hotel Senda Monteverde</a></h4>
           <p class="meta">Monteverde, Puntarenas · <span class="lux" role="img" aria-label="Luxury level: Mid-luxury" title="Mid-luxury"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><span class="lux-off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg></span></span></p>
           <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/#scheme-cst" title="What Costa Rica CST means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="https://turismo-sostenible.co.cr/entidad-certificada/hotel-senda-monteverde/" target="_blank" rel="noopener" title="Certified: opens the registry evidence">Costa Rica CST Nivel Élite</a></span></div>
-          <p class="blurb"><a href="#lodge-hotel-senda-monteverde-costa-rica">Hotel Senda Monteverde</a> is a lodging property in Monteverde, Puntarenas, Costa Rica.</p>
+          <p class="blurb">Hotel Senda Monteverde is a lodging property in Monteverde, Puntarenas, Costa Rica.</p>
         </div>
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
@@ -5377,7 +5398,7 @@
           <h4><a href="https://trapphotelmonteverde.com/" target="_blank" rel="noopener">Hotel Trapp Family</a></h4>
           <p class="meta">Monteverde, Puntarenas · <span class="lux" role="img" aria-label="Luxury level: Mid-luxury" title="Mid-luxury"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><span class="lux-off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg></span></span></p>
           <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/#scheme-cst" title="What Costa Rica CST means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="https://turismo-sostenible.co.cr/entidad-certificada/hotel-trapp-family/" target="_blank" rel="noopener" title="Certified: opens the registry evidence">Costa Rica CST Nivel Élite</a></span></div>
-          <p class="blurb"><a href="#lodge-hotel-trapp-family-costa-rica">Hotel Trapp Family</a>, in Monteverde, Puntarenas, Costa Rica, has built a sustainability track record around water and energy savings, responsible waste management, renewable energy use, wastewater treatment, and carbon footprint offsetting.</p>
+          <p class="blurb">Hotel Trapp Family, in Monteverde, Puntarenas, Costa Rica, has built a sustainability track record around water and energy savings, responsible waste management, renewable energy use, wastewater treatment, and carbon footprint offsetting.</p>
         </div>
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
@@ -5389,7 +5410,7 @@
           <h4><a href="https://www.valleescondidocr.com" target="_blank" rel="noopener">Valle Escondido Nature Reserve Hotel &amp; Farm</a></h4>
           <p class="meta">Monteverde, Puntarenas · <span class="lux" role="img" aria-label="Luxury level: Mid-luxury" title="Mid-luxury"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><span class="lux-off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg></span></span></p>
           <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/#scheme-cst" title="What Costa Rica CST means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="https://turismo-sostenible.co.cr/entidad-certificada/valle-escondido-nature-reserve-hotel-farm/" target="_blank" rel="noopener" title="Certified: opens the registry evidence">Costa Rica CST Nivel Élite</a></span></div>
-          <p class="blurb"><a href="#lodge-valle-escondido-nature-reserve-hotel-farm-costa-rica">Valle Escondido Nature Reserve Hotel &amp; Farm</a> is a nature reserve lodging and farm property in Puntarenas, Puntarenas, Costa Rica, as its name indicates.</p>
+          <p class="blurb">Valle Escondido Nature Reserve Hotel &amp; Farm is a nature reserve lodging and farm property in Puntarenas, Puntarenas, Costa Rica, as its name indicates.</p>
         </div>
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
@@ -5803,7 +5824,7 @@
           <h4><a href="https://www.rinconcitoverde.com" target="_blank" rel="noopener">Posada de Turismo Rural Rinconcito Verde</a></h4>
           <p class="meta">Paraíso, Cartago · <span class="lux" role="img" aria-label="Luxury level: Mid-luxury" title="Mid-luxury"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><span class="lux-off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg></span></span></p>
           <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/#scheme-cst" title="What Costa Rica CST means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="https://turismo-sostenible.co.cr/entidad-certificada/posada-de-turismo-rural-rinconcito-verde/" target="_blank" rel="noopener" title="Certified: opens the registry evidence">Costa Rica CST Nivel Básico</a></span></div>
-          <p class="blurb"><a href="#lodge-posada-de-turismo-rural-rinconcito-verde-costa-rica">Posada de Turismo Rural Rinconcito Verde</a> is a rural tourism lodging property in Paraiso, Cartago, Costa Rica, as indicated by its rural tourism designation.</p>
+          <p class="blurb">Posada de Turismo Rural Rinconcito Verde is a rural tourism lodging property in Paraiso, Cartago, Costa Rica, as indicated by its rural tourism designation.</p>
         </div>
         <div class="trip-side">
           <p class="priceline"><span class="pmuted">Rate not published</span></p>
@@ -5815,7 +5836,7 @@
           <h4><a href="https://www.xandari.com/costarica-xandari-overview.php" target="_blank" rel="noopener">Xandari Resort and Spa</a></h4>
           <p class="meta">Alajuela, Central Valley</p>
           <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/#scheme-cst" title="What Costa Rica CST means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="https://turismo-sostenible.co.cr/entidad-certificada/xandari-resort-and-spa/" target="_blank" rel="noopener" title="Certified: opens the registry evidence">Costa Rica CST Nivel Básico</a></span></div>
-          <p class="blurb"><a href="#lodge-xandari-resort-and-spa-costa-rica">Xandari Resort and Spa</a>, in Alajuela, Costa Rica, describes sustainability as part of its way of life, with practices aimed at protecting the biodiversity, gardens, trails, and local fauna surrounding the property.</p>
+          <p class="blurb">Xandari Resort and Spa, in Alajuela, Costa Rica, describes sustainability as part of its way of life, with practices aimed at protecting the biodiversity, gardens, trails, and local fauna surrounding the property.</p>
         </div>
         <div class="trip-side">
           <p class="priceline"><span class="pmuted">Rate not published</span></p>
@@ -6005,7 +6026,7 @@
           <h4><a href="https://www.bungalowspuntauva.com" target="_blank" rel="noopener">Bungalows Punta Uva Inn</a></h4>
           <p class="meta">Talamanca, Limón · <span class="lux" role="img" aria-label="Luxury level: Mid-range" title="Mid-range"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><span class="lux-off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg></span></span></p>
           <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/#scheme-cst" title="What Costa Rica CST means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="https://turismo-sostenible.co.cr/entidad-certificada/bungalows-punta-uva-inn/" target="_blank" rel="noopener" title="Certified: opens the registry evidence">Costa Rica CST Nivel Básico</a></span></div>
-          <p class="blurb"><a href="#lodge-bungalows-punta-uva-inn-costa-rica">Bungalows Punta Uva Inn</a> is a small lodging property in Punta Uva, Talamanca, Limon, Costa Rica.</p>
+          <p class="blurb">Bungalows Punta Uva Inn is a small lodging property in Punta Uva, Talamanca, Limon, Costa Rica.</p>
         </div>
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
@@ -6017,7 +6038,7 @@
           <h4><a href="https://www.namuwoki.com" target="_blank" rel="noopener">Hotel Namuwoki</a></h4>
           <p class="meta">Talamanca, Limón · <span class="lux" role="img" aria-label="Luxury level: Mid-luxury" title="Mid-luxury"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><span class="lux-off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg></span></span></p>
           <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/#scheme-cst" title="What Costa Rica CST means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="https://turismo-sostenible.co.cr/entidad-certificada/hotel-namuwoki/" target="_blank" rel="noopener" title="Certified: opens the registry evidence">Costa Rica CST Nivel Básico</a></span></div>
-          <p class="blurb"><a href="#lodge-hotel-namuwoki-costa-rica">Hotel Namuwoki</a> is a lodging property in Talamanca, Limon, Costa Rica.</p>
+          <p class="blurb">Hotel Namuwoki is a lodging property in Talamanca, Limon, Costa Rica.</p>
         </div>
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
@@ -6053,7 +6074,7 @@
           <h4><a href="https://www.indalohotel.com" target="_blank" rel="noopener">Hotel Indalo</a></h4>
           <p class="meta">Talamanca, Limón</p>
           <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/#scheme-cst" title="What Costa Rica CST means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="https://turismo-sostenible.co.cr/entidad-certificada/hotel-indalo/" target="_blank" rel="noopener" title="Certified: opens the registry evidence">Costa Rica CST Nivel Básico</a></span></div>
-          <p class="blurb"><a href="#lodge-hotel-indalo-costa-rica">Hotel Indalo</a>, in Talamanca, Limon, Costa Rica, applies energy and water efficiency measures, reduces single use plastics, and supports local conservation and environmental education initiatives.</p>
+          <p class="blurb">Hotel Indalo, in Talamanca, Limon, Costa Rica, applies energy and water efficiency measures, reduces single use plastics, and supports local conservation and environmental education initiatives.</p>
         </div>
         <div class="trip-side">
           <p class="priceline"><span class="pmuted">Rate not published</span></p>
@@ -6065,7 +6086,7 @@
           <h4><a href="https://ranchonaturalista.net/" target="_blank" rel="noopener">Rancho Naturalista</a></h4>
           <p class="meta">Turrialba</p>
           <div class="badge-row"></div>
-          <p class="blurb">Costa Rica's best known birding lodge, in the Turrialba hills, with over 450 species recorded in its private forest reserve and the hummingbird feeders and pools that made <a href="/birds/snowcap/">Snowcap</a> findable.</p>
+          <p class="blurb">Costa Rica's best known birding lodge, in the Turrialba hills, with over 450 species recorded in its private forest reserve and the hummingbird feeders and pools that made Snowcap findable.</p>
         </div>
         <div class="trip-side">
           <p class="priceline"><span class="pmuted">Rate not published</span></p>
@@ -6120,7 +6141,7 @@
           <h4><a href="https://www.villalapas.com" target="_blank" rel="noopener">Hotel Villa Lapas</a></h4>
           <p class="meta">Garabito, Puntarenas · <span class="lux" role="img" aria-label="Luxury level: Mid-luxury" title="Mid-luxury"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><span class="lux-off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg></span></span></p>
           <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/#scheme-cst" title="What Costa Rica CST means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="https://turismo-sostenible.co.cr/entidad-certificada/hotel-villa-lapas/" target="_blank" rel="noopener" title="Certified: opens the registry evidence">Costa Rica CST Nivel Básico</a></span></div>
-          <p class="blurb"><a href="#lodge-hotel-villa-lapas-costa-rica">Hotel Villa Lapas</a> is a lodging property in Garabito, Puntarenas, Costa Rica. Its name references the scarlet macaw (lapa).</p>
+          <p class="blurb">Hotel Villa Lapas is a lodging property in Garabito, Puntarenas, Costa Rica. Its name references the scarlet macaw (lapa).</p>
         </div>
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
@@ -6132,7 +6153,7 @@
           <h4><a href="https://www.puntaleona.com" target="_blank" rel="noopener">Punta Leona Beach Club &amp; Nature Resort</a></h4>
           <p class="meta">Garabito, Puntarenas</p>
           <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/#scheme-cst" title="What Costa Rica CST means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="https://turismo-sostenible.co.cr/entidad-certificada/hotel-punta-leona/" target="_blank" rel="noopener" title="Certified: opens the registry evidence">Costa Rica CST Nivel Básico</a></span></div>
-          <p class="blurb"><a href="#lodge-punta-leona-beach-club-nature-resort-costa-rica">Punta Leona Beach Club &amp; Nature Resort</a> is a beach and nature focused resort in Garabito, Puntarenas, Costa Rica, as its name indicates.</p>
+          <p class="blurb">Punta Leona Beach Club &amp; Nature Resort is a beach and nature focused resort in Garabito, Puntarenas, Costa Rica, as its name indicates.</p>
         </div>
         <div class="trip-side">
           <p class="priceline"><span class="pmuted">Rate not published</span></p>
@@ -6220,7 +6241,7 @@
           <h4><a href="https://www.hotelparador.com" target="_blank" rel="noopener">Hotel Parador</a></h4>
           <p class="meta">Quepos, Puntarenas · <span class="lux" role="img" aria-label="Luxury level: Mid-luxury" title="Mid-luxury"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><span class="lux-off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg></span></span></p>
           <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/#scheme-cst" title="What Costa Rica CST means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="https://turismo-sostenible.co.cr/entidad-certificada/hotel-parador/" target="_blank" rel="noopener" title="Certified: opens the registry evidence">Costa Rica CST Nivel Élite</a></span></div>
-          <p class="blurb"><a href="#lodge-hotel-parador-costa-rica">Hotel Parador</a> is a lodging property in Quepos, Puntarenas, Costa Rica.</p>
+          <p class="blurb">Hotel Parador is a lodging property in Quepos, Puntarenas, Costa Rica.</p>
         </div>
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
@@ -6232,7 +6253,7 @@
           <h4><a href="https://www.hotelsanbada.com" target="_blank" rel="noopener">Hotel San Bada</a></h4>
           <p class="meta">Quepos, Puntarenas · <span class="lux" role="img" aria-label="Luxury level: Mid-luxury" title="Mid-luxury"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><span class="lux-off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg></span></span></p>
           <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/#scheme-cst" title="What Costa Rica CST means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="https://turismo-sostenible.co.cr/entidad-certificada/hotel-san-bada/" target="_blank" rel="noopener" title="Certified: opens the registry evidence">Costa Rica CST Nivel Élite</a></span></div>
-          <p class="blurb"><a href="#lodge-hotel-san-bada-costa-rica">Hotel San Bada</a> is a lodging property in Quepos, Puntarenas, Costa Rica.</p>
+          <p class="blurb">Hotel San Bada is a lodging property in Quepos, Puntarenas, Costa Rica.</p>
         </div>
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
@@ -6280,7 +6301,7 @@
           <h4><a href="https://www.arenasdelmar.com" target="_blank" rel="noopener">Arenas del Mar Beachfront &amp; Rainforest</a></h4>
           <p class="meta">Quepos, Puntarenas · <span class="lux" role="img" aria-label="Luxury level: Mid-luxury" title="Mid-luxury"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><span class="lux-off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg></span></span></p>
           <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/#scheme-cst" title="What Costa Rica CST means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="https://turismo-sostenible.co.cr/entidad-certificada/arenas-del-mar/" target="_blank" rel="noopener" title="Certified: opens the registry evidence">Costa Rica CST Nivel Élite</a></span></div>
-          <p class="blurb"><a href="#lodge-arenas-del-mar-beachfront-rainforest-costa-rica">Arenas del Mar Beachfront &amp; Rainforest</a> is a lodging property in Quepos, Puntarenas, Costa Rica, combining beachfront and rainforest settings, as its name indicates.</p>
+          <p class="blurb">Arenas del Mar Beachfront &amp; Rainforest is a lodging property in Quepos, Puntarenas, Costa Rica, combining beachfront and rainforest settings, as its name indicates.</p>
         </div>
         <div class="trip-side">
           <p class="priceline"><span class="pmuted">Rate not published</span></p>
@@ -6446,7 +6467,7 @@
           <h4><a href="https://turismo-sostenible.co.cr/entidad-certificada/scp-corcovado-wilderness-lodge/" target="_blank" rel="noopener">SCP Corcovado Wilderness Lodge</a></h4>
           <p class="meta">Osa, Puntarenas · <span class="lux" role="img" aria-label="Luxury level: Mid-luxury" title="Mid-luxury"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><span class="lux-off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg></span></span></p>
           <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/#scheme-cst" title="What Costa Rica CST means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="https://turismo-sostenible.co.cr/entidad-certificada/scp-corcovado-wilderness-lodge/" target="_blank" rel="noopener" title="Certified: opens the registry evidence">Costa Rica CST Nivel Élite</a></span></div>
-          <p class="blurb"><a href="#lodge-scp-corcovado-wilderness-lodge-costa-rica">SCP Corcovado Wilderness Lodge</a> is a wilderness lodge in Osa, Puntarenas, Costa Rica, as its name indicates.</p>
+          <p class="blurb">SCP Corcovado Wilderness Lodge is a wilderness lodge in Osa, Puntarenas, Costa Rica, as its name indicates.</p>
         </div>
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
@@ -6530,7 +6551,7 @@
           <h4><a href="https://www.playacativo.com" target="_blank" rel="noopener">Playa Cativo Lodge</a></h4>
           <p class="meta">Golfito, Puntarenas · <span class="lux" role="img" aria-label="Luxury level: Luxury" title="Luxury"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><span class="lux-off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg></span></span></p>
           <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/#scheme-cst" title="What Costa Rica CST means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="https://turismo-sostenible.co.cr/entidad-certificada/playa-cativo-lodge/" target="_blank" rel="noopener" title="Certified: opens the registry evidence">Costa Rica CST Nivel Básico</a></span></div>
-          <p class="blurb"><a href="#lodge-playa-cativo-lodge-costa-rica">Playa Cativo Lodge</a> generates its own hydroelectric and solar power for a fully clean energy operation in Golfito, Puntarenas, Costa Rica, and grows much of what it serves on its own organic farm, sourcing the rest from local producers and small scale fishers.</p>
+          <p class="blurb">Playa Cativo Lodge generates its own hydroelectric and solar power for a fully clean energy operation in Golfito, Puntarenas, Costa Rica, and grows much of what it serves on its own organic farm, sourcing the rest from local producers and small scale fishers.</p>
         </div>
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$350 to $600</span><span class="psep">/</span><span class="palt">€302 to €518</span><span class="psep">/</span><span class="palt">£259 to £444</span> <span class="pmeta">/ night</span></p>
@@ -6542,7 +6563,7 @@
           <h4><a href="https://www.hotelthreesixty.com" target="_blank" rel="noopener">Hotel Three Sixty</a></h4>
           <p class="meta">Osa, Puntarenas · <span class="lux" role="img" aria-label="Luxury level: Luxury" title="Luxury"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><span class="lux-off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg></span></span></p>
           <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/#scheme-cst" title="What Costa Rica CST means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="https://turismo-sostenible.co.cr/entidad-certificada/hotel-three-sixty/" target="_blank" rel="noopener" title="Certified: opens the registry evidence">Costa Rica CST Nivel Básico</a></span></div>
-          <p class="blurb"><a href="#lodge-hotel-three-sixty-costa-rica">Hotel Three Sixty</a> is a lodging property in Osa, Puntarenas, Costa Rica.</p>
+          <p class="blurb">Hotel Three Sixty is a lodging property in Osa, Puntarenas, Costa Rica.</p>
         </div>
         <div class="trip-side">
           <p class="priceline">600 <span class="pmeta">/ night</span></p>
@@ -6621,7 +6642,7 @@
           <h4><a href="https://www.maquenquelodge.com" target="_blank" rel="noopener">Maquenque Ecolodge</a></h4>
           <p class="meta">Boca Tapada, San Carlos, Alajuela</p>
           <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/#scheme-cst" title="What Costa Rica CST means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="https://turismo-sostenible.co.cr/entidad-certificada/maquenque-ecolodge/" target="_blank" rel="noopener" title="Certified: opens the registry evidence">Costa Rica CST Nivel Élite</a></span></div>
-          <p class="blurb"><a href="#lodge-maquenque-ecolodge-costa-rica">Maquenque Ecolodge</a>, founded in 2009, is built around conservation of the Refugio de Vida Silvestre Maquenque in Boca Tapada, San Carlos, Alajuela, Costa Rica, employing more than 45 local families and sourcing local products for its operation.</p>
+          <p class="blurb">Maquenque Ecolodge, founded in 2009, is built around conservation of the Refugio de Vida Silvestre Maquenque in Boca Tapada, San Carlos, Alajuela, Costa Rica, employing more than 45 local families and sourcing local products for its operation.</p>
         </div>
         <div class="trip-side">
           <p class="priceline"><span class="pmuted">Rate not published</span></p>
@@ -6661,7 +6682,7 @@
 
     <section id="community">
       <h2 class="cat-title">Birding Community</h2>
-      <p class="mintro">Find a local birding organization. <a href="/community.html">Find a birding organization near you in our complete directory</a></p>
+      <p class="mintro">Find a local birding organization. <a href="/community.html">Find a birding organization near you in our complete worldwide directory</a></p>
       <div class="cgrid">
         <a class="ccard" href="https://www.aocr.app/" target="_blank" rel="noopener">
           <span class="ctop"><b>Asociación Ornitológica de Costa Rica</b></span>
@@ -7154,16 +7175,31 @@
         // scale) sit later in the cascade and used to clobber both, which scattered
         // every lodge dot to its flow position. The marker gets a bare wrapper now
         // and our CSS only ever touches the button inside it.
-        function mkWrap(el) {
+        function mkWrap(el, kind) {
           var w = document.createElement('div');
-          w.className = 'mlmark';
+          w.className = 'mlmark' + (kind ? ' mlmark-' + kind : '');
           w.appendChild(el);
           return w;
+        }
+        // One class on the container drives the whole stack, so there is no per-marker
+        // bookkeeping and nothing to fall out of step when markers are added.
+        var ZOOM_STEPS_IN = 1.2;
+        function bindLayering(map) {
+          if (!map) return;
+          var base = null;
+          function sync() {
+            if (base === null) base = map.getZoom();
+            map.getContainer().classList.toggle('zoomed-in', map.getZoom() >= base + ZOOM_STEPS_IN);
+          }
+          map.once('idle', function () { base = map.getZoom(); sync(); });
+          map.on('zoom', sync);
+          map.on('zoomend', sync);
+          sync();
         }
         var rmap = mkMap('regionmap');
         if (rmap) {
           REGIONS.forEach(function (r) {
-            new maplibregl.Marker({ element: mkWrap(regionPin(r, false)), anchor: 'left', offset: [-8, 0] })
+            new maplibregl.Marker({ element: mkWrap(regionPin(r, false), 'region'), anchor: 'left', offset: [-8, 0] })
               .setLngLat([r[1], r[2]]).addTo(rmap);
           });
         }
@@ -7174,7 +7210,7 @@
         if (lmap) {
           if (lmap !== rmap) {
             REGIONS.forEach(function (r) {
-              new maplibregl.Marker({ element: mkWrap(regionPin(r, true, true)), anchor: 'left', offset: [-6, 0] })
+              new maplibregl.Marker({ element: mkWrap(regionPin(r, true, true), 'region'), anchor: 'left', offset: [-6, 0] })
                 .setLngLat([r[1], r[2]]).addTo(lmap);
             });
           }
@@ -7195,7 +7231,7 @@
             b.addEventListener('mouseleave', function () { pop.remove(); });
             b.addEventListener('blur', function () { pop.remove(); });
             b.addEventListener('click', function (e) { e.stopPropagation(); pop.remove(); jumpTo('lodge-' + d[0]); });
-            new maplibregl.Marker({ element: mkWrap(b) }).setLngLat([d[1], d[2]]).addTo(lmap);
+            new maplibregl.Marker({ element: mkWrap(b, 'dot') }).setLngLat([d[1], d[2]]).addTo(lmap);
             dots['lodge-' + d[0]] = b;
           });
           // Tours and operators: same colour as their region, a diamond rather than
@@ -7215,7 +7251,7 @@
             b.addEventListener('mouseleave', function () { pop.remove(); });
             b.addEventListener('blur', function () { pop.remove(); });
             b.addEventListener('click', function (e) { e.stopPropagation(); pop.remove(); jumpTo(d[0]); });
-            new maplibregl.Marker({ element: mkWrap(b) }).setLngLat([d[1], d[2]]).addTo(lmap);
+            new maplibregl.Marker({ element: mkWrap(b, 'dot') }).setLngLat([d[1], d[2]]).addTo(lmap);
             dots[d[0]] = b;
           });
           // A dot whose card is filtered out must not stay live: clicking one used
@@ -7231,6 +7267,8 @@
           };
           window.__syncLodgeDots();
         }
+        bindLayering(rmap);
+        if (lmap && lmap !== rmap) bindLayering(lmap);
       }
       boot();
     })();
