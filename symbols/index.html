@@ -10,17 +10,18 @@
 <meta property="og:description" content="Habitat, food, nest, size and conservation status, explained symbol by symbol." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://beakbrain.com/symbols/" />
-<style>
-/* Extracted from the site's own page shell so /symbols/ carries the same
+<link rel="stylesheet" href="/assets/site.1274c2c9f0.css">
+  <style>
+    /* Extracted from the site's own page shell so /symbols/ carries the same
    header, nav, hero and footer as every other page. Asset URLs are
    absolute because this page sits one level down. */
 @font-face { font-family: 'Fredoka'; font-weight: 500; font-display: swap; src: url('/fonts/Fredoka-500.woff') format('woff'); }
-@font-face { font-family: 'Fredoka'; font-weight: 600; font-display: swap; src: url('/fonts/Fredoka-600.woff') format('woff'); }
-@font-face { font-family: 'Fredoka'; font-weight: 700; font-display: swap; src: url('/fonts/Fredoka-700.woff') format('woff'); }
-@font-face { font-family: 'Nunito'; font-weight: 400; font-display: swap; src: url('/fonts/Nunito-400.woff') format('woff'); }
-@font-face { font-family: 'Nunito'; font-weight: 700; font-display: swap; src: url('/fonts/Nunito-700.woff') format('woff'); }
-@font-face { font-family: 'Nunito'; font-weight: 800; font-display: swap; src: url('/fonts/Nunito-800.woff') format('woff'); }
-:root {
+    @font-face { font-family: 'Fredoka'; font-weight: 600; font-display: swap; src: url('/fonts/Fredoka-600.woff') format('woff'); }
+    @font-face { font-family: 'Fredoka'; font-weight: 700; font-display: swap; src: url('/fonts/Fredoka-700.woff') format('woff'); }
+    @font-face { font-family: 'Nunito'; font-weight: 400; font-display: swap; src: url('/fonts/Nunito-400.woff') format('woff'); }
+    @font-face { font-family: 'Nunito'; font-weight: 700; font-display: swap; src: url('/fonts/Nunito-700.woff') format('woff'); }
+    @font-face { font-family: 'Nunito'; font-weight: 800; font-display: swap; src: url('/fonts/Nunito-800.woff') format('woff'); }
+    :root {
       --bg: #F2E8CF; --surface: #FFFFFF; --surface-alt: #E7D9B4; --ink: #2E2A25;
       --muted: #6B6155; --border: #DDCBA0; --green: #386641; --green-dark: #2C5134;
       --sage: #6A994E; --gold: #EBB93C; --gold-deep: #7A5205;
@@ -28,144 +29,99 @@
       --body: 'Nunito', system-ui, -apple-system, sans-serif;
       --shadow: 0 14px 34px rgba(46, 42, 37, 0.09);
     }
-* { box-sizing: border-box; }
-body { margin: 0; font-family: var(--body); color: var(--ink); background: var(--bg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
-.wrap { max-width: 860px; margin: 0 auto; padding: 0 28px; }
-.wordmark { font-family: var(--display); font-weight: 700; color: var(--green); letter-spacing: -0.3px; text-decoration: none; }
-header .wrap { max-width: 1080px; padding: 0 28px; }
-header { position: fixed; top: 0; left: 0; right: 0; z-index: 30; background: transparent; border-bottom: 1px solid transparent; transition: background .28s ease, border-color .28s ease; }
-header.scrolled { background: rgba(242,232,207,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
-.nav { display: flex; align-items: center; justify-content: space-between; height: 80px; }
-.nav .wordmark { font-size: 24px; color: #fff; transition: color .28s ease; }
-header.scrolled .nav .wordmark { color: var(--green); }
-.nav-links { display: flex; align-items: center; gap: 24px; }
-.nav-links a { text-decoration: none; font-family: var(--display); font-weight: 600; color: #fff; font-size: 15px; white-space: nowrap; transition: color .28s ease; }
-header.scrolled .nav-links a { color: var(--green); }
-@media (max-width: 640px) { .nav .wordmark { font-size: 20px; } .nav-links { gap: 14px; } .nav-links a { font-size: 14px; } }
-.hero { position: relative; margin: 0; min-height: 300px; display: flex; align-items: flex-end; overflow: hidden; background: linear-gradient(150deg, #2C5134, #386641); }
-.hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0; transition: opacity .9s ease; }
-.hero-video.ready { opacity: 1; }
-.hero::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(30,45,30,.24) 0%, rgba(30,45,30,.44) 55%, rgba(22,36,24,.78) 100%); }
-/* 28px of side padding, matching the home and cams heroes. This copy had 0,
+    body { margin: 0; font-family: var(--body); color: var(--ink); background: var(--bg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    .wrap { max-width: 860px; margin: 0 auto; padding: 0 28px; }
+    .wordmark { font-family: var(--display); font-weight: 700; color: var(--green); letter-spacing: -0.3px; text-decoration: none; }
+    header .wrap { max-width: 1080px; padding: 0 28px; }
+    header { position: fixed; top: 0; left: 0; right: 0; z-index: 30; background: transparent; border-bottom: 1px solid transparent; transition: background .28s ease, border-color .28s ease; }
+    header.scrolled { background: rgba(242,232,207,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
+    .nav .wordmark { font-size: 24px; color: #fff; transition: color .28s ease; }
+    .nav-links a { text-decoration: none; font-family: var(--display); font-weight: 600; color: #fff; font-size: 15px; white-space: nowrap; transition: color .28s ease; }
+    @media (max-width: 640px) { .nav .wordmark { font-size: 20px; } .nav-links { gap: 14px; } .nav-links a { font-size: 14px; } }
+    .hero { position: relative; margin: 0; min-height: 300px; display: flex; align-items: flex-end; overflow: hidden; background: linear-gradient(150deg, #2C5134, #386641); }
+    .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0; transition: opacity .9s ease; }
+    .hero::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(30,45,30,.24) 0%, rgba(30,45,30,.44) 55%, rgba(22,36,24,.78) 100%); }
+    /* 28px of side padding, matching the home and cams heroes. This copy had 0,
    which overrode .wrap's own padding and left the heading against the edge of a
    phone screen. contribute.html still carries the 0 and has the same problem. */
 .hero-inner { position: relative; z-index: 2; width: 100%; color: #fff; padding: 100px 28px 26px; }
-.hero h1 { font-size: clamp(30px, 5vw, 46px); color: #fff; }
-.hero p { color: #EFE7D2; font-size: 18px; margin-top: 12px; max-width: 60ch; }
-@media (prefers-reduced-motion: reduce) { .hero-video { transition: none; } }
-.cta a.btn { display: inline-block; background: var(--gold); color: #2E2A25; font-family: var(--display); font-weight: 700; text-decoration: none; border-radius: 999px; padding: 13px 26px; }
-footer { position: relative; overflow: hidden; background: var(--green-dark); color: #EAF1E4; margin-top: 40px; padding: 70px 0; }
-footer .bg-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-footer::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(15,20,15,.16) 0%, rgba(15,20,15,.55) 100%); }
-.foot { position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; padding: 0 28px; max-width: 1080px; margin: 0 auto; text-shadow: 0 1px 6px rgba(0,0,0,.45); }
-.foot .wordmark { color: #fff; font-size: 22px; }
-.foot nav a { color: #EAF1E4; text-decoration: none; margin-left: 22px; font-weight: 700; }
-.foot .copy { width: 100%; color: rgba(234,241,228,0.7); font-size: 13px; }
-/* Narrow screens: the inline nav collapses into an obvious Menu dropdown. */
+    .hero h1 { font-size: clamp(30px, 5vw, 46px); color: #fff; }
+    .hero p { color: #EFE7D2; font-size: 18px; margin-top: 12px; max-width: 60ch; }
+    @media (prefers-reduced-motion: reduce) { .hero-video { transition: none; } }
+    footer { position: relative; overflow: hidden; background: var(--green-dark); color: #EAF1E4; margin-top: 40px; padding: 70px 0; }
+    footer .bg-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    footer::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(15,20,15,.16) 0%, rgba(15,20,15,.55) 100%); }
+    .foot { position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; padding: 0 28px; max-width: 1080px; margin: 0 auto; text-shadow: 0 1px 6px rgba(0,0,0,.45); }
+    .foot .wordmark { color: #fff; font-size: 22px; }
+    .foot nav a { color: #EAF1E4; text-decoration: none; margin-left: 22px; font-weight: 700; }
+    .foot .copy { width: 100%; color: rgba(234,241,228,0.7); font-size: 13px; }
+    /* Narrow screens: the inline nav collapses into an obvious Menu dropdown. */
 .mnav{display:none;position:relative}
-.mnav summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:7px;font-family:var(--display);font-weight:700;font-size:15px;color:#fff;background:rgba(0,0,0,.22);border:1.5px solid rgba(255,255,255,.55);border-radius:999px;padding:8px 16px;transition:color .28s ease,border-color .28s ease,background .28s ease}
-.mnav summary::-webkit-details-marker{display:none}
-.mnav summary::after{content:"";width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:6px solid currentColor;transition:transform .2s ease}
-.mnav[open] summary::after{transform:rotate(180deg)}
-header.scrolled .mnav summary{color:var(--green);border-color:var(--green);background:transparent}
-.mnav .navdrop{position:absolute;right:0;top:calc(100% + 10px);min-width:220px;background:var(--surface,#fff);border:1px solid var(--border,#DDCBA0);border-radius:14px;box-shadow:0 18px 40px rgba(46,42,37,.22);padding:8px;z-index:60}
-.mnav .navdrop a{display:block;margin:0;padding:12px 14px;border-radius:9px;color:var(--green-dark,#2C5134);background:none;text-decoration:none;font-family:var(--display);font-weight:600;font-size:15.5px;white-space:nowrap}
-.mnav .navdrop a:hover{background:var(--surface-alt,#E7D9B4)}
-@media(max-width:640px){.nav>nav,.nav .nav-right,.nav .nav-links{display:none}.mnav{display:block}}
-/* Page content. Colours come from the site tokens above so this page cannot
-   drift from the rest of beakbrain.com the way the standalone version did. */
-/* 1080/28 matches header .wrap and .foot, so the grid lines up with the
-   wordmark and the footer nav rather than sitting proud of them. */
-.sheet{max-width:1080px;margin:0 auto;padding:0 28px 96px}
-/* The site header is fixed and 80px tall, so a page's own bar sits under it and
+    .mnav summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:7px;font-family:var(--display);font-weight:700;font-size:15px;color:#fff;background:rgba(0,0,0,.22);border:1.5px solid rgba(255,255,255,.55);border-radius:999px;padding:8px 16px;transition:color .28s ease,border-color .28s ease,background .28s ease}
+    .mnav summary::-webkit-details-marker{display:none}
+    .mnav summary::after{content:"";width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:6px solid currentColor;transition:transform .2s ease}
+    .mnav[open] summary::after{transform:rotate(180deg)}
+    header.scrolled .mnav summary{color:var(--green);border-color:var(--green);background:transparent}
+    .mnav .navdrop{position:absolute;right:0;top:calc(100% + 10px);min-width:220px;background:var(--surface,#fff);border:1px solid var(--border,#DDCBA0);border-radius:14px;box-shadow:0 18px 40px rgba(46,42,37,.22);padding:8px;z-index:60}
+    .mnav .navdrop a{display:block;margin:0;padding:12px 14px;border-radius:9px;color:var(--green-dark,#2C5134);background:none;text-decoration:none;font-family:var(--display);font-weight:600;font-size:15.5px;white-space:nowrap}
+    .mnav .navdrop a:hover{background:var(--surface-alt,#E7D9B4)}
+    @media(max-width:640px){.nav>nav,.nav .nav-right,.nav .nav-links{display:none}.mnav{display:block}}
+    /* The site header is fixed and 80px tall, so a page's own bar sits under it and
    stays there while the page scrolls. Cat, 2026-08-17: these pages "aren't
    floating and have back option on screen" — the only way back used to be the
    browser button or a link at the very bottom of the document. */
 .crumb{position:sticky;top:80px;z-index:18;background:rgba(242,232,207,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);margin:0 -28px 34px}
-.crumb-in{max-width:1080px;margin:0 auto;padding:10px 28px;display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
-.crumb .back,.crumb .crumb-alt{font-family:var(--display);font-weight:600;font-size:14px;color:var(--green);text-decoration:none;white-space:nowrap}
-.crumb .back:hover,.crumb .crumb-alt:hover{text-decoration:underline;text-underline-offset:3px}
-.crumb .crumb-alt{margin-left:auto}
-.crumb .here{font-family:var(--display);font-weight:600;font-size:14px;color:var(--muted);white-space:nowrap}
-.crumb .sep{color:var(--border)}
-@media(max-width:640px){.crumb-in{padding:9px 20px}.crumb .crumb-alt{margin-left:0}}
-.sheet h2{font-family:var(--display);font-weight:600;font-size:26px;margin:56px 0 4px;padding-top:24px;border-top:2px solid var(--border);color:var(--ink)}
-.sheet > h2:first-child{margin-top:40px;padding-top:0;border-top:0}
-.sub{color:var(--muted);font-size:15.5px;margin:14px 0 0;max-width:66ch}
-/* The annotated card that opens the page. The export is 1200px square and the
+    .crumb-in{max-width:1080px;margin:0 auto;padding:10px 28px;display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
+    @media(max-width:640px){.crumb-in{padding:9px 20px}.crumb .crumb-alt{margin-left:0}}
+    .sheet > h2:first-child{margin-top:40px;padding-top:0;border-top:0}
+    .sub{color:var(--muted);font-size:15.5px;margin:14px 0 0;max-width:66ch}
+    /* The annotated card that opens the page. The export is 1200px square and the
    figure is held at half that, so it lands at 2x on a retina screen and the
    handwritten labels stay crisp. It carries its own transparency, so it sits on
    the page's beige the way the symbols below it do. */
 .anatomy{margin:36px auto 8px;max-width:600px;text-align:center}
-.anatomy img{display:block;width:100%;height:auto}
-@media (min-width:900px){.anatomy{margin:40px auto 8px}}
-.sub b{color:var(--ink);font-weight:800}
-.sub + .grid{margin-top:22px}
-/* Diagrams are drawn from the card's own geometry files, so they inherit the
+    .anatomy img{display:block;width:100%;height:auto}
+    @media (min-width:900px){.anatomy{margin:40px auto 8px}}
+    .sub + .grid{margin-top:22px}
+    /* Diagrams are drawn from the card's own geometry files, so they inherit the
    page's ink rather than the card's palette and scale with the text. */
 .fig{margin:22px 0 0;max-width:66ch}
-.fig figcaption{color:var(--muted);font-size:13px;margin-top:8px}
-.diagram{display:block;color:var(--ink)}
-.cal{width:100%;max-width:330px;height:auto}
-.cal .mon{font-family:var(--body);font-weight:700;font-size:15px;fill:currentColor}
-/* The eggs sit on the card's own trait grey, because that is the only ground
+    .fig figcaption{color:var(--muted);font-size:13px;margin-top:8px}
+    .diagram{display:block;color:var(--ink)}
+    /* The eggs sit on the card's own trait grey, because that is the only ground
    they are ever drawn on: off-white shells floating on this white sheet would
    be a different picture from the one the card shows. */
 .eggs{display:block;height:auto;background:#D0CEC6;border-radius:8px;padding:12px 14px;box-sizing:content-box}
-/* The map takes the card's own map colours rather than the page's green, so the
-   sample and the thing it explains are the same picture. */
-.map{width:100%;max-width:420px;height:auto}
-/* The base carries a hairline on the card so it holds up against the coloured
-   band behind it. This sample is four times card size on plain paper, where the
-   same hairline turns every internal border into a line, so the base is left
-   flat and only the range keeps its outline. */
-.map .off{fill:#D0CEC6}
-.map .on{fill:#434341;stroke:#2E2C29;stroke-width:1.6;stroke-linejoin:round}
-/* Each set of symbols is a grid that reflows with the window: three columns on
+    /* Each set of symbols is a grid that reflows with the window: three columns on
    a desktop, two on a tablet, one on a phone. auto-fit rather than a fixed
    column count so the last short row stretches instead of leaving a gap. */
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px;margin-top:22px}
-.row{display:flex;flex-direction:column;padding:24px 22px 20px;border:1px solid var(--border);border-radius:16px}
-/* No panel behind the symbol. The artwork carries its own transparency, so it
+    .row{display:flex;flex-direction:column;padding:24px 22px 20px;border:1px solid var(--border);border-radius:16px}
+    /* No panel behind the symbol. The artwork carries its own transparency, so it
    sits straight on the page's beige the way it does on a card. */
 .sym{height:86px;display:flex;align-items:center;justify-content:center;background:none;border:0;margin-bottom:12px}
-.sym img,.sym svg{display:block}
-/* Stacked drop-shadows trace the artwork's own alpha, so a pale symbol gets an
-   outline without a second image being drawn for it. */
-.sym img.outlined{filter:drop-shadow(1px 0 0 #434341) drop-shadow(-1px 0 0 #434341) drop-shadow(0 1px 0 #434341) drop-shadow(0 -1px 0 #434341)}
-/* Status discs are drawn as SVG here rather than pulled from the artwork, so
-   the code inside them needs the display face and a size matched to its own
-   radius (font ~= 0.68r) to look like the discs in the scale above. */
-.sym svg.disc .code{font-family:var(--display);font-weight:600;font-size:31px;letter-spacing:.5px}
-.txt{min-width:0}
-.txt h3{font-family:var(--display);font-weight:600;font-size:19px;margin:0 0 8px;color:var(--ink);text-align:center}
-.txt blockquote{margin:0 0 8px;font-size:15px;color:var(--ink)}
-/* Our own words, so it takes the same size as a quotation without the
+    .sym img,.sym svg{display:block}
+    .txt h3{font-family:var(--display);font-weight:600;font-size:19px;margin:0 0 8px;color:var(--ink);text-align:center}
+    .txt blockquote{margin:0 0 8px;font-size:15px;color:var(--ink)}
+    /* Our own words, so it takes the same size as a quotation without the
    quotation's attribution. */
 .txt .own{margin:0 0 8px;font-size:15px;color:var(--ink)}
-blockquote.wide{margin:0 0 6px;max-width:62ch;font-size:16px;color:var(--ink)}
-cite{font-style:normal;color:var(--muted);font-size:13px;display:block}
-cite.wide{margin-bottom:20px}
-cite a,.txt a{color:var(--green);text-decoration:none;border-bottom:1px solid transparent}
-cite a:hover,.txt a:hover{border-bottom-color:var(--green)}
-.txt a{font-size:13.5px}
-.todo-tag{font-family:var(--body);font-size:11px;font-weight:700;color:#fff;background:var(--gold-deep);padding:2px 8px;border-radius:20px;vertical-align:middle;letter-spacing:.4px}
-.todo{display:flex;align-items:center;justify-content:center;border:2px dashed var(--muted);border-radius:8px;color:var(--muted);font-size:28px}
-.scale{width:100%;height:auto;max-width:640px;display:block;margin:8px 0 18px}
-.scale .code{font-family:var(--display);font-weight:600;font-size:26px;letter-spacing:.5px}
-.scale .grp{font-family:var(--display);font-weight:600;font-size:19px;fill:var(--ink)}
-.key{list-style:none;padding:0;margin:0 0 8px;columns:230px;font-size:14.5px;color:var(--muted)}
-.key li{margin-bottom:4px;break-inside:avoid}
-.key b{font-family:var(--display);display:inline-block;width:34px}
-.credits{margin-top:64px;padding-top:24px;border-top:2px solid var(--border);font-size:13.5px;color:var(--muted);max-width:74ch}
-.credits h2{font-size:19px;border:0;padding:0;margin:0 0 10px;color:var(--ink)}
-.credits li{margin-bottom:10px}
-.credits a{color:var(--green);text-decoration:none;border-bottom:1px solid transparent}
-.credits a:hover{border-bottom-color:var(--green)}
-/* The full citation for a dataset that asks to be cited, set quieter than the
+    blockquote.wide{margin:0 0 6px;max-width:62ch;font-size:16px;color:var(--ink)}
+    cite{font-style:normal;color:var(--muted);font-size:13px;display:block}
+    cite.wide{margin-bottom:20px}
+    .todo-tag{font-family:var(--body);font-size:11px;font-weight:700;color:#fff;background:var(--gold-deep);padding:2px 8px;border-radius:20px;vertical-align:middle;letter-spacing:.4px}
+    .todo{display:flex;align-items:center;justify-content:center;border:2px dashed var(--muted);border-radius:8px;color:var(--muted);font-size:28px}
+    .scale{width:100%;height:auto;max-width:640px;display:block;margin:8px 0 18px}
+    .key{list-style:none;padding:0;margin:0 0 8px;columns:230px;font-size:14.5px;color:var(--muted)}
+    .key li{margin-bottom:4px;break-inside:avoid}
+    .key b{font-family:var(--display);display:inline-block;width:34px}
+    .credits{margin-top:64px;padding-top:24px;border-top:2px solid var(--border);font-size:13.5px;color:var(--muted);max-width:74ch}
+    .credits h2{font-size:19px;border:0;padding:0;margin:0 0 10px;color:var(--ink)}
+    .credits li{margin-bottom:10px}
+    /* The full citation for a dataset that asks to be cited, set quieter than the
    line it belongs to so the list still scans. */
 .credits .cit{display:block;font-size:12.5px;line-height:1.5;margin-top:2px}
-</style>
+  </style>
 </head>
 <body>
 <header>
