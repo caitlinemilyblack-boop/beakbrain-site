@@ -6,21 +6,10 @@
   <title>Find Your Community | BeakBrain</title>
   <meta name="description" content="A directory of bird societies, local clubs and citizen science projects, listed by country and region. Find people to bird with near home or on your next trip." />
   <link rel="icon" href="assets/favicon.png" />
-  <link rel="preload" as="image" href="assets/video/community-hero-poster.jpg" fetchpriority="high" />
-  <link rel="preload" as="font" type="font/woff" href="fonts/Fredoka-700.woff" crossorigin />
-  <link rel="preload" as="font" type="font/woff" href="fonts/Nunito-400.woff" crossorigin />
   <meta property="og:title" content="Find Your Community | BeakBrain" />
   <meta property="og:description" content="Bird societies, local clubs and citizen science projects, listed by country and region." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://beakbrain.com/community.html" />
-  <!-- The composed share card (build/make-og-image.py). Without it this page
-       unfurled as a bare title on a blank rectangle. -->
-  <meta property="og:image" content="https://beakbrain.com/assets/og-card.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="BeakBrain: learn to identify birds by sight and sound." />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="https://beakbrain.com/assets/og-card.png" />
 
   <style>
     @font-face { font-family: 'Fredoka'; font-weight: 500; font-display: swap; src: url('fonts/Fredoka-500.woff') format('woff'); }
@@ -33,7 +22,7 @@
     :root {
       --bg: #F2E8CF; --surface: #FFFFFF; --surface-alt: #E7D9B4; --ink: #2E2A25;
       --muted: #6B6155; --border: #DDCBA0; --green: #386641; --green-dark: #2C5134;
-      --sage: #6A994E; --gold: #EBB93C; --gold-deep: #8C6410;
+      --sage: #6A994E; --gold: #EBB93C; --gold-deep: #7A5205;
       --display: 'Fredoka', 'Trebuchet MS', system-ui, sans-serif;
       --body: 'Nunito', system-ui, -apple-system, sans-serif;
       --shadow: 0 14px 34px rgba(46, 42, 37, 0.09);
@@ -57,8 +46,8 @@
     .nav-right { display: flex; align-items: center; gap: 24px; }
     .nav-link { color: #fff; text-decoration: none; font-family: var(--display); font-weight: 600; font-size: 15px; transition: color .28s ease; white-space: nowrap; }
     header.scrolled .nav .nav-link { color: var(--green); }
-    .nav .btn { white-space: nowrap; line-height: 1.6; }
-    /* Narrow widths: shrink, then drop the nav CTA (the page-end CTA repeats
+    .nav .btn { white-space: nowrap; }
+    /* Narrow widths: shrink, then drop the waitlist button (the page-end CTA repeats
        it) — the section links stay visible at every width. */
     @media (max-width: 760px) {
       .nav-right { gap: 14px; }
@@ -79,7 +68,7 @@
     header.scrolled .nav .btn { background: var(--green); color: #fff; }
     header.scrolled .nav .btn:hover { background: var(--green-dark); }
 
-    .hero { position: relative; min-height: 52vh; display: flex; align-items: center; overflow: hidden; background-color: #386641; background-image: url('assets/video/community-hero-poster.jpg'), linear-gradient(150deg, #2C5134 0%, #386641 45%, #4A7A3E 100%); background-size: cover; background-position: center; }
+    .hero { position: relative; min-height: 52vh; display: flex; align-items: center; overflow: hidden; background: linear-gradient(150deg, #2C5134 0%, #386641 45%, #4A7A3E 100%); }
     .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0; transition: opacity .9s ease; }
     .hero-video.ready { opacity: 1; }
     .hero::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(30,45,30,0.30) 0%, rgba(30,45,30,0.52) 60%, rgba(22,36,24,0.82) 100%); }
@@ -197,7 +186,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
         <div class="select-row">
           <select class="cselect" id="cpick" aria-label="Pick a country or territory">
             <option value="">Choose your location</option>
-            <option value="INT">International and global</option>
+            <option value="INT">International and Global</option>
           <optgroup label="Europe">
             <option value="AL">Albania</option>
             <option value="AD">Andorra</option>
@@ -379,9 +368,9 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
     </div>
     <p class="empty" id="empty" hidden>No match yet. Try another spelling, or tell us who is missing and we will add them.</p>
 
-    <!-- International and global -->
+    <!-- International and Global -->
     <section class="country" data-country="INT" data-continent="INT" data-search="international and global int international global worldwide everywhere">
-      <h2 class="country-title">International and global</h2>
+      <h2 class="country-title">International and Global</h2>
       <div class="region" data-search="communities that welcome everyone feminist bird club birdability black af in stem and black birders week female bird day and the galbatross project global young birders network chapters on several continents run free, inclusive bird walks open to anyone. the community for birders with disabilities and other health concerns, with an accessible sites map anyone can add to. the collective behind black birders week, a worldwide programme of talks, walks and online events. a yearly global challenge to notice and record the overlooked female half of every species. connects birders under 25 worldwide to young birder clubs, camps and careers with birds.">
         <div class="region-label">Communities that welcome everyone</div>
         <div class="grid">
@@ -4140,11 +4129,11 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
     <!-- Madagascar -->
     <section class="country" data-country="MG" data-continent="Africa" data-search="madagascar mg madagascar">
       <h2 class="country-title">Madagascar</h2>
-      <div class="region" data-search="countrywide asity madagascar the peregrine fund madagascar the national birdlife partner and 100 percent malagasy organization protecting endemic birds through environmental education and community conservation. community conservation program that rediscovered four presumed extinct bird species and has fostered over 30 community associations around protected areas.">
+      <div class="region" data-search="countrywide asity madagascar the peregrine fund madagascar the national birdlife partner and 100 percent malagasy organization protecting endemic birds through environmental education and community conservation. community conservation program that rediscovered four presumed extinct bird species and has helped establish over 30 community associations around protected areas.">
         <div class="region-label">Countrywide</div>
         <div class="grid">
         <a class="card" href="https://www.birdlife.org/partners/madagascar-asity-madagascar/" target="_blank" rel="noopener"><div class="top"><h3>Asity Madagascar</h3></div><p class="blurb">The national BirdLife partner and 100 percent Malagasy organization protecting endemic birds through environmental education and community conservation.</p><div class="arrow">Visit →</div></a>
-        <a class="card" href="https://peregrinefund.org/madagascar-program" target="_blank" rel="noopener"><div class="top"><h3>The Peregrine Fund Madagascar</h3></div><p class="blurb">Community conservation program that rediscovered four presumed extinct bird species and has fostered over 30 community associations around protected areas.</p><div class="arrow">Visit →</div></a>
+        <a class="card" href="https://peregrinefund.org/madagascar-program" target="_blank" rel="noopener"><div class="top"><h3>The Peregrine Fund Madagascar</h3></div><p class="blurb">Community conservation program that rediscovered four presumed extinct bird species and has helped establish over 30 community associations around protected areas.</p><div class="arrow">Visit →</div></a>
         </div>
       </div>
     </section>
