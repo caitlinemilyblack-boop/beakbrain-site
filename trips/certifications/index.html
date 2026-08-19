@@ -142,7 +142,7 @@
        single frame, and the box is reserved for things that genuinely float — the
        maps, and the collector cards, which really are cards. */
     .panel { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; }
-    .siteindex { display: block; padding: 2px 24px; }
+    .siteindex { display: flex; flex-direction: column; gap: 26px; padding: 4px 24px 10px; }
     .lux { display: inline-flex; align-items: center; gap: 1.5px; vertical-align: -2px; }
     .lux svg { width: 12px; height: 12px; fill: var(--gold-deep); }
     .lux-off { display: inline-flex; gap: 1.5px; }
@@ -206,12 +206,21 @@
     /* Region identity is a colour chip, not coloured text: six of the eleven region
        hues fail WCAG AA as 12px text on white, and a 4px top stroke tapers badly
        into a 16px corner radius. The chip keeps the colour coding and passes. */
-    .site { background: none; border: none; border-bottom: 1px solid #EFE5C6; border-radius: 0; box-shadow: none; padding: 18px 0; display: block; }
+    .site { display: block; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--shadow); padding: 0; overflow: hidden; }
+    /* The name sits in a band tinted with the region's own colour, so the top of a region
+       is unmistakable even when you arrive mid-scroll with two blocks already open. */
+    .site-band { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 12px; padding: 14px 22px 12px; background: color-mix(in srgb, var(--rc, var(--sage)) 11%, var(--surface)); border-bottom: 2px solid color-mix(in srgb, var(--rc, var(--sage)) 34%, var(--border)); }
+    .site-band h3 { margin: 0; }
+    .site-band .site-tag { margin: 0; }
+    .site-body { padding: 16px 22px 6px; }
+    /* And an end. A region closes on a rule in its own colour rather than just stopping. */
+    .site-foot { height: 5px; background: color-mix(in srgb, var(--rc, var(--sage)) 30%, var(--surface)); }
+    @media (max-width: 560px) { .site-band { padding: 12px 15px 10px; } .site-body { padding: 13px 15px 6px; } }
     .site-head { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 4px 22px; align-items: start; }
     .site-intro { display: flex; flex-direction: column; gap: 7px; min-width: 0; }
     .site-head > .birdshot { margin: 0; }
     @media (max-width: 760px) { .site-head { grid-template-columns: 1fr; gap: 10px; } }
-    .site h3 { font-size: 17.5px; color: var(--green-dark); display: flex; align-items: baseline; gap: 9px; }
+    .site h3 { font-size: 18.5px; color: var(--green-dark); display: flex; align-items: baseline; gap: 9px; }
     .site h3::before { content: ""; flex: 0 0 auto; width: 12px; height: 12px; border-radius: 50%; background: var(--rc, var(--sage)); box-shadow: inset 0 0 0 1px rgba(0,0,0,.22); transform: translateY(-1px); }
     .site-tag { font-family: var(--body); font-weight: 700; font-size: 13px; color: var(--muted); }
     /* The region's signature bird. Fixed aspect so thirteen cards keep one rhythm
@@ -236,7 +245,7 @@
     .site .blurb { flex: 1; }
     .lodge-group { scroll-margin-top: 132px; }
     .lgroup { scroll-margin-top: 118px; }
-    .siteindex > .site:last-child { border-bottom: none; }
+
 
     /* Trips and lodges are the same shape of question — which one, at what price,
        with what evidence behind it — so they render as rows in one framed list.
