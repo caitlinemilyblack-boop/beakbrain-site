@@ -60,7 +60,11 @@
     .lead { color: var(--muted); font-size: 16.5px; margin: 34px 0 22px; max-width: 62ch; }
     .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin-bottom: 8px; }
     .card { display: block; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 20px 22px; box-shadow: var(--shadow); text-decoration: none; }
-    .card h2 { font-family: var(--display); font-weight: 700; font-size: 18px; color: var(--green-dark); }
+    /* A card title names a destination, so it is a paragraph, not a heading:
+       six h2 elements here advertised sections that exist nowhere on it. Specificity
+       (0,2,0) beats the .card p rule below, and margin-top is reset because
+       that rule would otherwise indent the title as if it were the blurb. */
+    .card .cn { font-family: var(--display); font-weight: 700; font-size: 18px; color: var(--green-dark); margin-top: 0; }
     .card p { color: var(--muted); font-size: 15px; margin-top: 6px; }
     .card:hover { border-color: var(--sage); }
     .back { display: inline-block; margin: 26px 0 0; font-weight: 700; }
@@ -99,27 +103,27 @@
 
     <div class="cards">
       <a class="card" href="/birds/">
-        <h2>Bird Guide</h2>
+        <p class="cn">Bird Guide</p>
         <p>Every species in the world, searchable by common or scientific name.</p>
       </a>
       <a class="card" href="/daily/">
-        <h2>Daily Bird</h2>
+        <p class="cn">Daily Bird</p>
         <p>One species a day, with its call, its range and its story.</p>
       </a>
       <a class="card" href="/cams/">
-        <h2>Live Cams</h2>
+        <p class="cn">Live Cams</p>
         <p>Nest and feeder cameras streaming from around the world.</p>
       </a>
       <a class="card" href="/community.html">
-        <h2>Community</h2>
+        <p class="cn">Community</p>
         <p>Bird clubs, walks and local groups near you.</p>
       </a>
       <a class="card" href="/contribute.html">
-        <h2>Contribute</h2>
+        <p class="cn">Contribute</p>
         <p>Add a photo or a recording, and help fill the gaps.</p>
       </a>
       <a class="card" href="/symbols/">
-        <h2>Interpreting the Bird Cards</h2>
+        <p class="cn">Interpreting the Bird Cards</p>
         <p>What every symbol on a species card means, and where the data comes from.</p>
       </a>
     </div>

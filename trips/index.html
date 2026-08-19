@@ -99,7 +99,10 @@
     .cbubble:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
     .cbtop { display: flex; align-items: center; gap: 9px; }
     .cbdot { width: 11px; height: 11px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 3px rgba(212,160,23,.22); flex: 0 0 auto; }
-    .cbtop b { font-family: var(--display); font-weight: 700; font-size: 19px; color: var(--green-dark); }
+    /* The country name is the heading of its own section of the atlas. It was a
+       <b>, so the served page carried a single h1 and no structure under it. */
+    .cbtop .cbname { font-family: var(--display); font-weight: 700; line-height: 1.14; font-size: 19px; color: var(--green-dark); margin: 0; }
+    .atlaslede { color: var(--muted); font-size: 16.5px; max-width: 66ch; margin: 0 0 22px; }
     .cbblurb { color: var(--muted); font-size: 14.5px; margin-top: 7px; }
     .cbgo { display: inline-flex; align-items: center; gap: 5px; color: var(--green); font-weight: 800; font-size: 13px; margin-top: auto; padding-top: 12px; }
     .cbgo svg { stroke: var(--green); transition: transform .12s ease; }
@@ -280,6 +283,7 @@
   </section>
 
   <main class="wrap">
+    <p class="atlaslede">Full birding guides, country by country. Each one covers the birds you can expect, the regions worth your time, when to travel, and the lodges and operators who know the ground.</p>
     <div class="mapwrap">
       <div class="tripmap" id="tripmap" role="application" aria-label="World map of the countries with a full birding guide"></div>
       <div class="mapbar">
@@ -289,7 +293,7 @@
     </div>
     <div class="cbubbles">
       <a class="cbubble" href="/trips/costa-rica/">
-        <span class="cbtop"><span class="cbdot" aria-hidden="true"></span><b>Costa Rica</b></span>
+        <div class="cbtop"><span class="cbdot" aria-hidden="true"></span><h2 class="cbname">Costa Rica</h2></div>
         <span class="cbblurb">944 birds across 13 regions, from cloud forest quetzals to macaws on the Osa. When to go, where to stay, what it costs.</span>
         <span class="cbgo">Open the guide <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </a>

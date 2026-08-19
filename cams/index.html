@@ -144,7 +144,12 @@
     @media (prefers-reduced-motion: reduce) { .badge.live::before { animation: none; } }
 
     .cam-body { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
-    .cam h3 { font-size: 17px; color: var(--green-dark); }
+    /* A cam name titles a card in a grid, so it is a paragraph. As 118 h3
+       elements they claimed 118 document sections under the 9 real category
+       headings, which is the whole outline of this page misreported. The
+       display font, weight and line-height are restated here because the
+       global h1, h2, h3 rule no longer reaches it. */
+    .cam .cam-name { font-family: var(--display); font-weight: 700; line-height: 1.14; font-size: 17px; color: var(--green-dark); }
     .cam .meta { color: var(--muted); font-size: 13.5px; }
     .cam .meta a { color: var(--muted); }
     .cam .blurb { color: var(--muted); font-size: 14.5px; }
@@ -282,7 +287,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Big Bear Bald Eagle Nest</h3>
+          <p class="cam-name">Big Bear Bald Eagle Nest</p>
           <p class="meta">Big Bear Lake, California, USA · Friends of Big Bear Valley</p>
           <p class="season">Eggs in January, chicks through June, and the pair visits the nest all year.</p>
           <div class="sp-row"><a class="sp" href="/birds/bald-eagle/">Bald Eagle</a></div>
@@ -297,7 +302,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Black Eagles of Selati</h3>
+          <p class="cam-name">Black Eagles of Selati</p>
           <p class="meta">Selati Game Reserve, South Africa · Selati Wilderness Foundation on explore.org</p>
           <p class="season">Eggs April to June, chicks through spring; the cliff is active all year.</p>
           <div class="sp-row"><a class="sp" href="/birds/verreaux-s-eagle/">Verreaux's Eagle</a></div>
@@ -312,7 +317,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </a>
         <div class="cam-body">
-          <h3>California Condor Sanctuary Cam</h3>
+          <p class="cam-name">California Condor Sanctuary Cam</p>
           <p class="meta">San Simeon, California, USA · Ventana Wildlife Society on explore.org</p>
           <p class="season">Condors visit the sanctuary ridge all year.</p>
           <div class="sp-row"><span class="sp">California Condor</span></div>
@@ -327,7 +332,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Cornell Red-tailed Hawks</h3>
+          <p class="cam-name">Cornell Red-tailed Hawks</p>
           <p class="meta">Ithaca, New York, USA · Cornell Lab Bird Cams</p>
           <p class="season">Eggs in March, fledging in June, above the Cornell campus.</p>
           <div class="sp-row"><a class="sp" href="/birds/red-tailed-hawk/">Red-tailed Hawk</a></div>
@@ -342,7 +347,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </a>
         <div class="cam-body">
-          <h3>Decorah Eagles</h3>
+          <p class="cam-name">Decorah Eagles</p>
           <p class="meta">Decorah, Iowa, USA · Raptor Resource Project on explore.org</p>
           <p class="season">Eggs in February, eaglets fledge by July; eagles visit the nest all year.</p>
           <div class="sp-row"><a class="sp" href="/birds/bald-eagle/">Bald Eagle</a></div>
@@ -357,7 +362,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </a>
         <div class="cam-body">
-          <h3>Decorah North Eagles</h3>
+          <p class="cam-name">Decorah North Eagles</p>
           <p class="meta">Decorah, Iowa, USA · Raptor Resource Project on explore.org</p>
           <p class="season">Eggs in February, fledging by July.</p>
           <div class="sp-row"><a class="sp" href="/birds/bald-eagle/">Bald Eagle</a></div>
@@ -372,7 +377,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Dulles Greenway Eagle Cam</h3>
+          <p class="cam-name">Dulles Greenway Eagle Cam</p>
           <p class="meta">Leesburg, Virginia, USA · Dulles Greenway</p>
           <p class="season">Eggs in February, fledging by June; the nest stays on camera all year.</p>
           <div class="sp-row"><a class="sp" href="/birds/bald-eagle/">Bald Eagle</a></div>
@@ -387,7 +392,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Glacier Gardens Bald Eagle Cam</h3>
+          <p class="cam-name">Glacier Gardens Bald Eagle Cam</p>
           <p class="meta">Juneau, Alaska, USA · Glacier Gardens</p>
           <p class="season">Nesting April to August in the Tongass rainforest.</p>
           <div class="sp-row"><a class="sp" href="/birds/bald-eagle/">Bald Eagle</a></div>
@@ -402,7 +407,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Glen Hazel (Hays) Bald Eagle Cam</h3>
+          <p class="cam-name">Glen Hazel (Hays) Bald Eagle Cam</p>
           <p class="meta">Pittsburgh, Pennsylvania, USA · PixCams</p>
           <p class="season">Eggs in February, chicks through June; the pair guards the nest all year.</p>
           <div class="sp-row"><a class="sp" href="/birds/bald-eagle/">Bald Eagle</a></div>
@@ -417,7 +422,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Golden Eagle Nest, Estonia</h3>
+          <p class="cam-name">Golden Eagle Nest, Estonia</p>
           <p class="meta">Estonia · Kotkaklubi (Eagle Club Estonia)</p>
           <p class="season">Eggs in March, fledging in July; eagles attend the nest in winter too.</p>
           <div class="sp-row"><a class="sp" href="/birds/golden-eagle/">Golden Eagle</a></div>
@@ -432,7 +437,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Hancock Wildlife Eagle Cams</h3>
+          <p class="cam-name">Hancock Wildlife Eagle Cams</p>
           <p class="meta">British Columbia, Canada · Hancock Wildlife Foundation</p>
           <p class="season">Eggs in March, fledging by August, on nests across the Fraser Valley.</p>
           <div class="sp-row"><a class="sp" href="/birds/bald-eagle/">Bald Eagle</a></div>
@@ -447,7 +452,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Kisatchie National Forest Eagle Cams</h3>
+          <p class="cam-name">Kisatchie National Forest Eagle Cams</p>
           <p class="meta">Kisatchie National Forest, Louisiana, USA · KNF Cams / US Forest Service</p>
           <p class="season">Nesting October to May; canopy cams stream the forest all year.</p>
           <div class="sp-row"><a class="sp" href="/birds/bald-eagle/">Bald Eagle</a></div>
@@ -462,7 +467,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Lesser Spotted Eagle Nest, Estonia</h3>
+          <p class="cam-name">Lesser Spotted Eagle Nest, Estonia</p>
           <p class="meta">Estonia · Kotkaklubi (Eagle Club Estonia)</p>
           <p class="season">On the nest April to August, then away to African winter grounds.</p>
           <div class="sp-row"><span class="sp">Lesser Spotted Eagle</span></div>
@@ -477,7 +482,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </a>
         <div class="cam-body">
-          <h3>Philippine Eagle Cam</h3>
+          <p class="cam-name">Philippine Eagle Cam</p>
           <p class="meta">Davao, Mindanao, Philippines · Philippine Eagle Foundation on explore.org</p>
           <p class="season">Streams year round from the Philippine Eagle Center.</p>
           <div class="sp-row"><a class="sp" href="/birds/philippine-eagle/">Philippine Eagle</a></div>
@@ -492,7 +497,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>RSPB Goshawk Nest Camera</h3>
+          <p class="cam-name">RSPB Goshawk Nest Camera</p>
           <p class="meta">Abernethy Forest, Scotland, UK · RSPB</p>
           <p class="season">Nesting March to July in ancient Caledonian pinewood.</p>
           <div class="sp-row"><span class="sp">Eurasian Goshawk</span></div>
@@ -507,7 +512,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>SuperBeaks Bald Eagle Nest</h3>
+          <p class="cam-name">SuperBeaks Bald Eagle Nest</p>
           <p class="meta">Central Florida, USA · SuperBeaks</p>
           <p class="season">Florida eagles nest early: eggs from November, eaglets fledge by spring.</p>
           <div class="sp-row"><a class="sp" href="/birds/bald-eagle/">Bald Eagle</a></div>
@@ -522,7 +527,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Sydney Sea-EagleCAM</h3>
+          <p class="cam-name">Sydney Sea-EagleCAM</p>
           <p class="meta">Sydney Olympic Park, Australia · BirdLife Australia</p>
           <p class="season">Eggs in June, chicks fledge by November; the pair visits year round.</p>
           <div class="sp-row"><span class="sp">White-bellied Sea-Eagle</span></div>
@@ -537,7 +542,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </a>
         <div class="cam-body">
-          <h3>Trempealeau Eagles</h3>
+          <p class="cam-name">Trempealeau Eagles</p>
           <p class="meta">Trempealeau, Wisconsin, USA · Raptor Resource Project on explore.org</p>
           <p class="season">Eggs in February, eaglets through June, above the Mississippi River.</p>
           <div class="sp-row"><a class="sp" href="/birds/bald-eagle/">Bald Eagle</a></div>
@@ -552,7 +557,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>U.S. Steel Red-tailed Hawk Nest</h3>
+          <p class="cam-name">U.S. Steel Red-tailed Hawk Nest</p>
           <p class="meta">Pittsburgh, Pennsylvania, USA · PixCams</p>
           <p class="season">Eggs in March, young on the nest into June.</p>
           <div class="sp-row"><a class="sp" href="/birds/red-tailed-hawk/">Red-tailed Hawk</a></div>
@@ -567,7 +572,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>West End Bald Eagles, Catalina Island</h3>
+          <p class="cam-name">West End Bald Eagles, Catalina Island</p>
           <p class="meta">Catalina Island, California, USA · Institute for Wildlife Studies on explore.org</p>
           <p class="season">Eggs in February, fledging by June, on sea cliffs above the Pacific.</p>
           <div class="sp-row"><a class="sp" href="/birds/bald-eagle/">Bald Eagle</a></div>
@@ -582,7 +587,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>White-tailed Eagle Nest, Durbe</h3>
+          <p class="cam-name">White-tailed Eagle Nest, Durbe</p>
           <p class="meta">Durbe, Latvia · Latvian Fund for Nature</p>
           <p class="season">Eggs in March, fledging in July; the pair visits the nest all winter.</p>
           <div class="sp-row"><a class="sp" href="/birds/white-tailed-eagle/">White-tailed Eagle</a></div>
@@ -597,7 +602,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>White-tailed Eagle Nest, Piotrków</h3>
+          <p class="cam-name">White-tailed Eagle Nest, Piotrków</p>
           <p class="meta">Piotrków, Poland · Eagle Conservation Committee (KOO)</p>
           <p class="season">Eggs in February, young fledge by July.</p>
           <div class="sp-row"><a class="sp" href="/birds/white-tailed-eagle/">White-tailed Eagle</a></div>
@@ -612,7 +617,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </a>
         <div class="cam-body">
-          <h3>Berry College Eagles</h3>
+          <p class="cam-name">Berry College Eagles</p>
           <p class="meta">Rome, Georgia, USA · Berry College</p>
           <p class="season">Streams November to May; eggs in January on the world's largest college campus.</p>
           <div class="sp-row"><a class="sp" href="/birds/bald-eagle/">Bald Eagle</a></div>
@@ -627,7 +632,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Dale Hollow Eagle Cam</h3>
+          <p class="cam-name">Dale Hollow Eagle Cam</p>
           <p class="meta">Dale Hollow Lake, Tennessee, USA · Dale Hollow Eagle Camera</p>
           <p class="season">Streams during nesting, February to June, above a clear highland reservoir.</p>
           <div class="sp-row"><a class="sp" href="/birds/bald-eagle/">Bald Eagle</a></div>
@@ -642,7 +647,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Redding Bald Eagles (Guardian and Liberty)</h3>
+          <p class="cam-name">Redding Bald Eagles (Guardian and Liberty)</p>
           <p class="meta">Redding, California, USA · Friends of the Redding Eagles</p>
           <p class="season">Streams during nesting, roughly February to June.</p>
           <div class="sp-row"><a class="sp" href="/birds/bald-eagle/">Bald Eagle</a></div>
@@ -657,7 +662,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Southwest Florida Eagle Cam</h3>
+          <p class="cam-name">Southwest Florida Eagle Cam</p>
           <p class="meta">North Fort Myers, Florida, USA · Pritchett Real Estate</p>
           <p class="season">Streams October to May; eggs in November and eaglets fledge by April.</p>
           <div class="sp-row"><a class="sp" href="/birds/bald-eagle/">Bald Eagle</a></div>
@@ -672,7 +677,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Window to Wildlife Cams</h3>
+          <p class="cam-name">Window to Wildlife Cams</p>
           <p class="meta">Florida, USA · Window to Wildlife</p>
           <p class="season">Multiple Florida nests stream through the winter breeding season.</p>
           <div class="sp-row"><a class="sp" href="/birds/bald-eagle/">Bald Eagle</a><a class="sp" href="/birds/great-horned-owl/">Great Horned Owl</a></div>
@@ -694,7 +699,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Charlo Osprey Nest</h3>
+          <p class="cam-name">Charlo Osprey Nest</p>
           <p class="meta">Charlo, Montana, USA · Owl Research Institute on explore.org</p>
           <p class="season">On the nest April to September beneath the Mission Mountains.</p>
           <div class="sp-row"><a class="sp" href="/birds/osprey/">Osprey</a></div>
@@ -709,7 +714,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Chesapeake Conservancy Osprey Cam</h3>
+          <p class="cam-name">Chesapeake Conservancy Osprey Cam</p>
           <p class="meta">Chesapeake Bay, Maryland, USA · Chesapeake Conservancy on explore.org</p>
           <p class="season">Tom and Audrey return in March and fledge young by August.</p>
           <div class="sp-row"><a class="sp" href="/birds/osprey/">Osprey</a></div>
@@ -724,7 +729,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Dyfi Osprey Project</h3>
+          <p class="cam-name">Dyfi Osprey Project</p>
           <p class="meta">Machynlleth, Wales, UK · Montgomeryshire Wildlife Trust</p>
           <p class="season">Idris and Telyn breed April to early September on the Dyfi estuary.</p>
           <div class="sp-row"><a class="sp" href="/birds/osprey/">Osprey</a></div>
@@ -739,7 +744,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Glaslyn Osprey Cam</h3>
+          <p class="cam-name">Glaslyn Osprey Cam</p>
           <p class="meta">Porthmadog, Wales, UK · Bywyd Gwyllt Glaslyn Wildlife</p>
           <p class="season">On the nest late March to September beneath Snowdonia.</p>
           <div class="sp-row"><a class="sp" href="/birds/osprey/">Osprey</a></div>
@@ -754,7 +759,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Hellgate Ospreys</h3>
+          <p class="cam-name">Hellgate Ospreys</p>
           <p class="meta">Missoula, Montana, USA · Cornell Lab Bird Cams / University of Montana</p>
           <p class="season">On the nest April to September, then away south for the winter.</p>
           <div class="sp-row"><a class="sp" href="/birds/osprey/">Osprey</a></div>
@@ -769,7 +774,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Loch Arkaig Osprey Cam</h3>
+          <p class="cam-name">Loch Arkaig Osprey Cam</p>
           <p class="meta">Loch Arkaig, Lochaber, Scotland, UK · Woodland Trust</p>
           <p class="season">Louis and Dorcha hold the nest April to early September.</p>
           <div class="sp-row"><a class="sp" href="/birds/osprey/">Osprey</a></div>
@@ -784,7 +789,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Loch of the Lowes Osprey Cam</h3>
+          <p class="cam-name">Loch of the Lowes Osprey Cam</p>
           <p class="meta">Dunkeld, Perthshire, Scotland, UK · Scottish Wildlife Trust</p>
           <p class="season">On the nest late March to early September, then off to West Africa.</p>
           <div class="sp-row"><a class="sp" href="/birds/osprey/">Osprey</a></div>
@@ -799,7 +804,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Moraine State Park Osprey Cam</h3>
+          <p class="cam-name">Moraine State Park Osprey Cam</p>
           <p class="meta">Moraine State Park, Pennsylvania, USA · Moraine Preservation Fund / PixCams</p>
           <p class="season">On the nest April to September over Lake Arthur.</p>
           <div class="sp-row"><a class="sp" href="/birds/osprey/">Osprey</a></div>
@@ -814,7 +819,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Osprey Nest, Jedwabno</h3>
+          <p class="cam-name">Osprey Nest, Jedwabno</p>
           <p class="meta">Jedwabno, Poland · Eagle Conservation Committee (KOO)</p>
           <p class="season">On the nest April to early September.</p>
           <div class="sp-row"><a class="sp" href="/birds/osprey/">Osprey</a></div>
@@ -829,7 +834,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Poole Harbour Osprey Cam</h3>
+          <p class="cam-name">Poole Harbour Osprey Cam</p>
           <p class="meta">Poole Harbour, England, UK · Birds of Poole Harbour</p>
           <p class="season">CJ7 and 022 breed April to early September.</p>
           <div class="sp-row"><a class="sp" href="/birds/osprey/">Osprey</a></div>
@@ -844,7 +849,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Port Lincoln Osprey Cam</h3>
+          <p class="cam-name">Port Lincoln Osprey Cam</p>
           <p class="meta">Port Lincoln, South Australia · Port Lincoln Osprey Project</p>
           <p class="season">Eggs in September, chicks fledge by January; the pair stays all year.</p>
           <div class="sp-row"><a class="sp" href="/birds/osprey/">Osprey</a></div>
@@ -859,7 +864,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Rogers Place Osprey and Goose Nest</h3>
+          <p class="cam-name">Rogers Place Osprey and Goose Nest</p>
           <p class="meta">Edmonton, Alberta, Canada · explore.org</p>
           <p class="season">Ospreys May to September; a Canada goose often claims the platform first in spring.</p>
           <div class="sp-row"><a class="sp" href="/birds/osprey/">Osprey</a><a class="sp" href="/birds/canada-goose/">Canada Goose</a></div>
@@ -874,7 +879,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>RSPB Loch Garten Osprey Cam</h3>
+          <p class="cam-name">RSPB Loch Garten Osprey Cam</p>
           <p class="meta">Abernethy, Scotland, UK · RSPB</p>
           <p class="season">On the nest April to early September.</p>
           <div class="sp-row"><a class="sp" href="/birds/osprey/">Osprey</a></div>
@@ -889,7 +894,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Rutland Water Ospreys, Manton Bay</h3>
+          <p class="cam-name">Rutland Water Ospreys, Manton Bay</p>
           <p class="meta">Rutland Water, England, UK · Leicestershire and Rutland Wildlife Trust</p>
           <p class="season">On the nest late March to September.</p>
           <div class="sp-row"><a class="sp" href="/birds/osprey/">Osprey</a></div>
@@ -904,7 +909,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>SuperBeaks Osprey Nest</h3>
+          <p class="cam-name">SuperBeaks Osprey Nest</p>
           <p class="meta">Central Florida, USA · SuperBeaks</p>
           <p class="season">Florida ospreys stay year round; eggs come as early as December.</p>
           <div class="sp-row"><a class="sp" href="/birds/osprey/">Osprey</a></div>
@@ -919,7 +924,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Taipalsaari Osprey Cam</h3>
+          <p class="cam-name">Taipalsaari Osprey Cam</p>
           <p class="meta">Taipalsaari, Finland · Taipalsaaren sääkset</p>
           <p class="season">On the nest April to late August above the Saimaa lakeland.</p>
           <div class="sp-row"><a class="sp" href="/birds/osprey/">Osprey</a></div>
@@ -934,7 +939,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </a>
         <div class="cam-body">
-          <h3>Loch Doon Osprey Cam</h3>
+          <p class="cam-name">Loch Doon Osprey Cam</p>
           <p class="meta">Loch Doon, Ayrshire, Scotland, UK · East Ayrshire Leisure</p>
           <p class="season">Streams while the nest is active, April to early September.</p>
           <div class="sp-row"><a class="sp" href="/birds/osprey/">Osprey</a></div>
@@ -949,7 +954,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </a>
         <div class="cam-body">
-          <h3>Savannah Osprey Nest</h3>
+          <p class="cam-name">Savannah Osprey Nest</p>
           <p class="meta">Savannah, Georgia, USA · Cornell Lab Bird Cams / Skidaway Audubon</p>
           <p class="season">Streams during nesting, March to July, in the Lowcountry live oaks.</p>
           <div class="sp-row"><a class="sp" href="/birds/osprey/">Osprey</a></div>
@@ -971,7 +976,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Cal Falcons, UC Berkeley Campanile</h3>
+          <p class="cam-name">Cal Falcons, UC Berkeley Campanile</p>
           <p class="meta">Berkeley, California, USA · Cal Falcons</p>
           <p class="season">Eggs in March, chicks fledge in June; falcons roost on the tower all year.</p>
           <div class="sp-row"><a class="sp" href="/birds/peregrine-falcon/">Peregrine Falcon</a></div>
@@ -986,7 +991,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Chesapeake Peregrine Falcon Cam</h3>
+          <p class="cam-name">Chesapeake Peregrine Falcon Cam</p>
           <p class="meta">Chesapeake Bay, Maryland, USA · Chesapeake Conservancy on explore.org</p>
           <p class="season">Eggs in March, fledging by June.</p>
           <div class="sp-row"><a class="sp" href="/birds/peregrine-falcon/">Peregrine Falcon</a></div>
@@ -1001,7 +1006,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Common Kestrel Cam, Tel Aviv</h3>
+          <p class="cam-name">Common Kestrel Cam, Tel Aviv</p>
           <p class="meta">Tel Aviv, Israel · Charter Group of Wildlife Ecology</p>
           <p class="season">Kestrels nest February to June; the ledge stays busy all year.</p>
           <div class="sp-row"><a class="sp" href="/birds/common-kestrel/">Common Kestrel</a><a class="sp" href="/birds/rock-dove/">Rock Dove</a></div>
@@ -1016,7 +1021,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Common Kestrel Nest, Skrīveri</h3>
+          <p class="cam-name">Common Kestrel Nest, Skrīveri</p>
           <p class="meta">Skrīveri, Latvia · Latvian Fund for Nature</p>
           <p class="season">Eggs in May, young fledge by August.</p>
           <div class="sp-row"><a class="sp" href="/birds/common-kestrel/">Common Kestrel</a></div>
@@ -1031,7 +1036,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Great Spirit Bluff Falcons</h3>
+          <p class="cam-name">Great Spirit Bluff Falcons</p>
           <p class="meta">La Crescent, Minnesota, USA · Raptor Resource Project on explore.org</p>
           <p class="season">Nesting March to July on a cliff above the Mississippi; highlights play off season.</p>
           <div class="sp-row"><a class="sp" href="/birds/peregrine-falcon/">Peregrine Falcon</a></div>
@@ -1046,7 +1051,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </a>
         <div class="cam-body">
-          <h3>American Kestrel Nest Box</h3>
+          <p class="cam-name">American Kestrel Nest Box</p>
           <p class="meta">Prairie du Chien, Wisconsin, USA · Cornell Lab Bird Cams</p>
           <p class="season">Streams during nesting, April to July.</p>
           <div class="sp-row"><a class="sp" href="/birds/american-kestrel/">American Kestrel</a></div>
@@ -1068,7 +1073,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>American Barn Owl Cam, Florida</h3>
+          <p class="cam-name">American Barn Owl Cam, Florida</p>
           <p class="meta">Gainesville, Florida, USA · Charter Group / University of Florida</p>
           <p class="season">Florida barn owls can nest in any month; winter is busiest.</p>
           <div class="sp-row"><a class="sp" href="/birds/american-barn-owl/">American Barn Owl</a></div>
@@ -1083,7 +1088,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Barn Owl 4K Cam, Israel</h3>
+          <p class="cam-name">Barn Owl 4K Cam, Israel</p>
           <p class="meta">Israel · Charter Group of Wildlife Ecology</p>
           <p class="season">Nesting February to July; owls roost in the box year round.</p>
           <div class="sp-row"><a class="sp" href="/birds/western-barn-owl/">Western Barn Owl</a></div>
@@ -1098,7 +1103,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Bonnie and Clyde, Great Horned Owls</h3>
+          <p class="cam-name">Bonnie and Clyde, Great Horned Owls</p>
           <p class="meta">Kansas, USA · Farmer Derek</p>
           <p class="season">Eggs in February, owlets through May; the box is watched all year.</p>
           <div class="sp-row"><a class="sp" href="/birds/great-horned-owl/">Great Horned Owl</a></div>
@@ -1113,7 +1118,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </a>
         <div class="cam-body">
-          <h3>Burrowing Owls at Umatilla</h3>
+          <p class="cam-name">Burrowing Owls at Umatilla</p>
           <p class="meta">Umatilla, Oregon, USA · Global Owl Project on explore.org</p>
           <p class="season">Owls at the burrows March to September.</p>
           <div class="sp-row"><a class="sp" href="/birds/burrowing-owl/">Burrowing Owl</a></div>
@@ -1128,7 +1133,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Eurasian Eagle-Owl Cam, Riga</h3>
+          <p class="cam-name">Eurasian Eagle-Owl Cam, Riga</p>
           <p class="meta">Riga, Latvia · Latvian Fund for Nature</p>
           <p class="season">Eggs in March, owlets through June; the owls hold territory all year.</p>
           <div class="sp-row"><a class="sp" href="/birds/eurasian-eagle-owl/">Eurasian Eagle-Owl</a></div>
@@ -1143,7 +1148,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Little Owl and Jackdaw Cam, Israel</h3>
+          <p class="cam-name">Little Owl and Jackdaw Cam, Israel</p>
           <p class="meta">Israel · Charter Group of Wildlife Ecology</p>
           <p class="season">Little owls nest March to June and use the site all year.</p>
           <div class="sp-row"><a class="sp" href="/birds/little-owl/">Little Owl</a><a class="sp" href="/birds/western-jackdaw/">Western Jackdaw</a></div>
@@ -1158,7 +1163,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </a>
         <div class="cam-body">
-          <h3>Long-eared Owl Nest</h3>
+          <p class="cam-name">Long-eared Owl Nest</p>
           <p class="meta">Missoula Valley, Montana, USA · Owl Research Institute on explore.org</p>
           <p class="season">Nesting March to June; the institute keeps a camera on the site year round.</p>
           <div class="sp-row"><a class="sp" href="/birds/long-eared-owl/">Long-eared Owl</a></div>
@@ -1173,7 +1178,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Robert E Fuller: Ash Wood Cams</h3>
+          <p class="cam-name">Robert E Fuller: Ash Wood Cams</p>
           <p class="meta">Yorkshire, England, UK · Robert E Fuller</p>
           <p class="season">Streams all year; tawny owls call and court through autumn and winter.</p>
           <div class="sp-row"><a class="sp" href="/birds/tawny-owl/">Tawny Owl</a><a class="sp" href="/birds/common-buzzard/">Common Buzzard</a></div>
@@ -1188,7 +1193,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Robert E Fuller: Fotherdale Cams</h3>
+          <p class="cam-name">Robert E Fuller: Fotherdale Cams</p>
           <p class="meta">Thixendale, Yorkshire, England, UK · Robert E Fuller</p>
           <p class="season">Streams all year; owl nesting peaks March to July.</p>
           <div class="sp-row"><a class="sp" href="/birds/western-barn-owl/">Western Barn Owl</a><a class="sp" href="/birds/tawny-owl/">Tawny Owl</a><a class="sp" href="/birds/common-kestrel/">Common Kestrel</a></div>
@@ -1203,7 +1208,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </a>
         <div class="cam-body">
-          <h3>Arctic Snowy Owl Nest Cam</h3>
+          <p class="cam-name">Arctic Snowy Owl Nest Cam</p>
           <p class="meta">Utqiaġvik (Barrow), Alaska, USA · Owl Research Institute on explore.org</p>
           <p class="season">Streams June to August, while the tundra nest is active under 24 hour daylight.</p>
           <div class="sp-row"><a class="sp" href="/birds/snowy-owl/">Snowy Owl</a></div>
@@ -1218,7 +1223,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </a>
         <div class="cam-body">
-          <h3>Barred Owl Nest Box</h3>
+          <p class="cam-name">Barred Owl Nest Box</p>
           <p class="meta">Indianapolis, Indiana, USA · Cornell Lab Bird Cams / Wild Birds Unlimited</p>
           <p class="season">Streams during nesting, March to May.</p>
           <div class="sp-row"><a class="sp" href="/birds/barred-owl/">Barred Owl</a></div>
@@ -1233,7 +1238,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </a>
         <div class="cam-body">
-          <h3>Charlo Great Horned Owl Cam</h3>
+          <p class="cam-name">Charlo Great Horned Owl Cam</p>
           <p class="meta">Charlo, Montana, USA · Owl Research Institute on explore.org</p>
           <p class="season">Streams during nesting, March to June.</p>
           <div class="sp-row"><a class="sp" href="/birds/great-horned-owl/">Great Horned Owl</a></div>
@@ -1248,7 +1253,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </a>
         <div class="cam-body">
-          <h3>Great Gray Owl Nest</h3>
+          <p class="cam-name">Great Gray Owl Nest</p>
           <p class="meta">Montana, USA · Owl Research Institute on explore.org</p>
           <p class="season">Streams April to July while the phantom of the north is nesting.</p>
           <div class="sp-row"><a class="sp" href="/birds/great-grey-owl/">Great Grey Owl</a></div>
@@ -1263,7 +1268,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </a>
         <div class="cam-body">
-          <h3>Wildflower Center Great Horned Owls</h3>
+          <p class="cam-name">Wildflower Center Great Horned Owls</p>
           <p class="meta">Austin, Texas, USA · Cornell Lab Bird Cams / Lady Bird Johnson Wildflower Center</p>
           <p class="season">Streams during nesting, February to May, in a planter on a public building.</p>
           <div class="sp-row"><a class="sp" href="/birds/great-horned-owl/">Great Horned Owl</a></div>
@@ -1285,7 +1290,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </a>
         <div class="cam-body">
-          <h3>Ash Canyon Bird Sanctuary</h3>
+          <p class="cam-name">Ash Canyon Bird Sanctuary</p>
           <p class="meta">Huachuca Mountains, Arizona, USA · Southeastern Arizona Bird Observatory on explore.org</p>
           <p class="season">Streams all year; hummingbird variety peaks April to September.</p>
           <div class="sp-row"><a class="sp" href="/birds/rivoli-s-hummingbird/">Rivoli's Hummingbird</a><a class="sp" href="/birds/lucifer-sheartail/">Lucifer Sheartail</a><a class="sp" href="/birds/mexican-jay/">Mexican Jay</a></div>
@@ -1300,7 +1305,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Cornell Lab FeederWatch Cam</h3>
+          <p class="cam-name">Cornell Lab FeederWatch Cam</p>
           <p class="meta">Ithaca, New York, USA · Cornell Lab Bird Cams</p>
           <p class="season">Streams all year; winter brings the biggest feeder crowds.</p>
           <div class="sp-row"><a class="sp" href="/birds/black-capped-chickadee/">Black-capped Chickadee</a><a class="sp" href="/birds/blue-jay/">Blue Jay</a><a class="sp" href="/birds/northern-cardinal/">Northern Cardinal</a><a class="sp" href="/birds/red-bellied-woodpecker/">Red-bellied Woodpecker</a></div>
@@ -1315,7 +1320,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Farmer Derek Feeder Cam</h3>
+          <p class="cam-name">Farmer Derek Feeder Cam</p>
           <p class="meta">Kansas, USA · Farmer Derek</p>
           <p class="season">Streams all year on the farm.</p>
           <div class="sp-row"><a class="sp" href="/birds/northern-cardinal/">Northern Cardinal</a><a class="sp" href="/birds/blue-jay/">Blue Jay</a><a class="sp" href="/birds/house-finch/">House Finch</a></div>
@@ -1330,7 +1335,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Pennsylvania Bird Feeder Cam</h3>
+          <p class="cam-name">Pennsylvania Bird Feeder Cam</p>
           <p class="meta">Murrysville, Pennsylvania, USA · PixCams</p>
           <p class="season">Streams all year with feeders topped daily.</p>
           <div class="sp-row"><a class="sp" href="/birds/northern-cardinal/">Northern Cardinal</a><a class="sp" href="/birds/tufted-titmouse/">Tufted Titmouse</a><a class="sp" href="/birds/white-breasted-nuthatch/">White-breasted Nuthatch</a><a class="sp" href="/birds/downy-woodpecker/">Downy Woodpecker</a></div>
@@ -1345,7 +1350,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Purple Martin House Cam</h3>
+          <p class="cam-name">Purple Martin House Cam</p>
           <p class="meta">Moraine State Park, Pennsylvania, USA · PixCams / Moraine Preservation Fund</p>
           <p class="season">Martins occupy the colony April to August, then leave for Brazil.</p>
           <div class="sp-row"><a class="sp" href="/birds/purple-martin/">Purple Martin</a></div>
@@ -1360,7 +1365,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>RSPB Swift Nest Camera</h3>
+          <p class="cam-name">RSPB Swift Nest Camera</p>
           <p class="meta">United Kingdom · RSPB</p>
           <p class="season">Swifts occupy the nest May to early August, then fly to Africa without landing for months.</p>
           <div class="sp-row"><a class="sp" href="/birds/common-swift/">Common Swift</a></div>
@@ -1375,7 +1380,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Simi Valley Hummingbird Cam</h3>
+          <p class="cam-name">Simi Valley Hummingbird Cam</p>
           <p class="meta">Simi Valley, California, USA · Hummingbird Spot</p>
           <p class="season">Streams all year; Anna's hummingbirds never leave southern California.</p>
           <div class="sp-row"><a class="sp" href="/birds/anna-s-hummingbird/">Anna's Hummingbird</a><a class="sp" href="/birds/allen-s-hummingbird/">Allen's Hummingbird</a></div>
@@ -1390,7 +1395,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </a>
         <div class="cam-body">
-          <h3>Beleef de Lente (Experience Spring)</h3>
+          <p class="cam-name">Beleef de Lente (Experience Spring)</p>
           <p class="meta">Netherlands · Vogelbescherming Nederland</p>
           <p class="season">Ten nest cams stream March to July every spring.</p>
           <div class="sp-row"><a class="sp" href="/birds/white-stork/">White Stork</a><a class="sp" href="/birds/western-barn-owl/">Western Barn Owl</a><a class="sp" href="/birds/common-kestrel/">Common Kestrel</a></div>
@@ -1405,7 +1410,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </a>
         <div class="cam-body">
-          <h3>Bella Hummingbird Nest</h3>
+          <p class="cam-name">Bella Hummingbird Nest</p>
           <p class="meta">La Verne, California, USA · explore.org</p>
           <p class="season">Bella nests October to May; between broods the cam plays calming highlights.</p>
           <div class="sp-row"><a class="sp" href="/birds/allen-s-hummingbird/">Allen's Hummingbird</a></div>
@@ -1420,7 +1425,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </a>
         <div class="cam-body">
-          <h3>Ontario FeederWatch Cam</h3>
+          <p class="cam-name">Ontario FeederWatch Cam</p>
           <p class="meta">Manitouwadge, Ontario, Canada · Cornell Lab Bird Cams / Perky-Pet</p>
           <p class="season">Streams November to April, when boreal finches mob the feeders in the snow.</p>
           <div class="sp-row"><a class="sp" href="/birds/evening-grosbeak/">Evening Grosbeak</a><a class="sp" href="/birds/canada-jay/">Canada Jay</a><a class="sp" href="/birds/pine-grosbeak/">Pine Grosbeak</a></div>
@@ -1435,7 +1440,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </a>
         <div class="cam-body">
-          <h3>Texas Titmouse Nest Box</h3>
+          <p class="cam-name">Texas Titmouse Nest Box</p>
           <p class="meta">Texas, USA · Texas Backyard Wildlife on explore.org</p>
           <p class="season">Streams during nesting, March to June.</p>
           <div class="sp-row"><a class="sp" href="/birds/black-crested-titmouse/">Black-crested Titmouse</a></div>
@@ -1450,7 +1455,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </a>
         <div class="cam-body">
-          <h3>West Texas Hummingbird Feeders</h3>
+          <p class="cam-name">West Texas Hummingbird Feeders</p>
           <p class="meta">Fort Davis, Texas, USA · Cornell Lab Bird Cams / West Texas Avian Research</p>
           <p class="season">Busiest March to October, when a dozen hummingbird species pass through the Davis Mountains.</p>
           <div class="sp-row"><a class="sp" href="/birds/broad-tailed-hummingbird/">Broad-tailed Hummingbird</a><a class="sp" href="/birds/rufous-hummingbird/">Rufous Hummingbird</a></div>
@@ -1472,7 +1477,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>BirdSouls Colombia Feeder Cam</h3>
+          <p class="cam-name">BirdSouls Colombia Feeder Cam</p>
           <p class="meta">Colombia · BirdSouls / PixCams</p>
           <p class="season">Streams all year from the world's birdiest country.</p>
           <div class="sp-row"><a class="sp" href="/birds/blue-grey-tanager/">Blue-grey Tanager</a><a class="sp" href="/birds/bananaquit/">Bananaquit</a><a class="sp" href="/birds/red-legged-honeycreeper/">Red-legged Honeycreeper</a></div>
@@ -1487,7 +1492,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </a>
         <div class="cam-body">
-          <h3>Great Green Macaw Nest</h3>
+          <p class="cam-name">Great Green Macaw Nest</p>
           <p class="meta">Sarapiquí, Costa Rica · Macaw Recovery Network on explore.org</p>
           <p class="season">Nesting December to June; the cavity is monitored year round.</p>
           <div class="sp-row"><a class="sp" href="/birds/great-green-macaw/">Great Green Macaw</a></div>
@@ -1502,7 +1507,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </a>
         <div class="cam-body">
-          <h3>Macaw Recovery Network Feeder</h3>
+          <p class="cam-name">Macaw Recovery Network Feeder</p>
           <p class="meta">Costa Rica · Macaw Recovery Network on explore.org</p>
           <p class="season">Streams all year at a macaw conservation site.</p>
           <div class="sp-row"><a class="sp" href="/birds/scarlet-macaw/">Scarlet Macaw</a><a class="sp" href="/birds/great-green-macaw/">Great Green Macaw</a></div>
@@ -1517,7 +1522,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Panama Fruit Feeder Cam</h3>
+          <p class="cam-name">Panama Fruit Feeder Cam</p>
           <p class="meta">El Valle de Antón, Panama · Cornell Lab Bird Cams / Canopy Lodge</p>
           <p class="season">Streams all year; fresh fruit goes out every morning.</p>
           <div class="sp-row"><a class="sp" href="/birds/grey-headed-chachalaca/">Grey-headed Chachalaca</a><a class="sp" href="/birds/clay-colored-thrush/">Clay-colored Thrush</a><a class="sp" href="/birds/blue-grey-tanager/">Blue-grey Tanager</a><a class="sp" href="/birds/collared-aracari/">Collared Aracari</a></div>
@@ -1532,7 +1537,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Panama Hummingbird Feeder Cam</h3>
+          <p class="cam-name">Panama Hummingbird Feeder Cam</p>
           <p class="meta">Soberanía National Park, Panama · Cornell Lab Bird Cams / Canopy Tower</p>
           <p class="season">Streams all year in rainforest at the edge of the Panama Canal.</p>
           <div class="sp-row"><a class="sp" href="/birds/white-necked-jacobin/">White-necked Jacobin</a><a class="sp" href="/birds/rufous-tailed-hummingbird/">Rufous-tailed Hummingbird</a><a class="sp" href="/birds/crowned-woodnymph/">Crowned Woodnymph</a></div>
@@ -1547,7 +1552,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Peru High Andes Hummingbird Cam</h3>
+          <p class="cam-name">Peru High Andes Hummingbird Cam</p>
           <p class="meta">Peru · Hummingbird Spot</p>
           <p class="season">Streams all year high in the Andes.</p>
           <div class="sp-row"><a class="sp" href="/birds/giant-hummingbird/">Giant Hummingbird</a><a class="sp" href="/birds/sword-billed-hummingbird/">Sword-billed Hummingbird</a><a class="sp" href="/birds/shining-sunbeam/">Shining Sunbeam</a></div>
@@ -1562,7 +1567,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Sachatamia Lodge Hummingbird Cam</h3>
+          <p class="cam-name">Sachatamia Lodge Hummingbird Cam</p>
           <p class="meta">Mindo, Ecuador · Hummingbird Spot</p>
           <p class="season">Streams all year in Andean cloud forest.</p>
           <div class="sp-row"><a class="sp" href="/birds/violet-tailed-sylph/">Violet-tailed Sylph</a><a class="sp" href="/birds/fawn-breasted-brilliant/">Fawn-breasted Brilliant</a></div>
@@ -1577,7 +1582,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </a>
         <div class="cam-body">
-          <h3>Toucan TV</h3>
+          <p class="cam-name">Toucan TV</p>
           <p class="meta">Costa Rica · explore.org</p>
           <p class="season">Streams all year in rainforest canopy.</p>
           <div class="sp-row"><a class="sp" href="/birds/yellow-throated-toucan/">Yellow-throated Toucan</a><a class="sp" href="/birds/keel-billed-toucan/">Keel-billed Toucan</a></div>
@@ -1592,7 +1597,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </a>
         <div class="cam-body">
-          <h3>Lance-tailed Manakin Cam</h3>
+          <p class="cam-name">Lance-tailed Manakin Cam</p>
           <p class="meta">Isla Boca Brava, Panama · Cornell Lab Bird Cams</p>
           <p class="season">Streams February to July, when males dance in pairs on their display perch.</p>
           <div class="sp-row"><a class="sp" href="/birds/lance-tailed-manakin/">Lance-tailed Manakin</a></div>
@@ -1614,7 +1619,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </a>
         <div class="cam-body">
-          <h3>Guillemot Burrow Cam</h3>
+          <p class="cam-name">Guillemot Burrow Cam</p>
           <p class="meta">Seal Island, Maine, USA · Audubon Seabird Institute on explore.org</p>
           <p class="season">Chicks in the burrow June to August.</p>
           <div class="sp-row"><a class="sp" href="/birds/black-guillemot/">Black Guillemot</a></div>
@@ -1629,7 +1634,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </a>
         <div class="cam-body">
-          <h3>Puffin Burrow Cam</h3>
+          <p class="cam-name">Puffin Burrow Cam</p>
           <p class="meta">Seal Island, Maine, USA · Audubon Seabird Institute on explore.org</p>
           <p class="season">A pufflin grows up on camera June to August.</p>
           <div class="sp-row"><a class="sp" href="/birds/atlantic-puffin/">Atlantic Puffin</a></div>
@@ -1644,7 +1649,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </a>
         <div class="cam-body">
-          <h3>Puffin Loafing Ledge</h3>
+          <p class="cam-name">Puffin Loafing Ledge</p>
           <p class="meta">Seal Island, Maine, USA · Audubon Seabird Institute on explore.org</p>
           <p class="season">Puffins crowd the ledge April to August, then head out to sea for winter.</p>
           <div class="sp-row"><a class="sp" href="/birds/atlantic-puffin/">Atlantic Puffin</a><a class="sp" href="/birds/black-guillemot/">Black Guillemot</a><a class="sp" href="/birds/common-murre/">Common Murre</a></div>
@@ -1659,7 +1664,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Royal Albatross Cam (Royal Cam)</h3>
+          <p class="cam-name">Royal Albatross Cam (Royal Cam)</p>
           <p class="meta">Taiaroa Head, Dunedin, New Zealand · NZ Department of Conservation / Cornell Lab</p>
           <p class="season">Eggs in November, chicks on camera from late January until they fledge in September.</p>
           <div class="sp-row"><a class="sp" href="/birds/northern-royal-albatross/">Northern Royal Albatross</a></div>
@@ -1674,7 +1679,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </a>
         <div class="cam-body">
-          <h3>Stony Point Penguin Colony</h3>
+          <p class="cam-name">Stony Point Penguin Colony</p>
           <p class="meta">Betty's Bay, South Africa · explore.org</p>
           <p class="season">Penguins are in the colony all year; chicks peak March to August.</p>
           <div class="sp-row"><a class="sp" href="/birds/african-penguin/">African Penguin</a></div>
@@ -1689,7 +1694,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </a>
         <div class="cam-body">
-          <h3>Bermuda Petrel (Cahow) Cam</h3>
+          <p class="cam-name">Bermuda Petrel (Cahow) Cam</p>
           <p class="meta">Nonsuch Island, Bermuda · Cornell Lab Bird Cams / Nonsuch Expeditions</p>
           <p class="season">Streams January to June, inside the burrow of a bird once thought extinct for 300 years.</p>
           <div class="sp-row"><a class="sp" href="/birds/bermuda-petrel/">Bermuda Petrel</a></div>
@@ -1704,7 +1709,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </a>
         <div class="cam-body">
-          <h3>Imperial Cormorant Colony</h3>
+          <p class="cam-name">Imperial Cormorant Colony</p>
           <p class="meta">Isla Tovita, Argentina · Rewilding Argentina on explore.org</p>
           <p class="season">Streams November to February at the height of the colony.</p>
           <div class="sp-row"><a class="sp" href="/birds/imperial-shag/">Imperial Shag</a></div>
@@ -1719,7 +1724,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </a>
         <div class="cam-body">
-          <h3>Magellanic Penguin Nest, Patagonia</h3>
+          <p class="cam-name">Magellanic Penguin Nest, Patagonia</p>
           <p class="meta">Isla Tova, Chubut, Argentina · Rewilding Argentina on explore.org</p>
           <p class="season">Streams October to February, the Patagonian breeding season.</p>
           <div class="sp-row"><a class="sp" href="/birds/magellanic-penguin/">Magellanic Penguin</a></div>
@@ -1734,7 +1739,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </a>
         <div class="cam-body">
-          <h3>Southern Giant Petrel Colony</h3>
+          <p class="cam-name">Southern Giant Petrel Colony</p>
           <p class="meta">Isla Gran Robredo, Argentina · Rewilding Argentina on explore.org</p>
           <p class="season">Streams November to March while the colony raises chicks.</p>
           <div class="sp-row"><a class="sp" href="/birds/southern-giant-petrel/">Southern Giant Petrel</a></div>
@@ -1749,7 +1754,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </a>
         <div class="cam-body">
-          <h3>White-tailed Tropicbird Cam</h3>
+          <p class="cam-name">White-tailed Tropicbird Cam</p>
           <p class="meta">Nonsuch Island, Bermuda · Cornell Lab Bird Cams / Nonsuch Expeditions</p>
           <p class="season">Streams May to September while the longtail chick is in the nest.</p>
           <div class="sp-row"><a class="sp" href="/birds/white-tailed-tropicbird/">White-tailed Tropicbird</a></div>
@@ -1771,7 +1776,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Angama Mara Cam</h3>
+          <p class="cam-name">Angama Mara Cam</p>
           <p class="meta">Maasai Mara, Kenya · Africam / Angama</p>
           <p class="season">Streams all year above the Mara; the wildebeest migration passes July to October.</p>
           <div class="sp-row"><a class="sp" href="/birds/superb-starling/">Superb Starling</a><a class="sp" href="/birds/grey-crowned-crane/">Grey Crowned Crane</a></div>
@@ -1786,7 +1791,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Black Stork Nest, Bolewice</h3>
+          <p class="cam-name">Black Stork Nest, Bolewice</p>
           <p class="meta">Bolewice, Poland · Eagle Conservation Committee (KOO)</p>
           <p class="season">On the nest April to August.</p>
           <div class="sp-row"><a class="sp" href="/birds/black-stork/">Black Stork</a></div>
@@ -1801,7 +1806,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Black Stork Nest, Estonia</h3>
+          <p class="cam-name">Black Stork Nest, Estonia</p>
           <p class="meta">Estonia · Kotkaklubi (Eagle Club Estonia)</p>
           <p class="season">On the nest April to August.</p>
           <div class="sp-row"><a class="sp" href="/birds/black-stork/">Black Stork</a></div>
@@ -1816,7 +1821,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Black Stork Nest, Riga Forests</h3>
+          <p class="cam-name">Black Stork Nest, Riga Forests</p>
           <p class="meta">Riga, Latvia · Latvian Fund for Nature</p>
           <p class="season">On the nest April to August, then away to Africa.</p>
           <div class="sp-row"><a class="sp" href="/birds/black-stork/">Black Stork</a></div>
@@ -1831,7 +1836,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Deteema Springs Cam</h3>
+          <p class="cam-name">Deteema Springs Cam</p>
           <p class="meta">Hwange National Park, Zimbabwe · Africam</p>
           <p class="season">Streams all year; the dry months, July to October, bring constant traffic.</p>
           <div class="sp-row"><a class="sp" href="/birds/yellow-billed-oxpecker/">Yellow-billed Oxpecker</a><a class="sp" href="/birds/marabou-stork/">Marabou Stork</a></div>
@@ -1846,7 +1851,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </a>
         <div class="cam-body">
-          <h3>European Roller Nest Box</h3>
+          <p class="cam-name">European Roller Nest Box</p>
           <p class="meta">Italy · Ornis Italica on explore.org</p>
           <p class="season">Rollers occupy the box May to August, then migrate to Africa.</p>
           <div class="sp-row"><a class="sp" href="/birds/european-roller/">European Roller</a></div>
@@ -1861,7 +1866,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </a>
         <div class="cam-body">
-          <h3>Great Blue Heron Nest</h3>
+          <p class="cam-name">Great Blue Heron Nest</p>
           <p class="meta">Chesapeake Bay, Maryland, USA · Chesapeake Conservancy on explore.org</p>
           <p class="season">Nesting March to July in a waterfront colony.</p>
           <div class="sp-row"><a class="sp" href="/birds/great-blue-heron/">Great Blue Heron</a></div>
@@ -1876,7 +1881,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Kalahari Desert Cam</h3>
+          <p class="cam-name">Kalahari Desert Cam</p>
           <p class="meta">Kalahari, Namibia · NamibiaCam</p>
           <p class="season">Streams all year in the red dunes.</p>
           <div class="sp-row"><a class="sp" href="/birds/sociable-weaver/">Sociable Weaver</a><a class="sp" href="/birds/crimson-breasted-shrike/">Crimson-breasted Shrike</a></div>
@@ -1891,7 +1896,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Kwando River Cam</h3>
+          <p class="cam-name">Kwando River Cam</p>
           <p class="meta">Kwando River, Zambezi Region, Namibia · NamibiaCam</p>
           <p class="season">Streams all year on a lush Caprivi riverbank.</p>
           <div class="sp-row"><a class="sp" href="/birds/pied-kingfisher/">Pied Kingfisher</a><a class="sp" href="/birds/african-jacana/">African Jacana</a><a class="sp" href="/birds/hamerkop/">Hamerkop</a></div>
@@ -1906,7 +1911,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </a>
         <div class="cam-body">
-          <h3>Lesser Flamingos at Kamfers Dam</h3>
+          <p class="cam-name">Lesser Flamingos at Kamfers Dam</p>
           <p class="meta">Kimberley, South Africa · explore.org</p>
           <p class="season">Flamingos are present most of the year; breeding follows the rains.</p>
           <div class="sp-row"><a class="sp" href="/birds/lesser-flamingo/">Lesser Flamingo</a></div>
@@ -1921,7 +1926,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </a>
         <div class="cam-body">
-          <h3>Mississippi River Flyway Cam</h3>
+          <p class="cam-name">Mississippi River Flyway Cam</p>
           <p class="meta">Upper Mississippi River, USA · Raptor Resource Project on explore.org</p>
           <p class="season">Streams all year; spring and autumn migration bring tens of thousands of birds.</p>
           <div class="sp-row"><a class="sp" href="/birds/bald-eagle/">Bald Eagle</a><a class="sp" href="/birds/american-white-pelican/">American White Pelican</a><a class="sp" href="/birds/tundra-swan/">Tundra Swan</a></div>
@@ -1936,7 +1941,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Namib Desert Waterhole</h3>
+          <p class="cam-name">Namib Desert Waterhole</p>
           <p class="meta">Namib Desert, Namibia · NamibiaCam / Gondwana Collection</p>
           <p class="season">Streams all year; mornings and evenings are busiest at the water.</p>
           <div class="sp-row"><a class="sp" href="/birds/sociable-weaver/">Sociable Weaver</a><a class="sp" href="/birds/ruppell-s-korhaan/">Ruppell's Korhaan</a></div>
@@ -1951,7 +1956,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Nkorho Bush Lodge Cam</h3>
+          <p class="cam-name">Nkorho Bush Lodge Cam</p>
           <p class="meta">Sabi Sand, South Africa · Africam</p>
           <p class="season">Streams all year beside the Kruger ecosystem.</p>
           <div class="sp-row"><a class="sp" href="/birds/lilac-breasted-roller/">Lilac-breasted Roller</a><a class="sp" href="/birds/fork-tailed-drongo/">Fork-tailed Drongo</a><a class="sp" href="/birds/magpie-shrike/">Magpie Shrike</a></div>
@@ -1966,7 +1971,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Okaukuejo Waterhole, Etosha</h3>
+          <p class="cam-name">Okaukuejo Waterhole, Etosha</p>
           <p class="meta">Etosha National Park, Namibia · NamibiaCam</p>
           <p class="season">Streams all year; the dry season, May to November, packs the waterhole.</p>
           <div class="sp-row"><a class="sp" href="/birds/southern-red-billed-hornbill/">Southern Red-billed Hornbill</a><a class="sp" href="/birds/namaqua-sandgrouse/">Namaqua Sandgrouse</a><a class="sp" href="/birds/common-ostrich/">Common Ostrich</a></div>
@@ -1981,7 +1986,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </a>
         <div class="cam-body">
-          <h3>Sacramento National Wildlife Refuge Cam</h3>
+          <p class="cam-name">Sacramento National Wildlife Refuge Cam</p>
           <p class="meta">Sacramento Valley, California, USA · US Fish and Wildlife Service on explore.org</p>
           <p class="season">Streams all year; winter floods the refuge with a million waterfowl.</p>
           <div class="sp-row"><a class="sp" href="/birds/snow-goose/">Snow Goose</a><a class="sp" href="/birds/northern-pintail/">Northern Pintail</a></div>
@@ -1996,7 +2001,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Tembe Elephant Park Waterhole</h3>
+          <p class="cam-name">Tembe Elephant Park Waterhole</p>
           <p class="meta">Tembe Elephant Park, KwaZulu-Natal, South Africa · Africam</p>
           <p class="season">Streams all year with sound; over 340 bird species live in the park.</p>
           <div class="sp-row"><a class="sp" href="/birds/african-grey-hornbill/">African Grey Hornbill</a><a class="sp" href="/birds/helmeted-guineafowl/">Helmeted Guineafowl</a><a class="sp" href="/birds/egyptian-goose/">Egyptian Goose</a></div>
@@ -2011,7 +2016,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Tortilis Camp Waterhole, Amboseli</h3>
+          <p class="cam-name">Tortilis Camp Waterhole, Amboseli</p>
           <p class="meta">Amboseli, Kenya · Africam / Elewana</p>
           <p class="season">Streams all year with Mount Kilimanjaro on clear mornings.</p>
           <div class="sp-row"><a class="sp" href="/birds/grey-crowned-crane/">Grey Crowned Crane</a><a class="sp" href="/birds/white-faced-whistling-duck/">White-faced Whistling Duck</a></div>
@@ -2026,7 +2031,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>White Stork Nest, Tukums</h3>
+          <p class="cam-name">White Stork Nest, Tukums</p>
           <p class="meta">Tukums, Latvia · Latvian Fund for Nature</p>
           <p class="season">On the nest April to August, bill clattering included.</p>
           <div class="sp-row"><a class="sp" href="/birds/white-stork/">White Stork</a></div>
@@ -2041,7 +2046,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </a>
         <div class="cam-body">
-          <h3>Decorah Goose Cam</h3>
+          <p class="cam-name">Decorah Goose Cam</p>
           <p class="meta">Decorah, Iowa, USA · Raptor Resource Project on explore.org</p>
           <p class="season">Streams March to May, ending with the goslings' famous leap from the nest.</p>
           <div class="sp-row"><a class="sp" href="/birds/canada-goose/">Canada Goose</a></div>
@@ -2056,7 +2061,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Knepp White Stork Cam</h3>
+          <p class="cam-name">Knepp White Stork Cam</p>
           <p class="meta">West Sussex, England, UK · Knepp Wildland (Kneppflix)</p>
           <p class="season">Streams April to August, when the storks nest in the rewilded oaks.</p>
           <div class="sp-row"><a class="sp" href="/birds/white-stork/">White Stork</a></div>
@@ -2071,7 +2076,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </a>
         <div class="cam-body">
-          <h3>Rowe Sanctuary Crane Cam</h3>
+          <p class="cam-name">Rowe Sanctuary Crane Cam</p>
           <p class="meta">Platte River, Nebraska, USA · Audubon on explore.org</p>
           <p class="season">Streams February to April, when half a million sandhill cranes roost on the Platte.</p>
           <div class="sp-row"><span class="sp">Sandhill Crane</span><a class="sp" href="/birds/whooping-crane/">Whooping Crane</a></div>
@@ -2086,7 +2091,7 @@ header.scrolled .mnav summary{color:var(--green);border-color:var(--green);backg
           <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
         </button>
         <div class="cam-body">
-          <h3>Storchennest Großefehn</h3>
+          <p class="cam-name">Storchennest Großefehn</p>
           <p class="meta">Großefehn, Ostfriesland, Germany · Storchennest Großefehn</p>
           <p class="season">Streams March to August while the pair raises chicks.</p>
           <div class="sp-row"><a class="sp" href="/birds/white-stork/">White Stork</a></div>
