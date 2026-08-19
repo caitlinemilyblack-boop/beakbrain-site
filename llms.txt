@@ -4,12 +4,12 @@
 > https://beakbrain.com/birds/ covers 10,927 bird species worldwide with photos,
 > field recordings, identification tips, range by country, seasonality and
 > conservation status. All media is openly licensed (CC0, CC BY, CC BY-SA)
-> and credited to its author on every page. Species data updated 2026-08-19.
+> and credited to its author on every page. Species data updated 2026-08-18.
 
 ## Browse
 
 - [All species](https://beakbrain.com/birds/): search and A to Z
-- [By country](https://beakbrain.com/birds/): 308 country checklists, e.g. [Birds of the Netherlands](https://beakbrain.com/birds/country/nl/)
+- [By country](https://beakbrain.com/birds/): 235 country checklists, e.g. [Birds of the Netherlands](https://beakbrain.com/birds/country/nl/)
 - [By family](https://beakbrain.com/birds/): 251 family guides
 
 ## Facts per species page
