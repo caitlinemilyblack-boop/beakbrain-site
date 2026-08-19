@@ -17,6 +17,7 @@
 /symbols/plates/:letter/* /symbols/plates/ 301
 
 # >>> generated: dropped compare pairs (do not edit by hand)
+# <<< generated: dropped compare pairs
 /birds/compare/azara-s-spinetail-vs-pale-breasted-spinetail/ /birds/compare/ 301
 /birds/compare/banded-honeyeater-vs-orange-chat/ /birds/compare/ 301
 /birds/compare/banded-honeyeater-vs-regent-honeyeater/ /birds/compare/ 301
@@ -43,4 +44,3 @@
 /birds/compare/slaty-antwren-vs-white-flanked-antwren/ /birds/compare/ 301
 /birds/compare/spot-winged-antshrike-vs-white-shouldered-antbird/ /birds/compare/ 301
 /birds/compare/spotted-bowerbird-vs-western-bowerbird/ /birds/compare/ 301
-# <<< generated: dropped compare pairs
