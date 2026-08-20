@@ -9,7 +9,7 @@
 ## Browse
 
 - [All species](https://beakbrain.com/birds/): search and A to Z
-- [By country](https://beakbrain.com/birds/): 308 country checklists, e.g. [Birds of the Netherlands](https://beakbrain.com/birds/country/nl/)
+- [By country](https://beakbrain.com/birds/): 251 country checklists, e.g. [Birds of the Netherlands](https://beakbrain.com/birds/country/nl/)
 - [By family](https://beakbrain.com/birds/): 251 family guides
 
 ## Facts per species page
