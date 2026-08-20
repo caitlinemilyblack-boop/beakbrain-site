@@ -142,7 +142,11 @@
        single frame, and the box is reserved for things that genuinely float — the
        maps, and the collector cards, which really are cards. */
     .panel { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; }
-    .siteindex { display: flex; flex-direction: column; gap: 26px; padding: 4px 24px 10px; }
+    /* The region cards sit in a panel of their own, so the gutter has to be even on all
+       four sides or the nesting reads as a mistake. It was 24px at the sides against 4px
+       top and 10px bottom, which put the first card's border almost on top of the
+       panel's. */
+    .siteindex { display: flex; flex-direction: column; gap: 26px; padding: 24px; }
     .lux { display: inline-flex; align-items: center; gap: 1.5px; vertical-align: -2px; }
     .lux svg { width: 12px; height: 12px; fill: var(--gold-deep); }
     .lux-off { display: inline-flex; gap: 1.5px; }
@@ -195,11 +199,25 @@
     .bdg.cert .bdg-sym:focus-visible, .bdg.cert .bdg-lab:focus-visible { outline: 2px solid var(--green-dark); outline-offset: -2px; }
     /* Map key. The tour marker is a rotated square so the two layers read apart in
        greyscale and for a reader who cannot separate the hues. */
+    .where.parks .parklink { color: var(--green-dark); font-weight: 700; }
+    .where.parks .pkind { color: var(--muted); font-weight: 400; font-size: 0.92em; }
+    .where.alsorec { color: var(--muted); }
+    /* Guiding status: a word, a dot for the state, never colour alone (rule 6). */
+    .guiding { margin: 6px 0 0; font-size: 13.5px; font-weight: 700; display: inline-flex; align-items: center; gap: 7px; }
+    .guiding::before { content: ""; width: 9px; height: 9px; border-radius: 50%; flex: none; background: currentColor; }
+    .guiding.g-yes { color: var(--green); }
+    .guiding.g-sep { color: var(--ink); }
+    .guiding.g-unk { color: var(--muted); font-weight: 600; }
+    .guiding.g-unk::before { background: none; border: 1.5px solid var(--muted); }
+    .mapnote { color: var(--muted); font-size: 14px; margin: -6px 0 18px; }
     .mapbar .mkey { display: inline-flex; align-items: center; gap: 6px; margin-right: 14px; }
     .mapbar .mkey-s { width: 11px; height: 11px; background: var(--muted); flex: none; }
     .mapbar .mkey-region { border-radius: 3px; }
     .mapbar .mkey-stay { border-radius: 50%; }
     .mapbar .mkey-go { transform: rotate(45deg); border-radius: 2px; }
+    /* A park's swatch is a triangle, matching its marker: four layers on one map, and
+       shape is what tells them apart, because hue already means region. */
+    .mapbar .mkey-park { width: 0; height: 0; background: none; border-left: 6px solid transparent; border-right: 6px solid transparent; border-bottom: 11px solid var(--muted); }
     .mapbar .mkeynote { display: block; margin-top: 4px; }
     /* Zoomed out, the region label is the thing worth reading and the markers sit behind
        it. Zoomed in, the reader has picked a place and the markers come forward. */
@@ -217,6 +235,10 @@
       .itinmap-btn { min-height: 34px; }
     }
     .mldot.mlgo { border-radius: 3px; transform: rotate(45deg); }
+    /* National park marker: a triangle in its region's colour, so the park layer reads
+       as a park layer at a glance and never as another lodge. */
+    .mldot.mlpark { border-radius: 0; background: none; width: 0; height: 0; border-left: 8px solid transparent; border-right: 8px solid transparent; border-bottom: 14px solid var(--pc); box-shadow: none; filter: drop-shadow(0 1px 2px rgba(0,0,0,.45)); }
+    .mldot.mlpark:hover, .mldot.mlpark:focus-visible { transform: scale(1.22); }
     .mldot.mlgo:hover, .mldot.mlgo:focus-visible { transform: rotate(45deg) scale(1.25); }
     /* Region identity is a colour chip, not coloured text: six of the eleven region
        hues fail WCAG AA as 12px text on white, and a 4px top stroke tapers badly
@@ -794,7 +816,7 @@
         <p>An international sustainability certification for accommodation, attractions and venues, with Bronze, Silver and Gold levels.</p>
         <div class="certwhere">
           <span class="certwhere-label">On these guides</span>
-          <a class="certchip" href="/trips/netherlands/">Netherlands<span>7 listings</span></a>
+          <a class="certchip" href="/trips/netherlands/">Netherlands<span>10 listings</span></a>
         </div>
         <dl class="certdef-rows">
           <div><dt>Levels</dt><dd>Bronze, Silver and Gold</dd></div>

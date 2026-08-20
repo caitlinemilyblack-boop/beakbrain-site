@@ -11,7 +11,6 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://beakbrain.com/community.html" />
 
-  <link rel="stylesheet" href="/assets/site.1274c2c9f0.css">
   <style>
     @font-face { font-family: 'Fredoka'; font-weight: 500; font-display: swap; src: url('fonts/Fredoka-500.woff') format('woff'); }
     @font-face { font-family: 'Fredoka'; font-weight: 600; font-display: swap; src: url('fonts/Fredoka-600.woff') format('woff'); }
@@ -19,6 +18,7 @@
     @font-face { font-family: 'Nunito'; font-weight: 400; font-display: swap; src: url('fonts/Nunito-400.woff') format('woff'); }
     @font-face { font-family: 'Nunito'; font-weight: 700; font-display: swap; src: url('fonts/Nunito-700.woff') format('woff'); }
     @font-face { font-family: 'Nunito'; font-weight: 800; font-display: swap; src: url('fonts/Nunito-800.woff') format('woff'); }
+
     :root {
       --bg: #F2E8CF; --surface: #FFFFFF; --surface-alt: #E7D9B4; --ink: #2E2A25;
       --muted: #6B6155; --border: #DDCBA0; --green: #386641; --green-dark: #2C5134;
@@ -27,6 +27,7 @@
       --body: 'Nunito', system-ui, -apple-system, sans-serif;
       --shadow: 0 14px 34px rgba(46, 42, 37, 0.09);
     }
+    * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     [id] { scroll-margin-top: 90px; }
     body { margin: 0; font-family: var(--body); color: var(--ink); background: var(--bg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
@@ -35,10 +36,16 @@
     a { color: var(--green); }
     .wrap { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
     .wordmark { font-family: var(--display); font-weight: 700; color: var(--green); letter-spacing: -0.3px; text-decoration: none; }
+
     /* Header: fixed so it overlays the hero video (transparent), solid once scrolled */
     header { position: fixed; top: 0; left: 0; right: 0; z-index: 30; background: transparent; border-bottom: 1px solid transparent; transition: background .28s ease, border-color .28s ease, backdrop-filter .28s ease; }
     header.scrolled { background: rgba(242, 232, 207, 0.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 80px; }
     .nav .wordmark { font-size: 24px; color: #fff; transition: color .28s ease; }
+    header.scrolled .nav .wordmark { color: var(--green); }
+    .nav-right { display: flex; align-items: center; gap: 24px; }
+    .nav-link { color: #fff; text-decoration: none; font-family: var(--display); font-weight: 600; font-size: 15px; transition: color .28s ease; white-space: nowrap; }
+    header.scrolled .nav .nav-link { color: var(--green); }
     .nav .btn { white-space: nowrap; }
     /* Narrow widths: shrink, then drop the waitlist button (the page-end CTA repeats
        it) — the section links stay visible at every width. */
@@ -58,8 +65,12 @@
     .btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
     .nav .btn { background: #fff; color: var(--green); }
     .nav .btn:hover { background: #F4EEDD; }
+    header.scrolled .nav .btn { background: var(--green); color: #fff; }
+    header.scrolled .nav .btn:hover { background: var(--green-dark); }
+
     .hero { position: relative; min-height: 52vh; display: flex; align-items: center; overflow: hidden; background: linear-gradient(150deg, #2C5134 0%, #386641 45%, #4A7A3E 100%); }
     .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0; transition: opacity .9s ease; }
+    .hero-video.ready { opacity: 1; }
     .hero::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(30,45,30,0.30) 0%, rgba(30,45,30,0.52) 60%, rgba(22,36,24,0.82) 100%); }
     /* width:100% keeps .wrap's 1080px grid: as a flex item it would otherwise shrink to
        the widest line of text, and margin:0 auto would centre that, pushing the hero copy
@@ -70,14 +81,23 @@
     .hero-jump { display: inline-block; font-family: var(--display); font-weight: 600; font-size: 15px; color: #fff; text-decoration: none; border: 1.5px solid rgba(255,255,255,0.55); border-radius: 999px; padding: 10px 20px; transition: background .2s ease; }
     .hero-jump:hover { background: rgba(255,255,255,0.14); }
     @media (prefers-reduced-motion: reduce) { .hero-video { transition: none; } }
+
+    .finder { margin: 26px 0 4px; }
+    .finder-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
     .search-row { position: relative; flex: 1 1 300px; max-width: 460px; }
+    .search { width: 100%; font-family: var(--body); font-size: 16px; color: var(--ink); background: var(--surface); border: 1.5px solid var(--border); border-radius: 999px; padding: 13px 20px; }
+    .search::placeholder { color: var(--muted); }
+    .search:focus { outline: none; border-color: var(--sage); box-shadow: 0 0 0 3px rgba(106,153,78,0.18); }
     .select-row { position: relative; flex: 1 1 260px; max-width: 340px; }
     .cselect { -webkit-appearance: none; appearance: none; width: 100%; font-family: var(--body); font-size: 16px; color: var(--ink); background: var(--surface); border: 1.5px solid var(--border); border-radius: 999px; padding: 13px 44px 13px 20px; cursor: pointer; }
+    .cselect:focus { outline: none; border-color: var(--sage); box-shadow: 0 0 0 3px rgba(106,153,78,0.18); }
     .select-row::after { content: ""; position: absolute; right: 21px; top: 50%; width: 8px; height: 8px; margin-top: -6px; border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted); transform: rotate(45deg); pointer-events: none; }
     .region[hidden] { display: none; }
     .empty { color: var(--muted); font-size: 15px; padding: 26px 0; }
     .count-note { color: var(--muted); font-size: 13.5px; margin-top: 10px; }
+
     .country-title { font-family: var(--display); font-weight: 700; font-size: 26px; color: var(--green-dark); margin: 36px 0 2px; }
+
     h3.region-label { font-family: var(--display); font-weight: 600; line-height: 1.14; text-transform: uppercase; letter-spacing: 1.5px; font-size: 12px; color: var(--gold-deep); margin: 26px 0 12px; }
     .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
     .card { display: block; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 18px 20px; text-decoration: none; color: inherit; box-shadow: var(--shadow); transition: transform .12s ease, box-shadow .12s ease; }
@@ -89,7 +109,9 @@
     .card .blurb { color: var(--muted); font-size: 14.5px; margin-top: 6px; }
     .card .arrow { color: var(--green); font-weight: 800; font-size: 13px; margin-top: 10px; }
     .chip { font-family: var(--body); font-weight: 800; font-size: 11px; white-space: nowrap; border-radius: 999px; padding: 3px 10px; color: var(--gold-deep); background: var(--surface-alt); }
+
     .cta { background: var(--green); color: #fff; border-radius: 20px; padding: 34px; margin: 40px 0 20px; text-align: center; box-shadow: var(--shadow); }
+    .cta h2 { color: #fff; font-size: 24px; }
     .cta p { color: rgba(255,255,255,0.9); margin: 10px auto 20px; max-width: 560px; }
     .cal-title { font-family: var(--display); font-weight: 700; font-size: clamp(24px, 4vw, 32px); color: var(--green-dark); margin: 44px 0 6px; }
     .ygrid-wrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--shadow); padding: 16px; margin: 14px 0 22px; }
@@ -107,6 +129,8 @@
     .event p { color: var(--muted); font-size: 15px; margin-top: 4px; }
     .event a { font-weight: 800; }
     .event .where { font-size: 12.5px; font-weight: 800; color: var(--sage); text-transform: uppercase; letter-spacing: 1px; }
+    .cta a.btn { display: inline-block; background: var(--gold); color: #2E2A25; font-family: var(--display); font-weight: 700; text-decoration: none; border-radius: 999px; padding: 13px 26px; }
+
     /* Footer: larger video band with a neutral scrim so more of the video shows */
     footer { position: relative; overflow: hidden; padding: 120px 0; color: #fff; background: #1F281F; margin-top: 40px; }
     footer::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(15,20,15,0.10) 0%, rgba(15,20,15,0.42) 100%); }
@@ -115,18 +139,19 @@
     .foot nav a { color: #EAF1E4; text-decoration: none; margin-left: 26px; font-weight: 700; }
     .foot nav a:hover { color: #fff; }
     .foot .copy { color: #E3ECDD; font-size: 14px; width: 100%; }
-    /* Narrow screens: the inline nav collapses into an obvious Menu dropdown. */
+  
+/* Narrow screens: the inline nav collapses into an obvious Menu dropdown. */
 .mnav{display:none;position:relative}
-    .mnav summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:7px;font-family:var(--display);font-weight:700;font-size:15px;color:#fff;background:rgba(0,0,0,.22);border:1.5px solid rgba(255,255,255,.55);border-radius:999px;padding:8px 16px;transition:color .28s ease,border-color .28s ease,background .28s ease}
-    .mnav summary::-webkit-details-marker{display:none}
-    .mnav summary::after{content:"";width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:6px solid currentColor;transition:transform .2s ease}
-    .mnav[open] summary::after{transform:rotate(180deg)}
-    header.scrolled .mnav summary{color:var(--green);border-color:var(--green);background:transparent}
-    .mnav .navdrop{position:absolute;right:0;top:calc(100% + 10px);min-width:220px;background:var(--surface,#fff);border:1px solid var(--border,#DDCBA0);border-radius:14px;box-shadow:0 18px 40px rgba(46,42,37,.22);padding:8px;z-index:60}
-    .mnav .navdrop a{display:block;margin:0;padding:12px 14px;border-radius:9px;color:var(--green-dark,#2C5134);background:none;text-decoration:none;font-family:var(--display);font-weight:600;font-size:15.5px;white-space:nowrap}
-    .mnav .navdrop a:hover{background:var(--surface-alt,#E7D9B4)}
-    @media(max-width:640px){.nav>nav,.nav .nav-right{display:none}.mnav{display:block}}
-  </style>
+.mnav summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:7px;font-family:var(--display);font-weight:700;font-size:15px;color:#fff;background:rgba(0,0,0,.22);border:1.5px solid rgba(255,255,255,.55);border-radius:999px;padding:8px 16px;transition:color .28s ease,border-color .28s ease,background .28s ease}
+.mnav summary::-webkit-details-marker{display:none}
+.mnav summary::after{content:"";width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:6px solid currentColor;transition:transform .2s ease}
+.mnav[open] summary::after{transform:rotate(180deg)}
+header.scrolled .mnav summary{color:var(--green);border-color:var(--green);background:transparent}
+.mnav .navdrop{position:absolute;right:0;top:calc(100% + 10px);min-width:220px;background:var(--surface,#fff);border:1px solid var(--border,#DDCBA0);border-radius:14px;box-shadow:0 18px 40px rgba(46,42,37,.22);padding:8px;z-index:60}
+.mnav .navdrop a{display:block;margin:0;padding:12px 14px;border-radius:9px;color:var(--green-dark,#2C5134);background:none;text-decoration:none;font-family:var(--display);font-weight:600;font-size:15.5px;white-space:nowrap}
+.mnav .navdrop a:hover{background:var(--surface-alt,#E7D9B4)}
+@media(max-width:640px){.nav>nav,.nav .nav-right{display:none}.mnav{display:block}}
+</style>
 </head>
 <body>
   <header>
@@ -5676,13 +5701,35 @@
       });
       pick.addEventListener('change', function () {
         search.value = '';
+        setHash(pick.value);
         render();
         if (pick.value) {
           var s = document.querySelector('.country[data-country="' + pick.value + '"]');
           if (s) s.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       });
-      render();
+
+      // The country guides link straight at a country, e.g. /community.html#NL, so the
+      // reader lands on that country's clubs rather than on a picker they have to work.
+      // The hash is only ever a code the picker already offers; anything else is ignored.
+      function setHash(code) {
+        if (!window.history || !history.replaceState) return;
+        history.replaceState(null, '', code ? '#' + code : location.pathname);
+      }
+      function fromHash() {
+        var code = (location.hash || '').replace('#', '').toUpperCase();
+        if (!code) return false;
+        var ok = Array.prototype.some.call(pick.options, function (o) { return o.value === code; });
+        if (!ok) return false;
+        pick.value = code;
+        search.value = '';
+        render();
+        var s = document.querySelector('.country[data-country="' + code + '"]');
+        if (s) s.scrollIntoView({ block: 'start' });
+        return true;
+      }
+      window.addEventListener('hashchange', fromHash);
+      if (!fromHash()) render();
     })();
 
     // Hero and footer video fade in once loaded; skipped entirely for reduced motion.
