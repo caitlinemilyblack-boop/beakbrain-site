@@ -24,6 +24,8 @@
     @font-face { font-family: 'Fredoka'; font-weight: 600; font-display: swap; src: url('/fonts/Fredoka-600.woff') format('woff'); }
     @font-face { font-family: 'Fredoka'; font-weight: 700; font-display: swap; src: url('/fonts/Fredoka-700.woff') format('woff'); }
     @font-face { font-family: 'Nunito'; font-weight: 400; font-display: swap; src: url('/fonts/Nunito-400.woff') format('woff'); }
+    @font-face { font-family: 'Nunito'; font-style: italic; font-weight: 400; font-display: swap; src: url('/fonts/Nunito-Italic-400.woff') format('woff'); }
+    @font-face { font-family: 'Nunito'; font-style: italic; font-weight: 700; font-display: swap; src: url('/fonts/Nunito-Italic-700.woff') format('woff'); }
     @font-face { font-family: 'Nunito'; font-weight: 700; font-display: swap; src: url('/fonts/Nunito-700.woff') format('woff'); }
     :root {
       --bg: #F2E8CF; --surface: #FFFFFF; --surface-alt: #E7D9B4; --ink: #2E2A25;
@@ -33,7 +35,7 @@
       --body: 'Nunito', system-ui, -apple-system, sans-serif;
       --shadow: 0 14px 34px rgba(46, 42, 37, 0.09);
     }
-    body { margin: 0; font-family: var(--body); color: var(--ink); background: var(--bg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    body { margin: 0; font-family: var(--body); color: var(--ink); background: var(--bg); line-height: 1.6; -webkit-font-smoothing: antialiased; ;font-size-adjust:0.5}
     h1, h2, h3 { font-family: var(--display); font-weight: 700; line-height: 1.14; margin: 0; }
     p { margin: 0; }
     a { color: var(--green); }
@@ -42,7 +44,7 @@
     header .wrap { max-width: 1080px; padding: 0 28px; }
     header { position: absolute; top: 0; left: 0; right: 0; z-index: 30; }
     .nav .wordmark { font-size: 24px; color: #fff; }
-    .nav-links a { color: #fff; text-decoration: none; font-family: var(--display); font-weight: 600; font-size: 15px; white-space: nowrap; }
+    .nav-links a { color: #fff; text-decoration: none; font-family: var(--body); font-weight: 600; font-size: 15px; white-space: nowrap; }
     @media (max-width: 640px) { .nav .wordmark { font-size: 20px; } .nav-links { display: none; } }
     /* The green gradient the other heroes fall back to before their video
        arrives, used here on its own. */
