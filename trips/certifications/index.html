@@ -147,7 +147,9 @@
        top and 10px bottom, which put the first card's border almost on top of the
        panel's. */
     .siteindex { display: flex; flex-direction: column; gap: 26px; padding: 24px; }
-    .lux { display: inline-flex; align-items: center; gap: 1.5px; vertical-align: -2px; }
+    .lux { display: inline-flex; align-items: center; gap: 5px; vertical-align: -2px; }
+    .luxname { font-weight: 700; color: var(--gold-deep); white-space: nowrap; }
+    .luxdots { display: inline-flex; align-items: center; gap: 1.5px; }
     .lux svg { width: 12px; height: 12px; fill: var(--gold-deep); }
     .lux-off { display: inline-flex; gap: 1.5px; }
     .lux-off svg { fill: #DED4B6; }
@@ -202,6 +204,9 @@
     .where.parks .parklink { color: var(--green-dark); font-weight: 700; }
     .where.parks .pkind { color: var(--muted); font-weight: 400; font-size: 0.92em; }
     .where.alsorec { color: var(--muted); }
+    .where.stops .stopname { color: var(--green-dark); font-weight: 800; }
+    .where.stops .stop + .stop::before { content: ' · '; color: var(--muted); font-weight: 400; }
+    .where.stops .parklink { color: var(--green-dark); font-weight: 800; }
     /* Guiding status: a word, a dot for the state, never colour alone (rule 6). */
     .guiding { margin: 6px 0 0; font-size: 13.5px; font-weight: 700; display: inline-flex; align-items: center; gap: 7px; }
     .guiding::before { content: ""; width: 9px; height: 9px; border-radius: 50%; flex: none; background: currentColor; }
@@ -301,11 +306,19 @@
        separators dangling at the start of a line. The operator's own figure gets a
        line to itself and the two conversions share the next one. */
     .trip h3, .trip h3 a, .trip h4, .trip h4 a { line-height: 1.35; }
-    .trip-side .priceline { display: block; text-align: right; }
-    .trip-side .pmain { display: block; font-size: 20px; line-height: 1.35; }
+    .trip-side .priceline { display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: baseline; gap: 0 6px; text-align: right; }
+    .trip-side .pmain { flex: 0 0 100%; font-size: 20px; line-height: 1.35; }
     .priceline, .priceline b, .priceline .psep { line-height: 1.45; }
+    /* A figure and its currency symbol are one unit and must never break across lines. */
+    .priceline b, .priceline .pmain, .priceline .palt { white-space: nowrap; }
     .trip-side .pmain + .psep { display: none; }
     .trip-side .palt { font-size: 13px; }
+    /* Below this the two conversions take a line each rather than half a line each. */
+    @media (max-width: 420px) {
+      .trip-side .priceline { justify-content: flex-start; }
+      .trip-side .palt { flex: 0 0 100%; }
+      .trip-side .psep { display: none; }
+    }
     .trip-side .pmeta, .trip-side .pmuted { display: block; font-size: 12.5px; margin-top: 2px; }
     .tmark { flex: 0 0 auto; width: 42px; height: 42px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #fff; }
     .rowregion { display: inline-flex; align-items: center; gap: 5px; color: var(--muted); text-decoration: none; font-weight: 700; }
