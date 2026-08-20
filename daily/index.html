@@ -22,13 +22,13 @@
 <meta name="twitter:image" content="https://beakbrain.com/assets/og-card.png" />
 <style>@font-face{font-family:'Fredoka';font-weight:700;font-display:swap;src:url('/fonts/Fredoka-700.woff') format('woff')}
 @font-face{font-family:'Fredoka';font-weight:600;font-display:swap;src:url('/fonts/Fredoka-600.woff') format('woff')}
-@font-face{font-family:'Nunito';font-weight:400;font-display:swap;src:url('/fonts/Nunito-400.woff') format('woff')}
-@font-face{font-family:'Nunito';font-weight:700;font-display:swap;src:url('/fonts/Nunito-700.woff') format('woff')}
+@font-face{font-family:'Nunito';size-adjust:103.31%;font-weight:400;font-display:swap;src:url('/fonts/Nunito-400.woff') format('woff')}@font-face{font-family:'Nunito';size-adjust:103.31%;font-style:italic;font-weight:400;font-display:swap;src:url('/fonts/Nunito-Italic-400.woff') format('woff')}@font-face{font-family:'Nunito';size-adjust:103.31%;font-style:italic;font-weight:700;font-display:swap;src:url('/fonts/Nunito-Italic-700.woff') format('woff')}
+@font-face{font-family:'Nunito';size-adjust:103.31%;font-weight:700;font-display:swap;src:url('/fonts/Nunito-700.woff') format('woff')}
 /* The three faces only the collector card uses (Fredoka 500, Nunito 800 and the
-   Dancing Script credit line), matching the species pages. */
+   NothingYouCouldDo credit line), matching the species pages. */
 @font-face{font-family:'Fredoka';font-weight:500;font-display:swap;src:url('/fonts/Fredoka-500.woff') format('woff')}
-@font-face{font-family:'Nunito';font-weight:800;font-display:swap;src:url('/fonts/Nunito-800.woff') format('woff')}
-@font-face{font-family:'Dancing Script';font-weight:500 700;font-display:swap;src:url('/fonts/DancingScript.ttf') format('truetype')}
+@font-face{font-family:'Nunito';size-adjust:103.31%;font-weight:800;font-display:swap;src:url('/fonts/Nunito-800.woff') format('woff')}
+@font-face{font-family:'NothingYouCouldDo';font-weight:400;font-display:swap;src:url('/fonts/NothingYouCouldDo.ttf') format('truetype')}
 :root{--bg:#F2E8CF;--surface:#fff;--surface-alt:#E7D9B4;--ink:#2E2A25;--muted:#6B6155;--border:#DDCBA0;--green:#386641;--green-dark:#2C5134;--sage:#6A994E;--gold:#EBB93C;--gold-deep:#7A5205;--display:'Fredoka','Trebuchet MS',system-ui,sans-serif;--body:'Nunito',system-ui,-apple-system,sans-serif;--shadow:0 14px 34px rgba(46,42,37,.09)}
 *{box-sizing:border-box}body{margin:0;font-family:var(--body);color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
 h1,h2{font-family:var(--display);font-weight:700;line-height:1.14;margin:0}p{margin:0}a{color:var(--green)}
@@ -56,7 +56,7 @@ header.scrolled .nav .btn{background:var(--green);color:#fff}
 .mnav[open] summary::after{transform:rotate(180deg)}
 header.scrolled .mnav summary{color:var(--green);border-color:var(--green);background:transparent}
 .mnav .navdrop{position:absolute;right:0;top:calc(100% + 10px);min-width:220px;background:var(--surface);border:1px solid var(--border);border-radius:14px;box-shadow:0 18px 40px rgba(46,42,37,.22);padding:8px;z-index:60}
-.mnav .navdrop a{display:block;margin:0;padding:12px 14px;border-radius:9px;color:var(--green-dark);background:none;text-decoration:none;font-family:var(--display);font-weight:600;font-size:15.5px;white-space:nowrap}
+.mnav .navdrop a{display:block;margin:0;padding:12px 14px;border-radius:9px;color:var(--green-dark);background:none;text-decoration:none;font-family:var(--body);font-weight:600;font-size:15.5px;white-space:nowrap}
 .mnav .navdrop a:hover{background:var(--surface-alt)}
 @media(max-width:640px){.nav>nav{display:none}.mnav{display:block}}
 .hero{position:relative;margin:0;min-height:250px;display:flex;align-items:flex-end;overflow:hidden;background:linear-gradient(150deg,#2C5134,#386641)}
