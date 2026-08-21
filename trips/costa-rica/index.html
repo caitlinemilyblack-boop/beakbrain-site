@@ -235,6 +235,11 @@
     .where.stops .stopname { color: var(--green-dark); font-weight: 800; }
     .where.stops .stop + .stop::before { content: ' · '; color: var(--muted); font-weight: 400; }
     .where.stops .parklink { color: var(--green-dark); font-weight: 800; }
+    .stoplink { font: inherit; font-weight: 800; color: var(--green-dark); background: none; border: 0; border-bottom: 1px dotted currentColor; padding: 0; cursor: pointer; }
+    .stoplink:hover { color: var(--green); border-bottom-style: solid; }
+    .stoplink:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+    .mkey-s.mkey-stop { width: 9px; height: 9px; border-radius: 50%; background: #fff; border: 2.5px solid var(--muted); }
+    .mldot.mlstop { width: 9px; height: 9px; background: #fff; border: 2.5px solid var(--pc); box-shadow: 0 1px 3px rgba(0,0,0,.3); }
     .stopmap { font-size: 11.5px; font-weight: 700; color: var(--muted); text-decoration: none; border-bottom: 1px dotted currentColor; margin-left: 3px; }
     .stopmap:hover { color: var(--green-dark); }
     /* Guiding status: a word, a dot for the state, never colour alone (rule 6). */
@@ -4917,7 +4922,7 @@
 
       <div class="mapwrap">
         <div class="mlmap" id="regionmap" aria-label="Map of Costa Rica's birding regions, with every place to stay and every tour on the page; select any marker to open its entry"></div>
-        <p class="mapbar"><span class="mkey"><span class="mkey-s mkey-region"></span>Region</span><span class="mkey"><span class="mkey-s mkey-park"></span>National park</span><span class="mkey"><span class="mkey-s mkey-stay"></span>Place to stay</span><span class="mkey"><span class="mkey-s mkey-go"></span>Tour or operator</span><span class="mkeynote">Colours match each region. Select a marker to open its entry below.</span></p>
+        <p class="mapbar"><span class="mkey"><span class="mkey-s mkey-region"></span>Region</span><span class="mkey"><span class="mkey-s mkey-park"></span>National park</span><span class="mkey"><span class="mkey-s mkey-stay"></span>Place to stay</span><span class="mkey"><span class="mkey-s mkey-go"></span>Tour or operator</span><span class="mkey"><span class="mkey-s mkey-stop"></span>Stop</span><span class="mkeynote">Colours match each region. Select a marker to open its entry below.</span></p>
       </div>
 
       <div class="subsec" id="trips">
@@ -5024,7 +5029,7 @@
         <p class="where"><b>Look for:</b> <a href="/birds/great-green-macaw/">Great Green Macaw</a>, <a href="/birds/snowy-cotinga/">Snowy Cotinga</a>, <a href="/birds/sunbittern/">Sunbittern</a>, <a href="/birds/great-curassow/">Great Curassow</a>, <a href="/birds/semiplumbeous-hawk/">Semiplumbeous Hawk</a>, <a href="/birds/bare-necked-umbrellabird/">Bare-necked Umbrellabird</a></p>
 
         <p class="where parks"><b>National park:</b> <a class="parklink" href="https://www.protectedplanet.net/165" target="_blank" rel="noopener">Braulio Carrillo National Park</a></p>
-        <p class="where stops"><b>Stops:</b> <span class="stop"><a class="parklink" href="https://tropicalstudies.org/portfolio/la-selva-research-station/" target="_blank" rel="noopener" title="La Selva Biological Station, official site">La Selva Biological Station</a>, a research station run by the Organization for Tropical Studies, open to day visitors and overnight guests. Marked trails, 50 years of records, and the antbirds and Great Green Macaws that made its name</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=10.16&amp;mlon=-83.94#map=14/10.16/-83.94" target="_blank" rel="noopener" title="Quebrada Gonzalez on a map">Quebrada Gonzalez</a>, a ranger station and trailhead on the Guapiles highway inside Braulio Carrillo National Park. Foothill forest at 500 metres, and the easiest place to try for umbrellabird</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=10.248&amp;mlon=-84.17#map=14/10.248/-84.17" target="_blank" rel="noopener" title="Virgen del Socorro on a map">Virgen del Socorro</a>, a steep public road down to a river gorge off the Vara Blanca route, birded slowly from the verge. Sunbittern and torrent species along the water</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=10.262&amp;mlon=-83.935#map=14/10.262/-83.935" target="_blank" rel="noopener" title="El Tapir on a map">El Tapir</a>, a small private garden of heliconias beside the same highway, open for a modest fee. The traditional place to look for Snowcap</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=10.217&amp;mlon=-83.786#map=14/10.217/-83.786" target="_blank" rel="noopener" title="Cope, at Guapiles on a map">Cope, at Guapiles</a>, a local artist who hosts feeder and hide sessions in his own garden, booked directly. The name most photographers here mention first</span></p>
+        <p class="where stops"><b>Stops:</b> <span class="stop"><button type="button" class="stoplink" data-stop="stop-la-selva-biological-station" title="Show La Selva Biological Station on the map">La Selva Biological Station</button>, a research station run by the Organization for Tropical Studies, open to day visitors and overnight guests. Marked trails, 50 years of records, and the antbirds and Great Green Macaws that made its name</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-quebrada-gonzalez" title="Show Quebrada Gonzalez on the map">Quebrada Gonzalez</button>, a ranger station and trailhead on the Guapiles highway inside Braulio Carrillo National Park. Foothill forest at 500 metres, and the easiest place to try for umbrellabird</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-virgen-del-socorro" title="Show Virgen del Socorro on the map">Virgen del Socorro</button>, a steep public road down to a river gorge off the Vara Blanca route, birded slowly from the verge. Sunbittern and torrent species along the water</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-el-tapir" title="Show El Tapir on the map">El Tapir</button>, a small private garden of heliconias beside the same highway, open for a modest fee. The traditional place to look for Snowcap</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-cope-at-guapiles" title="Show Cope, at Guapiles on the map">Cope, at Guapiles</button>, a local artist who hosts feeder and hide sessions in his own garden, booked directly. The name most photographers here mention first</span></p>
 
         <p class="where wildlife"><b>Also watch for:</b> Three-toed and two-toed sloth, collared peccary and mantled howler are all regular on the station trails. Strawberry poison dart frogs are on the leaf litter year round, and most active after rain from May to November.</p><p class="where"><b>Watch:</b> <a href="/cams/#cam-macaw-nest">A Great Green Macaw nest at Sarapiqui streams live on our cams page.</a></p>
           </div>
@@ -5046,7 +5051,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $180</span><span class="psep">/</span><span class="palt">€86 to €156</span><span class="psep">/</span><span class="palt">£74 to £133</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.selvaverde.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=10.4541&mlon=-84.0083#map=15/10.4541/-84.0083" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=10.4541,-84.0083" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
           </div>
@@ -5071,7 +5076,7 @@
         <p class="where"><b>Look for:</b> <a href="/birds/agami-heron/">Agami Heron</a>, <a href="/birds/sungrebe/">Sungrebe</a>, <a href="/birds/great-potoo/">Great Potoo</a>, <a href="/birds/green-ibis/">Green Ibis</a></p>
         <p class="where alsorec"><b>Also recorded in the parks here:</b> <a href="/birds/crested-eagle/">Crested Eagle</a>, <a href="/birds/short-tailed-nighthawk/">Short-tailed Nighthawk</a>, <a href="/birds/black-collared-hawk/">Black-collared Hawk</a>, <a href="/birds/chestnut-colored-woodpecker/">Chestnut-colored Woodpecker</a>, <a href="/birds/greater-ani/">Greater Ani</a>, <a href="/birds/lesser-swallow-tailed-swift/">Lesser Swallow-tailed Swift</a></p>
         <p class="where parks"><b>National park:</b> <a class="parklink" href="https://www.protectedplanet.net/167" target="_blank" rel="noopener">Tortuguero National Park</a></p>
-        <p class="where stops"><b>Stops:</b> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=10.515&amp;mlon=-83.515#map=14/10.515/-83.515" target="_blank" rel="noopener" title="Cano Chiquero and Cano Harold on a map">Cano Chiquero and Cano Harold</a>, two narrow side canals reached by boat from the village, quieter than the main waterway. Where the Agami Herons stand</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=10.6&amp;mlon=-83.525#map=14/10.6/-83.525" target="_blank" rel="noopener" title="Cerro Tortuguero on a map">Cerro Tortuguero</a>, a short steep hill behind the village with a view over the whole delta, walked at first light</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=10.543&amp;mlon=-83.514#map=14/10.543/-83.514" target="_blank" rel="noopener" title="The village airstrip edge on a map">The village airstrip edge</a>, open grass and scrub beside the landing strip, walkable from the village. Seed finches and flycatchers that the forest keeps hidden</span></p>
+        <p class="where stops"><b>Stops:</b> <span class="stop"><button type="button" class="stoplink" data-stop="stop-cano-chiquero-and-cano-harold" title="Show Cano Chiquero and Cano Harold on the map">Cano Chiquero and Cano Harold</button>, two narrow side canals reached by boat from the village, quieter than the main waterway. Where the Agami Herons stand</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-cerro-tortuguero" title="Show Cerro Tortuguero on the map">Cerro Tortuguero</button>, a short steep hill behind the village with a view over the whole delta, walked at first light</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-the-village-airstrip-edge" title="Show The village airstrip edge on the map">The village airstrip edge</button>, open grass and scrub beside the landing strip, walkable from the village. Seed finches and flycatchers that the forest keeps hidden</span></p>
 
         <p class="where wildlife"><b>Also watch for:</b> Green turtles nest on the beach from July to October and leatherbacks from March to May, both watched only with a licensed guide. Spider monkey, caiman and West Indian manatee are all possible from the canal boats.</p>
           </div>
@@ -5103,7 +5108,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$120 to $250</span><span class="psep">/</span><span class="palt">€104 to €216</span><span class="psep">/</span><span class="palt">£89 to £185</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.lagunatortuguero.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=10.542&mlon=-83.5028#map=15/10.542/-83.5028" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=10.542,-83.5028" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-tortuga-lodge-costa-rica" data-cat="stay" data-tier="3" data-price="200" data-region="1" data-certs="0" data-name="tortuga lodge">
@@ -5119,7 +5124,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$200 to $400</span><span class="psep">/</span><span class="palt">€173 to €346</span><span class="psep">/</span><span class="palt">£148 to £296</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.tortugalodge.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=10.542&mlon=-83.5028#map=15/10.542/-83.5028" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=10.542,-83.5028" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-manatus-hotel-costa-rica" data-cat="stay" data-tier="3" data-price="250" data-region="1" data-certs="0" data-name="manatus hotel">
@@ -5135,7 +5140,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$250 to $500</span><span class="psep">/</span><span class="palt">€216 to €432</span><span class="psep">/</span><span class="palt">£185 to £370</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.manatuscostarica.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=10.542&mlon=-83.5028#map=15/10.542/-83.5028" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=10.542,-83.5028" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
           </div>
@@ -5160,7 +5165,7 @@
         <p class="where"><b>Look for:</b> <a href="/birds/crested-guan/">Crested Guan</a>, <a href="/birds/keel-billed-motmot/">Keel-billed Motmot</a>, <a href="/birds/great-curassow/">Great Curassow</a> and, for the lucky, <a href="/birds/lovely-cotinga/">Lovely Cotinga</a></p>
 
         <p class="where parks"><b>National park:</b> <a class="parklink" href="https://www.protectedplanet.net/36059" target="_blank" rel="noopener">Arenal Volcano National Park</a></p>
-        <p class="where stops"><b>Stops:</b> <span class="stop"><a class="parklink" href="https://www.arenalobservatorylodge.com/" target="_blank" rel="noopener" title="Arenal Observatory Lodge, official site">Arenal Observatory Lodge</a>, a lodge below the volcano whose deck, feeders and trail system are open to day visitors for a fee, so you can bird it without staying</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=10.427&amp;mlon=-84.8#map=14/10.427/-84.8" target="_blank" rel="noopener" title="The El Castillo road on a map">The El Castillo road</a>, the quiet gravel road along the south shore of the lake, birded from the verge. Keel-billed Motmot and Lovely Cotinga are the reasons to walk it</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=10.4938&amp;mlon=-84.7532#map=14/10.4938/-84.7532" target="_blank" rel="noopener" title="Arenal hanging bridges on a map">Arenal hanging bridges</a>, a private trail with suspension bridges that put you level with the canopy, which is where much of the forest's activity actually happens</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=10.46&amp;mlon=-84.73#map=14/10.46/-84.73" target="_blank" rel="noopener" title="The Lake Arenal dam sector on a map">The Lake Arenal dam sector</a>, open water and shoreline at the dam, and the waterbirds that the forest regions never give you</span></p>
+        <p class="where stops"><b>Stops:</b> <span class="stop"><button type="button" class="stoplink" data-stop="stop-arenal-observatory-lodge" title="Show Arenal Observatory Lodge on the map">Arenal Observatory Lodge</button>, a lodge below the volcano whose deck, feeders and trail system are open to day visitors for a fee, so you can bird it without staying</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-the-el-castillo-road" title="Show The El Castillo road on the map">The El Castillo road</button>, the quiet gravel road along the south shore of the lake, birded from the verge. Keel-billed Motmot and Lovely Cotinga are the reasons to walk it</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-arenal-hanging-bridges" title="Show Arenal hanging bridges on the map">Arenal hanging bridges</button>, a private trail with suspension bridges that put you level with the canopy, which is where much of the forest's activity actually happens</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-the-lake-arenal-dam-sector" title="Show The Lake Arenal dam sector on the map">The Lake Arenal dam sector</button>, open water and shoreline at the dam, and the waterbirds that the forest regions never give you</span></p>
 
         <p class="where wildlife"><b>Also watch for:</b> Mantled howler and white-faced capuchin along the hanging bridges, coati around the trailheads, and eyelash viper coiled on heliconia. Bat colonies emerge at dusk over the lake all year.</p>
           </div>
@@ -5192,7 +5197,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $200</span><span class="psep">/</span><span class="palt">€86 to €173</span><span class="psep">/</span><span class="palt">£74 to £148</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.arenalobservatorylodge.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=10.4717&mlon=-84.6444#map=15/10.4717/-84.6444" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=10.4717,-84.6444" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-finca-luna-nueva-costa-rica" data-cat="stay" data-tier="2" data-price="120" data-region="2" data-certs="0" data-name="finca luna nueva">
@@ -5208,7 +5213,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$120 to $220</span><span class="psep">/</span><span class="palt">€104 to €190</span><span class="psep">/</span><span class="palt">£89 to £163</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.fincalunanuevalodge.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=10.4717&mlon=-84.6444#map=15/10.4717/-84.6444" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=10.4717,-84.6444" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-nayara-gardens-costa-rica" data-cat="stay" data-tier="3" data-price="300" data-region="2" data-certs="0" data-name="nayara gardens">
@@ -5224,7 +5229,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$300 to $600</span><span class="psep">/</span><span class="palt">€259 to €518</span><span class="psep">/</span><span class="palt">£222 to £444</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://nayaragardens.com/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=10.4717&mlon=-84.6444#map=15/10.4717/-84.6444" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=10.4717,-84.6444" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-nayara-springs-costa-rica" data-cat="stay" data-tier="4" data-price="500" data-region="2" data-certs="0" data-name="nayara springs">
@@ -5240,7 +5245,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$500 to $1,000</span><span class="psep">/</span><span class="palt">€432 to €864</span><span class="psep">/</span><span class="palt">£370 to £739</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://nayarasprings.com/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=10.4717&mlon=-84.6444#map=15/10.4717/-84.6444" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=10.4717,-84.6444" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-nayara-tented-camp-costa-rica" data-cat="stay" data-tier="4" data-price="500" data-region="2" data-certs="0" data-name="nayara tented camp">
@@ -5256,7 +5261,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$500 to $1,000</span><span class="psep">/</span><span class="palt">€432 to €864</span><span class="psep">/</span><span class="palt">£370 to £739</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://nayaratentedcamp.com/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=10.4717&mlon=-84.6444#map=15/10.4717/-84.6444" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=10.4717,-84.6444" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-hotel-arenal-manoa-costa-rica" data-cat="stay" data-tier="2" data-price="100" data-region="2" data-certs="1" data-name="hotel arenal manoa">
@@ -5272,7 +5277,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.arenalmanoa.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=10.4717&mlon=-84.6444#map=15/10.4717/-84.6444" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=10.4717,-84.6444" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-hotel-arenal-springs-resort-spa-costa-rica" data-cat="stay" data-tier="2" data-price="100" data-region="2" data-certs="1" data-name="hotel arenal springs resort &amp; spa">
@@ -5288,7 +5293,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.hotelarenalspring.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=10.4717&mlon=-84.6444#map=15/10.4717/-84.6444" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=10.4717,-84.6444" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-hotel-arenal-volcano-inn-costa-rica" data-cat="stay" data-tier="2" data-price="100" data-region="2" data-certs="1" data-name="hotel arenal volcano inn">
@@ -5304,7 +5309,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://arenalvolcanoinn.com/es.index.html" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=10.4717&mlon=-84.6444#map=15/10.4717/-84.6444" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=10.4717,-84.6444" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-hotel-royal-corin-wellness-and-spa-resort-costa-rica" data-cat="stay" data-tier="2" data-price="100" data-region="2" data-certs="1" data-name="hotel royal corin wellness and spa resort">
@@ -5320,7 +5325,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.royalcorin.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=10.4717&mlon=-84.6444#map=15/10.4717/-84.6444" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=10.4717,-84.6444" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-tabac-n-thermal-resort-and-spa-costa-rica" data-cat="stay" data-tier="2" data-price="100" data-region="2" data-certs="1" data-name="tabacón thermal resort and spa">
@@ -5336,7 +5341,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.tabacon.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=10.4717&mlon=-84.6444#map=15/10.4717/-84.6444" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=10.4717,-84.6444" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-hotel-lomas-del-volc-n-costa-rica" data-cat="stay" data-tier="0" data-region="2" data-certs="1" data-name="hotel lomas del volcán">
@@ -5352,7 +5357,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmuted">Rate not published</span></p>
           <a class="watch-link" href="https://www.lomasdelvolcan.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=10.4717&mlon=-84.6444#map=15/10.4717/-84.6444" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=10.4717,-84.6444" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
           </div>
@@ -5526,7 +5531,7 @@
         <p class="where"><b>Look for:</b> <a href="/birds/jabiru/">Jabiru</a>, <a href="/birds/long-tailed-manakin/">Long-tailed Manakin</a>, <a href="/birds/turquoise-browed-motmot/">Turquoise-browed Motmot</a>, <a href="/birds/nicaraguan-grackle/">Nicaraguan Grackle</a></p>
         <p class="where alsorec"><b>Also recorded in the parks here:</b> <a href="/birds/white-fronted-amazon/">White-fronted Amazon</a>, <a href="/birds/blue-vented-hummingbird/">Blue-vented Hummingbird</a>, <a href="/birds/great-curassow/">Great Curassow</a>, <a href="/birds/northern-barred-woodcreeper/">Northern Barred Woodcreeper</a>, <a href="/birds/crested-guan/">Crested Guan</a>, <a href="/birds/king-vulture/">King Vulture</a></p>
         <p class="where parks"><b>National parks:</b> <a class="parklink" href="https://www.protectedplanet.net/102334" target="_blank" rel="noopener">Tenorio Volcano National Park</a>, <a class="parklink" href="https://www.protectedplanet.net/168" target="_blank" rel="noopener">Rincón de la Vieja National Park</a>, <a class="parklink" href="https://www.protectedplanet.net/166" target="_blank" rel="noopener">Santa Rosa National Park</a>, <a class="parklink" href="https://www.protectedplanet.net/19368" target="_blank" rel="noopener">Guanacaste National Park</a>, <a class="parklink" href="https://www.protectedplanet.net/4646" target="_blank" rel="noopener">Palo Verde National Park</a></p>
-        <p class="where stops"><b>Stops:</b> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=10.348&amp;mlon=-85.342#map=14/10.348/-85.342" target="_blank" rel="noopener" title="Palo Verde boat trip on a map">Palo Verde boat trip</a>, a launch trip on the Tempisque river inside Palo Verde National Park, booked locally. Herons, Jabiru and the dry season concentrations</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=10.8923&amp;mlon=-84.7865#map=14/10.8923/-84.7865" target="_blank" rel="noopener" title="Cano Negro on a map">Cano Negro</a>, a wildlife refuge near the Nicaraguan border where the standard way to bird is a small boat at dawn, arranged in the village. The best wetland morning in the country from January to March</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=10.702&amp;mlon=-84.993#map=14/10.702/-84.993" target="_blank" rel="noopener" title="The Rio Celeste sector, Tenorio on a map">The Rio Celeste sector, Tenorio</a>, the wet Caribbean side of Tenorio Volcano National Park, reached by a well used trail. A different list from the dry lowlands an hour away</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=10.1415&amp;mlon=-85.0431#map=14/10.1415/-85.0431" target="_blank" rel="noopener" title="Ensenada on a map">Ensenada</a>, a working cattle ranch and lodge on the Gulf of Nicoya, open to day visitors. Dry forest, salt pans and easy White-throated Magpie-Jays</span></p>
+        <p class="where stops"><b>Stops:</b> <span class="stop"><button type="button" class="stoplink" data-stop="stop-palo-verde-boat-trip" title="Show Palo Verde boat trip on the map">Palo Verde boat trip</button>, a launch trip on the Tempisque river inside Palo Verde National Park, booked locally. Herons, Jabiru and the dry season concentrations</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-cano-negro" title="Show Cano Negro on the map">Cano Negro</button>, a wildlife refuge near the Nicaraguan border where the standard way to bird is a small boat at dawn, arranged in the village. The best wetland morning in the country from January to March</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-the-rio-celeste-sector-tenorio" title="Show The Rio Celeste sector, Tenorio on the map">The Rio Celeste sector, Tenorio</button>, the wet Caribbean side of Tenorio Volcano National Park, reached by a well used trail. A different list from the dry lowlands an hour away</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-ensenada" title="Show Ensenada on the map">Ensenada</button>, a working cattle ranch and lodge on the Gulf of Nicoya, open to day visitors. Dry forest, salt pans and easy White-throated Magpie-Jays</span></p>
 
         <p class="where"><b>Also covers:</b> Bagaces, Liberia, Nicoya, Rio Celeste</p><p class="where wildlife"><b>Also watch for:</b> Spider monkey and coati in the dry forest, and American crocodile in the Caño Negro channels. The dry season from December to April concentrates everything at the remaining water, which is what makes it the season to come.</p>
           </div>
@@ -5558,7 +5563,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $180</span><span class="psep">/</span><span class="palt">€86 to €156</span><span class="psep">/</span><span class="palt">£74 to £133</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.celestemountainlodge.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=10.7311&mlon=-85.0576#map=15/10.7311/-85.0576" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=10.7311,-85.0576" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-rio-celeste-hideaway-hotel-costa-rica" data-cat="stay" data-tier="3" data-price="180" data-region="3" data-certs="1" data-name="rio celeste hideaway hotel">
@@ -5574,7 +5579,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$180 to $350</span><span class="psep">/</span><span class="palt">€156 to €302</span><span class="psep">/</span><span class="palt">£133 to £259</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.riocelestehideaway.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=10.7311&mlon=-85.0576#map=15/10.7311/-85.0576" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=10.7311,-85.0576" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-hotel-hacienda-guachipelin-costa-rica" data-cat="stay" data-tier="2" data-price="100" data-region="3" data-certs="1" data-name="hotel hacienda guachipelin">
@@ -5590,7 +5595,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.guachipelin.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=10.7204&mlon=-85.4098#map=15/10.7204/-85.4098" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=10.7204,-85.4098" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-hotel-lagarta-lodge-costa-rica" data-cat="stay" data-tier="2" data-price="100" data-region="3" data-certs="1" data-name="hotel lagarta lodge">
@@ -5606,7 +5611,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.lagartalodge.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=9.98&mlon=-85.6528#map=15/9.98/-85.6528" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=9.98,-85.6528" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-rio-perdido-hot-springs-costa-rica" data-cat="stay" data-tier="3" data-price="250" data-region="3" data-certs="1" data-name="rio perdido hot springs">
@@ -5622,7 +5627,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$250 to $450</span><span class="psep">/</span><span class="palt">€216 to €389</span><span class="psep">/</span><span class="palt">£185 to £333</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.rioperdido.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=10.5266&mlon=-85.2548#map=15/10.5266/-85.2548" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=10.5266,-85.2548" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-hacienda-el-viejo-wetlands-costa-rica" data-cat="stay" data-tier="2" data-region="3" data-certs="1" data-name="hacienda el viejo wetlands">
@@ -5638,7 +5643,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmuted">Rate not published</span></p>
           <a class="watch-link" href="https://www.elviejowetlands.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=10.4454&mlon=-85.5526#map=15/10.4454/-85.5526" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=10.4454,-85.5526" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-suitree-experience-hotel-costa-rica" data-cat="stay" data-tier="0" data-region="3" data-certs="1" data-name="suitree experience hotel">
@@ -5654,7 +5659,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmuted">Rate not published</span></p>
           <a class="watch-link" href="https://www.suitree.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=10.5169&mlon=-85.6468#map=15/10.5169/-85.6468" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=10.5169,-85.6468" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
           </div>
@@ -5717,7 +5722,7 @@
         <p class="where"><b>Look for:</b> <a href="/birds/resplendent-quetzal/">Resplendent Quetzal</a>, <a href="/birds/three-wattled-bellbird/">Three-wattled Bellbird</a>, <a href="/birds/black-guan/">Black Guan</a>, <a href="/birds/prong-billed-barbet/">Prong-billed Barbet</a>, <a href="/birds/azure-hooded-jay/">Azure-hooded Jay</a>, <a href="/birds/golden-browed-chlorophonia/">Golden-browed Chlorophonia</a>, <a href="/birds/collared-trogon/">Collared Trogon</a> and the famous hummingbird galleries</p>
 
         <p class="where parks"><b>Parks and reserves:</b> <a class="parklink" href="https://www.reservamonteverde.com/" target="_blank" rel="noopener">Monteverde Cloud Forest Biological Preserve</a> <span class="pkind">(private reserve)</span>, <a class="parklink" href="https://www.reservasantaelena.org/" target="_blank" rel="noopener">Santa Elena Cloud Forest Reserve</a> <span class="pkind">(community reserve)</span>, <a class="parklink" href="https://www.acmcr.org/" target="_blank" rel="noopener">Children's Eternal Rainforest</a> <span class="pkind">(private reserve)</span></p>
-        <p class="where stops"><b>Stops:</b> <span class="stop"><a class="parklink" href="https://www.reservacuricancha.com/" target="_blank" rel="noopener" title="Curi-Cancha Reserve, official site">Curi-Cancha Reserve</a>, a private reserve with a booking cap, so it stays quiet. Generally the best quetzal odds in the area</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=10.3&amp;mlon=-84.793#map=14/10.3/-84.793" target="_blank" rel="noopener" title="Monteverde Cloud Forest Preserve on a map">Monteverde Cloud Forest Preserve</a>, the reserve most people mean by Monteverde, on the continental divide. Book the early entry slot</span> <span class="stop"><a class="parklink" href="https://www.reservasantaelena.org/" target="_blank" rel="noopener" title="Santa Elena Reserve, official site">Santa Elena Reserve</a>, a community run reserve, higher and wetter than Monteverde and much quieter in the middle of the day</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=10.31&amp;mlon=-84.818#map=14/10.31/-84.818" target="_blank" rel="noopener" title="Bajo del Tigre on a map">Bajo del Tigre</a>, the low dry edge of the Children's Eternal Rainforest, a short walk from the village. Where the bellbirds display in season</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=10.28&amp;mlon=-84.79#map=14/10.28/-84.79" target="_blank" rel="noopener" title="The San Luis valley on a map">The San Luis valley</a>, farmland and forest edge on the road below the town, birded from the roadside for a different set of species</span></p>
+        <p class="where stops"><b>Stops:</b> <span class="stop"><button type="button" class="stoplink" data-stop="stop-curi-cancha-reserve" title="Show Curi-Cancha Reserve on the map">Curi-Cancha Reserve</button>, a private reserve with a booking cap, so it stays quiet. Generally the best quetzal odds in the area</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-monteverde-cloud-forest-preserve" title="Show Monteverde Cloud Forest Preserve on the map">Monteverde Cloud Forest Preserve</button>, the reserve most people mean by Monteverde, on the continental divide. Book the early entry slot</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-santa-elena-reserve" title="Show Santa Elena Reserve on the map">Santa Elena Reserve</button>, a community run reserve, higher and wetter than Monteverde and much quieter in the middle of the day</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-bajo-del-tigre" title="Show Bajo del Tigre on the map">Bajo del Tigre</button>, the low dry edge of the Children's Eternal Rainforest, a short walk from the village. Where the bellbirds display in season</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-the-san-luis-valley" title="Show The San Luis valley on the map">The San Luis valley</button>, farmland and forest edge on the road below the town, birded from the roadside for a different set of species</span></p>
 
         <p class="where wildlife"><b>Also watch for:</b> Olingo and kinkajou on night walks, glass frogs along the stream margins from May to November, and orange-kneed tarantula in roadside banks. Two-toed sloth is regular in the reserve canopy.</p>
           </div>
@@ -5749,7 +5754,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$120 to $200</span><span class="psep">/</span><span class="palt">€104 to €173</span><span class="psep">/</span><span class="palt">£89 to £148</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.monteverdelodge.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=10.2912&mlon=-84.8136#map=15/10.2912/-84.8136" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=10.2912,-84.8136" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-hotel-belmar-costa-rica" data-cat="stay" data-tier="3" data-price="200" data-region="4" data-certs="1" data-name="hotel belmar">
@@ -5765,7 +5770,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$200 to $500</span><span class="psep">/</span><span class="palt">€173 to €432</span><span class="psep">/</span><span class="palt">£148 to £370</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.hotelbelmar.net/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=10.2912&mlon=-84.8136#map=15/10.2912/-84.8136" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=10.2912,-84.8136" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-koora-hotel-costa-rica" data-cat="stay" data-tier="3" data-price="250" data-region="4" data-certs="0" data-name="koora hotel">
@@ -5781,7 +5786,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$250 to $450</span><span class="psep">/</span><span class="palt">€216 to €389</span><span class="psep">/</span><span class="palt">£185 to £333</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.koorahotel.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=10.2912&mlon=-84.8136#map=15/10.2912/-84.8136" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=10.2912,-84.8136" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-cala-lodge-monteverde-costa-rica" data-cat="stay" data-tier="2" data-price="100" data-region="4" data-certs="1" data-name="cala lodge monteverde">
@@ -5797,7 +5802,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.calalodge.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=10.2912&mlon=-84.8136#map=15/10.2912/-84.8136" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=10.2912,-84.8136" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-hotel-poco-a-poco-costa-rica" data-cat="stay" data-tier="2" data-price="100" data-region="4" data-certs="1" data-name="hotel poco a poco">
@@ -5813,7 +5818,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.hotelpocoapoco.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=10.2912&mlon=-84.8136#map=15/10.2912/-84.8136" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=10.2912,-84.8136" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-hotel-senda-monteverde-costa-rica" data-cat="stay" data-tier="2" data-price="100" data-region="4" data-certs="1" data-name="hotel senda monteverde">
@@ -5829,7 +5834,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.sendamonteverde.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=10.2912&mlon=-84.8136#map=15/10.2912/-84.8136" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=10.2912,-84.8136" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-hotel-trapp-family-costa-rica" data-cat="stay" data-tier="2" data-price="100" data-region="4" data-certs="1" data-name="hotel trapp family">
@@ -5845,7 +5850,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://trapphotelmonteverde.com/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=10.2912&mlon=-84.8136#map=15/10.2912/-84.8136" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=10.2912,-84.8136" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-valle-escondido-nature-reserve-hotel-farm-costa-rica" data-cat="stay" data-tier="2" data-price="100" data-region="4" data-certs="1" data-name="valle escondido nature reserve hotel &amp; farm">
@@ -5861,7 +5866,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.valleescondidocr.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=10.2912&mlon=-84.8136#map=15/10.2912/-84.8136" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=10.2912,-84.8136" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
           </div>
@@ -6189,7 +6194,7 @@
         <p class="where"><b>Look for:</b> <a href="/birds/sooty-faced-finch/">Sooty-faced Finch</a>, <a href="/birds/torrent-tyrannulet/">Torrent Tyrannulet</a>, <a href="/birds/prong-billed-barbet/">Prong-billed Barbet</a></p>
         <p class="where alsorec"><b>Also recorded in the parks here:</b> <a href="/birds/costa-rican-pygmy-owl/">Costa Rican Pygmy Owl</a>, <a href="/birds/dark-pewee/">Dark Pewee</a>, <a href="/birds/green-thorntail/">Green Thorntail</a>, <a href="/birds/orange-billed-nightingale-thrush/">Orange-billed Nightingale-Thrush</a>, <a href="/birds/tropical-screech-owl/">Tropical Screech Owl</a>, <a href="/birds/white-eared-ground-sparrow/">White-eared Ground Sparrow</a>, <a href="/birds/black-and-yellow-phainoptila/">Black-and-yellow Phainoptila</a></p>
         <p class="where parks"><b>National parks:</b> <a class="parklink" href="https://www.protectedplanet.net/169" target="_blank" rel="noopener">Poás Volcano National Park</a>, <a class="parklink" href="https://www.protectedplanet.net/19379" target="_blank" rel="noopener">Juan Castro Blanco National Park</a>, <a class="parklink" href="https://www.protectedplanet.net/171" target="_blank" rel="noopener">Irazú Volcano National Park</a></p>
-        <p class="where stops"><b>Stops:</b> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=10.216&amp;mlon=-84.15#map=14/10.216/-84.15" target="_blank" rel="noopener" title="Cinchona on a map">Cinchona</a>, a roadside cafe above the Sarapiqui road whose balcony feeders are open to anyone who buys a coffee. Probably the best single hour of hummingbird watching in the country</span> <span class="stop"><a class="parklink" href="https://www.bosquedepaz.com/" target="_blank" rel="noopener" title="Bosque de Paz, official site">Bosque de Paz</a>, a private reserve and lodge between Poas and Juan Castro Blanco, open for day visits by arrangement. Feeders plus genuine forest</span> <span class="stop"><a class="parklink" href="https://serviciosenlinea.sinac.go.cr/" target="_blank" rel="noopener" title="Poas Volcano National Park, official site">Poas Volcano National Park</a>, high volcano scrub and the crater lookout, and it needs a timed booking through SICORE</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=10.183&amp;mlon=-84.162#map=14/10.183/-84.162" target="_blank" rel="noopener" title="The Vara Blanca and La Paz road on a map">The Vara Blanca and La Paz road</a>, the waterfall road down the mountain, birded from the pullouts on the way</span></p>
+        <p class="where stops"><b>Stops:</b> <span class="stop"><button type="button" class="stoplink" data-stop="stop-cinchona" title="Show Cinchona on the map">Cinchona</button>, a roadside cafe above the Sarapiqui road whose balcony feeders are open to anyone who buys a coffee. Probably the best single hour of hummingbird watching in the country</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-bosque-de-paz" title="Show Bosque de Paz on the map">Bosque de Paz</button>, a private reserve and lodge between Poas and Juan Castro Blanco, open for day visits by arrangement. Feeders plus genuine forest</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-poas-volcano-national-park" title="Show Poas Volcano National Park on the map">Poas Volcano National Park</button>, high volcano scrub and the crater lookout, and it needs a timed booking through SICORE</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-the-vara-blanca-and-la-paz-road" title="Show The Vara Blanca and La Paz road on the map">The Vara Blanca and La Paz road</button>, the waterfall road down the mountain, birded from the pullouts on the way</span></p>
 
         <p class="where"><b>Also covers:</b> Bajos del Toro, Vara Blanca</p><p class="where wildlife"><b>Also watch for:</b> Coati and nine-banded armadillo around the waterfall gardens, and the wet mid elevation forest holds a strong amphibian list. Hummingbird feeders here also draw two species of squirrel.</p>
           </div>
@@ -6221,7 +6226,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$200 to $400</span><span class="psep">/</span><span class="palt">€173 to €346</span><span class="psep">/</span><span class="palt">£148 to £296</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://fincarosablanca.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=10.0367&mlon=-84.1594#map=15/10.0367/-84.1594" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=10.0367,-84.1594" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-el-silencio-lodge-spa-costa-rica" data-cat="stay" data-tier="3" data-price="250" data-region="5" data-certs="1" data-name="el silencio lodge &amp; spa">
@@ -6237,7 +6242,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$250 to $450</span><span class="psep">/</span><span class="palt">€216 to €389</span><span class="psep">/</span><span class="palt">£185 to £333</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.elsilenciolodge.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=10.2134&mlon=-84.2996#map=15/10.2134/-84.2996" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=10.2134,-84.2996" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-peace-lodge-at-la-paz-waterfall-gardens-costa-rica" data-cat="stay" data-tier="3" data-price="250" data-region="5" data-certs="0" data-name="peace lodge at la paz waterfall gardens">
@@ -6253,7 +6258,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$250 to $500</span><span class="psep">/</span><span class="palt">€216 to €432</span><span class="psep">/</span><span class="palt">£185 to £370</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://waterfallgardens.com/peace-lodge" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=10.1714&mlon=-84.1572#map=15/10.1714/-84.1572" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=10.1714,-84.1572" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-posada-de-turismo-rural-rinconcito-verde-costa-rica" data-cat="stay" data-tier="2" data-region="5" data-certs="1" data-name="posada de turismo rural rinconcito verde">
@@ -6269,7 +6274,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmuted">Rate not published</span></p>
           <a class="watch-link" href="https://www.rinconcitoverde.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=9.7965&mlon=-83.8543#map=15/9.7965/-83.8543" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=9.7965,-83.8543" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-xandari-resort-and-spa-costa-rica" data-cat="stay" data-tier="0" data-region="5" data-certs="1" data-name="xandari resort and spa">
@@ -6285,7 +6290,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmuted">Rate not published</span></p>
           <a class="watch-link" href="https://www.xandari.com/costarica-xandari-overview.php" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=10.0165&mlon=-84.2139#map=15/10.0165/-84.2139" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=10.0165,-84.2139" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
           </div>
@@ -6359,7 +6364,7 @@
         <p class="where"><b>Look for:</b> <a href="/birds/resplendent-quetzal/">Resplendent Quetzal</a>, <a href="/birds/fiery-throated-hummingbird/">Fiery-throated Hummingbird</a>, <a href="/birds/volcano-junco/">Volcano Junco</a>, <a href="/birds/timberline-wren/">Timberline Wren</a></p>
         <p class="where alsorec"><b>Also recorded in the parks here:</b> <a href="/birds/sulphur-winged-parakeet/">Sulphur-winged Parakeet</a>, <a href="/birds/yellow-winged-vireo/">Yellow-winged Vireo</a>, <a href="/birds/barred-becard/">Barred Becard</a>, <a href="/birds/yellow-bellied-siskin/">Yellow-bellied Siskin</a>, <a href="/birds/black-cheeked-warbler/">Black-cheeked Warbler</a>, <a href="/birds/black-faced-solitaire/">Black-faced Solitaire</a></p>
         <p class="where parks"><b>National parks:</b> <a class="parklink" href="https://www.protectedplanet.net/108150" target="_blank" rel="noopener">Los Quetzales National Park</a>, <a class="parklink" href="https://www.protectedplanet.net/163" target="_blank" rel="noopener">Chirripó National Park</a></p>
-        <p class="where stops"><b>Stops:</b> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=9.552&amp;mlon=-83.809#map=14/9.552/-83.809" target="_blank" rel="noopener" title="Batsu Garden on a map">Batsu Garden</a>, a small paid hide and feeder set-up in the valley, built for photography and equally good for watching. Quetzal, Flame-throated Warbler and the highland hummingbirds</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=9.55&amp;mlon=-83.81#map=14/9.55/-83.81" target="_blank" rel="noopener" title="Miriam's and the Savegre orchards on a map">Miriam's and the Savegre orchards</a>, family run properties in the valley whose fruiting wild avocados draw quetzals from February to May, open to visitors for a fee</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=9.639&amp;mlon=-83.856#map=14/9.639/-83.856" target="_blank" rel="noopener" title="Paraiso Quetzal, km 70 on a map">Paraiso Quetzal, km 70</a>, a roadside lodge and cafe on the Interamericana with feeders, and guides who will walk you to a quetzal nest</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=9.561&amp;mlon=-83.755#map=14/9.561/-83.755" target="_blank" rel="noopener" title="Cerro de la Muerte paramo, km 89 on a map">Cerro de la Muerte paramo, km 89</a>, the radio towers at the high point of the highway, open ground above the treeline. Volcano Junco and Timberline Wren, and it starts near freezing</span></p>
+        <p class="where stops"><b>Stops:</b> <span class="stop"><button type="button" class="stoplink" data-stop="stop-batsu-garden" title="Show Batsu Garden on the map">Batsu Garden</button>, a small paid hide and feeder set-up in the valley, built for photography and equally good for watching. Quetzal, Flame-throated Warbler and the highland hummingbirds</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-miriam-s-and-the-savegre-orchards" title="Show Miriam's and the Savegre orchards on the map">Miriam's and the Savegre orchards</button>, family run properties in the valley whose fruiting wild avocados draw quetzals from February to May, open to visitors for a fee</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-paraiso-quetzal-km-70" title="Show Paraiso Quetzal, km 70 on the map">Paraiso Quetzal, km 70</button>, a roadside lodge and cafe on the Interamericana with feeders, and guides who will walk you to a quetzal nest</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-cerro-de-la-muerte-paramo-km-89" title="Show Cerro de la Muerte paramo, km 89 on the map">Cerro de la Muerte paramo, km 89</button>, the radio towers at the high point of the highway, open ground above the treeline. Volcano Junco and Timberline Wren, and it starts near freezing</span></p>
 
         <p class="where wildlife"><b>Also watch for:</b> Dice's cottontail and highland squirrel along the valley track, and salamanders under the oak leaf litter after rain. The paramo above holds a very different set of small mammals from anywhere else in the country.</p>
           </div>
@@ -6391,7 +6396,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$80 to $150</span><span class="psep">/</span><span class="palt">€69 to €130</span><span class="psep">/</span><span class="palt">£59 to £111</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.trogonlodge.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=9.5573&mlon=-83.8052#map=15/9.5573/-83.8052" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=9.5573,-83.8052" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-savegre-hotel-natural-reserve-and-spa-costa-rica" data-cat="stay" data-tier="2" data-price="100" data-region="6" data-certs="0" data-name="savegre hotel natural reserve &amp; spa">
@@ -6407,7 +6412,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $200</span><span class="psep">/</span><span class="palt">€86 to €173</span><span class="psep">/</span><span class="palt">£74 to £148</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.savegre.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=9.5573&mlon=-83.8052#map=15/9.5573/-83.8052" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=9.5573,-83.8052" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-dantica-cloud-forest-lodge-costa-rica" data-cat="stay" data-tier="3" data-price="180" data-region="6" data-certs="0" data-name="dantica cloud forest lodge">
@@ -6423,7 +6428,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$180 to $300</span><span class="psep">/</span><span class="palt">€156 to €259</span><span class="psep">/</span><span class="palt">£133 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.dantica.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=9.5573&mlon=-83.8052#map=15/9.5573/-83.8052" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=9.5573,-83.8052" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
           </div>
@@ -6475,7 +6480,7 @@
         <p class="where"><b>Look for:</b> <a href="/birds/snowcap/">Snowcap</a>, <a href="/birds/white-crowned-manakin/">White-crowned Manakin</a>, <a href="/birds/sunbittern/">Sunbittern</a>, <a href="/birds/tawny-chested-flycatcher/">Tawny-chested Flycatcher</a>, <a href="/birds/purple-throated-mountaingem/">Purple-throated Mountaingem</a>, <a href="/birds/lattice-tailed-trogon/">Lattice-tailed Trogon</a></p>
         <p class="where alsorec"><b>Also recorded in the parks here:</b> <a href="/birds/carmiol-s-tanager/">Carmiol's Tanager</a>, <a href="/birds/spotted-woodcreeper/">Spotted Woodcreeper</a>, <a href="/birds/pale-vented-thrush/">Pale-vented Thrush</a>, <a href="/birds/black-faced-grosbeak/">Black-faced Grosbeak</a></p>
         <p class="where parks"><b>National parks:</b> <a class="parklink" href="https://www.protectedplanet.net/168122" target="_blank" rel="noopener">Turrialba Volcano National Park</a>, <a class="parklink" href="https://www.protectedplanet.net/108173" target="_blank" rel="noopener">Tapantí National Park</a>, <a class="parklink" href="https://www.protectedplanet.net/19372" target="_blank" rel="noopener">Barbilla National Park</a></p>
-        <p class="where stops"><b>Stops:</b> <span class="stop"><a class="parklink" href="https://ranchonaturalista.net/" target="_blank" rel="noopener" title="Rancho Naturalista, official site">Rancho Naturalista</a>, a birding lodge whose balcony, hummingbird pools and morning moth light are open to day visitors by arrangement</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=9.7841&amp;mlon=-83.7516#map=14/9.7841/-83.7516" target="_blank" rel="noopener" title="El Copal on a map">El Copal</a>, a community run reserve on the Caribbean slope, reached by a rough road. Snowcap and Lattice-tailed Trogon</span> <span class="stop"><a class="parklink" href="https://www.catie.ac.cr/" target="_blank" rel="noopener" title="CATIE grounds, official site">CATIE grounds</a>, the grounds of an agricultural research centre outside Turrialba, open to walk. Lakes, old plantings and a long species list</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=9.85&amp;mlon=-83.61#map=14/9.85/-83.61" target="_blank" rel="noopener" title="The Tuis valley road on a map">The Tuis valley road</a>, a public road descending through coffee and forest fragments, birded from the car and the verge</span></p>
+        <p class="where stops"><b>Stops:</b> <span class="stop"><button type="button" class="stoplink" data-stop="stop-rancho-naturalista" title="Show Rancho Naturalista on the map">Rancho Naturalista</button>, a birding lodge whose balcony, hummingbird pools and morning moth light are open to day visitors by arrangement</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-el-copal" title="Show El Copal on the map">El Copal</button>, a community run reserve on the Caribbean slope, reached by a rough road. Snowcap and Lattice-tailed Trogon</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-catie-grounds" title="Show CATIE grounds on the map">CATIE grounds</button>, the grounds of an agricultural research centre outside Turrialba, open to walk. Lakes, old plantings and a long species list</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-the-tuis-valley-road" title="Show The Tuis valley road on the map">The Tuis valley road</button>, a public road descending through coffee and forest fragments, birded from the car and the verge</span></p>
 
         <p class="where"><b>Also covers:</b> Limón border</p><p class="where wildlife"><b>Also watch for:</b> Neotropical river otter on the Pacuare, poison dart frogs on the forest floor, and Central American agouti on the lodge trails. Basilisk lizards run the river margins all year.</p>
           </div>
@@ -6507,7 +6512,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $200</span><span class="psep">/</span><span class="palt">€86 to €173</span><span class="psep">/</span><span class="palt">£74 to £148</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.riostropicales.com/rios-lodge" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=9.9073&mlon=-83.6826#map=15/9.9073/-83.6826" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=9.9073,-83.6826" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-pacuare-lodge-costa-rica" data-cat="stay" data-tier="3" data-price="400" data-region="7" data-certs="0" data-name="pacuare lodge">
@@ -6523,7 +6528,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$400 to $800</span><span class="psep">/</span><span class="palt">€346 to €691</span><span class="psep">/</span><span class="palt">£296 to £591</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.pacuarelodge.com/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=10.098&mlon=-83.5076#map=15/10.098/-83.5076" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=10.098,-83.5076" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-rancho-naturalista-costa-rica" data-cat="stay" data-tier="0" data-region="7" data-certs="0" data-name="rancho naturalista">
@@ -6539,7 +6544,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmuted">Rate not published</span></p>
           <a class="watch-link" href="https://ranchonaturalista.net/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=9.9073&mlon=-83.6826#map=15/9.9073/-83.6826" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=9.9073,-83.6826" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
           </div>
@@ -6577,7 +6582,7 @@
         <p class="where"><b>Look for:</b> <a href="/birds/turkey-vulture/">Turkey Vulture</a>, <a href="/birds/broad-winged-hawk/">Broad-winged Hawk</a>, <a href="/birds/swainson-s-hawk/">Swainson's Hawk</a>, <a href="/birds/mississippi-kite/">Mississippi Kite</a>, <a href="/birds/snowy-cotinga/">Snowy Cotinga</a>, <a href="/birds/semiplumbeous-hawk/">Semiplumbeous Hawk</a>, <a href="/birds/purple-throated-fruitcrow/">Purple-throated Fruitcrow</a>, <a href="/birds/montezuma-oropendola/">Montezuma Oropendola</a></p>
         <p class="where alsorec"><b>Also recorded in the parks here:</b> <a href="/birds/black-capped-pygmy-tyrant/">Black-capped Pygmy Tyrant</a>, <a href="/birds/nicaraguan-seed-finch/">Nicaraguan Seed Finch</a></p>
         <p class="where parks"><b>Parks and reserves:</b> <a class="parklink" href="https://www.protectedplanet.net/2235" target="_blank" rel="noopener">Cahuita National Park</a>, <a class="parklink" href="https://www.protectedplanet.net/19402" target="_blank" rel="noopener">Gandoca-Manzanillo National Wildlife Refuge</a> <span class="pkind">(national wildlife refuge)</span></p>
-        <p class="where stops"><b>Stops:</b> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=9.66&amp;mlon=-82.77#map=14/9.66/-82.77" target="_blank" rel="noopener" title="The Kekoldi hawk watch on a map">The Kekoldi hawk watch</a>, a viewing platform on the Kekoldi indigenous reserve ridge above Puerto Viejo, visited with a local guide. The raptor passage crosses here in September, October and November</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=9.7406&amp;mlon=-82.8415#map=14/9.7406/-82.8415" target="_blank" rel="noopener" title="Cahuita National Park on a map">Cahuita National Park</a>, a coastal park entered at Kelly Creek on a donation basis, with a flat trail between forest and beach</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=9.639&amp;mlon=-82.66#map=14/9.639/-82.66" target="_blank" rel="noopener" title="Punta Uva and Manzanillo on a map">Punta Uva and Manzanillo</a>, the coast road south through beach forest to the Gandoca refuge, birded on foot or by bike. Snowy Cotinga sits on the treetops here</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=9.59&amp;mlon=-82.58#map=14/9.59/-82.58" target="_blank" rel="noopener" title="Gandoca lagoon on a map">Gandoca lagoon</a>, mangrove and lagoon at the Panama border inside the Gandoca-Manzanillo refuge, reached on foot or by boat</span></p>
+        <p class="where stops"><b>Stops:</b> <span class="stop"><button type="button" class="stoplink" data-stop="stop-the-kekoldi-hawk-watch" title="Show The Kekoldi hawk watch on the map">The Kekoldi hawk watch</button>, a viewing platform on the Kekoldi indigenous reserve ridge above Puerto Viejo, visited with a local guide. The raptor passage crosses here in September, October and November</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-cahuita-national-park" title="Show Cahuita National Park on the map">Cahuita National Park</button>, a coastal park entered at Kelly Creek on a donation basis, with a flat trail between forest and beach</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-punta-uva-and-manzanillo" title="Show Punta Uva and Manzanillo on the map">Punta Uva and Manzanillo</button>, the coast road south through beach forest to the Gandoca refuge, birded on foot or by bike. Snowy Cotinga sits on the treetops here</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-gandoca-lagoon" title="Show Gandoca lagoon on the map">Gandoca lagoon</button>, mangrove and lagoon at the Panama border inside the Gandoca-Manzanillo refuge, reached on foot or by boat</span></p>
 
         <p class="where wildlife"><b>Also watch for:</b> Cahuita's reef is the best developed on the Costa Rican Caribbean and is snorkelled from the beach. Three-toed sloth, mantled howler and white-faced capuchin are all routine along the park trail, and green and hawksbill turtles nest at Gandoca from March to July.</p>
           </div>
@@ -6609,7 +6614,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$80 to $150</span><span class="psep">/</span><span class="palt">€69 to €130</span><span class="psep">/</span><span class="palt">£59 to £111</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.selvabananito.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=9.8724&mlon=-83.0026#map=15/9.8724/-83.0026" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=9.8724,-83.0026" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-bungalows-punta-uva-inn-costa-rica" data-cat="stay" data-tier="1" data-price="100" data-region="8" data-certs="1" data-name="bungalows punta uva inn">
@@ -6625,7 +6630,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.bungalowspuntauva.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=9.6565&mlon=-82.7536#map=15/9.6565/-82.7536" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=9.6565,-82.7536" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-hotel-namuwoki-costa-rica" data-cat="stay" data-tier="2" data-price="100" data-region="8" data-certs="1" data-name="hotel namuwoki">
@@ -6641,7 +6646,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.namuwoki.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=9.6565&mlon=-82.7536#map=15/9.6565/-82.7536" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=9.6565,-82.7536" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-hotel-indalo-costa-rica" data-cat="stay" data-tier="0" data-region="8" data-certs="1" data-name="hotel indalo">
@@ -6657,7 +6662,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmuted">Rate not published</span></p>
           <a class="watch-link" href="https://www.indalohotel.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=9.6565&mlon=-82.7536#map=15/9.6565/-82.7536" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=9.6565,-82.7536" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
           </div>
@@ -6682,7 +6687,7 @@
         <p class="where"><b>Look for:</b> <a href="/birds/scarlet-macaw/">Scarlet Macaw</a>, <a href="/birds/mangrove-hummingbird/">Mangrove Hummingbird</a>, <a href="/birds/boat-billed-heron/">Boat-billed Heron</a>, <a href="/birds/turquoise-browed-motmot/">Turquoise-browed Motmot</a></p>
         <p class="where alsorec"><b>Also recorded in the parks here:</b> <a href="/birds/green-shrike-vireo/">Green Shrike-Vireo</a>, <a href="/birds/black-striped-woodcreeper/">Black-striped Woodcreeper</a>, <a href="/birds/streak-chested-antpitta/">Streak-chested Antpitta</a>, <a href="/birds/black-headed-trogon/">Black-headed Trogon</a>, <a href="/birds/streak-backed-oriole/">Streak-backed Oriole</a>, <a href="/birds/stripe-headed-sparrow/">Stripe-headed Sparrow</a></p>
         <p class="where parks"><b>National parks:</b> <a class="parklink" href="https://www.protectedplanet.net/157" target="_blank" rel="noopener">Carara National Park</a>, <a class="parklink" href="https://www.protectedplanet.net/108146" target="_blank" rel="noopener">La Cangreja National Park</a></p>
-        <p class="where stops"><b>Stops:</b> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=9.7772&amp;mlon=-84.53#map=14/9.7772/-84.53" target="_blank" rel="noopener" title="The Meandrica trail on a map">The Meandrica trail</a>, a flat trail through an old river oxbow inside Carara National Park, entered at the main gate. Transition forest, and Baird's Trogon country</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=9.7772&amp;mlon=-84.6259#map=14/9.7772/-84.6259" target="_blank" rel="noopener" title="The Tarcoles river boat on a map">The Tarcoles river boat</a>, a two hour launch trip from the village of Tarcoles, run by several local operators and bookable on the day. Boat-billed Heron, the mangrove specialities and the closest views you will get of them</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=9.81&amp;mlon=-84.66#map=14/9.81/-84.66" target="_blank" rel="noopener" title="Guacalillo mangroves on a map">Guacalillo mangroves</a>, the mangrove stand at the river mouth, reached by boat or a rough track. Where Mangrove Hummingbird is looked for</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=9.7861&amp;mlon=-84.6086#map=14/9.7861/-84.6086" target="_blank" rel="noopener" title="The Tarcoles bridge on a map">The Tarcoles bridge</a>, the roadside crocodile stop on the coastal highway, and a useful place to scan for macaws crossing at dusk</span></p>
+        <p class="where stops"><b>Stops:</b> <span class="stop"><button type="button" class="stoplink" data-stop="stop-the-meandrica-trail" title="Show The Meandrica trail on the map">The Meandrica trail</button>, a flat trail through an old river oxbow inside Carara National Park, entered at the main gate. Transition forest, and Baird's Trogon country</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-the-tarcoles-river-boat" title="Show The Tarcoles river boat on the map">The Tarcoles river boat</button>, a two hour launch trip from the village of Tarcoles, run by several local operators and bookable on the day. Boat-billed Heron, the mangrove specialities and the closest views you will get of them</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-guacalillo-mangroves" title="Show Guacalillo mangroves on the map">Guacalillo mangroves</button>, the mangrove stand at the river mouth, reached by boat or a rough track. Where Mangrove Hummingbird is looked for</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-the-tarcoles-bridge" title="Show The Tarcoles bridge on the map">The Tarcoles bridge</button>, the roadside crocodile stop on the coastal highway, and a useful place to scan for macaws crossing at dusk</span></p>
 
         <p class="where wildlife"><b>Also watch for:</b> The Tárcoles bridge is the most reliable American crocodile viewpoint in the country, with large animals visible on the sandbanks at low water. White-faced capuchin and green iguana are constant along the park trails.</p>
           </div>
@@ -6704,7 +6709,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.villalapas.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=9.7587&mlon=-84.625#map=15/9.7587/-84.625" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=9.7587,-84.625" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-punta-leona-beach-club-nature-resort-costa-rica" data-cat="stay" data-tier="0" data-region="9" data-certs="1" data-name="punta leona beach club &amp; nature resort">
@@ -6720,7 +6725,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmuted">Rate not published</span></p>
           <a class="watch-link" href="https://www.puntaleona.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=9.702&mlon=-84.6602#map=15/9.702/-84.6602" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=9.702,-84.6602" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
           </div>
@@ -6791,7 +6796,7 @@
         <p class="where"><b>Look for:</b> <a href="/birds/fiery-billed-aracari/">Fiery-billed Aracari</a>, <a href="/birds/baird-s-trogon/">Baird's Trogon</a>, <a href="/birds/riverside-wren/">Riverside Wren</a></p>
         <p class="where alsorec"><b>Also recorded in the parks here:</b> <a href="/birds/chiriqui-foliage-gleaner/">Chiriqui Foliage-gleaner</a>, <a href="/birds/turquoise-cotinga/">Turquoise Cotinga</a>, <a href="/birds/great-black-hawk/">Great Black Hawk</a>, <a href="/birds/band-tailed-barbthroat/">Band-tailed Barbthroat</a>, <a href="/birds/charming-hummingbird/">Charming Hummingbird</a>, <a href="/birds/white-crested-coquette/">White-crested Coquette</a>, <a href="/birds/black-hooded-antshrike/">Black-hooded Antshrike</a></p>
         <p class="where parks"><b>National parks:</b> <a class="parklink" href="https://www.protectedplanet.net/2250" target="_blank" rel="noopener">Manuel Antonio National Park</a>, <a class="parklink" href="https://www.protectedplanet.net/30595" target="_blank" rel="noopener">Marino Ballena National Park</a></p>
-        <p class="where stops"><b>Stops:</b> <span class="stop"><a class="parklink" href="https://serviciosenlinea.sinac.go.cr/" target="_blank" rel="noopener" title="Manuel Antonio National Park, official site">Manuel Antonio National Park</a>, a small coastal park with a daily visitor cap booked through SICORE. Best in the first hour after opening</span> <span class="stop"><a class="parklink" href="https://rainmakercostarica.com/" target="_blank" rel="noopener" title="Rainmaker, official site">Rainmaker</a>, a private reserve inland from Quepos with a canopy walkway over a river gorge, open for day visits</span> <span class="stop"><a class="parklink" href="https://haciendabaru.com/" target="_blank" rel="noopener" title="Hacienda Baru, official site">Hacienda Baru</a>, a private reserve and lodge at Dominical with forest, mangrove and its own trails, quieter than the national park</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=9.33&amp;mlon=-83.9#map=14/9.33/-83.9" target="_blank" rel="noopener" title="The Savegre river mouth on a map">The Savegre river mouth</a>, shore, river edge and beach scrub where the river meets the sea, for coastal migrants</span></p>
+        <p class="where stops"><b>Stops:</b> <span class="stop"><button type="button" class="stoplink" data-stop="stop-manuel-antonio-national-park" title="Show Manuel Antonio National Park on the map">Manuel Antonio National Park</button>, a small coastal park with a daily visitor cap booked through SICORE. Best in the first hour after opening</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-rainmaker" title="Show Rainmaker on the map">Rainmaker</button>, a private reserve inland from Quepos with a canopy walkway over a river gorge, open for day visits</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-hacienda-baru" title="Show Hacienda Baru on the map">Hacienda Baru</button>, a private reserve and lodge at Dominical with forest, mangrove and its own trails, quieter than the national park</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-the-savegre-river-mouth" title="Show The Savegre river mouth on the map">The Savegre river mouth</button>, shore, river edge and beach scrub where the river meets the sea, for coastal migrants</span></p>
 
         <p class="where"><b>Also covers:</b> Marino Ballena, Uvita</p><p class="where wildlife"><b>Also watch for:</b> Central American squirrel monkey lives only on this stretch of coast and in the Osa, and troops cross the park trails daily. Three-toed sloth and white-faced capuchin are both easy here.</p>
           </div>
@@ -6823,7 +6828,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $200</span><span class="psep">/</span><span class="palt">€86 to €173</span><span class="psep">/</span><span class="palt">£74 to £148</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.santajuanalodge.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=9.4321&mlon=-84.1625#map=15/9.4321/-84.1625" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=9.4321,-84.1625" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-hotel-parador-costa-rica" data-cat="stay" data-tier="2" data-price="100" data-region="10" data-certs="1" data-name="hotel parador">
@@ -6839,7 +6844,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.hotelparador.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=9.4086&mlon=-84.1548#map=15/9.4086/-84.1548" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=9.4086,-84.1548" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-hotel-san-bada-costa-rica" data-cat="stay" data-tier="2" data-price="100" data-region="10" data-certs="1" data-name="hotel san bada">
@@ -6855,7 +6860,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.hotelsanbada.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=9.4086&mlon=-84.1548#map=15/9.4086/-84.1548" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=9.4086,-84.1548" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-si-como-no-resort-costa-rica" data-cat="stay" data-tier="2" data-price="150" data-region="10" data-certs="1" data-name="si como no resort">
@@ -6871,7 +6876,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$150 to $300</span><span class="psep">/</span><span class="palt">€130 to €259</span><span class="psep">/</span><span class="palt">£111 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.sicomono.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=9.4086&mlon=-84.1548#map=15/9.4086/-84.1548" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=9.4086,-84.1548" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-oxygen-jungle-villas-costa-rica" data-cat="stay" data-tier="3" data-price="200" data-region="10" data-certs="1" data-name="oxygen jungle villas">
@@ -6887,7 +6892,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$200 to $400</span><span class="psep">/</span><span class="palt">€173 to €346</span><span class="psep">/</span><span class="palt">£148 to £296</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.oxygenjunglevillas.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=9.1731&mlon=-83.7364#map=15/9.1731/-83.7364" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=9.1731,-83.7364" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-arenas-del-mar-beachfront-rainforest-costa-rica" data-cat="stay" data-tier="2" data-region="10" data-certs="1" data-name="arenas del mar beachfront &amp; rainforest">
@@ -6903,7 +6908,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmuted">Rate not published</span></p>
           <a class="watch-link" href="https://www.arenasdelmar.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=9.4086&mlon=-84.1548#map=15/9.4086/-84.1548" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=9.4086,-84.1548" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
           </div>
@@ -7043,7 +7048,7 @@
         <p class="where"><b>Look for:</b> <a href="/birds/scarlet-macaw/">Scarlet Macaw</a>, <a href="/birds/black-cheeked-ant-tanager/">Black-cheeked Ant-Tanager</a>, <a href="/birds/white-crested-coquette/">White-crested Coquette</a>, <a href="/birds/yellow-billed-cotinga/">Yellow-billed Cotinga</a></p>
         <p class="where alsorec"><b>Also recorded in the parks here:</b> <a href="/birds/baird-s-trogon/">Baird's Trogon</a>, <a href="/birds/black-striped-woodcreeper/">Black-striped Woodcreeper</a>, <a href="/birds/rufous-piha/">Rufous Piha</a>, <a href="/birds/turquoise-cotinga/">Turquoise Cotinga</a>, <a href="/birds/white-throated-shrike-tanager/">White-throated Shrike-Tanager</a>, <a href="/birds/black-faced-antthrush/">Black-faced Antthrush</a></p>
         <p class="where parks"><b>National parks:</b> <a class="parklink" href="https://www.protectedplanet.net/164" target="_blank" rel="noopener">Corcovado National Park</a>, <a class="parklink" href="https://www.protectedplanet.net/102367" target="_blank" rel="noopener">Piedras Blancas National Park</a></p>
-        <p class="where stops"><b>Stops:</b> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=8.481&amp;mlon=-83.591#map=14/8.481/-83.591" target="_blank" rel="noopener" title="Sirena ranger station, Corcovado on a map">Sirena ranger station, Corcovado</a>, the remote station at the heart of Corcovado, reached by boat and requiring a licensed guide and a booking</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=8.7&amp;mlon=-83.48#map=14/8.7/-83.48" target="_blank" rel="noopener" title="The Rio Rincon bridge on a map">The Rio Rincon bridge</a>, a pull-in on the road onto the peninsula, scanned at first light. The classic spot for Yellow-billed Cotinga over the mangroves</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=8.695&amp;mlon=-83.67#map=14/8.695/-83.67" target="_blank" rel="noopener" title="The Drake Bay coastal path on a map">The Drake Bay coastal path</a>, a public trail along the coast between the lodges, walked in either direction</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=8.44&amp;mlon=-83.34#map=14/8.44/-83.34" target="_blank" rel="noopener" title="Cerro Osa and the Golfo Dulce forest on a map">Cerro Osa and the Golfo Dulce forest</a>, ridge forest above the gulf, reached through the lodges that hold it. Black-cheeked Ant-Tanager country</span></p>
+        <p class="where stops"><b>Stops:</b> <span class="stop"><button type="button" class="stoplink" data-stop="stop-sirena-ranger-station-corcovado" title="Show Sirena ranger station, Corcovado on the map">Sirena ranger station, Corcovado</button>, the remote station at the heart of Corcovado, reached by boat and requiring a licensed guide and a booking</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-the-rio-rincon-bridge" title="Show The Rio Rincon bridge on the map">The Rio Rincon bridge</button>, a pull-in on the road onto the peninsula, scanned at first light. The classic spot for Yellow-billed Cotinga over the mangroves</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-the-drake-bay-coastal-path" title="Show The Drake Bay coastal path on the map">The Drake Bay coastal path</button>, a public trail along the coast between the lodges, walked in either direction</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-cerro-osa-and-the-golfo-dulce-forest" title="Show Cerro Osa and the Golfo Dulce forest on the map">Cerro Osa and the Golfo Dulce forest</button>, ridge forest above the gulf, reached through the lodges that hold it. Black-cheeked Ant-Tanager country</span></p>
 
         <p class="where"><b>Also covers:</b> Drake Bay, Golfito, Piedras Blancas, Puerto Jiménez</p><p class="where wildlife"><b>Also watch for:</b> All four Costa Rican monkey species live here, along with Baird's tapir and, with luck and patience, jaguar tracks. Humpback whales are in the Golfo Dulce from July to October and again from December to March.</p>
           </div>
@@ -7075,7 +7080,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$80 to $150</span><span class="psep">/</span><span class="palt">€69 to €130</span><span class="psep">/</span><span class="palt">£59 to £111</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.esquinaslodge.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=8.708&mlon=-83.1847#map=15/8.708/-83.1847" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=8.708,-83.1847" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-playa-nicuesa-rainforest-lodge-costa-rica" data-cat="stay" data-tier="2" data-price="180" data-region="11" data-certs="1" data-name="playa nicuesa rainforest lodge">
@@ -7091,7 +7096,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$180 to $350</span><span class="psep">/</span><span class="palt">€156 to €302</span><span class="psep">/</span><span class="palt">£133 to £259</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.nicuesalodge.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=8.6395&mlon=-83.1692#map=15/8.6395/-83.1692" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=8.6395,-83.1692" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-la-paloma-lodge-costa-rica" data-cat="stay" data-tier="3" data-price="200" data-region="11" data-certs="0" data-name="la paloma lodge">
@@ -7107,7 +7112,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$200 to $400</span><span class="psep">/</span><span class="palt">€173 to €346</span><span class="psep">/</span><span class="palt">£148 to £296</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.lapalomalodge.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=8.6891&mlon=-83.6645#map=15/8.6891/-83.6645" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=8.6891,-83.6645" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-aguila-de-osa-costa-rica" data-cat="stay" data-tier="3" data-price="250" data-region="11" data-certs="0" data-name="aguila de osa">
@@ -7123,7 +7128,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$250 to $500</span><span class="psep">/</span><span class="palt">€216 to €432</span><span class="psep">/</span><span class="palt">£185 to £370</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://aguiladeosa.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=8.6891&mlon=-83.6645#map=15/8.6891/-83.6645" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=8.6891,-83.6645" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-copa-de-arbol-beach-rainforest-resort-costa-rica" data-cat="stay" data-tier="3" data-price="250" data-region="11" data-certs="0" data-name="copa de arbol beach &amp; rainforest resort">
@@ -7139,7 +7144,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$250 to $450</span><span class="psep">/</span><span class="palt">€216 to €389</span><span class="psep">/</span><span class="palt">£185 to £333</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.copadearboldrakebay.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=8.6891&mlon=-83.6645#map=15/8.6891/-83.6645" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=8.6891,-83.6645" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-el-remanso-rainforest-lodge-costa-rica" data-cat="stay" data-tier="3" data-price="250" data-region="11" data-certs="0" data-name="el remanso rainforest lodge">
@@ -7155,7 +7160,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$250 to $450</span><span class="psep">/</span><span class="palt">€216 to €389</span><span class="psep">/</span><span class="palt">£185 to £333</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.elremanso.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=8.5354&mlon=-83.3061#map=15/8.5354/-83.3061" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=8.5354,-83.3061" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-cielo-lodge-costa-rica" data-cat="stay" data-tier="3" data-price="300" data-region="11" data-certs="0" data-name="cielo lodge">
@@ -7171,7 +7176,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$300 to $500</span><span class="psep">/</span><span class="palt">€259 to €432</span><span class="psep">/</span><span class="palt">£222 to £370</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://cielolodge.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=8.6395&mlon=-83.1692#map=15/8.6395/-83.1692" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=8.6395,-83.1692" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-scp-corcovado-wilderness-lodge-costa-rica" data-cat="stay" data-tier="2" data-price="100" data-region="11" data-certs="1" data-name="scp corcovado wilderness lodge">
@@ -7187,7 +7192,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://turismo-sostenible.co.cr/entidad-certificada/scp-corcovado-wilderness-lodge/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=8.5354&mlon=-83.3061#map=15/8.5354/-83.3061" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=8.5354,-83.3061" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-playa-cativo-lodge-costa-rica" data-cat="stay" data-tier="3" data-price="350" data-region="11" data-certs="1" data-name="playa cativo lodge">
@@ -7203,7 +7208,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$350 to $600</span><span class="psep">/</span><span class="palt">€302 to €518</span><span class="psep">/</span><span class="palt">£259 to £444</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.playacativo.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=8.6395&mlon=-83.1692#map=15/8.6395/-83.1692" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=8.6395,-83.1692" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-hotel-three-sixty-costa-rica" data-cat="stay" data-tier="3" data-price="600" data-region="11" data-certs="1" data-name="hotel three sixty">
@@ -7219,7 +7224,7 @@
         <div class="trip-side">
           <p class="priceline">600 <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.hotelthreesixty.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=9.1731&mlon=-83.7364#map=15/9.1731/-83.7364" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=9.1731,-83.7364" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-hotel-villas-r-o-mar-costa-rica" data-cat="stay" data-tier="0" data-region="11" data-certs="1" data-name="hotel villas río mar">
@@ -7235,7 +7240,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmuted">Rate not published</span></p>
           <a class="watch-link" href="https://www.villasriomar.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=9.2536&mlon=-83.8627#map=15/9.2536/-83.8627" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=9.2536,-83.8627" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-lapa-r-os-costa-rica" data-cat="stay" data-tier="0" data-region="11" data-certs="1" data-name="lapa ríos">
@@ -7251,7 +7256,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmuted">Rate not published</span></p>
           <a class="watch-link" href="https://www.laparios.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=8.5354&mlon=-83.3061#map=15/8.5354/-83.3061" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=8.5354,-83.3061" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
           </div>
@@ -7292,7 +7297,7 @@
         <p class="where"><b>Look for:</b> <a href="/birds/great-green-macaw/">Great Green Macaw</a>, <a href="/birds/great-curassow/">Great Curassow</a>, <a href="/birds/keel-billed-toucan/">Keel-billed Toucan</a>, <a href="/birds/snowy-cotinga/">Snowy Cotinga</a>, <a href="/birds/semiplumbeous-hawk/">Semiplumbeous Hawk</a>, <a href="/birds/sunbittern/">Sunbittern</a>, <a href="/birds/rufous-winged-woodpecker/">Rufous-winged Woodpecker</a></p>
 
         <p class="where parks"><b>Parks and reserves:</b> <a class="parklink" href="https://www.protectedplanet.net/115179" target="_blank" rel="noopener">Maquenque National Wildlife Refuge</a> <span class="pkind">(national wildlife refuge)</span></p>
-        <p class="where stops"><b>Stops:</b> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=10.6862&amp;mlon=-84.1808#map=14/10.6862/-84.1808" target="_blank" rel="noopener" title="Laguna del Lagarto on a map">Laguna del Lagarto</a>, a lodge and private reserve whose lagoon, almendro trees and feeder deck are open to day visitors. Great Green Macaw nests in season</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=10.69&amp;mlon=-84.19#map=14/10.69/-84.19" target="_blank" rel="noopener" title="The San Carlos river boat on a map">The San Carlos river boat</a>, a boat trip on the border river arranged through the lodges. Kingfishers, Sungrebe and Sunbittern from the water</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=10.68&amp;mlon=-84.17#map=14/10.68/-84.17" target="_blank" rel="noopener" title="Maquenque refuge trails on a map">Maquenque refuge trails</a>, a national wildlife refuge of lowland forest and lagoons, and the quietest Caribbean lowland birding on this page</span></p>
+        <p class="where stops"><b>Stops:</b> <span class="stop"><button type="button" class="stoplink" data-stop="stop-laguna-del-lagarto" title="Show Laguna del Lagarto on the map">Laguna del Lagarto</button>, a lodge and private reserve whose lagoon, almendro trees and feeder deck are open to day visitors. Great Green Macaw nests in season</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-the-san-carlos-river-boat" title="Show The San Carlos river boat on the map">The San Carlos river boat</button>, a boat trip on the border river arranged through the lodges. Kingfishers, Sungrebe and Sunbittern from the water</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-maquenque-refuge-trails" title="Show Maquenque refuge trails on the map">Maquenque refuge trails</button>, a national wildlife refuge of lowland forest and lagoons, and the quietest Caribbean lowland birding on this page</span></p>
 
         <p class="where wildlife"><b>Also watch for:</b> Spectacled caiman in the lagoons, two-toed sloth in the lodge grounds, and a strong dart frog list on the trails. The area is quiet enough that mammals show themselves more readily than on the busier routes.</p>
           </div>
@@ -7314,7 +7319,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmuted">Rate not published</span></p>
           <a class="watch-link" href="https://www.maquenquelodge.com" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=10.6759&mlon=-84.2328#map=15/10.6759/-84.2328" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=10.6759,-84.2328" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
           </div>
@@ -7339,7 +7344,7 @@
         <p class="where"><b>Look for:</b> <a href="/birds/turquoise-cotinga/">Turquoise Cotinga</a>, <a href="/birds/white-crested-coquette/">White-crested Coquette</a>, <a href="/birds/silvery-throated-jay/">Silvery-throated Jay</a>, <a href="/birds/fiery-billed-aracari/">Fiery-billed Aracari</a>, <a href="/birds/spot-crowned-euphonia/">Spot-crowned Euphonia</a>, <a href="/birds/marbled-wood-quail/">Marbled Wood Quail</a>, <a href="/birds/black-thighed-grosbeak/">Black-thighed Grosbeak</a></p>
 
         <p class="where parks"><b>National park:</b> <a class="parklink" href="https://www.protectedplanet.net/2553" target="_blank" rel="noopener">La Amistad International Park</a></p>
-        <p class="where stops"><b>Stops:</b> <span class="stop"><a class="parklink" href="https://tropicalstudies.org/portfolio/las-cruces-research-station/" target="_blank" rel="noopener" title="Wilson Botanical Garden, official site">Wilson Botanical Garden</a>, a botanical garden and research station run by the Organization for Tropical Studies, with rooms, a restaurant and trails. The base almost everyone uses here</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=8.79&amp;mlon=-82.96#map=14/8.79/-82.96" target="_blank" rel="noopener" title="Las Cruces forest reserve on a map">Las Cruces forest reserve</a>, the block of primary forest behind the garden, on the same trail network. Chiriqui highland species</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=9.339&amp;mlon=-83.576#map=14/9.339/-83.576" target="_blank" rel="noopener" title="Los Cusingos on a map">Los Cusingos</a>, the farm where Alexander Skutch wrote his life's work, now a reserve open to visitors and run by the Tropical Science Center</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=8.82&amp;mlon=-82.98#map=14/8.82/-82.98" target="_blank" rel="noopener" title="The Coto Brus wetlands on a map">The Coto Brus wetlands</a>, marsh and pond edge below the town, a short drive for a completely different habitat</span></p>
+        <p class="where stops"><b>Stops:</b> <span class="stop"><button type="button" class="stoplink" data-stop="stop-wilson-botanical-garden" title="Show Wilson Botanical Garden on the map">Wilson Botanical Garden</button>, a botanical garden and research station run by the Organization for Tropical Studies, with rooms, a restaurant and trails. The base almost everyone uses here</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-las-cruces-forest-reserve" title="Show Las Cruces forest reserve on the map">Las Cruces forest reserve</button>, the block of primary forest behind the garden, on the same trail network. Chiriqui highland species</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-los-cusingos" title="Show Los Cusingos on the map">Los Cusingos</button>, the farm where Alexander Skutch wrote his life's work, now a reserve open to visitors and run by the Tropical Science Center</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-the-coto-brus-wetlands" title="Show The Coto Brus wetlands on the map">The Coto Brus wetlands</button>, marsh and pond edge below the town, a short drive for a completely different habitat</span></p>
 
         <p class="where wildlife"><b>Also watch for:</b> Agouti, coati and both squirrel species through the Wilson Botanical Garden, and the surrounding forest fragments hold olingo on night walks. Amphibians are at their most active from May to November.</p>
           </div>
@@ -7872,6 +7877,7 @@
       var LODGES = [["rios-lodge-costa-rica",-83.6666,9.9073,"Rios Lodge","Pacuare River / Turrialba","#8A5A44","$100 to $200 / €86 to €173 / £74 to £148 / night"],["rancho-naturalista-costa-rica",-83.6986,9.9073,"Rancho Naturalista","Turrialba","#8A5A44",""],["santa-juana-lodge-and-nature-reserve-costa-rica",-84.1625,9.4321,"Santa Juana Lodge & Nature Reserve","Manuel Antonio (mountain highlands)","#96762B","$100 to $200 / €86 to €173 / £74 to £148 / night"],["savegre-hotel-natural-reserve-and-spa-costa-rica",-83.7892,9.5573,"Savegre Hotel Natural Reserve & Spa","San Gerardo de Dota","#386641","$100 to $200 / €86 to €173 / £74 to £148 / night"],["trogon-lodge-costa-rica",-83.8132,9.5677,"Trogon Lodge","San Gerardo de Dota","#386641","$80 to $150 / €69 to €130 / £59 to £111 / night"],["dantica-cloud-forest-lodge-costa-rica",-83.8132,9.5469,"Dantica Cloud Forest Lodge","San Gerardo de Dota","#386641","$180 to $300 / €156 to €259 / £133 to £222 / night"],["selva-bananito-lodge-costa-rica",-83.0026,9.8724,"Selva Bananito Lodge","Limón / Caribbean Foothills","#C2185B","$80 to $150 / €69 to €130 / £59 to £111 / night"],["selva-verde-lodge-costa-rica",-84.0083,10.4541,"Selva Verde Lodge","Sarapiquí","#2E86AB","$100 to $180 / €86 to €156 / £74 to £133 / night"],["si-como-no-resort-costa-rica",-84.1388,9.4086,"Si Como No Resort","Manuel Antonio","#96762B","$150 to $300 / €130 to €259 / £111 to £222 / night"],["arenas-del-mar-beachfront-rainforest-costa-rica",-84.1548,9.4206,"Arenas del Mar Beachfront & Rainforest","Quepos, Puntarenas","#96762B",""],["hotel-parador-costa-rica",-84.1708,9.4086,"Hotel Parador","Quepos, Puntarenas","#96762B","$100 to $300 / €86 to €259 / £74 to £222 / night"],["hotel-san-bada-costa-rica",-84.1548,9.3966,"Hotel San Bada","Quepos, Puntarenas","#96762B","$100 to $300 / €86 to €259 / £74 to £222 / night"],["tortuga-lodge-costa-rica",-83.4868,10.542,"Tortuga Lodge","Tortuguero","#0F8B8D","$200 to $400 / €173 to €346 / £148 to £296 / night"],["laguna-lodge-tortuguero-costa-rica",-83.5108,10.5524,"Laguna Lodge Tortuguero","Tortuguero","#0F8B8D","$120 to $250 / €104 to €216 / £89 to £185 / night"],["manatus-hotel-costa-rica",-83.5108,10.5316,"Manatus Hotel","Tortuguero","#0F8B8D","$250 to $500 / €216 to €432 / £185 to £370 / night"],["koora-hotel-costa-rica",-84.7976,10.2912,"Koora Hotel","Monteverde","#6A994E","$250 to $450 / €216 to €389 / £185 to £333 / night"],["monteverde-lodge-and-gardens-costa-rica",-84.8023,10.2997,"Monteverde Lodge & Gardens","Monteverde","#6A994E","$120 to $200 / €104 to €173 / £89 to £148 / night"],["hotel-belmar-costa-rica",-84.8136,10.3032,"Hotel Belmar","Monteverde","#6A994E","$200 to $500 / €173 to €432 / £148 to £370 / night"],["cala-lodge-monteverde-costa-rica",-84.8249,10.2997,"Cala Lodge Monteverde","Monteverde, Puntarenas","#6A994E","$100 to $300 / €86 to €259 / £74 to £222 / night"],["hotel-poco-a-poco-costa-rica",-84.8296,10.2912,"Hotel Poco a Poco","Monteverde, Puntarenas","#6A994E","$100 to $300 / €86 to €259 / £74 to £222 / night"],["hotel-senda-monteverde-costa-rica",-84.8249,10.2827,"Hotel Senda Monteverde","Monteverde, Puntarenas","#6A994E","$100 to $300 / €86 to €259 / £74 to £222 / night"],["hotel-trapp-family-costa-rica",-84.8136,10.2792,"Hotel Trapp Family","Monteverde, Puntarenas","#6A994E","$100 to $300 / €86 to €259 / £74 to £222 / night"],["valle-escondido-nature-reserve-hotel-farm-costa-rica",-84.8023,10.2827,"Valle Escondido Nature Reserve Hotel & Farm","Monteverde, Puntarenas","#6A994E","$100 to $300 / €86 to €259 / £74 to £222 / night"],["la-paloma-lodge-costa-rica",-83.6485,8.6891,"La Paloma Lodge","Drake Bay / Corcovado","#B03A2E","$200 to $400 / €173 to €346 / £148 to £296 / night"],["aguila-de-osa-costa-rica",-83.6725,8.6995,"Aguila de Osa","Drake Bay / Corcovado","#B03A2E","$250 to $500 / €216 to €432 / £185 to £370 / night"],["copa-de-arbol-beach-rainforest-resort-costa-rica",-83.6725,8.6787,"Copa de Arbol Beach & Rainforest Resort","Drake Bay / Corcovado","#B03A2E","$250 to $450 / €216 to €389 / £185 to £333 / night"],["hotel-lagarta-lodge-costa-rica",-85.6528,9.98,"Hotel Lagarta Lodge","Nicoya, Guanacaste","#D68910","$100 to $300 / €86 to €259 / £74 to £222 / night"],["nayara-gardens-costa-rica",-84.6284,10.4717,"Nayara Gardens","La Fortuna / Arenal, Alajuela","#C0392B","$300 to $600 / €259 to €518 / £222 to £444 / night"],["nayara-springs-costa-rica",-84.6309,10.4782,"Nayara Springs","La Fortuna / Arenal, Alajuela","#C0392B","$500 to $1,000 / €432 to €864 / £370 to £739 / night"],["nayara-tented-camp-costa-rica",-84.6378,10.4826,"Nayara Tented Camp","La Fortuna / Arenal, Alajuela","#C0392B","$500 to $1,000 / €432 to €864 / £370 to £739 / night"],["arenal-observatory-lodge-spa-costa-rica",-84.6467,10.4836,"Arenal Observatory Lodge & Spa","Arenal","#C0392B","$100 to $200 / €86 to €173 / £74 to £148 / night"],["finca-luna-nueva-costa-rica",-84.6549,10.4808,"Finca Luna Nueva","Arenal","#C0392B","$120 to $220 / €104 to €190 / £89 to £163 / night"],["hotel-arenal-manoa-costa-rica",-84.6598,10.4751,"Hotel Arenal Manoa","La Fortuna, San Carlos, Alajuela","#C0392B","$100 to $300 / €86 to €259 / £74 to £222 / night"],["hotel-arenal-springs-resort-spa-costa-rica",-84.6598,10.4683,"Hotel Arenal Springs Resort & Spa","La Fortuna, San Carlos, Alajuela","#C0392B","$100 to $300 / €86 to €259 / £74 to £222 / night"],["hotel-arenal-volcano-inn-costa-rica",-84.6549,10.4626,"Hotel Arenal Volcano Inn","La Fortuna, San Carlos, Alajuela","#C0392B","$100 to $300 / €86 to €259 / £74 to £222 / night"],["hotel-lomas-del-volc-n-costa-rica",-84.6467,10.4598,"Hotel Lomas del Volcán","La Fortuna, San Carlos, Alajuela","#C0392B",""],["hotel-royal-corin-wellness-and-spa-resort-costa-rica",-84.6378,10.4608,"Hotel Royal Corin Wellness and Spa Resort","La Fortuna, San Carlos, Alajuela","#C0392B","$100 to $300 / €86 to €259 / £74 to £222 / night"],["tabac-n-thermal-resort-and-spa-costa-rica",-84.6309,10.4652,"Tabacón Thermal Resort and Spa","La Fortuna, San Carlos, Alajuela","#C0392B","$100 to $300 / €86 to €259 / £74 to £222 / night"],["oxygen-jungle-villas-costa-rica",-83.7204,9.1731,"Oxygen Jungle Villas","Uvita / Marino Ballena","#96762B","$200 to $400 / €173 to €346 / £148 to £296 / night"],["hotel-three-sixty-costa-rica",-83.7524,9.1731,"Hotel Three Sixty","Osa, Puntarenas","#B03A2E","600 / night"],["pacuare-lodge-costa-rica",-83.5076,10.098,"Pacuare Lodge","Pacuare River, Cartago/Limón border","#8A5A44","$400 to $800 / €346 to €691 / £296 to £591 / night"],["peace-lodge-at-la-paz-waterfall-gardens-costa-rica",-84.1572,10.1714,"Peace Lodge at La Paz Waterfall Gardens","Central Highlands (Vara Blanca)","#7D5BA6","$250 to $500 / €216 to €432 / £185 to £370 / night"],["playa-nicuesa-rainforest-lodge-costa-rica",-83.1532,8.6395,"Playa Nicuesa Rainforest Lodge","Golfo Dulce / Osa","#B03A2E","$180 to $350 / €156 to €302 / £133 to £259 / night"],["cielo-lodge-costa-rica",-83.1772,8.6499,"Cielo Lodge","Golfito / Southern Pacific","#B03A2E","$300 to $500 / €259 to €432 / £222 to £370 / night"],["playa-cativo-lodge-costa-rica",-83.1772,8.6291,"Playa Cativo Lodge","Golfito, Puntarenas","#B03A2E","$350 to $600 / €302 to €518 / £259 to £444 / night"],["rio-celeste-hideaway-hotel-costa-rica",-85.0416,10.7311,"Rio Celeste Hideaway Hotel","Tenorio / Rio Celeste","#D68910","$180 to $350 / €156 to €302 / £133 to £259 / night"],["celeste-mountain-lodge-costa-rica",-85.0736,10.7311,"Celeste Mountain Lodge","Tenorio / Rio Celeste","#D68910","$100 to $180 / €86 to €156 / £74 to £133 / night"],["rio-perdido-hot-springs-costa-rica",-85.2548,10.5266,"Rio Perdido Hot Springs","Bagaces, Guanacaste","#D68910","$250 to $450 / €216 to €389 / £185 to £333 / night"],["el-remanso-rainforest-lodge-costa-rica",-83.2901,8.5354,"El Remanso Rainforest Lodge","Osa Peninsula","#B03A2E","$250 to $450 / €216 to €389 / £185 to £333 / night"],["lapa-r-os-costa-rica",-83.3141,8.5458,"Lapa Ríos","Puerto Jiménez, Puntarenas","#B03A2E",""],["scp-corcovado-wilderness-lodge-costa-rica",-83.3141,8.525,"SCP Corcovado Wilderness Lodge","Osa, Puntarenas","#B03A2E","$100 to $300 / €86 to €259 / £74 to £222 / night"],["el-silencio-lodge-spa-costa-rica",-84.2996,10.2134,"El Silencio Lodge & Spa","Bajos del Toro","#7D5BA6","$250 to $450 / €216 to €389 / £185 to £333 / night"],["esquinas-rainforest-lodge-costa-rica",-83.1847,8.708,"Esquinas Rainforest Lodge","Golfo Dulce / Piedras Blancas","#B03A2E","$80 to $150 / €69 to €130 / £59 to £111 / night"],["finca-rosa-blanca-coffee-plantation-inn-costa-rica",-84.1594,10.0367,"Finca Rosa Blanca Coffee Plantation & Inn","Central Valley (Heredia)","#7D5BA6","$200 to $400 / €173 to €346 / £148 to £296 / night"],["bungalows-punta-uva-inn-costa-rica",-82.7376,9.6565,"Bungalows Punta Uva Inn","Talamanca, Limón","#C2185B","$100 to $300 / €86 to €259 / £74 to £222 / night"],["hotel-indalo-costa-rica",-82.7616,9.6669,"Hotel Indalo","Talamanca, Limón","#C2185B",""],["hotel-namuwoki-costa-rica",-82.7616,9.6461,"Hotel Namuwoki","Talamanca, Limón","#C2185B","$100 to $300 / €86 to €259 / £74 to £222 / night"],["hacienda-el-viejo-wetlands-costa-rica",-85.5526,10.4454,"Hacienda El Viejo Wetlands","Carrillo, Guanacaste","#D68910",""],["hotel-hacienda-guachipelin-costa-rica",-85.4098,10.7204,"Hotel Hacienda Guachipelin","Liberia, Guanacaste","#D68910","$100 to $300 / €86 to €259 / £74 to £222 / night"],["punta-leona-beach-club-nature-resort-costa-rica",-84.6602,9.702,"Punta Leona Beach Club & Nature Resort","Garabito, Puntarenas","#4E7AC7",""],["hotel-villa-lapas-costa-rica",-84.625,9.7587,"Hotel Villa Lapas","Garabito, Puntarenas","#4E7AC7","$100 to $300 / €86 to €259 / £74 to £222 / night"],["hotel-villas-r-o-mar-costa-rica",-83.8627,9.2536,"Hotel Villas Río Mar","Osa, Puntarenas","#B03A2E",""],["maquenque-ecolodge-costa-rica",-84.2328,10.6759,"Maquenque Ecolodge","Boca Tapada, San Carlos, Alajuela","#1F6F5C",""],["posada-de-turismo-rural-rinconcito-verde-costa-rica",-83.8543,9.7965,"Posada de Turismo Rural Rinconcito Verde","Paraíso, Cartago","#7D5BA6",""],["suitree-experience-hotel-costa-rica",-85.6468,10.5169,"Suitree Experience Hotel","Carrillo, Guanacaste","#D68910",""],["xandari-resort-and-spa-costa-rica",-84.2139,10.0165,"Xandari Resort and Spa","Alajuela, Central Valley","#7D5BA6",""]];
       var GOING = [["op-cst-mistico-park",-84.6164,10.4717,"Birdwatching Tour in La Fortuna","Mistico Park","#C0392B"],["dt-viator-45930P3",-84.6196,10.4815,"Early Bird Watching Tour","Viator","#C0392B"],["dt-getyourguide-1037932",-84.6285,10.489,"Sunrise Birdwatching Tour on a Private Reserve","GetYourGuide","#C0392B"],["dt-viator-5543412P1",-84.641,10.4925,"Arenal Half-day Birding and Photography","Viator","#C0392B"],["dt-viator-58343P5",-84.6543,10.4913,"Bird Watching Tour Arenal Mundo Aventura","Viator","#C0392B"],["dt-getyourguide-451558",-84.6654,10.4856,"Arenal Mundo Aventura Birdwatching Tour","GetYourGuide","#C0392B"],["dt-viator-7453P14",-84.6716,10.4767,"Birdwatching at Mundo Aventura Natural Park","Viator","#C0392B"],["dt-getyourguide-294865",-84.6716,10.4667,"Bird Watching Experience","GetYourGuide","#C0392B"],["dt-viator-5547438P5",-84.6654,10.4578,"Birdwatching in La Fortuna with Expert Naturalist Guide","Viator","#C0392B"],["dt-viator-129153P3",-84.6543,10.4521,"Bird watching Tour in La Fortuna","Viator","#C0392B"],["dt-getyourguide-25578",-84.641,10.4509,"La Fortuna Bird Watching Tour with Naturalist Guide","GetYourGuide","#C0392B"],["dt-getyourguide-940483",-84.6285,10.4544,"Bird Watching Tour at Natura Park","GetYourGuide","#C0392B"],["dt-viator-473730P31",-84.6196,10.4619,"Sunrise Birdwatching at Arenal Volcano","Viator","#C0392B"],["dt-viator-15373P37",-85.005,10.7167,"Early Bird Watching Tour - Guanacaste","Viator","#D68910"],["dt-getyourguide-301453",-85.047,10.7349,"Rincón de la Vieja Bird-Watching Tour","GetYourGuide","#D68910"],["dt-getyourguide-1370119",-85.047,10.6985,"Discovering the Birds of Guanacaste","GetYourGuide","#D68910"],["op-cst-ocotea-tours",-84.7856,10.2912,"Specialized Bird Watching Tour in Monteverde","Ocotea Tours","#6A994E"],["dt-viator-23968P1",-84.7864,10.296,"Curi-Cancha Birdwatching Tour | Small Group","Viator","#6A994E"],["dt-getyourguide-957259",-84.7886,10.3006,"Bird watching tour in the Curi-Cancha Reserve.","GetYourGuide","#6A994E"],["dt-viator-33383P4",-84.7922,10.3047,"Birdwatching Tour at Mistico Park","Viator","#6A994E"],["dt-getyourguide-604413",-84.7969,10.308,"Curicancha Reserve Birdwatching Tour in Monteverde","GetYourGuide","#6A994E"],["dt-viator-470685P3",-84.8025,10.3105,"The Quetzal Tour In Monteverde","Viator","#6A994E"],["dt-viator-370391P3",-84.8087,10.3119,"Monteverde Birdwatching Tour at Curicancha Reserve","Viator","#6A994E"],["dt-viator-257877P2",-84.8152,10.3122,"EXCLUSIVE CLOUD FOREST BIRDING + FREE Binoculars + hummingbirds","Viator","#6A994E"],["dt-viator-222190P5",-84.8216,10.3113,"Birdwatching in Monteverde","Viator","#6A994E"],["dt-viator-319875P4",-84.8276,10.3094,"Shared 5 Hours Monteverde Bird Watching","Viator","#6A994E"],["dt-getyourguide-870958",-84.8328,10.3065,"Birdwatching Half-Day Tour","GetYourGuide","#6A994E"],["dt-viator-470685P1",-84.837,10.3027,"Guided Bird Watching Tour in Monteverde","Viator","#6A994E"],["dt-viator-257877P1",-84.8399,10.2984,"Monteverde Full Day Birding Expedition with FREE BINOCULARS","Viator","#6A994E"],["dt-viator-470685P2",-84.8414,10.2936,"San Luis Ecological Farm Birding Tour.","Viator","#6A994E"],["dt-viator-292232P1",-84.8414,10.2888,"BirdwatchingTour between clouds and forest Monteverde","Viator","#6A994E"],["dt-viator-270195P4",-84.8399,10.284,"Small Groups Birding at Monteverde Cloud Forest","Viator","#6A994E"],["dt-viator-139151P127",-84.837,10.2797,"Curi Cancha Reserve Guided Walk","Viator","#6A994E"],["dt-viator-459922P1",-84.8328,10.2759,"4 Hours Bird Watching guided Experience in Woodpecker,Monteverde","Viator","#6A994E"],["dt-viator-5506868P1",-84.8276,10.273,"Curicancha Natural Walk","Viator","#6A994E"],["dt-getyourguide-509613",-84.8216,10.2711,"Birding Tour in Monteverde+Guide+Binoculars+Photos","GetYourGuide","#6A994E"],["dt-viator-23968P6",-84.8152,10.2702,"Looking for Toucans","Viator","#6A994E"],["dt-viator-348820P8",-84.8087,10.2705,"Birding spot in Monteverde: Guide + HD Scope & Binoculars+Photos","Viator","#6A994E"],["dt-viator-462228P2",-84.8025,10.2719,"Private Birdwatching at Curi Cancha Monteverde","Viator","#6A994E"],["dt-viator-470685P4",-84.7969,10.2744,"Three Wattled Bellbird Tour In Monteverde","Viator","#6A994E"],["dt-viator-468467P1",-84.7922,10.2777,"Best Monteverde Bird Watching Tour Curi-Cancha Reserve","Viator","#6A994E"],["dt-viator-5501412P4",-84.7886,10.2818,"Monteverde Cloud Forest Tour nature hike","Viator","#6A994E"],["dt-getyourguide-554994",-84.7864,10.2864,"Monteverde Sunrise + Bird Watching Experience","GetYourGuide","#6A994E"],["dt-viator-5189SJBIRD",-84.2004,10.1924,"Braulio Carrillo Bird Watching Full Day Pass","Viator","#7D5BA6"],["dt-viator-158476P5",-84.2284,10.2134,"Poas Volcano, Local Coffee Farm and Birdwatching from San José","Viator","#7D5BA6"],["dt-getyourguide-69778",-84.2564,10.1924,"Bird Watching Tour at Rainforest Adventures Braulio Carrillo","GetYourGuide","#7D5BA6"],["dt-viator-5189P134",-84.2284,10.1714,"Guided Birdwatching Activity in Braulio Carrillo, Costa Rica","Viator","#7D5BA6"],["dt-viator-182711P6",-83.7772,9.5573,"Quetzal Birdwatching Experience at San Gerardo De Dota Private Tour.","Viator","#386641"],["dt-viator-182711P15",-83.8332,9.5573,"Quetzal Birdwatching Experience at San Gerardo De Dota Group Tour.","Viator","#386641"],["dt-getyourguide-880564",-83.5671,10.0026,"Cahuita's Birdwatching Tour","GetYourGuide","#8A5A44"],["dt-viator-413451P1",-84.597,9.7587,"Birdwatching tour in Carara National Park","Viator","#4E7AC7"],["dt-viator-182711P10",-84.625,9.7797,"Carara National Park Birdwatching Private Guided Tour Experience.","Viator","#4E7AC7"],["dt-viator-5639602P2",-84.653,9.7587,"Adventure in the jungle river and crocodiles","Viator","#4E7AC7"],["dt-viator-109125P17",-84.625,9.7377,"Carara National Park Guided Tour","Viator","#4E7AC7"],["dt-getyourguide-588605",-84.1268,9.4086,"Exclusive Birdwatching Tour","GetYourGuide","#96762B"],["dt-viator-70025P9",-84.1321,9.4209,"Deluxe Private Bird Watching Tour | Manuel Antonio","Viator","#96762B"],["dt-viator-45683P8",-84.1461,9.4286,"Esquipulas Rainforest - Private Birding - Fully Customizable Tour","Viator","#96762B"],["dt-viator-109125P9",-84.1635,9.4286,"Esquipulas Bird watching Tour - Top Rainforest birding experience","Viator","#96762B"],["dt-viator-461178P1",-84.1775,9.4209,"Manuel Antonio Esquipulas Birdwatching Tour","Viator","#96762B"],["dt-viator-438453P1",-84.1828,9.4086,"3-Hour Private Birdwatching Experience in Uvita / Ojochal","Viator","#96762B"],["dt-viator-270195P2",-84.1775,9.3963,"Private Birdwatching & Photography Tour - Esquipulas","Viator","#96762B"],["dt-viator-182711P4",-84.1635,9.3886,"Birdwatching Tour Manuel Antonio / Esquipulas Private Tour","Viator","#96762B"],["dt-viator-182711P5",-84.1461,9.3886,"Birding at El Rey. (Marshes,rice fields,canals) Private Birding Tour","Viator","#96762B"],["dt-viator-168450P10",-84.1321,9.3963,"Birdwatching Tour in Esquipulas","Viator","#96762B"],["dt-getyourguide-521180",-83.3519,8.6213,"Drake Bay - Bird Watching Tour","GetYourGuide","#B03A2E"]];
       var NPARKS = [["site-sarapiqui-and-la-selva",-83.97442,10.1599,"Braulio Carrillo National Park","Sarapiqui and La Selva","#2E86AB","https://www.protectedplanet.net/165"],["site-tortuguero",-83.4967,10.4232,"Tortuguero National Park","Tortuguero","#0F8B8D","https://www.protectedplanet.net/167"],["site-arenal",-84.70306,10.46306,"Arenal Volcano National Park","Arenal","#C0392B","https://www.protectedplanet.net/36059"],["site-guanacaste-tenorio-and-the-northern-wetlands",-85,10.66667,"Tenorio Volcano National Park","Guanacaste, Tenorio and the Northern Wetlands","#D68910","https://www.protectedplanet.net/102334"],["site-guanacaste-tenorio-and-the-northern-wetlands",-85.32389,10.83,"Rincón de la Vieja National Park","Guanacaste, Tenorio and the Northern Wetlands","#D68910","https://www.protectedplanet.net/168"],["site-guanacaste-tenorio-and-the-northern-wetlands",-85.775,10.88361,"Santa Rosa National Park","Guanacaste, Tenorio and the Northern Wetlands","#D68910","https://www.protectedplanet.net/166"],["site-guanacaste-tenorio-and-the-northern-wetlands",-85.51533,10.94981,"Guanacaste National Park","Guanacaste, Tenorio and the Northern Wetlands","#D68910","https://www.protectedplanet.net/19368"],["site-guanacaste-tenorio-and-the-northern-wetlands",-85.32333,10.39722,"Palo Verde National Park","Guanacaste, Tenorio and the Northern Wetlands","#D68910","https://www.protectedplanet.net/4646"],["site-monteverde",-84.78771,10.30365,"Monteverde Cloud Forest Biological Preserve","Monteverde","#6A994E","https://www.reservamonteverde.com/"],["site-monteverde",-84.79014,10.34431,"Santa Elena Cloud Forest Reserve","Monteverde","#6A994E","https://www.reservasantaelena.org/"],["site-monteverde",-84.77804,10.35692,"Children's Eternal Rainforest","Monteverde","#6A994E","https://www.acmcr.org/"],["site-the-central-highlands",-84.24179,10.20141,"Poás Volcano National Park","The Central Highlands","#7D5BA6","https://www.protectedplanet.net/169"],["site-the-central-highlands",-84.32933,10.2857,"Juan Castro Blanco National Park","The Central Highlands","#7D5BA6","https://www.protectedplanet.net/19379"],["site-the-central-highlands",-83.86528,9.975,"Irazú Volcano National Park","The Central Highlands","#7D5BA6","https://www.protectedplanet.net/171"],["site-san-gerardo-de-dota-and-the-talamanca-highlands",-83.90722,9.58611,"Los Quetzales National Park","San Gerardo de Dota and the Talamanca Highlands","#386641","https://www.protectedplanet.net/108150"],["site-san-gerardo-de-dota-and-the-talamanca-highlands",-83.48,9.48,"Chirripó National Park","San Gerardo de Dota and the Talamanca Highlands","#386641","https://www.protectedplanet.net/163"],["site-turrialba-and-the-pacuare-valley",-83.77,10.03,"Turrialba Volcano National Park","Turrialba and the Pacuare Valley","#8A5A44","https://www.protectedplanet.net/168122"],["site-turrialba-and-the-pacuare-valley",-83.79972,9.77056,"Tapantí National Park","Turrialba and the Pacuare Valley","#8A5A44","https://www.protectedplanet.net/108173"],["site-turrialba-and-the-pacuare-valley",-83.42,9.942,"Barbilla National Park","Turrialba and the Pacuare Valley","#8A5A44","https://www.protectedplanet.net/19372"],["site-the-southern-caribbean-and-kekoldi",-82.8408,9.7385,"Cahuita National Park","The Southern Caribbean and Kekoldi","#C2185B","https://www.protectedplanet.net/2235"],["site-the-southern-caribbean-and-kekoldi",-82.6572,9.6317,"Gandoca-Manzanillo National Wildlife Refuge","The Southern Caribbean and Kekoldi","#C2185B","https://www.protectedplanet.net/19402"],["site-carara-and-the-tarcoles-river",-84.62778,9.74722,"Carara National Park","Carara and the Tarcoles River","#4E7AC7","https://www.protectedplanet.net/157"],["site-carara-and-the-tarcoles-river",-84.373,9.717,"La Cangreja National Park","Carara and the Tarcoles River","#4E7AC7","https://www.protectedplanet.net/108146"],["site-manuel-antonio-and-the-quepos-coast",-84.1428,9.3907,"Manuel Antonio National Park","Manuel Antonio and the Quepos Coast","#96762B","https://www.protectedplanet.net/2250"],["site-manuel-antonio-and-the-quepos-coast",-83.755,9.155,"Marino Ballena National Park","Manuel Antonio and the Quepos Coast","#96762B","https://www.protectedplanet.net/30595"],["site-the-osa-peninsula-corcovado-and-golfo-dulce",-83.58333,8.55,"Corcovado National Park","The Osa Peninsula, Corcovado and Golfo Dulce","#B03A2E","https://www.protectedplanet.net/164"],["site-the-osa-peninsula-corcovado-and-golfo-dulce",-83.261,8.7,"Piedras Blancas National Park","The Osa Peninsula, Corcovado and Golfo Dulce","#B03A2E","https://www.protectedplanet.net/102367"],["site-boca-tapada",-84.2328,10.6759,"Maquenque National Wildlife Refuge","Boca Tapada","#1F6F5C","https://www.protectedplanet.net/115179"],["site-san-vito-and-coto-brus",-82.93611,9.405,"La Amistad International Park","San Vito and Coto Brus","#2E86AB","https://www.protectedplanet.net/2553"]];
+      var STOPS = [["stop-la-selva-biological-station",-84.0064,10.4247,"La Selva Biological Station","Sarapiqui and La Selva","#2E86AB","https://tropicalstudies.org/portfolio/la-selva-research-station/"],["stop-quebrada-gonzalez",-83.94,10.16,"Quebrada Gonzalez","Sarapiqui and La Selva","#2E86AB",""],["stop-virgen-del-socorro",-84.17,10.248,"Virgen del Socorro","Sarapiqui and La Selva","#2E86AB",""],["stop-el-tapir",-83.935,10.262,"El Tapir","Sarapiqui and La Selva","#2E86AB",""],["stop-cope-at-guapiles",-83.786,10.217,"Cope, at Guapiles","Sarapiqui and La Selva","#2E86AB",""],["stop-cano-chiquero-and-cano-harold",-83.515,10.515,"Cano Chiquero and Cano Harold","Tortuguero","#0F8B8D",""],["stop-cerro-tortuguero",-83.525,10.6,"Cerro Tortuguero","Tortuguero","#0F8B8D",""],["stop-the-village-airstrip-edge",-83.514,10.543,"The village airstrip edge","Tortuguero","#0F8B8D",""],["stop-arenal-observatory-lodge",-84.7102,10.4378,"Arenal Observatory Lodge","Arenal","#C0392B","https://www.arenalobservatorylodge.com/"],["stop-the-el-castillo-road",-84.8,10.427,"The El Castillo road","Arenal","#C0392B",""],["stop-arenal-hanging-bridges",-84.7532,10.4938,"Arenal hanging bridges","Arenal","#C0392B",""],["stop-the-lake-arenal-dam-sector",-84.73,10.46,"The Lake Arenal dam sector","Arenal","#C0392B",""],["stop-palo-verde-boat-trip",-85.342,10.348,"Palo Verde boat trip","Guanacaste, Tenorio and the Northern Wetlands","#D68910",""],["stop-cano-negro",-84.7865,10.8923,"Cano Negro","Guanacaste, Tenorio and the Northern Wetlands","#D68910",""],["stop-the-rio-celeste-sector-tenorio",-84.993,10.702,"The Rio Celeste sector, Tenorio","Guanacaste, Tenorio and the Northern Wetlands","#D68910",""],["stop-ensenada",-85.0431,10.1415,"Ensenada","Guanacaste, Tenorio and the Northern Wetlands","#D68910",""],["stop-curi-cancha-reserve",-84.8,10.302,"Curi-Cancha Reserve","Monteverde","#6A994E","https://www.reservacuricancha.com/"],["stop-monteverde-cloud-forest-preserve",-84.793,10.3,"Monteverde Cloud Forest Preserve","Monteverde","#6A994E",""],["stop-santa-elena-reserve",-84.7958,10.3434,"Santa Elena Reserve","Monteverde","#6A994E","https://www.reservasantaelena.org/"],["stop-bajo-del-tigre",-84.818,10.31,"Bajo del Tigre","Monteverde","#6A994E",""],["stop-the-san-luis-valley",-84.79,10.28,"The San Luis valley","Monteverde","#6A994E",""],["stop-cinchona",-84.15,10.216,"Cinchona","The Central Highlands","#7D5BA6",""],["stop-bosque-de-paz",-84.3167,10.2045,"Bosque de Paz","The Central Highlands","#7D5BA6","https://www.bosquedepaz.com/"],["stop-poas-volcano-national-park",-84.232,10.198,"Poas Volcano National Park","The Central Highlands","#7D5BA6","https://serviciosenlinea.sinac.go.cr/"],["stop-the-vara-blanca-and-la-paz-road",-84.162,10.183,"The Vara Blanca and La Paz road","The Central Highlands","#7D5BA6",""],["stop-batsu-garden",-83.809,9.552,"Batsu Garden","San Gerardo de Dota and the Talamanca Highlands","#386641",""],["stop-miriam-s-and-the-savegre-orchards",-83.81,9.55,"Miriam's and the Savegre orchards","San Gerardo de Dota and the Talamanca Highlands","#386641",""],["stop-paraiso-quetzal-km-70",-83.856,9.639,"Paraiso Quetzal, km 70","San Gerardo de Dota and the Talamanca Highlands","#386641",""],["stop-cerro-de-la-muerte-paramo-km-89",-83.755,9.561,"Cerro de la Muerte paramo, km 89","San Gerardo de Dota and the Talamanca Highlands","#386641",""],["stop-rancho-naturalista",-83.5639,9.8319,"Rancho Naturalista","Turrialba and the Pacuare Valley","#8A5A44","https://ranchonaturalista.net/"],["stop-el-copal",-83.7516,9.7841,"El Copal","Turrialba and the Pacuare Valley","#8A5A44",""],["stop-catie-grounds",-83.648,9.894,"CATIE grounds","Turrialba and the Pacuare Valley","#8A5A44","https://www.catie.ac.cr/"],["stop-the-tuis-valley-road",-83.61,9.85,"The Tuis valley road","Turrialba and the Pacuare Valley","#8A5A44",""],["stop-the-kekoldi-hawk-watch",-82.77,9.66,"The Kekoldi hawk watch","The Southern Caribbean and Kekoldi","#C2185B",""],["stop-cahuita-national-park",-82.8415,9.7406,"Cahuita National Park","The Southern Caribbean and Kekoldi","#C2185B",""],["stop-punta-uva-and-manzanillo",-82.66,9.639,"Punta Uva and Manzanillo","The Southern Caribbean and Kekoldi","#C2185B",""],["stop-gandoca-lagoon",-82.58,9.59,"Gandoca lagoon","The Southern Caribbean and Kekoldi","#C2185B",""],["stop-the-meandrica-trail",-84.53,9.7772,"The Meandrica trail","Carara and the Tarcoles River","#4E7AC7",""],["stop-the-tarcoles-river-boat",-84.6259,9.7772,"The Tarcoles river boat","Carara and the Tarcoles River","#4E7AC7",""],["stop-guacalillo-mangroves",-84.66,9.81,"Guacalillo mangroves","Carara and the Tarcoles River","#4E7AC7",""],["stop-the-tarcoles-bridge",-84.6086,9.7861,"The Tarcoles bridge","Carara and the Tarcoles River","#4E7AC7",""],["stop-manuel-antonio-national-park",-84.245,9.0605,"Manuel Antonio National Park","Manuel Antonio and the Quepos Coast","#96762B","https://serviciosenlinea.sinac.go.cr/"],["stop-rainmaker",-84.2143,9.5774,"Rainmaker","Manuel Antonio and the Quepos Coast","#96762B","https://rainmakercostarica.com/"],["stop-hacienda-baru",-83.8813,9.2715,"Hacienda Baru","Manuel Antonio and the Quepos Coast","#96762B","https://haciendabaru.com/"],["stop-the-savegre-river-mouth",-83.9,9.33,"The Savegre river mouth","Manuel Antonio and the Quepos Coast","#96762B",""],["stop-sirena-ranger-station-corcovado",-83.591,8.481,"Sirena ranger station, Corcovado","The Osa Peninsula, Corcovado and Golfo Dulce","#B03A2E",""],["stop-the-rio-rincon-bridge",-83.48,8.7,"The Rio Rincon bridge","The Osa Peninsula, Corcovado and Golfo Dulce","#B03A2E",""],["stop-the-drake-bay-coastal-path",-83.67,8.695,"The Drake Bay coastal path","The Osa Peninsula, Corcovado and Golfo Dulce","#B03A2E",""],["stop-cerro-osa-and-the-golfo-dulce-forest",-83.34,8.44,"Cerro Osa and the Golfo Dulce forest","The Osa Peninsula, Corcovado and Golfo Dulce","#B03A2E",""],["stop-laguna-del-lagarto",-84.1808,10.6862,"Laguna del Lagarto","Boca Tapada","#1F6F5C",""],["stop-the-san-carlos-river-boat",-84.19,10.69,"The San Carlos river boat","Boca Tapada","#1F6F5C",""],["stop-maquenque-refuge-trails",-84.17,10.68,"Maquenque refuge trails","Boca Tapada","#1F6F5C",""],["stop-wilson-botanical-garden",-82.9685,8.7902,"Wilson Botanical Garden","San Vito and Coto Brus","#2E86AB","https://tropicalstudies.org/portfolio/las-cruces-research-station/"],["stop-las-cruces-forest-reserve",-82.96,8.79,"Las Cruces forest reserve","San Vito and Coto Brus","#2E86AB",""],["stop-los-cusingos",-83.576,9.339,"Los Cusingos","San Vito and Coto Brus","#2E86AB",""],["stop-the-coto-brus-wetlands",-82.98,8.82,"The Coto Brus wetlands","San Vito and Coto Brus","#2E86AB",""]];
       function boot() {
         if (!window.maplibregl) { setTimeout(boot, 80); return; }
         function mkMap(id) {
@@ -7965,6 +7971,41 @@
             b.addEventListener('click', function (e) { e.stopPropagation(); pop.remove(); jumpTo('lodge-' + d[0]); });
             new maplibregl.Marker({ element: mkWrap(b, 'dot') }).setLngLat([d[1], d[2]]).addTo(lmap);
             dots['lodge-' + d[0]] = b;
+          });
+          // Stops: the smallest marker, a hollow ring, because there are a hundred of
+          // them and they must not compete with the four layers that were here first.
+          var stopMarks = {};
+          STOPS.forEach(function (d) {
+            var b = document.createElement('button');
+            b.className = 'mldot mlstop';
+            b.style.setProperty('--pc', d[5]);
+            b.setAttribute('aria-label', d[3] + ', a birding stop in ' + d[4]);
+            function show() {
+              var dir = 'https://www.google.com/maps/dir/?api=1&destination=' + d[2] + ',' + d[1];
+              pop.setLngLat([d[1], d[2]])
+                .setHTML('<b>' + d[3] + '</b>' + d[4]
+                  + '<br><a href="' + dir + '" target="_blank" rel="noopener">Directions</a>'
+                  + (d[6] ? ' · <a href="' + d[6] + '" target="_blank" rel="noopener">Official site</a>' : ''))
+                .addTo(lmap);
+            }
+            b.addEventListener('mouseenter', show);
+            b.addEventListener('focus', show);
+            b.addEventListener('click', function (e) { e.stopPropagation(); show(); });
+            new maplibregl.Marker({ element: mkWrap(b, 'dot') }).setLngLat([d[1], d[2]]).addTo(lmap);
+            stopMarks[d[0]] = { lon: d[1], lat: d[2], show: show };
+          });
+          // A stop name in the prose brings the map to it rather than sending the reader
+          // to another site. The map is the thing that shows where a place sits in its
+          // region, which is the question the name is being clicked to answer.
+          document.querySelectorAll('.stoplink').forEach(function (el) {
+            el.addEventListener('click', function () {
+              var m = stopMarks[el.getAttribute('data-stop')];
+              if (!m) return;
+              var box = document.getElementById('regionmap');
+              if (box) box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              lmap.flyTo({ center: [m.lon, m.lat], zoom: 10, duration: 900 });
+              setTimeout(m.show, 950);
+            });
           });
           // Tours and operators: same colour as their region, a diamond rather than
           // a circle, so the two layers stay tellable apart without relying on hue.

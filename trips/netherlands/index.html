@@ -235,6 +235,11 @@
     .where.stops .stopname { color: var(--green-dark); font-weight: 800; }
     .where.stops .stop + .stop::before { content: ' · '; color: var(--muted); font-weight: 400; }
     .where.stops .parklink { color: var(--green-dark); font-weight: 800; }
+    .stoplink { font: inherit; font-weight: 800; color: var(--green-dark); background: none; border: 0; border-bottom: 1px dotted currentColor; padding: 0; cursor: pointer; }
+    .stoplink:hover { color: var(--green); border-bottom-style: solid; }
+    .stoplink:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+    .mkey-s.mkey-stop { width: 9px; height: 9px; border-radius: 50%; background: #fff; border: 2.5px solid var(--muted); }
+    .mldot.mlstop { width: 9px; height: 9px; background: #fff; border: 2.5px solid var(--pc); box-shadow: 0 1px 3px rgba(0,0,0,.3); }
     .stopmap { font-size: 11.5px; font-weight: 700; color: var(--muted); text-decoration: none; border-bottom: 1px dotted currentColor; margin-left: 3px; }
     .stopmap:hover { color: var(--green-dark); }
     /* Guiding status: a word, a dot for the state, never colour alone (rule 6). */
@@ -3153,7 +3158,7 @@
 
       <div class="mapwrap">
         <div class="mlmap" id="regionmap" aria-label="Map of the Netherlands' birding regions, with every place to stay and every tour on the page; select any marker to open its entry"></div>
-        <p class="mapbar"><span class="mkey"><span class="mkey-s mkey-region"></span>Region</span><span class="mkey"><span class="mkey-s mkey-park"></span>National park</span><span class="mkey"><span class="mkey-s mkey-stay"></span>Place to stay</span><span class="mkey"><span class="mkey-s mkey-go"></span>Tour or operator</span><span class="mkeynote">Colours match each region. Select a marker to open its entry below.</span></p>
+        <p class="mapbar"><span class="mkey"><span class="mkey-s mkey-region"></span>Region</span><span class="mkey"><span class="mkey-s mkey-park"></span>National park</span><span class="mkey"><span class="mkey-s mkey-stay"></span>Place to stay</span><span class="mkey"><span class="mkey-s mkey-go"></span>Tour or operator</span><span class="mkey"><span class="mkey-s mkey-stop"></span>Stop</span><span class="mkeynote">Colours match each region. Select a marker to open its entry below.</span></p>
       </div>
       <p class="mapnote">Each park name links to that park's own website.</p>
       <div class="subsec" id="trips">
@@ -3260,7 +3265,7 @@
         <p class="where"><b>Look for:</b> <a href="/birds/eurasian-spoonbill/">Eurasian Spoonbill</a>, <a href="/birds/pied-avocet/">Pied Avocet</a>, <a href="/birds/bar-tailed-godwit/">Bar-tailed Godwit</a>, <a href="/birds/red-knot/">Red Knot</a></p>
 
         <p class="where parks"><b>National parks:</b> <a class="parklink" href="https://www.npduinenvantexel.nl/" target="_blank" rel="noopener">Dunes of Texel National Park</a>, <a class="parklink" href="https://www.np-schiermonnikoog.nl" target="_blank" rel="noopener">Schiermonnikoog National Park</a></p>
-        <p class="where stops"><b>Stops:</b> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=53.105&amp;mlon=4.883#map=14/53.105/4.883" target="_blank" rel="noopener" title="Wagejot, Texel on a map">Wagejot, Texel</a>, a shallow roadside pool on the east coast of Texel, watched from the car on the dike road. Terns and waders at close range</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=53.101&amp;mlon=4.879#map=14/53.101/4.879" target="_blank" rel="noopener" title="Utopia, Texel on a map">Utopia, Texel</a>, a reserve built for waders beside the Wagejot, with a hide over its pools and islands. Free to enter</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=53.094&amp;mlon=4.846#map=14/53.094/4.846" target="_blank" rel="noopener" title="Dijkmanshuizen, Texel on a map">Dijkmanshuizen, Texel</a>, wet grassland and brackish pools inland of the same dike road, viewed from the roadside</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=53.147&amp;mlon=4.75#map=14/53.147/4.75" target="_blank" rel="noopener" title="De Slufter, Texel on a map">De Slufter, Texel</a>, a valley where the sea breaks through the dunes, creating salt marsh, walked on marked paths from the car park</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=53.42&amp;mlon=5.46#map=14/53.42/5.46" target="_blank" rel="noopener" title="De Boschplaat, Terschelling on a map">De Boschplaat, Terschelling</a>, the undeveloped eastern third of Terschelling, salt marsh and beach plain, reached by bike or on foot</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=53.483&amp;mlon=6.155#map=14/53.483/6.155" target="_blank" rel="noopener" title="Westerplas, Schiermonnikoog on a map">Westerplas, Schiermonnikoog</a>, a freshwater lake with a hide, a short walk from the village on an island where visitors leave cars on the mainland</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=53.265&amp;mlon=5.01#map=14/53.265/5.01" target="_blank" rel="noopener" title="De Kroon's Polders, Vlieland on a map">De Kroon's Polders, Vlieland</a>, a chain of shallow lakes behind the dunes, on a marked cycle route from the village</span></p>
+        <p class="where stops"><b>Stops:</b> <span class="stop"><button type="button" class="stoplink" data-stop="stop-wagejot-texel" title="Show Wagejot, Texel on the map">Wagejot, Texel</button>, a shallow roadside pool on the east coast of Texel, watched from the car on the dike road. Terns and waders at close range</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-utopia-texel" title="Show Utopia, Texel on the map">Utopia, Texel</button>, a reserve built for waders beside the Wagejot, with a hide over its pools and islands. Free to enter</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-dijkmanshuizen-texel" title="Show Dijkmanshuizen, Texel on the map">Dijkmanshuizen, Texel</button>, wet grassland and brackish pools inland of the same dike road, viewed from the roadside</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-de-slufter-texel" title="Show De Slufter, Texel on the map">De Slufter, Texel</button>, a valley where the sea breaks through the dunes, creating salt marsh, walked on marked paths from the car park</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-de-boschplaat-terschelling" title="Show De Boschplaat, Terschelling on the map">De Boschplaat, Terschelling</button>, the undeveloped eastern third of Terschelling, salt marsh and beach plain, reached by bike or on foot</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-westerplas-schiermonnikoog" title="Show Westerplas, Schiermonnikoog on the map">Westerplas, Schiermonnikoog</button>, a freshwater lake with a hide, a short walk from the village on an island where visitors leave cars on the mainland</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-de-kroon-s-polders-vlieland" title="Show De Kroon's Polders, Vlieland on the map">De Kroon's Polders, Vlieland</button>, a chain of shallow lakes behind the dunes, on a marked cycle route from the village</span></p>
         <p class="where centres"><b>Visitor centres:</b> <a class="parklink" href="https://www.ecomare.nl/" target="_blank" rel="noopener">Ecomare, Texel</a></p>
         <p class="where"><b>Also covers:</b> De Cocksdorp Texel, de Koog, den Burg, Midsland, Oosterend, Schiermonnikoog, Terschelling, Vlieland</p><p class="where wildlife"><b>Also watch for:</b> Harbour and grey seals haul out on the sandbanks and are visible from the boat trips that run from every island. Harbour seal pups arrive in June and July, grey seal pups from November into January.</p>
           </div>
@@ -3292,7 +3297,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.hoteltexel.nl/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=53.0768&mlon=4.9058#map=15/53.0768/4.9058" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=53.0768,4.9058" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-vjt-vof-op-oost-gastrofarm-texel-netherlands" data-cat="stay" data-tier="3" data-price="200" data-region="0" data-certs="0" data-name="vjt vof op oost gastrofarm texel">
@@ -3308,7 +3313,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$200 to $600</span><span class="psep">/</span><span class="palt">€173 to €518</span><span class="psep">/</span><span class="palt">£148 to £444</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.opoost.nl/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=53.0768&mlon=4.9058#map=15/53.0768/4.9058" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=53.0768,4.9058" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-camping-kogerstrand-netherlands" data-cat="stay" data-tier="1" data-price="50" data-region="0" data-certs="1" data-name="camping kogerstrand">
@@ -3324,7 +3329,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$50 to $150</span><span class="psep">/</span><span class="palt">€43 to €130</span><span class="psep">/</span><span class="palt">£37 to £111</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.krim-texel.com/campsite-kogerstrand" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=53.1008&mlon=4.758#map=15/53.1008/4.758" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=53.1008,4.758" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-hotel-de-walvisvaarder-netherlands" data-cat="stay" data-tier="2" data-price="100" data-region="0" data-certs="1" data-name="hotel de walvisvaarder">
@@ -3340,7 +3345,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.walvisvaarder.nl/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=53.3941&mlon=5.3254#map=15/53.3941/5.3254" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=53.3941,5.3254" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-kampeerterrein-stortemelk-netherlands" data-cat="stay" data-tier="1" data-price="100" data-region="0" data-certs="1" data-name="kampeerterrein stortemelk">
@@ -3356,7 +3361,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.stortemelk.nl/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=53.3046&mlon=5.0801#map=15/53.3046/5.0801" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=53.3046,5.0801" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-landal-villapark-vogelmient-netherlands" data-cat="stay" data-tier="2" data-price="100" data-region="0" data-certs="1" data-name="landal villapark vogelmient">
@@ -3372,7 +3377,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.landal.nl/nl-nl/bungalowparken/nederland/texel/villapark-vogelmient" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=53.0947&mlon=4.7589#map=15/53.0947/4.7589" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=53.0947,4.7589" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-landal-vitamaris-netherlands" data-cat="stay" data-tier="1" data-price="100" data-region="0" data-certs="1" data-name="landal vitamaris">
@@ -3388,7 +3393,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.landal.nl/vrs" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=53.4838&mlon=6.1575#map=15/53.4838/6.1575" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=53.4838,6.1575" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-landal-vlieduyn-netherlands" data-cat="stay" data-tier="1" data-price="100" data-region="0" data-certs="1" data-name="landal vlieduyn">
@@ -3404,7 +3409,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.landal.nl/nl-nl/bungalowparken/nederland/vlieland/vlieduyn/adres" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=53.305&mlon=5.0636#map=15/53.305/5.0636" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=53.305,5.0636" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-landal-west-terschelling-netherlands" data-cat="stay" data-tier="1" data-price="100" data-region="0" data-certs="1" data-name="landal west terschelling">
@@ -3420,7 +3425,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.landal.nl/parken/west-terschelling" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=53.3671&mlon=5.2198#map=15/53.3671/5.2198" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=53.3671,5.2198" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-nieuw-leven-texel-netherlands" data-cat="stay" data-tier="1" data-price="100" data-region="0" data-certs="1" data-name="nieuw leven texel">
@@ -3436,7 +3441,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.nieuwleventexel.nl/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=53.0568&mlon=4.8182#map=15/53.0568/4.8182" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=53.0568,4.8182" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-residence-terschelling-wellness-waddenresort-netherlands" data-cat="stay" data-tier="2" data-price="100" data-region="0" data-certs="1" data-name="residence terschelling wellness waddenresort">
@@ -3452,7 +3457,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.landal.com/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=53.3339&mlon=5.3515#map=15/53.3339/5.3515" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=53.3339,5.3515" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-residentie-vlierijck-netherlands" data-cat="stay" data-tier="1" data-price="100" data-region="0" data-certs="1" data-name="residentie vlierijck">
@@ -3468,7 +3473,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.vlierijck.nl/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=53.2973&mlon=5.0741#map=15/53.2973/5.0741" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=53.2973,5.0741" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-vakantiepark-tjermelan-netherlands" data-cat="stay" data-tier="1" data-price="100" data-region="0" data-certs="1" data-name="vakantiepark tjermelân">
@@ -3484,7 +3489,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.terschelling-recreatie.nl/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=53.4021&mlon=5.3646#map=15/53.4021/5.3646" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=53.4021,5.3646" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-westcord-aparthotel-boschrijck-netherlands" data-cat="stay" data-tier="2" data-price="100" data-region="0" data-certs="1" data-name="westcord aparthotel boschrijck">
@@ -3500,7 +3505,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.westcordhotels.nl/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=53.3339&mlon=5.3515#map=15/53.3339/5.3515" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=53.3339,5.3515" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-westcord-hotel-schylge-netherlands" data-cat="stay" data-tier="2" data-price="100" data-region="0" data-certs="1" data-name="westcord hotel schylge">
@@ -3516,7 +3521,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.westcordhotels.nl/hotels/Hotel-Schylge" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=53.3664&mlon=5.223#map=15/53.3664/5.223" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=53.3664,5.223" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
           </div>
@@ -3541,7 +3546,7 @@
         <p class="where"><b>Look for:</b> <a href="/birds/bluethroat/">Bluethroat</a>, <a href="/birds/montagu-s-harrier/">Montagu's Harrier</a>, <a href="/birds/common-crane/">Common Crane</a>, <a href="/birds/eurasian-spoonbill/">Eurasian Spoonbill</a></p>
 
         <p class="where parks"><b>Parks and reserves:</b> <a class="parklink" href="https://www.np-lauwersmeer.nl" target="_blank" rel="noopener">Lauwersmeer National Park</a>, <a class="parklink" href="https://www.natura2000.nl/gebieden/friesland/waddenzee" target="_blank" rel="noopener">Waddenzee</a> <span class="pkind">(Natura 2000 site and World Heritage)</span></p>
-        <p class="where stops"><b>Stops:</b> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=53.352&amp;mlon=6.156#map=14/53.352/6.156" target="_blank" rel="noopener" title="Ezumakeeg on a map">Ezumakeeg</a>, two viewpoints over mud and shallow water at the south end of Lauwersmeer, free and open. The best wader watching in the north</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=53.362&amp;mlon=6.24#map=14/53.362/6.24" target="_blank" rel="noopener" title="Jaap Deensgat on a map">Jaap Deensgat</a>, a free hide over grazed marsh on the Groningen side of Lauwersmeer, a short walk from the parking</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=53.39&amp;mlon=6.18#map=14/53.39/6.18" target="_blank" rel="noopener" title="Bantpolder on a map">Bantpolder</a>, wet grassland inside the Wadden dike near Lauwersoog, viewed from the road and the dike</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=53.36&amp;mlon=5.71#map=14/53.36/5.71" target="_blank" rel="noopener" title="The Noarderleech on a map">The Noarderleech</a>, outer salt marsh west of Holwerd, walked out along the dike. A high tide roost when the flats cover</span></p>
+        <p class="where stops"><b>Stops:</b> <span class="stop"><button type="button" class="stoplink" data-stop="stop-ezumakeeg" title="Show Ezumakeeg on the map">Ezumakeeg</button>, two viewpoints over mud and shallow water at the south end of Lauwersmeer, free and open. The best wader watching in the north</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-jaap-deensgat" title="Show Jaap Deensgat on the map">Jaap Deensgat</button>, a free hide over grazed marsh on the Groningen side of Lauwersmeer, a short walk from the parking</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-bantpolder" title="Show Bantpolder on the map">Bantpolder</button>, wet grassland inside the Wadden dike near Lauwersoog, viewed from the road and the dike</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-the-noarderleech" title="Show The Noarderleech on the map">The Noarderleech</button>, outer salt marsh west of Holwerd, walked out along the dike. A high tide roost when the flats cover</span></p>
 
         <p class="where"><b>Also covers:</b> Harlingen, Lauwersoog</p><p class="where wildlife"><b>Also watch for:</b> Konik horses and Highland cattle graze the reserve and keep the grassland open, and roe deer are regular at the edges. Otter has returned to the waterways and is occasionally seen at first light.</p>
           </div>
@@ -3563,7 +3568,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$50 to $150</span><span class="psep">/</span><span class="palt">€43 to €130</span><span class="psep">/</span><span class="palt">£37 to £111</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.zeehoeve.nl/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=53.1752&mlon=5.4142#map=15/53.1752/5.4142" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=53.1752,5.4142" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-landal-suyderoogh-netherlands" data-cat="stay" data-tier="1" data-price="100" data-region="1" data-certs="0" data-name="landal suyderoogh">
@@ -3579,7 +3584,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.landal.nl/Suyderoogh" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=53.4036&mlon=6.2142#map=15/53.4036/6.2142" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=53.4036,6.2142" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
           </div>
@@ -3604,7 +3609,7 @@
         <p class="where"><b>Look for:</b> <a href="/birds/black-woodpecker/">Black Woodpecker</a>, <a href="/birds/woodlark/">Woodlark</a>, <a href="/birds/european-nightjar/">European Nightjar</a>, <a href="/birds/red-backed-shrike/">Red-backed Shrike</a></p>
 
         <p class="where parks"><b>National parks:</b> <a class="parklink" href="https://www.drentscheaa.nl/" target="_blank" rel="noopener">Drentsche Aa National Park</a>, <a class="parklink" href="https://www.nationaalpark-dwingelderveld.nl" target="_blank" rel="noopener">Dwingelderveld National Park</a>, <a class="parklink" href="https://www.nationaalpark-drents-friese-wold.nl/" target="_blank" rel="noopener">Drents-Friese Wold National Park</a></p>
-        <p class="where stops"><b>Stops:</b> <span class="stop"><a class="parklink" href="https://www.natuurmonumenten.nl/natuurgebieden/fochteloerveen" target="_blank" rel="noopener" title="Fochteloerveen, official site">Fochteloerveen</a>, a raised bog straddling Friesland and Drenthe with a viewing tower, free to enter. The cranes that recolonised the Netherlands nest here</span> <span class="stop"><a class="parklink" href="https://www.np-dwingelderveld.nl/" target="_blank" rel="noopener" title="Dwingelderveld, official site">Dwingelderveld</a>, a national park of wet heath and pools with marked walks from several car parks. Nightjar in June, Black Woodpecker in the pines</span> <span class="stop"><a class="parklink" href="https://www.natuurmonumenten.nl/natuurgebieden/de-onlanden" target="_blank" rel="noopener" title="De Onlanden, official site">De Onlanden</a>, a flooded peat basin south of Groningen with cycle paths and hides, free and open. Bittern and marsh harrier</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=53.125&amp;mlon=6.71#map=14/53.125/6.71" target="_blank" rel="noopener" title="Zuidlaardermeer on a map">Zuidlaardermeer</a>, lake edge and reedbed with a hide, reached from the village of Zuidlaren</span></p>
+        <p class="where stops"><b>Stops:</b> <span class="stop"><button type="button" class="stoplink" data-stop="stop-fochteloerveen" title="Show Fochteloerveen on the map">Fochteloerveen</button>, a raised bog straddling Friesland and Drenthe with a viewing tower, free to enter. The cranes that recolonised the Netherlands nest here</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-dwingelderveld" title="Show Dwingelderveld on the map">Dwingelderveld</button>, a national park of wet heath and pools with marked walks from several car parks. Nightjar in June, Black Woodpecker in the pines</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-de-onlanden" title="Show De Onlanden on the map">De Onlanden</button>, a flooded peat basin south of Groningen with cycle paths and hides, free and open. Bittern and marsh harrier</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-zuidlaardermeer" title="Show Zuidlaardermeer on the map">Zuidlaardermeer</button>, lake edge and reedbed with a hide, reached from the village of Zuidlaren</span></p>
 
         <p class="where"><b>Also covers:</b> Assen, Dwingeloo</p><p class="where wildlife"><b>Also watch for:</b> Red deer, badger and roe deer live across the heath and old woodland, and adders bask on the sandy tracks at Dwingelderveld from April to September. Sheep flocks still graze the heather by arrangement.</p>
           </div>
@@ -3636,7 +3641,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.hotelgroningencentre.nl/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=53.2191&mlon=6.568#map=15/53.2191/6.568" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=53.2191,6.568" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-best-western-plus-hotel-groningen-plaza-netherlands" data-cat="stay" data-tier="2" data-price="100" data-region="2" data-certs="1" data-name="best western plus hotel groningen plaza">
@@ -3652,7 +3657,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.hotelgroningenplaza.nl/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=53.2191&mlon=6.568#map=15/53.2191/6.568" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=53.2191,6.568" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-camping-de-haarsluis-netherlands" data-cat="stay" data-tier="1" data-price="100" data-region="2" data-certs="1" data-name="camping de haarsluis">
@@ -3668,7 +3673,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.haarsluis.nl/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=52.8684&mlon=6.3635#map=15/52.8684/6.3635" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=52.8684,6.3635" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-city-hotel-de-jonge-netherlands" data-cat="stay" data-tier="2" data-price="100" data-region="2" data-certs="1" data-name="city hotel de jonge">
@@ -3684,7 +3689,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://hoteldejonge.nl/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=52.995&mlon=6.5634#map=15/52.995/6.5634" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=52.995,6.5634" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-the-market-hotel-netherlands" data-cat="stay" data-tier="2" data-price="100" data-region="2" data-certs="1" data-name="the market hotel">
@@ -3700,7 +3705,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="http://westcordhotels.nl/hotel/market-hotel-groningen/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=53.2191&mlon=6.568#map=15/53.2191/6.568" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=53.2191,6.568" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
           </div>
@@ -3725,7 +3730,7 @@
         <p class="where"><b>Look for:</b> <a href="/birds/black-tailed-godwit/">Black-tailed Godwit</a>, <a href="/birds/northern-lapwing/">Northern Lapwing</a>, <a href="/birds/ruff/">Ruff</a>, <a href="/birds/eurasian-oystercatcher/">Eurasian Oystercatcher</a></p>
 
         <p class="where parks"><b>National park:</b> <a class="parklink" href="https://www.np-aldefeanen.nl/" target="_blank" rel="noopener">De Alde Feanen National Park</a></p>
-        <p class="where stops"><b>Stops:</b> <span class="stop"><a class="parklink" href="https://www.natuurmonumenten.nl/natuurgebieden/skrok-en-skrins" target="_blank" rel="noopener" title="Skrok and Skrins, official site">Skrok and Skrins</a>, two small reserves near Wommels managed specifically for breeding godwit and Ruff, with a viewpoint on each</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=52.97&amp;mlon=5.38#map=14/52.97/5.38" target="_blank" rel="noopener" title="Workumerwaard on a map">Workumerwaard</a>, wet grassland on the IJsselmeer shore south of Workum, viewed from the dike</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=53.06&amp;mlon=5.38#map=14/53.06/5.38" target="_blank" rel="noopener" title="Makkumer Noardwaard on a map">Makkumer Noardwaard</a>, shallow shore and reed on the same coast, with a hide reached on foot</span> <span class="stop"><a class="parklink" href="https://www.np-aldefeanen.nl/" target="_blank" rel="noopener" title="De Alde Feanen, official site">De Alde Feanen</a>, a national park of fen, reed and open water, reached by boat or from the visitor centre at Earnewald</span></p>
+        <p class="where stops"><b>Stops:</b> <span class="stop"><button type="button" class="stoplink" data-stop="stop-skrok-and-skrins" title="Show Skrok and Skrins on the map">Skrok and Skrins</button>, two small reserves near Wommels managed specifically for breeding godwit and Ruff, with a viewpoint on each</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-workumerwaard" title="Show Workumerwaard on the map">Workumerwaard</button>, wet grassland on the IJsselmeer shore south of Workum, viewed from the dike</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-makkumer-noardwaard" title="Show Makkumer Noardwaard on the map">Makkumer Noardwaard</button>, shallow shore and reed on the same coast, with a hide reached on foot</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-de-alde-feanen" title="Show De Alde Feanen on the map">De Alde Feanen</button>, a national park of fen, reed and open water, reached by boat or from the visitor centre at Earnewald</span></p>
 
         <p class="where"><b>Also covers:</b> Akkrum, Leeuwarden</p><p class="where wildlife"><b>Also watch for:</b> Otter has recovered across the Frisian waterways since reintroduction, and brown hares box in the open fields through March and April. Roe deer work the ditches between the wet meadows.</p>
           </div>
@@ -3757,7 +3762,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.leonardo-hotels.nl/leeuwarden/leonardo-oranje-hotel-leeuwarden" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=53.1972&mlon=5.7936#map=15/53.1972/5.7936" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=53.1972,5.7936" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-notiz-hotel-netherlands" data-cat="stay" data-tier="2" data-price="100" data-region="3" data-certs="1" data-name="notiz hotel">
@@ -3773,7 +3778,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.stendenhotel.com/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=53.2006&mlon=5.7919#map=15/53.2006/5.7919" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=53.2006,5.7919" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-recreatiepark-tusken-de-marren-netherlands" data-cat="stay" data-tier="1" data-price="100" data-region="3" data-certs="1" data-name="recreatiepark tusken de marren">
@@ -3789,7 +3794,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://tuskendemarren.nl/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=53.0501&mlon=5.8362#map=15/53.0501/5.8362" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=53.0501,5.8362" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
           </div>
@@ -3811,7 +3816,7 @@
         <p class="where"><b>Look for:</b> <a href="/birds/purple-heron/">Purple Heron</a>, <a href="/birds/savi-s-warbler/">Savi's Warbler</a>, <a href="/birds/bearded-reedling/">Bearded Reedling</a>, <a href="/birds/black-tern/">Black Tern</a>, <a href="/birds/common-crane/">Common Crane</a>, <a href="/birds/western-marsh-harrier/">Western Marsh Harrier</a>, <a href="/birds/black-grouse/">Black Grouse</a>, <a href="/birds/european-nightjar/">European Nightjar</a></p>
 
         <p class="where parks"><b>National parks:</b> <a class="parklink" href="https://www.nationaalparkweerribbenwieden.nl/" target="_blank" rel="noopener">Weerribben-Wieden National Park</a>, <a class="parklink" href="https://www.sallandseheuvelrug.nl/" target="_blank" rel="noopener">Sallandse Heuvelrug National Park</a></p>
-        <p class="where stops"><b>Stops:</b> <span class="stop"><a class="parklink" href="https://www.nationaalparkweerribbenwieden.nl/" target="_blank" rel="noopener" title="De Weerribben, official site">De Weerribben</a>, a national park of peat cuttings, reed and open water near Ossenzijl, with marked walks and canoe routes</span> <span class="stop"><a class="parklink" href="https://www.nationaalparkweerribbenwieden.nl/" target="_blank" rel="noopener" title="De Wieden, official site">De Wieden</a>, the lake and reedbed half of the same park, entered near Giethoorn. Purple Heron and Black Tern over the water</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=52.2897&amp;mlon=6.5259#map=14/52.2897/6.5259" target="_blank" rel="noopener" title="Sallandse Heuvelrug on a map">Sallandse Heuvelrug</a>, a heath ridge national park near Nijverdal, with a marked viewpoint for the last Dutch Black Grouse</span></p>
+        <p class="where stops"><b>Stops:</b> <span class="stop"><button type="button" class="stoplink" data-stop="stop-de-weerribben" title="Show De Weerribben on the map">De Weerribben</button>, a national park of peat cuttings, reed and open water near Ossenzijl, with marked walks and canoe routes</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-de-wieden" title="Show De Wieden on the map">De Wieden</button>, the lake and reedbed half of the same park, entered near Giethoorn. Purple Heron and Black Tern over the water</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-sallandse-heuvelrug" title="Show Sallandse Heuvelrug on the map">Sallandse Heuvelrug</button>, a heath ridge national park near Nijverdal, with a marked viewpoint for the last Dutch Black Grouse</span></p>
 
         <p class="where wildlife"><b>Also watch for:</b> Otter was reintroduced to the Weerribben in 2002 and is now resident across the reserve, most often seen from a boat at first light. The Salland heath carries roe deer and adder, and the heather is at its best in August.</p>
           </div>
@@ -3837,7 +3842,7 @@
         <p class="where"><b>Look for:</b> <a href="/birds/smew/">Smew</a>, <a href="/birds/great-cormorant/">Great Cormorant</a>, <a href="/birds/eurasian-wigeon/">Eurasian Wigeon</a>, <a href="/birds/common-tern/">Common Tern</a></p>
 
         <p class="where parks"><b>Parks and reserves:</b> <a class="parklink" href="https://www.natura2000.nl/gebieden/flevoland/ijsselmeer" target="_blank" rel="noopener">IJsselmeer</a> <span class="pkind">(Natura 2000 site)</span>, <a class="parklink" href="https://www.natura2000.nl/gebieden/flevoland/markermeer-ijmeer" target="_blank" rel="noopener">Markermeer and IJmeer</a> <span class="pkind">(Natura 2000 site)</span></p>
-        <p class="where stops"><b>Stops:</b> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=52.933&amp;mlon=5.033#map=14/52.933/5.033" target="_blank" rel="noopener" title="Den Oever sluices on a map">Den Oever sluices</a>, the eastern end of the Afsluitdijk, where the outflow draws diving duck and gulls. Parking and a walkway</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=53.074&amp;mlon=5.339#map=14/53.074/5.339" target="_blank" rel="noopener" title="Kornwerderzand on a map">Kornwerderzand</a>, the western sluices of the same dike, and a passage watchpoint in autumn</span> <span class="stop"><a class="parklink" href="https://www.natuurmonumenten.nl/natuurgebieden/marker-wadden" target="_blank" rel="noopener" title="Marker Wadden, official site">Marker Wadden</a>, a group of islands built for wildlife in the Markermeer, reached by a seasonal ferry from Lelystad. Hides and a lookout tower</span></p>
+        <p class="where stops"><b>Stops:</b> <span class="stop"><button type="button" class="stoplink" data-stop="stop-den-oever-sluices" title="Show Den Oever sluices on the map">Den Oever sluices</button>, the eastern end of the Afsluitdijk, where the outflow draws diving duck and gulls. Parking and a walkway</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-kornwerderzand" title="Show Kornwerderzand on the map">Kornwerderzand</button>, the western sluices of the same dike, and a passage watchpoint in autumn</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-marker-wadden" title="Show Marker Wadden on the map">Marker Wadden</button>, a group of islands built for wildlife in the Markermeer, reached by a seasonal ferry from Lelystad. Hides and a lookout tower</span></p>
 
         <p class="where"><b>Also covers:</b> Bovenkarspel, Enkhuizen, Hoorn, Medemblik</p><p class="where wildlife"><b>Also watch for:</b> The lake carries a large eel population and the fish passage at the Afsluitdijk was built for it. Harbour porpoise turn up on the seaward side of the dyke, most often in winter.</p>
           </div>
@@ -3869,7 +3874,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.europarcs.nl/vakantieparken/nederland/noord-holland/enkhuizer-strand" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=52.7577&mlon=5.3207#map=15/52.7577/5.3207" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=52.7577,5.3207" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-europarcs-het-markermeer-netherlands" data-cat="stay" data-tier="1" data-price="100" data-region="5" data-certs="0" data-name="europarcs het markermeer">
@@ -3885,7 +3890,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.europarcs.nl/vakantieparken/nederland/noord-holland/markermeer/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=52.6988&mlon=5.2498#map=15/52.6988/5.2498" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=52.6988,5.2498" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-europarcs-ijsselmeer-bv-netherlands" data-cat="stay" data-tier="1" data-price="100" data-region="5" data-certs="0" data-name="europarcs ijsselmeer bv">
@@ -3901,7 +3906,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.europarcs.nl/vakantieparken/nederland/noord-holland/ijsselmeer/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=52.7907&mlon=5.1686#map=15/52.7907/5.1686" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=52.7907,5.1686" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-van-der-valk-hoorn-netherlands" data-cat="stay" data-tier="1" data-price="100" data-region="5" data-certs="1" data-name="van der valk hoorn">
@@ -3917,7 +3922,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.hotelhoorn.com/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=52.6533&mlon=5.0736#map=15/52.6533/5.0736" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=52.6533,5.0736" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
           </div>
@@ -3942,7 +3947,7 @@
         <p class="where"><b>Look for:</b> <a href="/birds/white-tailed-eagle/">White-tailed Eagle</a>, <a href="/birds/great-egret/">Great Egret</a>, <a href="/birds/eurasian-bittern/">Eurasian Bittern</a>, <a href="/birds/bearded-reedling/">Bearded Reedling</a></p>
 
         <p class="where parks"><b>Parks and reserves:</b> <a class="parklink" href="https://www.nationaalparknieuwland.nl/" target="_blank" rel="noopener">Nieuw Land National Park</a>, <a class="parklink" href="https://www.natura2000.nl/gebieden/gelderland/veluwerandmeren" target="_blank" rel="noopener">Veluwerandmeren</a> <span class="pkind">(Natura 2000 site)</span></p>
-        <p class="where stops"><b>Stops:</b> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=52.456&amp;mlon=5.355#map=14/52.456/5.355" target="_blank" rel="noopener" title="De Kluut and Grote Praambult on a map">De Kluut and Grote Praambult</a>, the two marked lookouts over the Oostvaardersplassen marsh, free and reached on foot from the car parks</span> <span class="stop"><a class="parklink" href="https://www.natuurmonumenten.nl/natuurgebieden/lepelaarplassen" target="_blank" rel="noopener" title="Lepelaarplassen, official site">Lepelaarplassen</a>, spoonbill and heron ground on the Almere side, with a visitor centre and hides</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=52.56&amp;mlon=5.7#map=14/52.56/5.7" target="_blank" rel="noopener" title="Kamperhoek on a map">Kamperhoek</a>, the northeast corner of the polder, a migration watchpoint over open farmland</span></p>
+        <p class="where stops"><b>Stops:</b> <span class="stop"><button type="button" class="stoplink" data-stop="stop-de-kluut-and-grote-praambult" title="Show De Kluut and Grote Praambult on the map">De Kluut and Grote Praambult</button>, the two marked lookouts over the Oostvaardersplassen marsh, free and reached on foot from the car parks</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-lepelaarplassen" title="Show Lepelaarplassen on the map">Lepelaarplassen</button>, spoonbill and heron ground on the Almere side, with a visitor centre and hides</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-kamperhoek" title="Show Kamperhoek on the map">Kamperhoek</button>, the northeast corner of the polder, a migration watchpoint over open farmland</span></p>
         <p class="where centres"><b>Visitor centres:</b> <a class="parklink" href="https://www.natuurmonumenten.nl/bezoekerscentra/bezoekerscentrum-oostvaardersplassen" target="_blank" rel="noopener">Bezoekerscentrum Oostvaardersplassen</a></p>
         <p class="where"><b>Also covers:</b> Biddinghuizen, Zeewolde</p><p class="where wildlife"><b>Also watch for:</b> Konik horses, red deer and Heck cattle graze the reserve as large herbivores, which is what keeps the reedbed and grassland in balance. The red deer rut runs through September and October.</p>
           </div>
@@ -3974,7 +3979,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.flevonatuur.nl/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=52.3311&mlon=5.543#map=15/52.3311/5.543" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=52.3311,5.543" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-landal-waterparc-veluwemeer-netherlands" data-cat="stay" data-tier="1" data-price="100" data-region="6" data-certs="0" data-name="landal waterparc veluwemeer">
@@ -3990,7 +3995,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.landal.nl/nl-nl/bungalowparken/nederland/flevoland/waterparc-veluwemeer" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=52.4552&mlon=5.6922#map=15/52.4552/5.6922" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=52.4552,5.6922" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-molecaten-park-flevostrand-netherlands" data-cat="stay" data-tier="1" data-price="100" data-region="6" data-certs="0" data-name="molecaten park flevostrand">
@@ -4006,7 +4011,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.molecaten.nl/flevostrand" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=52.4552&mlon=5.6922#map=15/52.4552/5.6922" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=52.4552,5.6922" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-rcn-zeewolde-netherlands" data-cat="stay" data-tier="1" data-price="100" data-region="6" data-certs="0" data-name="rcn zeewolde">
@@ -4022,7 +4027,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.rcn.nl/nl/vakantieparken/nederland/flevoland/rcn-zeewolde" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=52.3311&mlon=5.543#map=15/52.3311/5.543" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=52.3311,5.543" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
           </div>
@@ -4047,7 +4052,7 @@
         <p class="where"><b>Look for:</b> <a href="/birds/middle-spotted-woodpecker/">Middle Spotted Woodpecker</a>, <a href="/birds/black-woodpecker/">Black Woodpecker</a>, <a href="/birds/woodlark/">Woodlark</a>, <a href="/birds/common-redstart/">Common Redstart</a></p>
 
         <p class="where parks"><b>National parks:</b> <a class="parklink" href="https://www.hogeveluwe.nl/" target="_blank" rel="noopener">Hoge Veluwe National Park</a>, <a class="parklink" href="https://www.natuurmonumenten.nl/natuurgebieden/nationaal-park-veluwezoom" target="_blank" rel="noopener">Veluwezoom National Park</a></p>
-        <p class="where stops"><b>Stops:</b> <span class="stop"><a class="parklink" href="https://www.natuurmonumenten.nl/natuurgebieden/deelerwoud" target="_blank" rel="noopener" title="Deelerwoud, official site">Deelerwoud</a>, unfenced old woodland and heath between Arnhem and Apeldoorn, quiet and free to walk</span> <span class="stop"><a class="parklink" href="https://www.natuurmonumenten.nl/natuurgebieden/planken-wambuis" target="_blank" rel="noopener" title="Planken Wambuis, official site">Planken Wambuis</a>, heath and drift sand with marked walks from the car park on the Ede road. Woodlark and nightjar</span> <span class="stop"><a class="parklink" href="https://www.hogeveluwe.nl/en" target="_blank" rel="noopener" title="De Hoge Veluwe, official site">De Hoge Veluwe</a>, a national park with sit-in wildlife hides on the heath, and the one park here that charges admission at the gate</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=52.174&amp;mlon=5.76#map=14/52.174/5.76" target="_blank" rel="noopener" title="Kootwijkerzand on a map">Kootwijkerzand</a>, the largest area of drift sand in western Europe, walked from the Kootwijk car park</span></p>
+        <p class="where stops"><b>Stops:</b> <span class="stop"><button type="button" class="stoplink" data-stop="stop-deelerwoud" title="Show Deelerwoud on the map">Deelerwoud</button>, unfenced old woodland and heath between Arnhem and Apeldoorn, quiet and free to walk</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-planken-wambuis" title="Show Planken Wambuis on the map">Planken Wambuis</button>, heath and drift sand with marked walks from the car park on the Ede road. Woodlark and nightjar</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-de-hoge-veluwe" title="Show De Hoge Veluwe on the map">De Hoge Veluwe</button>, a national park with sit-in wildlife hides on the heath, and the one park here that charges admission at the gate</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-kootwijkerzand" title="Show Kootwijkerzand on the map">Kootwijkerzand</button>, the largest area of drift sand in western Europe, walked from the Kootwijk car park</span></p>
 
         <p class="where"><b>Also covers:</b> Apeldoorn, Arnhem, Beekbergen, Elspeet, Garderen, Hoenderloo, Lunteren, Oosterbeek, Otterlo, Putten</p><p class="where wildlife"><b>Also watch for:</b> Red deer, wild boar, roe deer and mouflon all live here, and the reserve runs marked wildlife viewing points for them. The red deer rut in September and October is the loudest time of the year.</p>
           </div>
@@ -4079,7 +4084,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$50 to $150</span><span class="psep">/</span><span class="palt">€43 to €130</span><span class="psep">/</span><span class="palt">£37 to £111</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.bilderberg.nl/hotels/residence-groot-heideborgh" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=52.22&mlon=5.7035#map=15/52.22/5.7035" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=52.22,5.7035" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-camping-de-pampel-netherlands" data-cat="stay" data-tier="1" data-price="50" data-region="7" data-certs="1" data-name="camping de pampel">
@@ -4095,7 +4100,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$50 to $150</span><span class="psep">/</span><span class="palt">€43 to €130</span><span class="psep">/</span><span class="palt">£37 to £111</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.pampel.nl/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=52.1187&mlon=5.9054#map=15/52.1187/5.9054" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=52.1187,5.9054" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-bilderberg-hotel-t-speulderbos-netherlands" data-cat="stay" data-tier="2" data-price="100" data-region="7" data-certs="1" data-name="bilderberg hotel 't speulderbos">
@@ -4111,7 +4116,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.bilderberg.nl/hotels/speulderbos" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=52.239&mlon=5.7001#map=15/52.239/5.7001" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=52.239,5.7001" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-bilderberg-hotel-de-keizerskroon-netherlands" data-cat="stay" data-tier="2" data-price="100" data-region="7" data-certs="1" data-name="bilderberg hotel de keizerskroon">
@@ -4127,7 +4132,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.bilderberg.nl/hotels/hotel-de-keizerskroon" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=52.2343&mlon=5.9497#map=15/52.2343/5.9497" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=52.2343,5.9497" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-bospark-ede-netherlands" data-cat="stay" data-tier="1" data-price="100" data-region="7" data-certs="1" data-name="bospark ede">
@@ -4143,7 +4148,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.topparken.nl/bospark-ede/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=52.0458&mlon=5.6702#map=15/52.0458/5.6702" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=52.0458,5.6702" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-boutique-hotel-sterrenberg-netherlands" data-cat="stay" data-tier="3" data-price="100" data-region="7" data-certs="1" data-name="boutique hotel sterrenberg">
@@ -4159,7 +4164,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.sterrenberg.nl/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=52.1015&mlon=5.7721#map=15/52.1015/5.7721" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=52.1015,5.7721" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-hotel-de-bilderberg-netherlands" data-cat="stay" data-tier="2" data-price="100" data-region="7" data-certs="1" data-name="hotel de bilderberg">
@@ -4175,7 +4180,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.bilderberg.nl/hotels/hotel-de-bilderberg" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=51.9901&mlon=5.8177#map=15/51.9901/5.8177" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=51.9901,5.8177" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-hotel-de-werelt-netherlands" data-cat="stay" data-tier="1" data-price="100" data-region="7" data-certs="1" data-name="hotel de werelt">
@@ -4191,7 +4196,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.congrescentrum.com/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=52.0825&mlon=5.641#map=15/52.0825/5.641" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=52.0825,5.641" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-hotel-papendal-netherlands" data-cat="stay" data-tier="2" data-price="100" data-region="7" data-certs="1" data-name="hotel papendal">
@@ -4207,7 +4212,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.papendal.nl/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=52.0102&mlon=5.8242#map=15/52.0102/5.8242" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=52.0102,5.8242" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-landal-heideheuvel-netherlands" data-cat="stay" data-tier="1" data-price="100" data-region="7" data-certs="1" data-name="landal heideheuvel">
@@ -4223,7 +4228,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.landal.nl/parken/heideheuvel" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=52.1404&mlon=6.002#map=15/52.1404/6.002" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=52.1404,6.002" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-landal-heihaas-netherlands" data-cat="stay" data-tier="1" data-price="100" data-region="7" data-certs="1" data-name="landal heihaas">
@@ -4239,7 +4244,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.landal.nl/Heihaas" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=52.2459&mlon=5.6092#map=15/52.2459/5.6092" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=52.2459,5.6092" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-landgoed-mennorode-netherlands" data-cat="stay" data-tier="1" data-price="100" data-region="7" data-certs="1" data-name="landgoed mennorode">
@@ -4255,7 +4260,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.mennorode.nl/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=52.2789&mlon=5.806#map=15/52.2789/5.806" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=52.2789,5.806" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-recreatiepark-beekbergen-netherlands" data-cat="stay" data-tier="1" data-price="100" data-region="7" data-certs="1" data-name="recreatiepark beekbergen">
@@ -4271,7 +4276,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.topparken.nl/recreatiepark-beekbergen/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=52.1434&mlon=5.9622#map=15/52.1434/5.9622" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=52.1434,5.9622" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-resort-bosvallei-netherlands" data-cat="stay" data-tier="1" data-price="100" data-region="7" data-certs="1" data-name="resort bosvallei">
@@ -4287,7 +4292,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.topparken.nl/recreatiepark-t-gelloo" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=52.074&mlon=5.6621#map=15/52.074/5.6621" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=52.074,5.6621" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-resort-veluwe-netherlands" data-cat="stay" data-tier="2" data-price="100" data-region="7" data-certs="1" data-name="resort veluwe">
@@ -4303,7 +4308,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.topparken.nl/resort-veluwe" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=52.2378&mlon=5.6889#map=15/52.2378/5.6889" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=52.2378,5.6889" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-van-der-valk-hotel-arnhem-netherlands" data-cat="stay" data-tier="2" data-price="100" data-region="7" data-certs="1" data-name="van der valk hotel arnhem">
@@ -4319,7 +4324,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.hotelarnhem.nl/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=52.014&mlon=5.819#map=15/52.014/5.819" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=52.014,5.819" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-witte-berken-natuurhotel-netherlands" data-cat="stay" data-tier="1" data-price="100" data-region="7" data-certs="1" data-name="witte berken natuurhotel">
@@ -4335,7 +4340,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.witteberken.nl/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=52.3472&mlon=5.9387#map=15/52.3472/5.9387" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=52.3472,5.9387" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-zenzez-hotel-lounge-netherlands" data-cat="stay" data-tier="2" data-price="100" data-region="7" data-certs="1" data-name="zenzez hotel &amp; lounge">
@@ -4351,7 +4356,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.zenzezhotelandlounge.nl/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=52.2204&mlon=5.9587#map=15/52.2204/5.9587" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=52.2204,5.9587" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
           </div>
@@ -4376,7 +4381,7 @@
         <p class="where"><b>Look for:</b> <a href="/birds/northern-wheatear/">Northern Wheatear</a>, <a href="/birds/common-redstart/">Common Redstart</a>, <a href="/birds/european-stonechat/">European Stonechat</a>, <a href="/birds/eurasian-skylark/">Eurasian Skylark</a></p>
 
         <p class="where parks"><b>National park:</b> <a class="parklink" href="https://www.np-zuidkennemerland.nl" target="_blank" rel="noopener">Zuid-Kennemerland National Park</a></p>
-        <p class="where stops"><b>Stops:</b> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=52.462&amp;mlon=4.535#map=14/52.462/4.535" target="_blank" rel="noopener" title="The IJmuiden Zuidpier on a map">The IJmuiden Zuidpier</a>, a long stone pier at the harbour mouth, walked out from the car park. The classic Dutch seawatch in a northwesterly gale</span> <span class="stop"><a class="parklink" href="https://www.natuurmonumenten.nl/natuurgebieden/zwanenwater" target="_blank" rel="noopener" title="Het Zwanenwater, official site">Het Zwanenwater</a>, dune lakes north of Callantsoog with hides, entered for a small fee. Spoonbill colony and bittern</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=52.547&amp;mlon=4.618#map=14/52.547/4.618" target="_blank" rel="noopener" title="Castricum ringing station on a map">Castricum ringing station</a>, a bird ringing station in the dunes, open to visitors on set mornings. Migration in the hand</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=52.722&amp;mlon=4.642#map=14/52.722/4.642" target="_blank" rel="noopener" title="Camperduin and the Hondsbossche dunes on a map">Camperduin and the Hondsbossche dunes</a>, new dune and lagoon built on a rebuilt sea defence, with paths along the top</span></p>
+        <p class="where stops"><b>Stops:</b> <span class="stop"><button type="button" class="stoplink" data-stop="stop-the-ijmuiden-zuidpier" title="Show The IJmuiden Zuidpier on the map">The IJmuiden Zuidpier</button>, a long stone pier at the harbour mouth, walked out from the car park. The classic Dutch seawatch in a northwesterly gale</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-het-zwanenwater" title="Show Het Zwanenwater on the map">Het Zwanenwater</button>, dune lakes north of Callantsoog with hides, entered for a small fee. Spoonbill colony and bittern</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-castricum-ringing-station" title="Show Castricum ringing station on the map">Castricum ringing station</button>, a bird ringing station in the dunes, open to visitors on set mornings. Migration in the hand</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-camperduin-and-the-hondsbossche-dunes" title="Show Camperduin and the Hondsbossche dunes on the map">Camperduin and the Hondsbossche dunes</button>, new dune and lagoon built on a rebuilt sea defence, with paths along the top</span></p>
 
         <p class="where"><b>Also covers:</b> Bergen aan Zee, Callantsoog, Castricum, Egmond aan den Hoef, Julianadorp, Overveen, Schoorl</p><p class="where wildlife"><b>Also watch for:</b> European bison graze the Kraansvlak enclosure at Zuid-Kennemerland, one of the few free-ranging herds in western Europe, alongside fallow deer and Konik horses. Rabbits keep the dune grassland short.</p>
           </div>
@@ -4408,7 +4413,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$50 to $150</span><span class="psep">/</span><span class="palt">€43 to €130</span><span class="psep">/</span><span class="palt">£37 to £111</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://denollen.nl/nl/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=52.8406&mlon=4.7194#map=15/52.8406/4.7194" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=52.8406,4.7194" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-kennemer-duincamping-bakkum-netherlands" data-cat="stay" data-tier="1" data-price="50" data-region="8" data-certs="1" data-name="kennemer duincamping bakkum">
@@ -4424,7 +4429,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$50 to $150</span><span class="psep">/</span><span class="palt">€43 to €130</span><span class="psep">/</span><span class="palt">£37 to £111</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.campingbakkum.nl/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=52.5619&mlon=4.6328#map=15/52.5619/4.6328" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=52.5619,4.6328" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-kennemer-duincamping-de-lakens-netherlands" data-cat="stay" data-tier="1" data-price="50" data-region="8" data-certs="1" data-name="kennemer duincamping de lakens">
@@ -4440,7 +4445,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$50 to $150</span><span class="psep">/</span><span class="palt">€43 to €130</span><span class="psep">/</span><span class="palt">£37 to £111</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.kennemerduincampings.nl/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=52.4085&mlon=4.5546#map=15/52.4085/4.5546" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=52.4085,4.5546" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-europarcs-de-woudhoeve-netherlands" data-cat="stay" data-tier="1" data-price="100" data-region="8" data-certs="1" data-name="europarcs de woudhoeve">
@@ -4456,7 +4461,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.woudhoeve.nl/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=52.6332&mlon=4.6646#map=15/52.6332/4.6646" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=52.6332,4.6646" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-europarcs-koningshof-netherlands" data-cat="stay" data-tier="1" data-price="100" data-region="8" data-certs="1" data-name="europarcs koningshof">
@@ -4472,7 +4477,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.europarcs.nl/vakantieparken/nederland/noord-holland/koningshof/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=52.7009&mlon=4.6939#map=15/52.7009/4.6939" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=52.7009,4.6939" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-landal-golf-beach-resort-ooghduyne-netherlands" data-cat="stay" data-tier="2" data-price="100" data-region="8" data-certs="1" data-name="landal golf &amp; beach resort ooghduyne">
@@ -4488,7 +4493,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.ooghduyne.com/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=52.8934&mlon=4.7292#map=15/52.8934/4.7292" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=52.8934,4.7292" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-natuurvriendenhuis-het-zeehuis-netherlands" data-cat="stay" data-tier="1" data-price="100" data-region="8" data-certs="1" data-name="natuurvriendenhuis het zeehuis">
@@ -4504,7 +4509,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.nivon.nl/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=52.666&mlon=4.6359#map=15/52.666/4.6359" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=52.666,4.6359" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-strandhotel-camperduin-netherlands" data-cat="stay" data-tier="2" data-price="100" data-region="8" data-certs="1" data-name="strandhotel camperduin">
@@ -4520,7 +4525,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.strandhotel-camperduin.nl/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=52.7263&mlon=4.6447#map=15/52.7263/4.6447" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=52.7263,4.6447" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
           </div>
@@ -4545,7 +4550,7 @@
         <p class="where"><b>Look for:</b> <a href="/birds/sandwich-tern/">Sandwich Tern</a>, <a href="/birds/common-hoopoe/">Common Hoopoe</a>, <a href="/birds/common-redstart/">Common Redstart</a>, <a href="/birds/icterine-warbler/">Icterine Warbler</a></p>
 
         <p class="where parks"><b>National park:</b> <a class="parklink" href="https://www.nationaalparkhollandseduinen.nl" target="_blank" rel="noopener">Hollandse Duinen National Park</a></p>
-        <p class="where stops"><b>Stops:</b> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=52.1352&amp;mlon=4.3372#map=14/52.1352/4.3372" target="_blank" rel="noopener" title="Meijendel on a map">Meijendel</a>, dune valleys and water channels behind Wassenaar, free and open, with a visitor centre and marked walks</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=52.19&amp;mlon=4.41#map=14/52.19/4.41" target="_blank" rel="noopener" title="Berkheide on a map">Berkheide</a>, older, quieter dune between Katwijk and Wassenaar. Nightingale in May</span> <span class="stop"><a class="parklink" href="https://www.natuurmonumenten.nl/natuurgebieden/kwade-hoek" target="_blank" rel="noopener" title="Kwade Hoek, official site">Kwade Hoek</a>, a sandy spit at the Haringvliet mouth, walked from the Ouddorp side. Terns and waders</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=51.756&amp;mlon=3.83#map=14/51.756/3.83" target="_blank" rel="noopener" title="The Brouwersdam on a map">The Brouwersdam</a>, the dam between Goeree and Schouwen, scanned from the pull-ins for divers, grebes and sea duck in winter</span></p>
+        <p class="where stops"><b>Stops:</b> <span class="stop"><button type="button" class="stoplink" data-stop="stop-meijendel" title="Show Meijendel on the map">Meijendel</button>, dune valleys and water channels behind Wassenaar, free and open, with a visitor centre and marked walks</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-berkheide" title="Show Berkheide on the map">Berkheide</button>, older, quieter dune between Katwijk and Wassenaar. Nightingale in May</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-kwade-hoek" title="Show Kwade Hoek on the map">Kwade Hoek</button>, a sandy spit at the Haringvliet mouth, walked from the Ouddorp side. Terns and waders</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-the-brouwersdam" title="Show The Brouwersdam on the map">The Brouwersdam</button>, the dam between Goeree and Schouwen, scanned from the pull-ins for divers, grebes and sea duck in winter</span></p>
 
         <p class="where"><b>Also covers:</b> Katwijk aan Zee, Noordwijk, Rockanje, Sassenheim, Wassenaar</p><p class="where wildlife"><b>Also watch for:</b> Fallow deer and roe deer are common through Meijendel and the Wassenaar estates, and foxes hunt the dune slacks in daylight. The dune ponds hold a strong amphibian list in spring.</p>
           </div>
@@ -4577,7 +4582,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$50 to $150</span><span class="psep">/</span><span class="palt">€43 to €130</span><span class="psep">/</span><span class="palt">£37 to £111</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.zuidduinen.com/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=52.1924&mlon=4.3877#map=15/52.1924/4.3877" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=52.1924,4.3877" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-europarcs-noordwijkse-duinen-netherlands" data-cat="stay" data-tier="1" data-price="100" data-region="9" data-certs="1" data-name="europarcs noordwijkse duinen">
@@ -4593,7 +4598,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.noordwijkseduinen.nl/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=52.2866&mlon=4.4899#map=15/52.2866/4.4899" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=52.2866,4.4899" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-molecaten-park-rondeweibos-netherlands" data-cat="stay" data-tier="1" data-price="100" data-region="9" data-certs="1" data-name="molecaten park rondeweibos">
@@ -4609,7 +4614,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.molecaten.nl/rondeweibos" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=51.8545&mlon=4.081#map=15/51.8545/4.081" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=51.8545,4.081" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-molecaten-park-waterbos-netherlands" data-cat="stay" data-tier="1" data-price="100" data-region="9" data-certs="1" data-name="molecaten park waterbos">
@@ -4625,7 +4630,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.molecaten.nl/waterbos" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=51.8825&mlon=4.0534#map=15/51.8825/4.0534" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=51.8825,4.0534" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-palace-hotel-1-netherlands" data-cat="stay" data-tier="2" data-price="100" data-region="9" data-certs="1" data-name="palace hotel 1">
@@ -4641,7 +4646,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.radissonblu.com/palacehotel-noordwijk" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=52.2699&mlon=4.4527#map=15/52.2699/4.4527" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=52.2699,4.4527" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-van-der-valk-hotel-den-haag-wassenaar-netherlands" data-cat="stay" data-tier="2" data-price="100" data-region="9" data-certs="1" data-name="van der valk hotel den haag wassenaar">
@@ -4657,7 +4662,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.hoteldenhaagwassenaar.nl/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=52.1051&mlon=4.3608#map=15/52.1051/4.3608" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=52.1051,4.3608" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-van-der-valk-hotel-sassenheim-netherlands" data-cat="stay" data-tier="2" data-price="100" data-region="9" data-certs="1" data-name="van der valk hotel sassenheim">
@@ -4673,7 +4678,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.hotelsassenheim.nl/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=52.2124&mlon=4.5044#map=15/52.2124/4.5044" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=52.2124,4.5044" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
           </div>
@@ -4698,7 +4703,7 @@
         <p class="where"><b>Look for:</b> <a href="/birds/white-tailed-eagle/">White-tailed Eagle</a>, <a href="/birds/purple-heron/">Purple Heron</a>, <a href="/birds/common-kingfisher/">Common Kingfisher</a>, <a href="/birds/great-egret/">Great Egret</a></p>
 
         <p class="where parks"><b>National park:</b> <a class="parklink" href="https://np-debiesbosch.nl/" target="_blank" rel="noopener">De Biesbosch National Park</a></p>
-        <p class="where stops"><b>Stops:</b> <span class="stop"><a class="parklink" href="https://www.np-debiesbosch.nl/" target="_blank" rel="noopener" title="Drimmelen boat routes, official site">Drimmelen boat routes</a>, quiet electric boats into the creeks of the Biesbosch, leaving from Drimmelen. The only way to see the interior</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=51.73&amp;mlon=4.83#map=14/51.73/4.83" target="_blank" rel="noopener" title="The Aakvlaai on a map">The Aakvlaai</a>, shallow water and willow scrub near Drimmelen, walked from the car park. White-tailed Eagle territory</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=51.76&amp;mlon=4.77#map=14/51.76/4.77" target="_blank" rel="noopener" title="The Nieuwe Merwede banks on a map">The Nieuwe Merwede banks</a>, tidal freshwater edge along the main channel, birded from the dike path</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=51.8695&amp;mlon=6.0097#map=14/51.8695/6.0097" target="_blank" rel="noopener" title="De Millingerwaard on a map">De Millingerwaard</a>, floodplain further up the Waal with wild grazing and marked walks, free and open</span></p>
+        <p class="where stops"><b>Stops:</b> <span class="stop"><button type="button" class="stoplink" data-stop="stop-drimmelen-boat-routes" title="Show Drimmelen boat routes on the map">Drimmelen boat routes</button>, quiet electric boats into the creeks of the Biesbosch, leaving from Drimmelen. The only way to see the interior</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-the-aakvlaai" title="Show The Aakvlaai on the map">The Aakvlaai</button>, shallow water and willow scrub near Drimmelen, walked from the car park. White-tailed Eagle territory</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-the-nieuwe-merwede-banks" title="Show The Nieuwe Merwede banks on the map">The Nieuwe Merwede banks</button>, tidal freshwater edge along the main channel, birded from the dike path</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-de-millingerwaard" title="Show De Millingerwaard on the map">De Millingerwaard</button>, floodplain further up the Waal with wild grazing and marked walks, free and open</span></p>
 
         <p class="where"><b>Also covers:</b> Wageningen</p><p class="where wildlife"><b>Also watch for:</b> Beaver was reintroduced here in 1988 and the lodges and gnawed willow are easy to find from a boat. Otter and roe deer both use the same creeks, and dusk is when the beavers move.</p>
           </div>
@@ -4720,7 +4725,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.hoteldenieuwewereld.nl/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=51.9663&mlon=5.6663#map=15/51.9663/5.6663" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=51.9663,5.6663" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
           </div>
@@ -4745,7 +4750,7 @@
         <p class="where"><b>Look for:</b> <a href="/birds/kentish-plover/">Kentish Plover</a>, <a href="/birds/pied-avocet/">Pied Avocet</a>, <a href="/birds/eurasian-curlew/">Eurasian Curlew</a>, <a href="/birds/dunlin/">Dunlin</a></p>
 
         <p class="where parks"><b>National park:</b> <a class="parklink" href="https://www.np-oosterschelde.nl/" target="_blank" rel="noopener">Oosterschelde National Park</a></p>
-        <p class="where stops"><b>Stops:</b> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=51.66&amp;mlon=3.93#map=14/51.66/3.93" target="_blank" rel="noopener" title="Prunje polder on a map">Prunje polder</a>, flooded fields inland from the Oosterschelde, viewed from the road. The best wader field in Zeeland</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=51.7&amp;mlon=3.7#map=14/51.7/3.7" target="_blank" rel="noopener" title="Kop van Schouwen on a map">Kop van Schouwen</a>, dune and pine at the island tip near Burgh-Haamstede, with a migration watchpoint</span> <span class="stop"><a class="parklink" href="https://www.natuurmonumenten.nl/natuurgebieden/yerseke-moer" target="_blank" rel="noopener" title="Yerseke Moer, official site">Yerseke Moer</a>, old salt marsh relief grazed by geese, walked on marked paths</span> <span class="stop"><a class="parklink" href="https://www.waterdunen.com/" target="_blank" rel="noopener" title="Waterdunen, official site">Waterdunen</a>, a new tidal reserve at Breskens with hides over the lagoon, free and open</span></p>
+        <p class="where stops"><b>Stops:</b> <span class="stop"><button type="button" class="stoplink" data-stop="stop-prunje-polder" title="Show Prunje polder on the map">Prunje polder</button>, flooded fields inland from the Oosterschelde, viewed from the road. The best wader field in Zeeland</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-kop-van-schouwen" title="Show Kop van Schouwen on the map">Kop van Schouwen</button>, dune and pine at the island tip near Burgh-Haamstede, with a migration watchpoint</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-yerseke-moer" title="Show Yerseke Moer on the map">Yerseke Moer</button>, old salt marsh relief grazed by geese, walked on marked paths</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-waterdunen" title="Show Waterdunen on the map">Waterdunen</button>, a new tidal reserve at Breskens with hides over the lagoon, free and open</span></p>
 
         <p class="where"><b>Also covers:</b> Domburg, GOES, Haamstede, Kamperland, Ouddorp</p><p class="where wildlife"><b>Also watch for:</b> Harbour and grey seals rest on the banks inside the Oosterschelde and are visible from the shore at low water. Harbour porpoise are regular in the tidal channels through the winter.</p>
           </div>
@@ -4777,7 +4782,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$50 to $150</span><span class="psep">/</span><span class="palt">€43 to €130</span><span class="psep">/</span><span class="palt">£37 to £111</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.landal.nl/nl-nl/bungalowparken/nederland/zeeland/residence-t-hof-van-haamstede" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=51.6834&mlon=3.7217#map=15/51.6834/3.7217" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=51.6834,3.7217" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-badhotel-domburg-netherlands" data-cat="stay" data-tier="2" data-price="100" data-region="11" data-certs="1" data-name="badhotel domburg">
@@ -4793,7 +4798,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.badhotel.com/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=51.5648&mlon=3.4993#map=15/51.5648/3.4993" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=51.5648,3.4993" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-boutique-hotel-rijks-netherlands" data-cat="stay" data-tier="3" data-price="100" data-region="11" data-certs="1" data-name="boutique hotel rijks">
@@ -4809,7 +4814,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.kloegcollection.com/nl/overnachten/boutique-hotel-rijks" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=51.5031&mlon=3.8898#map=15/51.5031/3.8898" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=51.5031,3.8898" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-landal-duinpark-t-hof-van-haamstede-netherlands" data-cat="stay" data-tier="1" data-price="100" data-region="11" data-certs="1" data-name="landal duinpark 't hof van haamstede">
@@ -4825,7 +4830,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.landal.nl/nl-nl/bungalowparken/nederland/zeeland/duinpark-t-hof-van-haamstede" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=51.6859&mlon=3.7249#map=15/51.6859/3.7249" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=51.6859,3.7249" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-landal-resort-haamstede-netherlands" data-cat="stay" data-tier="2" data-price="100" data-region="11" data-certs="1" data-name="landal resort haamstede">
@@ -4841,7 +4846,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.landal.nl/parken/resort-haamstede" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=51.6834&mlon=3.7285#map=15/51.6834/3.7285" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=51.6834,3.7285" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-landal-strand-resort-ouddorp-duin-netherlands" data-cat="stay" data-tier="2" data-price="100" data-region="11" data-certs="1" data-name="landal strand resort ouddorp duin">
@@ -4857,7 +4862,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.landal.nl/nl-nl/bungalowparken/nederland/zuid-holland/strand-resort-ouddorp-duin" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=51.8224&mlon=3.9076#map=15/51.8224/3.9076" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=51.8224,3.9076" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-landal-villapark-livingstone-netherlands" data-cat="stay" data-tier="2" data-price="100" data-region="11" data-certs="1" data-name="landal villapark livingstone">
@@ -4873,7 +4878,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.landal.nl/parken/villapark-livingstone/praktische-info" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=51.6856&mlon=3.7288#map=15/51.6856/3.7288" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=51.6856,3.7288" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-rcn-de-schotsman-netherlands" data-cat="stay" data-tier="1" data-price="100" data-region="11" data-certs="1" data-name="rcn de schotsman">
@@ -4889,7 +4894,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.rcn.nl/nl/vakantieparken/nederland/zeeland" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=51.5679&mlon=3.6622#map=15/51.5679/3.6622" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=51.5679,3.6622" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-rcn-toppershoedje-netherlands" data-cat="stay" data-tier="1" data-price="100" data-region="11" data-certs="1" data-name="rcn toppershoedje">
@@ -4905,7 +4910,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.rcn.nl/nl/vakantieparken/nederland/zuid-holland/rcn-toppershoedje" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=51.8231&mlon=3.9139#map=15/51.8231/3.9139" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=51.8231,3.9139" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
           </div>
@@ -4930,7 +4935,7 @@
         <p class="where"><b>Look for:</b> <a href="/birds/red-backed-shrike/">Red-backed Shrike</a>, <a href="/birds/middle-spotted-woodpecker/">Middle Spotted Woodpecker</a>, <a href="/birds/common-redstart/">Common Redstart</a>, <a href="/birds/eurasian-skylark/">Eurasian Skylark</a></p>
 
         <p class="where parks"><b>National parks:</b> <a class="parklink" href="https://nationaalpark.nl/park/de-maasduinen" target="_blank" rel="noopener">De Maasduinen National Park</a>, <a class="parklink" href="https://www.natuurparkenlimburg.nl/np/de-groote-peel" target="_blank" rel="noopener">De Groote Peel National Park</a>, <a class="parklink" href="https://limburgsemaasterrassen.nl/nl" target="_blank" rel="noopener">Meinweg National Park</a></p>
-        <p class="where stops"><b>Stops:</b> <span class="stop"><a class="parklink" href="https://www.np-degrootepeel.nl/" target="_blank" rel="noopener" title="De Groote Peel, official site">De Groote Peel</a>, a national park of raised bog on the Brabant border, with marked walks and a crane roost in autumn</span> <span class="stop"><a class="parklink" href="https://www.np-demeinweg.nl/" target="_blank" rel="noopener" title="De Meinweg, official site">De Meinweg</a>, a national park of heath and terrace woodland on the German border. Nightjar, and adders on the paths</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=50.79&amp;mlon=5.9#map=14/50.79/5.9" target="_blank" rel="noopener" title="The Gulp and Geul valleys on a map">The Gulp and Geul valleys</a>, stream valleys in the south hills with public footpaths through old oak. Middle Spotted Woodpecker</span> <span class="stop"><a class="parklink" href="https://www.openstreetmap.org/?mlat=50.83&amp;mlon=5.69#map=14/50.83/5.69" target="_blank" rel="noopener" title="The ENCI quarry, Maastricht on a map">The ENCI quarry, Maastricht</a>, a former marl quarry now open as a nature area, with eagle-owls nesting on its faces</span></p>
+        <p class="where stops"><b>Stops:</b> <span class="stop"><button type="button" class="stoplink" data-stop="stop-de-groote-peel" title="Show De Groote Peel on the map">De Groote Peel</button>, a national park of raised bog on the Brabant border, with marked walks and a crane roost in autumn</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-de-meinweg" title="Show De Meinweg on the map">De Meinweg</button>, a national park of heath and terrace woodland on the German border. Nightjar, and adders on the paths</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-the-gulp-and-geul-valleys" title="Show The Gulp and Geul valleys on the map">The Gulp and Geul valleys</button>, stream valleys in the south hills with public footpaths through old oak. Middle Spotted Woodpecker</span> <span class="stop"><button type="button" class="stoplink" data-stop="stop-the-enci-quarry-maastricht" title="Show The ENCI quarry, Maastricht on the map">The ENCI quarry, Maastricht</button>, a former marl quarry now open as a nature area, with eagle-owls nesting on its faces</span></p>
 
         <p class="where"><b>Also covers:</b> Maastricht, Roermond, Slenaken, Vaals, Valkenburg, Venlo</p><p class="where wildlife"><b>Also watch for:</b> Badger and roe deer work the hedged fields, and wildcat has returned to the woods along the Belgian and German border. Fire salamanders emerge on wet nights from April to October.</p>
           </div>
@@ -4962,7 +4967,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.bilderberg.nl/hotels/hotel-de-bovenste-molen" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=51.3495&mlon=6.175#map=15/51.3495/6.175" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=51.3495,6.175" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-bilderberg-kasteel-vaalsbroek-netherlands" data-cat="stay" data-tier="1" data-price="100" data-region="12" data-certs="1" data-name="bilderberg kasteel vaalsbroek">
@@ -4978,7 +4983,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.bilderberg.nl/hotels/kasteel-vaalsbroek" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=50.7679&mlon=5.9961#map=15/50.7679/5.9961" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=50.7679,5.9961" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-buitenplaats-vaeshartelt-netherlands" data-cat="stay" data-tier="1" data-price="100" data-region="12" data-certs="1" data-name="buitenplaats vaeshartelt">
@@ -4994,7 +4999,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.vaeshartelt.nl/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=50.8795&mlon=5.7262#map=15/50.8795/5.7262" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=50.8795,5.7262" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-dormio-resort-maastricht-netherlands" data-cat="stay" data-tier="2" data-price="100" data-region="12" data-certs="1" data-name="dormio resort maastricht">
@@ -5010,7 +5015,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.dormio.nl/vakantie/resorts/maastricht" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=50.8547&mlon=5.646#map=15/50.8547/5.646" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=50.8547,5.646" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-hotel-klein-zwitserland-netherlands" data-cat="stay" data-tier="2" data-price="100" data-region="12" data-certs="1" data-name="hotel klein zwitserland">
@@ -5026,7 +5031,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.kleinzwitserland.com/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=50.766&mlon=5.8633#map=15/50.766/5.8633" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=50.766,5.8633" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-landal-hoog-vaals-netherlands" data-cat="stay" data-tier="1" data-price="100" data-region="12" data-certs="1" data-name="landal hoog vaals">
@@ -5042,7 +5047,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.landal.nl/hoogvaals" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=50.774&mlon=6.0054#map=15/50.774/6.0054" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=50.774,6.0054" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-landal-kasteeldomein-de-cauberg-netherlands" data-cat="stay" data-tier="1" data-price="100" data-region="12" data-certs="1" data-name="landal kasteeldomein de cauberg">
@@ -5058,7 +5063,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.landal.nl/cauberg" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=50.8565&mlon=5.8228#map=15/50.8565/5.8228" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=50.8565,5.8228" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-van-der-valk-het-arresthuis-netherlands" data-cat="stay" data-tier="1" data-price="100" data-region="12" data-certs="1" data-name="van der valk het arresthuis">
@@ -5074,7 +5079,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.hetarresthuis.nl/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=51.1947&mlon=5.9894#map=15/51.1947/5.9894" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=51.1947,5.9894" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
       <article class="trip" id="lodge-van-der-valk-theaterhotel-de-oranjerie-netherlands" data-cat="stay" data-tier="2" data-price="100" data-region="12" data-certs="1" data-name="van der valk theaterhotel de oranjerie">
@@ -5090,7 +5095,7 @@
         <div class="trip-side">
           <p class="priceline"><span class="pmain">$100 to $300</span><span class="psep">/</span><span class="palt">€86 to €259</span><span class="psep">/</span><span class="palt">£74 to £222</span> <span class="pmeta">/ night</span></p>
           <a class="watch-link" href="https://www.theaterhotelroermond.nl/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.openstreetmap.org/?mlat=51.1917&mlon=5.9893#map=15/51.1917/5.9893" target="_blank" rel="noopener">See on a map</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=51.1917,5.9893" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
           </div>
@@ -5544,6 +5549,7 @@
       var LODGES = [["boutique-hotel-texel-netherlands",4.9218,53.0768,"Boutique Hotel Texel","De Cocksdorp Texel","#2E86AB","$100 to $300 / €86 to €259 / £74 to £222 / night"],["vjt-vof-op-oost-gastrofarm-texel-netherlands",4.8898,53.0768,"Vjt Vof Op Oost Gastrofarm Texel","Oosterend","#2E86AB","$200 to $600 / €173 to €518 / £148 to £444 / night"],["palace-hotel-1-netherlands",4.4527,52.2699,"Palace Hotel 1","Noordwijk aan zee","#4E7AC7","$100 to $300 / €86 to €259 / £74 to £222 / night"],["residence-terschelling-wellness-waddenresort-netherlands",5.3675,53.3339,"Residence Terschelling Wellness Waddenresort","Midsland","#2E86AB","$100 to $300 / €86 to €259 / £74 to £222 / night"],["westcord-aparthotel-boschrijck-netherlands",5.3355,53.3339,"Westcord Aparthotel Boschrijck","West-Terschelling","#2E86AB","$100 to $300 / €86 to €259 / £74 to £222 / night"],["best-western-hotel-groningen-centre-netherlands",6.584,53.2191,"Best Western Hotel Groningen Centre","Groningen","#C0392B","$100 to $300 / €86 to €259 / £74 to £222 / night"],["best-western-plus-hotel-groningen-plaza-netherlands",6.56,53.2295,"Best Western Plus Hotel Groningen Plaza","Groningen","#C0392B","$100 to $300 / €86 to €259 / £74 to £222 / night"],["the-market-hotel-netherlands",6.56,53.2087,"The Market Hotel","Groningen","#C0392B","$100 to $300 / €86 to €259 / £74 to £222 / night"],["boutique-hotel-rijks-netherlands",3.8898,51.5031,"Boutique Hotel Rijks","GOES","#B03A2E","$100 to $300 / €86 to €259 / £74 to £222 / night"],["boutique-hotel-sterrenberg-netherlands",5.7721,52.1015,"Boutique Hotel Sterrenberg","Otterlo","#8A5A44","$100 to $300 / €86 to €259 / £74 to £222 / night"],["notiz-hotel-netherlands",5.7919,53.2006,"Notiz Hotel","Leeuwarden","#D68910","$100 to $300 / €86 to €259 / £74 to £222 / night"],["van-der-valk-hoorn-netherlands",5.0736,52.6533,"Van Der Valk Hoorn","Hoorn","#7D5BA6","$100 to $300 / €86 to €259 / £74 to £222 / night"],["rijnijsselhotel-de-nieuwe-wereld-netherlands",5.6663,51.9663,"Rijnijsselhotel De Nieuwe Wereld","Wageningen","#96762B","$100 to $300 / €86 to €259 / £74 to £222 / night"],["camping-de-zeehoeve-netherlands",5.4142,53.1752,"Camping De Zeehoeve","Harlingen","#0F8B8D","$50 to $150 / €43 to €130 / £37 to £111 / night"],["landal-suyderoogh-netherlands",6.2142,53.4036,"Landal Suyderoogh","Lauwersoog","#0F8B8D","$100 to $300 / €86 to €259 / £74 to £222 / night"],["europarcs-enkhuizerstrand-netherlands",5.3207,52.7577,"Europarcs Enkhuizerstrand","Enkhuizen","#7D5BA6","$100 to $300 / €86 to €259 / £74 to £222 / night"],["europarcs-ijsselmeer-bv-netherlands",5.1686,52.7907,"Europarcs Ijsselmeer Bv","Medemblik","#7D5BA6","$100 to $300 / €86 to €259 / £74 to £222 / night"],["europarcs-het-markermeer-netherlands",5.2498,52.6988,"Europarcs Het Markermeer","Bovenkarspel","#7D5BA6","$100 to $300 / €86 to €259 / £74 to £222 / night"],["molecaten-park-flevostrand-netherlands",5.7082,52.4552,"Molecaten Park Flevostrand","Biddinghuizen","#386641","$100 to $300 / €86 to €259 / £74 to £222 / night"],["landal-waterparc-veluwemeer-netherlands",5.6762,52.4552,"Landal Waterparc Veluwemeer","Biddinghuizen","#386641","$100 to $300 / €86 to €259 / £74 to £222 / night"],["rcn-zeewolde-netherlands",5.559,52.3311,"Rcn Zeewolde","Zeewolde","#386641","$100 to $300 / €86 to €259 / £74 to £222 / night"],["flevonatuur-netherlands",5.527,52.3311,"Flevonatuur","Zeewolde","#386641","$100 to $300 / €86 to €259 / £74 to £222 / night"],["badhotel-domburg-netherlands",3.4993,51.5648,"Badhotel Domburg","Domburg","#B03A2E","$100 to $300 / €86 to €259 / £74 to £222 / night"],["bilderberg-hotel-de-bovenste-molen-netherlands",6.175,51.3495,"Bilderberg Hotel De Bovenste Molen","Venlo","#1F6F5C","$100 to $300 / €86 to €259 / £74 to £222 / night"],["bilderberg-hotel-de-keizerskroon-netherlands",5.9497,52.2343,"Bilderberg Hotel De Keizerskroon","Apeldoorn","#8A5A44","$100 to $300 / €86 to €259 / £74 to £222 / night"],["bilderberg-hotel-t-speulderbos-netherlands",5.7001,52.239,"Bilderberg Hotel 't Speulderbos","Garderen","#8A5A44","$100 to $300 / €86 to €259 / £74 to £222 / night"],["bilderberg-kasteel-vaalsbroek-netherlands",5.9961,50.7679,"Bilderberg Kasteel Vaalsbroek","Vaals","#1F6F5C","$100 to $300 / €86 to €259 / £74 to £222 / night"],["bilderberg-residence-groot-heideborgh-netherlands",5.7035,52.22,"Bilderberg Résidence Groot Heideborgh","Garderen","#8A5A44","$50 to $150 / €43 to €130 / £37 to £111 / night"],["buitenplaats-vaeshartelt-netherlands",5.7262,50.8795,"Buitenplaats Vaeshartelt","Maastricht","#1F6F5C","$100 to $300 / €86 to €259 / £74 to £222 / night"],["camping-de-nollen-netherlands",4.7194,52.8406,"Camping De Nollen","Callantsoog","#C2185B","$50 to $150 / €43 to €130 / £37 to £111 / night"],["camping-de-pampel-netherlands",5.9054,52.1187,"Camping De Pampel","Hoenderloo","#8A5A44","$50 to $150 / €43 to €130 / £37 to £111 / night"],["camping-kogerstrand-netherlands",4.758,53.1008,"Camping Kogerstrand","de Koog","#2E86AB","$50 to $150 / €43 to €130 / £37 to £111 / night"],["city-hotel-de-jonge-netherlands",6.5634,52.995,"City Hotel de Jonge","Assen","#C0392B","$100 to $300 / €86 to €259 / £74 to £222 / night"],["hotel-de-werelt-netherlands",5.641,52.0825,"Hotel De Werelt","Lunteren","#8A5A44","$100 to $300 / €86 to €259 / £74 to £222 / night"],["dormio-resort-maastricht-netherlands",5.646,50.8547,"Dormio Resort Maastricht","Maastricht","#1F6F5C","$100 to $300 / €86 to €259 / £74 to £222 / night"],["europarcs-koningshof-netherlands",4.6939,52.7009,"EuroParcs Koningshof","Schoorl","#C2185B","$100 to $300 / €86 to €259 / £74 to £222 / night"],["camping-de-haarsluis-netherlands",6.3635,52.8684,"Camping de Haarsluis","Dwingeloo","#C0392B","$100 to $300 / €86 to €259 / £74 to £222 / night"],["hotel-de-bilderberg-netherlands",5.8177,51.9901,"Hotel De Bilderberg","Oosterbeek","#8A5A44","$100 to $300 / €86 to €259 / £74 to £222 / night"],["hotel-de-walvisvaarder-netherlands",5.3254,53.3941,"Hotel De Walvisvaarder","Terschelling","#2E86AB","$100 to $300 / €86 to €259 / £74 to £222 / night"],["van-der-valk-hotel-den-haag-wassenaar-netherlands",4.3608,52.1051,"Van der Valk Hotel Den Haag Wassenaar","Wassenaar","#4E7AC7","$100 to $300 / €86 to €259 / £74 to £222 / night"],["hotel-klein-zwitserland-netherlands",5.8633,50.766,"Hotel Klein Zwitserland","Slenaken","#1F6F5C","$100 to $300 / €86 to €259 / £74 to £222 / night"],["hotel-papendal-netherlands",5.8242,52.0102,"Hotel Papendal","Arnhem","#8A5A44","$100 to $300 / €86 to €259 / £74 to £222 / night"],["kampeerterrein-stortemelk-netherlands",5.0801,53.3046,"Kampeerterrein Stortemelk","Vlieland","#2E86AB","$100 to $300 / €86 to €259 / £74 to £222 / night"],["kennemer-duincamping-bakkum-netherlands",4.6328,52.5619,"Kennemer Duincamping Bakkum","Castricum","#C2185B","$50 to $150 / €43 to €130 / £37 to £111 / night"],["kennemer-duincamping-de-lakens-netherlands",4.5546,52.4085,"Kennemer Duincamping De Lakens","Overveen","#C2185B","$50 to $150 / €43 to €130 / £37 to £111 / night"],["landal-duinpark-t-hof-van-haamstede-netherlands",3.7249,51.6859,"Landal Duinpark 't Hof van Haamstede","Haamstede","#B03A2E","$100 to $300 / €86 to €259 / £74 to £222 / night"],["landal-golf-beach-resort-ooghduyne-netherlands",4.7292,52.8934,"Landal Golf & Beach Resort Ooghduyne","Julianadorp","#C2185B","$100 to $300 / €86 to €259 / £74 to £222 / night"],["landal-heideheuvel-netherlands",6.002,52.1404,"Landal Heideheuvel","Beekbergen","#8A5A44","$100 to $300 / €86 to €259 / £74 to £222 / night"],["landal-heihaas-netherlands",5.6092,52.2459,"Landal Heihaas","Putten","#8A5A44","$100 to $300 / €86 to €259 / £74 to £222 / night"],["landal-hoog-vaals-netherlands",6.0054,50.774,"Landal Hoog Vaals","Vaals","#1F6F5C","$100 to $300 / €86 to €259 / £74 to £222 / night"],["landal-kasteeldomein-de-cauberg-netherlands",5.8228,50.8565,"Landal Kasteeldomein De Cauberg","Valkenburg","#1F6F5C","$100 to $300 / €86 to €259 / £74 to £222 / night"],["landal-residence-t-hof-van-haamstede-netherlands",3.7217,51.6834,"Landal Résidence 't Hof van Haamstede","Haamstede","#B03A2E","$50 to $150 / €43 to €130 / £37 to £111 / night"],["landal-resort-haamstede-netherlands",3.7285,51.6834,"Landal Resort Haamstede","Haamstede","#B03A2E","$100 to $300 / €86 to €259 / £74 to £222 / night"],["landal-strand-resort-ouddorp-duin-netherlands",3.9076,51.8224,"Landal Strand Resort Ouddorp Duin","Ouddorp","#B03A2E","$100 to $300 / €86 to €259 / £74 to £222 / night"],["landal-villapark-livingstone-netherlands",3.7288,51.6856,"Landal Villapark Livingstone","Haamstede","#B03A2E","$100 to $300 / €86 to €259 / £74 to £222 / night"],["landal-villapark-vogelmient-netherlands",4.7589,53.0947,"Landal Villapark Vogelmient","de Koog","#2E86AB","$100 to $300 / €86 to €259 / £74 to £222 / night"],["landal-vitamaris-netherlands",6.1575,53.4838,"Landal Vitamaris","Schiermonnikoog","#2E86AB","$100 to $300 / €86 to €259 / £74 to £222 / night"],["landal-vlieduyn-netherlands",5.0636,53.305,"Landal Vlieduyn","Vlieland","#2E86AB","$100 to $300 / €86 to €259 / £74 to £222 / night"],["landal-west-terschelling-netherlands",5.2198,53.3671,"Landal West Terschelling","Terschelling","#2E86AB","$100 to $300 / €86 to €259 / £74 to £222 / night"],["leonardo-oranje-hotel-leeuwarden-netherlands",5.7936,53.1972,"Leonardo Oranje Hotel Leeuwarden","Leeuwarden","#D68910","$100 to $300 / €86 to €259 / £74 to £222 / night"],["landgoed-mennorode-netherlands",5.806,52.2789,"Landgoed Mennorode","Elspeet","#8A5A44","$100 to $300 / €86 to €259 / £74 to £222 / night"],["molecaten-park-rondeweibos-netherlands",4.081,51.8545,"Molecaten Park Rondeweibos","Rockanje","#4E7AC7","$100 to $300 / €86 to €259 / £74 to £222 / night"],["molecaten-park-waterbos-netherlands",4.0534,51.8825,"Molecaten Park Waterbos","Rockanje","#4E7AC7","$100 to $300 / €86 to €259 / £74 to £222 / night"],["natuurvriendenhuis-het-zeehuis-netherlands",4.6359,52.666,"Natuurvriendenhuis Het Zeehuis","Bergen aan Zee","#C2185B","$100 to $300 / €86 to €259 / £74 to £222 / night"],["nieuw-leven-texel-netherlands",4.8182,53.0568,"Nieuw Leven Texel","den Burg","#2E86AB","$100 to $300 / €86 to €259 / £74 to £222 / night"],["rcn-de-schotsman-netherlands",3.6622,51.5679,"RCN de Schotsman","Kamperland","#B03A2E","$100 to $300 / €86 to €259 / £74 to £222 / night"],["rcn-toppershoedje-netherlands",3.9139,51.8231,"RCN Toppershoedje","Ouddorp","#B03A2E","$100 to $300 / €86 to €259 / £74 to £222 / night"],["recreatiepark-beekbergen-netherlands",5.9622,52.1434,"Recreatiepark Beekbergen","Beekbergen","#8A5A44","$100 to $300 / €86 to €259 / £74 to £222 / night"],["recreatiepark-tusken-de-marren-netherlands",5.8362,53.0501,"Recreatiepark Tusken de Marren","Akkrum","#D68910","$100 to $300 / €86 to €259 / £74 to £222 / night"],["residentie-vlierijck-netherlands",5.0741,53.2973,"Residentie Vlierijck","Vlieland","#2E86AB","$100 to $300 / €86 to €259 / £74 to £222 / night"],["strandcamping-zuidduinen-netherlands",4.3877,52.1924,"Strandcamping Zuidduinen","Katwijk aan Zee","#4E7AC7","$50 to $150 / €43 to €130 / £37 to £111 / night"],["strandhotel-camperduin-netherlands",4.6447,52.7263,"Strandhotel Camperduin","Schoorl","#C2185B","$100 to $300 / €86 to €259 / £74 to £222 / night"],["van-der-valk-theaterhotel-de-oranjerie-netherlands",5.9893,51.1917,"Van der Valk TheaterHotel De Oranjerie","Roermond","#1F6F5C","$100 to $300 / €86 to €259 / £74 to £222 / night"],["bospark-ede-netherlands",5.6702,52.0458,"Bospark Ede","Ede","#8A5A44","$100 to $300 / €86 to €259 / £74 to £222 / night"],["europarcs-de-woudhoeve-netherlands",4.6646,52.6332,"EuroParcs De Woudhoeve","Egmond aan den Hoef","#C2185B","$100 to $300 / €86 to €259 / £74 to £222 / night"],["europarcs-noordwijkse-duinen-netherlands",4.4899,52.2866,"EuroParcs Noordwijkse Duinen","Noordwijk","#4E7AC7","$100 to $300 / €86 to €259 / £74 to £222 / night"],["resort-bosvallei-netherlands",5.6621,52.074,"Resort Bosvallei","Ede","#8A5A44","$100 to $300 / €86 to €259 / £74 to £222 / night"],["resort-veluwe-netherlands",5.6889,52.2378,"Resort Veluwe","Garderen","#8A5A44","$100 to $300 / €86 to €259 / £74 to £222 / night"],["vakantiepark-tjermelan-netherlands",5.3646,53.4021,"Vakantiepark Tjermelân","Oosterend Terschelling","#2E86AB","$100 to $300 / €86 to €259 / £74 to £222 / night"],["van-der-valk-het-arresthuis-netherlands",5.9894,51.1947,"Van der Valk Het Arresthuis","Roermond","#1F6F5C","$100 to $300 / €86 to €259 / £74 to £222 / night"],["van-der-valk-hotel-arnhem-netherlands",5.819,52.014,"Van der Valk Hotel Arnhem","Arnhem","#8A5A44","$100 to $300 / €86 to €259 / £74 to £222 / night"],["van-der-valk-hotel-sassenheim-netherlands",4.5044,52.2124,"Van der Valk Hotel Sassenheim","Sassenheim","#4E7AC7","$100 to $300 / €86 to €259 / £74 to £222 / night"],["westcord-hotel-schylge-netherlands",5.223,53.3664,"WestCord Hotel Schylge","Terschelling","#2E86AB","$100 to $300 / €86 to €259 / £74 to £222 / night"],["witte-berken-natuurhotel-netherlands",5.9387,52.3472,"Witte Berken Natuurhotel","Epe","#8A5A44","$100 to $300 / €86 to €259 / £74 to £222 / night"],["zenzez-hotel-lounge-netherlands",5.9587,52.2204,"Zenzez Hotel & Lounge","Apeldoorn","#8A5A44","$100 to $300 / €86 to €259 / £74 to £222 / night"]];
       var GOING = [];
       var NPARKS = [["site-the-wadden-islands",4.8025,53.14583,"Dunes of Texel National Park","The Wadden Islands","#2E86AB","https://www.npduinenvantexel.nl/"],["site-the-wadden-islands",6.232,53.4893,"Schiermonnikoog National Park","The Wadden Islands","#2E86AB","https://www.np-schiermonnikoog.nl"],["site-the-wadden-coast-and-lauwersmeer",6.19972,53.36389,"Lauwersmeer National Park","The Wadden Coast and Lauwersmeer","#0F8B8D","https://www.np-lauwersmeer.nl"],["site-the-wadden-coast-and-lauwersmeer",5.55,53.3,"Waddenzee","The Wadden Coast and Lauwersmeer","#0F8B8D","https://www.natura2000.nl/gebieden/friesland/waddenzee"],["site-groningen-and-drenthe",6.64945,53.04161,"Drentsche Aa National Park","Groningen and Drenthe","#C0392B","https://www.drentscheaa.nl/"],["site-groningen-and-drenthe",6.4075,52.81639,"Dwingelderveld National Park","Groningen and Drenthe","#C0392B","https://www.nationaalpark-dwingelderveld.nl"],["site-groningen-and-drenthe",6.28056,52.90972,"Drents-Friese Wold National Park","Groningen and Drenthe","#C0392B","https://www.nationaalpark-drents-friese-wold.nl/"],["site-the-frisian-lakes-and-meadow-bird-country",5.9233,53.1244,"De Alde Feanen National Park","The Frisian Lakes and Meadow-Bird Country","#D68910","https://www.np-aldefeanen.nl/"],["site-the-weerribben-wieden-and-the-salland-ridge",5.9489,52.7769,"Weerribben-Wieden National Park","The Weerribben-Wieden and the Salland Ridge","#6A994E","https://www.nationaalparkweerribbenwieden.nl/"],["site-the-weerribben-wieden-and-the-salland-ridge",6.41667,52.33333,"Sallandse Heuvelrug National Park","The Weerribben-Wieden and the Salland Ridge","#6A994E","https://www.sallandseheuvelrug.nl/"],["site-the-ijsselmeer-and-the-afsluitdijk",5.35,52.8,"IJsselmeer","The IJsselmeer and the Afsluitdijk","#7D5BA6","https://www.natura2000.nl/gebieden/flevoland/ijsselmeer"],["site-the-ijsselmeer-and-the-afsluitdijk",5.22,52.53,"Markermeer and IJmeer","The IJsselmeer and the Afsluitdijk","#7D5BA6","https://www.natura2000.nl/gebieden/flevoland/markermeer-ijmeer"],["site-flevoland-and-the-oostvaardersplassen",5.33333,52.5,"Nieuw Land National Park","Flevoland and the Oostvaardersplassen","#386641","https://www.nationaalparknieuwland.nl/"],["site-flevoland-and-the-oostvaardersplassen",5.72,52.4,"Veluwerandmeren","Flevoland and the Oostvaardersplassen","#386641","https://www.natura2000.nl/gebieden/gelderland/veluwerandmeren"],["site-the-veluwe",5.79855,52.0833,"Hoge Veluwe National Park","The Veluwe","#8A5A44","https://www.hogeveluwe.nl/"],["site-the-veluwe",6.01991,52.04844,"Veluwezoom National Park","The Veluwe","#8A5A44","https://www.natuurmonumenten.nl/natuurgebieden/nationaal-park-veluwezoom"],["site-the-north-holland-dunes",4.5921,52.3962,"Zuid-Kennemerland National Park","The North Holland Dunes","#C2185B","https://www.np-zuidkennemerland.nl"],["site-the-south-holland-dunes",4.3,52.13,"Hollandse Duinen National Park","The South Holland Dunes","#4E7AC7","https://www.nationaalparkhollandseduinen.nl"],["site-the-biesbosch-and-the-great-rivers",4.75833,51.75833,"De Biesbosch National Park","The Biesbosch and the Great Rivers","#96762B","https://np-debiesbosch.nl/"],["site-the-zeeland-delta",3.94528,51.57194,"Oosterschelde National Park","The Zeeland Delta","#B03A2E","https://www.np-oosterschelde.nl/"],["site-limburg-and-the-southern-hills",6.08917,51.58861,"De Maasduinen National Park","Limburg and the Southern Hills","#1F6F5C","https://nationaalpark.nl/park/de-maasduinen"],["site-limburg-and-the-southern-hills",5.82389,51.34556,"De Groote Peel National Park","Limburg and the Southern Hills","#1F6F5C","https://www.natuurparkenlimburg.nl/np/de-groote-peel"],["site-limburg-and-the-southern-hills",6.11889,51.16333,"Meinweg National Park","Limburg and the Southern Hills","#1F6F5C","https://limburgsemaasterrassen.nl/nl"]];
+      var STOPS = [["stop-wagejot-texel",4.883,53.105,"Wagejot, Texel","The Wadden Islands","#2E86AB",""],["stop-utopia-texel",4.879,53.101,"Utopia, Texel","The Wadden Islands","#2E86AB",""],["stop-dijkmanshuizen-texel",4.846,53.094,"Dijkmanshuizen, Texel","The Wadden Islands","#2E86AB",""],["stop-de-slufter-texel",4.75,53.147,"De Slufter, Texel","The Wadden Islands","#2E86AB",""],["stop-de-boschplaat-terschelling",5.46,53.42,"De Boschplaat, Terschelling","The Wadden Islands","#2E86AB",""],["stop-westerplas-schiermonnikoog",6.155,53.483,"Westerplas, Schiermonnikoog","The Wadden Islands","#2E86AB",""],["stop-de-kroon-s-polders-vlieland",5.01,53.265,"De Kroon's Polders, Vlieland","The Wadden Islands","#2E86AB",""],["stop-ezumakeeg",6.156,53.352,"Ezumakeeg","The Wadden Coast and Lauwersmeer","#0F8B8D",""],["stop-jaap-deensgat",6.24,53.362,"Jaap Deensgat","The Wadden Coast and Lauwersmeer","#0F8B8D",""],["stop-bantpolder",6.18,53.39,"Bantpolder","The Wadden Coast and Lauwersmeer","#0F8B8D",""],["stop-the-noarderleech",5.71,53.36,"The Noarderleech","The Wadden Coast and Lauwersmeer","#0F8B8D",""],["stop-fochteloerveen",6.4228,53.0047,"Fochteloerveen","Groningen and Drenthe","#C0392B","https://www.natuurmonumenten.nl/natuurgebieden/fochteloerveen"],["stop-dwingelderveld",6.4028,52.8095,"Dwingelderveld","Groningen and Drenthe","#C0392B","https://www.np-dwingelderveld.nl/"],["stop-de-onlanden",6.4132,53.167,"De Onlanden","Groningen and Drenthe","#C0392B","https://www.natuurmonumenten.nl/natuurgebieden/de-onlanden"],["stop-zuidlaardermeer",6.71,53.125,"Zuidlaardermeer","Groningen and Drenthe","#C0392B",""],["stop-skrok-and-skrins",5.61,53.05,"Skrok and Skrins","The Frisian Lakes and Meadow-Bird Country","#D68910","https://www.natuurmonumenten.nl/natuurgebieden/skrok-en-skrins"],["stop-workumerwaard",5.38,52.97,"Workumerwaard","The Frisian Lakes and Meadow-Bird Country","#D68910",""],["stop-makkumer-noardwaard",5.38,53.06,"Makkumer Noardwaard","The Frisian Lakes and Meadow-Bird Country","#D68910",""],["stop-de-alde-feanen",5.9203,53.1178,"De Alde Feanen","The Frisian Lakes and Meadow-Bird Country","#D68910","https://www.np-aldefeanen.nl/"],["stop-de-weerribben",5.9264,52.7774,"De Weerribben","The Weerribben-Wieden and the Salland Ridge","#6A994E","https://www.nationaalparkweerribbenwieden.nl/"],["stop-de-wieden",4.9395,52.4013,"De Wieden","The Weerribben-Wieden and the Salland Ridge","#6A994E","https://www.nationaalparkweerribbenwieden.nl/"],["stop-sallandse-heuvelrug",6.5259,52.2897,"Sallandse Heuvelrug","The Weerribben-Wieden and the Salland Ridge","#6A994E",""],["stop-den-oever-sluices",5.033,52.933,"Den Oever sluices","The IJsselmeer and the Afsluitdijk","#7D5BA6",""],["stop-kornwerderzand",5.339,53.074,"Kornwerderzand","The IJsselmeer and the Afsluitdijk","#7D5BA6",""],["stop-marker-wadden",5.3832,52.5875,"Marker Wadden","The IJsselmeer and the Afsluitdijk","#7D5BA6","https://www.natuurmonumenten.nl/natuurgebieden/marker-wadden"],["stop-de-kluut-and-grote-praambult",5.355,52.456,"De Kluut and Grote Praambult","Flevoland and the Oostvaardersplassen","#386641",""],["stop-lepelaarplassen",5.2064,52.4081,"Lepelaarplassen","Flevoland and the Oostvaardersplassen","#386641","https://www.natuurmonumenten.nl/natuurgebieden/lepelaarplassen"],["stop-kamperhoek",5.7,52.56,"Kamperhoek","Flevoland and the Oostvaardersplassen","#386641",""],["stop-deelerwoud",5.9134,52.0792,"Deelerwoud","The Veluwe","#8A5A44","https://www.natuurmonumenten.nl/natuurgebieden/deelerwoud"],["stop-planken-wambuis",5.7783,52.0543,"Planken Wambuis","The Veluwe","#8A5A44","https://www.natuurmonumenten.nl/natuurgebieden/planken-wambuis"],["stop-de-hoge-veluwe",5.8311,52.0797,"De Hoge Veluwe","The Veluwe","#8A5A44","https://www.hogeveluwe.nl/en"],["stop-kootwijkerzand",5.76,52.174,"Kootwijkerzand","The Veluwe","#8A5A44",""],["stop-the-ijmuiden-zuidpier",4.535,52.462,"The IJmuiden Zuidpier","The North Holland Dunes","#C2185B",""],["stop-het-zwanenwater",4.6992,52.8208,"Het Zwanenwater","The North Holland Dunes","#C2185B","https://www.natuurmonumenten.nl/natuurgebieden/zwanenwater"],["stop-castricum-ringing-station",4.618,52.547,"Castricum ringing station","The North Holland Dunes","#C2185B",""],["stop-camperduin-and-the-hondsbossche-dunes",4.642,52.722,"Camperduin and the Hondsbossche dunes","The North Holland Dunes","#C2185B",""],["stop-meijendel",4.3372,52.1352,"Meijendel","The South Holland Dunes","#4E7AC7",""],["stop-berkheide",4.41,52.19,"Berkheide","The South Holland Dunes","#4E7AC7",""],["stop-kwade-hoek",3.9892,51.8408,"Kwade Hoek","The South Holland Dunes","#4E7AC7","https://www.natuurmonumenten.nl/natuurgebieden/kwade-hoek"],["stop-the-brouwersdam",3.83,51.756,"The Brouwersdam","The South Holland Dunes","#4E7AC7",""],["stop-drimmelen-boat-routes",4.808,51.708,"Drimmelen boat routes","The Biesbosch and the Great Rivers","#96762B","https://www.np-debiesbosch.nl/"],["stop-the-aakvlaai",4.83,51.73,"The Aakvlaai","The Biesbosch and the Great Rivers","#96762B",""],["stop-the-nieuwe-merwede-banks",4.77,51.76,"The Nieuwe Merwede banks","The Biesbosch and the Great Rivers","#96762B",""],["stop-de-millingerwaard",6.0097,51.8695,"De Millingerwaard","The Biesbosch and the Great Rivers","#96762B",""],["stop-prunje-polder",3.93,51.66,"Prunje polder","The Zeeland Delta","#B03A2E",""],["stop-kop-van-schouwen",3.7,51.7,"Kop van Schouwen","The Zeeland Delta","#B03A2E",""],["stop-yerseke-moer",4.0187,51.491,"Yerseke Moer","The Zeeland Delta","#B03A2E","https://www.natuurmonumenten.nl/natuurgebieden/yerseke-moer"],["stop-waterdunen",3.512,51.3987,"Waterdunen","The Zeeland Delta","#B03A2E","https://www.waterdunen.com/"],["stop-de-groote-peel",5.8188,51.3468,"De Groote Peel","Limburg and the Southern Hills","#1F6F5C","https://www.np-degrootepeel.nl/"],["stop-de-meinweg",6.1185,51.1667,"De Meinweg","Limburg and the Southern Hills","#1F6F5C","https://www.np-demeinweg.nl/"],["stop-the-gulp-and-geul-valleys",5.9,50.79,"The Gulp and Geul valleys","Limburg and the Southern Hills","#1F6F5C",""],["stop-the-enci-quarry-maastricht",5.69,50.83,"The ENCI quarry, Maastricht","Limburg and the Southern Hills","#1F6F5C",""]];
       function boot() {
         if (!window.maplibregl) { setTimeout(boot, 80); return; }
         function mkMap(id) {
@@ -5637,6 +5643,41 @@
             b.addEventListener('click', function (e) { e.stopPropagation(); pop.remove(); jumpTo('lodge-' + d[0]); });
             new maplibregl.Marker({ element: mkWrap(b, 'dot') }).setLngLat([d[1], d[2]]).addTo(lmap);
             dots['lodge-' + d[0]] = b;
+          });
+          // Stops: the smallest marker, a hollow ring, because there are a hundred of
+          // them and they must not compete with the four layers that were here first.
+          var stopMarks = {};
+          STOPS.forEach(function (d) {
+            var b = document.createElement('button');
+            b.className = 'mldot mlstop';
+            b.style.setProperty('--pc', d[5]);
+            b.setAttribute('aria-label', d[3] + ', a birding stop in ' + d[4]);
+            function show() {
+              var dir = 'https://www.google.com/maps/dir/?api=1&destination=' + d[2] + ',' + d[1];
+              pop.setLngLat([d[1], d[2]])
+                .setHTML('<b>' + d[3] + '</b>' + d[4]
+                  + '<br><a href="' + dir + '" target="_blank" rel="noopener">Directions</a>'
+                  + (d[6] ? ' · <a href="' + d[6] + '" target="_blank" rel="noopener">Official site</a>' : ''))
+                .addTo(lmap);
+            }
+            b.addEventListener('mouseenter', show);
+            b.addEventListener('focus', show);
+            b.addEventListener('click', function (e) { e.stopPropagation(); show(); });
+            new maplibregl.Marker({ element: mkWrap(b, 'dot') }).setLngLat([d[1], d[2]]).addTo(lmap);
+            stopMarks[d[0]] = { lon: d[1], lat: d[2], show: show };
+          });
+          // A stop name in the prose brings the map to it rather than sending the reader
+          // to another site. The map is the thing that shows where a place sits in its
+          // region, which is the question the name is being clicked to answer.
+          document.querySelectorAll('.stoplink').forEach(function (el) {
+            el.addEventListener('click', function () {
+              var m = stopMarks[el.getAttribute('data-stop')];
+              if (!m) return;
+              var box = document.getElementById('regionmap');
+              if (box) box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              lmap.flyTo({ center: [m.lon, m.lat], zoom: 10, duration: 900 });
+              setTimeout(m.show, 950);
+            });
           });
           // Tours and operators: same colour as their region, a diamond rather than
           // a circle, so the two layers stay tellable apart without relying on hue.

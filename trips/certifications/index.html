@@ -217,6 +217,11 @@
     .where.stops .stopname { color: var(--green-dark); font-weight: 800; }
     .where.stops .stop + .stop::before { content: ' · '; color: var(--muted); font-weight: 400; }
     .where.stops .parklink { color: var(--green-dark); font-weight: 800; }
+    .stoplink { font: inherit; font-weight: 800; color: var(--green-dark); background: none; border: 0; border-bottom: 1px dotted currentColor; padding: 0; cursor: pointer; }
+    .stoplink:hover { color: var(--green); border-bottom-style: solid; }
+    .stoplink:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+    .mkey-s.mkey-stop { width: 9px; height: 9px; border-radius: 50%; background: #fff; border: 2.5px solid var(--muted); }
+    .mldot.mlstop { width: 9px; height: 9px; background: #fff; border: 2.5px solid var(--pc); box-shadow: 0 1px 3px rgba(0,0,0,.3); }
     .stopmap { font-size: 11.5px; font-weight: 700; color: var(--muted); text-decoration: none; border-bottom: 1px dotted currentColor; margin-left: 3px; }
     .stopmap:hover { color: var(--green-dark); }
     /* Guiding status: a word, a dot for the state, never colour alone (rule 6). */
