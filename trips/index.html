@@ -4,11 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>The Birding Atlas | BeakBrain</title>
-  <meta name="description" content="Country by country birding guides. Every bird, every region, when to go and what it costs, with real rates, honest month by month timing and every eco claim linked to its evidence." />
+  <meta name="description" content="Full birding guides, country by country: the birds you can expect, the regions worth your time, when to travel, and the lodges and operators who know the ground." />
   <link rel="icon" href="/assets/favicon.png" />
   <link rel="canonical" href="https://beakbrain.com/trips/" />
   <meta property="og:title" content="The Birding Atlas | BeakBrain" />
-  <meta property="og:description" content="Every bird, every region, when to go and what it costs. Country guides with real rates, honest timing and evidence behind every eco claim." />
+  <meta property="og:description" content="Full birding guides, country by country, with real rates, honest month by month timing and evidence behind every eco claim." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://beakbrain.com/trips/" />
   <!-- The composed share card (build/make-og-image.py). Without it this page
@@ -276,17 +276,17 @@
   </header>
 
   <section class="hero">
-    <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="auto" poster="/assets/video/hero-poster.jpg" aria-label="Birds in flight over wild country">
-      <source src="/assets/video/hero.mp4" type="video/mp4" />
+    <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="auto" poster="/assets/video/trips-hero-poster.jpg" aria-label="Nesting storks, a bee-eater colony and waders on the shore">
+      <source src="/assets/video/trips-hero.mp4" type="video/mp4" />
     </video>
     <div class="wrap hero-inner">
       <h1>The Birding Atlas</h1>
-      <p>Every bird, every region, when to go and what it costs.</p>
+      <p>Full birding guides, country by country. Each one covers the birds you can expect, the regions worth your time, when to travel, and the lodges and operators who know the ground.</p>
     </div>
   </section>
 
   <main class="wrap">
-    <p class="atlaslede">Full birding guides, country by country. Each one covers the birds you can expect, the regions worth your time, when to travel, and the lodges and operators who know the ground.</p>
+
     <div class="mapwrap">
       <div class="tripmap" id="tripmap" role="application" aria-label="World map of the countries with a full birding guide"></div>
       <div class="mapbar">
@@ -298,12 +298,12 @@
     <div class="cbubbles">
       <a class="cbubble" href="/trips/costa-rica/">
         <div class="cbtop"><span class="cbdot" aria-hidden="true"></span><h3 class="cbname">Costa Rica</h3></div>
-        <span class="cbblurb">944 birds across 13 regions, from cloud forest quetzals to macaws on the Osa. When to go, where to stay, what it costs.</span>
+        <span class="cbblurb">979 species across 14 regions, from cloud forest quetzals to the macaws of the Osa, with the lodges and guides for each.</span>
         <span class="cbgo">Open the guide <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </a>
       <a class="cbubble" href="/trips/netherlands/">
         <div class="cbtop"><span class="cbdot" aria-hidden="true"></span><h3 class="cbname">Netherlands</h3></div>
-        <span class="cbblurb">523 birds across 12 regions, from Wadden Sea wader roosts to the Veluwe woodpeckers. When to go, where to stay, what it costs.</span>
+        <span class="cbblurb">Wadden Sea wader roosts, meadow birds and the Veluwe woodpeckers: 539 species across 13 regions, reachable by train and bike.</span>
         <span class="cbgo">Open the guide <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </a>
     </div>
@@ -336,7 +336,7 @@
     // The world map is the way in to a country guide: shared Natural Earth land plus
     // one gold pin per country that has a full page of its own. Listings are found
     // through the finder below, so no listing dots are drawn.
-    var COUNTRY_PAGES = [{"href":"/trips/costa-rica/","name":"Costa Rica","lon":-84.1,"lat":9.9,"blurb":"944 birds across 13 regions, from cloud forest quetzals to macaws on the Osa. When to go, where to stay, what it costs."},{"href":"/trips/netherlands/","name":"Netherlands","lon":5.3,"lat":52.2,"blurb":"523 birds across 12 regions, from Wadden Sea wader roosts to the Veluwe woodpeckers. When to go, where to stay, what it costs."}];
+    var COUNTRY_PAGES = [{"href":"/trips/costa-rica/","slug":"costa-rica","name":"Costa Rica","lon":-84.1,"lat":9.9,"blurb":"979 species across 14 regions, from cloud forest quetzals to the macaws of the Osa, with the lodges and guides for each."},{"href":"/trips/netherlands/","slug":"netherlands","name":"Netherlands","lon":5.3,"lat":52.2,"blurb":"Wadden Sea wader roosts, meadow birds and the Veluwe woodpeckers: 539 species across 13 regions, reachable by train and bike."}];
     (function () {
       var host = document.getElementById('tripmap');
       if (!host) return;
