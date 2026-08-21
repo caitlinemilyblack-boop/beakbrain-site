@@ -14,6 +14,76 @@ function render(el){
     s+='<path class="'+cls+'" d="'+LAND[k]+'"/>';
   }
   el.innerHTML=s+'</svg>';
+  zoomable(el, el.firstChild);
+}
+// PINCH AND WHEEL ZOOM (Cat, 2026-08-20: "allow pinch to zoom in on map in
+// species pages in app and web"). A range map of a bird found in three small
+// island states is unreadable at world scale, and the countries are the whole
+// point of the section.
+//
+// It moves the SVG viewBox rather than transforming the element, so the paths
+// stay crisp at any magnification and the stroke does not fatten.
+//
+// ONE FINGER STILL SCROLLS THE PAGE while the map is at rest. A map that eats a
+// swipe is a map you have to fight to get past, and most readers are scrolling
+// past rather than exploring. Two fingers always zoom; one finger only pans once
+// zoomed in, at which point the reader has clearly opted in.
+function zoomable(host, svg){
+  var vb=VB.split(' ').map(Number), W0=vb[2], H0=vb[3];
+  var x=vb[0], y=vb[1], w=W0, h=H0;
+  var MIN=W0/8;                       // 8x is as far in as the 110m data holds up
+  function apply(){
+    if(w>W0){w=W0;h=H0}
+    if(w<MIN){w=MIN;h=MIN*H0/W0}
+    x=Math.max(0,Math.min(W0-w,x)); y=Math.max(0,Math.min(H0-h,y));
+    svg.setAttribute('viewBox',x+' '+y+' '+w+' '+h);
+    host.classList.toggle('zoomed', w<W0-0.5);
+  }
+  // Zoom about a point given in client coords, so what is under the finger stays
+  // under the finger. Anything else feels like the map is running away.
+  function zoomAt(cx,cy,k){
+    var r=svg.getBoundingClientRect();
+    var px=(cx-r.left)/r.width, py=(cy-r.top)/r.height;
+    var nw=Math.max(MIN,Math.min(W0,w*k)), nh=nw*H0/W0;
+    x+=(w-nw)*px; y+=(h-nh)*py; w=nw; h=nh; apply();
+  }
+  host.addEventListener('wheel',function(e){
+    if(!e.ctrlKey && Math.abs(e.deltaY)<2) return;
+    e.preventDefault(); zoomAt(e.clientX,e.clientY,e.deltaY>0?1.12:1/1.12);
+  },{passive:false});
+  var pts={}, base=0, mid=null, last=null;
+  function dist(a,b){return Math.hypot(a.x-b.x,a.y-b.y)}
+  host.addEventListener('pointerdown',function(e){
+    pts[e.pointerId]={x:e.clientX,y:e.clientY};
+    var k=Object.keys(pts);
+    if(k.length===2){base=dist(pts[k[0]],pts[k[1]]);mid={x:(pts[k[0]].x+pts[k[1]].x)/2,y:(pts[k[0]].y+pts[k[1]].y)/2}}
+    else if(k.length===1&&w<W0-0.5){last={x:e.clientX,y:e.clientY};host.setPointerCapture(e.pointerId)}
+  });
+  host.addEventListener('pointermove',function(e){
+    if(!pts[e.pointerId])return;
+    pts[e.pointerId]={x:e.clientX,y:e.clientY};
+    var k=Object.keys(pts);
+    if(k.length===2&&base){
+      e.preventDefault();
+      var d=dist(pts[k[0]],pts[k[1]]);
+      if(d>0){zoomAt(mid.x,mid.y,base/d);base=d}
+    } else if(k.length===1&&last&&w<W0-0.5){
+      e.preventDefault();
+      var r=svg.getBoundingClientRect();
+      x-=(e.clientX-last.x)*(w/r.width); y-=(e.clientY-last.y)*(h/r.height);
+      last={x:e.clientX,y:e.clientY}; apply();
+    }
+  },{passive:false});
+  function up(e){delete pts[e.pointerId];base=0;last=null}
+  host.addEventListener('pointerup',up); host.addEventListener('pointercancel',up);
+  // A way back out that needs no gesture vocabulary at all.
+  host.addEventListener('dblclick',function(e){e.preventDefault();x=0;y=0;w=W0;h=H0;apply()});
+  var btn=document.createElement('button');
+  btn.type='button'; btn.className='mapreset'; btn.textContent='Reset';
+  btn.setAttribute('aria-label','Reset the map to the whole world');
+  btn.addEventListener('click',function(){x=0;y=0;w=W0;h=H0;apply()});
+  host.appendChild(btn);
+  apply();
 }
 var els=document.querySelectorAll('.rangemap');
 for(var i=0;i<els.length;i++)render(els[i]);
