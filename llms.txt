@@ -26,7 +26,7 @@ with recordist credit via xeno-canto.
 
 ## Community
 
-- [Find a birding club](https://beakbrain.com/community.html): worldwide directory of bird clubs and societies
+- [Find a birding club](https://beakbrain.com/community): worldwide directory of bird clubs and societies
 - [Contribute](https://beakbrain.com/contribute.html): how to add photos and recordings to the open commons
 
 ## App
