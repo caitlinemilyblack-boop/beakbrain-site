@@ -5966,10 +5966,9 @@
     })();
     (function () {
       var header = document.querySelector('header');
-      var hero = document.querySelector('.hero');
       if (!header) return;
       function update() {
-        var threshold = hero ? hero.offsetHeight - 80 : 120;
+        var threshold = 8;
         if (window.scrollY > threshold) header.classList.add('scrolled');
         else header.classList.remove('scrolled');
       }

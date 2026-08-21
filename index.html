@@ -770,13 +770,18 @@
       lazyVids.forEach(function (v) { io.observe(v); });
     })();
 
-    // Nav: transparent over the hero, solid once you scroll onto the page.
+    // Nav: transparent at the very top, solid the moment you scroll.
+    //
+    // Cat, 2026-08-21: the trigger used to be the HERO's height, so the bar stayed
+    // transparent for the entire length of the video and its labels sat unreadable
+    // on top of the hero title the whole way down. The hero is the one thing the bar
+    // must never be measured against, because that is exactly the stretch where the
+    // two overlap. A few pixels of scroll is the signal instead.
     (function () {
       var header = document.querySelector('header');
-      var hero = document.querySelector('.hero');
       if (!header) return;
       function update() {
-        var threshold = hero ? hero.offsetHeight - 80 : 120;
+        var threshold = 8;
         if (window.scrollY > threshold) header.classList.add('scrolled');
         else header.classList.remove('scrolled');
       }
