@@ -217,6 +217,8 @@
     .where.stops .stopname { color: var(--green-dark); font-weight: 800; }
     .where.stops .stop + .stop::before { content: ' · '; color: var(--muted); font-weight: 400; }
     .where.stops .parklink { color: var(--green-dark); font-weight: 800; }
+    .stopmap { font-size: 11.5px; font-weight: 700; color: var(--muted); text-decoration: none; border-bottom: 1px dotted currentColor; margin-left: 3px; }
+    .stopmap:hover { color: var(--green-dark); }
     /* Guiding status: a word, a dot for the state, never colour alone (rule 6). */
     .guiding { margin: 6px 0 0; font-size: 13.5px; font-weight: 700; display: inline-flex; align-items: center; gap: 7px; }
     .guiding::before { content: ""; width: 9px; height: 9px; border-radius: 50%; flex: none; background: currentColor; }
