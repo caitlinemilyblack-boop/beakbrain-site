@@ -56,11 +56,20 @@
       <tr><td>Email address (account)</td><td>To create your account and sign you in</td><td>Performance of a contract</td></tr>
       <tr><td>Learning progress, saved trips, collections (account)</td><td>To sync your progress across your devices</td><td>Performance of a contract</td></tr>
       <tr><td>Email address (waitlist, closed 2026-08-14)</td><td>To send the single launch email it was given for, after which it is deleted</td><td>Consent, which you can withdraw at any time by emailing us</td></tr>
+      <tr><td>Approximate location (only when you open Near Me)</td><td>To look up which birds have been recorded around you. Your position is rounded to an area of roughly 35&nbsp;km and sent to GBIF to fetch those sightings. We never store it.</td><td>Consent, which you give by allowing location and can withdraw in your device settings</td></tr>
       <tr><td>Product usage and crash diagnostics</td><td>To see which parts of the app are used, and to find and fix faults</td><td>Legitimate interests in operating and improving the app</td></tr>
     </table>
-    <p>We do not collect your location, your contacts, or advertising identifiers, we never sell your
-      data, and we never use it for advertising. We do record how the app is used, in aggregate, along
-      with crash diagnostics. Both are described under <a href="#processors">Who processes your data</a>.</p>
+    <p>We do not collect your contacts or advertising identifiers, we never sell your data, and we
+      never use it for advertising. We do record how the app is used, in aggregate, along with crash
+      diagnostics, both described under <a href="#processors">Who processes your data</a>.</p>
+
+    <p><strong>Location is used by one feature, Near Me, and only while you have it open.</strong>
+      When you open Near Me the app asks your device for your position, rounds it to an area of
+      roughly 35&nbsp;km, and sends that area to <a href="https://www.gbif.org/" rel="noopener">GBIF</a>,
+      the open biodiversity database, to find which birds have been recorded there. Your coordinates
+      are never stored by us, never attached to your account, and never used for anything else. Every
+      other part of the app works without location, and you can refuse or revoke the permission in
+      your device settings at any time.</p>
 
     <h2>Guest use</h2>
     <p>You can use BeakBrain without an account. In that case everything you learn, your progress,
@@ -78,6 +87,10 @@
     <p>We use a small number of processors, each acting only on our instructions under a data processing
       agreement:</p>
     <ul>
+      <li><strong>GBIF</strong> (Global Biodiversity Information Facility) answers the Near Me
+        lookup. It receives an approximate area, never your exact position and never anything
+        identifying you, and it is a public research infrastructure rather than a commercial
+        service. It is only contacted while you have Near Me open.</li>
       <li><strong>Supabase</strong> hosts the database and handles sign-in. Row-level security means only
         you can read your own account data.</li>
       <li><strong>PostHog</strong> provides privacy-friendly product analytics, so we can see how the app is
