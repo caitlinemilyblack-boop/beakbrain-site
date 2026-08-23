@@ -51,8 +51,8 @@
     header.scrolled { background: rgba(242,232,207,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
     .nav .wordmark { font-size: 24px; color: #fff; transition: color .28s ease; }
     .nav-links a { color:#fff;text-decoration:none;font-family:var(--body);font-weight:600;font-size:15px;white-space:nowrap;transition:color .28s ease }
-    @media (max-width: 640px) { .nav .wordmark { font-size: 20px; } .nav-links { gap: 14px; } .nav-links a { font-size: 14px; } }
-    .hero { position: relative; margin: 0; min-height: 300px; display: flex; align-items: flex-end; overflow: hidden; background-color: #386641; background-image: url('assets/video/contribute-hero-poster.jpg'), linear-gradient(150deg, #2C5134, #386641); background-size: cover; background-position: center; }
+    @media (max-width: 640px) { .nav .wordmark { font-size: 20px; } .nav-links { gap: 24px; } .nav-links a { font-size: 14px; } }
+    .hero { position: relative; margin: 0; min-height: 46vh; display: flex; align-items: flex-end; overflow: hidden; background-color: #386641; background-image: url('assets/video/contribute-hero-poster.jpg'), linear-gradient(150deg, #2C5134, #386641); background-size: cover; background-position: center; }
     .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0; transition: opacity .9s ease; }
     .hero::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(30,45,30,.24) 0%, rgba(30,45,30,.44) 55%, rgba(22,36,24,.78) 100%); }
     .hero-inner {max-width:1080px; position: relative; z-index: 2; width: 100%; color: #fff; padding: 100px 0 26px; }
@@ -93,18 +93,27 @@
     .mnav .navdrop a{display:block;margin:0;padding:12px 14px;border-radius:9px;color:var(--green-dark,#2C5134);background:none;text-decoration:none;font-family:var(--body);font-weight:600;font-size:15.5px;white-space:nowrap}
     .mnav .navdrop a:hover{background:var(--surface-alt,#E7D9B4)}
     @media(max-width:640px){.nav>nav,.nav .nav-right,.nav .nav-links{display:none}.mnav{display:block}}
+  
+  
+    /* Added 2026-08-23. site.css scopes its button as `.cta a.btn`, so a header
+       button inherits no padding from the shared sheet. The four pages that
+       looked right each defined .btn locally; this is that same declaration,
+       lifted from index.html, so the button is one size on every page. */
+    .nav .btn{display: inline-block; font-family: var(--body); font-weight: 800; font-size: 16px; background: var(--green); color: #fff; text-decoration: none; padding: 14px 26px; border-radius: 999px; border: none; cursor: pointer; transition: background 0.15s ease, transform 0.05s ease;}
   </style>
 </head>
 <body>
   <header>
     <div class="wrap nav">
       <a class="wordmark" href="/">BeakBrain</a>
-      <nav class="nav-links">
-        <a href="/birds/">Bird Guide</a>
-        <a href="/daily/">Daily Bird</a>
-        <a href="/cams/">Cams</a>
-        <a href="/community.html">Community</a>
-      </nav>
+      <div class="nav-right">
+        <a class="nav-link" href="/birds/">Bird Guide</a>
+        <a class="nav-link" href="/daily/">Daily Bird</a>
+        <a class="nav-link" href="/cams/">Cams</a>
+        <a class="nav-link" href="/trips/">Trips</a>
+        <a class="nav-link" href="/community.html">Community</a>
+        <a class="btn" href="/#get">Get the app</a>
+      </div>
 <details class="mnav"><summary aria-label="Site menu">Menu</summary><div class="navdrop"><a href="/birds/">Bird Guide</a><a href="/daily/">Daily Bird</a><a href="/cams/">Cams</a><a href="/trips/">Trips</a><a href="/community.html">Community</a></div></details>
     </div>
   </header>
