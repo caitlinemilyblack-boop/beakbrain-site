@@ -79,6 +79,13 @@
     .vidtoggle { position: absolute; right: 16px; bottom: 16px; z-index: 3; font-family: var(--body); font-weight: 800; font-size: 12px; color: #fff; background: rgba(20,30,20,.55); border: 1px solid rgba(255,255,255,.5); border-radius: 999px; padding: 7px 14px; cursor: pointer; }
     .vidtoggle:hover { background: rgba(20,30,20,.78); }
     .vidtoggle:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+    /* Bottom-left, opposite the video toggle. Quiet enough to stay out of the
+       headline's way, legible enough to be a real credit. */
+    .vidcredit { position: absolute; left: 28px; bottom: 16px; z-index: 3; margin: 0; font-family: var(--body); font-size: 11.5px; font-weight: 600; color: rgba(255,255,255,.82); text-shadow: 0 1px 3px rgba(0,0,0,.6); }
+    .vidcredit a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+    .vidcredit a:hover { color: #fff; }
+    .vidcredit-foot { bottom: 14px; }
+    @media (max-width: 640px) { .vidcredit { left: 16px; right: 96px; } .vidcredit-foot { right: 16px; } }
     .hero p.sub { color: #EFE7D2; font-size: clamp(17px, 2vw, 20px); margin-top: 20px; max-width: 62ch; }
     @media (prefers-reduced-motion: reduce) { .hero-video { transition: none; } }
 
@@ -231,6 +238,14 @@
     .guiding.g-sep { color: var(--ink); }
     .guiding.g-unk { color: var(--muted); font-weight: 600; }
     .guiding.g-unk::before { background: none; border: 1.5px solid var(--muted); }
+    /* The only thing any register on this site says about the habitat around a property.
+       GreenSign audits it and publishes the score, so it is shown as a score rather than
+       paraphrased as a claim. */
+    .biodiv { font-family: var(--body); font-size: 11.5px; color: var(--ink-soft); margin: 6px 0 0; display: flex; align-items: center; gap: 7px; flex-wrap: wrap; }
+    .biodiv b { font-weight: 800; color: var(--ink); }
+    .biobar { display: inline-block; width: 64px; height: 5px; border-radius: 999px; background: #E7DEC6; overflow: hidden; flex: none; }
+    .biobar i { display: block; height: 100%; background: var(--green); border-radius: 999px; }
+    .biomax { color: var(--ink-soft); opacity: .7; }
     .qualifies { margin: 6px 0 0; font-size: 13.5px; font-weight: 700; color: var(--green-dark); }
     .qualifies.birdlodge { color: var(--green); }
     .mapnote { color: var(--muted); font-size: 14px; margin: -6px 0 18px; }
@@ -827,7 +842,7 @@
   <main class="wrap certpage">
     <div class="certtools">
       <input id="certq" type="search" placeholder="Search a country or a certification" aria-label="Search a country or a certification" autocomplete="off" />
-      <span class="certtally" id="certtally">3 certifications across 4 countries: Costa Rica, Netherlands, Scotland, United Kingdom</span>
+      <span class="certtally" id="certtally">4 certifications across 8 countries: Costa Rica, England, France, Germany, Netherlands, Northern Ireland, Scotland, Wales</span>
     </div>
 
     <div class="certlist" id="certlist">
@@ -845,34 +860,52 @@
         </dl>
         <p><a class="watch-link" href="https://turismo-sostenible.co.cr/" target="_blank" rel="noopener">Search the CST registry</a></p>
       </article>
-      <article class="certdef" id="scheme-green-key" data-q="green key green key stichting kmvk in the netherlands, under foundation for environmental education netherlands">
-        <h3>Green Key<span class="certdef-tag">Green Key</span></h3>
-        <p class="certdef-by">Run by Stichting KMVK in the Netherlands, under Foundation for Environmental Education, since 1996</p>
-        <p>An international sustainability certification for accommodation, attractions and venues, with Bronze, Silver and Gold levels.</p>
-        <div class="certwhere">
-          <span class="certwhere-label">On these guides</span>
-          <a class="certchip" href="/trips/netherlands/">Netherlands<span>75 listings</span></a>
-        </div>
-        <dl class="certdef-rows">
-          <div><dt>Levels</dt><dd>Bronze, Silver and Gold</dd></div>
-          <div><dt>How it is checked</dt><dd>Search the official site register, which the scheme publishes as an open map layer.</dd></div>
-        </dl>
-        <p><a class="watch-link" href="https://www.greenkey.global/green-key-sites" target="_blank" rel="noopener">Open the official register</a></p>
-      </article>
-      <article class="certdef" id="scheme-green-tourism" data-q="green tourism green tourism green tourism, an independent certification body based in perth, scotland united kingdom scotland">
+      <article class="certdef" id="scheme-green-tourism" data-q="green tourism green tourism green tourism, an independent certification body based in perth, scotland england scotland wales northern ireland">
         <h3>Green Tourism<span class="certdef-tag">Green Tourism</span></h3>
         <p class="certdef-by">Run by Green Tourism, an independent certification body based in Perth, Scotland, since 1997</p>
         <p>A sustainability certification for accommodation, attractions and venues across the UK and beyond, assessed against a criteria set covering energy, water, waste, travel, biodiversity and community, then awarded at Bronze, Silver or Gold.</p>
         <div class="certwhere">
           <span class="certwhere-label">On these guides</span>
-          <a class="certchip" href="/trips/united-kingdom/">United Kingdom<span>46 listings</span></a>
-          <a class="certchip" href="/trips/scotland/">Scotland<span>32 listings</span></a>
+          <a class="certchip" href="/trips/england/">England<span>504 listings</span></a>
+          <a class="certchip" href="/trips/scotland/">Scotland<span>211 listings</span></a>
+          <a class="certchip" href="/trips/wales/">Wales<span>136 listings</span></a>
+          <a class="certchip" href="/trips/northern-ireland/">Northern Ireland<span>59 listings</span></a>
         </div>
         <dl class="certdef-rows">
           <div><dt>Levels</dt><dd>Bronze, Silver and Gold</dd></div>
           <div><dt>How it is checked</dt><dd>Search the scheme's own public member directory, which names the award level beside every member.</dd></div>
         </dl>
         <p><a class="watch-link" href="https://www.green-tourism.com/our-members/" target="_blank" rel="noopener">Open the official register</a></p>
+      </article>
+      <article class="certdef" id="scheme-green-key" data-q="green key green key teragir in france, under foundation for environmental education france netherlands germany">
+        <h3>Green Key<span class="certdef-tag">Green Key</span></h3>
+        <p class="certdef-by">Run by Teragir in France, under Foundation for Environmental Education, since 1998</p>
+        <p>An international sustainability certification for accommodation, campsites, restaurants and attractions.</p>
+        <div class="certwhere">
+          <span class="certwhere-label">On these guides</span>
+          <a class="certchip" href="/trips/france/">France<span>241 listings</span></a>
+          <a class="certchip" href="/trips/netherlands/">Netherlands<span>75 listings</span></a>
+          <a class="certchip" href="/trips/germany/">Germany<span>9 listings</span></a>
+        </div>
+        <dl class="certdef-rows">
+          <div><dt>Levels</dt><dd>A single award rather than levels</dd></div>
+          <div><dt>How it is checked</dt><dd>Search the scheme's own site register, which it publishes as an open map layer.</dd></div>
+        </dl>
+        <p><a class="watch-link" href="https://www.greenkey.global/green-key-sites" target="_blank" rel="noopener">Open the official register</a></p>
+      </article>
+      <article class="certdef" id="scheme-greensign" data-q="greensign greensign greensign institut, berlin germany">
+        <h3>GreenSign<span class="certdef-tag">GreenSign</span></h3>
+        <p class="certdef-by">Run by GreenSign Institut, Berlin, since 2015</p>
+        <p>The largest sustainability certification for hotels in Germany, audited across areas including energy, water, waste, purchasing, mobility and biodiversity.</p>
+        <div class="certwhere">
+          <span class="certwhere-label">On these guides</span>
+          <a class="certchip" href="/trips/germany/">Germany<span>214 listings</span></a>
+        </div>
+        <dl class="certdef-rows">
+          <div><dt>Levels</dt><dd>Certified, with an audited score out of 100 in each area. A business still being audited shows as in progress and is left off this page.</dd></div>
+          <div><dt>How it is checked</dt><dd>Search the scheme's own register of currently valid certificates.</dd></div>
+        </dl>
+        <p><a class="watch-link" href="https://www.greensign.de/en/certified-companies/" target="_blank" rel="noopener">Open the official register</a></p>
       </article>
     </div>
     <p class="certempty" id="certempty" hidden>No certification on a country guide matches that yet.</p>
@@ -883,6 +916,7 @@
     <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="/assets/video/site-footer-poster.jpg" aria-label="A weaver at its hanging nest">
       <source src="/assets/video/site-footer.mp4" type="video/mp4" />
     </video>
+
     <div class="wrap foot">
       <span class="wordmark">BeakBrain</span>
       <nav>
@@ -898,6 +932,24 @@
     </div>
   </footer>
   <script>
+    // shellFooter() emits the footer clip, and .hero-video sits at opacity 0 until .ready
+    // lands on it. Every country guide adds that class in its own script; this page did
+    // not, so the footer video loaded, autoplayed and stayed invisible.
+    (function () {
+      var vids = document.querySelectorAll('.hero-video');
+      if (!vids.length) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        vids.forEach(function (v) { v.remove(); });
+        return;
+      }
+      vids.forEach(function (v) {
+        if (v.readyState >= 2) v.classList.add('ready');
+        v.addEventListener('loadeddata', function () { v.classList.add('ready'); });
+        var pl = v.play();
+        if (pl && pl.catch) { pl.catch(function () {}); }
+      });
+    })();
+
     // Search covers the scheme name, its short form, whoever runs it and every country
     // it is badged on, so "costa rica" and "cst" both land on the same card.
     (function () {

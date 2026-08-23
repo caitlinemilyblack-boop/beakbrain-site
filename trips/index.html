@@ -96,6 +96,19 @@
        the way in to a country page is the same gesture as browsing the listings.
        One country today, and the layer takes the second without a rewrite. */
     .atlashead { font-family: var(--display); font-weight: 600; font-size: 22px; color: var(--green-dark); margin: 30px 0 2px; }
+    /* Guides grouped by continent, with one hue per continent carried by the heading dot,
+       the card dot and the card's left edge. Cat, 2026-08-23. The map pins take the same
+       hue from the same table, so a colour means the same thing in both places. */
+    .cbgroups { display: flex; flex-direction: column; gap: 26px; margin: 14px 0 0; }
+    .cbgroup { --cont: var(--gold); }
+    .cbconth { display: flex; align-items: center; gap: 9px; margin: 0 0 10px; font-family: var(--display);
+      font-weight: 700; font-size: 17px; color: var(--green-dark); }
+    .cbcontdot { width: 11px; height: 11px; border-radius: 50%; background: var(--cont);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--cont) 22%, transparent); flex: 0 0 auto; }
+    .cbcontn { font-family: var(--body); font-weight: 800; font-size: 12px; color: var(--gold-deep);
+      background: #F4EEDC; border-radius: 999px; padding: 2px 9px; }
+    .cbgroup .cbubble { border-left: 4px solid var(--cont); }
+    .cbgroup .cbdot { background: var(--cont); box-shadow: 0 0 0 3px color-mix(in srgb, var(--cont) 22%, transparent); }
     .cbubbles { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 400px)); justify-content: start; gap: 16px; margin: 14px 0 4px; }
     .cbubble { display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 18px 20px; text-decoration: none; color: inherit; box-shadow: var(--shadow); transition: transform .12s ease, box-shadow .12s ease; }
     .cbubble:hover { transform: translateY(-2px); box-shadow: 0 18px 40px rgba(46,42,37,0.14); }
@@ -112,16 +125,16 @@
     .cbubble:hover .cbgo svg { transform: translateX(3px); }
     @media (prefers-reduced-motion: reduce) { .cbubble, .cbgo svg { transition: none; } }
 
-    /* One labelled pin per country: dot at the point, tail, name pill above it. The
-       pill and the dot used to be two separate-looking objects on the same link, so
-       a reader could not tell which was the control. */
+    /* One gold dot per country, and the name on hover. Standing name pills collided as
+       soon as two countries sat close together, and the collision gets worse with every
+       country added, so the cams map's behaviour is the one used here. */
     .cpage { cursor: pointer; }
-    .cpdot { fill: var(--gold); stroke: #fff; stroke-width: 1.2; }
-    .cptail { fill: var(--gold); }
-    .cplab { fill: var(--green-dark); font-family: var(--body); font-weight: 800; font-size: 13px; text-anchor: middle; dominant-baseline: middle; }
-    .cppill { fill: #fff; stroke: var(--gold); stroke-width: 1.4; }
-    .cpage:hover .cppill, .cpage:focus-visible .cppill { fill: var(--gold); }
-    .cpage:hover .cpdot, .cpage:focus-visible .cpdot { fill: var(--green-dark); }
+    .cpdot { fill: var(--gold); stroke: #fff; stroke-width: 1.2; transition: fill .12s ease; }
+    /* A dot is a small target, so give the pointer some slack around it. */
+    .cpage { --hit: 10px; }
+    .cpage:hover .cpdot, .cpage:focus-visible .cpdot { fill: var(--green-dark) !important; stroke-width: 2; }
+    .maptip .tipcont { display: block; font-family: var(--body); font-weight: 800; font-size: 11px;
+      letter-spacing: .5px; text-transform: uppercase; color: var(--gold-deep); margin-top: 1px; }
     .cpage:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
     .dotleg.cpage { background: var(--gold); }
     .finder-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
@@ -295,10 +308,28 @@
       </div>
     </div>
     <h2 class="atlashead">Country Guides</h2>
-    <div class="cbubbles">
-      <a class="cbubble" href="/trips/costa-rica/">
-        <div class="cbtop"><span class="cbdot" aria-hidden="true"></span><h3 class="cbname">Costa Rica</h3></div>
-        <span class="cbblurb">979 species across 14 regions, from cloud forest quetzals to the macaws of the Osa, with the lodges and guides for each.</span>
+    <div class="cbgroups">
+      <section class="cbgroup" style="--cont:#2E86AB">
+        <h3 class="cbconth"><span class="cbcontdot" aria-hidden="true"></span>Europe<span class="cbcontn">8 guides</span></h3>
+        <div class="cbubbles">
+      <a class="cbubble" href="/trips/england/">
+        <div class="cbtop"><span class="cbdot" aria-hidden="true"></span><h3 class="cbname">England</h3></div>
+        <span class="cbblurb">Seabird cities, reedbed bitterns and the finest wader spectacle in Britain: 12 regions, from the Farnes to Scilly.</span>
+        <span class="cbgo">Open the guide <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+      </a>
+      <a class="cbubble" href="/trips/france/">
+        <div class="cbtop"><span class="cbdot" aria-hidden="true"></span><h3 class="cbname">France</h3></div>
+        <span class="cbblurb">Flamingos in the Camargue, four vulture species over one gorge and cranes in Champagne: 724 species across 14 regions.</span>
+        <span class="cbgo">Open the guide <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+      </a>
+      <a class="cbubble" href="/trips/germany/">
+        <div class="cbtop"><span class="cbdot" aria-hidden="true"></span><h3 class="cbname">Germany</h3></div>
+        <span class="cbblurb">The largest crane gathering in western Europe, Great Bustards an hour from Berlin and Helgoland in autumn: 651 species across 12 regions.</span>
+        <span class="cbgo">Open the guide <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+      </a>
+      <a class="cbubble" href="/trips/ireland/">
+        <div class="cbtop"><span class="cbdot" aria-hidden="true"></span><h3 class="cbname">Ireland</h3></div>
+        <span class="cbblurb">Greenland White-fronted Geese at Wexford, Skellig gannets and Atlantic seawatching: 445 species across 8 regions.</span>
         <span class="cbgo">Open the guide <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </a>
       <a class="cbubble" href="/trips/netherlands/">
@@ -306,9 +337,9 @@
         <span class="cbblurb">Wadden Sea wader roosts, meadow birds and the Veluwe woodpeckers: 539 species across 13 regions, reachable by train and bike.</span>
         <span class="cbgo">Open the guide <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </a>
-      <a class="cbubble" href="/trips/united-kingdom/">
-        <div class="cbtop"><span class="cbdot" aria-hidden="true"></span><h3 class="cbname">United Kingdom</h3></div>
-        <span class="cbblurb">Seabird cliffs, pinewood specialities and estuaries full of geese: 748 species across 14 regions, from Shetland to Scilly.</span>
+      <a class="cbubble" href="/trips/northern-ireland/">
+        <div class="cbtop"><span class="cbdot" aria-hidden="true"></span><h3 class="cbname">Northern Ireland</h3></div>
+        <span class="cbblurb">Rathlin's seabird cliffs and a world population of Brent Geese on Strangford: 4 regions, all within two hours of Belfast.</span>
         <span class="cbgo">Open the guide <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </a>
       <a class="cbubble" href="/trips/scotland/">
@@ -316,6 +347,23 @@
         <span class="cbblurb">Pinewood specialities, the world's largest gannet colony and geese in six figures: 7 regions from Shetland to the Solway.</span>
         <span class="cbgo">Open the guide <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </a>
+      <a class="cbubble" href="/trips/wales/">
+        <div class="cbtop"><span class="cbdot" aria-hidden="true"></span><h3 class="cbname">Wales</h3></div>
+        <span class="cbblurb">Shearwater islands, Red Kites and estuary waders: 6 regions, from Anglesey to the Gower.</span>
+        <span class="cbgo">Open the guide <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+      </a>
+        </div>
+      </section>
+      <section class="cbgroup" style="--cont:#D68910">
+        <h3 class="cbconth"><span class="cbcontdot" aria-hidden="true"></span>Central America<span class="cbcontn">1 guide</span></h3>
+        <div class="cbubbles">
+      <a class="cbubble" href="/trips/costa-rica/">
+        <div class="cbtop"><span class="cbdot" aria-hidden="true"></span><h3 class="cbname">Costa Rica</h3></div>
+        <span class="cbblurb">979 species across 14 regions, from cloud forest quetzals to the macaws of the Osa, with the lodges and guides for each.</span>
+        <span class="cbgo">Open the guide <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+      </a>
+        </div>
+      </section>
     </div>
 
 
@@ -346,7 +394,7 @@
     // The world map is the way in to a country guide: shared Natural Earth land plus
     // one gold pin per country that has a full page of its own. Listings are found
     // through the finder below, so no listing dots are drawn.
-    var COUNTRY_PAGES = [{"href":"/trips/costa-rica/","slug":"costa-rica","name":"Costa Rica","lon":-84.1,"lat":9.9,"blurb":"979 species across 14 regions, from cloud forest quetzals to the macaws of the Osa, with the lodges and guides for each."},{"href":"/trips/netherlands/","slug":"netherlands","name":"Netherlands","lon":5.3,"lat":52.2,"blurb":"Wadden Sea wader roosts, meadow birds and the Veluwe woodpeckers: 539 species across 13 regions, reachable by train and bike."},{"href":"/trips/united-kingdom/","slug":"united-kingdom","name":"United Kingdom","lon":-2.5,"lat":54.2,"blurb":"Seabird cliffs, pinewood specialities and estuaries full of geese: 748 species across 14 regions, from Shetland to Scilly."},{"href":"/trips/scotland/","slug":"scotland","name":"Scotland","lon":-4.2,"lat":56.8,"blurb":"Pinewood specialities, the world's largest gannet colony and geese in six figures: 7 regions from Shetland to the Solway."}];
+    var COUNTRY_PAGES = [{"href": "/trips/costa-rica/", "slug": "costa-rica", "name": "Costa Rica", "lon": -84.1, "lat": 9.9, "blurb": "979 species across 14 regions, from cloud forest quetzals to the macaws of the Osa, with the lodges and guides for each.", "continent": "Central America", "hue": "#D68910"}, {"href": "/trips/netherlands/", "slug": "netherlands", "name": "Netherlands", "lon": 5.3, "lat": 52.2, "blurb": "Wadden Sea wader roosts, meadow birds and the Veluwe woodpeckers: 539 species across 13 regions, reachable by train and bike.", "continent": "Europe", "hue": "#2E86AB"}, {"href": "/trips/scotland/", "slug": "scotland", "name": "Scotland", "lon": -4.2, "lat": 56.8, "blurb": "Pinewood specialities, the world's largest gannet colony and geese in six figures: 7 regions from Shetland to the Solway.", "continent": "Europe", "hue": "#2E86AB"}, {"href": "/trips/france/", "slug": "france", "name": "France", "lon": 2.4, "lat": 46.6, "blurb": "Flamingos in the Camargue, four vulture species over one gorge and cranes in Champagne: 724 species across 14 regions.", "continent": "Europe", "hue": "#2E86AB"}, {"href": "/trips/germany/", "slug": "germany", "name": "Germany", "lon": 10.4, "lat": 51.2, "blurb": "The largest crane gathering in western Europe, Great Bustards an hour from Berlin and Helgoland in autumn: 651 species across 12 regions.", "continent": "Europe", "hue": "#2E86AB"}, {"href": "/trips/england/", "slug": "england", "name": "England", "lon": -1.5, "lat": 52.6, "blurb": "Seabird cities, reedbed bitterns and the finest wader spectacle in Britain: 12 regions, from the Farnes to Scilly.", "continent": "Europe", "hue": "#2E86AB"}, {"href": "/trips/wales/", "slug": "wales", "name": "Wales", "lon": -3.8, "lat": 52.4, "blurb": "Shearwater islands, Red Kites and estuary waders: 6 regions, from Anglesey to the Gower.", "continent": "Europe", "hue": "#2E86AB"}, {"href": "/trips/northern-ireland/", "slug": "northern-ireland", "name": "Northern Ireland", "lon": -6.7, "lat": 54.7, "blurb": "Rathlin's seabird cliffs and a world population of Brent Geese on Strangford: 4 regions, all within two hours of Belfast.", "continent": "Europe", "hue": "#2E86AB"}, {"href": "/trips/ireland/", "slug": "ireland", "name": "Ireland", "lon": -8.0, "lat": 53.3, "blurb": "Greenland White-fronted Geese at Wexford, Skellig gannets and Atlantic seawatching: 445 species across 8 regions.", "continent": "Europe", "hue": "#2E86AB"}];
     (function () {
       var host = document.getElementById('tripmap');
       if (!host) return;
@@ -382,58 +430,53 @@
           a.setAttribute('class', 'cpage');
           a.setAttribute('aria-label', c.name + ' birding guide');
           var x = (c.lon + 180) * S, y = (TOP - c.lat) * S;
-          // One marker, not two. A gold ring at the point with a separate name pill
-          // under it read as two controls and left people unsure which one to click.
-          // The pill now sits above the point with a tail running down to it, so the
-          // whole thing is a single labelled pin.
+          // NO STANDING LABEL. Cat, 2026-08-23: the name pills were drawn permanently and
+          // collided the moment two countries sat close together — Scotland and the United
+          // Kingdom overlapped into "U…om" at the default zoom, which is unreadable and
+          // gets worse with every country added. The cams map already had the answer: a
+          // plain dot, and the name on hover. Same behaviour here, with the <a> kept so the
+          // pin stays a real link a keyboard can reach and a crawler can follow.
           var dot = document.createElementNS(NS, 'circle');
           dot.setAttribute('cx', x.toFixed(1)); dot.setAttribute('cy', y.toFixed(1));
-          dot.setAttribute('r', 4); dot.setAttribute('class', 'cpdot');
-          var tail = document.createElementNS(NS, 'path');
-          tail.setAttribute('class', 'cptail');
-          var pill = document.createElementNS(NS, 'rect');
-          pill.setAttribute('class', 'cppill'); pill.setAttribute('rx', 9);
-          var lab = document.createElementNS(NS, 'text');
-          lab.setAttribute('x', x.toFixed(1)); lab.setAttribute('y', (y - 22).toFixed(1));
-          lab.setAttribute('class', 'cplab'); lab.textContent = c.name;
-          a.appendChild(dot); a.appendChild(tail); a.appendChild(pill); a.appendChild(lab);
-          a.addEventListener('pointerenter', function (e) {
-            tip.innerHTML = '<b>' + c.name + '</b><span>' + c.blurb + '</span>'
+          dot.setAttribute('r', 5); dot.setAttribute('class', 'cpdot');
+          // One hue per continent, the same one the card carries, so a colour means the
+          // same thing on the map and in the list below it.
+          if (c.hue) dot.setAttribute('fill', c.hue);
+          var title = document.createElementNS(NS, 'title');
+          title.textContent = c.name;
+          a.appendChild(dot); a.appendChild(title);
+          function show(e) {
+            tip.innerHTML = '<b>' + c.name + '</b>'
+              + (c.continent ? '<span class="tipcont">' + c.continent + '</span>' : '')
+              + '<span>' + c.blurb + '</span>'
               + '<span class="go">Open the country guide</span>';
-            tip.hidden = false; posTip(e);
-          });
+            tip.hidden = false;
+            if (e && e.clientX !== undefined) posTip(e);
+            else {
+              // Keyboard focus has no pointer position, so the tip goes beside the dot.
+              var r = host.getBoundingClientRect(), b = dot.getBoundingClientRect();
+              tip.style.left = (b.left - r.left + 14) + 'px';
+              tip.style.top = (b.top - r.top + 10) + 'px';
+            }
+          }
+          a.addEventListener('pointerenter', show);
           a.addEventListener('pointermove', posTip);
           a.addEventListener('pointerleave', function () { tip.hidden = true; });
+          a.addEventListener('focus', show);
+          a.addEventListener('blur', function () { tip.hidden = true; });
           // A pan that ends over the pin must not count as a click.
           a.addEventListener('click', function (e) { if (moved) e.preventDefault(); });
           svg.appendChild(a);
-          cpins.push({ dot: dot, tail: tail, lab: lab, pill: pill, x: x, y: y });
+          cpins.push({ dot: dot });
         });
         host.appendChild(svg);
         var vb = { x: 0, y: 0, w: W, h: H };
         function apply() {
           svg.setAttribute('viewBox', vb.x + ' ' + vb.y + ' ' + vb.w + ' ' + vb.h);
-          var k = vb.w / W;
-          cpins.forEach(function (c) {
-            c.dot.setAttribute('r', (4 * k).toFixed(2));
-            c.lab.setAttribute('font-size', (13 * k).toFixed(2));
-            c.lab.setAttribute('y', (c.y - 22 * k).toFixed(2));
-            // The pill is sized from the rendered text, so it fits any country name.
-            var bb = c.lab.getBBox();
-            var px = 8 * k, py = 4 * k;
-            var py0 = bb.y - py, ph = bb.height + py * 2;
-            c.pill.setAttribute('x', (bb.x - px).toFixed(2));
-            c.pill.setAttribute('y', py0.toFixed(2));
-            c.pill.setAttribute('width', (bb.width + px * 2).toFixed(2));
-            c.pill.setAttribute('height', ph.toFixed(2));
-            c.pill.setAttribute('rx', (7 * k).toFixed(2));
-            c.pill.setAttribute('stroke-width', (1.4 * k).toFixed(2));
-            // Tail from the pill's bottom edge down to the point itself.
-            var by = py0 + ph, w = 5 * k;
-            c.tail.setAttribute('d', 'M' + (c.x - w).toFixed(2) + ' ' + (by - 0.5 * k).toFixed(2)
-              + 'L' + (c.x + w).toFixed(2) + ' ' + (by - 0.5 * k).toFixed(2)
-              + 'L' + c.x.toFixed(2) + ' ' + (c.y - 1.5 * k).toFixed(2) + 'Z');
-          });
+          // Counter-scale the dot so it stays the same size on screen at any zoom. It has
+          // to be an SVG attribute; a CSS r would override this.
+          var r = Math.max(2, 5 * vb.w / W);
+          cpins.forEach(function (c) { c.dot.setAttribute('r', r.toFixed(2)); });
           land.setAttribute('style', 'stroke-width:' + (0.6 * vb.w / W) + 'px');
         }
         function clamp() {
@@ -478,6 +521,23 @@
         apply();
       }
       boot();
+    })();
+
+
+    // The hero and footer clips sit at opacity 0 until .ready lands on them, so without
+    // this they load, autoplay, and stay invisible — which is exactly what they were
+    // doing on this page. Same block as cams/ and every country guide.
+    (function () {
+      var vids = document.querySelectorAll('.hero-video');
+      if (!vids.length) return;
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      vids.forEach(function (v) {
+        if (reduce) { v.remove(); return; }
+        if (v.readyState >= 2) v.classList.add('ready');
+        v.addEventListener('loadeddata', function () { v.classList.add('ready'); });
+        var p = v.play();
+        if (p && p.catch) { p.catch(function () {}); }
+      });
     })();
 
     (function () {
