@@ -162,6 +162,18 @@
     .lux svg { width: 12px; height: 12px; fill: var(--gold-deep); }
     .lux-off { display: inline-flex; gap: 1.5px; }
     .lux-off svg { fill: #DED4B6; }
+    /* The distance is the key the list is sorted on, so it reads as a fact about the
+       property rather than as another chip to press. Same weight as the town beside it,
+       set in the green so the eye can run down the column and compare. */
+    .stdist { color: var(--green-dark); font-weight: 700; white-space: nowrap; }
+    /* Wide, quiet, and clearly a control rather than a card: it sits at the foot of a
+       list of twenty and its whole job is to say how many more there are. */
+    .showrest { display: block; width: calc(100% - 4px); margin: 10px 2px 2px; padding: 11px 14px;
+      font-family: var(--body); font-size: 13.5px; font-weight: 800; color: var(--green-dark);
+      background: var(--surface); border: 1px dashed var(--border); border-radius: 12px;
+      cursor: pointer; text-align: center; }
+    .showrest:hover { background: var(--surface-alt); border-style: solid; }
+    .showrest:focus-visible { outline: 2px solid var(--green-dark); outline-offset: 2px; }
     .stayrule { font-family: var(--body); font-size: 13px; line-height: 1.55; color: var(--muted); margin: 0 2px 12px; max-width: 78ch; }
     .stayrule a { color: var(--green-dark); font-weight: 800; }
     .where.wildlife { color: var(--muted); }
@@ -846,14 +858,14 @@
     </div>
 
     <div class="certlist" id="certlist">
-      <article class="certdef" id="scheme-ecolabel" data-q="eu ecolabel ecolabel european commission austria austria france france austria austria austria italy italy netherlands netherlands austria austria germany canary islands canary islands germany portugal iceland portugal spain spain">
+      <article class="certdef" id="scheme-ecolabel" data-q="eu ecolabel ecolabel european commission austria austria france france austria austria austria italy italy netherlands netherlands austria austria germany germany iceland portugal spain spain portugal">
         <h3>EU Ecolabel<span class="certdef-tag">Ecolabel</span></h3>
         <p class="certdef-by">Run by European Commission, since 1992</p>
         <p>Present in Austria and used alongside the national scheme. The country-filtered catalogue could not be loaded when this page was last checked, so no Austrian count is stated here.</p>
         <div class="certwhere">
           <span class="certwhere-label">On these guides</span>
-          <a class="certchip" href="/trips/austria/">Austria<span>167 listings</span></a>
-          <a class="certchip" href="/trips/austria/">Austria<span>158 listings</span></a>
+          <a class="certchip" href="/trips/austria/">Austria<span>165 listings</span></a>
+          <a class="certchip" href="/trips/austria/">Austria<span>156 listings</span></a>
           <a class="certchip" href="/trips/france/">France<span>126 listings</span></a>
           <a class="certchip" href="/trips/france/">France<span>105 listings</span></a>
           <a class="certchip" href="/trips/austria/">Austria<span>104 listings</span></a>
@@ -866,14 +878,12 @@
           <a class="certchip" href="/trips/austria/">Austria<span>12 listings</span></a>
           <a class="certchip" href="/trips/austria/">Austria<span>12 listings</span></a>
           <a class="certchip" href="/trips/germany/">Germany<span>10 listings</span></a>
-          <a class="certchip" href="/trips/canary-islands/">Canary Islands<span>6 listings</span></a>
-          <a class="certchip" href="/trips/canary-islands/">Canary Islands<span>6 listings</span></a>
           <a class="certchip" href="/trips/germany/">Germany<span>6 listings</span></a>
-          <a class="certchip" href="/trips/portugal/">Portugal<span>4 listings</span></a>
           <a class="certchip" href="/trips/iceland/">Iceland<span>3 listings</span></a>
-          <a class="certchip" href="/trips/portugal/">Portugal<span>3 listings</span></a>
+          <a class="certchip" href="/trips/portugal/">Portugal<span>2 listings</span></a>
           <a class="certchip" href="/trips/spain/">Spain<span>2 listings</span></a>
           <a class="certchip" href="/trips/spain/">Spain<span>2 listings</span></a>
+          <a class="certchip" href="/trips/portugal/">Portugal<span>1 listing</span></a>
         </div>
         <dl class="certdef-rows">
           <div><dt>Levels</dt><dd></dd></div>
@@ -887,10 +897,10 @@
         <p>The scheme the islands run on, built on the seventeen UN Sustainable Development Goals. Its register can be filtered by individual island rather than by country, which is the practical way to separate a Canary property from a mainland one. Lanzarote was the first Biosphere certified destination in the world and renewed its Gold destination status in 2026.</p>
         <div class="certwhere">
           <span class="certwhere-label">On these guides</span>
-          <a class="certchip" href="/trips/portugal/">Portugal<span>139 listings</span></a>
-          <a class="certchip" href="/trips/spain/">Spain<span>47 listings</span></a>
-          <a class="certchip" href="/trips/spain/">Spain<span>22 listings</span></a>
+          <a class="certchip" href="/trips/portugal/">Portugal<span>138 listings</span></a>
+          <a class="certchip" href="/trips/spain/">Spain<span>46 listings</span></a>
           <a class="certchip" href="/trips/spain/">Spain<span>21 listings</span></a>
+          <a class="certchip" href="/trips/spain/">Spain<span>20 listings</span></a>
           <a class="certchip" href="/trips/germany/">Germany<span>5 listings</span></a>
           <a class="certchip" href="/trips/austria/">Austria<span>2 listings</span></a>
           <a class="certchip" href="/trips/canary-islands/">Canary Islands<span>1 listing</span></a>
@@ -953,12 +963,12 @@
         <p>The layer above all of this, and the one most often misread on lodge websites. GSTC maintains the global standards and, in its own words, certifies the certifiers. It does not audit hotels.</p>
         <div class="certwhere">
           <span class="certwhere-label">On these guides</span>
-          <a class="certchip" href="/trips/italy/">Italy<span>82 listings</span></a>
+          <a class="certchip" href="/trips/italy/">Italy<span>81 listings</span></a>
           <a class="certchip" href="/trips/england/">England<span>10 listings</span></a>
           <a class="certchip" href="/trips/germany/">Germany<span>8 listings</span></a>
-          <a class="certchip" href="/trips/spain/">Spain<span>7 listings</span></a>
-          <a class="certchip" href="/trips/austria/">Austria<span>2 listings</span></a>
-          <a class="certchip" href="/trips/austria/">Austria<span>2 listings</span></a>
+          <a class="certchip" href="/trips/spain/">Spain<span>5 listings</span></a>
+          <a class="certchip" href="/trips/austria/">Austria<span>1 listing</span></a>
+          <a class="certchip" href="/trips/austria/">Austria<span>1 listing</span></a>
           <a class="certchip" href="/trips/costa-rica/">Costa Rica<span>1 listing</span></a>
           <a class="certchip" href="/trips/france/">France<span>1 listing</span></a>
           <a class="certchip" href="/trips/greece/">Greece<span>1 listing</span></a>
@@ -973,17 +983,17 @@
         </dl>
         <p><a class="watch-link" href="https://www.gstc.org/certification/accreditation-certification-recognition/" target="_blank" rel="noopener">Read GSTC on the difference</a></p>
       </article>
-      <article class="certdef" id="scheme-green-tourism" data-q="green tourism green tourism green tourism, an independent certification body based in perth, scotland england scotland northern ireland wales ireland">
+      <article class="certdef" id="scheme-green-tourism" data-q="green tourism green tourism green tourism, an independent certification body based in perth, scotland england scotland wales northern ireland ireland">
         <h3>Green Tourism<span class="certdef-tag">Green Tourism</span></h3>
         <p class="certdef-by">Run by Green Tourism, an independent certification body based in Perth, Scotland, since 1997</p>
         <p>A sustainability certification for accommodation, attractions and venues across the UK and beyond, assessed against a criteria set covering energy, water, waste, travel, biodiversity and community, then awarded at Bronze, Silver or Gold.</p>
         <div class="certwhere">
           <span class="certwhere-label">On these guides</span>
-          <a class="certchip" href="/trips/england/">England<span>614 listings</span></a>
-          <a class="certchip" href="/trips/scotland/">Scotland<span>317 listings</span></a>
-          <a class="certchip" href="/trips/northern-ireland/">Northern Ireland<span>73 listings</span></a>
-          <a class="certchip" href="/trips/wales/">Wales<span>66 listings</span></a>
-          <a class="certchip" href="/trips/ireland/">Ireland<span>39 listings</span></a>
+          <a class="certchip" href="/trips/england/">England<span>575 listings</span></a>
+          <a class="certchip" href="/trips/scotland/">Scotland<span>258 listings</span></a>
+          <a class="certchip" href="/trips/wales/">Wales<span>62 listings</span></a>
+          <a class="certchip" href="/trips/northern-ireland/">Northern Ireland<span>53 listings</span></a>
+          <a class="certchip" href="/trips/ireland/">Ireland<span>18 listings</span></a>
         </div>
         <dl class="certdef-rows">
           <div><dt>Levels</dt><dd>Bronze, Silver and Gold</dd></div>
@@ -991,27 +1001,25 @@
         </dl>
         <p><a class="watch-link" href="https://www.green-tourism.com/our-members/" target="_blank" rel="noopener">Open the official register</a></p>
       </article>
-      <article class="certdef" id="scheme-green-key" data-q="green key green key teragir in france, under foundation for environmental education france netherlands portugal germany england greece italy spain austria scotland iceland northern ireland wales austria canary islands ireland austria austria france">
+      <article class="certdef" id="scheme-green-key" data-q="green key green key teragir in france, under foundation for environmental education france netherlands portugal germany england greece italy spain austria scotland iceland wales austria ireland austria austria france">
         <h3>Green Key<span class="certdef-tag">Green Key</span></h3>
         <p class="certdef-by">Run by Teragir in France, under Foundation for Environmental Education, since 1998</p>
         <p>An international sustainability certification for accommodation, campsites, restaurants and attractions.</p>
         <div class="certwhere">
           <span class="certwhere-label">On these guides</span>
-          <a class="certchip" href="/trips/france/">France<span>808 listings</span></a>
+          <a class="certchip" href="/trips/france/">France<span>805 listings</span></a>
           <a class="certchip" href="/trips/netherlands/">Netherlands<span>561 listings</span></a>
-          <a class="certchip" href="/trips/portugal/">Portugal<span>250 listings</span></a>
+          <a class="certchip" href="/trips/portugal/">Portugal<span>249 listings</span></a>
           <a class="certchip" href="/trips/germany/">Germany<span>191 listings</span></a>
           <a class="certchip" href="/trips/england/">England<span>154 listings</span></a>
-          <a class="certchip" href="/trips/greece/">Greece<span>104 listings</span></a>
+          <a class="certchip" href="/trips/greece/">Greece<span>102 listings</span></a>
           <a class="certchip" href="/trips/italy/">Italy<span>43 listings</span></a>
-          <a class="certchip" href="/trips/spain/">Spain<span>40 listings</span></a>
+          <a class="certchip" href="/trips/spain/">Spain<span>39 listings</span></a>
           <a class="certchip" href="/trips/austria/">Austria<span>37 listings</span></a>
           <a class="certchip" href="/trips/scotland/">Scotland<span>14 listings</span></a>
           <a class="certchip" href="/trips/iceland/">Iceland<span>6 listings</span></a>
-          <a class="certchip" href="/trips/northern-ireland/">Northern Ireland<span>4 listings</span></a>
           <a class="certchip" href="/trips/wales/">Wales<span>4 listings</span></a>
           <a class="certchip" href="/trips/austria/">Austria<span>3 listings</span></a>
-          <a class="certchip" href="/trips/canary-islands/">Canary Islands<span>2 listings</span></a>
           <a class="certchip" href="/trips/ireland/">Ireland<span>2 listings</span></a>
           <a class="certchip" href="/trips/austria/">Austria<span>1 listing</span></a>
           <a class="certchip" href="/trips/austria/">Austria<span>1 listing</span></a>
@@ -1051,7 +1059,7 @@
         <p>The second scheme with real presence in Greek resort hotels, and GSTC recognised. Its Greek accommodation directory could not be loaded when this page was last checked, so no count is stated here.</p>
         <div class="certwhere">
           <span class="certwhere-label">On these guides</span>
-          <a class="certchip" href="/trips/canary-islands/">Canary Islands<span>56 listings</span></a>
+          <a class="certchip" href="/trips/canary-islands/">Canary Islands<span>54 listings</span></a>
           <a class="certchip" href="/trips/portugal/">Portugal<span>20 listings</span></a>
           <a class="certchip" href="/trips/spain/">Spain<span>19 listings</span></a>
           <a class="certchip" href="/trips/spain/">Spain<span>6 listings</span></a>

@@ -180,6 +180,18 @@
     .lux svg { width: 12px; height: 12px; fill: var(--gold-deep); }
     .lux-off { display: inline-flex; gap: 1.5px; }
     .lux-off svg { fill: #DED4B6; }
+    /* The distance is the key the list is sorted on, so it reads as a fact about the
+       property rather than as another chip to press. Same weight as the town beside it,
+       set in the green so the eye can run down the column and compare. */
+    .stdist { color: var(--green-dark); font-weight: 700; white-space: nowrap; }
+    /* Wide, quiet, and clearly a control rather than a card: it sits at the foot of a
+       list of twenty and its whole job is to say how many more there are. */
+    .showrest { display: block; width: calc(100% - 4px); margin: 10px 2px 2px; padding: 11px 14px;
+      font-family: var(--body); font-size: 13.5px; font-weight: 800; color: var(--green-dark);
+      background: var(--surface); border: 1px dashed var(--border); border-radius: 12px;
+      cursor: pointer; text-align: center; }
+    .showrest:hover { background: var(--surface-alt); border-style: solid; }
+    .showrest:focus-visible { outline: 2px solid var(--green-dark); outline-offset: 2px; }
     .stayrule { font-family: var(--body); font-size: 13px; line-height: 1.55; color: var(--muted); margin: 0 2px 12px; max-width: 78ch; }
     .stayrule a { color: var(--green-dark); font-weight: 800; }
     .where.wildlife { color: var(--muted); }
@@ -2612,6 +2624,7 @@
             <label for="rsort-site-lake-m-vatn-and-the-northeast">Sort</label>
             <select id="rsort-site-lake-m-vatn-and-the-northeast" class="sortsel" data-staysort="stay-site-lake-m-vatn-and-the-northeast">
               <option value="rec" selected>Recommended</option>
+              <option value="dist">Distance, nearest first</option>
               <option value="price">Price, lowest first</option>
               <option value="lux">Luxury level, highest first</option>
               <option value="cert">Certified first</option>
@@ -2619,27 +2632,10 @@
             </select>
           </div>
           <div class="list">
-      <article class="trip" id="lodge-bird-hotel-raudaskrida-adaldalur" data-cat="stay" data-tier="0" data-region="0" data-certs="0" data-name="hótel rauðaskriða">
-        <div class="trip-body">
-          <h4><a href="https://hotelraudaskrida.is/" target="_blank" rel="noopener">Hótel Rauðaskriða</a></h4>
-          <p class="meta">Aðaldalur</p>
-          <div class="badge-row"></div>
-          <p class="blurb">A family-run country hotel in Aðaldalur, twenty-eight kilometres south of Húsavík, used as the northeast base for covering Mývatn, Ásbyrgi and the Húsavík coast as day trips rather than staying on the lake itself.</p>
-          <p class="qualifies birdlodge">Birding lodge</p>
-          
-          
-          
-        </div>
-        <div class="trip-side">
-          <p class="priceline"><span class="pmuted">Rate not published</span></p>
-          <a class="watch-link" href="https://hotelraudaskrida.is/" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=65.8364,-17.4739" target="_blank" rel="noopener">See on a map</a>
-        </div>
-      </article>
-      <article class="trip" id="lodge-bird-skutustadir-myvatn" data-cat="stay" data-tier="0" data-region="0" data-certs="0" data-name="skútustaðir farm guesthouse">
+      <article class="trip" id="lodge-bird-skutustadir-myvatn" data-cat="stay" data-tier="0" data-km="4.2" data-region="0" data-certs="0" data-name="skútustaðir farm guesthouse">
         <div class="trip-body">
           <h4><a href="https://www.skutustadirguesthouse.com/" target="_blank" rel="noopener">Skútustaðir Farm Guesthouse</a></h4>
-          <p class="meta">Skútustaðir, Lake Mývatn</p>
+          <p class="meta">Skútustaðir, Lake Mývatn · <span class="stdist" title="Measured from this property's town to Mývatn, the nearest birding area this page lists in that region">4.2 km from Mývatn</span></p>
           <div class="badge-row"></div>
           <p class="blurb">A farm guesthouse on the southern shore beside the Skútustaðagígar pseudocraters, with Stakhólstjörn pond a short walk away for Long-tailed Duck and the scarcer wildfowl.</p>
           <p class="qualifies birdlodge">Birding lodge</p>
@@ -2653,10 +2649,10 @@
           <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=65.5674,-17.0387" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
-      <article class="trip" id="lodge-bird-vogafjos-myvatn" data-cat="stay" data-tier="0" data-region="0" data-certs="0" data-name="vogafjós farm resort">
+      <article class="trip" id="lodge-bird-vogafjos-myvatn" data-cat="stay" data-tier="0" data-km="4.4" data-region="0" data-certs="0" data-name="vogafjós farm resort">
         <div class="trip-body">
           <h4><a href="https://www.vogafjosfarmresort.is/en/" target="_blank" rel="noopener">Vogafjós Farm Resort</a></h4>
-          <p class="meta">Vogar, Lake Mývatn</p>
+          <p class="meta">Vogar, Lake Mývatn · <span class="stdist" title="Measured from this property's town to Dimmuborgir, the nearest birding area this page lists in that region">4.4 km from Dimmuborgir</span></p>
           <div class="badge-row"></div>
           <p class="blurb">A working dairy farm on the east shore of Mývatn, among the wetland breeding grounds, close enough that a Short-eared Owl hunting outside the dining room is a thing guests report.</p>
           <p class="qualifies birdlodge">Birding lodge</p>
@@ -2668,6 +2664,23 @@
           <p class="priceline"><span class="pmuted">Rate not published</span></p>
           <a class="watch-link" href="https://www.vogafjosfarmresort.is/en/" target="_blank" rel="noopener">Visit website</a>
           <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=65.6244,-16.9236" target="_blank" rel="noopener">See on a map</a>
+        </div>
+      </article>
+      <article class="trip" id="lodge-bird-hotel-raudaskrida-adaldalur" data-cat="stay" data-tier="0" data-km="17.4" data-region="0" data-certs="0" data-name="hótel rauðaskriða">
+        <div class="trip-body">
+          <h4><a href="https://hotelraudaskrida.is/" target="_blank" rel="noopener">Hótel Rauðaskriða</a></h4>
+          <p class="meta">Aðaldalur · <span class="stdist" title="Measured from this property's town to Goðafoss, the nearest birding area this page lists in that region">17 km from Goðafoss</span></p>
+          <div class="badge-row"></div>
+          <p class="blurb">A family-run country hotel in Aðaldalur, twenty-eight kilometres south of Húsavík, used as the northeast base for covering Mývatn, Ásbyrgi and the Húsavík coast as day trips rather than staying on the lake itself.</p>
+          <p class="qualifies birdlodge">Birding lodge</p>
+          
+          
+          
+        </div>
+        <div class="trip-side">
+          <p class="priceline"><span class="pmuted">Rate not published</span></p>
+          <a class="watch-link" href="https://hotelraudaskrida.is/" target="_blank" rel="noopener">Visit website</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=65.8364,-17.4739" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
           </div>
@@ -2701,6 +2714,7 @@
             <label for="rsort-site-the-westfjords-and-l-trabjarg">Sort</label>
             <select id="rsort-site-the-westfjords-and-l-trabjarg" class="sortsel" data-staysort="stay-site-the-westfjords-and-l-trabjarg">
               <option value="rec" selected>Recommended</option>
+              <option value="dist">Distance, nearest first</option>
               <option value="price">Price, lowest first</option>
               <option value="lux">Luxury level, highest first</option>
               <option value="cert">Certified first</option>
@@ -2708,27 +2722,10 @@
             </select>
           </div>
           <div class="list">
-      <article class="trip" id="lodge-bird-heydalur-mjoifjordur" data-cat="stay" data-tier="0" data-region="1" data-certs="0" data-name="heydalur country hotel">
-        <div class="trip-body">
-          <h4><a href="https://www.heydalur.is/en" target="_blank" rel="noopener">Heydalur Country Hotel</a></h4>
-          <p class="meta">Mjóifjörður, Ísafjarðardjúp</p>
-          <div class="badge-row"></div>
-          <p class="blurb">A remote valley hotel on Ísafjarðardjúp with geothermal baths, used as the stop between Hólmavík and Ísafjörður, with birding in the valley itself through the summer.</p>
-          <p class="qualifies birdlodge">Birding lodge</p>
-          
-          
-          
-        </div>
-        <div class="trip-side">
-          <p class="priceline"><span class="pmuted">Rate not published</span></p>
-          <a class="watch-link" href="https://www.heydalur.is/en" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=65.8438,-22.6784" target="_blank" rel="noopener">See on a map</a>
-        </div>
-      </article>
-      <article class="trip" id="lodge-bird-hotel-breidavik-latrabjarg" data-cat="stay" data-tier="0" data-region="1" data-certs="0" data-name="hótel breiðavík">
+      <article class="trip" id="lodge-bird-hotel-breidavik-latrabjarg" data-cat="stay" data-tier="0" data-km="5.1" data-region="1" data-certs="0" data-name="hótel breiðavík">
         <div class="trip-body">
           <h4><a href="https://breidavik.is/" target="_blank" rel="noopener">Hótel Breiðavík</a></h4>
-          <p class="meta">Breiðavík</p>
+          <p class="meta">Breiðavík · <span class="stdist" title="Measured from this property's town to Látrabjarg, the nearest birding area this page lists in that region">5.1 km from Látrabjarg</span></p>
           <div class="badge-row"></div>
           <p class="blurb">A former boarding school turned seasonal guesthouse twelve kilometres from Látrabjarg, and the only accommodation at Europe's largest bird cliff. Open 1 May to 30 September.</p>
           <p class="qualifies birdlodge">Birding lodge</p>
@@ -2742,10 +2739,10 @@
           <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=65.5,-24.3513" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
-      <article class="trip" id="lodge-bird-vigur-island-house" data-cat="stay" data-tier="0" data-region="1" data-certs="0" data-name="viktoría's house, vigur">
+      <article class="trip" id="lodge-bird-vigur-island-house" data-cat="stay" data-tier="0" data-km="13.3" data-region="1" data-certs="0" data-name="viktoría's house, vigur">
         <div class="trip-body">
           <h4><a href="https://www.vigurisland.com/stay" target="_blank" rel="noopener">Viktoría's House, Vigur</a></h4>
-          <p class="meta">Vigur, Ísafjarðardjúp</p>
+          <p class="meta">Vigur, Ísafjarðardjúp · <span class="stdist" title="Measured from this property's town to Ísafjörður, the nearest birding area this page lists in that region">13 km from Ísafjörður</span></p>
           <div class="badge-row"></div>
           <p class="blurb">Two rooms in an 1860 farmhouse annex, and the only place to sleep on Vigur, an Important Bird Area holding about a hundred thousand puffins and Iceland's largest Black Guillemot colony at over fifteen hundred pairs.</p>
           <p class="qualifies birdlodge">Birding lodge</p>
@@ -2757,6 +2754,23 @@
           <p class="priceline"><span class="pmuted">Rate not published</span></p>
           <a class="watch-link" href="https://www.vigurisland.com/stay" target="_blank" rel="noopener">Visit website</a>
           <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=66.055,-22.828" target="_blank" rel="noopener">See on a map</a>
+        </div>
+      </article>
+      <article class="trip" id="lodge-bird-heydalur-mjoifjordur" data-cat="stay" data-tier="0" data-km="26.8" data-region="1" data-certs="0" data-name="heydalur country hotel">
+        <div class="trip-body">
+          <h4><a href="https://www.heydalur.is/en" target="_blank" rel="noopener">Heydalur Country Hotel</a></h4>
+          <p class="meta">Mjóifjörður, Ísafjarðardjúp · <span class="stdist" title="Measured from this property's town to Dynjandi, the nearest birding area this page lists in that region">27 km from Dynjandi</span></p>
+          <div class="badge-row"></div>
+          <p class="blurb">A remote valley hotel on Ísafjarðardjúp with geothermal baths, used as the stop between Hólmavík and Ísafjörður, with birding in the valley itself through the summer.</p>
+          <p class="qualifies birdlodge">Birding lodge</p>
+          
+          
+          
+        </div>
+        <div class="trip-side">
+          <p class="priceline"><span class="pmuted">Rate not published</span></p>
+          <a class="watch-link" href="https://www.heydalur.is/en" target="_blank" rel="noopener">Visit website</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=65.8438,-22.6784" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
           </div>
@@ -2787,10 +2801,10 @@
           <summary class="rsub"><span class="rsub-x" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span><span class="rsub-t">Where to Stay</span><span class="rsub-n">2 places to stay</span></summary>
           <p class="stayrule">Two kinds of place, and the difference is worth knowing. Most carry a current certification from a scheme that publishes its own members, taken from the register rather than from the property. The rest carry none, and are here because birding operators actually use them: the guesthouse at Látrabjarg that is the only building at Europe’s largest bird cliff, the two rooms on Vigur among a hundred thousand puffins, the farm on the Mývatn shore. Iceland is thin ground for certification, with thirty Icelandic properties in the supplier archive against three and a half thousand for Spain, so a list of only certified places would have left four regions with nowhere to sleep. The highlands still have nowhere, because there the answer is a mountain hut rather than a hotel. <a href="/trips/certifications/">What each certification actually means</a></p>
           <div class="list">
-      <article class="trip" id="lodge-bird-langaholt-snaefellsnes" data-cat="stay" data-tier="0" data-region="2" data-certs="0" data-name="hotel langaholt">
+      <article class="trip" id="lodge-bird-langaholt-snaefellsnes" data-cat="stay" data-tier="0" data-km="16.1" data-region="2" data-certs="0" data-name="hotel langaholt">
         <div class="trip-body">
           <h4><a href="https://langaholt.is/" target="_blank" rel="noopener">Hotel Langaholt</a></h4>
-          <p class="meta">Staðarstaður, Snæfellsnes</p>
+          <p class="meta">Staðarstaður, Snæfellsnes · <span class="stdist" title="Measured from this property's town to Grundarfjörður, the nearest birding area this page lists in that region">16 km from Grundarfjörður</span></p>
           <div class="badge-row"></div>
           <p class="blurb">A family-run hotel on the south shore of Snæfellsnes since 1978, near Ytri Tunga and within reach of the peninsula's White-tailed Eagles, Arctic Terns and Kittiwakes.</p>
           <p class="qualifies birdlodge">Birding lodge</p>
@@ -2804,10 +2818,10 @@
           <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=64.8228,-23.0169" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
-      <article class="trip" id="lodge-ww-ion-adventure-hotel-thingvellir" data-cat="stay" data-tier="3" data-price="300" data-region="2" data-certs="2" data-name="ion adventure hotel">
+      <article class="trip" id="lodge-ww-ion-adventure-hotel-thingvellir" data-cat="stay" data-tier="3" data-price="300" data-km="1.8" data-region="2" data-certs="2" data-name="ion adventure hotel">
         <div class="trip-body">
           <h4><a href="https://www.ioniceland.is/" target="_blank" rel="noopener">Ion Adventure Hotel</a></h4>
-          <p class="meta">Thingvellir · <span class="lux" title="Luxury level 3 of 4: Luxury"><span class="luxname">Luxury</span><span class="luxdots" role="img" aria-label="Luxury level 3 of 4"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><span class="lux-off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg></span></span></span></p>
+          <p class="meta">Thingvellir · <span class="stdist" title="Measured from this property's town to Stykkishólmur, the nearest birding area this page lists in that region">1.8 km from Stykkishólmur</span> · <span class="lux" title="Luxury level 3 of 4: Luxury"><span class="luxname">Luxury</span><span class="luxdots" role="img" aria-label="Luxury level 3 of 4"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><span class="lux-off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg></span></span></span></p>
           <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/" title="What Geothermal sustainable means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="" target="_blank" rel="noopener" title="Certified: opens the registry evidence">Geothermal sustainable</a></span><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/" title="What Tablet Hotels means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="" target="_blank" rel="noopener" title="Certified: opens the registry evidence">Tablet Hotels</a></span></div>
           <p class="blurb">Glass hotel on Thingvellir UNESCO lava fields, Northern Lights bar</p>
           
@@ -2852,6 +2866,7 @@
             <label for="rsort-site-the-south-coast-and-vestmannaeyjar">Sort</label>
             <select id="rsort-site-the-south-coast-and-vestmannaeyjar" class="sortsel" data-staysort="stay-site-the-south-coast-and-vestmannaeyjar">
               <option value="rec" selected>Recommended</option>
+              <option value="dist">Distance, nearest first</option>
               <option value="price">Price, lowest first</option>
               <option value="lux">Luxury level, highest first</option>
               <option value="cert">Certified first</option>
@@ -2859,10 +2874,10 @@
             </select>
           </div>
           <div class="list">
-      <article class="trip" id="lodge-ww-hotel-fljotshlid-hli-arendi-hvolsvollur" data-cat="stay" data-tier="0" data-region="3" data-certs="1" data-name="hótel fljótshlíd, hlíðarendi">
+      <article class="trip" id="lodge-ww-hotel-fljotshlid-hli-arendi-hvolsvollur" data-cat="stay" data-tier="0" data-km="34.7" data-region="3" data-certs="1" data-name="hótel fljótshlíd, hlíðarendi">
         <div class="trip-body">
           <h4><a href="https://smaratun.is" target="_blank" rel="noopener">Hótel Fljótshlíd, Hlíðarendi</a></h4>
-          <p class="meta">Hvolsvöllur</p>
+          <p class="meta">Hvolsvöllur · <span class="stdist" title="Measured from this property's town to Vestmannaeyjar, the nearest birding area this page lists in that region">35 km from Vestmannaeyjar</span></p>
           <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/" title="What Nordic Swan Ecolabel means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="" target="_blank" rel="noopener" title="Certified: opens the registry evidence">Nordic Swan Ecolabel</a></span></div>
           <p class="blurb">Eco-certified working farm hotel on the Saga Trail with views of Eyjafjallajökull volcano; family-run for generations; dining in a renovated historic barn and cowshed; on the grounds of Hlíðarendi from the Njáls Saga</p>
           
@@ -2876,27 +2891,10 @@
           <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=63.7508,-20.2238" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
-      <article class="trip" id="lodge-ww-hotel-ranga-south-iceland" data-cat="stay" data-tier="0" data-region="3" data-certs="1" data-name="hotel ranga">
-        <div class="trip-body">
-          <h4><a href="https://www.i-escape.com/hotel-ranga" target="_blank" rel="noopener">Hotel Ranga</a></h4>
-          <p class="meta">South Iceland</p>
-          <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/" title="What i-escape means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="" target="_blank" rel="noopener" title="Certified: opens the registry evidence">i-escape</a></span></div>
-          <p class="blurb">Remote luxury with observatory, outdoor hot tubs, Hekla volcano views</p>
-          
-          
-          
-          
-        </div>
-        <div class="trip-side">
-          <p class="priceline"><span class="pmuted">Rate not published</span></p>
-          <a class="watch-link" href="https://www.i-escape.com/hotel-ranga" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=63.78064,-20.30119" target="_blank" rel="noopener">See on a map</a>
-        </div>
-      </article>
-      <article class="trip" id="lodge-ww-umi-hotel-hvolsvollur" data-cat="stay" data-tier="3" data-region="3" data-certs="1" data-name="umi hotel">
+      <article class="trip" id="lodge-ww-umi-hotel-hvolsvollur" data-cat="stay" data-tier="3" data-km="34.7" data-region="3" data-certs="1" data-name="umi hotel">
         <div class="trip-body">
           <h4><a href="https://www.tablethotels.com/en/vik-hotels/umi-hotel" target="_blank" rel="noopener">UMI Hotel</a></h4>
-          <p class="meta"> · <span class="lux" title="Luxury level 3 of 4: Luxury"><span class="luxname">Luxury</span><span class="luxdots" role="img" aria-label="Luxury level 3 of 4"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><span class="lux-off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg></span></span></span></p>
+          <p class="meta">Hvolsvöllur · <span class="stdist" title="Measured from this property's town to Vestmannaeyjar, the nearest birding area this page lists in that region">35 km from Vestmannaeyjar</span> · <span class="lux" title="Luxury level 3 of 4: Luxury"><span class="luxname">Luxury</span><span class="luxdots" role="img" aria-label="Luxury level 3 of 4"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><span class="lux-off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg></span></span></span></p>
           <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/" title="What Tablet Hotels means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="" target="_blank" rel="noopener" title="Certified: opens the registry evidence">Tablet Hotels</a></span></div>
           
           
@@ -2908,6 +2906,23 @@
           <p class="priceline"><span class="pmuted">Rate not published</span></p>
           <a class="watch-link" href="https://www.tablethotels.com/en/vik-hotels/umi-hotel" target="_blank" rel="noopener">Visit website</a>
           <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=63.75081,-20.22384" target="_blank" rel="noopener">See on a map</a>
+        </div>
+      </article>
+      <article class="trip" id="lodge-ww-hotel-ranga-south-iceland" data-cat="stay" data-tier="0" data-km="37.9" data-region="3" data-certs="1" data-name="hotel ranga">
+        <div class="trip-body">
+          <h4><a href="https://www.i-escape.com/hotel-ranga" target="_blank" rel="noopener">Hotel Ranga</a></h4>
+          <p class="meta">South Iceland · <span class="stdist" title="Measured from this property's town to Vestmannaeyjar, the nearest birding area this page lists in that region">38 km from Vestmannaeyjar</span></p>
+          <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/" title="What i-escape means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="" target="_blank" rel="noopener" title="Certified: opens the registry evidence">i-escape</a></span></div>
+          <p class="blurb">Remote luxury with observatory, outdoor hot tubs, Hekla volcano views</p>
+          
+          
+          
+          
+        </div>
+        <div class="trip-side">
+          <p class="priceline"><span class="pmuted">Rate not published</span></p>
+          <a class="watch-link" href="https://www.i-escape.com/hotel-ranga" target="_blank" rel="noopener">Visit website</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=63.78064,-20.30119" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
           </div>
@@ -2941,6 +2956,7 @@
             <label for="rsort-site-reykjanes">Sort</label>
             <select id="rsort-site-reykjanes" class="sortsel" data-staysort="stay-site-reykjanes">
               <option value="rec" selected>Recommended</option>
+              <option value="dist">Distance, nearest first</option>
               <option value="price">Price, lowest first</option>
               <option value="lux">Luxury level, highest first</option>
               <option value="cert">Certified first</option>
@@ -2948,10 +2964,10 @@
             </select>
           </div>
           <div class="list">
-      <article class="trip" id="lodge-ww-ion-city-hotel-reykjavik" data-cat="stay" data-tier="3" data-region="4" data-certs="1" data-name="ion city hotel">
+      <article class="trip" id="lodge-ww-ion-city-hotel-reykjavik" data-cat="stay" data-tier="3" data-km="0" data-region="4" data-certs="1" data-name="ion city hotel">
         <div class="trip-body">
           <h4><a href="https://www.mrandmrssmith.com/luxury-hotels/ion-city-hotel" target="_blank" rel="noopener">Ion City Hotel</a></h4>
-          <p class="meta"> · <span class="lux" title="Luxury level 3 of 4: Luxury"><span class="luxname">Luxury</span><span class="luxdots" role="img" aria-label="Luxury level 3 of 4"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><span class="lux-off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg></span></span></span></p>
+          <p class="meta">Reykjavik · <span class="stdist" title="Measured from this property's town to Reykjavík, the nearest birding area this page lists in that region">At Reykjavík</span> · <span class="lux" title="Luxury level 3 of 4: Luxury"><span class="luxname">Luxury</span><span class="luxdots" role="img" aria-label="Luxury level 3 of 4"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><span class="lux-off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg></span></span></span></p>
           <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/" title="What Mr &amp; Mrs Smith means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="" target="_blank" rel="noopener" title="Certified: opens the registry evidence">Mr &amp; Mrs Smith</a></span></div>
           <p class="blurb">The design-led Ion City Hotel is an urban retreat on a buzzing street in downtown Reykjavik, with panoramic mountain views, in-room saunas and easy access to Iceland’s great outdoors. Recycled wood panelling, lava-studded walls and bird’s-nest lighting acknowledge the natural wonders of this untamed island, while mid-century furniture and muted charcoal tones lend an air of Scandi sophistication. The house restaurant serves creative North African cuisine – it’s always buzzing with a hip local cr</p>
           <p class="qualifies birdlodge">Birding lodge</p>
@@ -2965,10 +2981,10 @@
           <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=64.146,-21.9422" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
-      <article class="trip" id="lodge-ww-berjaya-reykjavik-natura-hotel-reykjavik" data-cat="stay" data-tier="0" data-region="4" data-certs="1" data-name="berjaya reykjavik natura hotel">
+      <article class="trip" id="lodge-ww-berjaya-reykjavik-natura-hotel-reykjavik" data-cat="stay" data-tier="0" data-km="0" data-region="4" data-certs="1" data-name="berjaya reykjavik natura hotel">
         <div class="trip-body">
           <h4><a href="https://www.icelandhotelcollectionbyberjaya.com/en/hotels/reykjavik/reykjavik-natura" target="_blank" rel="noopener">Berjaya Reykjavik Natura Hotel</a></h4>
-          <p class="meta">Reykjavik</p>
+          <p class="meta">Reykjavik · <span class="stdist" title="Measured from this property's town to Reykjavík, the nearest birding area this page lists in that region">At Reykjavík</span></p>
           <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/" title="What ISO 14001 means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="" target="_blank" rel="noopener" title="Certified: opens the registry evidence">ISO 14001</a></span></div>
           <p class="blurb">Located in quiet Oskjuhlid wooded area near the sea next to Reykjavik domestic airport; indoor saltwater pool and spa; relaxed retreat feel on the edge of the city</p>
           
@@ -2982,10 +2998,10 @@
           <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=64.146,-21.9422" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
-      <article class="trip" id="lodge-ww-canopy-by-hilton-reykjavik-city-centre-reykjavik" data-cat="stay" data-tier="0" data-region="4" data-certs="1" data-name="canopy by hilton reykjavik city centre">
+      <article class="trip" id="lodge-ww-canopy-by-hilton-reykjavik-city-centre-reykjavik" data-cat="stay" data-tier="0" data-km="0" data-region="4" data-certs="1" data-name="canopy by hilton reykjavik city centre">
         <div class="trip-body">
           <h4><a href="https://www.icelandhotelcollectionbyberjaya.com/en/hotels/reykjavik/canopy-reykjavik" target="_blank" rel="noopener">Canopy by Hilton Reykjavik City Centre</a></h4>
-          <p class="meta">Reykjavik</p>
+          <p class="meta">Reykjavik · <span class="stdist" title="Measured from this property's town to Reykjavík, the nearest birding area this page lists in that region">At Reykjavík</span></p>
           <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/" title="What ISO 14001 means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="" target="_blank" rel="noopener" title="Certified: opens the registry evidence">ISO 14001</a></span></div>
           <p class="blurb">First Canopy by Hilton to open in the world; set across six connected historic houses in the heart of Reykjavik with vinyl record collection in rooms and community-focused design</p>
           
@@ -2999,10 +3015,10 @@
           <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=64.146,-21.9422" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
-      <article class="trip" id="lodge-ww-dalur-hi-eco-hostel-reykjavik-reykjavik" data-cat="stay" data-tier="0" data-region="4" data-certs="2" data-name="dalur - hi eco hostel, reykjavik">
+      <article class="trip" id="lodge-ww-dalur-hi-eco-hostel-reykjavik-reykjavik" data-cat="stay" data-tier="0" data-km="0" data-region="4" data-certs="2" data-name="dalur - hi eco hostel, reykjavik">
         <div class="trip-body">
           <h4><a href="https://www.hostel.is/en/hostels/hi-reykjavik-dalur" target="_blank" rel="noopener">Dalur - HI Eco Hostel, Reykjavik</a></h4>
-          <p class="meta">Reykjavik</p>
+          <p class="meta">Reykjavik · <span class="stdist" title="Measured from this property's town to Reykjavík, the nearest birding area this page lists in that region">At Reykjavík</span></p>
           <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/" title="What Nordic Swan Ecolabel means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="" target="_blank" rel="noopener" title="Certified: opens the registry evidence">Nordic Swan Ecolabel</a></span><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/" title="What HI Quality and Sustainability label means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="" target="_blank" rel="noopener" title="Certified: opens the registry evidence">HI Quality and Sustainability label</a></span></div>
           <p class="blurb">Eco-certified hostel in Laugardalur Park — a quiet oasis near Reykjavik's largest thermal pool; SWAN Nordic Eco-label since 2004; carbon offsets included; suits families, groups, and solo travellers</p>
           
@@ -3016,10 +3032,10 @@
           <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=64.146,-21.9422" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
-      <article class="trip" id="lodge-ww-exeter-hotel-reykjavik" data-cat="stay" data-tier="3" data-region="4" data-certs="1" data-name="exeter hotel">
+      <article class="trip" id="lodge-ww-exeter-hotel-reykjavik" data-cat="stay" data-tier="3" data-km="0" data-region="4" data-certs="1" data-name="exeter hotel">
         <div class="trip-body">
           <h4><a href="https://www.mrandmrssmith.com/luxury-hotels/exeter-hotel" target="_blank" rel="noopener">Exeter Hotel</a></h4>
-          <p class="meta"> · <span class="lux" title="Luxury level 3 of 4: Luxury"><span class="luxname">Luxury</span><span class="luxdots" role="img" aria-label="Luxury level 3 of 4"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><span class="lux-off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg></span></span></span></p>
+          <p class="meta">Reykjavik · <span class="stdist" title="Measured from this property's town to Reykjavík, the nearest birding area this page lists in that region">At Reykjavík</span> · <span class="lux" title="Luxury level 3 of 4: Luxury"><span class="luxname">Luxury</span><span class="luxdots" role="img" aria-label="Luxury level 3 of 4"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><span class="lux-off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg></span></span></span></p>
           <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/" title="What Mr &amp; Mrs Smith means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="" target="_blank" rel="noopener" title="Certified: opens the registry evidence">Mr &amp; Mrs Smith</a></span></div>
           <p class="blurb">The Old Harbour was once the beating heart of Reykjavík, and Exeter Hotel is right at the centre of this reviving – and already thriving – waterfront district. The concrete-dominated interiors tick most of the boxes on any converted warehouse check-list, with a cool colour scheme of charcoal and gun-metal grey. Although the hotel is distinctly urban in look, feel and location, you’ll also be well placed (and well rested) to discover Iceland’s many natural wonders on land and by water. And, with</p>
           
@@ -3033,10 +3049,10 @@
           <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=64.146,-21.9422" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
-      <article class="trip" id="lodge-ww-fosshotel-baron-reykjavik" data-cat="stay" data-tier="0" data-region="4" data-certs="1" data-name="fosshotel baron">
+      <article class="trip" id="lodge-ww-fosshotel-baron-reykjavik" data-cat="stay" data-tier="0" data-km="0" data-region="4" data-certs="1" data-name="fosshotel baron">
         <div class="trip-body">
           <h4><a href="https://www.islandshotel.is/hotels/fosshotel-baron" target="_blank" rel="noopener">Fosshotel Baron</a></h4>
-          <p class="meta">Reykjavik</p>
+          <p class="meta">Reykjavik · <span class="stdist" title="Measured from this property's town to Reykjavík, the nearest birding area this page lists in that region">At Reykjavík</span></p>
           <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/#scheme-green-key" title="What Green Key means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="" target="_blank" rel="noopener" title="Certified: opens the registry evidence">Green Key</a></span></div>
           <p class="blurb">Historic harbourfront hotel occupying Reykjavik's first-ever concrete building, originally built in 1898 as a dairy farm by a French baron</p>
           
@@ -3050,10 +3066,10 @@
           <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=64.146,-21.9422" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
-      <article class="trip" id="lodge-ww-fosshotel-raudara-reykjavik" data-cat="stay" data-tier="0" data-region="4" data-certs="1" data-name="fosshotel raudara">
+      <article class="trip" id="lodge-ww-fosshotel-raudara-reykjavik" data-cat="stay" data-tier="0" data-km="0" data-region="4" data-certs="1" data-name="fosshotel raudara">
         <div class="trip-body">
           <h4><a href="https://www.islandshotel.is/hotels/fosshotel-raudara" target="_blank" rel="noopener">Fosshotel Raudara</a></h4>
-          <p class="meta">Reykjavik</p>
+          <p class="meta">Reykjavik · <span class="stdist" title="Measured from this property's town to Reykjavík, the nearest birding area this page lists in that region">At Reykjavík</span></p>
           <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/#scheme-green-key" title="What Green Key means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="" target="_blank" rel="noopener" title="Certified: opens the registry evidence">Green Key</a></span></div>
           <p class="blurb">Located in a building that housed Iceland's original first brewery (1930–1984); contemporary stylish interior with historic character</p>
           
@@ -3067,10 +3083,10 @@
           <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=64.146,-21.9422" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
-      <article class="trip" id="lodge-ww-fosshotel-reykjavik-reykjavik" data-cat="stay" data-tier="0" data-region="4" data-certs="1" data-name="fosshotel reykjavik">
+      <article class="trip" id="lodge-ww-fosshotel-reykjavik-reykjavik" data-cat="stay" data-tier="0" data-km="0" data-region="4" data-certs="1" data-name="fosshotel reykjavik">
         <div class="trip-body">
           <h4><a href="https://www.islandshotel.is/hotels/fosshotel-reykjavik" target="_blank" rel="noopener">Fosshotel Reykjavik</a></h4>
-          <p class="meta">Reykjavik</p>
+          <p class="meta">Reykjavik · <span class="stdist" title="Measured from this property's town to Reykjavík, the nearest birding area this page lists in that region">At Reykjavík</span></p>
           <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/#scheme-green-key" title="What Green Key means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="" target="_blank" rel="noopener" title="Certified: opens the registry evidence">Green Key</a></span></div>
           <p class="blurb">Iceland's largest hotel at 320 rooms in a stylish 16-floor tower in the business district; first fully sustainability-certified hotel chain in Iceland</p>
           
@@ -3084,10 +3100,10 @@
           <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=64.146,-21.9422" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
-      <article class="trip" id="lodge-ww-grand-hotel-reykjavik-reykjavik" data-cat="stay" data-tier="0" data-region="4" data-certs="1" data-name="grand hotel reykjavik">
+      <article class="trip" id="lodge-ww-grand-hotel-reykjavik-reykjavik" data-cat="stay" data-tier="0" data-km="0" data-region="4" data-certs="1" data-name="grand hotel reykjavik">
         <div class="trip-body">
           <h4><a href="https://www.islandshotel.is/hotels/grand-hotel-reykjavik" target="_blank" rel="noopener">Grand Hotel Reykjavik</a></h4>
-          <p class="meta">Reykjavik</p>
+          <p class="meta">Reykjavik · <span class="stdist" title="Measured from this property's town to Reykjavík, the nearest birding area this page lists in that region">At Reykjavík</span></p>
           <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/#scheme-green-key" title="What Green Key means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="" target="_blank" rel="noopener" title="Certified: opens the registry evidence">Green Key</a></span></div>
           <p class="blurb">Major conference hotel and the largest event venue in Iceland for private guests; flagship of Islandshotel chain in the business district</p>
           
@@ -3101,27 +3117,10 @@
           <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=64.146,-21.9422" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
-      <article class="trip" id="lodge-ww-hotel-eldhestar-hverager-i-hveragerdi" data-cat="stay" data-tier="0" data-region="4" data-certs="1" data-name="hótel eldhestar, hveragerði">
-        <div class="trip-body">
-          <h4><a href="https://hoteleldhestar.is" target="_blank" rel="noopener">Hótel Eldhestar, Hveragerði</a></h4>
-          <p class="meta">Hveragerdi</p>
-          <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/" title="What Nordic Swan Ecolabel means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="" target="_blank" rel="noopener" title="Certified: opens the registry evidence">Nordic Swan Ecolabel</a></span></div>
-          <p class="blurb">Iceland's premier horse-riding hotel since 1986 — on-site working horse farm with up to 350 Icelandic horses; first hotel in Iceland to receive the Nordic Swan Eco-label; immersive equestrian experience 30 min from Reykjavik</p>
-          
-          
-          
-          
-        </div>
-        <div class="trip-side">
-          <p class="priceline"><span class="pmuted">Rate not published</span></p>
-          <a class="watch-link" href="https://hoteleldhestar.is" target="_blank" rel="noopener">Visit website</a>
-          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=63.9976,-21.1868" target="_blank" rel="noopener">See on a map</a>
-        </div>
-      </article>
-      <article class="trip" id="lodge-ww-hotel-reykjavik-centrum-reykjavik" data-cat="stay" data-tier="0" data-region="4" data-certs="1" data-name="hotel reykjavik centrum">
+      <article class="trip" id="lodge-ww-hotel-reykjavik-centrum-reykjavik" data-cat="stay" data-tier="0" data-km="0" data-region="4" data-certs="1" data-name="hotel reykjavik centrum">
         <div class="trip-body">
           <h4><a href="https://www.islandshotel.is/hotels/hotel-reykjavik-centrum" target="_blank" rel="noopener">Hotel Reykjavik Centrum</a></h4>
-          <p class="meta">Reykjavik</p>
+          <p class="meta">Reykjavik · <span class="stdist" title="Measured from this property's town to Reykjavík, the nearest birding area this page lists in that region">At Reykjavík</span></p>
           <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/#scheme-green-key" title="What Green Key means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="" target="_blank" rel="noopener" title="Certified: opens the registry evidence">Green Key</a></span></div>
           <p class="blurb">Nestled on Aðalstræti, one of Reykjavik's oldest streets, with the oldest section of the building dating to 1764; intimate boutique feel in prime old city location</p>
           
@@ -3135,10 +3134,10 @@
           <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=64.146,-21.9422" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
-      <article class="trip" id="lodge-ww-hotel-reykjavik-saga-reykjavik" data-cat="stay" data-tier="0" data-region="4" data-certs="1" data-name="hotel reykjavik saga">
+      <article class="trip" id="lodge-ww-hotel-reykjavik-saga-reykjavik" data-cat="stay" data-tier="0" data-km="0" data-region="4" data-certs="1" data-name="hotel reykjavik saga">
         <div class="trip-body">
           <h4><a href="https://www.islandshotel.is/hotels/hotel-reykjavik-saga" target="_blank" rel="noopener">Hotel Reykjavik Saga</a></h4>
-          <p class="meta">Reykjavik</p>
+          <p class="meta">Reykjavik · <span class="stdist" title="Measured from this property's town to Reykjavík, the nearest birding area this page lists in that region">At Reykjavík</span></p>
           <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/#scheme-green-key" title="What Green Key means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="" target="_blank" rel="noopener" title="Certified: opens the registry evidence">Green Key</a></span></div>
           <p class="blurb">Boutique spa hotel on a historic downtown street with sauna, steam bath and two roof terraces; modern design respecting Icelandic tradition; 4-star with intimate character</p>
           
@@ -3152,10 +3151,10 @@
           <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=64.146,-21.9422" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
-      <article class="trip" id="lodge-ww-kvosin-hotel-reykjavik" data-cat="stay" data-tier="3" data-region="4" data-certs="1" data-name="kvosin hotel">
+      <article class="trip" id="lodge-ww-kvosin-hotel-reykjavik" data-cat="stay" data-tier="3" data-km="0" data-region="4" data-certs="1" data-name="kvosin hotel">
         <div class="trip-body">
           <h4><a href="https://www.mrandmrssmith.com/luxury-hotels/kvosin-hotel" target="_blank" rel="noopener">Kvosin Hotel</a></h4>
-          <p class="meta"> · <span class="lux" title="Luxury level 3 of 4: Luxury"><span class="luxname">Luxury</span><span class="luxdots" role="img" aria-label="Luxury level 3 of 4"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><span class="lux-off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg></span></span></span></p>
+          <p class="meta">Reykjavik · <span class="stdist" title="Measured from this property's town to Reykjavík, the nearest birding area this page lists in that region">At Reykjavík</span> · <span class="lux" title="Luxury level 3 of 4: Luxury"><span class="luxname">Luxury</span><span class="luxdots" role="img" aria-label="Luxury level 3 of 4"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><span class="lux-off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg></span></span></span></p>
           <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/" title="What Mr &amp; Mrs Smith means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="" target="_blank" rel="noopener" title="Certified: opens the registry evidence">Mr &amp; Mrs Smith</a></span></div>
           <p class="blurb">Smack bang in the centre of downtown Reykjavik, Kvosin Hotel is charmingly historic on the outside, but inside you’ll find swish, Scandi-style interiors and a bar that'll please the pickiest connoisseur. Another winning feature of this former townhouse is the size of its rooms: all but the smallest have a lounge area and marble-topped kitchenette – worth its weight in gold if you’re looking to keep costs down. If you don’t mind splashing a little, then head out to take on the city’s burgeoning r</p>
           
@@ -3169,10 +3168,10 @@
           <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=64.146,-21.9422" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
-      <article class="trip" id="lodge-ww-sandhotel-reykjavik" data-cat="stay" data-tier="3" data-region="4" data-certs="1" data-name="sandhotel">
+      <article class="trip" id="lodge-ww-sandhotel-reykjavik" data-cat="stay" data-tier="3" data-km="0" data-region="4" data-certs="1" data-name="sandhotel">
         <div class="trip-body">
           <h4><a href="https://www.mrandmrssmith.com/luxury-hotels/sandhotel" target="_blank" rel="noopener">Sandhotel</a></h4>
-          <p class="meta"> · <span class="lux" title="Luxury level 3 of 4: Luxury"><span class="luxname">Luxury</span><span class="luxdots" role="img" aria-label="Luxury level 3 of 4"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><span class="lux-off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg></span></span></span></p>
+          <p class="meta">Reykjavik · <span class="stdist" title="Measured from this property's town to Reykjavík, the nearest birding area this page lists in that region">At Reykjavík</span> · <span class="lux" title="Luxury level 3 of 4: Luxury"><span class="luxname">Luxury</span><span class="luxdots" role="img" aria-label="Luxury level 3 of 4"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg><span class="lux-off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9z"/></svg></span></span></span></p>
           <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/" title="What Mr &amp; Mrs Smith means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="" target="_blank" rel="noopener" title="Certified: opens the registry evidence">Mr &amp; Mrs Smith</a></span></div>
           <p class="blurb">Don’t let Sandhotel’s gritty name fool you: this boutique hotel in central Reykjavik is a sweet confection by the pâtissiers behind beloved Icelandic bakery Sandholt. This irresistible purveyor of buns is just next door, and Sandhotel’s friendly team will perfectly understand if you need to nip out to buy a pair, then take them back to your super-soft bed. Beyond your cinnamon-scented lie-in, there’s a list of day-trips longer than an Icelandic summer to try and Reykjavik’s main street to ramble</p>
           
@@ -3184,6 +3183,23 @@
           <p class="priceline"><span class="pmuted">Rate not published</span></p>
           <a class="watch-link" href="https://www.mrandmrssmith.com/luxury-hotels/sandhotel" target="_blank" rel="noopener">Visit website</a>
           <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=64.146,-21.9422" target="_blank" rel="noopener">See on a map</a>
+        </div>
+      </article>
+      <article class="trip" id="lodge-ww-hotel-eldhestar-hverager-i-hveragerdi" data-cat="stay" data-tier="0" data-km="40.3" data-region="4" data-certs="1" data-name="hótel eldhestar, hveragerði">
+        <div class="trip-body">
+          <h4><a href="https://hoteleldhestar.is" target="_blank" rel="noopener">Hótel Eldhestar, Hveragerði</a></h4>
+          <p class="meta">Hveragerdi · <span class="stdist" title="Measured from this property's town to Reykjavík, the nearest birding area this page lists in that region">40 km from Reykjavík</span></p>
+          <div class="badge-row"><span class="bdg cert"><a class="bdg-sym" href="/trips/certifications/" title="What Nordic Swan Ecolabel means"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></a><a class="bdg-lab" href="" target="_blank" rel="noopener" title="Certified: opens the registry evidence">Nordic Swan Ecolabel</a></span></div>
+          <p class="blurb">Iceland's premier horse-riding hotel since 1986 — on-site working horse farm with up to 350 Icelandic horses; first hotel in Iceland to receive the Nordic Swan Eco-label; immersive equestrian experience 30 min from Reykjavik</p>
+          
+          
+          
+          
+        </div>
+        <div class="trip-side">
+          <p class="priceline"><span class="pmuted">Rate not published</span></p>
+          <a class="watch-link" href="https://hoteleldhestar.is" target="_blank" rel="noopener">Visit website</a>
+          <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=63.9976,-21.1868" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
           </div>
@@ -3214,10 +3230,10 @@
           <summary class="rsub"><span class="rsub-x" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span><span class="rsub-t">Where to Stay</span><span class="rsub-n">2 places to stay</span></summary>
           <p class="stayrule">Two kinds of place, and the difference is worth knowing. Most carry a current certification from a scheme that publishes its own members, taken from the register rather than from the property. The rest carry none, and are here because birding operators actually use them: the guesthouse at Látrabjarg that is the only building at Europe’s largest bird cliff, the two rooms on Vigur among a hundred thousand puffins, the farm on the Mývatn shore. Iceland is thin ground for certification, with thirty Icelandic properties in the supplier archive against three and a half thousand for Spain, so a list of only certified places would have left four regions with nowhere to sleep. The highlands still have nowhere, because there the answer is a mountain hut rather than a hotel. <a href="/trips/certifications/">What each certification actually means</a></p>
           <div class="list">
-      <article class="trip" id="lodge-bird-alfheimar-borgarfjordur-eystri" data-cat="stay" data-tier="0" data-region="5" data-certs="0" data-name="álfheimar country hotel">
+      <article class="trip" id="lodge-bird-alfheimar-borgarfjordur-eystri" data-cat="stay" data-tier="0" data-km="0.1" data-region="5" data-certs="0" data-name="álfheimar country hotel">
         <div class="trip-body">
           <h4><a href="https://www.heyiceland.is/accommodation/detail/825/alfheimar-country-hotel" target="_blank" rel="noopener">Álfheimar Country Hotel</a></h4>
-          <p class="meta">Bakkagerði, Borgarfjörður Eystri</p>
+          <p class="meta">Bakkagerði, Borgarfjörður Eystri · <span class="stdist" title="Measured from this property's town to Borgarfjörður Eystri, the nearest birding area this page lists in that region">At Borgarfjörður Eystri</span></p>
           <div class="badge-row"></div>
           <p class="blurb">The nearest lodging to Hafnarhólmi, where a boardwalk puts you about two metres from nesting puffins, along with Kittiwake and Fulmar, from mid April to early August.</p>
           <p class="qualifies birdlodge">Birding lodge</p>
@@ -3231,10 +3247,10 @@
           <a class="watch-link maplink" href="https://www.google.com/maps/search/?api=1&query=65.5266,-13.8182" target="_blank" rel="noopener">See on a map</a>
         </div>
       </article>
-      <article class="trip" id="lodge-bird-hotel-framtid-djupivogur" data-cat="stay" data-tier="0" data-region="5" data-certs="0" data-name="hótel framtíð">
+      <article class="trip" id="lodge-bird-hotel-framtid-djupivogur" data-cat="stay" data-tier="0" data-km="0.4" data-region="5" data-certs="0" data-name="hótel framtíð">
         <div class="trip-body">
           <h4><a href="https://www.hotelframtid.com/" target="_blank" rel="noopener">Hótel Framtíð</a></h4>
-          <p class="meta">Djúpivogur</p>
+          <p class="meta">Djúpivogur · <span class="stdist" title="Measured from this property's town to Djúpivogur, the nearest birding area this page lists in that region">0.4 km from Djúpivogur</span></p>
           <div class="badge-row"></div>
           <p class="blurb">A small hotel in a renovated early twentieth century harbour building at Djúpivogur, beside the quay the Papey boat leaves from.</p>
           <p class="qualifies birdlodge">Birding lodge</p>
@@ -3276,10 +3292,10 @@
           <summary class="rsub"><span class="rsub-x" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span><span class="rsub-t">Where to Stay</span><span class="rsub-n">1 place to stay</span></summary>
           <p class="stayrule">Two kinds of place, and the difference is worth knowing. Most carry a current certification from a scheme that publishes its own members, taken from the register rather than from the property. The rest carry none, and are here because birding operators actually use them: the guesthouse at Látrabjarg that is the only building at Europe’s largest bird cliff, the two rooms on Vigur among a hundred thousand puffins, the farm on the Mývatn shore. Iceland is thin ground for certification, with thirty Icelandic properties in the supplier archive against three and a half thousand for Spain, so a list of only certified places would have left four regions with nowhere to sleep. The highlands still have nowhere, because there the answer is a mountain hut rather than a hotel. <a href="/trips/certifications/">What each certification actually means</a></p>
           <div class="list">
-      <article class="trip" id="lodge-bird-hali-country-hotel" data-cat="stay" data-tier="0" data-region="6" data-certs="0" data-name="hali country hotel">
+      <article class="trip" id="lodge-bird-hali-country-hotel" data-cat="stay" data-tier="0" data-km="19.9" data-region="6" data-certs="0" data-name="hali country hotel">
         <div class="trip-body">
           <h4><a href="https://hali.is/" target="_blank" rel="noopener">Hali Country Hotel</a></h4>
-          <p class="meta">Hali, Suðursveit</p>
+          <p class="meta">Hali, Suðursveit · <span class="stdist" title="Measured from this property's town to Höfn, the nearest birding area this page lists in that region">20 km from Höfn</span></p>
           <div class="badge-row"></div>
           <p class="blurb">A family-run farm hotel twelve kilometres east of Jökulsárlón, and the base for the Breiðamerkursandur and Skeiðarársandur sands that hold the largest Great Skua population in the world.</p>
           <p class="qualifies birdlodge">Birding lodge</p>
@@ -3490,12 +3506,19 @@
               var have = card.getAttribute('data-' + k);
               if (have !== null && have !== '' && have !== f.val) { hit = false; break; }
             }
+            // The filter's verdict is recorded on the card as well as applied to it.
+            // The cap below hides rows the filter PASSED, so the two rules would fight
+            // over style.display if the cap had to infer what the filter decided.
+            card.dataset.fhit = hit ? '1' : '0';
             card.style.display = hit ? '' : 'none';
             card.hidden = !hit;
             if (hit) { shown++; vis[card.id] = 1; }
           });
           scope.querySelectorAll('.lgroup').forEach(function (g) {
-            var live = Array.prototype.filter.call(g.querySelectorAll('.trip'), function (c) { return c.style.display !== 'none'; }).length;
+            // Counted off the filter's verdict, never off what is on screen: a capped
+            // group shows twenty of its rows and holds the rest, and a heading reading
+            // "20 places to stay" above a control offering 136 more would be a lie.
+            var live = Array.prototype.filter.call(g.querySelectorAll('.trip'), function (c) { return c.dataset.fhit !== '0'; }).length;
             g.style.display = live ? '' : 'none';
             var sc = g.querySelector('.stripcount');
             if (sc) {
@@ -3513,6 +3536,7 @@
               ? 'Showing ' + shown + ' of ' + total + ' ' + noun + ' · ' + active.join(' · ')
               : 'Showing all ' + total + ' ' + noun;
           }
+          if (window.__applyCaps) window.__applyCaps();
           // Without this the reader stays at a scroll offset the collapsed list no
           // longer occupies. Only ever scrolls UP to the chips, never past them.
           if (announce && anchor) {
@@ -3562,6 +3586,7 @@
         sel.addEventListener('change', function () {
           var m = sel.value;
           var out = cards.slice().sort(function (a, b) {
+            if (m === 'dist') return num(a, 'km', Infinity) - num(b, 'km', Infinity) || a.dataset.name.localeCompare(b.dataset.name);
             if (m === 'price') return num(a, 'price', Infinity) - num(b, 'price', Infinity) || a.dataset.name.localeCompare(b.dataset.name);
             if (m === 'lux') return num(b, 'tier', 0) - num(a, 'tier', 0) || a.dataset.name.localeCompare(b.dataset.name);
             if (m === 'cert') return num(b, 'certs', 0) - num(a, 'certs', 0) || a.dataset.name.localeCompare(b.dataset.name);
@@ -3569,6 +3594,10 @@
             return num(a, 'rec', 0) - num(b, 'rec', 0);
           });
           out.forEach(function (c) { list.appendChild(c); });
+          // The cap holds the first twenty of whatever order is current, so re-sorting
+          // has to re-cap. Without this, sorting by price inside a capped group leaves
+          // the twenty NEAREST visible and the cheapest hidden behind the control.
+          if (window.__applyCaps) window.__applyCaps();
         });
       });
       document.querySelectorAll('.sortsel').forEach(function (sel) {
@@ -3616,6 +3645,59 @@
           if (FAPPLY[target]) FAPPLY[target]();
         });
       });
+    })();
+    // ---------- twenty at a time ----------
+    // A region's Where to Stay is built nearest-first and holds the first twenty. The rest
+    // are in the document and hidden, so find-in-page and a crawler still see them, and one
+    // press puts them back.
+    //
+    // The cap runs LAST, after the filter and after any sort, and it only ever hides rows
+    // the filter passed. That ordering is the whole design: the filter decides what belongs
+    // in the list, the sort decides the order, and the cap decides how much of that order
+    // is on screen. Each reads the previous one's answer rather than re-deriving it.
+    (function () {
+      var blocks = [].slice.call(document.querySelectorAll('[data-cap]'));
+      if (!blocks.length) return;
+      window.__applyCaps = function () {
+        blocks.forEach(function (b) {
+          var cap = parseInt(b.getAttribute('data-cap'), 10);
+          var btn = b.querySelector('.showrest');
+          var open = b.dataset.showrest === '1';
+          var list = b.querySelector('.list');
+          if (!list || !cap) return;
+          var shown = 0, held = 0;
+          [].slice.call(list.querySelectorAll('.trip')).forEach(function (c) {
+            if (c.dataset.fhit === '0') return;      // the filter already hid it
+            if (open || shown < cap) { c.style.display = ''; c.hidden = false; shown++; }
+            else { c.style.display = 'none'; c.hidden = true; held++; }
+          });
+          if (!btn) return;
+          btn.hidden = held === 0 && !open;
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+          var n = b.getAttribute('data-noun') || 'place to stay|places to stay';
+          var parts = n.split('|');
+          btn.textContent = open
+            ? 'Show fewer'
+            : 'Show the other ' + held + ' ' + (held === 1 ? parts[0] : (parts[1] || parts[0]));
+        });
+      };
+      document.addEventListener('click', function (e) {
+        var btn = e.target.closest && e.target.closest('.showrest');
+        if (!btn) return;
+        var b = document.getElementById(btn.getAttribute('data-rest'));
+        if (!b) return;
+        var closing = b.dataset.showrest === '1';
+        b.dataset.showrest = closing ? '0' : '1';
+        window.__applyCaps();
+        // Collapsing a list of 156 rows back to 20 removes several screens from under
+        // the reader, who then finds themselves somewhere further down the page with no
+        // idea what moved. Put them back on the control they just pressed.
+        if (closing) {
+          var top = btn.getBoundingClientRect().top + window.scrollY - 180;
+          if (window.scrollY > top) window.scrollTo({ top: top, behavior: 'smooth' });
+        }
+      });
+      window.__applyCaps();
     })();
     // Route sketches open full width. One dialog, filled from whichever button was
     // pressed, so twelve stop markers are readable instead of overlapping at 200px.
@@ -3754,7 +3836,7 @@
     });
     (function () {
       var REGIONS = [["site-lake-m-vatn-and-the-northeast",-17.1954,65.6941,"Mývatn","#2E86AB",0],["site-the-westfjords-and-l-trabjarg",-23.595,65.8017,"Westfjords","#0F8B8D",1],["site-sn-fellsnes",-23.1334,65.0352,"Snæfellsnes","#C0392B",2],["site-the-south-coast-and-vestmannaeyjar",-19.1354,63.5067,"south coast","#D68910",3],["site-reykjanes",-22.4139,64.0149,"Reykjanes","#6A994E",4],["site-the-east-fjords",-13.9801,64.8935,"east fjords","#7D5BA6",5],["site-vatnaj-kull-and-the-southeast",-16.3111,64.0838,"Vatnajökull","#386641",6],["site-the-highlands",-18.5266,64.6515,"highlands","#8A5A44",7]];
-      var LODGES = [["ww-berjaya-reykjavik-natura-hotel-reykjavik",-21.9422,64.146,"Berjaya Reykjavik Natura Hotel","Reykjavik","#6A994E",""],["ww-canopy-by-hilton-reykjavik-city-centre-reykjavik",-21.9422,64.146,"Canopy by Hilton Reykjavik City Centre","Reykjavik","#6A994E",""],["ww-dalur-hi-eco-hostel-reykjavik-reykjavik",-21.9422,64.146,"Dalur - HI Eco Hostel, Reykjavik","Reykjavik","#6A994E",""],["ww-fosshotel-baron-reykjavik",-21.9422,64.146,"Fosshotel Baron","Reykjavik","#6A994E",""],["ww-fosshotel-raudara-reykjavik",-21.9422,64.146,"Fosshotel Raudara","Reykjavik","#6A994E",""],["ww-fosshotel-reykjavik-reykjavik",-21.9422,64.146,"Fosshotel Reykjavik","Reykjavik","#6A994E",""],["ww-grand-hotel-reykjavik-reykjavik",-21.9422,64.146,"Grand Hotel Reykjavik","Reykjavik","#6A994E",""],["ww-hotel-ranga-south-iceland",-20.3012,63.7806,"Hotel Ranga","South Iceland","#D68910",""],["ww-hotel-reykjavik-centrum-reykjavik",-21.9422,64.146,"Hotel Reykjavik Centrum","Reykjavik","#6A994E",""],["ww-hotel-reykjavik-saga-reykjavik",-21.9422,64.146,"Hotel Reykjavik Saga","Reykjavik","#6A994E",""],["ww-ion-adventure-hotel-thingvellir",-22.7013,65.0638,"Ion Adventure Hotel","Thingvellir","#C0392B","$300 to $800 / €259 to €691 / £222 to £591 / night"],["ww-hotel-eldhestar-hverager-i-hveragerdi",-21.1868,63.9976,"Hótel Eldhestar, Hveragerði","Hveragerdi","#6A994E",""],["ww-hotel-fljotshlid-hli-arendi-hvolsvollur",-20.2238,63.7508,"Hótel Fljótshlíd, Hlíðarendi","Hvolsvöllur","#D68910",""],["ww-umi-hotel-hvolsvollur",-20.2238,63.7508,"UMI Hotel","","#D68910",""],["ww-exeter-hotel-reykjavik",-21.9422,64.146,"Exeter Hotel","","#6A994E",""],["ww-kvosin-hotel-reykjavik",-21.9422,64.146,"Kvosin Hotel","","#6A994E",""],["ww-sandhotel-reykjavik",-21.9422,64.146,"Sandhotel","","#6A994E",""],["ww-ion-city-hotel-reykjavik",-21.9422,64.146,"Ion City Hotel","","#6A994E",""],["bird-hotel-raudaskrida-adaldalur",-17.4739,65.8364,"Hótel Rauðaskriða","Aðaldalur","#2E86AB",""],["bird-vogafjos-myvatn",-16.9236,65.6244,"Vogafjós Farm Resort","Vogar, Lake Mývatn","#2E86AB",""],["bird-skutustadir-myvatn",-17.0387,65.5674,"Skútustaðir Farm Guesthouse","Skútustaðir, Lake Mývatn","#2E86AB",""],["bird-hotel-breidavik-latrabjarg",-24.3513,65.5,"Hótel Breiðavík","Breiðavík","#0F8B8D",""],["bird-heydalur-mjoifjordur",-22.6784,65.8438,"Heydalur Country Hotel","Mjóifjörður, Ísafjarðardjúp","#0F8B8D",""],["bird-vigur-island-house",-22.828,66.055,"Viktoría's House, Vigur","Vigur, Ísafjarðardjúp","#0F8B8D",""],["bird-langaholt-snaefellsnes",-23.0169,64.8228,"Hotel Langaholt","Staðarstaður, Snæfellsnes","#C0392B",""],["bird-alfheimar-borgarfjordur-eystri",-13.8182,65.5266,"Álfheimar Country Hotel","Bakkagerði, Borgarfjörður Eystri","#7D5BA6",""],["bird-hotel-framtid-djupivogur",-14.2901,64.6569,"Hótel Framtíð","Djúpivogur","#7D5BA6",""],["bird-hali-country-hotel",-15.6167,64.2333,"Hali Country Hotel","Hali, Suðursveit","#386641",""]];
+      var LODGES = [["bird-hotel-raudaskrida-adaldalur",-17.4739,65.8364,"Hótel Rauðaskriða","Aðaldalur","#2E86AB",""],["bird-vogafjos-myvatn",-16.9236,65.6244,"Vogafjós Farm Resort","Vogar, Lake Mývatn","#2E86AB",""],["bird-skutustadir-myvatn",-17.0387,65.5674,"Skútustaðir Farm Guesthouse","Skútustaðir, Lake Mývatn","#2E86AB",""],["bird-hotel-breidavik-latrabjarg",-24.3513,65.5,"Hótel Breiðavík","Breiðavík","#0F8B8D",""],["bird-heydalur-mjoifjordur",-22.6784,65.8438,"Heydalur Country Hotel","Mjóifjörður, Ísafjarðardjúp","#0F8B8D",""],["bird-vigur-island-house",-22.828,66.055,"Viktoría's House, Vigur","Vigur, Ísafjarðardjúp","#0F8B8D",""],["bird-langaholt-snaefellsnes",-23.0169,64.8228,"Hotel Langaholt","Staðarstaður, Snæfellsnes","#C0392B",""],["bird-alfheimar-borgarfjordur-eystri",-13.8182,65.5266,"Álfheimar Country Hotel","Bakkagerði, Borgarfjörður Eystri","#7D5BA6",""],["bird-hotel-framtid-djupivogur",-14.2901,64.6569,"Hótel Framtíð","Djúpivogur","#7D5BA6",""],["bird-hali-country-hotel",-15.6167,64.2333,"Hali Country Hotel","Hali, Suðursveit","#386641",""],["ww-berjaya-reykjavik-natura-hotel-reykjavik",-21.9422,64.146,"Berjaya Reykjavik Natura Hotel","Reykjavik","#6A994E",""],["ww-canopy-by-hilton-reykjavik-city-centre-reykjavik",-21.9422,64.146,"Canopy by Hilton Reykjavik City Centre","Reykjavik","#6A994E",""],["ww-dalur-hi-eco-hostel-reykjavik-reykjavik",-21.9422,64.146,"Dalur - HI Eco Hostel, Reykjavik","Reykjavik","#6A994E",""],["ww-fosshotel-baron-reykjavik",-21.9422,64.146,"Fosshotel Baron","Reykjavik","#6A994E",""],["ww-fosshotel-raudara-reykjavik",-21.9422,64.146,"Fosshotel Raudara","Reykjavik","#6A994E",""],["ww-fosshotel-reykjavik-reykjavik",-21.9422,64.146,"Fosshotel Reykjavik","Reykjavik","#6A994E",""],["ww-grand-hotel-reykjavik-reykjavik",-21.9422,64.146,"Grand Hotel Reykjavik","Reykjavik","#6A994E",""],["ww-hotel-ranga-south-iceland",-20.3012,63.7806,"Hotel Ranga","South Iceland","#D68910",""],["ww-hotel-reykjavik-centrum-reykjavik",-21.9422,64.146,"Hotel Reykjavik Centrum","Reykjavik","#6A994E",""],["ww-hotel-reykjavik-saga-reykjavik",-21.9422,64.146,"Hotel Reykjavik Saga","Reykjavik","#6A994E",""],["ww-ion-adventure-hotel-thingvellir",-22.7013,65.0638,"Ion Adventure Hotel","Thingvellir","#C0392B","$300 to $800 / €259 to €691 / £222 to £591 / night"],["ww-hotel-eldhestar-hverager-i-hveragerdi",-21.1868,63.9976,"Hótel Eldhestar, Hveragerði","Hveragerdi","#6A994E",""],["ww-hotel-fljotshlid-hli-arendi-hvolsvollur",-20.2238,63.7508,"Hótel Fljótshlíd, Hlíðarendi","Hvolsvöllur","#D68910",""],["ww-umi-hotel-hvolsvollur",-20.2238,63.7508,"UMI Hotel","Hvolsvöllur","#D68910",""],["ww-exeter-hotel-reykjavik",-21.9422,64.146,"Exeter Hotel","Reykjavik","#6A994E",""],["ww-kvosin-hotel-reykjavik",-21.9422,64.146,"Kvosin Hotel","Reykjavik","#6A994E",""],["ww-sandhotel-reykjavik",-21.9422,64.146,"Sandhotel","Reykjavik","#6A994E",""],["ww-ion-city-hotel-reykjavik",-21.9422,64.146,"Ion City Hotel","Reykjavik","#6A994E",""]];
       var GOING = [];
       var NPARKS = [];
       var STOPS = [];
