@@ -16,6 +16,13 @@
 /symbols/plates/:letter /symbols/plates/ 301
 /symbols/plates/:letter/* /symbols/plates/ 301
 
+# The United Kingdom guide retired 2026-08-23, on Cat's instruction: England, Scotland,
+# Wales and Northern Ireland each have a page now, and the Republic of Ireland its own.
+# ABOVE the generated marker on purpose: species/generate.js rebuilds that block with
+# body.split(START)[0], so anything below the marker is deleted on the next species run.
+/trips/united-kingdom/ /trips/ 301
+/trips/united-kingdom /trips/ 301
+
 # >>> generated: dropped compare pairs (do not edit by hand)
 /birds/compare/azara-s-spinetail-vs-pale-breasted-spinetail/ /birds/compare/ 301
 /birds/compare/banded-honeyeater-vs-orange-chat/ /birds/compare/ 301
