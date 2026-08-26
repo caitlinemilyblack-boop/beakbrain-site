@@ -203,6 +203,10 @@
        meets it having just seen a rate, which is the moment the caveat is worth reading. */
     .ratebasis { font-family: var(--body); font-size: 13px; line-height: 1.55; color: var(--muted); margin: 14px 2px 0; max-width: 78ch; }
     .stayrule a { color: var(--green-dark); font-weight: 800; }
+    /* Habitat and When sit above the birds and read as fact rather than as recommendation,
+       so they take the body colour and leave the muted grey to the wildlife aside. */
+    .where.habitat b, .where.when b { color: var(--green-dark); }
+    .where.when { font-variant-numeric: tabular-nums; }
     .where.wildlife { color: var(--muted); }
     .where.wildlife b { color: var(--ink); }
     .rblock { margin: 10px 0 4px; border-top: 1px solid #EFE5C6; }
@@ -1355,7 +1359,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/eurasian-spoonbill/" data-i="95" data-group="highlight" aria-label="Eurasian Spoonbill collector card"><span class="tph"><span class="tph-name">Eurasian Spoonbill</span><span class="tph-sci">Platalea leucorodia</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> The Neusiedler See soda pans</p>
             <p><b>When:</b> Breeding season, April to August</p>
           </div>
         </div>
@@ -1986,7 +1990,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/alpine-accentor/" data-i="252" data-group="highlight mountain" aria-label="Alpine Accentor collector card"><span class="tph"><span class="tph-name">Alpine Accentor</span><span class="tph-sci">Prunella collaris</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> The Grossglockner and the Tyrolean tops</p>
             <p><b>When:</b> High ground in summer, lower in winter</p>
           </div>
         </div>
@@ -2009,7 +2013,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/bearded-vulture/" data-i="257" data-group="highlight raptor mountain" aria-label="Bearded Vulture collector card"><span class="tph"><span class="tph-name">Bearded Vulture</span><span class="tph-sci">Gypaetus barbatus</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> Hohe Tauern and the Tyrolean Alps</p>
             <p><b>When:</b> Resident, best in settled weather</p>
           </div>
         </div>
@@ -2128,7 +2132,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/great-bustard/" data-i="286" data-group="highlight" aria-label="Great Bustard collector card"><span class="tph"><span class="tph-name">Great Bustard</span><span class="tph-sci">Otis tarda</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> Parndorfer Platte and the Hansag</p>
             <p><b>When:</b> Resident, display in spring</p>
           </div>
         </div>
@@ -2275,7 +2279,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/red-footed-falcon/" data-i="322" data-group="highlight raptor" aria-label="Red-footed Falcon collector card"><span class="tph"><span class="tph-name">Red-footed Falcon</span><span class="tph-sci">Falco vespertinus</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> The Seewinkel and Parndorf Plain</p>
             <p><b>When:</b> Summer visitor, May to August</p>
           </div>
         </div>
@@ -2346,7 +2350,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/ural-owl/" data-i="339" data-group="highlight raptor" aria-label="Ural Owl collector card"><span class="tph"><span class="tph-name">Ural Owl</span><span class="tph-sci">Strix uralensis</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> Biosphere Park Wienerwald</p>
             <p><b>When:</b> Resident, calling from late winter</p>
           </div>
         </div>
@@ -2369,7 +2373,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/white-backed-woodpecker/" data-i="344" data-group="highlight" aria-label="White-backed Woodpecker collector card"><span class="tph"><span class="tph-name">White-backed Woodpecker</span><span class="tph-sci">Dendrocopos leucotos</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> Kalkalpen and the Reichraminger Hintergebirge</p>
             <p><b>When:</b> Resident, drumming from February</p>
           </div>
         </div>
@@ -2464,7 +2468,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/saker-falcon/" data-i="367" data-group="highlight raptor scarce" aria-label="Saker Falcon collector card"><span class="tph"><span class="tph-name">Saker Falcon</span><span class="tph-sci">Falco cherrug</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> The Seewinkel and Parndorf Plain</p>
             <p><b>When:</b> Resident</p>
           </div>
         </div>
@@ -2927,6 +2931,7 @@
         <p class="blurb">The reason most birders come to Austria. The soda pans of the Seewinkel hold Avocet, Spoonbill, <a href="/birds/red-footed-falcon/">Red-footed Falcon</a> and <a href="/birds/black-tailed-godwit/">Black-tailed Godwit</a>, and <a href="/birds/great-bustard/">Great Bustard</a> and <a href="/birds/saker-falcon/">Saker Falcon</a> work the plain above.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/great-bustard/">Great Bustard</a>, <a href="/birds/saker-falcon/">Saker Falcon</a>, <a href="/birds/red-footed-falcon/">Red-footed Falcon</a>, <a href="/birds/pied-avocet/">Pied Avocet</a>, <a href="/birds/eurasian-spoonbill/">Eurasian Spoonbill</a>, <a href="/birds/black-tailed-godwit/">Black-tailed Godwit</a>, <a href="/birds/bearded-reedling/">Bearded Reedling</a>, <a href="/birds/moustached-warbler/">Moustached Warbler</a></li>
 
 
@@ -3030,6 +3035,7 @@
         <p class="blurb">The storks nest in the crowns of the oaks rather than on roofs, which is what makes the colony unusual as well as large. <a href="/birds/black-stork/">Black Stork</a>, <a href="/birds/white-tailed-eagle/">White-tailed Eagle</a> and the woodpeckers use the floodplain behind, and it is forty minutes from Vienna.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/white-stork/">White Stork</a>, <a href="/birds/black-stork/">Black Stork</a>, <a href="/birds/middle-spotted-woodpecker/">Middle Spotted Woodpecker</a>, <a href="/birds/collared-flycatcher/">Collared Flycatcher</a>, <a href="/birds/red-breasted-flycatcher/">Red-breasted Flycatcher</a>, <a href="/birds/common-kingfisher/">Common Kingfisher</a>, <a href="/birds/lesser-spotted-eagle/">Lesser Spotted Eagle</a></li>
 
 
@@ -3086,6 +3092,7 @@
         <p class="blurb">Protected as a national park, and the wetlands east of Vienna still flood and shift their channels each year, which is why the forest here regenerates and the ones upriver do not. Kingfisher, <a href="/birds/black-woodpecker/">Black Woodpecker</a> and <a href="/birds/white-tailed-eagle/">White-tailed Eagle</a> work it alongside a beaver population.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/white-tailed-eagle/">White-tailed Eagle</a>, <a href="/birds/black-woodpecker/">Black Woodpecker</a>, <a href="/birds/grey-headed-woodpecker/">Grey-headed Woodpecker</a>, <a href="/birds/black-kite/">Black Kite</a>, <a href="/birds/common-sandpiper/">Common Sandpiper</a>, <a href="/birds/eurasian-golden-oriole/">Eurasian Golden Oriole</a>, <a href="/birds/syrian-woodpecker/">Syrian Woodpecker</a></li>
 
 
@@ -4481,6 +4488,7 @@
         <p class="blurb">The limestone hills southwest of Vienna, and the Wienerwald biosphere park where <a href="/birds/ural-owl/">Ural Owl</a> was reintroduced. Rax and Schneeberg both top two thousand metres and give the Alpine species on a cable car ride rather than a two-day walk.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/ural-owl/">Ural Owl</a>, <a href="/birds/eurasian-pygmy-owl/">Eurasian Pygmy Owl</a>, <a href="/birds/boreal-owl/">Boreal Owl</a>, <a href="/birds/ring-ouzel/">Ring Ouzel</a>, <a href="/birds/water-pipit/">Water Pipit</a>, <a href="/birds/alpine-swift/">Alpine Swift</a>, <a href="/birds/rock-bunting/">Rock Bunting</a></li>
 
 
@@ -5910,6 +5918,7 @@
         <p class="blurb">Thayatal national park sits on the river meanders at Hardegg, with <a href="/birds/black-stork/">Black Stork</a> on the Thaya. The forest woodpeckers are through the woods around it.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/white-backed-woodpecker/">White-backed Woodpecker</a>, <a href="/birds/hazel-grouse/">Hazel Grouse</a>, <a href="/birds/eurasian-three-toed-woodpecker/">Eurasian Three-toed Woodpecker</a>, <a href="/birds/northern-raven/">Northern Raven</a>, <a href="/birds/common-redstart/">Common Redstart</a>, <a href="/birds/eurasian-wryneck/">Eurasian Wryneck</a>, <a href="/birds/black-redstart/">Black Redstart</a></li>
 
 
@@ -5983,6 +5992,7 @@
         <p class="blurb">The Grossglockner Hochalpenstrasse climbs to two and a half thousand metres and is the single best Alpine birding road in the country. Lammergeier, <a href="/birds/golden-eagle/">Golden Eagle</a>, <a href="/birds/alpine-accentor/">Alpine Accentor</a>, Snowfinch, Ptarmigan and <a href="/birds/alpine-chough/">Alpine Chough</a>, with national park centres at Mittersill, Mallnitz and Matrei.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/bearded-vulture/">Bearded Vulture</a>, <a href="/birds/golden-eagle/">Golden Eagle</a>, <a href="/birds/alpine-accentor/">Alpine Accentor</a>, <a href="/birds/white-winged-snowfinch/">White-winged Snowfinch</a>, <a href="/birds/rock-ptarmigan/">Rock Ptarmigan</a>, <a href="/birds/alpine-chough/">Alpine Chough</a>, <a href="/birds/common-rock-thrush/">Common Rock Thrush</a>, <a href="/birds/citril-finch/">Citril Finch</a></li>
 
 
@@ -7940,6 +7950,7 @@
         <p class="blurb">Ehrwald is the base, and the cable car reaches <a href="/birds/alpine-accentor/">Alpine Accentor</a> and <a href="/birds/wallcreeper/">Wallcreeper</a> ground before the day warms. The Karwendel behind holds the same set for anyone willing to walk in.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/wallcreeper/">Wallcreeper</a>, <a href="/birds/northern-nutcracker/">Northern Nutcracker</a>, <a href="/birds/black-grouse/">Black Grouse</a>, <a href="/birds/rock-partridge/">Rock Partridge</a>, <a href="/birds/rock-ptarmigan/">Rock Ptarmigan</a>, <a href="/birds/eurasian-crag-martin/">Eurasian Crag Martin</a>, <a href="/birds/red-billed-chough/">Red-billed Chough</a></li>
 
 
@@ -8418,6 +8429,7 @@
         <p class="blurb">Austria's only stretch of Lake Constance, where the Rhine arrives in a delta of reedbed and alluvial forest. It is the country's most important wetland for passage and wintering waterbirds, and the Rheinholz forest behind adds the woodland species.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/great-crested-grebe/">Great Crested Grebe</a>, <a href="/birds/common-pochard/">Common Pochard</a>, <a href="/birds/tufted-duck/">Tufted Duck</a>, <a href="/birds/common-goldeneye/">Common Goldeneye</a>, <a href="/birds/water-rail/">Water Rail</a>, <a href="/birds/bluethroat/">Bluethroat</a>, <a href="/birds/common-reed-warbler/">Common Reed Warbler</a></li>
 
 
@@ -8828,6 +8840,7 @@
         <p class="blurb">The Reichraminger Hintergebirge core zone is why every woodpecker on the Austrian list is here, White-backed among them. Sengsengebirge above it adds the mountain birds.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/western-capercaillie/">Western Capercaillie</a>, <a href="/birds/eurasian-nuthatch/">Eurasian Nuthatch</a>, <a href="/birds/boreal-owl/">Boreal Owl</a>, <a href="/birds/eurasian-treecreeper/">Eurasian Treecreeper</a>, <a href="/birds/willow-tit/">Willow Tit</a>, <a href="/birds/crested-tit/">Crested Tit</a>, <a href="/birds/eurasian-bullfinch/">Eurasian Bullfinch</a></li>
 
 
@@ -9134,6 +9147,7 @@
         <p class="blurb">The Enns cuts a gorge through limestone at the Gesause, and the walls give <a href="/birds/wallcreeper/">Wallcreeper</a>, <a href="/birds/golden-eagle/">Golden Eagle</a> and Peregrine. The Xeis plateau above and the Hartelsgraben side valley carry the forest and mountain birds together.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/peregrine-falcon/">Peregrine Falcon</a>, <a href="/birds/white-throated-dipper/">White-throated Dipper</a>, <a href="/birds/red-crossbill/">Red Crossbill</a>, <a href="/birds/goldcrest/">Goldcrest</a>, <a href="/birds/grey-wagtail/">Grey Wagtail</a>, <a href="/birds/fieldfare/">Fieldfare</a>, <a href="/birds/coal-tit/">Coal Tit</a></li>
 
 

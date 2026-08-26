@@ -185,6 +185,10 @@
        meets it having just seen a rate, which is the moment the caveat is worth reading. */
     .ratebasis { font-family: var(--body); font-size: 13px; line-height: 1.55; color: var(--muted); margin: 14px 2px 0; max-width: 78ch; }
     .stayrule a { color: var(--green-dark); font-weight: 800; }
+    /* Habitat and When sit above the birds and read as fact rather than as recommendation,
+       so they take the body colour and leave the muted grey to the wildlife aside. */
+    .where.habitat b, .where.when b { color: var(--green-dark); }
+    .where.when { font-variant-numeric: tabular-nums; }
     .where.wildlife { color: var(--muted); }
     .where.wildlife b { color: var(--ink); }
     .rblock { margin: 10px 0 4px; border-top: 1px solid #EFE5C6; }

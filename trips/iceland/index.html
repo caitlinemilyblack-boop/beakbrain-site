@@ -203,6 +203,10 @@
        meets it having just seen a rate, which is the moment the caveat is worth reading. */
     .ratebasis { font-family: var(--body); font-size: 13px; line-height: 1.55; color: var(--muted); margin: 14px 2px 0; max-width: 78ch; }
     .stayrule a { color: var(--green-dark); font-weight: 800; }
+    /* Habitat and When sit above the birds and read as fact rather than as recommendation,
+       so they take the body colour and leave the muted grey to the wildlife aside. */
+    .where.habitat b, .where.when b { color: var(--green-dark); }
+    .where.when { font-variant-numeric: tabular-nums; }
     .where.wildlife { color: var(--muted); }
     .where.wildlife b { color: var(--ink); }
     .rblock { margin: 10px 0 4px; border-top: 1px solid #EFE5C6; }
@@ -1037,7 +1041,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/barrow-s-goldeneye/" data-i="16" data-group="highlight wildfowl" aria-label="Barrow's Goldeneye collector card"><span class="tph"><span class="tph-name">Barrow's Goldeneye</span><span class="tph-sci">Bucephala islandica</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> Lake Myvatn and the Laxa</p>
             <p><b>When:</b> Resident, best May to September</p>
           </div>
         </div>
@@ -1492,7 +1496,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/harlequin-duck/" data-i="129" data-group="highlight wildfowl" aria-label="Harlequin Duck collector card"><span class="tph"><span class="tph-name">Harlequin Duck</span><span class="tph-sci">Histrionicus histrionicus</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> Fast rivers at Myvatn, Snaefellsnes and Reykjanes</p>
             <p><b>When:</b> May to September on the rivers</p>
           </div>
         </div>
@@ -1947,7 +1951,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/white-tailed-eagle/" data-i="242" data-group="highlight raptor" aria-label="White-tailed Eagle collector card"><span class="tph"><span class="tph-name">White-tailed Eagle</span><span class="tph-sci">Haliaeetus albicilla</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> Breidafjordur and Snaefellsnes</p>
             <p><b>When:</b> Year round</p>
           </div>
         </div>
@@ -2010,7 +2014,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/atlantic-puffin/" data-i="257" data-group="highlight seabird" aria-label="Atlantic Puffin collector card"><span class="tph"><span class="tph-name">Atlantic Puffin</span><span class="tph-sci">Fratercula arctica</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> Vestmannaeyjar, Latrabjarg, Hafnarholmi, Dyrholaey, Ingolfshofdi, Grimsey</p>
             <p><b>When:</b> Late April arrival, main influx early May, peak June and July, mostly gone by early September</p>
           </div>
         </div>
@@ -2077,7 +2081,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/great-skua/" data-i="273" data-group="highlight seabird" aria-label="Great Skua collector card"><span class="tph"><span class="tph-name">Great Skua</span><span class="tph-sci">Stercorarius skua</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> Ingolfshofdi and the Austur-Skaftafell sands</p>
             <p><b>When:</b> May to August</p>
           </div>
         </div>
@@ -2136,7 +2140,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/red-phalarope/" data-i="287" data-group="highlight wader" aria-label="Red Phalarope collector card"><span class="tph"><span class="tph-name">Red Phalarope</span><span class="tph-sci">Phalaropus fulicarius</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> Coastal bogs and small islands</p>
             <p><b>When:</b> June and July</p>
           </div>
         </div>
@@ -2191,7 +2195,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/thick-billed-murre/" data-i="300" data-group="highlight seabird" aria-label="Thick-billed Murre collector card"><span class="tph"><span class="tph-name">Thick-billed Murre</span><span class="tph-sci">Uria lomvia</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> Latrabjarg, Grimsey, Langanes, Skrudur, Papey</p>
             <p><b>When:</b> May to August</p>
           </div>
         </div>
@@ -2218,7 +2222,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/gyrfalcon/" data-i="306" data-group="highlight raptor mountain scarce" aria-label="Gyrfalcon collector card"><span class="tph"><span class="tph-name">Gyrfalcon</span><span class="tph-sci">Falco rusticolus</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> Myvatn, Dimmuborgir, Jokulsargljufur, and Reykjanes in winter</p>
             <p><b>When:</b> Year round, winter easiest as birds drop to lower ground</p>
           </div>
         </div>
@@ -2705,6 +2709,7 @@
         <p class="blurb">The single most cited site in every itinerary read. Sixteen breeding duck species are recorded, among them the only European breeding population of <a href="/birds/barrow-s-goldeneye/">Barrow's Goldeneye</a>, and <a href="/birds/gyrfalcon/">Gyrfalcon</a> hunts the area. The 1974 act and the Ramsar listing both cover it.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/barrow-s-goldeneye/">Barrow's Goldeneye</a>, <a href="/birds/harlequin-duck/">Harlequin Duck</a>, <a href="/birds/gyrfalcon/">Gyrfalcon</a>, <a href="/birds/horned-grebe/">Horned Grebe</a>, <a href="/birds/red-necked-phalarope/">Red-necked Phalarope</a>, <a href="/birds/long-tailed-duck/">Long-tailed Duck</a>, <a href="/birds/greater-scaup/">Greater Scaup</a>, <a href="/birds/common-scoter/">Common Scoter</a></li>
 
 
@@ -2809,6 +2814,7 @@
         <p class="blurb">Puffin, <a href="/birds/razorbill/">Razorbill</a>, Common and Brünnich's Guillemot, <a href="/birds/black-guillemot/">Black Guillemot</a>, Fulmar and Kittiwake all hold ledges on the same cliff, which is what makes Látrabjarg worth the drive rather than any one of them.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/atlantic-puffin/">Atlantic Puffin</a>, <a href="/birds/razorbill/">Razorbill</a>, <a href="/birds/common-murre/">Common Murre</a>, <a href="/birds/thick-billed-murre/">Thick-billed Murre</a>, <a href="/birds/black-guillemot/">Black Guillemot</a>, <a href="/birds/northern-fulmar/">Northern Fulmar</a>, <a href="/birds/black-legged-kittiwake/">Black-legged Kittiwake</a></li>
 
 
@@ -2912,6 +2918,7 @@
         <p class="blurb">Seabird cliffs in summer and sea ducks in winter, and the Breidafjordur shore holds about three quarters of Iceland's <a href="/birds/white-tailed-eagle/">White-tailed Eagles</a>.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/white-tailed-eagle/">White-tailed Eagle</a>, <a href="/birds/common-eider/">Common Eider</a>, <a href="/birds/purple-sandpiper/">Purple Sandpiper</a>, <a href="/birds/black-tailed-godwit/">Black-tailed Godwit</a>, <a href="/birds/red-throated-loon/">Red-throated Loon</a>, <a href="/birds/european-shag/">European Shag</a>, <a href="/birds/glaucous-gull/">Glaucous Gull</a></li>
 
 
@@ -2969,6 +2976,7 @@
         <p class="blurb">Iceland's largest puffin stronghold. Vestmannaeyjar holds roughly 830,000 breeding pairs, about one in five of the world total. Ingólfshöfði holds one of the world's largest <a href="/birds/great-skua/">Great Skua</a> colonies.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/great-skua/">Great Skua</a>, <a href="/birds/manx-shearwater/">Manx Shearwater</a>, <a href="/birds/leach-s-storm-petrel/">Leach's Storm Petrel</a>, <a href="/birds/european-storm-petrel/">European Storm Petrel</a>, <a href="/birds/arctic-tern/">Arctic Tern</a>, <a href="/birds/northern-gannet/">Northern Gannet</a>, <a href="/birds/rock-ptarmigan/">Rock Ptarmigan</a></li>
 
 
@@ -3026,6 +3034,7 @@
         <p class="blurb">Close enough to the airport to bird on the morning of a flight, and Garður at its tip is a named vagrant trap. It carries a winter list of its own when the rest of the country is shut.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/iceland-gull/">Iceland Gull</a>, <a href="/birds/common-loon/">Common Loon</a>, <a href="/birds/king-eider/">King Eider</a>, <a href="/birds/common-redshank/">Common Redshank</a>, <a href="/birds/snow-bunting/">Snow Bunting</a>, <a href="/birds/northern-wheatear/">Northern Wheatear</a>, <a href="/birds/whooper-swan/">Whooper Swan</a></li>
 
 
@@ -3248,6 +3257,7 @@
         <p class="blurb">Roughly ten thousand pairs of puffin nest in the turf at Hafnarhólmi, and a boardwalk runs out over them so the birds are below eye level rather than across a gulf. Borgarfjörður Eystri is the end of a long road and the coast behind it stays empty.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/parasitic-jaeger/">Parasitic Jaeger</a>, <a href="/birds/common-snipe/">Common Snipe</a>, <a href="/birds/meadow-pipit/">Meadow Pipit</a>, <a href="/birds/white-wagtail/">White Wagtail</a>, <a href="/birds/redwing/">Redwing</a>, <a href="/birds/common-ringed-plover/">Common Ringed Plover</a>, <a href="/birds/european-golden-plover/">European Golden Plover</a></li>
 
 
@@ -3322,6 +3332,7 @@
         <p class="blurb"><a href="/birds/great-skua/">Great Skua</a> breed on the outwash sands in numbers, and the glacier lagoon at Jökulsárlón holds terns and skuas working the ice.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/pink-footed-goose/">Pink-footed Goose</a>, <a href="/birds/barnacle-goose/">Barnacle Goose</a>, <a href="/birds/great-cormorant/">Great Cormorant</a>, <a href="/birds/eurasian-oystercatcher/">Eurasian Oystercatcher</a>, <a href="/birds/dunlin/">Dunlin</a>, <a href="/birds/red-knot/">Red Knot</a>, <a href="/birds/sanderling/">Sanderling</a></li>
 
 
@@ -3379,6 +3390,7 @@
         <p class="blurb">Þjórsárver is the world's largest breeding ground for <a href="/birds/pink-footed-goose/">Pink-footed Goose</a>, six to ten thousand pairs. Reachable only once the F-roads open.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/eurasian-dotterel/">Eurasian Dotterel</a>, <a href="/birds/eurasian-skylark/">Eurasian Skylark</a>, <a href="/birds/northern-raven/">Northern Raven</a>, <a href="/birds/merlin/">Merlin</a>, <a href="/birds/eurasian-whimbrel/">Eurasian Whimbrel</a>, <a href="/birds/meadow-pipit/">Meadow Pipit</a>, <a href="/birds/lapland-longspur/">Lapland Longspur</a></li>
 
 

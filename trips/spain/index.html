@@ -203,6 +203,10 @@
        meets it having just seen a rate, which is the moment the caveat is worth reading. */
     .ratebasis { font-family: var(--body); font-size: 13px; line-height: 1.55; color: var(--muted); margin: 14px 2px 0; max-width: 78ch; }
     .stayrule a { color: var(--green-dark); font-weight: 800; }
+    /* Habitat and When sit above the birds and read as fact rather than as recommendation,
+       so they take the body colour and leave the muted grey to the wildlife aside. */
+    .where.habitat b, .where.when b { color: var(--green-dark); }
+    .where.when { font-variant-numeric: tabular-nums; }
     .where.wildlife { color: var(--muted); }
     .where.wildlife b { color: var(--ink); }
     .rblock { margin: 10px 0 4px; border-top: 1px solid #EFE5C6; }
@@ -1191,7 +1195,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/cinereous-vulture/" data-i="54" data-group="highlight raptor mountain" aria-label="Cinereous Vulture collector card"><span class="tph"><span class="tph-name">Cinereous Vulture</span><span class="tph-sci">Aegypius monachus</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> Monfragüe, 376 pairs, and the Sierra de San Pedro, 461</p>
             <p><b>When:</b> Resident</p>
           </div>
         </div>
@@ -2346,7 +2350,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/audouin-s-gull/" data-i="342" data-group="highlight seabird" aria-label="Audouin's Gull collector card"><span class="tph"><span class="tph-name">Audouin's Gull</span><span class="tph-sci">Ichthyaetus audouinii</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> The Ebro Delta</p>
             <p><b>When:</b> Breeding season</p>
           </div>
         </div>
@@ -2365,7 +2369,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/bearded-vulture/" data-i="346" data-group="highlight raptor mountain" aria-label="Bearded Vulture collector card"><span class="tph"><span class="tph-name">Bearded Vulture</span><span class="tph-sci">Gypaetus barbatus</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> The Pyrenees, with reintroductions in Andalucia and the Picos</p>
             <p><b>When:</b> Resident</p>
           </div>
         </div>
@@ -2572,7 +2576,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/great-bustard/" data-i="397" data-group="highlight" aria-label="Great Bustard collector card"><span class="tph"><span class="tph-name">Great Bustard</span><span class="tph-sci">Otis tarda</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> Villafáfila in Zamora, the Cáceres steppes, La Serena</p>
             <p><b>When:</b> March to early April for the lek</p>
           </div>
         </div>
@@ -2863,7 +2867,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/spanish-imperial-eagle/" data-i="469" data-group="highlight raptor" aria-label="Spanish Imperial Eagle collector card"><span class="tph"><span class="tph-name">Spanish Imperial Eagle</span><span class="tph-sci">Aquila adalberti</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> Doñana, Extremadura, the Sierra Norte</p>
             <p><b>When:</b> Resident</p>
           </div>
         </div>
@@ -2918,7 +2922,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/wallcreeper/" data-i="482" data-group="highlight mountain" aria-label="Wallcreeper collector card"><span class="tph"><span class="tph-name">Wallcreeper</span><span class="tph-sci">Tichodroma muraria</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> Ordesa, Riglos, the Picos de Europa</p>
             <p><b>When:</b> Resident on cliffs, lower in winter</p>
           </div>
         </div>
@@ -3077,7 +3081,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/dupont-s-lark/" data-i="521" data-group="highlight scarce" aria-label="Dupont's Lark collector card"><span class="tph"><span class="tph-name">Dupont's Lark</span><span class="tph-sci">Chersophilus duponti</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> Belchite, at the SEO reserves of El Planerón and La Lomaza</p>
             <p><b>When:</b> Dawn, or the brief dusk song</p>
           </div>
         </div>
@@ -4037,6 +4041,7 @@
         <p class="blurb">The region operators call the best birding in western Europe, with twenty breeding raptor species. Monfragüe holds 376 pairs of <a href="/birds/cinereous-vulture/">Cinereous Vulture</a> and the Sierra de San Pedro 461, which between them are Europe's two most important colonies.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/cinereous-vulture/">Cinereous Vulture</a>, <a href="/birds/spanish-imperial-eagle/">Spanish Imperial Eagle</a>, <a href="/birds/black-stork/">Black Stork</a>, <a href="/birds/eurasian-eagle-owl/">Eurasian Eagle-Owl</a>, <a href="/birds/great-bustard/">Great Bustard</a>, <a href="/birds/little-bustard/">Little Bustard</a>, <a href="/birds/black-winged-kite/">Black-winged Kite</a>, <a href="/birds/iberian-magpie/">Iberian Magpie</a></li>
 
 
@@ -4158,6 +4163,7 @@
         <p class="blurb">Atlantic marsh, dune and pine, and the classic Spanish wetland. <a href="/birds/spanish-imperial-eagle/">Spanish Imperial Eagle</a>, Crested Coot and the marsh assemblage, reached by guided vehicle rather than freely.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/red-knobbed-coot/">Red-knobbed Coot</a>, <a href="/birds/marbled-duck/">Marbled Duck</a>, <a href="/birds/purple-swamphen/">Purple Swamphen</a>, <a href="/birds/greater-flamingo/">Greater Flamingo</a>, <a href="/birds/squacco-heron/">Squacco Heron</a>, <a href="/birds/glossy-ibis/">Glossy Ibis</a>, <a href="/birds/red-crested-pochard/">Red-crested Pochard</a>, <a href="/birds/slender-billed-gull/">Slender-billed Gull</a></li>
 
 
@@ -4500,6 +4506,7 @@
         <p class="blurb">Europe's premier bottleneck for soaring birds and the shortest Mediterranean crossing. Roughly 300,000 raptors of about thirty species and 150,000 storks pass each season.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/black-kite/">Black Kite</a>, <a href="/birds/short-toed-snake-eagle/">Short-toed Snake Eagle</a>, <a href="/birds/booted-eagle/">Booted Eagle</a>, <a href="/birds/european-honey-buzzard/">European Honey Buzzard</a>, <a href="/birds/white-stork/">White Stork</a>, <a href="/birds/egyptian-vulture/">Egyptian Vulture</a>, <a href="/birds/ruppell-s-vulture/">Rüppell's Vulture</a>, <a href="/birds/northern-bald-ibis/">Northern Bald Ibis</a></li>
 
 
@@ -4722,6 +4729,7 @@
         <p class="blurb">The Iberian Lynx stronghold, which several operators now name in the tour title itself, alongside <a href="/birds/spanish-imperial-eagle/">Spanish Imperial Eagle</a>, <a href="/birds/black-vulture/">Black Vulture</a> and <a href="/birds/iberian-magpie/">Iberian Magpie</a>. Grazalema holds over 700 pairs of <a href="/birds/griffon-vulture/">Griffon Vulture</a>.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/griffon-vulture/">Griffon Vulture</a>, <a href="/birds/black-wheatear/">Black Wheatear</a>, <a href="/birds/blue-rock-thrush/">Blue Rock Thrush</a>, <a href="/birds/rock-bunting/">Rock Bunting</a>, <a href="/birds/thekla-s-lark/">Thekla's Lark</a>, <a href="/birds/red-billed-chough/">Red-billed Chough</a>, <a href="/birds/alpine-swift/">Alpine Swift</a></li>
 
 
@@ -5150,6 +5158,7 @@
         <p class="blurb">Lammergeier and <a href="/birds/wallcreeper/">Wallcreeper</a> on the cliffs. The Pyrenees hold 209 territorial <a href="/birds/bearded-vulture/">Bearded Vulture</a> units, 151 of them in Spain.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/bearded-vulture/">Bearded Vulture</a>, <a href="/birds/wallcreeper/">Wallcreeper</a>, <a href="/birds/white-winged-snowfinch/">White-winged Snowfinch</a>, <a href="/birds/alpine-accentor/">Alpine Accentor</a>, <a href="/birds/rock-ptarmigan/">Rock Ptarmigan</a>, <a href="/birds/citril-finch/">Citril Finch</a>, <a href="/birds/black-woodpecker/">Black Woodpecker</a>, <a href="/birds/common-rock-thrush/">Common Rock Thrush</a></li>
 
 
@@ -5303,6 +5312,7 @@
         <p class="blurb">A Mediterranean delta rated among the best wetlands in Europe. <a href="/birds/audouin-s-gull/">Audouin's Gull</a>, <a href="/birds/greater-flamingo/">Greater Flamingo</a>, <a href="/birds/slender-billed-gull/">Slender-billed Gull</a> and the reedbed herons.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/audouin-s-gull/">Audouin's Gull</a>, <a href="/birds/purple-heron/">Purple Heron</a>, <a href="/birds/eurasian-bittern/">Eurasian Bittern</a>, <a href="/birds/collared-pratincole/">Collared Pratincole</a>, <a href="/birds/kentish-plover/">Kentish Plover</a>, <a href="/birds/moustached-warbler/">Moustached Warbler</a>, <a href="/birds/whiskered-tern/">Whiskered Tern</a></li>
 
 
@@ -5610,6 +5620,7 @@
         <p class="blurb"><a href="/birds/dupont-s-lark/">Dupont's Lark</a> at the SEO reserves of El Planerón and La Lomaza, with <a href="/birds/pin-tailed-sandgrouse/">Pin-tailed Sandgrouse</a>, Lesser Short-toed Lark and <a href="/birds/black-wheatear/">Black Wheatear</a>. The Lleida plains carry <a href="/birds/little-bustard/">Little Bustard</a> and <a href="/birds/montagu-s-harrier/">Montagu's Harrier</a>.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/dupont-s-lark/">Dupont's Lark</a>, <a href="/birds/pin-tailed-sandgrouse/">Pin-tailed Sandgrouse</a>, <a href="/birds/black-bellied-sandgrouse/">Black-bellied Sandgrouse</a>, <a href="/birds/mediterranean-short-toed-lark/">Mediterranean Short-toed Lark</a>, <a href="/birds/calandra-lark/">Calandra Lark</a>, <a href="/birds/montagu-s-harrier/">Montagu's Harrier</a>, <a href="/birds/spectacled-warbler/">Spectacled Warbler</a></li>
 
 
@@ -5748,6 +5759,7 @@
         <p class="blurb">Laguna de Gallocanta is the largest saline lagoon in Iberia and eighty per cent of the western <a href="/birds/common-crane/">Common Crane</a> population passes through it. Single day counts have reached 135,000 cranes. The same central leg takes in the Madrid steppes for <a href="/birds/great-bustard/">Great Bustard</a> and Sierra de Gredos for <a href="/birds/bluethroat/">Bluethroat</a>, <a href="/birds/citril-finch/">Citril Finch</a> and <a href="/birds/spanish-imperial-eagle/">Spanish Imperial Eagle</a>.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/common-crane/">Common Crane</a>, <a href="/birds/bluethroat/">Bluethroat</a>, <a href="/birds/ortolan-bunting/">Ortolan Bunting</a>, <a href="/birds/water-pipit/">Water Pipit</a>, <a href="/birds/rock-sparrow/">Rock Sparrow</a>, <a href="/birds/northern-wheatear/">Northern Wheatear</a>, <a href="/birds/iberian-grey-shrike/">Iberian Grey Shrike</a></li>
 
 
@@ -7179,6 +7191,7 @@
         <p class="blurb">Cantabrian mountains with <a href="/birds/wallcreeper/">Wallcreeper</a>, Snowfinch, <a href="/birds/alpine-accentor/">Alpine Accentor</a> and Capercaillie, and a <a href="/birds/bearded-vulture/">Bearded Vulture</a> reintroduction running since 2010.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/western-capercaillie/">Western Capercaillie</a>, <a href="/birds/middle-spotted-woodpecker/">Middle Spotted Woodpecker</a>, <a href="/birds/white-backed-woodpecker/">White-backed Woodpecker</a>, <a href="/birds/alpine-chough/">Alpine Chough</a>, <a href="/birds/ring-ouzel/">Ring Ouzel</a>, <a href="/birds/yellowhammer/">Yellowhammer</a>, <a href="/birds/common-firecrest/">Common Firecrest</a></li>
 
 
@@ -7401,6 +7414,7 @@
         <p class="blurb">The Levante coast holds Albufera de Valencia, which takes up to a hundred species in a migration day, and El Hondo, which holds most of the European Marbled Teal population. Mallorca sits offshore with its own Albufera.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/eleonora-s-falcon/">Eleonora's Falcon</a>, <a href="/birds/mediterranean-shearwater/">Mediterranean Shearwater</a>, <a href="/birds/moltoni-s-warbler/">Moltoni's Warbler</a>, <a href="/birds/eurasian-stone-curlew/">Eurasian Stone-curlew</a>, <a href="/birds/little-tern/">Little Tern</a>, <a href="/birds/black-necked-grebe/">Black-necked Grebe</a>, <a href="/birds/booted-warbler/">Booted Warbler</a></li>
 
 

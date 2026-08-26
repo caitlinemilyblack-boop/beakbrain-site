@@ -203,6 +203,10 @@
        meets it having just seen a rate, which is the moment the caveat is worth reading. */
     .ratebasis { font-family: var(--body); font-size: 13px; line-height: 1.55; color: var(--muted); margin: 14px 2px 0; max-width: 78ch; }
     .stayrule a { color: var(--green-dark); font-weight: 800; }
+    /* Habitat and When sit above the birds and read as fact rather than as recommendation,
+       so they take the body colour and leave the muted grey to the wildlife aside. */
+    .where.habitat b, .where.when b { color: var(--green-dark); }
+    .where.when { font-variant-numeric: tabular-nums; }
     .where.wildlife { color: var(--muted); }
     .where.wildlife b { color: var(--ink); }
     .rblock { margin: 10px 0 4px; border-top: 1px solid #EFE5C6; }
@@ -1090,7 +1094,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/cinereous-vulture/" data-i="29" data-group="highlight raptor mountain" aria-label="Cinereous Vulture collector card"><span class="tph"><span class="tph-name">Cinereous Vulture</span><span class="tph-sci">Aegypius monachus</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> Dadia Forest</p>
             <p><b>When:</b> Resident, viewed year round from the hide</p>
           </div>
         </div>
@@ -2061,7 +2065,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/dalmatian-pelican/" data-i="271" data-group="highlight" aria-label="Dalmatian Pelican collector card"><span class="tph"><span class="tph-name">Dalmatian Pelican</span><span class="tph-sci">Pelecanus crispus</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> Kerkini, Prespa and Porto Lagos</p>
             <p><b>When:</b> Winter for the large flocks, spring for the breeding colony</p>
           </div>
         </div>
@@ -2072,7 +2076,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/eastern-imperial-eagle/" data-i="273" data-group="highlight raptor" aria-label="Eastern Imperial Eagle collector card"><span class="tph"><span class="tph-name">Eastern Imperial Eagle</span><span class="tph-sci">Aquila heliaca</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> The Thracian borderlands</p>
             <p><b>When:</b> Resident, most often on the Evros to Dadia transfer</p>
           </div>
         </div>
@@ -2083,14 +2087,14 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/egyptian-vulture/" data-i="275" data-group="highlight raptor mountain" aria-label="Egyptian Vulture collector card"><span class="tph"><span class="tph-name">Egyptian Vulture</span><span class="tph-sci">Neophron percnopterus</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> Dadia and the Thracian cliffs</p>
             <p><b>When:</b> Summer visitor, arriving in spring</p>
           </div>
         </div>
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/eleonora-s-falcon/" data-i="276" data-group="highlight raptor" aria-label="Eleonora's Falcon collector card"><span class="tph"><span class="tph-name">Eleonora's Falcon</span><span class="tph-sci">Falco eleonorae</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> Lesvos and the Aegean cliffs</p>
             <p><b>When:</b> Spring arrival through to autumn</p>
           </div>
         </div>
@@ -2405,7 +2409,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/cinereous-bunting/" data-i="354" data-group="highlight scarce" aria-label="Cinereous Bunting collector card"><span class="tph"><span class="tph-name">Cinereous Bunting</span><span class="tph-sci">Emberiza cineracea</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> Western Lesvos garrigue</p>
             <p><b>When:</b> Spring, April to May</p>
           </div>
         </div>
@@ -2432,7 +2436,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/kruper-s-nuthatch/" data-i="360" data-group="highlight scarce" aria-label="Krüper's Nuthatch collector card"><span class="tph"><span class="tph-name">Krüper's Nuthatch</span><span class="tph-sci">Sitta krueperi</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> Achladeri Pine Forest, Lesvos</p>
             <p><b>When:</b> Resident, best located in spring</p>
           </div>
         </div>
@@ -2463,7 +2467,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/ruppell-s-warbler/" data-i="367" data-group="highlight scarce" aria-label="Rüppell's Warbler collector card"><span class="tph"><span class="tph-name">Rüppell's Warbler</span><span class="tph-sci">Curruca ruppeli</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> Western Lesvos and the mainland scrub</p>
             <p><b>When:</b> Spring, April to May</p>
           </div>
         </div>
@@ -3014,6 +3018,7 @@
         <p class="blurb">The single most photographed birding site in Greece. <a href="/birds/dalmatian-pelican/">Dalmatian Pelicans</a> come to the boats at Lithotopos, the flooded forest holds nesting <a href="/birds/pygmy-cormorant/">Pygmy Cormorant</a> and heron colonies, and the Mount Kerkini foothills above give <a href="/birds/sombre-tit/">Sombre Tit</a> and Rock Nuthatch. Winter brings the large pelican flocks.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/dalmatian-pelican/">Dalmatian Pelican</a>, <a href="/birds/great-white-pelican/">Great White Pelican</a>, <a href="/birds/pygmy-cormorant/">Pygmy Cormorant</a>, <a href="/birds/squacco-heron/">Squacco Heron</a>, <a href="/birds/sombre-tit/">Sombre Tit</a>, <a href="/birds/western-rock-nuthatch/">Western Rock Nuthatch</a>, <a href="/birds/spur-winged-lapwing/">Spur-winged Lapwing</a></li>
 
 
@@ -3150,6 +3155,7 @@
         <p class="blurb">The reason Greece is a vulture destination. The hide gives <a href="/birds/cinereous-vulture/">Cinereous Vulture</a> year round, <a href="/birds/egyptian-vulture/">Egyptian Vulture</a> in summer and Griffon on the same carcass, which is a combination almost nowhere else in Europe offers.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/cinereous-vulture/">Cinereous Vulture</a>, <a href="/birds/egyptian-vulture/">Egyptian Vulture</a>, <a href="/birds/griffon-vulture/">Griffon Vulture</a>, <a href="/birds/lesser-spotted-eagle/">Lesser Spotted Eagle</a>, <a href="/birds/booted-eagle/">Booted Eagle</a>, <a href="/birds/eurasian-sparrowhawk/">Eurasian Sparrowhawk</a>, <a href="/birds/black-stork/">Black Stork</a></li>
 
 
@@ -3285,6 +3291,7 @@
         <p class="blurb">The Evros Delta is the largest wetland in the country and one of the richest in the eastern Mediterranean, with <a href="/birds/eastern-imperial-eagle/">Eastern Imperial Eagle</a> over the Thracian borderlands between it and Dadia. The Maroneia scrubland adds the eastern warblers and shrikes.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/eastern-imperial-eagle/">Eastern Imperial Eagle</a>, <a href="/birds/pygmy-cormorant/">Pygmy Cormorant</a>, <a href="/birds/greater-flamingo/">Greater Flamingo</a>, <a href="/birds/masked-shrike/">Masked Shrike</a>, <a href="/birds/olive-tree-warbler/">Olive-tree Warbler</a>, <a href="/birds/isabelline-wheatear/">Isabelline Wheatear</a>, <a href="/birds/great-egret/">Great Egret</a></li>
 
 
@@ -3386,6 +3393,7 @@
         <p class="blurb">Porto Lagos saltpans hold <a href="/birds/greater-flamingo/">Greater Flamingo</a> and <a href="/birds/dalmatian-pelican/">Dalmatian Pelican</a>, Lake Vistonida and Lake Ismarida take the wildfowl, and the Nestos Gorge cuts inland for raptors and <a href="/birds/black-stork/">Black Stork</a>.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/slender-billed-gull/">Slender-billed Gull</a>, <a href="/birds/mediterranean-gull/">Mediterranean Gull</a>, <a href="/birds/pied-avocet/">Pied Avocet</a>, <a href="/birds/ferruginous-duck/">Ferruginous Duck</a>, <a href="/birds/little-crake/">Little Crake</a>, <a href="/birds/eurasian-spoonbill/">Eurasian Spoonbill</a>, <a href="/birds/whiskered-tern/">Whiskered Tern</a></li>
 
 
@@ -3746,6 +3754,7 @@
         <p class="blurb">Lesvos is a birding destination in its own right and the busiest spring product in Greece. Skala Kalloni is the base, the Tsiknias river mouth takes the waders, Achladeri holds Krüper's Nuthatch, and the western garrigue has <a href="/birds/cinereous-bunting/">Cinereous Bunting</a> and Rüppell's Warbler.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/kruper-s-nuthatch/">Krüper's Nuthatch</a>, <a href="/birds/cinereous-bunting/">Cinereous Bunting</a>, <a href="/birds/ruppell-s-warbler/">Rüppell's Warbler</a>, <a href="/birds/cretzschmar-s-bunting/">Cretzschmar's Bunting</a>, <a href="/birds/middle-spotted-woodpecker/">Middle Spotted Woodpecker</a>, <a href="/birds/western-black-eared-wheatear/">Western Black-eared Wheatear</a>, <a href="/birds/citrine-wagtail/">Citrine Wagtail</a></li>
 
 
@@ -3953,6 +3962,7 @@
         <p class="blurb">The Prespa lakes sit where Greece, Albania and North Macedonia meet, and Micro Prespa holds the largest <a href="/birds/dalmatian-pelican/">Dalmatian Pelican</a> breeding colony in the world. The Kastoria highlands and the Aliakmonas gorge behind give the mountain raptors and the Grammos forest birds.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/golden-eagle/">Golden Eagle</a>, <a href="/birds/white-tailed-eagle/">White-tailed Eagle</a>, <a href="/birds/ferruginous-duck/">Ferruginous Duck</a>, <a href="/birds/alpine-chough/">Alpine Chough</a>, <a href="/birds/common-rock-thrush/">Common Rock Thrush</a>, <a href="/birds/eurasian-crag-martin/">Eurasian Crag Martin</a>, <a href="/birds/black-woodpecker/">Black Woodpecker</a></li>
 
 
@@ -4107,6 +4117,7 @@
         <p class="blurb">Two mountains that carry the forest and high-ground list. Mount Olympus has the beech and pine trails with woodpeckers and Alpine species above them, and Mount Pangaio further east is the reliable Greek site for the same set on a shorter walk.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/white-backed-woodpecker/">White-backed Woodpecker</a>, <a href="/birds/eurasian-three-toed-woodpecker/">Eurasian Three-toed Woodpecker</a>, <a href="/birds/western-capercaillie/">Western Capercaillie</a>, <a href="/birds/ring-ouzel/">Ring Ouzel</a>, <a href="/birds/water-pipit/">Water Pipit</a>, <a href="/birds/alpine-accentor/">Alpine Accentor</a>, <a href="/birds/common-firecrest/">Common Firecrest</a></li>
 
 
@@ -4430,6 +4441,7 @@
         <p class="blurb">The central Greek hills around Delphi and Parnassos, on limestone and scrub. Rock Nuthatch, <a href="/birds/blue-rock-thrush/">Blue Rock Thrush</a> and <a href="/birds/sombre-tit/">Sombre Tit</a> on the Delphi slopes, with Parnassos above for the higher birds and Osios Loukas for the olive-grove species.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/blue-rock-thrush/">Blue Rock Thrush</a>, <a href="/birds/rock-bunting/">Rock Bunting</a>, <a href="/birds/eastern-orphean-warbler/">Eastern Orphean Warbler</a>, <a href="/birds/eastern-olivaceous-warbler/">Eastern Olivaceous Warbler</a>, <a href="/birds/woodchat-shrike/">Woodchat Shrike</a>, <a href="/birds/eurasian-scops-owl/">Eurasian Scops Owl</a>, <a href="/birds/cirl-bunting/">Cirl Bunting</a></li>
 
 
@@ -4532,6 +4544,7 @@
         <p class="blurb">Attica is where most visitors land and it holds more than an airport. Schinias National Park and Oropos Lagoon take the passage waders, Mount Parnitha and Mount Hymettus give the scrub and raptor birds, and the Erythres Plains hold larks and harriers within an hour of Athens.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/greater-short-toed-lark/">Greater Short-toed Lark</a>, <a href="/birds/calandra-lark/">Calandra Lark</a>, <a href="/birds/montagu-s-harrier/">Montagu's Harrier</a>, <a href="/birds/little-owl/">Little Owl</a>, <a href="/birds/european-bee-eater/">European Bee-eater</a>, <a href="/birds/zitting-cisticola/">Zitting Cisticola</a>, <a href="/birds/kentish-plover/">Kentish Plover</a></li>
 
 

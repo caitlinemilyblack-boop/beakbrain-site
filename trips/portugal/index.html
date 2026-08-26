@@ -203,6 +203,10 @@
        meets it having just seen a rate, which is the moment the caveat is worth reading. */
     .ratebasis { font-family: var(--body); font-size: 13px; line-height: 1.55; color: var(--muted); margin: 14px 2px 0; max-width: 78ch; }
     .stayrule a { color: var(--green-dark); font-weight: 800; }
+    /* Habitat and When sit above the birds and read as fact rather than as recommendation,
+       so they take the body colour and leave the muted grey to the wildlife aside. */
+    .where.habitat b, .where.when b { color: var(--green-dark); }
+    .where.when { font-variant-numeric: tabular-nums; }
     .where.wildlife { color: var(--muted); }
     .where.wildlife b { color: var(--ink); }
     .rblock { margin: 10px 0 4px; border-top: 1px solid #EFE5C6; }
@@ -1104,7 +1108,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/black-winged-kite/" data-i="32" data-group="highlight raptor" aria-label="Black-winged Kite collector card"><span class="tph"><span class="tph-name">Black-winged Kite</span><span class="tph-sci">Elanus caeruleus</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> Alentejo and Algarve farmland</p>
             <p><b>When:</b> Resident, visible year round</p>
           </div>
         </div>
@@ -2411,7 +2415,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/bonelli-s-eagle/" data-i="358" data-group="highlight raptor" aria-label="Bonelli's Eagle collector card"><span class="tph"><span class="tph-name">Bonelli's Eagle</span><span class="tph-sci">Aquila fasciata</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> Tejo Internacional, Douro Internacional and the Guadiana</p>
             <p><b>When:</b> Resident</p>
           </div>
         </div>
@@ -2546,7 +2550,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/great-bustard/" data-i="391" data-group="highlight" aria-label="Great Bustard collector card"><span class="tph"><span class="tph-name">Great Bustard</span><span class="tph-sci">Otis tarda</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> Castro Verde</p>
             <p><b>When:</b> March to early April for the lek</p>
           </div>
         </div>
@@ -2781,7 +2785,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/spanish-imperial-eagle/" data-i="449" data-group="highlight raptor" aria-label="Spanish Imperial Eagle collector card"><span class="tph"><span class="tph-name">Spanish Imperial Eagle</span><span class="tph-sci">Aquila adalberti</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> Alentejo and Tejo Internacional</p>
             <p><b>When:</b> Resident</p>
           </div>
         </div>
@@ -2992,7 +2996,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/zino-s-petrel/" data-i="501" data-group="highlight seabird scarce" aria-label="Zino's Petrel collector card"><span class="tph"><span class="tph-name">Zino's Petrel</span><span class="tph-sci">Pterodroma madeira</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> Madeira, Pico do Areeiro</p>
             <p><b>When:</b> Pelagic trips late May to early August</p>
           </div>
         </div>
@@ -3327,7 +3331,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/iberian-magpie/" data-i="584" data-group="highlight" aria-label="Iberian Magpie collector card"><span class="tph"><span class="tph-name">Iberian Magpie</span><span class="tph-sci">Cyanopica cooki</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> The Alentejo and the south</p>
             <p><b>When:</b> Resident, easy year round</p>
           </div>
         </div>
@@ -3338,7 +3342,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/little-bustard/" data-i="586" data-group="highlight" aria-label="Little Bustard collector card"><span class="tph"><span class="tph-name">Little Bustard</span><span class="tph-sci">Tetrax tetrax</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> Castro Verde and the Alentejo plains</p>
             <p><b>When:</b> April to June for display</p>
           </div>
         </div>
@@ -3501,7 +3505,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/monteiro-s-storm-petrel/" data-i="626" data-group="highlight seabird scarce" aria-label="Monteiro's Storm Petrel collector card"><span class="tph"><span class="tph-name">Monteiro's Storm Petrel</span><span class="tph-sci">Hydrobates monteiroi</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> The Graciosa islets, Azores</p>
             <p><b>When:</b> Late April to July</p>
           </div>
         </div>
@@ -3740,6 +3744,7 @@
         <p class="blurb"><a href="/birds/greater-flamingo/">Greater Flamingo</a>, Spoonbill, <a href="/birds/caspian-tern/">Caspian Tern</a> and <a href="/birds/audouin-s-gull/">Audouin's Gull</a> are on the water most of the year, and the working salt pans at Castro Marim and Tavira concentrate them. A first Portuguese trip usually starts here because the sites sit close together.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/purple-swamphen/">Purple Swamphen</a>, <a href="/birds/greater-flamingo/">Greater Flamingo</a>, <a href="/birds/eurasian-spoonbill/">Eurasian Spoonbill</a>, <a href="/birds/caspian-tern/">Caspian Tern</a>, <a href="/birds/audouin-s-gull/">Audouin's Gull</a>, <a href="/birds/kentish-plover/">Kentish Plover</a>, <a href="/birds/black-winged-stilt/">Black-winged Stilt</a></li>
 
 
@@ -5155,6 +5160,7 @@
         <p class="blurb">The one region every operator sells, and the heart of the Alentejo. Castro Verde holds <a href="/birds/great-bustard/">Great Bustard</a>, <a href="/birds/little-bustard/">Little Bustard</a>, <a href="/birds/montagu-s-harrier/">Montagu's Harrier</a>, <a href="/birds/black-bellied-sandgrouse/">Black-bellied Sandgrouse</a> and <a href="/birds/lesser-kestrel/">Lesser Kestrel</a> in the same few thousand hectares under a Liga para a Proteção da Natureza programme, and over ninety-five per cent of Portugal's <a href="/birds/little-bustard/">Little Bustards</a> are on these plains.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/great-bustard/">Great Bustard</a>, <a href="/birds/little-bustard/">Little Bustard</a>, <a href="/birds/montagu-s-harrier/">Montagu's Harrier</a>, <a href="/birds/black-bellied-sandgrouse/">Black-bellied Sandgrouse</a>, <a href="/birds/lesser-kestrel/">Lesser Kestrel</a>, <a href="/birds/calandra-lark/">Calandra Lark</a>, <a href="/birds/eurasian-stone-curlew/">Eurasian Stone-curlew</a>, <a href="/birds/iberian-grey-shrike/">Iberian Grey Shrike</a></li>
 
 
@@ -5429,6 +5435,7 @@
         <p class="blurb">The southwest corner of Europe, and the funnel every soaring bird uses in autumn. Raptors pile up at Cabranosa and Vila do Bispo waiting for the wind, and the seabird passage off Cape St Vincent runs at the same time. The festival in the first week of October exists because of it.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/booted-eagle/">Booted Eagle</a>, <a href="/birds/short-toed-snake-eagle/">Short-toed Snake Eagle</a>, <a href="/birds/european-honey-buzzard/">European Honey Buzzard</a>, <a href="/birds/egyptian-vulture/">Egyptian Vulture</a>, <a href="/birds/cory-s-shearwater/">Cory's Shearwater</a>, <a href="/birds/great-skua/">Great Skua</a>, <a href="/birds/western-black-eared-wheatear/">Western Black-eared Wheatear</a></li>
 
 
@@ -5874,6 +5881,7 @@
         <p class="blurb">Two estuaries either side of Lisbon, both tide-dependent and both enormous. The Tagus holds the largest wader concentration in Portugal, with EVOA's hides giving the reliable close view, and the Sado rice fields and Comporta salt pans carry <a href="/birds/black-winged-stilt/">Black-winged Stilt</a>, <a href="/birds/collared-pratincole/">Collared Pratincole</a> and a resident bottlenose dolphin population.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/collared-pratincole/">Collared Pratincole</a>, <a href="/birds/pied-avocet/">Pied Avocet</a>, <a href="/birds/black-tailed-godwit/">Black-tailed Godwit</a>, <a href="/birds/dunlin/">Dunlin</a>, <a href="/birds/glossy-ibis/">Glossy Ibis</a>, <a href="/birds/little-tern/">Little Tern</a>, <a href="/birds/common-redshank/">Common Redshank</a></li>
 
 
@@ -8818,6 +8826,7 @@
         <p class="blurb">The Guadiana cuts a gorge through the Alentejo schist and the scarps above Mertola hold <a href="/birds/bonelli-s-eagle/">Bonelli's Eagle</a>, <a href="/birds/egyptian-vulture/">Egyptian Vulture</a>, <a href="/birds/black-stork/">Black Stork</a> and <a href="/birds/blue-rock-thrush/">Blue Rock Thrush</a>. Pulo do Lobo is the set piece. The birding here is cliff work and patience rather than the open sweep of the steppe.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/bonelli-s-eagle/">Bonelli's Eagle</a>, <a href="/birds/black-stork/">Black Stork</a>, <a href="/birds/blue-rock-thrush/">Blue Rock Thrush</a>, <a href="/birds/black-wheatear/">Black Wheatear</a>, <a href="/birds/great-spotted-cuckoo/">Great Spotted Cuckoo</a>, <a href="/birds/alpine-swift/">Alpine Swift</a>, <a href="/birds/eurasian-eagle-owl/">Eurasian Eagle-Owl</a></li>
 
 
@@ -9007,6 +9016,7 @@
         <p class="blurb">The Douro Internacional is a canyon on the Spanish border with one of Iberia's densest raptor cliffs: <a href="/birds/griffon-vulture/">Griffon Vulture</a>, <a href="/birds/egyptian-vulture/">Egyptian Vulture</a>, <a href="/birds/golden-eagle/">Golden Eagle</a>, <a href="/birds/bonelli-s-eagle/">Bonelli's Eagle</a> and <a href="/birds/black-stork/">Black Stork</a> all on the same rock faces. Miranda do Douro is the base, and the river boat gives the view the road cannot.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/griffon-vulture/">Griffon Vulture</a>, <a href="/birds/golden-eagle/">Golden Eagle</a>, <a href="/birds/red-billed-chough/">Red-billed Chough</a>, <a href="/birds/rock-bunting/">Rock Bunting</a>, <a href="/birds/common-rock-thrush/">Common Rock Thrush</a>, <a href="/birds/eurasian-crag-martin/">Eurasian Crag Martin</a>, <a href="/birds/ortolan-bunting/">Ortolan Bunting</a></li>
 
 
@@ -10489,6 +10499,7 @@
         <p class="blurb">Salvaterra do Extremo and Monfortinho put you on the cliffs, and both <a href="/birds/black-vulture/">Black Vulture</a> and <a href="/birds/spanish-imperial-eagle/">Spanish Imperial Eagle</a> use this ground.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/cinereous-vulture/">Cinereous Vulture</a>, <a href="/birds/spanish-imperial-eagle/">Spanish Imperial Eagle</a>, <a href="/birds/peregrine-falcon/">Peregrine Falcon</a>, <a href="/birds/black-winged-kite/">Black-winged Kite</a>, <a href="/birds/woodchat-shrike/">Woodchat Shrike</a>, <a href="/birds/european-roller/">European Roller</a>, <a href="/birds/western-orphean-warbler/">Western Orphean Warbler</a></li>
 
 
@@ -10712,6 +10723,7 @@
         <p class="blurb">Portugal's central high country, glacial and granite, topping out at Torre. The birds are the mountain set that the lowlands lack: <a href="/birds/bluethroat/">Bluethroat</a>, <a href="/birds/water-pipit/">Water Pipit</a>, <a href="/birds/alpine-accentor/">Alpine Accentor</a>, Rock Thrush and <a href="/birds/red-billed-chough/">Red-billed Chough</a>. Snow closes the top in winter and the season here runs late spring to early autumn.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/bluethroat/">Bluethroat</a>, <a href="/birds/water-pipit/">Water Pipit</a>, <a href="/birds/alpine-accentor/">Alpine Accentor</a>, <a href="/birds/northern-wheatear/">Northern Wheatear</a>, <a href="/birds/ring-ouzel/">Ring Ouzel</a>, <a href="/birds/rock-sparrow/">Rock Sparrow</a>, <a href="/birds/dartford-warbler/">Dartford Warbler</a></li>
 
 
@@ -11139,6 +11151,7 @@
         <p class="blurb">The only national park in Portugal, on the Galician border, and a different country from the Alentejo: oak and pine, granite tors and wet Atlantic weather. <a href="/birds/golden-eagle/">Golden Eagle</a>, <a href="/birds/short-toed-snake-eagle/">Short-toed Snake Eagle</a> and <a href="/birds/iberian-green-woodpecker/">Iberian Green Woodpecker</a>, with a wolf population that occasionally shows.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/iberian-green-woodpecker/">Iberian Green Woodpecker</a>, <a href="/birds/eurasian-wryneck/">Eurasian Wryneck</a>, <a href="/birds/common-firecrest/">Common Firecrest</a>, <a href="/birds/red-backed-shrike/">Red-backed Shrike</a>, <a href="/birds/whinchat/">Whinchat</a>, <a href="/birds/tawny-pipit/">Tawny Pipit</a>, <a href="/birds/grey-wagtail/">Grey Wagtail</a></li>
 
 
@@ -11635,6 +11648,7 @@
         <p class="blurb"><a href="/birds/trocaz-pigeon/">Trocaz Pigeon</a> and <a href="/birds/madeira-firecrest/">Madeira Firecrest</a> are on the forest trails at Ribeiro Frio, and <a href="/birds/zino-s-petrel/">Zino's Petrel</a> breeds on the Pico do Areeiro ledges. The pelagics out of Funchal are a separate product and the real draw.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/trocaz-pigeon/">Trocaz Pigeon</a>, <a href="/birds/madeira-firecrest/">Madeira Firecrest</a>, <a href="/birds/zino-s-petrel/">Zino's Petrel</a>, <a href="/birds/desertas-petrel/">Desertas Petrel</a>, <a href="/birds/plain-swift/">Plain Swift</a>, <a href="/birds/berthelot-s-pipit/">Berthelot's Pipit</a>, <a href="/birds/band-rumped-storm-petrel/">Band-rumped Storm Petrel</a></li>
 
 
@@ -11926,6 +11940,7 @@
         <p class="blurb">The Graciosa islets hold <a href="/birds/monteiro-s-storm-petrel/">Monteiro's Storm-petrel</a>, which breeds nowhere else on earth. <a href="/birds/cory-s-shearwater/">Cory's Shearwater</a> is everywhere in summer and the pelagics run out to the offshore banks.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/monteiro-s-storm-petrel/">Monteiro's Storm Petrel</a>, <a href="/birds/azores-bullfinch/">Azores Bullfinch</a>, <a href="/birds/roseate-tern/">Roseate Tern</a>, <a href="/birds/great-shearwater/">Great Shearwater</a>, <a href="/birds/barolo-shearwater/">Barolo Shearwater</a>, <a href="/birds/common-tern/">Common Tern</a>, <a href="/birds/yellow-legged-gull/">Yellow-legged Gull</a></li>
 
 

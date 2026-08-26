@@ -203,6 +203,10 @@
        meets it having just seen a rate, which is the moment the caveat is worth reading. */
     .ratebasis { font-family: var(--body); font-size: 13px; line-height: 1.55; color: var(--muted); margin: 14px 2px 0; max-width: 78ch; }
     .stayrule a { color: var(--green-dark); font-weight: 800; }
+    /* Habitat and When sit above the birds and read as fact rather than as recommendation,
+       so they take the body colour and leave the muted grey to the wildlife aside. */
+    .where.habitat b, .where.when b { color: var(--green-dark); }
+    .where.when { font-variant-numeric: tabular-nums; }
     .where.wildlife { color: var(--muted); }
     .where.wildlife b { color: var(--ink); }
     .rblock { margin: 10px 0 4px; border-top: 1px solid #EFE5C6; }
@@ -2984,7 +2988,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/african-houbara/" data-i="502" data-group="highlight scarce" aria-label="African Houbara collector card"><span class="tph"><span class="tph-name">African Houbara</span><span class="tph-sci">Chlamydotis undulata</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> Fuerteventura's plains and El Jable</p>
             <p><b>When:</b> Resident, display in winter and early spring</p>
           </div>
         </div>
@@ -3055,7 +3059,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/cream-colored-courser/" data-i="519" data-group="highlight wader scarce" aria-label="Cream-colored Courser collector card"><span class="tph"><span class="tph-name">Cream-colored Courser</span><span class="tph-sci">Cursorius cursor</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> The Fuerteventura plains and El Jable</p>
             <p><b>When:</b> Resident</p>
           </div>
         </div>
@@ -3162,7 +3166,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/tenerife-blue-chaffinch/" data-i="545" data-group="highlight scarce" aria-label="Tenerife Blue Chaffinch collector card"><span class="tph"><span class="tph-name">Tenerife Blue Chaffinch</span><span class="tph-sci">Fringilla teydea</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> Teide and Las Canadas</p>
             <p><b>When:</b> Resident, easiest at pine-belt picnic sites</p>
           </div>
         </div>
@@ -3677,7 +3681,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/bolle-s-pigeon/" data-i="673" data-group="highlight scarce" aria-label="Bolle's Pigeon collector card"><span class="tph"><span class="tph-name">Bolle's Pigeon</span><span class="tph-sci">Columba bollii</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> Teno, Anaga, La Palma and Garajonay</p>
             <p><b>When:</b> Resident, best at dawn from a ridge viewpoint</p>
           </div>
         </div>
@@ -3688,7 +3692,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/canary-islands-stonechat/" data-i="675" data-group="highlight scarce" aria-label="Canary Islands Stonechat collector card"><span class="tph"><span class="tph-name">Canary Islands Stonechat</span><span class="tph-sci">Saxicola dacotiae</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> Betancuria's barrancos</p>
             <p><b>When:</b> Resident</p>
           </div>
         </div>
@@ -3719,7 +3723,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/laurel-pigeon/" data-i="682" data-group="highlight scarce" aria-label="Laurel Pigeon collector card"><span class="tph"><span class="tph-name">Laurel Pigeon</span><span class="tph-sci">Columba junoniae</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> La Palma, La Gomera and Tenerife</p>
             <p><b>When:</b> Resident</p>
           </div>
         </div>
@@ -3782,7 +3786,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/white-faced-storm-petrel/" data-i="697" data-group="highlight seabird scarce" aria-label="White-faced Storm Petrel collector card"><span class="tph"><span class="tph-name">White-faced Storm Petrel</span><span class="tph-sci">Pelagodroma marina</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> Banco de la Concepcion seamount</p>
             <p><b>When:</b> Summer pelagics in settled weather</p>
           </div>
         </div>
@@ -3801,7 +3805,7 @@
         <div class="tcell is-hl">
           <a class="tcard tload" href="/birds/gran-canaria-blue-chaffinch/" data-i="701" data-group="highlight scarce" aria-label="Gran Canaria Blue Chaffinch collector card"><span class="tph"><span class="tph-name">Gran Canaria Blue Chaffinch</span><span class="tph-sci">Fringilla polatzeki</span></span></a>
           <div class="tdet">
-            <p><b>Where:</b> </p>
+            <p><b>Where:</b> Inagua, Ojeda and Pajonales</p>
             <p><b>When:</b> Resident, in the Inagua pine reserve</p>
           </div>
         </div>
@@ -4048,6 +4052,7 @@
         <p class="blurb">The northwest corner of Tenerife, and the least developed part of the island. Monte del Agua holds <a href="/birds/bolle-s-pigeon/">Bolle's Pigeon</a> and <a href="/birds/laurel-pigeon/">Laurel Pigeon</a> in the laurel forest, the Masca gorge cuts down to the sea, and Punta de Teno is the seabird watchpoint with Barbary Falcon on the cliffs above.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/bolle-s-pigeon/">Bolle's Pigeon</a>, <a href="/birds/laurel-pigeon/">Laurel Pigeon</a>, <a href="/birds/peregrine-falcon/">Peregrine Falcon</a>, <a href="/birds/plain-swift/">Plain Swift</a>, <a href="/birds/canary-islands-chiffchaff/">Canary Islands Chiffchaff</a>, <a href="/birds/atlantic-canary/">Atlantic Canary</a>, <a href="/birds/african-blue-tit/">African Blue Tit</a></li>
 
 
@@ -4106,6 +4111,7 @@
         <p class="blurb">Teide National Park and the Las Cañadas caldera, at two thousand metres. This is the <a href="/birds/tenerife-blue-chaffinch/">Tenerife Blue Chaffinch's</a> ground, in the Canary pine belt around the caldera rim, with <a href="/birds/berthelot-s-pipit/">Berthelot's Pipit</a> on the open pumice and <a href="/birds/plain-swift/">Plain Swift</a> overhead.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/tenerife-blue-chaffinch/">Tenerife Blue Chaffinch</a>, <a href="/birds/berthelot-s-pipit/">Berthelot's Pipit</a>, <a href="/birds/rock-sparrow/">Rock Sparrow</a>, <a href="/birds/eurasian-sparrowhawk/">Eurasian Sparrowhawk</a>, <a href="/birds/common-kestrel/">Common Kestrel</a>, <a href="/birds/great-spotted-woodpecker/">Great Spotted Woodpecker</a>, <a href="/birds/trumpeter-finch/">Trumpeter Finch</a></li>
 
 
@@ -4395,6 +4401,7 @@
         <p class="blurb">The massif fills Tenerife's northeast tip, and the ridge trails at El Pijaral and Cruz del Carmen give both endemic pigeons alongside <a href="/birds/canary-islands-chiffchaff/">Canary Islands Chiffchaff</a> and Tenerife <a href="/birds/goldcrest/">Goldcrest</a>.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/goldcrest/">Goldcrest</a>, <a href="/birds/eurasian-woodcock/">Eurasian Woodcock</a>, <a href="/birds/canary-islands-chaffinch/">Canary Islands Chaffinch</a>, <a href="/birds/grey-wagtail/">Grey Wagtail</a>, <a href="/birds/common-blackbird/">Common Blackbird</a>, <a href="/birds/european-robin/">European Robin</a>, <a href="/birds/eurasian-sparrowhawk/">Eurasian Sparrowhawk</a></li>
 
 
@@ -4452,6 +4459,7 @@
         <p class="blurb">Fuerteventura's central plains are the reason the island is on every itinerary. Flat stony semi-desert holding the Canary Islands Houbara Bustard, Cream-coloured Courser and <a href="/birds/black-bellied-sandgrouse/">Black-bellied Sandgrouse</a>, with Los Molinos reservoir as the one piece of fresh water.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/african-houbara/">African Houbara</a>, <a href="/birds/cream-colored-courser/">Cream-colored Courser</a>, <a href="/birds/black-bellied-sandgrouse/">Black-bellied Sandgrouse</a>, <a href="/birds/mediterranean-short-toed-lark/">Mediterranean Short-toed Lark</a>, <a href="/birds/trumpeter-finch/">Trumpeter Finch</a>, <a href="/birds/ruddy-shelduck/">Ruddy Shelduck</a>, <a href="/birds/barbary-partridge/">Barbary Partridge</a></li>
 
 
@@ -4526,6 +4534,7 @@
         <p class="blurb">The southern half of Fuerteventura, where the barrancos cut into the old massif around Betancuria. Fuerteventura Stonechat lives here and nowhere else on earth, along the barranco floors at Las Peñitas and Vega de Río Palmas, with <a href="/birds/egyptian-vulture/">Egyptian Vulture</a> on the ridges.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/canary-islands-stonechat/">Canary Islands Stonechat</a>, <a href="/birds/egyptian-vulture/">Egyptian Vulture</a>, <a href="/birds/great-grey-shrike/">Great Grey Shrike</a>, <a href="/birds/spectacled-warbler/">Spectacled Warbler</a>, <a href="/birds/rock-dove/">Rock Dove</a>, <a href="/birds/laughing-dove/">Laughing Dove</a>, <a href="/birds/berthelot-s-pipit/">Berthelot's Pipit</a></li>
 
 
@@ -4696,6 +4705,7 @@
         <p class="blurb">The <a href="/birds/gran-canaria-blue-chaffinch/">Gran Canaria Blue Chaffinch</a> lives in the Inagua reserve and the Ojeda and Pajonales pines and nowhere else on earth, in a population counted in the hundreds.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/gran-canaria-blue-chaffinch/">Gran Canaria Blue Chaffinch</a>, <a href="/birds/great-spotted-woodpecker/">Great Spotted Woodpecker</a>, <a href="/birds/common-kestrel/">Common Kestrel</a>, <a href="/birds/plain-swift/">Plain Swift</a>, <a href="/birds/african-blue-tit/">African Blue Tit</a>, <a href="/birds/common-linnet/">Common Linnet</a>, <a href="/birds/atlantic-canary/">Atlantic Canary</a></li>
 
 
@@ -5070,6 +5080,7 @@
         <p class="blurb">La Palma is the wettest island and holds the largest <a href="/birds/laurel-pigeon/">Laurel Pigeon</a> population. Los Tilos is dense laurisilva in a barranco, the Caldera de Taburiente is a national park of Canary pine, and the island runs its own pelagic trips.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/laurel-pigeon/">Laurel Pigeon</a>, <a href="/birds/bolle-s-pigeon/">Bolle's Pigeon</a>, <a href="/birds/canary-islands-chiffchaff/">Canary Islands Chiffchaff</a>, <a href="/birds/peregrine-falcon/">Peregrine Falcon</a>, <a href="/birds/northern-raven/">Northern Raven</a>, <a href="/birds/canary-islands-chaffinch/">Canary Islands Chaffinch</a>, <a href="/birds/grey-wagtail/">Grey Wagtail</a></li>
 
 
@@ -5105,6 +5116,7 @@
         <p class="blurb">El Hierro is the smallest and the least visited, and the sabinar, a grove of juniper bent flat by the trade winds, at La Dehesa is unlike anything on the other islands, wind-sculpted and open. <a href="/birds/berthelot-s-pipit/">Berthelot's Pipit</a> and Barbary Falcon, with the El Julan cliffs above the sea.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/berthelot-s-pipit/">Berthelot's Pipit</a>, <a href="/birds/peregrine-falcon/">Peregrine Falcon</a>, <a href="/birds/cory-s-shearwater/">Cory's Shearwater</a>, <a href="/birds/yellow-legged-gull/">Yellow-legged Gull</a>, <a href="/birds/common-kestrel/">Common Kestrel</a>, <a href="/birds/atlantic-canary/">Atlantic Canary</a>, <a href="/birds/rock-dove/">Rock Dove</a></li>
 
 
@@ -5141,6 +5153,7 @@
         <p class="blurb">Lanzarote gives the eastern-island birds without a tree in sight. The Salinas de Janubio take the waders, the Famara cliffs the seabirds, and El Jable holds Houbara Bustard and courser on the sand plain.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/african-houbara/">African Houbara</a>, <a href="/birds/cream-colored-courser/">Cream-colored Courser</a>, <a href="/birds/kentish-plover/">Kentish Plover</a>, <a href="/birds/black-winged-stilt/">Black-winged Stilt</a>, <a href="/birds/trumpeter-finch/">Trumpeter Finch</a>, <a href="/birds/eleonora-s-falcon/">Eleonora's Falcon</a>, <a href="/birds/peregrine-falcon/">Peregrine Falcon</a></li>
 
 
@@ -5295,6 +5308,7 @@
         <p class="blurb">Both endemic pigeons are on the Alto de Garajonay trails, reached from the Juego de Bolas centre, and the forest runs unbroken over the top of the island.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/bolle-s-pigeon/">Bolle's Pigeon</a>, <a href="/birds/laurel-pigeon/">Laurel Pigeon</a>, <a href="/birds/goldcrest/">Goldcrest</a>, <a href="/birds/canary-islands-chiffchaff/">Canary Islands Chiffchaff</a>, <a href="/birds/african-blue-tit/">African Blue Tit</a>, <a href="/birds/canary-islands-chaffinch/">Canary Islands Chaffinch</a>, <a href="/birds/plain-swift/">Plain Swift</a></li>
 
 
@@ -5352,6 +5366,7 @@
         <p class="blurb">The water between the islands is a birding region in its own right, and the grounds a boat works are as named a place as any headland. Ferry crossings give <a href="/birds/bulwer-s-petrel/">Bulwer's Petrel</a> and <a href="/birds/cory-s-shearwater/">Cory's Shearwater</a>, and the dedicated pelagic trips run north to the Banco de la Concepción seamount for <a href="/birds/white-faced-storm-petrel/">White-faced Storm-petrel</a> on a narrow summer window.</p>
 
         <ul class="wherelist">
+
         <li class="where"><b>Look for:</b> <a href="/birds/bulwer-s-petrel/">Bulwer's Petrel</a>, <a href="/birds/cory-s-shearwater/">Cory's Shearwater</a>, <a href="/birds/white-faced-storm-petrel/">White-faced Storm Petrel</a>, <a href="/birds/band-rumped-storm-petrel/">Band-rumped Storm Petrel</a>, <a href="/birds/european-storm-petrel/">European Storm Petrel</a>, <a href="/birds/barolo-shearwater/">Barolo Shearwater</a>, <a href="/birds/long-tailed-jaeger/">Long-tailed Jaeger</a></li>
 
 
