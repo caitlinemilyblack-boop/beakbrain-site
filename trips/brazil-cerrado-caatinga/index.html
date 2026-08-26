@@ -262,6 +262,10 @@
     .where.alsorec { color: var(--muted); }
     .where.stops .stopname { color: var(--green-dark); font-weight: 800; }
     .where.stops .parklink { color: var(--green-dark); font-weight: 800; }
+    /* The host a stop links out to sits at the end of its note and must read as an aside
+       rather than compete with the stop's own name, which is the bold green above it. */
+    .where.stops .stopsite { font-weight: 600; font-size: 0.9em; color: var(--muted); border-bottom: 1px dotted currentColor; }
+    .where.stops .stopsite:hover { color: var(--green-dark); border-bottom-style: solid; }
     .stoplink { font: inherit; font-weight: 800; color: var(--green-dark); background: none; border: 0; border-bottom: 1px dotted currentColor; padding: 0; cursor: pointer; }
     .stoplink:hover { color: var(--green); border-bottom-style: solid; }
     .stoplink:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
@@ -8430,7 +8434,7 @@
         </li>
         <li class="where stops"><b>Stops:</b>
           <ul class="stoplist">
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-santuario-do-caraca" title="Show Santuario do Caraca on the map">Santuario do Caraca</button>, a nineteenth century monastery in 11,000 hectares of its own reserve, with Maned Wolves fed on the steps after dark and forest trails behind it</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-santuario-do-caraca" title="Show Santuario do Caraca on the map">Santuario do Caraca</button>, a nineteenth century monastery in 11,000 hectares of its own reserve, with Maned Wolves fed on the steps after dark and forest trails behind it <a class="parklink stopsite" href="https://santuariodocaraca.com.br/" target="_blank" rel="noopener">santuariodocaraca.com.br</a></li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-serra-do-cipo" title="Show Serra do Cipo on the map">Serra do Cipo</button>, the village on the park road, ninety minutes from Belo Horizonte, and the base for the plateau</li>
           </ul>
         </li>
@@ -8673,8 +8677,8 @@
 
         <li class="where stops"><b>Stops:</b>
           <ul class="stoplist">
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-canudos-biological-station" title="Show Canudos Biological Station on the map">Canudos Biological Station</button>, a reserve run by Fundacao Biodiversitas holding the main Lear's Macaw roost, visited at dawn by arrangement</li>
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-raso-da-catarina-ecological-station" title="Show Raso da Catarina Ecological Station on the map">Raso da Catarina Ecological Station</button>, 99,000 hectares of the driest caatinga, a federal reserve closed to general visits and watched from its edges</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-canudos-biological-station" title="Show Canudos Biological Station on the map">Canudos Biological Station</button>, a reserve run by Fundacao Biodiversitas holding the main Lear's Macaw roost, visited at dawn by arrangement <a class="parklink stopsite" href="https://www.gov.br/icmbio/" target="_blank" rel="noopener">gov.br</a></li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-raso-da-catarina-ecological-station" title="Show Raso da Catarina Ecological Station on the map">Raso da Catarina Ecological Station</button>, 99,000 hectares of the driest caatinga, a federal reserve closed to general visits and watched from its edges <a class="parklink stopsite" href="https://www.gov.br/icmbio/" target="_blank" rel="noopener">gov.br</a></li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-canudos" title="Show Canudos on the map">Canudos</button>, the town rebuilt after the war of 1897, with the only accommodation for a long way, and the base for the macaw roost</li>
           </ul>
         </li>
@@ -8733,7 +8737,7 @@
         </li>
         <li class="where stops"><b>Stops:</b>
           <ul class="stoplist">
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-araripe-national-forest" title="Show Araripe National Forest on the map">Araripe National Forest</button>, the plateau forest above Crato and Barbalha, and the escarpment springs below it that the manakin depends on</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-araripe-national-forest" title="Show Araripe National Forest on the map">Araripe National Forest</button>, the plateau forest above Crato and Barbalha, and the escarpment springs below it that the manakin depends on <a class="parklink stopsite" href="https://www.gov.br/icmbio/" target="_blank" rel="noopener">gov.br</a></li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-crato" title="Show Crato on the map">Crato</button>, the town at the foot of the Araripe escarpment, and the base for the manakin sites</li>
           </ul>
         </li>
@@ -8766,7 +8770,7 @@
 
         <li class="where stops"><b>Stops:</b>
           <ul class="stoplist">
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-murici-ecological-station" title="Show Murici Ecological Station on the map">Murici Ecological Station</button>, 6,100 hectares in Alagoas, the largest remaining fragment of the Pernambuco centre of endemism, and the site several of these birds are confined to</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-murici-ecological-station" title="Show Murici Ecological Station on the map">Murici Ecological Station</button>, 6,100 hectares in Alagoas, the largest remaining fragment of the Pernambuco centre of endemism, and the site several of these birds are confined to <a class="parklink stopsite" href="https://www.gov.br/icmbio/" target="_blank" rel="noopener">gov.br</a></li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-frei-caneca-reserve" title="Show Frei Caneca Reserve on the map">Frei Caneca Reserve</button>, a private reserve in the Pernambuco hill forest at Jaqueira, in sugar-cane country, and one of the few pieces with any protection</li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-tamandare" title="Show Tamandare on the map">Tamandare</button>, the coastal town south of Recife, with the Saltinho reserve inland of it and the mangrove behind the beach</li>
           </ul>

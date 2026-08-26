@@ -262,6 +262,10 @@
     .where.alsorec { color: var(--muted); }
     .where.stops .stopname { color: var(--green-dark); font-weight: 800; }
     .where.stops .parklink { color: var(--green-dark); font-weight: 800; }
+    /* The host a stop links out to sits at the end of its note and must read as an aside
+       rather than compete with the stop's own name, which is the bold green above it. */
+    .where.stops .stopsite { font-weight: 600; font-size: 0.9em; color: var(--muted); border-bottom: 1px dotted currentColor; }
+    .where.stops .stopsite:hover { color: var(--green-dark); border-bottom-style: solid; }
     .stoplink { font: inherit; font-weight: 800; color: var(--green-dark); background: none; border: 0; border-bottom: 1px dotted currentColor; padding: 0; cursor: pointer; }
     .stoplink:hover { color: var(--green); border-bottom-style: solid; }
     .stoplink:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
@@ -2698,7 +2702,7 @@
           <figcaption><a href="/birds/barrow-s-goldeneye/">Barrow's Goldeneye</a><span class="photocredit">Daniel Patterson · CC BY 4.0</span></figcaption>
         </figure>
           <div class="site-intro">
-        <p class="blurb">The single most cited site in every itinerary read. More breeding duck species than anywhere else in Europe, sixteen recorded, and the only European breeding population of <a href="/birds/barrow-s-goldeneye/">Barrow's Goldeneye</a>. <a href="/birds/gyrfalcon/">Gyrfalcon</a> hunts the area. Protected by its own 1974 act and Ramsar listed.</p>
+        <p class="blurb">The single most cited site in every itinerary read. Sixteen breeding duck species are recorded, among them the only European breeding population of <a href="/birds/barrow-s-goldeneye/">Barrow's Goldeneye</a>, and <a href="/birds/gyrfalcon/">Gyrfalcon</a> hunts the area. The 1974 act and the Ramsar listing both cover it.</p>
 
         <ul class="wherelist">
         <li class="where"><b>Look for:</b> <a href="/birds/barrow-s-goldeneye/">Barrow's Goldeneye</a>, <a href="/birds/harlequin-duck/">Harlequin Duck</a>, <a href="/birds/gyrfalcon/">Gyrfalcon</a>, <a href="/birds/horned-grebe/">Horned Grebe</a>, <a href="/birds/red-necked-phalarope/">Red-necked Phalarope</a>, <a href="/birds/long-tailed-duck/">Long-tailed Duck</a>, <a href="/birds/greater-scaup/">Greater Scaup</a>, <a href="/birds/common-scoter/">Common Scoter</a></li>
@@ -2802,7 +2806,7 @@
           <figcaption><a href="/birds/atlantic-puffin/">Atlantic Puffin</a><span class="photocredit">Tom Field · CC BY 4.0</span></figcaption>
         </figure>
           <div class="site-intro">
-        <p class="blurb">Látrabjarg is Europe's largest bird cliff, fourteen kilometres of basalt ledges at the westernmost point of the country, holding puffin, <a href="/birds/razorbill/">Razorbill</a>, Common and Brunnich's Guillemot, <a href="/birds/black-guillemot/">Black Guillemot</a>, Fulmar and Kittiwake.</p>
+        <p class="blurb">Puffin, <a href="/birds/razorbill/">Razorbill</a>, Common and Brünnich's Guillemot, <a href="/birds/black-guillemot/">Black Guillemot</a>, Fulmar and Kittiwake all hold ledges on the same cliff, which is what makes Látrabjarg worth the drive rather than any one of them.</p>
 
         <ul class="wherelist">
         <li class="where"><b>Look for:</b> <a href="/birds/atlantic-puffin/">Atlantic Puffin</a>, <a href="/birds/razorbill/">Razorbill</a>, <a href="/birds/common-murre/">Common Murre</a>, <a href="/birds/thick-billed-murre/">Thick-billed Murre</a>, <a href="/birds/black-guillemot/">Black Guillemot</a>, <a href="/birds/northern-fulmar/">Northern Fulmar</a>, <a href="/birds/black-legged-kittiwake/">Black-legged Kittiwake</a></li>
@@ -3019,7 +3023,7 @@
           <figcaption><a href="/birds/iceland-gull/">Iceland Gull</a><span class="photocredit">David McCorquodale · CC BY 4.0</span></figcaption>
         </figure>
           <div class="site-intro">
-        <p class="blurb">The volcanic peninsula around the airport, a bookend on nearly every itinerary and a genuine winter destination in its own right. Garður is a named vagrant trap.</p>
+        <p class="blurb">Close enough to the airport to bird on the morning of a flight, and Garður at its tip is a named vagrant trap. It carries a winter list of its own when the rest of the country is shut.</p>
 
         <ul class="wherelist">
         <li class="where"><b>Look for:</b> <a href="/birds/iceland-gull/">Iceland Gull</a>, <a href="/birds/common-loon/">Common Loon</a>, <a href="/birds/king-eider/">King Eider</a>, <a href="/birds/common-redshank/">Common Redshank</a>, <a href="/birds/snow-bunting/">Snow Bunting</a>, <a href="/birds/northern-wheatear/">Northern Wheatear</a>, <a href="/birds/whooper-swan/">Whooper Swan</a></li>
@@ -3241,7 +3245,7 @@
           <figcaption><a href="/birds/parasitic-jaeger/">Parasitic Jaeger</a><span class="photocredit">Billy Lindblom · CC BY 2.0</span></figcaption>
         </figure>
           <div class="site-intro">
-        <p class="blurb">Hafnarhólmi at Borgarfjörður Eystri is described as the most accessible puffin colony in the country, a boardwalk into roughly ten thousand pairs.</p>
+        <p class="blurb">Roughly ten thousand pairs of puffin nest in the turf at Hafnarhólmi, and a boardwalk runs out over them so the birds are below eye level rather than across a gulf. Borgarfjörður Eystri is the end of a long road and the coast behind it stays empty.</p>
 
         <ul class="wherelist">
         <li class="where"><b>Look for:</b> <a href="/birds/parasitic-jaeger/">Parasitic Jaeger</a>, <a href="/birds/common-snipe/">Common Snipe</a>, <a href="/birds/meadow-pipit/">Meadow Pipit</a>, <a href="/birds/white-wagtail/">White Wagtail</a>, <a href="/birds/redwing/">Redwing</a>, <a href="/birds/common-ringed-plover/">Common Ringed Plover</a>, <a href="/birds/european-golden-plover/">European Golden Plover</a></li>
@@ -3315,7 +3319,7 @@
           <figcaption><a href="/birds/pink-footed-goose/">Pink-footed Goose</a><span class="photocredit">Kalvin Chan · CC BY 4.0</span></figcaption>
         </figure>
           <div class="site-intro">
-        <p class="blurb">Glacier lagoon, sands and the <a href="/birds/great-skua/">Great Skua</a> colonies of the Austur-Skaftafell district.</p>
+        <p class="blurb"><a href="/birds/great-skua/">Great Skua</a> breed on the outwash sands in numbers, and the glacier lagoon at Jökulsárlón holds terns and skuas working the ice.</p>
 
         <ul class="wherelist">
         <li class="where"><b>Look for:</b> <a href="/birds/pink-footed-goose/">Pink-footed Goose</a>, <a href="/birds/barnacle-goose/">Barnacle Goose</a>, <a href="/birds/great-cormorant/">Great Cormorant</a>, <a href="/birds/eurasian-oystercatcher/">Eurasian Oystercatcher</a>, <a href="/birds/dunlin/">Dunlin</a>, <a href="/birds/red-knot/">Red Knot</a>, <a href="/birds/sanderling/">Sanderling</a></li>

@@ -262,6 +262,10 @@
     .where.alsorec { color: var(--muted); }
     .where.stops .stopname { color: var(--green-dark); font-weight: 800; }
     .where.stops .parklink { color: var(--green-dark); font-weight: 800; }
+    /* The host a stop links out to sits at the end of its note and must read as an aside
+       rather than compete with the stop's own name, which is the bold green above it. */
+    .where.stops .stopsite { font-weight: 600; font-size: 0.9em; color: var(--muted); border-bottom: 1px dotted currentColor; }
+    .where.stops .stopsite:hover { color: var(--green-dark); border-bottom-style: solid; }
     .stoplink { font: inherit; font-weight: 800; color: var(--green-dark); background: none; border: 0; border-bottom: 1px dotted currentColor; padding: 0; cursor: pointer; }
     .stoplink:hover { color: var(--green); border-bottom-style: solid; }
     .stoplink:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
@@ -8388,10 +8392,10 @@
         <li class="where stops"><b>Stops:</b>
           <ul class="stoplist">
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-transpantaneira-the-pocone-end" title="Show Transpantaneira, the Pocone end on the map">Transpantaneira, the Pocone end</button>, the first 30 km, where the road climbs onto its embankment and the roadside pools begin. Birded slowly from the vehicle at dawn</li>
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-pousada-piuval" title="Show Pousada Piuval on the map">Pousada Piuval</button>, the first fazenda on the road, 10 km from Pocone, with cerrado edge as well as marsh and a Hyacinth Macaw roost</li>
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-pouso-alegre" title="Show Pouso Alegre on the map">Pouso Alegre</button>, 8,000 hectares of savanna grassland and woodland patches, 6 km off the road down its own track. The northern Pantanal's most reliable ground for Giant Anteater and tapir</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-pousada-piuval" title="Show Pousada Piuval on the map">Pousada Piuval</button>, the first fazenda on the road, 10 km from Pocone, with cerrado edge as well as marsh and a Hyacinth Macaw roost <a class="parklink stopsite" href="https://www.pousadapiuval.com.br/" target="_blank" rel="noopener">pousadapiuval.com.br</a></li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-pouso-alegre" title="Show Pouso Alegre on the map">Pouso Alegre</button>, 8,000 hectares of savanna grassland and woodland patches, 6 km off the road down its own track. The northern Pantanal's most reliable ground for Giant Anteater and tapir <a class="parklink stopsite" href="https://www.pousadapousoalegre.com.br/" target="_blank" rel="noopener">pousadapousoalegre.com.br</a></li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-rio-pixaim-crossing" title="Show Rio Pixaim crossing on the map">Rio Pixaim crossing</button>, the bridge at the halfway point, with boat trips upstream and down from the two lodges either side of it</li>
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-araras-eco-lodge-boardwalk" title="Show Araras Eco Lodge boardwalk on the map">Araras Eco Lodge boardwalk</button>, a raised walkway and tower over marsh behind the lodge at km 32, open to its own guests</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-araras-eco-lodge-boardwalk" title="Show Araras Eco Lodge boardwalk on the map">Araras Eco Lodge boardwalk</button>, a raised walkway and tower over marsh behind the lodge at km 32, open to its own guests <a class="parklink stopsite" href="https://www.araraslodge.com.br/" target="_blank" rel="noopener">araraslodge.com.br</a></li>
           </ul>
         </li>
 
@@ -8603,7 +8607,7 @@
 
         <li class="where stops"><b>Stops:</b>
           <ul class="stoplist">
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-private-nature-reserve-sesc-pantanal" title="Show private nature reserve SESC Pantanal on the map">private nature reserve SESC Pantanal</button>, 106,000 hectares between the Cuiaba and Sao Lourenco rivers, the largest private reserve in Brazil, with its own lodge, towers and boat trips</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-private-nature-reserve-sesc-pantanal" title="Show private nature reserve SESC Pantanal on the map">private nature reserve SESC Pantanal</button>, 106,000 hectares between the Cuiaba and Sao Lourenco rivers, the largest private reserve in Brazil, with its own lodge, towers and boat trips <a class="parklink stopsite" href="https://www.sesc.com.br/sescpantanal/" target="_blank" rel="noopener">sesc.com.br</a></li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-barao-de-melgaco" title="Show Barao de Melgaco on the map">Barao de Melgaco</button>, the river town the reserve and the boat trips are reached from, two hours south-east of Cuiaba</li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-rio-sao-lourenco" title="Show Rio Sao Lourenco on the map">Rio Sao Lourenco</button>, the eastern boundary river, birded by boat for kingfishers, skimmers and the bank-nesting terns</li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-porto-cercado" title="Show Porto Cercado on the map">Porto Cercado</button>, the Cuiaba river landing at the end of the Pocone road, where the SESC hotel sits and most boat trips on this side leave from</li>
@@ -8661,7 +8665,7 @@
         <li class="where stops"><b>Stops:</b>
           <ul class="stoplist">
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-caceres" title="Show Caceres on the map">Caceres</button>, the river port at the navigable head of the Paraguay, 220 km west of Cuiaba, and the base for everything below it</li>
-            <li class="stop"><b class="stopname">Taiama Ecological Station</b>, a federal reserve on an island in the Paraguay, closed to general visits and watched from the surrounding channels</li>
+            <li class="stop"><b class="stopname">Taiama Ecological Station</b>, a federal reserve on an island in the Paraguay, closed to general visits and watched from the surrounding channels <a class="parklink stopsite" href="https://www.gov.br/icmbio/" target="_blank" rel="noopener">gov.br</a></li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-rio-paraguai-at-caceres" title="Show Rio Paraguai at Caceres on the map">Rio Paraguai at Caceres</button>, the main channel, worked downstream by boat for terns, skimmers and the bank-side herons</li>
           </ul>
         </li>
@@ -8895,7 +8899,7 @@
         </li>
         <li class="where stops"><b>Stops:</b>
           <ul class="stoplist">
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-buraco-das-araras" title="Show Buraco das Araras on the map">Buraco das Araras</button>, a sandstone sinkhole 500 m round and 100 m deep, 53 km from Bonito in the municipality of Jardim, with Red-and-green Macaws nesting on the walls, Turquoise-fronted Amazons around the rim and 169 species recorded. Booked visits only</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-buraco-das-araras" title="Show Buraco das Araras on the map">Buraco das Araras</button>, a sandstone sinkhole 500 m round and 100 m deep, 53 km from Bonito in the municipality of Jardim, with Red-and-green Macaws nesting on the walls, Turquoise-fronted Amazons around the rim and 169 species recorded. Booked visits only <a class="parklink stopsite" href="https://www.buracodasararas.com.br/" target="_blank" rel="noopener">buracodasararas.com.br</a></li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-bonito" title="Show Bonito on the map">Bonito</button>, the town the region is reached from, 300 km south-west of Campo Grande, with a booked-access system for every site around it</li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-rio-formoso" title="Show Rio Formoso on the map">Rio Formoso</button>, the clear limestone river through the town's own reserves, birded from the bank for kingfishers, Sunbittern and Amazon Kingfisher</li>
           </ul>

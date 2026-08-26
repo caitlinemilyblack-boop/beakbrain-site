@@ -244,6 +244,10 @@
     .where.alsorec { color: var(--muted); }
     .where.stops .stopname { color: var(--green-dark); font-weight: 800; }
     .where.stops .parklink { color: var(--green-dark); font-weight: 800; }
+    /* The host a stop links out to sits at the end of its note and must read as an aside
+       rather than compete with the stop's own name, which is the bold green above it. */
+    .where.stops .stopsite { font-weight: 600; font-size: 0.9em; color: var(--muted); border-bottom: 1px dotted currentColor; }
+    .where.stops .stopsite:hover { color: var(--green-dark); border-bottom-style: solid; }
     .stoplink { font: inherit; font-weight: 800; color: var(--green-dark); background: none; border: 0; border-bottom: 1px dotted currentColor; padding: 0; cursor: pointer; }
     .stoplink:hover { color: var(--green); border-bottom-style: solid; }
     .stoplink:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }

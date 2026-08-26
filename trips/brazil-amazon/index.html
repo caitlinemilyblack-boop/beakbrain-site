@@ -262,6 +262,10 @@
     .where.alsorec { color: var(--muted); }
     .where.stops .stopname { color: var(--green-dark); font-weight: 800; }
     .where.stops .parklink { color: var(--green-dark); font-weight: 800; }
+    /* The host a stop links out to sits at the end of its note and must read as an aside
+       rather than compete with the stop's own name, which is the bold green above it. */
+    .where.stops .stopsite { font-weight: 600; font-size: 0.9em; color: var(--muted); border-bottom: 1px dotted currentColor; }
+    .where.stops .stopsite:hover { color: var(--green-dark); border-bottom-style: solid; }
     .stoplink { font: inherit; font-weight: 800; color: var(--green-dark); background: none; border: 0; border-bottom: 1px dotted currentColor; padding: 0; cursor: pointer; }
     .stoplink:hover { color: var(--green); border-bottom-style: solid; }
     .stoplink:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
@@ -8556,7 +8560,7 @@
         </li>
         <li class="where stops"><b>Stops:</b>
           <ul class="stoplist">
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-tapajos-national-forest" title="Show Tapajos National Forest on the map">Tapajos National Forest</button>, 549,000 hectares on the east bank south of Santarem, with community-run trails and an old-growth stand of some of the tallest trees in the Amazon</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-tapajos-national-forest" title="Show Tapajos National Forest on the map">Tapajos National Forest</button>, 549,000 hectares on the east bank south of Santarem, with community-run trails and an old-growth stand of some of the tallest trees in the Amazon <a class="parklink stopsite" href="https://www.gov.br/icmbio/" target="_blank" rel="noopener">gov.br</a></li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-alter-do-chao" title="Show Alter do Chao on the map">Alter do Chao</button>, a village on a clear-water bay with white sand beaches when the river is low, searched for the varzea and igapo birds around it</li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-santarem" title="Show Santarem on the map">Santarem</button>, the city where the Tapajos meets the Amazon, with the airport and the boats, and the meeting of black and brown water off the waterfront</li>
           </ul>
@@ -8592,7 +8596,7 @@
           <ul class="stoplist">
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-utinga-state-park" title="Show Utinga State Park on the map">Utinga State Park</button>, 1,300 hectares of forest and two water-supply lakes inside Belem itself, with made trails, and the easiest Amazonian forest anywhere to reach</li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-ilha-do-mosqueiro" title="Show Ilha do Mosqueiro on the map">Ilha do Mosqueiro</button>, a river island an hour from the city by road, with beach, mangrove and secondary forest watched from the road</li>
-            <li class="stop"><b class="stopname">Caxiuana National Forest</b>, 330,000 hectares on the Caxiuana bay south-west of Belem, reached by boat, with a long-running research station inside it</li>
+            <li class="stop"><b class="stopname">Caxiuana National Forest</b>, 330,000 hectares on the Caxiuana bay south-west of Belem, reached by boat, with a long-running research station inside it <a class="parklink stopsite" href="https://www.gov.br/icmbio/" target="_blank" rel="noopener">gov.br</a></li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-braganca-and-the-mangrove-coast" title="Show Braganca and the mangrove coast on the map">Braganca and the mangrove coast</button>, the Atlantic mangrove belt east of Belem, the largest continuous mangrove in the world, searched for shorebirds and Scarlet Ibis</li>
           </ul>
         </li>
@@ -8625,7 +8629,7 @@
 
         <li class="where stops"><b>Stops:</b>
           <ul class="stoplist">
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-carajas-national-forest" title="Show Carajas National Forest on the map">Carajas National Forest</button>, over 400,000 hectares around the mine, with 594 bird species recorded, the largest list of any site in Brazil. Entry is through the mine's own controlled road</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-carajas-national-forest" title="Show Carajas National Forest on the map">Carajas National Forest</button>, over 400,000 hectares around the mine, with 594 bird species recorded, the largest list of any site in Brazil. Entry is through the mine's own controlled road <a class="parklink stopsite" href="https://www.gov.br/icmbio/" target="_blank" rel="noopener">gov.br</a></li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-parauapebas" title="Show Parauapebas on the map">Parauapebas</button>, the town at the gate, with the airport, and where the permits and the guides are arranged</li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-serra-norte-canga" title="Show Serra Norte canga on the map">Serra Norte canga</button>, the ironstone plateau tops inside the forest, open low scrub over rock, with a flora and a bird list that share nothing with the forest below</li>
           </ul>
@@ -8750,10 +8754,10 @@
 
         <li class="where stops"><b>Stops:</b>
           <ul class="stoplist">
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-mamiraua-sustainable-development-reserve" title="Show Mamiraua Sustainable Development Reserve on the map">Mamiraua Sustainable Development Reserve</button>, 1,124,000 hectares of flooded forest between the Japura and the Solimoes, with a floating lodge run with the local communities</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-mamiraua-sustainable-development-reserve" title="Show Mamiraua Sustainable Development Reserve on the map">Mamiraua Sustainable Development Reserve</button>, 1,124,000 hectares of flooded forest between the Japura and the Solimoes, with a floating lodge run with the local communities <a class="parklink stopsite" href="https://www.mamiraua.org.br/" target="_blank" rel="noopener">mamiraua.org.br</a></li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-tefe" title="Show Tefe on the map">Tefe</button>, the river town with the airstrip, 600 km upstream of Manaus, and the only practical way in</li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-rio-japura" title="Show Rio Japura on the map">Rio Japura</button>, the northern boundary river of the reserve, worked by canoe through the flooded canopy when the water is high</li>
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-amana-sustainable-development-reserve" title="Show Amana Sustainable Development Reserve on the map">Amana Sustainable Development Reserve</button>, 2,300,000 hectares north of Mamiraua joining it to Jau, and part of the largest block of protected tropical forest on earth. OpenStreetMap carries no boundary for it, so the coordinate here is its published centre</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-amana-sustainable-development-reserve" title="Show Amana Sustainable Development Reserve on the map">Amana Sustainable Development Reserve</button>, 2,300,000 hectares north of Mamiraua joining it to Jau, and part of the largest block of protected tropical forest on earth. OpenStreetMap carries no boundary for it, so the coordinate here is its published centre <a class="parklink stopsite" href="https://www.gov.br/icmbio/" target="_blank" rel="noopener">gov.br</a></li>
           </ul>
         </li>
 

@@ -262,6 +262,10 @@
     .where.alsorec { color: var(--muted); }
     .where.stops .stopname { color: var(--green-dark); font-weight: 800; }
     .where.stops .parklink { color: var(--green-dark); font-weight: 800; }
+    /* The host a stop links out to sits at the end of its note and must read as an aside
+       rather than compete with the stop's own name, which is the bold green above it. */
+    .where.stops .stopsite { font-weight: 600; font-size: 0.9em; color: var(--muted); border-bottom: 1px dotted currentColor; }
+    .where.stops .stopsite:hover { color: var(--green-dark); border-bottom-style: solid; }
     .stoplink { font: inherit; font-weight: 800; color: var(--green-dark); background: none; border: 0; border-bottom: 1px dotted currentColor; padding: 0; cursor: pointer; }
     .stoplink:hover { color: var(--green); border-bottom-style: solid; }
     .stoplink:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
@@ -4177,7 +4181,7 @@
           <ul class="stoplist">
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-lummenfelsen" title="Show Lummenfelsen on the map">Lummenfelsen</button>, the seabird cliff on the west side, watched from a made path along the top. Guillemots, Razorbills, Kittiwakes and the gannet colony</li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-lange-anna" title="Show Lange Anna on the map">Lange Anna</button>, the free-standing sea stack at the northern tip, the end of the cliff path and the densest part of the colony</li>
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-helgoland-bird-observatory" title="Show Helgoland Bird Observatory on the map">Helgoland Bird Observatory</button>, the ringing station in the Oberland, running since 1910, with the trapping garden and a visitor centre</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-helgoland-bird-observatory" title="Show Helgoland Bird Observatory on the map">Helgoland Bird Observatory</button>, the ringing station in the Oberland, running since 1910, with the trapping garden and a visitor centre <a class="parklink stopsite" href="https://ifv-vogelwarte.de/" target="_blank" rel="noopener">ifv-vogelwarte.de</a></li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-helgoland-duene" title="Show Helgoland Duene on the map">Helgoland Duene</button>, the sand island a short ferry hop away, with the seal colony and passage waders on the beaches</li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-oberland" title="Show Oberland on the map">Oberland</button>, the plateau of gardens, fields and scrub where migrants land, walked on the island's paths</li>
           </ul>
@@ -4217,7 +4221,7 @@
         <li class="where stops"><b>Stops:</b>
           <ul class="stoplist">
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-pramort" title="Show Pramort on the map">Pramort</button>, the viewing platform at the eastern tip of the Zingst, reached on foot or by bike, and the place the crane roost is watched from. Access is managed in season</li>
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-kranorama-guentershagen" title="Show Kranorama Guentershagen on the map">Kranorama Guentershagen</button>, a purpose-built crane hide over a feeding field south of the Bodden, staffed in autumn</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-kranorama-guentershagen" title="Show Kranorama Guentershagen on the map">Kranorama Guentershagen</button>, a purpose-built crane hide over a feeding field south of the Bodden, staffed in autumn <a class="parklink stopsite" href="https://www.kraniche.de/" target="_blank" rel="noopener">kraniche.de</a></li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-bock-island" title="Show Bock island on the map">Bock island</button>, a sandbank island in the Bodden and the core of the crane roost, watched from the shore rather than entered</li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-darsser-ort" title="Show Darsser Ort on the map">Darsser Ort</button>, the wooded north-western tip of the Darss, with a lighthouse, a nature centre and passage along the shore</li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-grosser-zicker-ruegen" title="Show Grosser Zicker, Ruegen on the map">Grosser Zicker, Ruegen</button>, a grassy headland on the Moenchgut peninsula with wide views over the Baltic and the Bodden</li>
@@ -5183,7 +5187,7 @@
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-criewen" title="Show Criewen on the map">Criewen</button>, the park's headquarters village, with a visitor centre and the start of the dike walks</li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-stuetzkow-viewpoint" title="Show Stuetzkow viewpoint on the map">Stuetzkow viewpoint</button>, a bluff above the valley with a tower giving the overview of the polders</li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-gartz-polder" title="Show Gartz polder on the map">Gartz polder</button>, the northern polders, the quietest part of the park and the best of the goose ground</li>
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-blumberger-muehle" title="Show Blumberger Muehle on the map">Blumberger Muehle</button>, a NABU nature centre in old fish ponds south-west of the park, with trails and hides</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-blumberger-muehle" title="Show Blumberger Muehle on the map">Blumberger Muehle</button>, a NABU nature centre in old fish ponds south-west of the park, with trails and hides <a class="parklink stopsite" href="https://blumberger-muehle.nabu.de/" target="_blank" rel="noopener">blumberger-muehle.nabu.de</a></li>
           </ul>
         </li>
         <li class="where centres"><b>Visitor centres:</b> <a class="parklink" href="https://blumberger-muehle.nabu.de/" target="_blank" rel="noopener">NABU Blumberger Muehle</a></li>
@@ -8865,7 +8869,7 @@
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-oberlausitzer-heide-und-teichlandschaft" title="Show Oberlausitzer Heide- und Teichlandschaft on the map">Oberlausitzer Heide- und Teichlandschaft</button>, the biosphere reserve itself, watched from the marked paths and dams between the ponds</li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-guttauer-teiche" title="Show Guttauer Teiche on the map">Guttauer Teiche</button>, a pond group east of Bautzen with a nature trail and screens, and the easiest bittern site in the reserve</li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-niederspreer-teichgebiet" title="Show Niederspreer Teichgebiet on the map">Niederspreer Teichgebiet</button>, the northern ponds near Kreba-Neudorf, quieter, with a tower over the largest water</li>
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-haus-der-tausend-teiche" title="Show Haus der Tausend Teiche on the map">Haus der Tausend Teiche</button>, the reserve's visitor centre at Wartha, with a trail out into the ponds</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-haus-der-tausend-teiche" title="Show Haus der Tausend Teiche on the map">Haus der Tausend Teiche</button>, the reserve's visitor centre at Wartha, with a trail out into the ponds <a class="parklink stopsite" href="https://www.biosphaerenreservat-oberlausitz.de/" target="_blank" rel="noopener">biosphaerenreservat-oberlausitz.de</a></li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-talsperre-quitzdorf" title="Show Talsperre Quitzdorf on the map">Talsperre Quitzdorf</button>, a large reservoir north of Niesky, drawn down in autumn, with roosting geese and cranes</li>
           </ul>
         </li>
@@ -13131,7 +13135,7 @@
           <ul class="stoplist">
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-rachel" title="Show Rachel on the map">Rachel</button>, one of the two high summits, walked from Spiegelau, spruce forest into the summit zone. Three-toed Woodpecker on the deadwood</li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-lusen" title="Show Lusen on the map">Lusen</button>, the other summit, above Neuschoenau, with a long stretch of standing dead spruce that is the best owl and woodpecker ground in the park</li>
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-hans-eisenmann-haus" title="Show Hans-Eisenmann-Haus on the map">Hans-Eisenmann-Haus</button>, the park's main visitor centre, with the treetop walkway and the animal enclosures beside it</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-hans-eisenmann-haus" title="Show Hans-Eisenmann-Haus on the map">Hans-Eisenmann-Haus</button>, the park's main visitor centre, with the treetop walkway and the animal enclosures beside it <a class="parklink stopsite" href="https://www.nationalpark-bayerischer-wald.bayern.de/" target="_blank" rel="noopener">nationalpark-bayerischer-wald.bayern.de</a></li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-grosser-arbersee" title="Show Grosser Arbersee on the map">Grosser Arbersee</button>, a glacial lake under the Arber with a floating bog and a path around it</li>
           </ul>
         </li>

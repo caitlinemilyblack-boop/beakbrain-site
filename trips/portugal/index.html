@@ -262,6 +262,10 @@
     .where.alsorec { color: var(--muted); }
     .where.stops .stopname { color: var(--green-dark); font-weight: 800; }
     .where.stops .parklink { color: var(--green-dark); font-weight: 800; }
+    /* The host a stop links out to sits at the end of its note and must read as an aside
+       rather than compete with the stop's own name, which is the bold green above it. */
+    .where.stops .stopsite { font-weight: 600; font-size: 0.9em; color: var(--muted); border-bottom: 1px dotted currentColor; }
+    .where.stops .stopsite:hover { color: var(--green-dark); border-bottom-style: solid; }
     .stoplink { font: inherit; font-weight: 800; color: var(--green-dark); background: none; border: 0; border-bottom: 1px dotted currentColor; padding: 0; cursor: pointer; }
     .stoplink:hover { color: var(--green); border-bottom-style: solid; }
     .stoplink:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
@@ -3733,7 +3737,7 @@
           <figcaption><a href="/birds/purple-swamphen/">Purple Swamphen</a><span class="photocredit">Hobbyfotowiki · CC0</span></figcaption>
         </figure>
           <div class="site-intro">
-        <p class="blurb">Ria Formosa is a barrier island lagoon running sixty kilometres behind Faro, and the salt pans at Castro Marim and Tavira are the working half of it. <a href="/birds/greater-flamingo/">Greater Flamingo</a>, Spoonbill, <a href="/birds/caspian-tern/">Caspian Tern</a> and <a href="/birds/audouin-s-gull/">Audouin's Gull</a> are on the water most of the year, and the Algarve is where a first Portuguese trip usually starts because the sites sit close together.</p>
+        <p class="blurb"><a href="/birds/greater-flamingo/">Greater Flamingo</a>, Spoonbill, <a href="/birds/caspian-tern/">Caspian Tern</a> and <a href="/birds/audouin-s-gull/">Audouin's Gull</a> are on the water most of the year, and the working salt pans at Castro Marim and Tavira concentrate them. A first Portuguese trip usually starts here because the sites sit close together.</p>
 
         <ul class="wherelist">
         <li class="where"><b>Look for:</b> <a href="/birds/purple-swamphen/">Purple Swamphen</a>, <a href="/birds/greater-flamingo/">Greater Flamingo</a>, <a href="/birds/eurasian-spoonbill/">Eurasian Spoonbill</a>, <a href="/birds/caspian-tern/">Caspian Tern</a>, <a href="/birds/audouin-s-gull/">Audouin's Gull</a>, <a href="/birds/kentish-plover/">Kentish Plover</a>, <a href="/birds/black-winged-stilt/">Black-winged Stilt</a></li>
@@ -5148,7 +5152,7 @@
           <figcaption><a href="/birds/great-bustard/">Great Bustard</a><span class="photocredit">Patrick Hacker · CC BY 4.0</span></figcaption>
         </figure>
           <div class="site-intro">
-        <p class="blurb">The one region every operator sells, and the heart of the Alentejo. Castro Verde is a cereal steppe farmed the old way under an Liga para a Protecao da Natureza conservation programme, and it holds <a href="/birds/great-bustard/">Great Bustard</a>, <a href="/birds/little-bustard/">Little Bustard</a>, <a href="/birds/montagu-s-harrier/">Montagu's Harrier</a>, <a href="/birds/black-bellied-sandgrouse/">Black-bellied Sandgrouse</a> and <a href="/birds/lesser-kestrel/">Lesser Kestrel</a> in the same few thousand hectares. Over ninety-five per cent of Portugal's <a href="/birds/little-bustard/">Little Bustards</a> are on these plains.</p>
+        <p class="blurb">The one region every operator sells, and the heart of the Alentejo. Castro Verde holds <a href="/birds/great-bustard/">Great Bustard</a>, <a href="/birds/little-bustard/">Little Bustard</a>, <a href="/birds/montagu-s-harrier/">Montagu's Harrier</a>, <a href="/birds/black-bellied-sandgrouse/">Black-bellied Sandgrouse</a> and <a href="/birds/lesser-kestrel/">Lesser Kestrel</a> in the same few thousand hectares under a Liga para a Proteção da Natureza programme, and over ninety-five per cent of Portugal's <a href="/birds/little-bustard/">Little Bustards</a> are on these plains.</p>
 
         <ul class="wherelist">
         <li class="where"><b>Look for:</b> <a href="/birds/great-bustard/">Great Bustard</a>, <a href="/birds/little-bustard/">Little Bustard</a>, <a href="/birds/montagu-s-harrier/">Montagu's Harrier</a>, <a href="/birds/black-bellied-sandgrouse/">Black-bellied Sandgrouse</a>, <a href="/birds/lesser-kestrel/">Lesser Kestrel</a>, <a href="/birds/calandra-lark/">Calandra Lark</a>, <a href="/birds/eurasian-stone-curlew/">Eurasian Stone-curlew</a>, <a href="/birds/iberian-grey-shrike/">Iberian Grey Shrike</a></li>
@@ -10482,7 +10486,7 @@
           <figcaption><a href="/birds/cinereous-vulture/">Cinereous Vulture</a><span class="photocredit">Andrew Bazdyrev · CC BY</span></figcaption>
         </figure>
           <div class="site-intro">
-        <p class="blurb">The Tejo Internacional runs the same canyon idea further south, and it is the Portuguese half of a raptor landscape that continues into Spanish Extremadura. Salvaterra do Extremo and Monfortinho put you on the cliffs. <a href="/birds/black-vulture/">Black Vulture</a> and <a href="/birds/spanish-imperial-eagle/">Spanish Imperial Eagle</a> both use this ground.</p>
+        <p class="blurb">Salvaterra do Extremo and Monfortinho put you on the cliffs, and both <a href="/birds/black-vulture/">Black Vulture</a> and <a href="/birds/spanish-imperial-eagle/">Spanish Imperial Eagle</a> use this ground.</p>
 
         <ul class="wherelist">
         <li class="where"><b>Look for:</b> <a href="/birds/cinereous-vulture/">Cinereous Vulture</a>, <a href="/birds/spanish-imperial-eagle/">Spanish Imperial Eagle</a>, <a href="/birds/peregrine-falcon/">Peregrine Falcon</a>, <a href="/birds/black-winged-kite/">Black-winged Kite</a>, <a href="/birds/woodchat-shrike/">Woodchat Shrike</a>, <a href="/birds/european-roller/">European Roller</a>, <a href="/birds/western-orphean-warbler/">Western Orphean Warbler</a></li>
@@ -11628,7 +11632,7 @@
           <figcaption><a href="/birds/trocaz-pigeon/">Trocaz Pigeon</a><span class="photocredit">Samuel Persson · CC0</span></figcaption>
         </figure>
           <div class="site-intro">
-        <p class="blurb">Laurisilva forest older than the last ice age, and the reason Madeira is a destination rather than a stopover. <a href="/birds/trocaz-pigeon/">Trocaz Pigeon</a> and <a href="/birds/madeira-firecrest/">Madeira Firecrest</a> are on the forest trails at Ribeiro Frio, and <a href="/birds/zino-s-petrel/">Zino's Petrel</a> breeds on the Pico do Areeiro ledges. The pelagics out of Funchal are a separate product and the real draw.</p>
+        <p class="blurb"><a href="/birds/trocaz-pigeon/">Trocaz Pigeon</a> and <a href="/birds/madeira-firecrest/">Madeira Firecrest</a> are on the forest trails at Ribeiro Frio, and <a href="/birds/zino-s-petrel/">Zino's Petrel</a> breeds on the Pico do Areeiro ledges. The pelagics out of Funchal are a separate product and the real draw.</p>
 
         <ul class="wherelist">
         <li class="where"><b>Look for:</b> <a href="/birds/trocaz-pigeon/">Trocaz Pigeon</a>, <a href="/birds/madeira-firecrest/">Madeira Firecrest</a>, <a href="/birds/zino-s-petrel/">Zino's Petrel</a>, <a href="/birds/desertas-petrel/">Desertas Petrel</a>, <a href="/birds/plain-swift/">Plain Swift</a>, <a href="/birds/berthelot-s-pipit/">Berthelot's Pipit</a>, <a href="/birds/band-rumped-storm-petrel/">Band-rumped Storm Petrel</a></li>
@@ -11919,7 +11923,7 @@
           <figcaption><a href="/birds/azores-bullfinch/">Azores Bullfinch</a><span class="photocredit">no rights reserved, uploaded by steve b · cc0</span></figcaption>
         </figure>
           <div class="site-intro">
-        <p class="blurb">Nine islands two hours further into the Atlantic, and a seabird list nowhere else in Europe carries. The Graciosa islets hold <a href="/birds/monteiro-s-storm-petrel/">Monteiro's Storm-petrel</a>, which breeds nowhere else on earth. <a href="/birds/cory-s-shearwater/">Cory's Shearwater</a> is everywhere in summer and the pelagics run to the offshore banks.</p>
+        <p class="blurb">The Graciosa islets hold <a href="/birds/monteiro-s-storm-petrel/">Monteiro's Storm-petrel</a>, which breeds nowhere else on earth. <a href="/birds/cory-s-shearwater/">Cory's Shearwater</a> is everywhere in summer and the pelagics run out to the offshore banks.</p>
 
         <ul class="wherelist">
         <li class="where"><b>Look for:</b> <a href="/birds/monteiro-s-storm-petrel/">Monteiro's Storm Petrel</a>, <a href="/birds/azores-bullfinch/">Azores Bullfinch</a>, <a href="/birds/roseate-tern/">Roseate Tern</a>, <a href="/birds/great-shearwater/">Great Shearwater</a>, <a href="/birds/barolo-shearwater/">Barolo Shearwater</a>, <a href="/birds/common-tern/">Common Tern</a>, <a href="/birds/yellow-legged-gull/">Yellow-legged Gull</a></li>

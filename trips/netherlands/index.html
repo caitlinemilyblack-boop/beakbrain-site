@@ -262,6 +262,10 @@
     .where.alsorec { color: var(--muted); }
     .where.stops .stopname { color: var(--green-dark); font-weight: 800; }
     .where.stops .parklink { color: var(--green-dark); font-weight: 800; }
+    /* The host a stop links out to sits at the end of its note and must read as an aside
+       rather than compete with the stop's own name, which is the bold green above it. */
+    .where.stops .stopsite { font-weight: 600; font-size: 0.9em; color: var(--muted); border-bottom: 1px dotted currentColor; }
+    .where.stops .stopsite:hover { color: var(--green-dark); border-bottom-style: solid; }
     .stoplink { font: inherit; font-weight: 800; color: var(--green-dark); background: none; border: 0; border-bottom: 1px dotted currentColor; padding: 0; cursor: pointer; }
     .stoplink:hover { color: var(--green); border-bottom-style: solid; }
     .stoplink:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
@@ -4122,9 +4126,9 @@
         <li class="where parks"><b>National parks:</b> <a class="parklink" href="https://www.drentscheaa.nl/" target="_blank" rel="noopener">Drentsche Aa National Park</a>, <a class="parklink" href="https://www.nationaalpark-dwingelderveld.nl" target="_blank" rel="noopener">Dwingelderveld National Park</a>, <a class="parklink" href="https://www.nationaalpark-drents-friese-wold.nl/" target="_blank" rel="noopener">Drents-Friese Wold National Park</a></li>
         <li class="where stops"><b>Stops:</b>
           <ul class="stoplist">
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-fochteloerveen" title="Show Fochteloerveen on the map">Fochteloerveen</button>, a raised bog straddling Friesland and Drenthe with a viewing tower, free to enter. The cranes that recolonised the Netherlands nest here</li>
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-dwingelderveld" title="Show Dwingelderveld on the map">Dwingelderveld</button>, a national park of wet heath and pools with marked walks from several car parks. Nightjar in June, Black Woodpecker in the pines</li>
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-de-onlanden" title="Show De Onlanden on the map">De Onlanden</button>, a flooded peat basin south of Groningen with cycle paths and hides, free and open. Bittern and marsh harrier</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-fochteloerveen" title="Show Fochteloerveen on the map">Fochteloerveen</button>, a raised bog straddling Friesland and Drenthe with a viewing tower, free to enter. The cranes that recolonised the Netherlands nest here <a class="parklink stopsite" href="https://www.natuurmonumenten.nl/natuurgebieden/fochteloerveen" target="_blank" rel="noopener">natuurmonumenten.nl</a></li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-dwingelderveld" title="Show Dwingelderveld on the map">Dwingelderveld</button>, a national park of wet heath and pools with marked walks from several car parks. Nightjar in June, Black Woodpecker in the pines <a class="parklink stopsite" href="https://www.np-dwingelderveld.nl/" target="_blank" rel="noopener">np-dwingelderveld.nl</a></li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-de-onlanden" title="Show De Onlanden on the map">De Onlanden</button>, a flooded peat basin south of Groningen with cycle paths and hides, free and open. Bittern and marsh harrier <a class="parklink stopsite" href="https://www.natuurmonumenten.nl/natuurgebieden/de-onlanden" target="_blank" rel="noopener">natuurmonumenten.nl</a></li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-zuidlaardermeer" title="Show Zuidlaardermeer on the map">Zuidlaardermeer</button>, lake edge and reedbed with a hide, reached from the village of Zuidlaren</li>
           </ul>
         </li>
@@ -4651,10 +4655,10 @@
         <li class="where parks"><b>National park:</b> <a class="parklink" href="https://www.np-aldefeanen.nl/" target="_blank" rel="noopener">De Alde Feanen National Park</a></li>
         <li class="where stops"><b>Stops:</b>
           <ul class="stoplist">
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-skrok-and-skrins" title="Show Skrok and Skrins on the map">Skrok and Skrins</button>, two small reserves near Wommels managed specifically for breeding godwit and Ruff, with a viewpoint on each</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-skrok-and-skrins" title="Show Skrok and Skrins on the map">Skrok and Skrins</button>, two small reserves near Wommels managed specifically for breeding godwit and Ruff, with a viewpoint on each <a class="parklink stopsite" href="https://www.natuurmonumenten.nl/natuurgebieden/skrok-en-skrins" target="_blank" rel="noopener">natuurmonumenten.nl</a></li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-workumerwaard" title="Show Workumerwaard on the map">Workumerwaard</button>, wet grassland on the IJsselmeer shore south of Workum, viewed from the dike</li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-makkumer-noardwaard" title="Show Makkumer Noardwaard on the map">Makkumer Noardwaard</button>, shallow shore and reed on the same coast, with a hide reached on foot</li>
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-de-alde-feanen" title="Show De Alde Feanen on the map">De Alde Feanen</button>, a national park of fen, reed and open water, reached by boat or from the visitor centre at Earnewald</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-de-alde-feanen" title="Show De Alde Feanen on the map">De Alde Feanen</button>, a national park of fen, reed and open water, reached by boat or from the visitor centre at Earnewald <a class="parklink stopsite" href="https://www.np-aldefeanen.nl/" target="_blank" rel="noopener">np-aldefeanen.nl</a></li>
           </ul>
         </li>
 
@@ -4873,8 +4877,8 @@
         <li class="where parks"><b>National parks:</b> <a class="parklink" href="https://www.nationaalparkweerribbenwieden.nl/" target="_blank" rel="noopener">Weerribben-Wieden National Park</a>, <a class="parklink" href="https://www.sallandseheuvelrug.nl/" target="_blank" rel="noopener">Sallandse Heuvelrug National Park</a></li>
         <li class="where stops"><b>Stops:</b>
           <ul class="stoplist">
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-de-weerribben" title="Show De Weerribben on the map">De Weerribben</button>, a national park of peat cuttings, reed and open water near Ossenzijl, with marked walks and canoe routes</li>
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-de-wieden" title="Show De Wieden on the map">De Wieden</button>, the lake and reedbed half of the same park, entered near Giethoorn. Purple Heron and Black Tern over the water</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-de-weerribben" title="Show De Weerribben on the map">De Weerribben</button>, a national park of peat cuttings, reed and open water near Ossenzijl, with marked walks and canoe routes <a class="parklink stopsite" href="https://www.nationaalparkweerribbenwieden.nl/" target="_blank" rel="noopener">nationaalparkweerribbenwieden.nl</a></li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-de-wieden" title="Show De Wieden on the map">De Wieden</button>, the lake and reedbed half of the same park, entered near Giethoorn. Purple Heron and Black Tern over the water <a class="parklink stopsite" href="https://www.nationaalparkweerribbenwieden.nl/" target="_blank" rel="noopener">nationaalparkweerribbenwieden.nl</a></li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-sallandse-heuvelrug" title="Show Sallandse Heuvelrug on the map">Sallandse Heuvelrug</button>, a heath ridge national park near Nijverdal, with a marked viewpoint for the last Dutch Black Grouse</li>
           </ul>
         </li>
@@ -5284,7 +5288,7 @@
           <ul class="stoplist">
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-den-oever-sluices" title="Show Den Oever sluices on the map">Den Oever sluices</button>, the eastern end of the Afsluitdijk, where the outflow draws diving duck and gulls. Parking and a walkway</li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-kornwerderzand" title="Show Kornwerderzand on the map">Kornwerderzand</button>, the western sluices of the same dike, and a passage watchpoint in autumn</li>
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-marker-wadden" title="Show Marker Wadden on the map">Marker Wadden</button>, a group of islands built for wildlife in the Markermeer, reached by a seasonal ferry from Lelystad. Hides and a lookout tower</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-marker-wadden" title="Show Marker Wadden on the map">Marker Wadden</button>, a group of islands built for wildlife in the Markermeer, reached by a seasonal ferry from Lelystad. Hides and a lookout tower <a class="parklink stopsite" href="https://www.natuurmonumenten.nl/natuurgebieden/marker-wadden" target="_blank" rel="noopener">natuurmonumenten.nl</a></li>
           </ul>
         </li>
 
@@ -5470,7 +5474,7 @@
         <li class="where stops"><b>Stops:</b>
           <ul class="stoplist">
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-de-kluut-and-grote-praambult" title="Show De Kluut and Grote Praambult on the map">De Kluut and Grote Praambult</button>, the two marked lookouts over the Oostvaardersplassen marsh, free and reached on foot from the car parks</li>
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-lepelaarplassen" title="Show Lepelaarplassen on the map">Lepelaarplassen</button>, spoonbill and heron ground on the Almere side, with a visitor centre and hides</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-lepelaarplassen" title="Show Lepelaarplassen on the map">Lepelaarplassen</button>, spoonbill and heron ground on the Almere side, with a visitor centre and hides <a class="parklink stopsite" href="https://www.natuurmonumenten.nl/natuurgebieden/lepelaarplassen" target="_blank" rel="noopener">natuurmonumenten.nl</a></li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-kamperhoek" title="Show Kamperhoek on the map">Kamperhoek</button>, the northeast corner of the polder, a migration watchpoint over open farmland</li>
           </ul>
         </li>
@@ -5673,9 +5677,9 @@
         <li class="where parks"><b>National parks:</b> <a class="parklink" href="https://www.hogeveluwe.nl/" target="_blank" rel="noopener">Hoge Veluwe National Park</a>, <a class="parklink" href="https://www.natuurmonumenten.nl/natuurgebieden/nationaal-park-veluwezoom" target="_blank" rel="noopener">Veluwezoom National Park</a></li>
         <li class="where stops"><b>Stops:</b>
           <ul class="stoplist">
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-deelerwoud" title="Show Deelerwoud on the map">Deelerwoud</button>, unfenced old woodland and heath between Arnhem and Apeldoorn, quiet and free to walk</li>
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-planken-wambuis" title="Show Planken Wambuis on the map">Planken Wambuis</button>, heath and drift sand with marked walks from the car park on the Ede road. Woodlark and nightjar</li>
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-de-hoge-veluwe" title="Show De Hoge Veluwe on the map">De Hoge Veluwe</button>, a national park with sit-in wildlife hides on the heath, and the one park here that charges admission at the gate</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-deelerwoud" title="Show Deelerwoud on the map">Deelerwoud</button>, unfenced old woodland and heath between Arnhem and Apeldoorn, quiet and free to walk <a class="parklink stopsite" href="https://www.natuurmonumenten.nl/natuurgebieden/deelerwoud" target="_blank" rel="noopener">natuurmonumenten.nl</a></li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-planken-wambuis" title="Show Planken Wambuis on the map">Planken Wambuis</button>, heath and drift sand with marked walks from the car park on the Ede road. Woodlark and nightjar <a class="parklink stopsite" href="https://www.natuurmonumenten.nl/natuurgebieden/planken-wambuis" target="_blank" rel="noopener">natuurmonumenten.nl</a></li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-de-hoge-veluwe" title="Show De Hoge Veluwe on the map">De Hoge Veluwe</button>, a national park with sit-in wildlife hides on the heath, and the one park here that charges admission at the gate <a class="parklink stopsite" href="https://www.hogeveluwe.nl/en" target="_blank" rel="noopener">hogeveluwe.nl</a></li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-kootwijkerzand" title="Show Kootwijkerzand on the map">Kootwijkerzand</button>, the largest area of drift sand in western Europe, walked from the Kootwijk car park</li>
           </ul>
         </li>
@@ -6407,7 +6411,7 @@
         <li class="where stops"><b>Stops:</b>
           <ul class="stoplist">
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-the-ijmuiden-zuidpier" title="Show The IJmuiden Zuidpier on the map">The IJmuiden Zuidpier</button>, a long stone pier at the harbour mouth, walked out from the car park. The classic Dutch seabird passage in a northwesterly gale</li>
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-het-zwanenwater" title="Show Het Zwanenwater on the map">Het Zwanenwater</button>, dune lakes north of Callantsoog with hides, entered for a small fee. Spoonbill colony and bittern</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-het-zwanenwater" title="Show Het Zwanenwater on the map">Het Zwanenwater</button>, dune lakes north of Callantsoog with hides, entered for a small fee. Spoonbill colony and bittern <a class="parklink stopsite" href="https://www.natuurmonumenten.nl/natuurgebieden/zwanenwater" target="_blank" rel="noopener">natuurmonumenten.nl</a></li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-castricum-ringing-station" title="Show Castricum ringing station on the map">Castricum ringing station</button>, a bird ringing station in the dunes, open to visitors on set mornings. Migration in the hand</li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-camperduin-and-the-hondsbossche-dunes" title="Show Camperduin and the Hondsbossche dunes on the map">Camperduin and the Hondsbossche dunes</button>, new dune and lagoon built on a rebuilt sea defence, with paths along the top</li>
           </ul>
@@ -7005,7 +7009,7 @@
           <ul class="stoplist">
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-meijendel" title="Show Meijendel on the map">Meijendel</button>, dune valleys and water channels behind Wassenaar, free and open, with a visitor centre and marked walks</li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-berkheide" title="Show Berkheide on the map">Berkheide</button>, older, quieter dune between Katwijk and Wassenaar. Nightingale in May</li>
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-kwade-hoek" title="Show Kwade Hoek on the map">Kwade Hoek</button>, a sandy spit at the Haringvliet mouth, walked from the Ouddorp side. Terns and waders</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-kwade-hoek" title="Show Kwade Hoek on the map">Kwade Hoek</button>, a sandy spit at the Haringvliet mouth, walked from the Ouddorp side. Terns and waders <a class="parklink stopsite" href="https://www.natuurmonumenten.nl/natuurgebieden/kwade-hoek" target="_blank" rel="noopener">natuurmonumenten.nl</a></li>
           </ul>
         </li>
 
@@ -7326,7 +7330,7 @@
         <li class="where parks"><b>National park:</b> <a class="parklink" href="https://np-debiesbosch.nl/" target="_blank" rel="noopener">De Biesbosch National Park</a></li>
         <li class="where stops"><b>Stops:</b>
           <ul class="stoplist">
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-drimmelen-boat-routes" title="Show Drimmelen boat routes on the map">Drimmelen boat routes</button>, quiet electric boats into the creeks of the Biesbosch, leaving from Drimmelen. The only way to see the interior</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-drimmelen-boat-routes" title="Show Drimmelen boat routes on the map">Drimmelen boat routes</button>, quiet electric boats into the creeks of the Biesbosch, leaving from Drimmelen. The only way to see the interior <a class="parklink stopsite" href="https://www.np-debiesbosch.nl/" target="_blank" rel="noopener">np-debiesbosch.nl</a></li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-the-aakvlaai" title="Show The Aakvlaai on the map">The Aakvlaai</button>, shallow water and willow scrub near Drimmelen, walked from the car park. White-tailed Eagle territory</li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-the-nieuwe-merwede-banks" title="Show The Nieuwe Merwede banks on the map">The Nieuwe Merwede banks</button>, tidal freshwater edge along the main channel, birded from the dike path</li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-de-millingerwaard" title="Show De Millingerwaard on the map">De Millingerwaard</button>, floodplain further up the Waal with wild grazing and marked walks, free and open</li>
@@ -7925,8 +7929,8 @@
           <ul class="stoplist">
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-prunje-polder" title="Show Prunje polder on the map">Prunje polder</button>, flooded fields inland from the Oosterschelde, viewed from the road. The best wader field in Zeeland</li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-kop-van-schouwen" title="Show Kop van Schouwen on the map">Kop van Schouwen</button>, dune and pine at the island tip near Burgh-Haamstede, with a migration watchpoint</li>
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-yerseke-moer" title="Show Yerseke Moer on the map">Yerseke Moer</button>, old salt marsh relief grazed by geese, walked on marked paths</li>
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-waterdunen" title="Show Waterdunen on the map">Waterdunen</button>, a new tidal reserve at Breskens with hides over the lagoon, free and open</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-yerseke-moer" title="Show Yerseke Moer on the map">Yerseke Moer</button>, old salt marsh relief grazed by geese, walked on marked paths <a class="parklink stopsite" href="https://www.natuurmonumenten.nl/natuurgebieden/yerseke-moer" target="_blank" rel="noopener">natuurmonumenten.nl</a></li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-waterdunen" title="Show Waterdunen on the map">Waterdunen</button>, a new tidal reserve at Breskens with hides over the lagoon, free and open <a class="parklink stopsite" href="https://www.waterdunen.com/" target="_blank" rel="noopener">waterdunen.com</a></li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-the-brouwersdam" title="Show The Brouwersdam on the map">The Brouwersdam</button>, the dam between Goeree and Schouwen, scanned from the pull-ins for divers, grebes and sea duck in winter</li>
           </ul>
         </li>
@@ -8402,8 +8406,8 @@
         <li class="where parks"><b>National parks:</b> <a class="parklink" href="https://nationaalpark.nl/park/de-maasduinen" target="_blank" rel="noopener">De Maasduinen National Park</a>, <a class="parklink" href="https://www.natuurparkenlimburg.nl/np/de-groote-peel" target="_blank" rel="noopener">De Groote Peel National Park</a>, <a class="parklink" href="https://limburgsemaasterrassen.nl/nl" target="_blank" rel="noopener">Meinweg National Park</a></li>
         <li class="where stops"><b>Stops:</b>
           <ul class="stoplist">
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-de-groote-peel" title="Show De Groote Peel on the map">De Groote Peel</button>, a national park of raised bog on the Brabant border, with marked walks and a crane roost in autumn</li>
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-de-meinweg" title="Show De Meinweg on the map">De Meinweg</button>, a national park of heath and terrace woodland on the German border. Nightjar, and adders on the paths</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-de-groote-peel" title="Show De Groote Peel on the map">De Groote Peel</button>, a national park of raised bog on the Brabant border, with marked walks and a crane roost in autumn <a class="parklink stopsite" href="https://www.np-degrootepeel.nl/" target="_blank" rel="noopener">np-degrootepeel.nl</a></li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-de-meinweg" title="Show De Meinweg on the map">De Meinweg</button>, a national park of heath and terrace woodland on the German border. Nightjar, and adders on the paths <a class="parklink stopsite" href="https://www.np-demeinweg.nl/" target="_blank" rel="noopener">np-demeinweg.nl</a></li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-the-gulp-and-geul-valleys" title="Show The Gulp and Geul valleys on the map">The Gulp and Geul valleys</button>, stream valleys in the south hills with public footpaths through old oak. Middle Spotted Woodpecker</li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-the-enci-quarry-maastricht" title="Show The ENCI quarry, Maastricht on the map">The ENCI quarry, Maastricht</button>, a former marl quarry now open as a nature area, with eagle-owls nesting on its faces</li>
           </ul>

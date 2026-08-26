@@ -262,6 +262,10 @@
     .where.alsorec { color: var(--muted); }
     .where.stops .stopname { color: var(--green-dark); font-weight: 800; }
     .where.stops .parklink { color: var(--green-dark); font-weight: 800; }
+    /* The host a stop links out to sits at the end of its note and must read as an aside
+       rather than compete with the stop's own name, which is the bold green above it. */
+    .where.stops .stopsite { font-weight: 600; font-size: 0.9em; color: var(--muted); border-bottom: 1px dotted currentColor; }
+    .where.stops .stopsite:hover { color: var(--green-dark); border-bottom-style: solid; }
     .stoplink { font: inherit; font-weight: 800; color: var(--green-dark); background: none; border: 0; border-bottom: 1px dotted currentColor; padding: 0; cursor: pointer; }
     .stoplink:hover { color: var(--green); border-bottom-style: solid; }
     .stoplink:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
@@ -8387,7 +8391,7 @@
         <li class="where parks"><b>National park:</b> <a class="parklink" href="https://www.gov.br/icmbio/" target="_blank" rel="noopener">Itatiaia National Park</a></li>
         <li class="where stops"><b>Stops:</b>
           <ul class="stoplist">
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-itatiaia-national-park-lower-part" title="Show Itatiaia National Park, lower part on the map">Itatiaia National Park, lower part</button>, the forested lower section reached from Itatiaia town, with the Tres Picos trail, the Maromba waterfall and the hotel road that is birded on foot at dawn</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-itatiaia-national-park-lower-part" title="Show Itatiaia National Park, lower part on the map">Itatiaia National Park, lower part</button>, the forested lower section reached from Itatiaia town, with the Tres Picos trail, the Maromba waterfall and the hotel road that is birded on foot at dawn <a class="parklink stopsite" href="https://www.gov.br/icmbio/" target="_blank" rel="noopener">gov.br</a></li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-agulhas-negras-road" title="Show Agulhas Negras road on the map">Agulhas Negras road</button>, the upper section, reached from the Dutra highway at Engenheiro Passos, climbing to open grassland above 2,400 m. A different list entirely from the forest below</li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-hotel-do-ype-road" title="Show Hotel do Ype road on the map">Hotel do Ype road</button>, the private road above the park hotel, with feeders and the forest edge that most of the park's hummingbirds are seen on</li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-itatiaia" title="Show Itatiaia on the map">Itatiaia</button>, the town at the park gate on the Rio to Sao Paulo highway, two and a half hours from either city</li>
@@ -8427,7 +8431,7 @@
         <li class="where stops"><b>Stops:</b>
           <ul class="stoplist">
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-tres-picos-state-park" title="Show Tres Picos State Park on the map">Tres Picos State Park</button>, 58,000 hectares next to the national park and the largest protected Atlantic Forest in Rio de Janeiro state, with the Itororo lodge road running through it</li>
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-guapiacu-reserve" title="Show Guapiacu Reserve on the map">Guapiacu Reserve</button>, a private reserve on the lowland side at Cachoeiras de Macacu, with restored wetland, its own lodge and a long reforestation record</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-guapiacu-reserve" title="Show Guapiacu Reserve on the map">Guapiacu Reserve</button>, a private reserve on the lowland side at Cachoeiras de Macacu, with restored wetland, its own lodge and a long reforestation record <a class="parklink stopsite" href="https://regua.org.br/" target="_blank" rel="noopener">regua.org.br</a></li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-teresopolis" title="Show Teresopolis on the map">Teresopolis</button>, the mountain town at the park gate, ninety minutes from Rio, and the base for the upper forest</li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-nova-friburgo" title="Show Nova Friburgo on the map">Nova Friburgo</button>, the town on the far side of the range, and the way onto the Macae de Cima forest</li>
           </ul>
@@ -8575,8 +8579,8 @@
 
         <li class="where stops"><b>Stops:</b>
           <ul class="stoplist">
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-sooretama-biological-reserve" title="Show Sooretama Biological Reserve on the map">Sooretama Biological Reserve</button>, 24,000 hectares of federal lowland forest, entered by permit for research and by arrangement for birding</li>
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-vale-natural-reserve" title="Show Vale Natural Reserve on the map">Vale Natural Reserve</button>, 23,000 hectares of private reserve adjoining Sooretama, with its own accommodation, roads and guides, and the most accessible lowland Atlantic Forest in Brazil</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-sooretama-biological-reserve" title="Show Sooretama Biological Reserve on the map">Sooretama Biological Reserve</button>, 24,000 hectares of federal lowland forest, entered by permit for research and by arrangement for birding <a class="parklink stopsite" href="https://www.gov.br/icmbio/" target="_blank" rel="noopener">gov.br</a></li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-vale-natural-reserve" title="Show Vale Natural Reserve on the map">Vale Natural Reserve</button>, 23,000 hectares of private reserve adjoining Sooretama, with its own accommodation, roads and guides, and the most accessible lowland Atlantic Forest in Brazil <a class="parklink stopsite" href="https://www.vale.com/" target="_blank" rel="noopener">vale.com</a></li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-santa-teresa" title="Show Santa Teresa on the map">Santa Teresa</button>, the hill town where Augusto Ruschi worked on hummingbirds, with the Augusto Ruschi biological reserve and the museum above it</li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-domingos-martins" title="Show Domingos Martins on the map">Domingos Martins</button>, the montane forest south-west of Vitoria where the Cherry-throated Tanager was rediscovered</li>
           </ul>
@@ -8633,7 +8637,7 @@
         <li class="where stops"><b>Stops:</b>
           <ul class="stoplist">
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-serra-bonita-reserve" title="Show Serra Bonita Reserve on the map">Serra Bonita Reserve</button>, a private reserve running from 200 m to 950 m on a ridge above Camacan, with a lodge and a research station on the top</li>
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-una-biological-reserve" title="Show Una Biological Reserve on the map">Una Biological Reserve</button>, lowland forest inland of Ilheus, the stronghold of the Golden-headed Lion Tamarin, with a visitor section and a canopy walkway</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-una-biological-reserve" title="Show Una Biological Reserve on the map">Una Biological Reserve</button>, lowland forest inland of Ilheus, the stronghold of the Golden-headed Lion Tamarin, with a visitor section and a canopy walkway <a class="parklink stopsite" href="https://www.gov.br/icmbio/" target="_blank" rel="noopener">gov.br</a></li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-camacan" title="Show Camacan on the map">Camacan</button>, the cocoa town below Serra Bonita, four hours south of Ilheus</li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-porto-seguro" title="Show Porto Seguro on the map">Porto Seguro</button>, the coastal town with the airport, and the Veracel reserve and mangrove north of it</li>
           </ul>

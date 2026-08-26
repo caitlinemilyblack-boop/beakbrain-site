@@ -262,6 +262,10 @@
     .where.alsorec { color: var(--muted); }
     .where.stops .stopname { color: var(--green-dark); font-weight: 800; }
     .where.stops .parklink { color: var(--green-dark); font-weight: 800; }
+    /* The host a stop links out to sits at the end of its note and must read as an aside
+       rather than compete with the stop's own name, which is the bold green above it. */
+    .where.stops .stopsite { font-weight: 600; font-size: 0.9em; color: var(--muted); border-bottom: 1px dotted currentColor; }
+    .where.stops .stopsite:hover { color: var(--green-dark); border-bottom-style: solid; }
     .stoplink { font: inherit; font-weight: 800; color: var(--green-dark); background: none; border: 0; border-bottom: 1px dotted currentColor; padding: 0; cursor: pointer; }
     .stoplink:hover { color: var(--green); border-bottom-style: solid; }
     .stoplink:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
@@ -2920,7 +2924,7 @@
           <figcaption><a href="/birds/great-bustard/">Great Bustard</a><span class="photocredit">David Pereira · CC BY 4.0</span></figcaption>
         </figure>
           <div class="site-intro">
-        <p class="blurb">The reason most birders come to Austria. Neusiedler See is a shallow steppe lake with a reed belt kilometres wide, and the Seewinkel behind it is a scatter of soda pans that hold Avocet, Spoonbill, <a href="/birds/red-footed-falcon/">Red-footed Falcon</a> and <a href="/birds/black-tailed-godwit/">Black-tailed Godwit</a>. The Parndorf Plain above carries <a href="/birds/great-bustard/">Great Bustard</a> and <a href="/birds/saker-falcon/">Saker Falcon</a>.</p>
+        <p class="blurb">The reason most birders come to Austria. The soda pans of the Seewinkel hold Avocet, Spoonbill, <a href="/birds/red-footed-falcon/">Red-footed Falcon</a> and <a href="/birds/black-tailed-godwit/">Black-tailed Godwit</a>, and <a href="/birds/great-bustard/">Great Bustard</a> and <a href="/birds/saker-falcon/">Saker Falcon</a> work the plain above.</p>
 
         <ul class="wherelist">
         <li class="where"><b>Look for:</b> <a href="/birds/great-bustard/">Great Bustard</a>, <a href="/birds/saker-falcon/">Saker Falcon</a>, <a href="/birds/red-footed-falcon/">Red-footed Falcon</a>, <a href="/birds/pied-avocet/">Pied Avocet</a>, <a href="/birds/eurasian-spoonbill/">Eurasian Spoonbill</a>, <a href="/birds/black-tailed-godwit/">Black-tailed Godwit</a>, <a href="/birds/bearded-reedling/">Bearded Reedling</a>, <a href="/birds/moustached-warbler/">Moustached Warbler</a></li>
@@ -3023,7 +3027,7 @@
           <figcaption><a href="/birds/white-stork/">White Stork</a><span class="photocredit">SteveM4560 · CC BY</span></figcaption>
         </figure>
           <div class="site-intro">
-        <p class="blurb">Marchegg holds the largest tree-nesting <a href="/birds/white-stork/">White Stork</a> colony in Europe, in oak floodplain forest on the March river. The floodplain behind gives <a href="/birds/black-stork/">Black Stork</a>, <a href="/birds/white-tailed-eagle/">White-tailed Eagle</a> and the woodpeckers, and it is forty minutes from Vienna.</p>
+        <p class="blurb">The storks nest in the crowns of the oaks rather than on roofs, which is what makes the colony unusual as well as large. <a href="/birds/black-stork/">Black Stork</a>, <a href="/birds/white-tailed-eagle/">White-tailed Eagle</a> and the woodpeckers use the floodplain behind, and it is forty minutes from Vienna.</p>
 
         <ul class="wherelist">
         <li class="where"><b>Look for:</b> <a href="/birds/white-stork/">White Stork</a>, <a href="/birds/black-stork/">Black Stork</a>, <a href="/birds/middle-spotted-woodpecker/">Middle Spotted Woodpecker</a>, <a href="/birds/collared-flycatcher/">Collared Flycatcher</a>, <a href="/birds/red-breasted-flycatcher/">Red-breasted Flycatcher</a>, <a href="/birds/common-kingfisher/">Common Kingfisher</a>, <a href="/birds/lesser-spotted-eagle/">Lesser Spotted Eagle</a></li>
@@ -3079,7 +3083,7 @@
           <figcaption><a href="/birds/eurasian-golden-oriole/">Eurasian Golden Oriole</a><span class="photocredit">Ron Knight from Seaford, East Sussex, United Kingdom · CC BY 2.0</span></figcaption>
         </figure>
           <div class="site-intro">
-        <p class="blurb">The Danube east of Vienna runs through the last free-flowing floodplain forest on its Austrian length, protected as a national park. The wetlands here are side-arms, gravel banks and softwood forest, with Kingfisher, <a href="/birds/black-woodpecker/">Black Woodpecker</a>, <a href="/birds/white-tailed-eagle/">White-tailed Eagle</a> and a beaver population.</p>
+        <p class="blurb">Protected as a national park, and the wetlands east of Vienna still flood and shift their channels each year, which is why the forest here regenerates and the ones upriver do not. Kingfisher, <a href="/birds/black-woodpecker/">Black Woodpecker</a> and <a href="/birds/white-tailed-eagle/">White-tailed Eagle</a> work it alongside a beaver population.</p>
 
         <ul class="wherelist">
         <li class="where"><b>Look for:</b> <a href="/birds/white-tailed-eagle/">White-tailed Eagle</a>, <a href="/birds/black-woodpecker/">Black Woodpecker</a>, <a href="/birds/grey-headed-woodpecker/">Grey-headed Woodpecker</a>, <a href="/birds/black-kite/">Black Kite</a>, <a href="/birds/common-sandpiper/">Common Sandpiper</a>, <a href="/birds/eurasian-golden-oriole/">Eurasian Golden Oriole</a>, <a href="/birds/syrian-woodpecker/">Syrian Woodpecker</a></li>
@@ -5903,7 +5907,7 @@
           <figcaption><a href="/birds/white-backed-woodpecker/">White-backed Woodpecker</a><span class="photocredit">Andrew Bazdyrev · CC BY 4.0</span></figcaption>
         </figure>
           <div class="site-intro">
-        <p class="blurb">The Waldviertel is granite upland and old forest along the Czech border, with Thayatal national park on the river meanders at Hardegg. <a href="/birds/black-stork/">Black Stork</a> on the Thaya, and the forest woodpeckers through the surrounding woods.</p>
+        <p class="blurb">Thayatal national park sits on the river meanders at Hardegg, with <a href="/birds/black-stork/">Black Stork</a> on the Thaya. The forest woodpeckers are through the woods around it.</p>
 
         <ul class="wherelist">
         <li class="where"><b>Look for:</b> <a href="/birds/white-backed-woodpecker/">White-backed Woodpecker</a>, <a href="/birds/hazel-grouse/">Hazel Grouse</a>, <a href="/birds/eurasian-three-toed-woodpecker/">Eurasian Three-toed Woodpecker</a>, <a href="/birds/northern-raven/">Northern Raven</a>, <a href="/birds/common-redstart/">Common Redstart</a>, <a href="/birds/eurasian-wryneck/">Eurasian Wryneck</a>, <a href="/birds/black-redstart/">Black Redstart</a></li>
@@ -7933,7 +7937,7 @@
           <figcaption><a href="/birds/wallcreeper/">Wallcreeper</a><span class="photocredit">TRinaud · CC BY 4.0</span></figcaption>
         </figure>
           <div class="site-intro">
-        <p class="blurb">The Tyrolean limestone around Ehrwald, under the Zugspitze and the Wetterstein wall. The cable car gives the high ground quickly, <a href="/birds/alpine-accentor/">Alpine Accentor</a> and <a href="/birds/wallcreeper/">Wallcreeper</a> on the rock, and the Karwendel behind holds the same set with a longer walk in.</p>
+        <p class="blurb">Ehrwald is the base, and the cable car reaches <a href="/birds/alpine-accentor/">Alpine Accentor</a> and <a href="/birds/wallcreeper/">Wallcreeper</a> ground before the day warms. The Karwendel behind holds the same set for anyone willing to walk in.</p>
 
         <ul class="wherelist">
         <li class="where"><b>Look for:</b> <a href="/birds/wallcreeper/">Wallcreeper</a>, <a href="/birds/northern-nutcracker/">Northern Nutcracker</a>, <a href="/birds/black-grouse/">Black Grouse</a>, <a href="/birds/rock-partridge/">Rock Partridge</a>, <a href="/birds/rock-ptarmigan/">Rock Ptarmigan</a>, <a href="/birds/eurasian-crag-martin/">Eurasian Crag Martin</a>, <a href="/birds/red-billed-chough/">Red-billed Chough</a></li>
@@ -8821,7 +8825,7 @@
           <figcaption><a href="/birds/western-capercaillie/">Western Capercaillie</a><span class="photocredit">Simon Bailey · CC BY 2.0</span></figcaption>
         </figure>
           <div class="site-intro">
-        <p class="blurb">The Kalkalpen national park protects the largest unbroken forest wilderness in Austria, and the Reichraminger Hintergebirge core zone is the reason it holds all the woodpeckers, White-backed among them. Sengsengebirge above adds the mountain birds.</p>
+        <p class="blurb">The Reichraminger Hintergebirge core zone is why every woodpecker on the Austrian list is here, White-backed among them. Sengsengebirge above it adds the mountain birds.</p>
 
         <ul class="wherelist">
         <li class="where"><b>Look for:</b> <a href="/birds/western-capercaillie/">Western Capercaillie</a>, <a href="/birds/eurasian-nuthatch/">Eurasian Nuthatch</a>, <a href="/birds/boreal-owl/">Boreal Owl</a>, <a href="/birds/eurasian-treecreeper/">Eurasian Treecreeper</a>, <a href="/birds/willow-tit/">Willow Tit</a>, <a href="/birds/crested-tit/">Crested Tit</a>, <a href="/birds/eurasian-bullfinch/">Eurasian Bullfinch</a></li>

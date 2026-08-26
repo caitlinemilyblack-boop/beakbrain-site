@@ -262,6 +262,10 @@
     .where.alsorec { color: var(--muted); }
     .where.stops .stopname { color: var(--green-dark); font-weight: 800; }
     .where.stops .parklink { color: var(--green-dark); font-weight: 800; }
+    /* The host a stop links out to sits at the end of its note and must read as an aside
+       rather than compete with the stop's own name, which is the bold green above it. */
+    .where.stops .stopsite { font-weight: 600; font-size: 0.9em; color: var(--muted); border-bottom: 1px dotted currentColor; }
+    .where.stops .stopsite:hover { color: var(--green-dark); border-bottom-style: solid; }
     .stoplink { font: inherit; font-weight: 800; color: var(--green-dark); background: none; border: 0; border-bottom: 1px dotted currentColor; padding: 0; cursor: pointer; }
     .stoplink:hover { color: var(--green); border-bottom-style: solid; }
     .stoplink:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
@@ -5149,7 +5153,7 @@
         <li class="where parks"><b>National park:</b> <a class="parklink" href="https://www.protectedplanet.net/165" target="_blank" rel="noopener">Braulio Carrillo National Park</a></li>
         <li class="where stops"><b>Stops:</b>
           <ul class="stoplist">
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-la-selva-biological-station" title="Show La Selva Biological Station on the map">La Selva Biological Station</button>, a research station run by the Organization for Tropical Studies, open to day visitors and overnight guests. Marked trails, 50 years of records, and the antbirds and Great Green Macaws that made its name</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-la-selva-biological-station" title="Show La Selva Biological Station on the map">La Selva Biological Station</button>, a research station run by the Organization for Tropical Studies, open to day visitors and overnight guests. Marked trails, 50 years of records, and the antbirds and Great Green Macaws that made its name <a class="parklink stopsite" href="https://tropicalstudies.org/portfolio/la-selva-research-station/" target="_blank" rel="noopener">tropicalstudies.org</a></li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-quebrada-gonzalez" title="Show Quebrada Gonzalez on the map">Quebrada Gonzalez</button>, a ranger station and trailhead on the Guapiles highway inside Braulio Carrillo National Park. Foothill forest at 500 metres, and the easiest place to try for umbrellabird</li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-virgen-del-socorro" title="Show Virgen del Socorro on the map">Virgen del Socorro</button>, a steep public road down to a river gorge off the Vara Blanca route, birded slowly from the verge. Sunbittern and torrent species along the water</li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-el-tapir" title="Show El Tapir on the map">El Tapir</button>, a small private garden of heliconias beside the same highway, open for a modest fee. The traditional place to look for Snowcap</li>
@@ -5440,7 +5444,7 @@
         <li class="where parks"><b>National park:</b> <a class="parklink" href="https://www.protectedplanet.net/36059" target="_blank" rel="noopener">Arenal Volcano National Park</a></li>
         <li class="where stops"><b>Stops:</b>
           <ul class="stoplist">
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-arenal-observatory-lodge" title="Show Arenal Observatory Lodge on the map">Arenal Observatory Lodge</button>, a lodge below the volcano whose deck, feeders and trail system are open to day visitors for a fee, so you can bird it without staying</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-arenal-observatory-lodge" title="Show Arenal Observatory Lodge on the map">Arenal Observatory Lodge</button>, a lodge below the volcano whose deck, feeders and trail system are open to day visitors for a fee, so you can bird it without staying <a class="parklink stopsite" href="https://www.arenalobservatorylodge.com/" target="_blank" rel="noopener">arenalobservatorylodge.com</a></li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-the-el-castillo-road" title="Show The El Castillo road on the map">The El Castillo road</button>, the quiet gravel road along the south shore of the lake, birded from the verge. Keel-billed Motmot and Lovely Cotinga are the reasons to walk it</li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-arenal-hanging-bridges" title="Show Arenal hanging bridges on the map">Arenal hanging bridges</button>, a private trail with suspension bridges that put you level with the canopy, which is where much of the forest's activity actually happens</li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-the-lake-arenal-dam-sector" title="Show The Lake Arenal dam sector on the map">The Lake Arenal dam sector</button>, open water and shoreline at the dam, and the waterbirds that the forest regions never give you</li>
@@ -6207,9 +6211,9 @@
         <li class="where parks"><b>Parks and reserves:</b> <a class="parklink" href="https://www.reservamonteverde.com/" target="_blank" rel="noopener">Monteverde Cloud Forest Biological Preserve</a> <span class="pkind">(private reserve)</span>, <a class="parklink" href="https://www.reservasantaelena.org/" target="_blank" rel="noopener">Santa Elena Cloud Forest Reserve</a> <span class="pkind">(community reserve)</span>, <a class="parklink" href="https://www.acmcr.org/" target="_blank" rel="noopener">Children's Eternal Rainforest</a> <span class="pkind">(private reserve)</span></li>
         <li class="where stops"><b>Stops:</b>
           <ul class="stoplist">
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-curi-cancha-reserve" title="Show Curi-Cancha Reserve on the map">Curi-Cancha Reserve</button>, a private reserve with a booking cap, so it stays quiet. Generally the best quetzal odds in the area</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-curi-cancha-reserve" title="Show Curi-Cancha Reserve on the map">Curi-Cancha Reserve</button>, a private reserve with a booking cap, so it stays quiet. Generally the best quetzal odds in the area <a class="parklink stopsite" href="https://www.reservacuricancha.com/" target="_blank" rel="noopener">reservacuricancha.com</a></li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-monteverde-cloud-forest-preserve" title="Show Monteverde Cloud Forest Preserve on the map">Monteverde Cloud Forest Preserve</button>, the reserve most people mean by Monteverde, on the continental divide. Book the early entry slot</li>
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-santa-elena-reserve" title="Show Santa Elena Reserve on the map">Santa Elena Reserve</button>, a community run reserve, higher and wetter than Monteverde and much quieter in the middle of the day</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-santa-elena-reserve" title="Show Santa Elena Reserve on the map">Santa Elena Reserve</button>, a community run reserve, higher and wetter than Monteverde and much quieter in the middle of the day <a class="parklink stopsite" href="https://www.reservasantaelena.org/" target="_blank" rel="noopener">reservasantaelena.org</a></li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-bajo-del-tigre" title="Show Bajo del Tigre on the map">Bajo del Tigre</button>, the low dry edge of the Children's Eternal Rainforest, a short walk from the village. Where the bellbirds display in season</li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-the-san-luis-valley" title="Show The San Luis valley on the map">The San Luis valley</button>, farmland and forest edge on the road below the town, birded from the roadside for a different set of species</li>
           </ul>
@@ -6802,8 +6806,8 @@
         <li class="where stops"><b>Stops:</b>
           <ul class="stoplist">
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-cinchona" title="Show Cinchona on the map">Cinchona</button>, a roadside cafe above the Sarapiqui road whose balcony feeders are open to anyone who buys a coffee. Probably the best single hour of hummingbird watching in the country</li>
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-bosque-de-paz" title="Show Bosque de Paz on the map">Bosque de Paz</button>, a private reserve and lodge between Poas and Juan Castro Blanco, open for day visits by arrangement. Feeders plus genuine forest</li>
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-poas-volcano-national-park" title="Show Poas Volcano National Park on the map">Poas Volcano National Park</button>, high volcano scrub and the crater lookout, and it needs a timed booking through SICORE</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-bosque-de-paz" title="Show Bosque de Paz on the map">Bosque de Paz</button>, a private reserve and lodge between Poas and Juan Castro Blanco, open for day visits by arrangement. Feeders plus genuine forest <a class="parklink stopsite" href="https://www.bosquedepaz.com/" target="_blank" rel="noopener">bosquedepaz.com</a></li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-poas-volcano-national-park" title="Show Poas Volcano National Park on the map">Poas Volcano National Park</button>, high volcano scrub and the crater lookout, and it needs a timed booking through SICORE <a class="parklink stopsite" href="https://serviciosenlinea.sinac.go.cr/" target="_blank" rel="noopener">serviciosenlinea.sinac.go.cr</a></li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-the-vara-blanca-and-la-paz-road" title="Show The Vara Blanca and La Paz road on the map">The Vara Blanca and La Paz road</button>, the waterfall road down the mountain, birded from the pullouts on the way</li>
           </ul>
         </li>
@@ -7203,9 +7207,9 @@
         <li class="where parks"><b>National parks:</b> <a class="parklink" href="https://www.protectedplanet.net/168122" target="_blank" rel="noopener">Turrialba Volcano National Park</a>, <a class="parklink" href="https://www.protectedplanet.net/108173" target="_blank" rel="noopener">Tapantí National Park</a>, <a class="parklink" href="https://www.protectedplanet.net/19372" target="_blank" rel="noopener">Barbilla National Park</a></li>
         <li class="where stops"><b>Stops:</b>
           <ul class="stoplist">
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-rancho-naturalista" title="Show Rancho Naturalista on the map">Rancho Naturalista</button>, a birding lodge whose balcony, hummingbird pools and morning moth light are open to day visitors by arrangement</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-rancho-naturalista" title="Show Rancho Naturalista on the map">Rancho Naturalista</button>, a birding lodge whose balcony, hummingbird pools and morning moth light are open to day visitors by arrangement <a class="parklink stopsite" href="https://ranchonaturalista.net/" target="_blank" rel="noopener">ranchonaturalista.net</a></li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-el-copal" title="Show El Copal on the map">El Copal</button>, a community run reserve on the Caribbean slope, reached by a rough road. Snowcap and Lattice-tailed Trogon</li>
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-catie-grounds" title="Show CATIE grounds on the map">CATIE grounds</button>, the grounds of an agricultural research centre outside Turrialba, open to walk. Lakes, old plantings and a long species list</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-catie-grounds" title="Show CATIE grounds on the map">CATIE grounds</button>, the grounds of an agricultural research centre outside Turrialba, open to walk. Lakes, old plantings and a long species list <a class="parklink stopsite" href="https://www.catie.ac.cr/" target="_blank" rel="noopener">catie.ac.cr</a></li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-the-tuis-valley-road" title="Show The Tuis valley road on the map">The Tuis valley road</button>, a public road descending through coffee and forest fragments, birded from the car and the verge</li>
           </ul>
         </li>
@@ -7688,8 +7692,8 @@
         </li>
         <li class="where stops"><b>Stops:</b>
           <ul class="stoplist">
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-rainmaker" title="Show Rainmaker on the map">Rainmaker</button>, a private reserve inland from Quepos with a canopy walkway over a river gorge, open for day visits</li>
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-hacienda-baru" title="Show Hacienda Baru on the map">Hacienda Baru</button>, a private reserve and lodge at Dominical with forest, mangrove and its own trails, quieter than the national park</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-rainmaker" title="Show Rainmaker on the map">Rainmaker</button>, a private reserve inland from Quepos with a canopy walkway over a river gorge, open for day visits <a class="parklink stopsite" href="https://rainmakercostarica.com/" target="_blank" rel="noopener">rainmakercostarica.com</a></li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-hacienda-baru" title="Show Hacienda Baru on the map">Hacienda Baru</button>, a private reserve and lodge at Dominical with forest, mangrove and its own trails, quieter than the national park <a class="parklink stopsite" href="https://haciendabaru.com/" target="_blank" rel="noopener">haciendabaru.com</a></li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-the-savegre-river-mouth" title="Show The Savegre river mouth on the map">The Savegre river mouth</button>, shore, river edge and beach scrub where the river meets the sea, for coastal migrants</li>
           </ul>
         </li>
@@ -8505,7 +8509,7 @@
         <li class="where parks"><b>National park:</b> <a class="parklink" href="https://www.protectedplanet.net/2553" target="_blank" rel="noopener">La Amistad International Park</a></li>
         <li class="where stops"><b>Stops:</b>
           <ul class="stoplist">
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-wilson-botanical-garden" title="Show Wilson Botanical Garden on the map">Wilson Botanical Garden</button>, a botanical garden and research station run by the Organization for Tropical Studies, with rooms, a restaurant and trails. The base almost everyone uses here</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-wilson-botanical-garden" title="Show Wilson Botanical Garden on the map">Wilson Botanical Garden</button>, a botanical garden and research station run by the Organization for Tropical Studies, with rooms, a restaurant and trails. The base almost everyone uses here <a class="parklink stopsite" href="https://tropicalstudies.org/portfolio/las-cruces-research-station/" target="_blank" rel="noopener">tropicalstudies.org</a></li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-las-cruces-forest-reserve" title="Show Las Cruces forest reserve on the map">Las Cruces forest reserve</button>, the block of primary forest behind the garden, on the same trail network. Chiriqui highland species</li>
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-the-coto-brus-wetlands" title="Show The Coto Brus wetlands on the map">The Coto Brus wetlands</button>, marsh and pond edge below the town, a short drive for a completely different habitat</li>
           </ul>

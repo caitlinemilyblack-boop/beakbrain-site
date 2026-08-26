@@ -262,6 +262,10 @@
     .where.alsorec { color: var(--muted); }
     .where.stops .stopname { color: var(--green-dark); font-weight: 800; }
     .where.stops .parklink { color: var(--green-dark); font-weight: 800; }
+    /* The host a stop links out to sits at the end of its note and must read as an aside
+       rather than compete with the stop's own name, which is the bold green above it. */
+    .where.stops .stopsite { font-weight: 600; font-size: 0.9em; color: var(--muted); border-bottom: 1px dotted currentColor; }
+    .where.stops .stopsite:hover { color: var(--green-dark); border-bottom-style: solid; }
     .stoplink { font: inherit; font-weight: 800; color: var(--green-dark); background: none; border: 0; border-bottom: 1px dotted currentColor; padding: 0; cursor: pointer; }
     .stoplink:hover { color: var(--green); border-bottom-style: solid; }
     .stoplink:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
@@ -3580,7 +3584,7 @@
           <figcaption><a href="/birds/great-grey-owl/">Great Grey Owl</a><span class="photocredit">Bernard Spragg. NZ from Christchurch, New Zealand · CC0</span></figcaption>
         </figure>
           <div class="site-intro">
-        <p class="blurb">The Pasvik valley runs south from Kirkenes along the Russian border, and it is the only piece of true Siberian taiga in the country. <a href="/birds/great-grey-owl/">Great Grey Owl</a>, Hawk Owl, <a href="/birds/siberian-jay/">Siberian Jay</a>, <a href="/birds/pine-grosbeak/">Pine Grosbeak</a> and Three-toed Woodpecker in old pine forest.</p>
+        <p class="blurb">The Pasvik valley runs south from Kirkenes along the Russian border, and it is the only piece of true Siberian taiga in the country. <a href="/birds/great-grey-owl/">Great Grey Owl</a>, <a href="/birds/northern-hawk-owl/">Northern Hawk-Owl</a>, <a href="/birds/siberian-jay/">Siberian Jay</a>, <a href="/birds/pine-grosbeak/">Pine Grosbeak</a> and <a href="/birds/eurasian-three-toed-woodpecker/">Eurasian Three-toed Woodpecker</a> all hold territory in the old pine forest along it.</p>
 
         <ul class="wherelist">
         <li class="where"><b>Look for:</b> <a href="/birds/great-grey-owl/">Great Grey Owl</a>, <a href="/birds/northern-hawk-owl/">Northern Hawk-Owl</a>, <a href="/birds/siberian-jay/">Siberian Jay</a>, <a href="/birds/pine-grosbeak/">Pine Grosbeak</a>, <a href="/birds/eurasian-three-toed-woodpecker/">Eurasian Three-toed Woodpecker</a>, <a href="/birds/rustic-bunting/">Rustic Bunting</a>, <a href="/birds/western-capercaillie/">Western Capercaillie</a></li>
@@ -3681,7 +3685,7 @@
           <figcaption><a href="/birds/bluethroat/">Bluethroat</a><span class="photocredit">Matti Virtala · CC0</span></figcaption>
         </figure>
           <div class="site-intro">
-        <p class="blurb">The Tana river cuts the largest salmon valley in the north, and the Finnmarksvidda plateau above it is open tundra. <a href="/birds/bluethroat/">Bluethroat</a>, Lapland Bunting, <a href="/birds/red-necked-phalarope/">Red-necked Phalarope</a> and Long-tailed Skua on the approach roads in summer.</p>
+        <p class="blurb"><a href="/birds/bluethroat/">Bluethroat</a>, Lapland Bunting, <a href="/birds/red-necked-phalarope/">Red-necked Phalarope</a> and Long-tailed Skua are on the approach roads through the summer, which is the season the ground is reachable at all.</p>
 
         <ul class="wherelist">
         <li class="where"><b>Look for:</b> <a href="/birds/bluethroat/">Bluethroat</a>, <a href="/birds/lapland-longspur/">Lapland Longspur</a>, <a href="/birds/red-necked-phalarope/">Red-necked Phalarope</a>, <a href="/birds/long-tailed-jaeger/">Long-tailed Jaeger</a>, <a href="/birds/temminck-s-stint/">Temminck's Stint</a>, <a href="/birds/arctic-warbler/">Arctic Warbler</a>, <a href="/birds/little-bunting/">Little Bunting</a></li>
@@ -3737,7 +3741,7 @@
           <figcaption><a href="/birds/black-guillemot/">Black Guillemot</a><span class="photocredit">Boaworm · CC BY 3.0</span></figcaption>
         </figure>
           <div class="site-intro">
-        <p class="blurb">The Lofoten and Vesterålen chain is a wall of mountains straight out of the sea, with <a href="/birds/white-tailed-eagle/">White-tailed Eagle</a> throughout and seabird colonies on the outer islands. Andenes on Andøya is the whale and seabird departure point.</p>
+        <p class="blurb"><a href="/birds/white-tailed-eagle/">White-tailed Eagle</a> are throughout the chain, and the outer islands carry the seabird colonies. Andenes on Andøya is the departure point for whales and seabirds together.</p>
 
         <ul class="wherelist">
         <li class="where"><b>Look for:</b> <a href="/birds/white-tailed-eagle/">White-tailed Eagle</a>, <a href="/birds/european-shag/">European Shag</a>, <a href="/birds/black-guillemot/">Black Guillemot</a>, <a href="/birds/northern-fulmar/">Northern Fulmar</a>, <a href="/birds/black-legged-kittiwake/">Black-legged Kittiwake</a>, <a href="/birds/common-murre/">Common Murre</a>, <a href="/birds/purple-sandpiper/">Purple Sandpiper</a></li>
@@ -3929,7 +3933,7 @@
           <figcaption><a href="/birds/red-throated-loon/">Red-throated Loon</a><span class="photocredit">Hobbyfotowiki · CC0</span></figcaption>
         </figure>
           <div class="site-intro">
-        <p class="blurb">Smøla is a low island of bare rock and lochans off the Trøndelag coast, holding one of the densest <a href="/birds/white-tailed-eagle/">White-tailed Eagle</a> populations anywhere. The wind farm here is also the best studied case in the world of what turbines do to eagles.</p>
+        <p class="blurb">Smøla lies off the Trøndelag coast, and its wind farm is the best studied case in the world of what turbines do to eagles.</p>
 
         <ul class="wherelist">
         <li class="where"><b>Look for:</b> <a href="/birds/red-throated-loon/">Red-throated Loon</a>, <a href="/birds/black-throated-loon/">Black-throated Loon</a>, <a href="/birds/common-snipe/">Common Snipe</a>, <a href="/birds/eurasian-curlew/">Eurasian Curlew</a>, <a href="/birds/willow-ptarmigan/">Willow Ptarmigan</a>, <a href="/birds/common-redshank/">Common Redshank</a>, <a href="/birds/arctic-tern/">Arctic Tern</a></li>
@@ -3985,7 +3989,7 @@
           <figcaption><a href="/birds/eurasian-dotterel/">Eurasian Dotterel</a><span class="photocredit">Frank Vassen from Brussels, Belgium · CC BY 2.0</span></figcaption>
         </figure>
           <div class="site-intro">
-        <p class="blurb">Dovrefjell is high plateau in the middle of the country, with Snøhetta above it. <a href="/birds/gyrfalcon/">Gyrfalcon</a>, Dotterel, Long-tailed Skua and Ptarmigan on the fell, and a musk ox herd that shares the same ground.</p>
+        <p class="blurb"><a href="/birds/gyrfalcon/">Gyrfalcon</a>, Dotterel, Long-tailed Skua and Ptarmigan work the fell under Snøhetta, and a musk ox herd shares the same ground.</p>
 
         <ul class="wherelist">
         <li class="where"><b>Look for:</b> <a href="/birds/eurasian-dotterel/">Eurasian Dotterel</a>, <a href="/birds/rock-ptarmigan/">Rock Ptarmigan</a>, <a href="/birds/snow-bunting/">Snow Bunting</a>, <a href="/birds/snowy-owl/">Snowy Owl</a>, <a href="/birds/ring-ouzel/">Ring Ouzel</a>, <a href="/birds/golden-eagle/">Golden Eagle</a>, <a href="/birds/european-golden-plover/">European Golden Plover</a></li>
