@@ -252,7 +252,6 @@
     .where.parks .pkind { color: var(--muted); font-weight: 400; font-size: 0.92em; }
     .where.alsorec { color: var(--muted); }
     .where.stops .stopname { color: var(--green-dark); font-weight: 800; }
-    .where.stops .stop + .stop::before { content: ' · '; color: var(--muted); font-weight: 400; }
     .where.stops .parklink { color: var(--green-dark); font-weight: 800; }
     .stoplink { font: inherit; font-weight: 800; color: var(--green-dark); background: none; border: 0; border-bottom: 1px dotted currentColor; padding: 0; cursor: pointer; }
     .stoplink:hover { color: var(--green); border-bottom-style: solid; }
@@ -288,6 +287,31 @@
        shape is what tells them apart, because hue already means region. */
     .mapbar .mkey-park { width: 0; height: 0; background: none; border-left: 6px solid transparent; border-right: 6px solid transparent; border-bottom: 11px solid var(--muted); }
     .mapbar .mkeynote { display: block; margin-top: 4px; }
+    /* The key is also the filter. Five layers on one map is four too many when a reader
+       is looking for one kind of thing, so a key entry is a button: it shows its own
+       layer and hides the rest, and All puts them back. Single-select, because the
+       question being asked is "where are the national parks", not "which combination". */
+    .maplayers { display: flex; flex-wrap: wrap; gap: 6px; }
+    .mapbar .maplayers .mkey { margin-right: 0; font: inherit; font-size: 13px; font-weight: 700;
+      color: var(--ink-soft); background: var(--paper, #fff); border: 1.5px solid #E2D9C2;
+      border-radius: 999px; padding: 5px 12px; cursor: pointer; }
+    .mapbar .maplayers .mkey:hover { border-color: var(--green); color: var(--ink); }
+    .mapbar .maplayers .mkey:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+    .mapbar .maplayers .mkey.is-on { background: var(--green-dark); border-color: var(--green-dark); color: #fff; }
+    .mapbar .maplayers .mkey.is-on .mkey-s { background: #fff; }
+    .mapbar .maplayers .mkey.is-on .mkey-park { background: none; border-bottom-color: #fff; }
+    .mapbar .maplayers .mkey.is-on .mkey-stop { background: transparent; border-color: #fff; }
+    .mapbar .maplayers .mkey[hidden] { display: none; }
+    .mapbar .mkey-all { border-radius: 3px; background: none; border: 1.5px solid currentColor; }
+    /* One attribute on the map container drives the whole stack. A marker wrapper carries
+       its layer, so nothing per-marker has to be tracked and a layer added later is
+       filtered by writing one class on it. */
+    .mlmap[data-layer]:not([data-layer="all"]) .mlmark { display: none; }
+    .mlmap[data-layer="region"] .mlmark.mlayer-region,
+    .mlmap[data-layer="park"] .mlmark.mlayer-park,
+    .mlmap[data-layer="stay"] .mlmark.mlayer-stay,
+    .mlmap[data-layer="go"] .mlmark.mlayer-go,
+    .mlmap[data-layer="stop"] .mlmark.mlayer-stop { display: block; }
     /* Zoomed out, the region label is the thing worth reading and the markers sit behind
        it. Zoomed in, the reader has picked a place and the markers come forward. */
     .mlmark-region { z-index: 4; }
@@ -450,6 +474,23 @@
     .blurb { color: var(--muted); font-size: 14.5px; flex: 1; }
     .where { color: var(--muted); font-size: 13px; }
     .where b { color: var(--ink); font-weight: 800; }
+    /* What a region holds is a list of facts, and it used to be a stack of paragraphs
+       that read as one grey block. Each fact is a bullet now, and the list runs across
+       the width rather than down it: the short facts sit beside each other and only the
+       two long ones, the bird list and the stops, take a full line. The bullet is the
+       region's own colour, which is the same key the map uses. */
+    .wherelist { list-style: none; margin: 12px 0 0; padding: 0; display: flex; flex-wrap: wrap; column-gap: 22px; row-gap: 7px; }
+    .wherelist > li { flex: 1 1 100%; position: relative; padding-left: 15px; min-width: 0; }
+    .wherelist > li::before { content: ""; position: absolute; left: 2px; top: 0.5em; width: 6px; height: 6px;
+      border-radius: 50%; background: var(--rc, var(--sage)); }
+    .wherelist > li.parks, .wherelist > li.centres, .wherelist > li.covers, .wherelist > li.wildlife {
+      flex: 1 1 clamp(240px, 42%, 100%); }
+    /* One bullet per stop. Six stops in one paragraph read as a single long sentence and
+       the note belonging to each name could only be found by counting commas. */
+    .stoplist { list-style: none; margin: 6px 0 0; padding: 0; display: flex; flex-wrap: wrap; column-gap: 20px; row-gap: 5px; }
+    .stoplist > li { position: relative; padding-left: 14px; flex: 1 1 clamp(260px, 30%, 100%); min-width: 0; }
+    .stoplist > li::before { content: ""; position: absolute; left: 2px; top: 0.5em; width: 6px; height: 6px;
+      border-radius: 50%; border: 1.5px solid var(--rc, var(--sage)); }
     .watch-link { font-weight: 800; font-size: 13.5px; color: var(--green); text-decoration: none; }
     .maplink { color: var(--muted); font-weight: 700; }
     .watch-link:hover { text-decoration: underline; }
@@ -547,7 +588,7 @@
     .itinmap-btn { position: absolute; right: 8px; top: 8px; width: 30px; height: 30px; display: grid; place-items: center; padding: 0; border: 1.5px solid var(--border); background: var(--surface); color: var(--green-dark); cursor: zoom-in; border-radius: 999px; box-shadow: 0 2px 6px rgba(46,42,37,.10); }
     .itinmap-btn:hover { border-color: var(--sage); color: var(--green); }
     .itinmap-btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
-    .itinmap { width: 100%; height: auto; max-height: 210px; padding: 10px; background: #EAF0F4; border-radius: 10px; margin-bottom: 4px; display: block; }
+    .itinmap { width: 100%; height: auto; max-height: 260px; padding: 10px; background: #EAF0F4; border-radius: 10px; margin-bottom: 4px; display: block; }
     /* A stop is a link now, so it needs the affordances of one. */
     .rstop-link { cursor: pointer; }
     .rstop-link .rstop { transition: stroke-width .12s ease; }
@@ -564,6 +605,21 @@
     dialog.mapzoom .zoomclose:hover { border-color: var(--sage); color: var(--ink); }
     .rline { fill: none; stroke: var(--live); stroke-width: 7; stroke-dasharray: 16 14; stroke-linecap: round; opacity: .75; }
     .rstop { fill: var(--green); stroke: #fff; stroke-width: 5; }
+    /* Drawn where a numbered disc had to move off its stop to stay readable: the thin
+       line and the small dot say which point on the map the number belongs to. */
+    .rlead { stroke: #fff; stroke-width: 6; stroke-linecap: round; opacity: .95; }
+    .rtrue { fill: #fff; stroke: var(--live); stroke-width: 4; }
+    /* The airport a route starts at. A plane rather than a number, because it is where
+       the trip begins and not a place to go birding, and numbering it would turn every
+       route's stop 1 into a terminal. */
+    .rairdot { fill: var(--ink); stroke: #fff; stroke-width: 5; }
+    .rairicon { color: #fff; }
+    .itinkey-air { font-weight: 700; color: var(--ink); }
+    .itinkey-p { display: inline-grid; place-items: center; width: 19px; height: 19px; border-radius: 50%;
+      background: var(--ink); color: #fff; flex: 0 0 auto; }
+    .itinkey-p svg { width: 12px; height: 12px; }
+    .itinkey-role { margin-left: 5px; font-size: 10.5px; font-weight: 800; letter-spacing: .04em;
+      text-transform: uppercase; color: var(--muted); }
     .rnum { font-family: var(--body); font-weight: 800; font-size: 48px; fill: #fff; }
     .bdg.loop { background: var(--surface-alt); color: #6B5326; border: 1px solid var(--border); }
     /* The app card. This is an advert for our own product and is styled as one:
@@ -865,10 +921,10 @@
       <a class="jump" href="#when">When to Go</a>
       <a class="jump" href="#where">Where to Bird</a>
       <a class="jump" href="#trips">Itineraries</a>
-      <a class="jump" href="#community">Community</a>
-
       <a class="jump" href="#prep">Prep</a>
       <a class="jump" href="#faq">FAQ</a>
+      <a class="jump" href="#community">Community</a>
+
     </nav>
 
     <section id="species">
@@ -3817,28 +3873,28 @@
           </div>
           <div class="tg-row">
             <div class="tg-ill"><img src="/birds/assets/sprites/4da14b5d9847.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
-            <div class="tg-n"><a href="/birds/canary-islands-stonechat/">Fuerteventura Stonechat</a></div>
+            <div class="tg-n"><a href="/birds/canary-islands-stonechat/">Canary Islands Stonechat</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:100.00%"></span></div>
             <div class="tg-w">Resident</div>
             <div class="tg-p">Betancuria's barrancos</div>
           </div>
           <div class="tg-row">
             <div class="tg-ill"><img src="/birds/assets/sprites/df453e92599a.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
-            <div class="tg-n"><a href="/birds/african-houbara/">Houbara Bustard</a></div>
+            <div class="tg-n"><a href="/birds/african-houbara/">African Houbara</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:100.00%;width:0.00%"></span><span class="tg-b" style="left:0.00%;width:33.33%"></span></div>
             <div class="tg-w">Resident, display in winter and early spring</div>
             <div class="tg-p">Fuerteventura's plains and El Jable</div>
           </div>
           <div class="tg-row">
             <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
-            <div class="tg-n"><a href="/birds/cream-colored-courser/">Cream-coloured Courser</a></div>
+            <div class="tg-n"><a href="/birds/cream-colored-courser/">Cream-colored Courser</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:100.00%"></span></div>
             <div class="tg-w">Resident</div>
             <div class="tg-p">The Fuerteventura plains and El Jable</div>
           </div>
           <div class="tg-row">
             <div class="tg-ill"><img src="/birds/assets/sprites/04468f6de1ec.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
-            <div class="tg-n"><a href="/birds/white-faced-storm-petrel/">White-faced Storm-petrel</a></div>
+            <div class="tg-n"><a href="/birds/white-faced-storm-petrel/">White-faced Storm Petrel</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:50.00%;width:33.33%"></span></div>
             <div class="tg-w">Summer pelagics in settled weather</div>
             <div class="tg-p">Banco de la Concepcion seamount</div>
@@ -3851,9 +3907,19 @@
 
       <div class="mapwrap">
         <div class="mlmap" id="regionmap" aria-label="Map of birding regions in the Canary Islands, with every place to stay and every tour on the page; select any marker to open its entry"></div>
-        <p class="mapbar"><span class="mkey"><span class="mkey-s mkey-region"></span>Region</span><span class="mkey"><span class="mkey-s mkey-park"></span>National park</span><span class="mkey"><span class="mkey-s mkey-stay"></span>Place to stay</span><span class="mkey"><span class="mkey-s mkey-go"></span>Tour or operator</span><span class="mkey"><span class="mkey-s mkey-stop"></span>Stop</span><span class="mkeynote">Colours match each region. Select a marker to open its entry below.</span></p>
+        <div class="mapbar">
+          <div class="maplayers" id="maplayers" role="group" aria-label="Show one kind of marker at a time">
+            <button type="button" class="mkey is-on" data-layer="all" aria-pressed="true"><span class="mkey-s mkey-all"></span>All</button>
+            <button type="button" class="mkey" data-layer="region" aria-pressed="false"><span class="mkey-s mkey-region"></span>Region</button>
+            <button type="button" class="mkey" data-layer="park" aria-pressed="false"><span class="mkey-s mkey-park"></span>National park</button>
+            <button type="button" class="mkey" data-layer="stay" aria-pressed="false"><span class="mkey-s mkey-stay"></span>Place to stay</button>
+            <button type="button" class="mkey" data-layer="go" aria-pressed="false"><span class="mkey-s mkey-go"></span>Tour or operator</button>
+            <button type="button" class="mkey" data-layer="stop" aria-pressed="false"><span class="mkey-s mkey-stop"></span>Stop</button>
+          </div>
+          <p class="mkeynote" id="maplayers-note" role="status" aria-live="polite">Colours match each region. Select a marker to open its entry below.</p>
+        </div>
       </div>
-      <p class="mapnote">National parks, regional parks and national nature reserves named on this page.</p>
+      <p class="mapnote">National parks, regional parks and national nature reserves named in the regions above.</p>
       <div class="subsec" id="trips">
         <h3 class="subhead">Itineraries</h3>
         <div class="itingrid">
@@ -3861,11 +3927,12 @@
         <div class="itinmap-wrap">
           <svg class="itinmap" viewBox="0 0 1000 481" preserveAspectRatio="xMidYMid meet" role="group" aria-label="Route sketch. Each numbered stop is named in the key below.">
           <path class="cmland" d="M84.5 417.4L85.1 411.5L90.9 408.8L99.3 393.1L92.8 383.4L78.5 388.9L78.9 394.2L69.9 402.2L61.1 404.1L51.5 400.2L47.1 404L46.8 413.4L67.2 417.4L78.5 429.1L82.6 427.1L84.5 417.4ZM232.1 307.1L216.1 302.4L208 305.5L204.5 311.9L202.1 328.6L217.4 344.7L236.8 342.3L250.3 329.2L246.4 316.5L232.1 307.1ZM575.3 383.4L580 380.2L579.9 366.1L584.9 365.2L579.9 357.3L582.1 348L573.1 336.8L574.8 328.1L571.4 320L573.5 318L574.6 322.1L575.6 315.5L576 323.6L575.6 311.2L569.3 313.1L570.8 318.3L563.9 322.5L552.5 316.2L538.5 318.5L531.3 312.5L525.7 315.5L517.5 313.8L520 316.9L517.1 331.9L502.6 345.5L495.6 347.1L493.4 356.4L493.6 369.8L502.4 386.4L524.1 405L527.3 403.4L538.7 408.2L544.2 407.5L545.5 402.5L554.2 398L570.5 394L575.3 383.4ZM903.8 149.3L914.7 149L923.6 142.6L934 140.7L948.8 127.5L952.4 111.3L949.2 103.3L956 97.5L957.9 88.1L948.1 78.6L942.9 83.5L933.9 104.8L922.7 101.5L916.7 105.9L912 104.2L913.1 106.4L902.5 113.8L893 114.3L881.7 124L878.1 133.5L879 146.5L868.9 156.2L869.8 162L884.5 162.3L887.1 166.7L896.4 152.1L903.8 149.3ZM116 236.7L124.1 220.5L121.4 201.9L129.9 187.5L119.7 166.2L104.3 167.9L92.3 162.5L75.8 178.4L75.5 184.3L91.2 219.6L99.2 230.1L104.4 249.5L109 250.1L116 236.7ZM397.4 225.1L397.3 228.1L382.5 234.8L373.8 249.5L363.1 258.3L354.9 258.4L345.5 263.9L331.9 262.2L317 269L301.4 264.1L284.1 272.3L283.5 275.3L289.1 277.4L299.8 292.3L300.5 304.7L319.5 330.9L319.8 338L324.7 339.8L328.1 350.2L337.8 349.3L347 343.7L356.4 344.7L364.8 333.3L368 333.2L367.3 330.4L379.8 317.3L379.9 305.4L392 283.5L392.2 267.1L414.9 247.7L414 250.4L415.9 243.9L437.4 233.7L438.6 229L431.1 221.3L418.7 226.4L397.4 225.1ZM776 339.3L783.5 339.9L804.1 314L843.7 304.7L862.1 295L875 262.5L871.6 244.9L879.7 228.6L878.7 198.3L872 187L860.3 185.7L842.8 193.7L844.4 201.9L838.7 215.5L839.7 220.3L827.3 245.3L817.9 254.2L815 269.4L806.9 278.3L803.3 303L774.3 324.6L759.6 328.2L751.7 325.8L748.1 335.2L754.3 333.1L776 339.3Z"/>
-          <path class="rline" d="M412 233.4L339 291.3L303.4 276.5"/>
-          <a class="rstop-link" href="#site-anaga-s-laurel-forest"><title>Anaga Rural Park: go to Anaga's laurel forest</title><circle cx="412" cy="233.4" r="36" class="rstop" style="fill:#C0392B"/><text x="412" y="250.4" text-anchor="middle" class="rnum">1</text></a><a class="rstop-link" href="#site-teide-and-las-ca-adas"><title>Teide National Park: go to Teide and Las Cañadas</title><circle cx="339" cy="291.3" r="36" class="rstop" style="fill:#0F8B8D"/><text x="339" y="308.3" text-anchor="middle" class="rnum">2</text></a><a class="rstop-link" href="#site-teno-and-masca"><title>Monte del Agua: go to Teno and Masca</title><circle cx="303.4" cy="276.5" r="36" class="rstop" style="fill:#2E86AB"/><text x="303.4" y="293.5" text-anchor="middle" class="rnum">3</text></a>
+          <path class="rline" d="M395.8 244.5L412 233.4L339 291.3L303.4 276.5"/>
+          <line class="rlead" x1="395.8" y1="244.5" x2="375.6" y2="252.8"/><circle class="rtrue" cx="395.8" cy="244.5" r="8"/><line class="rlead" x1="412.0" y1="233.4" x2="449.4" y2="208.6"/><circle class="rtrue" cx="412.0" cy="233.4" r="8"/><line class="rlead" x1="339.0" y1="291.3" x2="335.5" y2="328.9"/><circle class="rtrue" cx="339.0" cy="291.3" r="8"/><line class="rlead" x1="303.4" y1="276.5" x2="289.7" y2="255.4"/><circle class="rtrue" cx="303.4" cy="276.5" r="8"/>
+          <g class="rair"><title>Tenerife North (TFN), the airport this route starts at</title><circle cx="375.6" cy="252.8" r="38" class="rairdot"/><g transform="translate(354 231.20000000000002) scale(1.8)" class="rairicon" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></g></g><a class="rstop-link" href="#site-anaga-s-laurel-forest"><title>Anaga Rural Park: go to Anaga's laurel forest</title><circle cx="449.4" cy="208.6" r="36" class="rstop" style="fill:#C0392B"/><text x="449.4" y="225.6" text-anchor="middle" class="rnum">1</text></a><a class="rstop-link" href="#site-teide-and-las-ca-adas"><title>Teide National Park: go to Teide and Las Cañadas</title><circle cx="335.5" cy="328.9" r="36" class="rstop" style="fill:#0F8B8D"/><text x="335.5" y="345.9" text-anchor="middle" class="rnum">2</text></a><a class="rstop-link" href="#site-teno-and-masca"><title>Monte del Agua: go to Teno and Masca</title><circle cx="289.7" cy="255.4" r="36" class="rstop" style="fill:#2E86AB"/><text x="289.7" y="272.4" text-anchor="middle" class="rnum">3</text></a>
         </svg>
           <button class="itinmap-btn" type="button" data-zoom aria-label="Open this route map larger" title="Open larger"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/><line x1="11" x2="11" y1="8" y2="14"/><line x1="8" x2="14" y1="11" y2="11"/></svg></button>
-          <ol class="itinkey"><li><span class="itinkey-n" style="--kc:#C0392B">1</span><a href="#site-anaga-s-laurel-forest">Anaga Rural Park</a></li><li><span class="itinkey-n" style="--kc:#0F8B8D">2</span><a href="#site-teide-and-las-ca-adas">Teide National Park</a></li><li><span class="itinkey-n" style="--kc:#2E86AB">3</span><a href="#site-teno-and-masca">Monte del Agua</a></li></ol>
+          <ol class="itinkey"><li class="itinkey-air"><span class="itinkey-p" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></span>Tenerife North (TFN)<span class="itinkey-role">in</span></li><li><span class="itinkey-n" style="--kc:#C0392B">1</span><a href="#site-anaga-s-laurel-forest">Anaga Rural Park</a></li><li><span class="itinkey-n" style="--kc:#0F8B8D">2</span><a href="#site-teide-and-las-ca-adas">Teide National Park</a></li><li><span class="itinkey-n" style="--kc:#2E86AB">3</span><a href="#site-teno-and-masca">Monte del Agua</a></li></ol>
         </div>
         <p class="itin-days">4 days</p>
         <h3>A Tenerife Long Weekend</h3>
@@ -3877,11 +3944,12 @@
         <div class="itinmap-wrap">
           <svg class="itinmap" viewBox="0 0 1000 481" preserveAspectRatio="xMidYMid meet" role="group" aria-label="Route sketch. Each numbered stop is named in the key below.">
           <path class="cmland" d="M84.5 417.4L85.1 411.5L90.9 408.8L99.3 393.1L92.8 383.4L78.5 388.9L78.9 394.2L69.9 402.2L61.1 404.1L51.5 400.2L47.1 404L46.8 413.4L67.2 417.4L78.5 429.1L82.6 427.1L84.5 417.4ZM232.1 307.1L216.1 302.4L208 305.5L204.5 311.9L202.1 328.6L217.4 344.7L236.8 342.3L250.3 329.2L246.4 316.5L232.1 307.1ZM575.3 383.4L580 380.2L579.9 366.1L584.9 365.2L579.9 357.3L582.1 348L573.1 336.8L574.8 328.1L571.4 320L573.5 318L574.6 322.1L575.6 315.5L576 323.6L575.6 311.2L569.3 313.1L570.8 318.3L563.9 322.5L552.5 316.2L538.5 318.5L531.3 312.5L525.7 315.5L517.5 313.8L520 316.9L517.1 331.9L502.6 345.5L495.6 347.1L493.4 356.4L493.6 369.8L502.4 386.4L524.1 405L527.3 403.4L538.7 408.2L544.2 407.5L545.5 402.5L554.2 398L570.5 394L575.3 383.4ZM903.8 149.3L914.7 149L923.6 142.6L934 140.7L948.8 127.5L952.4 111.3L949.2 103.3L956 97.5L957.9 88.1L948.1 78.6L942.9 83.5L933.9 104.8L922.7 101.5L916.7 105.9L912 104.2L913.1 106.4L902.5 113.8L893 114.3L881.7 124L878.1 133.5L879 146.5L868.9 156.2L869.8 162L884.5 162.3L887.1 166.7L896.4 152.1L903.8 149.3ZM116 236.7L124.1 220.5L121.4 201.9L129.9 187.5L119.7 166.2L104.3 167.9L92.3 162.5L75.8 178.4L75.5 184.3L91.2 219.6L99.2 230.1L104.4 249.5L109 250.1L116 236.7ZM397.4 225.1L397.3 228.1L382.5 234.8L373.8 249.5L363.1 258.3L354.9 258.4L345.5 263.9L331.9 262.2L317 269L301.4 264.1L284.1 272.3L283.5 275.3L289.1 277.4L299.8 292.3L300.5 304.7L319.5 330.9L319.8 338L324.7 339.8L328.1 350.2L337.8 349.3L347 343.7L356.4 344.7L364.8 333.3L368 333.2L367.3 330.4L379.8 317.3L379.9 305.4L392 283.5L392.2 267.1L414.9 247.7L414 250.4L415.9 243.9L437.4 233.7L438.6 229L431.1 221.3L418.7 226.4L397.4 225.1ZM776 339.3L783.5 339.9L804.1 314L843.7 304.7L862.1 295L875 262.5L871.6 244.9L879.7 228.6L878.7 198.3L872 187L860.3 185.7L842.8 193.7L844.4 201.9L838.7 215.5L839.7 220.3L827.3 245.3L817.9 254.2L815 269.4L806.9 278.3L803.3 303L774.3 324.6L759.6 328.2L751.7 325.8L748.1 335.2L754.3 333.1L776 339.3Z"/>
-          <path class="rline" d="M850.3 221.6L840.2 238.6L835.1 257.1"/>
-          <a class="rstop-link" href="#site-fuerteventura-s-central-plains"><title>Tindaya plain: go to Fuerteventura's central plains</title><circle cx="850.3" cy="221.6" r="36" class="rstop" style="fill:#D68910"/><text x="850.3" y="238.6" text-anchor="middle" class="rnum">1</text></a><a class="rstop-link" href="#site-fuerteventura-s-central-plains"><title>Los Molinos reservoir: go to Fuerteventura's central plains</title><circle cx="840.2" cy="238.6" r="36" class="rstop" style="fill:#D68910"/><text x="840.2" y="255.6" text-anchor="middle" class="rnum">2</text></a><a class="rstop-link" href="#site-betancuria-and-the-southern-barrancos"><title>Betancuria: go to Betancuria and the southern barrancos</title><circle cx="835.1" cy="257.1" r="36" class="rstop" style="fill:#6A994E"/><text x="835.1" y="274.1" text-anchor="middle" class="rnum">3</text></a>
+          <path class="rline" d="M872.3 251.1L850.3 221.6L840.2 238.6L835.1 257.1"/>
+          <line class="rlead" x1="872.3" y1="251.1" x2="924.8" y2="296.1"/><circle class="rtrue" cx="872.3" cy="251.1" r="8"/><line class="rlead" x1="850.3" y1="221.6" x2="841.0" y2="158.8"/><circle class="rtrue" cx="850.3" cy="221.6" r="8"/><line class="rlead" x1="840.2" y1="238.6" x2="775.2" y2="270.1"/><circle class="rtrue" cx="840.2" cy="238.6" r="8"/><line class="rlead" x1="835.1" y1="257.1" x2="856.9" y2="243.3"/><circle class="rtrue" cx="835.1" cy="257.1" r="8"/>
+          <g class="rair"><title>Fuerteventura (FUE), the airport this route starts at</title><circle cx="924.8" cy="296.1" r="38" class="rairdot"/><g transform="translate(903.1999999999999 274.5) scale(1.8)" class="rairicon" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></g></g><a class="rstop-link" href="#site-fuerteventura-s-central-plains"><title>Tindaya plain: go to Fuerteventura's central plains</title><circle cx="841" cy="158.8" r="36" class="rstop" style="fill:#D68910"/><text x="841" y="175.8" text-anchor="middle" class="rnum">1</text></a><a class="rstop-link" href="#site-fuerteventura-s-central-plains"><title>Los Molinos reservoir: go to Fuerteventura's central plains</title><circle cx="775.2" cy="270.1" r="36" class="rstop" style="fill:#D68910"/><text x="775.2" y="287.1" text-anchor="middle" class="rnum">2</text></a><a class="rstop-link" href="#site-betancuria-and-the-southern-barrancos"><title>Betancuria: go to Betancuria and the southern barrancos</title><circle cx="856.9" cy="243.3" r="36" class="rstop" style="fill:#6A994E"/><text x="856.9" y="260.3" text-anchor="middle" class="rnum">3</text></a>
         </svg>
           <button class="itinmap-btn" type="button" data-zoom aria-label="Open this route map larger" title="Open larger"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/><line x1="11" x2="11" y1="8" y2="14"/><line x1="8" x2="14" y1="11" y2="11"/></svg></button>
-          <ol class="itinkey"><li><span class="itinkey-n" style="--kc:#D68910">1</span><a href="#site-fuerteventura-s-central-plains">Tindaya plain</a></li><li><span class="itinkey-n" style="--kc:#D68910">2</span><a href="#site-fuerteventura-s-central-plains">Los Molinos reservoir</a></li><li><span class="itinkey-n" style="--kc:#6A994E">3</span><a href="#site-betancuria-and-the-southern-barrancos">Betancuria</a></li></ol>
+          <ol class="itinkey"><li class="itinkey-air"><span class="itinkey-p" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></span>Fuerteventura (FUE)<span class="itinkey-role">in</span></li><li><span class="itinkey-n" style="--kc:#D68910">1</span><a href="#site-fuerteventura-s-central-plains">Tindaya plain</a></li><li><span class="itinkey-n" style="--kc:#D68910">2</span><a href="#site-fuerteventura-s-central-plains">Los Molinos reservoir</a></li><li><span class="itinkey-n" style="--kc:#6A994E">3</span><a href="#site-betancuria-and-the-southern-barrancos">Betancuria</a></li></ol>
         </div>
         <p class="itin-days">4 days</p>
         <h3>Fuerteventura in Four</h3>
@@ -3893,11 +3961,12 @@
         <div class="itinmap-wrap">
           <svg class="itinmap" viewBox="0 0 1000 481" preserveAspectRatio="xMidYMid meet" role="group" aria-label="Route sketch. Each numbered stop is named in the key below.">
           <path class="cmland" d="M84.5 417.4L85.1 411.5L90.9 408.8L99.3 393.1L92.8 383.4L78.5 388.9L78.9 394.2L69.9 402.2L61.1 404.1L51.5 400.2L47.1 404L46.8 413.4L67.2 417.4L78.5 429.1L82.6 427.1L84.5 417.4ZM232.1 307.1L216.1 302.4L208 305.5L204.5 311.9L202.1 328.6L217.4 344.7L236.8 342.3L250.3 329.2L246.4 316.5L232.1 307.1ZM575.3 383.4L580 380.2L579.9 366.1L584.9 365.2L579.9 357.3L582.1 348L573.1 336.8L574.8 328.1L571.4 320L573.5 318L574.6 322.1L575.6 315.5L576 323.6L575.6 311.2L569.3 313.1L570.8 318.3L563.9 322.5L552.5 316.2L538.5 318.5L531.3 312.5L525.7 315.5L517.5 313.8L520 316.9L517.1 331.9L502.6 345.5L495.6 347.1L493.4 356.4L493.6 369.8L502.4 386.4L524.1 405L527.3 403.4L538.7 408.2L544.2 407.5L545.5 402.5L554.2 398L570.5 394L575.3 383.4ZM903.8 149.3L914.7 149L923.6 142.6L934 140.7L948.8 127.5L952.4 111.3L949.2 103.3L956 97.5L957.9 88.1L948.1 78.6L942.9 83.5L933.9 104.8L922.7 101.5L916.7 105.9L912 104.2L913.1 106.4L902.5 113.8L893 114.3L881.7 124L878.1 133.5L879 146.5L868.9 156.2L869.8 162L884.5 162.3L887.1 166.7L896.4 152.1L903.8 149.3ZM116 236.7L124.1 220.5L121.4 201.9L129.9 187.5L119.7 166.2L104.3 167.9L92.3 162.5L75.8 178.4L75.5 184.3L91.2 219.6L99.2 230.1L104.4 249.5L109 250.1L116 236.7ZM397.4 225.1L397.3 228.1L382.5 234.8L373.8 249.5L363.1 258.3L354.9 258.4L345.5 263.9L331.9 262.2L317 269L301.4 264.1L284.1 272.3L283.5 275.3L289.1 277.4L299.8 292.3L300.5 304.7L319.5 330.9L319.8 338L324.7 339.8L328.1 350.2L337.8 349.3L347 343.7L356.4 344.7L364.8 333.3L368 333.2L367.3 330.4L379.8 317.3L379.9 305.4L392 283.5L392.2 267.1L414.9 247.7L414 250.4L415.9 243.9L437.4 233.7L438.6 229L431.1 221.3L418.7 226.4L397.4 225.1ZM776 339.3L783.5 339.9L804.1 314L843.7 304.7L862.1 295L875 262.5L871.6 244.9L879.7 228.6L878.7 198.3L872 187L860.3 185.7L842.8 193.7L844.4 201.9L838.7 215.5L839.7 220.3L827.3 245.3L817.9 254.2L815 269.4L806.9 278.3L803.3 303L774.3 324.6L759.6 328.2L751.7 325.8L748.1 335.2L754.3 333.1L776 339.3Z"/>
-          <path class="rline" d="M339 291.3L520.7 362.3"/>
-          <a class="rstop-link" href="#site-teide-and-las-ca-adas"><title>Teide National Park: go to Teide and Las Cañadas</title><circle cx="339" cy="291.3" r="36" class="rstop" style="fill:#0F8B8D"/><text x="339" y="308.3" text-anchor="middle" class="rnum">1</text></a><a class="rstop-link" href="#site-inagua-and-the-gran-canaria-pines"><title>Inagua Natural Reserve: go to Inagua and the Gran Canaria pines</title><circle cx="520.7" cy="362.3" r="36" class="rstop" style="fill:#7D5BA6"/><text x="520.7" y="379.3" text-anchor="middle" class="rnum">2</text></a>
+          <path class="rline" d="M395.8 244.5L339 291.3L520.7 362.3"/>
+          <line class="rlead" x1="395.8" y1="244.5" x2="400.6" y2="240.6"/><circle class="rtrue" cx="395.8" cy="244.5" r="8"/><line class="rlead" x1="339.0" y1="291.3" x2="334.2" y2="295.2"/><circle class="rtrue" cx="339.0" cy="291.3" r="8"/>
+          <g class="rair"><title>Tenerife North (TFN), the airport this route starts at</title><circle cx="400.6" cy="240.6" r="38" class="rairdot"/><g transform="translate(379 219) scale(1.8)" class="rairicon" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></g></g><a class="rstop-link" href="#site-teide-and-las-ca-adas"><title>Teide National Park: go to Teide and Las Cañadas</title><circle cx="334.2" cy="295.2" r="36" class="rstop" style="fill:#0F8B8D"/><text x="334.2" y="312.2" text-anchor="middle" class="rnum">1</text></a><a class="rstop-link" href="#site-inagua-and-the-gran-canaria-pines"><title>Inagua Natural Reserve: go to Inagua and the Gran Canaria pines</title><circle cx="520.7" cy="362.3" r="36" class="rstop" style="fill:#7D5BA6"/><text x="520.7" y="379.3" text-anchor="middle" class="rnum">2</text></a>
         </svg>
           <button class="itinmap-btn" type="button" data-zoom aria-label="Open this route map larger" title="Open larger"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/><line x1="11" x2="11" y1="8" y2="14"/><line x1="8" x2="14" y1="11" y2="11"/></svg></button>
-          <ol class="itinkey"><li><span class="itinkey-n" style="--kc:#0F8B8D">1</span><a href="#site-teide-and-las-ca-adas">Teide National Park</a></li><li><span class="itinkey-n" style="--kc:#7D5BA6">2</span><a href="#site-inagua-and-the-gran-canaria-pines">Inagua Natural Reserve</a></li></ol>
+          <ol class="itinkey"><li class="itinkey-air"><span class="itinkey-p" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></span>Tenerife North (TFN)<span class="itinkey-role">in</span></li><li><span class="itinkey-n" style="--kc:#0F8B8D">1</span><a href="#site-teide-and-las-ca-adas">Teide National Park</a></li><li><span class="itinkey-n" style="--kc:#7D5BA6">2</span><a href="#site-inagua-and-the-gran-canaria-pines">Inagua Natural Reserve</a></li></ol>
         </div>
         <p class="itin-days">7 days</p>
         <h3>The Two Blue Chaffinches</h3>
@@ -3909,11 +3978,12 @@
         <div class="itinmap-wrap">
           <svg class="itinmap" viewBox="0 0 1000 481" preserveAspectRatio="xMidYMid meet" role="group" aria-label="Route sketch. Each numbered stop is named in the key below.">
           <path class="cmland" d="M84.5 417.4L85.1 411.5L90.9 408.8L99.3 393.1L92.8 383.4L78.5 388.9L78.9 394.2L69.9 402.2L61.1 404.1L51.5 400.2L47.1 404L46.8 413.4L67.2 417.4L78.5 429.1L82.6 427.1L84.5 417.4ZM232.1 307.1L216.1 302.4L208 305.5L204.5 311.9L202.1 328.6L217.4 344.7L236.8 342.3L250.3 329.2L246.4 316.5L232.1 307.1ZM575.3 383.4L580 380.2L579.9 366.1L584.9 365.2L579.9 357.3L582.1 348L573.1 336.8L574.8 328.1L571.4 320L573.5 318L574.6 322.1L575.6 315.5L576 323.6L575.6 311.2L569.3 313.1L570.8 318.3L563.9 322.5L552.5 316.2L538.5 318.5L531.3 312.5L525.7 315.5L517.5 313.8L520 316.9L517.1 331.9L502.6 345.5L495.6 347.1L493.4 356.4L493.6 369.8L502.4 386.4L524.1 405L527.3 403.4L538.7 408.2L544.2 407.5L545.5 402.5L554.2 398L570.5 394L575.3 383.4ZM903.8 149.3L914.7 149L923.6 142.6L934 140.7L948.8 127.5L952.4 111.3L949.2 103.3L956 97.5L957.9 88.1L948.1 78.6L942.9 83.5L933.9 104.8L922.7 101.5L916.7 105.9L912 104.2L913.1 106.4L902.5 113.8L893 114.3L881.7 124L878.1 133.5L879 146.5L868.9 156.2L869.8 162L884.5 162.3L887.1 166.7L896.4 152.1L903.8 149.3ZM116 236.7L124.1 220.5L121.4 201.9L129.9 187.5L119.7 166.2L104.3 167.9L92.3 162.5L75.8 178.4L75.5 184.3L91.2 219.6L99.2 230.1L104.4 249.5L109 250.1L116 236.7ZM397.4 225.1L397.3 228.1L382.5 234.8L373.8 249.5L363.1 258.3L354.9 258.4L345.5 263.9L331.9 262.2L317 269L301.4 264.1L284.1 272.3L283.5 275.3L289.1 277.4L299.8 292.3L300.5 304.7L319.5 330.9L319.8 338L324.7 339.8L328.1 350.2L337.8 349.3L347 343.7L356.4 344.7L364.8 333.3L368 333.2L367.3 330.4L379.8 317.3L379.9 305.4L392 283.5L392.2 267.1L414.9 247.7L414 250.4L415.9 243.9L437.4 233.7L438.6 229L431.1 221.3L418.7 226.4L397.4 225.1ZM776 339.3L783.5 339.9L804.1 314L843.7 304.7L862.1 295L875 262.5L871.6 244.9L879.7 228.6L878.7 198.3L872 187L860.3 185.7L842.8 193.7L844.4 201.9L838.7 215.5L839.7 220.3L827.3 245.3L817.9 254.2L815 269.4L806.9 278.3L803.3 303L774.3 324.6L759.6 328.2L751.7 325.8L748.1 335.2L754.3 333.1L776 339.3Z"/>
-          <path class="rline" d="M412 233.4L339 291.3L221.5 321.9L113.8 177.1"/>
-          <a class="rstop-link" href="#site-anaga-s-laurel-forest"><title>Anaga Rural Park: go to Anaga's laurel forest</title><circle cx="412" cy="233.4" r="36" class="rstop" style="fill:#C0392B"/><text x="412" y="250.4" text-anchor="middle" class="rnum">1</text></a><a class="rstop-link" href="#site-teide-and-las-ca-adas"><title>Teide National Park: go to Teide and Las Cañadas</title><circle cx="339" cy="291.3" r="36" class="rstop" style="fill:#0F8B8D"/><text x="339" y="308.3" text-anchor="middle" class="rnum">2</text></a><a class="rstop-link" href="#site-garajonay-and-la-gomera-s-laurisilva"><title>Garajonay National Park: go to Garajonay and La Gomera's laurisilva</title><circle cx="221.5" cy="321.9" r="36" class="rstop" style="fill:#4E7AC7"/><text x="221.5" y="338.9" text-anchor="middle" class="rnum">3</text></a><a class="rstop-link" href="#site-la-palma-s-taburiente-and-los-tilos"><title>Los Tilos laurisilva: go to La Palma's Taburiente and Los Tilos</title><circle cx="113.8" cy="177.1" r="36" class="rstop" style="fill:#386641"/><text x="113.8" y="194.1" text-anchor="middle" class="rnum">4</text></a>
+          <path class="rline" d="M395.8 244.5L412 233.4L339 291.3L221.5 321.9L113.8 177.1"/>
+          <line class="rlead" x1="395.8" y1="244.5" x2="377.3" y2="250.0"/><circle class="rtrue" cx="395.8" cy="244.5" r="8"/><line class="rlead" x1="412.0" y1="233.4" x2="451.9" y2="207.2"/><circle class="rtrue" cx="412.0" cy="233.4" r="8"/><line class="rlead" x1="339.0" y1="291.3" x2="317.6" y2="312.0"/><circle class="rtrue" cx="339.0" cy="291.3" r="8"/>
+          <g class="rair"><title>Tenerife North (TFN), the airport this route starts at</title><circle cx="377.3" cy="250" r="38" class="rairdot"/><g transform="translate(355.7 228.4) scale(1.8)" class="rairicon" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></g></g><a class="rstop-link" href="#site-anaga-s-laurel-forest"><title>Anaga Rural Park: go to Anaga's laurel forest</title><circle cx="451.9" cy="207.2" r="36" class="rstop" style="fill:#C0392B"/><text x="451.9" y="224.2" text-anchor="middle" class="rnum">1</text></a><a class="rstop-link" href="#site-teide-and-las-ca-adas"><title>Teide National Park: go to Teide and Las Cañadas</title><circle cx="317.6" cy="312" r="36" class="rstop" style="fill:#0F8B8D"/><text x="317.6" y="329" text-anchor="middle" class="rnum">2</text></a><a class="rstop-link" href="#site-garajonay-and-la-gomera-s-laurisilva"><title>Garajonay National Park: go to Garajonay and La Gomera's laurisilva</title><circle cx="221.5" cy="321.9" r="36" class="rstop" style="fill:#4E7AC7"/><text x="221.5" y="338.9" text-anchor="middle" class="rnum">3</text></a><a class="rstop-link" href="#site-la-palma-s-taburiente-and-los-tilos"><title>Los Tilos laurisilva: go to La Palma's Taburiente and Los Tilos</title><circle cx="113.8" cy="177.1" r="36" class="rstop" style="fill:#386641"/><text x="113.8" y="194.1" text-anchor="middle" class="rnum">4</text></a>
         </svg>
           <button class="itinmap-btn" type="button" data-zoom aria-label="Open this route map larger" title="Open larger"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/><line x1="11" x2="11" y1="8" y2="14"/><line x1="8" x2="14" y1="11" y2="11"/></svg></button>
-          <ol class="itinkey"><li><span class="itinkey-n" style="--kc:#C0392B">1</span><a href="#site-anaga-s-laurel-forest">Anaga Rural Park</a></li><li><span class="itinkey-n" style="--kc:#0F8B8D">2</span><a href="#site-teide-and-las-ca-adas">Teide National Park</a></li><li><span class="itinkey-n" style="--kc:#4E7AC7">3</span><a href="#site-garajonay-and-la-gomera-s-laurisilva">Garajonay National Park</a></li><li><span class="itinkey-n" style="--kc:#386641">4</span><a href="#site-la-palma-s-taburiente-and-los-tilos">Los Tilos laurisilva</a></li></ol>
+          <ol class="itinkey"><li class="itinkey-air"><span class="itinkey-p" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></span>Tenerife North (TFN)<span class="itinkey-role">in</span></li><li><span class="itinkey-n" style="--kc:#C0392B">1</span><a href="#site-anaga-s-laurel-forest">Anaga Rural Park</a></li><li><span class="itinkey-n" style="--kc:#0F8B8D">2</span><a href="#site-teide-and-las-ca-adas">Teide National Park</a></li><li><span class="itinkey-n" style="--kc:#4E7AC7">3</span><a href="#site-garajonay-and-la-gomera-s-laurisilva">Garajonay National Park</a></li><li><span class="itinkey-n" style="--kc:#386641">4</span><a href="#site-la-palma-s-taburiente-and-los-tilos">Los Tilos laurisilva</a></li></ol>
         </div>
         <p class="itin-days">10 days</p>
         <h3>The Western Isles</h3>
@@ -3925,11 +3995,12 @@
         <div class="itinmap-wrap">
           <svg class="itinmap" viewBox="0 0 1000 481" preserveAspectRatio="xMidYMid meet" role="group" aria-label="Route sketch. Each numbered stop is named in the key below.">
           <path class="cmland" d="M84.5 417.4L85.1 411.5L90.9 408.8L99.3 393.1L92.8 383.4L78.5 388.9L78.9 394.2L69.9 402.2L61.1 404.1L51.5 400.2L47.1 404L46.8 413.4L67.2 417.4L78.5 429.1L82.6 427.1L84.5 417.4ZM232.1 307.1L216.1 302.4L208 305.5L204.5 311.9L202.1 328.6L217.4 344.7L236.8 342.3L250.3 329.2L246.4 316.5L232.1 307.1ZM575.3 383.4L580 380.2L579.9 366.1L584.9 365.2L579.9 357.3L582.1 348L573.1 336.8L574.8 328.1L571.4 320L573.5 318L574.6 322.1L575.6 315.5L576 323.6L575.6 311.2L569.3 313.1L570.8 318.3L563.9 322.5L552.5 316.2L538.5 318.5L531.3 312.5L525.7 315.5L517.5 313.8L520 316.9L517.1 331.9L502.6 345.5L495.6 347.1L493.4 356.4L493.6 369.8L502.4 386.4L524.1 405L527.3 403.4L538.7 408.2L544.2 407.5L545.5 402.5L554.2 398L570.5 394L575.3 383.4ZM903.8 149.3L914.7 149L923.6 142.6L934 140.7L948.8 127.5L952.4 111.3L949.2 103.3L956 97.5L957.9 88.1L948.1 78.6L942.9 83.5L933.9 104.8L922.7 101.5L916.7 105.9L912 104.2L913.1 106.4L902.5 113.8L893 114.3L881.7 124L878.1 133.5L879 146.5L868.9 156.2L869.8 162L884.5 162.3L887.1 166.7L896.4 152.1L903.8 149.3ZM116 236.7L124.1 220.5L121.4 201.9L129.9 187.5L119.7 166.2L104.3 167.9L92.3 162.5L75.8 178.4L75.5 184.3L91.2 219.6L99.2 230.1L104.4 249.5L109 250.1L116 236.7ZM397.4 225.1L397.3 228.1L382.5 234.8L373.8 249.5L363.1 258.3L354.9 258.4L345.5 263.9L331.9 262.2L317 269L301.4 264.1L284.1 272.3L283.5 275.3L289.1 277.4L299.8 292.3L300.5 304.7L319.5 330.9L319.8 338L324.7 339.8L328.1 350.2L337.8 349.3L347 343.7L356.4 344.7L364.8 333.3L368 333.2L367.3 330.4L379.8 317.3L379.9 305.4L392 283.5L392.2 267.1L414.9 247.7L414 250.4L415.9 243.9L437.4 233.7L438.6 229L431.1 221.3L418.7 226.4L397.4 225.1ZM776 339.3L783.5 339.9L804.1 314L843.7 304.7L862.1 295L875 262.5L871.6 244.9L879.7 228.6L878.7 198.3L872 187L860.3 185.7L842.8 193.7L844.4 201.9L838.7 215.5L839.7 220.3L827.3 245.3L817.9 254.2L815 269.4L806.9 278.3L803.3 303L774.3 324.6L759.6 328.2L751.7 325.8L748.1 335.2L754.3 333.1L776 339.3Z"/>
-          <path class="rline" d="M412 233.4L339 291.3L221.5 321.9L101.3 192.3L58.3 405.4L520.7 362.3L850.3 221.6L888.2 126.6"/>
-          <a class="rstop-link" href="#site-anaga-s-laurel-forest"><title>Anaga Rural Park: go to Anaga's laurel forest</title><circle cx="412" cy="233.4" r="36" class="rstop" style="fill:#C0392B"/><text x="412" y="250.4" text-anchor="middle" class="rnum">1</text></a><a class="rstop-link" href="#site-teide-and-las-ca-adas"><title>Teide National Park: go to Teide and Las Cañadas</title><circle cx="339" cy="291.3" r="36" class="rstop" style="fill:#0F8B8D"/><text x="339" y="308.3" text-anchor="middle" class="rnum">2</text></a><a class="rstop-link" href="#site-garajonay-and-la-gomera-s-laurisilva"><title>Garajonay National Park: go to Garajonay and La Gomera's laurisilva</title><circle cx="221.5" cy="321.9" r="36" class="rstop" style="fill:#4E7AC7"/><text x="221.5" y="338.9" text-anchor="middle" class="rnum">3</text></a><a class="rstop-link" href="#site-la-palma-s-taburiente-and-los-tilos"><title>Caldera de Taburiente National Park: go to La Palma's Taburiente and Los Tilos</title><circle cx="101.3" cy="192.3" r="36" class="rstop" style="fill:#386641"/><text x="101.3" y="209.3" text-anchor="middle" class="rnum">4</text></a><a class="rstop-link" href="#site-el-hierro-s-sabinar-and-cliffs"><title>El Sabinar / La Dehesa: go to El Hierro's sabinar and cliffs</title><circle cx="58.3" cy="405.4" r="36" class="rstop" style="fill:#8A5A44"/><text x="58.3" y="422.4" text-anchor="middle" class="rnum">5</text></a><a class="rstop-link" href="#site-inagua-and-the-gran-canaria-pines"><title>Inagua Natural Reserve: go to Inagua and the Gran Canaria pines</title><circle cx="520.7" cy="362.3" r="36" class="rstop" style="fill:#7D5BA6"/><text x="520.7" y="379.3" text-anchor="middle" class="rnum">6</text></a><a class="rstop-link" href="#site-fuerteventura-s-central-plains"><title>Tindaya plain: go to Fuerteventura's central plains</title><circle cx="850.3" cy="221.6" r="36" class="rstop" style="fill:#D68910"/><text x="850.3" y="238.6" text-anchor="middle" class="rnum">7</text></a><a class="rstop-link" href="#site-timanfaya-and-the-lanzarote-salinas"><title>Timanfaya National Park: go to Timanfaya and the Lanzarote salinas</title><circle cx="888.2" cy="126.6" r="36" class="rstop" style="fill:#C2185B"/><text x="888.2" y="143.6" text-anchor="middle" class="rnum">8</text></a>
+          <path class="rline" d="M395.8 244.5L412 233.4L339 291.3L221.5 321.9L101.3 192.3L58.3 405.4L520.7 362.3L850.3 221.6L888.2 126.6"/>
+          <line class="rlead" x1="395.8" y1="244.5" x2="377.3" y2="250.0"/><circle class="rtrue" cx="395.8" cy="244.5" r="8"/><line class="rlead" x1="412.0" y1="233.4" x2="451.9" y2="207.2"/><circle class="rtrue" cx="412.0" cy="233.4" r="8"/><line class="rlead" x1="339.0" y1="291.3" x2="317.6" y2="312.0"/><circle class="rtrue" cx="339.0" cy="291.3" r="8"/>
+          <g class="rair"><title>Tenerife North (TFN), the airport this route starts at</title><circle cx="377.3" cy="250" r="38" class="rairdot"/><g transform="translate(355.7 228.4) scale(1.8)" class="rairicon" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></g></g><a class="rstop-link" href="#site-anaga-s-laurel-forest"><title>Anaga Rural Park: go to Anaga's laurel forest</title><circle cx="451.9" cy="207.2" r="36" class="rstop" style="fill:#C0392B"/><text x="451.9" y="224.2" text-anchor="middle" class="rnum">1</text></a><a class="rstop-link" href="#site-teide-and-las-ca-adas"><title>Teide National Park: go to Teide and Las Cañadas</title><circle cx="317.6" cy="312" r="36" class="rstop" style="fill:#0F8B8D"/><text x="317.6" y="329" text-anchor="middle" class="rnum">2</text></a><a class="rstop-link" href="#site-garajonay-and-la-gomera-s-laurisilva"><title>Garajonay National Park: go to Garajonay and La Gomera's laurisilva</title><circle cx="221.5" cy="321.9" r="36" class="rstop" style="fill:#4E7AC7"/><text x="221.5" y="338.9" text-anchor="middle" class="rnum">3</text></a><a class="rstop-link" href="#site-la-palma-s-taburiente-and-los-tilos"><title>Caldera de Taburiente National Park: go to La Palma's Taburiente and Los Tilos</title><circle cx="101.3" cy="192.3" r="36" class="rstop" style="fill:#386641"/><text x="101.3" y="209.3" text-anchor="middle" class="rnum">4</text></a><a class="rstop-link" href="#site-el-hierro-s-sabinar-and-cliffs"><title>El Sabinar / La Dehesa: go to El Hierro's sabinar and cliffs</title><circle cx="58.3" cy="405.4" r="36" class="rstop" style="fill:#8A5A44"/><text x="58.3" y="422.4" text-anchor="middle" class="rnum">5</text></a><a class="rstop-link" href="#site-inagua-and-the-gran-canaria-pines"><title>Inagua Natural Reserve: go to Inagua and the Gran Canaria pines</title><circle cx="520.7" cy="362.3" r="36" class="rstop" style="fill:#7D5BA6"/><text x="520.7" y="379.3" text-anchor="middle" class="rnum">6</text></a><a class="rstop-link" href="#site-fuerteventura-s-central-plains"><title>Tindaya plain: go to Fuerteventura's central plains</title><circle cx="850.3" cy="221.6" r="36" class="rstop" style="fill:#D68910"/><text x="850.3" y="238.6" text-anchor="middle" class="rnum">7</text></a><a class="rstop-link" href="#site-timanfaya-and-the-lanzarote-salinas"><title>Timanfaya National Park: go to Timanfaya and the Lanzarote salinas</title><circle cx="888.2" cy="126.6" r="36" class="rstop" style="fill:#C2185B"/><text x="888.2" y="143.6" text-anchor="middle" class="rnum">8</text></a>
         </svg>
           <button class="itinmap-btn" type="button" data-zoom aria-label="Open this route map larger" title="Open larger"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/><line x1="11" x2="11" y1="8" y2="14"/><line x1="8" x2="14" y1="11" y2="11"/></svg></button>
-          <ol class="itinkey"><li><span class="itinkey-n" style="--kc:#C0392B">1</span><a href="#site-anaga-s-laurel-forest">Anaga Rural Park</a></li><li><span class="itinkey-n" style="--kc:#0F8B8D">2</span><a href="#site-teide-and-las-ca-adas">Teide National Park</a></li><li><span class="itinkey-n" style="--kc:#4E7AC7">3</span><a href="#site-garajonay-and-la-gomera-s-laurisilva">Garajonay National Park</a></li><li><span class="itinkey-n" style="--kc:#386641">4</span><a href="#site-la-palma-s-taburiente-and-los-tilos">Caldera de Taburiente National Park</a></li><li><span class="itinkey-n" style="--kc:#8A5A44">5</span><a href="#site-el-hierro-s-sabinar-and-cliffs">El Sabinar / La Dehesa</a></li><li><span class="itinkey-n" style="--kc:#7D5BA6">6</span><a href="#site-inagua-and-the-gran-canaria-pines">Inagua Natural Reserve</a></li><li><span class="itinkey-n" style="--kc:#D68910">7</span><a href="#site-fuerteventura-s-central-plains">Tindaya plain</a></li><li><span class="itinkey-n" style="--kc:#C2185B">8</span><a href="#site-timanfaya-and-the-lanzarote-salinas">Timanfaya National Park</a></li></ol>
+          <ol class="itinkey"><li class="itinkey-air"><span class="itinkey-p" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></span>Tenerife North (TFN)<span class="itinkey-role">in</span></li><li><span class="itinkey-n" style="--kc:#C0392B">1</span><a href="#site-anaga-s-laurel-forest">Anaga Rural Park</a></li><li><span class="itinkey-n" style="--kc:#0F8B8D">2</span><a href="#site-teide-and-las-ca-adas">Teide National Park</a></li><li><span class="itinkey-n" style="--kc:#4E7AC7">3</span><a href="#site-garajonay-and-la-gomera-s-laurisilva">Garajonay National Park</a></li><li><span class="itinkey-n" style="--kc:#386641">4</span><a href="#site-la-palma-s-taburiente-and-los-tilos">Caldera de Taburiente National Park</a></li><li><span class="itinkey-n" style="--kc:#8A5A44">5</span><a href="#site-el-hierro-s-sabinar-and-cliffs">El Sabinar / La Dehesa</a></li><li><span class="itinkey-n" style="--kc:#7D5BA6">6</span><a href="#site-inagua-and-the-gran-canaria-pines">Inagua Natural Reserve</a></li><li><span class="itinkey-n" style="--kc:#D68910">7</span><a href="#site-fuerteventura-s-central-plains">Tindaya plain</a></li><li><span class="itinkey-n" style="--kc:#C2185B">8</span><a href="#site-timanfaya-and-the-lanzarote-salinas">Timanfaya National Park</a></li></ol>
         </div>
         <p class="itin-days">15 days</p>
         <h3>The Full Archipelago</h3>
@@ -3955,17 +4026,19 @@
           <div class="site-intro">
         <p class="blurb">The northwest corner of Tenerife, and the least developed part of the island. Monte del Agua holds <a href="/birds/bolle-s-pigeon/">Bolle's Pigeon</a> and <a href="/birds/laurel-pigeon/">Laurel Pigeon</a> in the laurel forest, the Masca gorge cuts down to the sea, and Punta de Teno is the seawatching point with Barbary Falcon on the cliffs above.</p>
 
-        <p class="where"><b>Look for:</b> <a href="/birds/bolle-s-pigeon/">Bolle's Pigeon</a>, <a href="/birds/laurel-pigeon/">Laurel Pigeon</a>, <a href="/birds/peregrine-falcon/">Peregrine Falcon</a>, <a href="/birds/plain-swift/">Plain Swift</a>, <a href="/birds/canary-islands-chiffchaff/">Canary Islands Chiffchaff</a>, <a href="/birds/atlantic-canary/">Atlantic Canary</a>, <a href="/birds/african-blue-tit/">African Blue Tit</a></p>
+        <ul class="wherelist">
+        <li class="where"><b>Look for:</b> <a href="/birds/bolle-s-pigeon/">Bolle's Pigeon</a>, <a href="/birds/laurel-pigeon/">Laurel Pigeon</a>, <a href="/birds/peregrine-falcon/">Peregrine Falcon</a>, <a href="/birds/plain-swift/">Plain Swift</a>, <a href="/birds/canary-islands-chiffchaff/">Canary Islands Chiffchaff</a>, <a href="/birds/atlantic-canary/">Atlantic Canary</a>, <a href="/birds/african-blue-tit/">African Blue Tit</a></li>
 
 
 
 
-        <p class="where"><b>Also covers:</b> Garachico</p><p class="where wildlife"><b>Also watch for:</b> Bottlenose Dolphin and Short-finned Pilot Whale are resident in the strait below Punta de Teno. Tenerife Lizard and Tenerife Wall Lizard are on every warm rock, and Barbary Ground Squirrel has yet to reach this corner.</p>
+        <li class="where covers"><b>Also covers:</b> Garachico</li><li class="where wildlife"><b>Also watch for:</b> Bottlenose Dolphin and Short-finned Pilot Whale are resident in the strait below Punta de Teno. Tenerife Lizard and Tenerife Wall Lizard are on every warm rock, and Barbary Ground Squirrel has yet to reach this corner.</li>
+        </ul>
           </div>
         </div>
         <details class="lgroup rblock" id="stay-site-teno-and-masca" data-noun="place to stay|places to stay">
           <summary class="rsub"><span class="rsub-x" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span><span class="rsub-t">Where to Stay</span><span class="rsub-n">1 place to stay</span></summary>
-          <p class="stayrule">The Canary Islands carry no certification scheme of their own. They run on Biosphere, the same Spanish scheme the mainland uses, and on Travelife in the larger island hotels. That matters for a practical reason worth stating plainly: every register and every supplier database files these properties under Spain, so the country field tells a reader nothing about which island a hotel is on. The Biosphere register filters by island, and the listings below are placed by their own coordinates against the regions on this page. Every property holds a certification from a scheme's own record. <a href="/trips/certifications/">What each certification actually means</a></p>
+          <p class="stayrule">The Canary Islands carry no certification scheme of their own. They run on Biosphere, the same Spanish scheme the mainland uses, and on Travelife in the larger island hotels. That matters for a practical reason worth stating plainly: every register and every supplier database files these properties under Spain, so the country field tells you nothing about which island a hotel is on. The Biosphere register filters by island, and the listings below are placed by their own coordinates against the regions above. Every property holds a certification from a scheme's own record. <a href="/trips/certifications/">What each certification actually means</a></p>
           <div class="list">
       <article class="trip" id="lodge-ww-hotel-el-patio-garachico" data-cat="stay" data-tier="0" data-km="9.3" data-region="0" data-certs="1" data-name="hotel el patio">
         <div class="trip-body">
@@ -4003,17 +4076,19 @@
           <div class="site-intro">
         <p class="blurb">Teide National Park and the Las Cañadas caldera, at two thousand metres. This is the <a href="/birds/tenerife-blue-chaffinch/">Tenerife Blue Chaffinch's</a> ground, in the Canary pine belt around the caldera rim, with <a href="/birds/berthelot-s-pipit/">Berthelot's Pipit</a> on the open pumice and <a href="/birds/plain-swift/">Plain Swift</a> overhead.</p>
 
-        <p class="where"><b>Look for:</b> <a href="/birds/tenerife-blue-chaffinch/">Tenerife Blue Chaffinch</a>, <a href="/birds/berthelot-s-pipit/">Berthelot's Pipit</a>, <a href="/birds/rock-sparrow/">Rock Sparrow</a>, <a href="/birds/eurasian-sparrowhawk/">Eurasian Sparrowhawk</a>, <a href="/birds/common-kestrel/">Common Kestrel</a>, <a href="/birds/great-spotted-woodpecker/">Great Spotted Woodpecker</a>, <a href="/birds/trumpeter-finch/">Trumpeter Finch</a></p>
+        <ul class="wherelist">
+        <li class="where"><b>Look for:</b> <a href="/birds/tenerife-blue-chaffinch/">Tenerife Blue Chaffinch</a>, <a href="/birds/berthelot-s-pipit/">Berthelot's Pipit</a>, <a href="/birds/rock-sparrow/">Rock Sparrow</a>, <a href="/birds/eurasian-sparrowhawk/">Eurasian Sparrowhawk</a>, <a href="/birds/common-kestrel/">Common Kestrel</a>, <a href="/birds/great-spotted-woodpecker/">Great Spotted Woodpecker</a>, <a href="/birds/trumpeter-finch/">Trumpeter Finch</a></li>
 
 
 
 
-        <p class="where"><b>Also covers:</b> Puerto de la Cruz, Tenerife</p><p class="where wildlife"><b>Also watch for:</b> Tenerife Speckled Lizard was rediscovered on the Teno cliffs in 1996 after being known only as a fossil. Algerian Hedgehog and Rabbit are the introduced mammals on the caldera floor.</p>
+        <li class="where covers"><b>Also covers:</b> Puerto de la Cruz, Tenerife</li><li class="where wildlife"><b>Also watch for:</b> Tenerife Speckled Lizard was rediscovered on the Teno cliffs in 1996 after being known only as a fossil. Algerian Hedgehog and Rabbit are the introduced mammals on the caldera floor.</li>
+        </ul>
           </div>
         </div>
         <details class="lgroup rblock" id="stay-site-teide-and-las-ca-adas" data-noun="place to stay|places to stay">
           <summary class="rsub"><span class="rsub-x" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span><span class="rsub-t">Where to Stay</span><span class="rsub-n">14 places to stay</span></summary>
-          <p class="stayrule">The Canary Islands carry no certification scheme of their own. They run on Biosphere, the same Spanish scheme the mainland uses, and on Travelife in the larger island hotels. That matters for a practical reason worth stating plainly: every register and every supplier database files these properties under Spain, so the country field tells a reader nothing about which island a hotel is on. The Biosphere register filters by island, and the listings below are placed by their own coordinates against the regions on this page. Every property holds a certification from a scheme's own record. <a href="/trips/certifications/">What each certification actually means</a></p>
+          <p class="stayrule">The Canary Islands carry no certification scheme of their own. They run on Biosphere, the same Spanish scheme the mainland uses, and on Travelife in the larger island hotels. That matters for a practical reason worth stating plainly: every register and every supplier database files these properties under Spain, so the country field tells you nothing about which island a hotel is on. The Biosphere register filters by island, and the listings below are placed by their own coordinates against the regions above. Every property holds a certification from a scheme's own record. <a href="/trips/certifications/">What each certification actually means</a></p>
           <div class="sortbar staysort">
             <label for="rsort-site-teide-and-las-ca-adas">Sort</label>
             <select id="rsort-site-teide-and-las-ca-adas" class="sortsel" data-staysort="stay-site-teide-and-las-ca-adas">
@@ -4283,17 +4358,19 @@
           <div class="site-intro">
         <p class="blurb">The Anaga massif on Tenerife's northeast tip is the finest laurel forest left in the archipelago, and a UNESCO biosphere reserve. Both endemic pigeons, <a href="/birds/canary-islands-chiffchaff/">Canary Islands Chiffchaff</a> and Tenerife <a href="/birds/goldcrest/">Goldcrest</a> on the ridge trails at El Pijaral and Cruz del Carmen.</p>
 
-        <p class="where"><b>Look for:</b> <a href="/birds/goldcrest/">Goldcrest</a>, <a href="/birds/eurasian-woodcock/">Eurasian Woodcock</a>, <a href="/birds/canary-islands-chaffinch/">Canary Islands Chaffinch</a>, <a href="/birds/grey-wagtail/">Grey Wagtail</a>, <a href="/birds/common-blackbird/">Common Blackbird</a>, <a href="/birds/european-robin/">European Robin</a>, <a href="/birds/eurasian-sparrowhawk/">Eurasian Sparrowhawk</a></p>
+        <ul class="wherelist">
+        <li class="where"><b>Look for:</b> <a href="/birds/goldcrest/">Goldcrest</a>, <a href="/birds/eurasian-woodcock/">Eurasian Woodcock</a>, <a href="/birds/canary-islands-chaffinch/">Canary Islands Chaffinch</a>, <a href="/birds/grey-wagtail/">Grey Wagtail</a>, <a href="/birds/common-blackbird/">Common Blackbird</a>, <a href="/birds/european-robin/">European Robin</a>, <a href="/birds/eurasian-sparrowhawk/">Eurasian Sparrowhawk</a></li>
 
 
 
 
-        <p class="where"><b>Also covers:</b> Santa Kruz de Tenerife</p><p class="where wildlife"><b>Also watch for:</b> The Anaga laurisilva carries an exceptional invertebrate fauna, with hundreds of species found nowhere else. Tenerife Lizard is common on the trail edges and Canary Big-eared Bat roosts in the caves.</p>
+        <li class="where covers"><b>Also covers:</b> Santa Kruz de Tenerife</li><li class="where wildlife"><b>Also watch for:</b> The Anaga laurisilva carries an exceptional invertebrate fauna, with hundreds of species found nowhere else. Tenerife Lizard is common on the trail edges and Canary Big-eared Bat roosts in the caves.</li>
+        </ul>
           </div>
         </div>
         <details class="lgroup rblock" id="stay-site-anaga-s-laurel-forest" data-noun="place to stay|places to stay">
           <summary class="rsub"><span class="rsub-x" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span><span class="rsub-t">Where to Stay</span><span class="rsub-n">1 place to stay</span></summary>
-          <p class="stayrule">The Canary Islands carry no certification scheme of their own. They run on Biosphere, the same Spanish scheme the mainland uses, and on Travelife in the larger island hotels. That matters for a practical reason worth stating plainly: every register and every supplier database files these properties under Spain, so the country field tells a reader nothing about which island a hotel is on. The Biosphere register filters by island, and the listings below are placed by their own coordinates against the regions on this page. Every property holds a certification from a scheme's own record. <a href="/trips/certifications/">What each certification actually means</a></p>
+          <p class="stayrule">The Canary Islands carry no certification scheme of their own. They run on Biosphere, the same Spanish scheme the mainland uses, and on Travelife in the larger island hotels. That matters for a practical reason worth stating plainly: every register and every supplier database files these properties under Spain, so the country field tells you nothing about which island a hotel is on. The Biosphere register filters by island, and the listings below are placed by their own coordinates against the regions above. Every property holds a certification from a scheme's own record. <a href="/trips/certifications/">What each certification actually means</a></p>
           <div class="list">
       <article class="trip" id="lodge-ww-iberostar-heritage-grand-mencey-santa-kruz-de-tenerife-santa-kruz-de-tenerife" data-cat="stay" data-tier="0" data-km="7.4" data-region="2" data-certs="1" data-name="iberostar heritage grand mencey, santa kruz de tenerife">
         <div class="trip-body">
@@ -4331,17 +4408,19 @@
           <div class="site-intro">
         <p class="blurb">Fuerteventura's central plains are the reason the island is on every itinerary. Flat stony semi-desert holding the Canary Islands Houbara Bustard, Cream-coloured Courser and <a href="/birds/black-bellied-sandgrouse/">Black-bellied Sandgrouse</a>, with Los Molinos reservoir as the one piece of fresh water.</p>
 
-        <p class="where"><b>Look for:</b> <a href="/birds/african-houbara/">African Houbara</a>, <a href="/birds/cream-colored-courser/">Cream-colored Courser</a>, <a href="/birds/black-bellied-sandgrouse/">Black-bellied Sandgrouse</a>, <a href="/birds/mediterranean-short-toed-lark/">Mediterranean Short-toed Lark</a>, <a href="/birds/trumpeter-finch/">Trumpeter Finch</a>, <a href="/birds/ruddy-shelduck/">Ruddy Shelduck</a>, <a href="/birds/barbary-partridge/">Barbary Partridge</a></p>
+        <ul class="wherelist">
+        <li class="where"><b>Look for:</b> <a href="/birds/african-houbara/">African Houbara</a>, <a href="/birds/cream-colored-courser/">Cream-colored Courser</a>, <a href="/birds/black-bellied-sandgrouse/">Black-bellied Sandgrouse</a>, <a href="/birds/mediterranean-short-toed-lark/">Mediterranean Short-toed Lark</a>, <a href="/birds/trumpeter-finch/">Trumpeter Finch</a>, <a href="/birds/ruddy-shelduck/">Ruddy Shelduck</a>, <a href="/birds/barbary-partridge/">Barbary Partridge</a></li>
 
 
 
 
-        <p class="where"><b>Also covers:</b> Corralejo</p><p class="where wildlife"><b>Also watch for:</b> Barbary Ground Squirrel is everywhere on the stone walls, introduced in 1965 from two animals. Fuerteventura also holds the endemic Atlantic Lizard, and the plains carry a strong population of Hoopoe alongside them.</p>
+        <li class="where covers"><b>Also covers:</b> Corralejo</li><li class="where wildlife"><b>Also watch for:</b> Barbary Ground Squirrel is everywhere on the stone walls, introduced in 1965 from two animals. Fuerteventura also holds the endemic Atlantic Lizard, and the plains carry a strong population of Hoopoe alongside them.</li>
+        </ul>
           </div>
         </div>
         <details class="lgroup rblock" id="stay-site-fuerteventura-s-central-plains" data-noun="place to stay|places to stay">
           <summary class="rsub"><span class="rsub-x" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span><span class="rsub-t">Where to Stay</span><span class="rsub-n">2 places to stay</span></summary>
-          <p class="stayrule">The Canary Islands carry no certification scheme of their own. They run on Biosphere, the same Spanish scheme the mainland uses, and on Travelife in the larger island hotels. That matters for a practical reason worth stating plainly: every register and every supplier database files these properties under Spain, so the country field tells a reader nothing about which island a hotel is on. The Biosphere register filters by island, and the listings below are placed by their own coordinates against the regions on this page. Every property holds a certification from a scheme's own record. <a href="/trips/certifications/">What each certification actually means</a></p>
+          <p class="stayrule">The Canary Islands carry no certification scheme of their own. They run on Biosphere, the same Spanish scheme the mainland uses, and on Travelife in the larger island hotels. That matters for a practical reason worth stating plainly: every register and every supplier database files these properties under Spain, so the country field tells you nothing about which island a hotel is on. The Biosphere register filters by island, and the listings below are placed by their own coordinates against the regions above. Every property holds a certification from a scheme's own record. <a href="/trips/certifications/">What each certification actually means</a></p>
           <div class="list">
       <article class="trip" id="lodge-ww-bluesea-corralejo-village-corralejo" data-cat="stay" data-tier="0" data-km="12.1" data-region="3" data-certs="1" data-name="bluesea corralejo village">
         <div class="trip-body">
@@ -4396,17 +4475,19 @@
           <div class="site-intro">
         <p class="blurb">The southern half of Fuerteventura, where the barrancos cut into the old massif around Betancuria. Fuerteventura Stonechat lives here and nowhere else on earth, along the barranco floors at Las Peñitas and Vega de Río Palmas, with <a href="/birds/egyptian-vulture/">Egyptian Vulture</a> on the ridges.</p>
 
-        <p class="where"><b>Look for:</b> <a href="/birds/canary-islands-stonechat/">Canary Islands Stonechat</a>, <a href="/birds/egyptian-vulture/">Egyptian Vulture</a>, <a href="/birds/great-grey-shrike/">Great Grey Shrike</a>, <a href="/birds/spectacled-warbler/">Spectacled Warbler</a>, <a href="/birds/rock-dove/">Rock Dove</a>, <a href="/birds/laughing-dove/">Laughing Dove</a>, <a href="/birds/berthelot-s-pipit/">Berthelot's Pipit</a></p>
+        <ul class="wherelist">
+        <li class="where"><b>Look for:</b> <a href="/birds/canary-islands-stonechat/">Canary Islands Stonechat</a>, <a href="/birds/egyptian-vulture/">Egyptian Vulture</a>, <a href="/birds/great-grey-shrike/">Great Grey Shrike</a>, <a href="/birds/spectacled-warbler/">Spectacled Warbler</a>, <a href="/birds/rock-dove/">Rock Dove</a>, <a href="/birds/laughing-dove/">Laughing Dove</a>, <a href="/birds/berthelot-s-pipit/">Berthelot's Pipit</a></li>
 
 
 
 
-        <p class="where"><b>Also covers:</b> Antigua, Caleta de Fuste, Costa Calma, Morro Jable</p><p class="where wildlife"><b>Also watch for:</b> Barbary Ground Squirrel works the barranco walls in numbers, and Atlantic Lizard basks on the palm terraces. Loggerhead Turtle nests are being re-established on the island's east coast.</p>
+        <li class="where covers"><b>Also covers:</b> Antigua, Caleta de Fuste, Costa Calma, Morro Jable</li><li class="where wildlife"><b>Also watch for:</b> Barbary Ground Squirrel works the barranco walls in numbers, and Atlantic Lizard basks on the palm terraces. Loggerhead Turtle nests are being re-established on the island's east coast.</li>
+        </ul>
           </div>
         </div>
         <details class="lgroup rblock" id="stay-site-betancuria-and-the-southern-barrancos" data-noun="place to stay|places to stay">
           <summary class="rsub"><span class="rsub-x" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span><span class="rsub-t">Where to Stay</span><span class="rsub-n">7 places to stay</span></summary>
-          <p class="stayrule">The Canary Islands carry no certification scheme of their own. They run on Biosphere, the same Spanish scheme the mainland uses, and on Travelife in the larger island hotels. That matters for a practical reason worth stating plainly: every register and every supplier database files these properties under Spain, so the country field tells a reader nothing about which island a hotel is on. The Biosphere register filters by island, and the listings below are placed by their own coordinates against the regions on this page. Every property holds a certification from a scheme's own record. <a href="/trips/certifications/">What each certification actually means</a></p>
+          <p class="stayrule">The Canary Islands carry no certification scheme of their own. They run on Biosphere, the same Spanish scheme the mainland uses, and on Travelife in the larger island hotels. That matters for a practical reason worth stating plainly: every register and every supplier database files these properties under Spain, so the country field tells you nothing about which island a hotel is on. The Biosphere register filters by island, and the listings below are placed by their own coordinates against the regions above. Every property holds a certification from a scheme's own record. <a href="/trips/certifications/">What each certification actually means</a></p>
           <div class="sortbar staysort">
             <label for="rsort-site-betancuria-and-the-southern-barrancos">Sort</label>
             <select id="rsort-site-betancuria-and-the-southern-barrancos" class="sortsel" data-staysort="stay-site-betancuria-and-the-southern-barrancos">
@@ -4557,17 +4638,19 @@
           <div class="site-intro">
         <p class="blurb">Gran Canaria's high pine forest, and the whole world range of the <a href="/birds/gran-canaria-blue-chaffinch/">Gran Canaria Blue Chaffinch</a>. The Inagua reserve and the Ojeda and Pajonales pines hold a population counted in the hundreds, which makes it one of the rarest songbirds in Europe.</p>
 
-        <p class="where"><b>Look for:</b> <a href="/birds/gran-canaria-blue-chaffinch/">Gran Canaria Blue Chaffinch</a>, <a href="/birds/great-spotted-woodpecker/">Great Spotted Woodpecker</a>, <a href="/birds/common-kestrel/">Common Kestrel</a>, <a href="/birds/plain-swift/">Plain Swift</a>, <a href="/birds/african-blue-tit/">African Blue Tit</a>, <a href="/birds/common-linnet/">Common Linnet</a>, <a href="/birds/atlantic-canary/">Atlantic Canary</a></p>
+        <ul class="wherelist">
+        <li class="where"><b>Look for:</b> <a href="/birds/gran-canaria-blue-chaffinch/">Gran Canaria Blue Chaffinch</a>, <a href="/birds/great-spotted-woodpecker/">Great Spotted Woodpecker</a>, <a href="/birds/common-kestrel/">Common Kestrel</a>, <a href="/birds/plain-swift/">Plain Swift</a>, <a href="/birds/african-blue-tit/">African Blue Tit</a>, <a href="/birds/common-linnet/">Common Linnet</a>, <a href="/birds/atlantic-canary/">Atlantic Canary</a></li>
 
 
 
 
-        <p class="where"><b>Also covers:</b> Amadores, Las Palmas, Maspalomas, Puerto Rico, Taurito</p><p class="where wildlife"><b>Also watch for:</b> Gran Canaria Giant Lizard survives in the barrancos below the pines, one of four giant lizard species that were each thought extinct. Algerian Hedgehog is common on the tracks after dark.</p>
+        <li class="where covers"><b>Also covers:</b> Amadores, Las Palmas, Maspalomas, Puerto Rico, Taurito</li><li class="where wildlife"><b>Also watch for:</b> Gran Canaria Giant Lizard survives in the barrancos below the pines, one of four giant lizard species that were each thought extinct. Algerian Hedgehog is common on the tracks after dark.</li>
+        </ul>
           </div>
         </div>
         <details class="lgroup rblock" id="stay-site-inagua-and-the-gran-canaria-pines" data-noun="place to stay|places to stay">
           <summary class="rsub"><span class="rsub-x" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span><span class="rsub-t">Where to Stay</span><span class="rsub-n">19 places to stay</span></summary>
-          <p class="stayrule">The Canary Islands carry no certification scheme of their own. They run on Biosphere, the same Spanish scheme the mainland uses, and on Travelife in the larger island hotels. That matters for a practical reason worth stating plainly: every register and every supplier database files these properties under Spain, so the country field tells a reader nothing about which island a hotel is on. The Biosphere register filters by island, and the listings below are placed by their own coordinates against the regions on this page. Every property holds a certification from a scheme's own record. <a href="/trips/certifications/">What each certification actually means</a></p>
+          <p class="stayrule">The Canary Islands carry no certification scheme of their own. They run on Biosphere, the same Spanish scheme the mainland uses, and on Travelife in the larger island hotels. That matters for a practical reason worth stating plainly: every register and every supplier database files these properties under Spain, so the country field tells you nothing about which island a hotel is on. The Biosphere register filters by island, and the listings below are placed by their own coordinates against the regions above. Every property holds a certification from a scheme's own record. <a href="/trips/certifications/">What each certification actually means</a></p>
           <div class="sortbar staysort">
             <label for="rsort-site-inagua-and-the-gran-canaria-pines">Sort</label>
             <select id="rsort-site-inagua-and-the-gran-canaria-pines" class="sortsel" data-staysort="stay-site-inagua-and-the-gran-canaria-pines">
@@ -4922,12 +5005,14 @@
           <div class="site-intro">
         <p class="blurb">La Palma is the wettest island and holds the largest <a href="/birds/laurel-pigeon/">Laurel Pigeon</a> population. Los Tilos is dense laurisilva in a barranco, the Caldera de Taburiente is a national park of Canary pine, and the island runs its own pelagic trips.</p>
 
-        <p class="where"><b>Look for:</b> <a href="/birds/laurel-pigeon/">Laurel Pigeon</a>, <a href="/birds/bolle-s-pigeon/">Bolle's Pigeon</a>, <a href="/birds/canary-islands-chiffchaff/">Canary Islands Chiffchaff</a>, <a href="/birds/peregrine-falcon/">Peregrine Falcon</a>, <a href="/birds/northern-raven/">Northern Raven</a>, <a href="/birds/canary-islands-chaffinch/">Canary Islands Chaffinch</a>, <a href="/birds/grey-wagtail/">Grey Wagtail</a></p>
+        <ul class="wherelist">
+        <li class="where"><b>Look for:</b> <a href="/birds/laurel-pigeon/">Laurel Pigeon</a>, <a href="/birds/bolle-s-pigeon/">Bolle's Pigeon</a>, <a href="/birds/canary-islands-chiffchaff/">Canary Islands Chiffchaff</a>, <a href="/birds/peregrine-falcon/">Peregrine Falcon</a>, <a href="/birds/northern-raven/">Northern Raven</a>, <a href="/birds/canary-islands-chaffinch/">Canary Islands Chaffinch</a>, <a href="/birds/grey-wagtail/">Grey Wagtail</a></li>
 
 
 
 
-        <p class="where wildlife"><b>Also watch for:</b> La Palma Giant Lizard was rediscovered in 2007 on a cliff above Puntallana after four hundred years. The island's pelagics find Short-finned Pilot Whale and Atlantic Spotted Dolphin close inshore.</p>
+        <li class="where wildlife"><b>Also watch for:</b> La Palma Giant Lizard was rediscovered in 2007 on a cliff above Puntallana after four hundred years. The island's pelagics find Short-finned Pilot Whale and Atlantic Spotted Dolphin close inshore.</li>
+        </ul>
           </div>
         </div>
 
@@ -4948,12 +5033,14 @@
           <div class="site-intro">
         <p class="blurb">El Hierro is the smallest and the least visited, and the juniper sabinar at La Dehesa is unlike anything on the other islands, wind-sculpted and open. <a href="/birds/berthelot-s-pipit/">Berthelot's Pipit</a> and Barbary Falcon, with the El Julan cliffs above the sea.</p>
 
-        <p class="where"><b>Look for:</b> <a href="/birds/berthelot-s-pipit/">Berthelot's Pipit</a>, <a href="/birds/peregrine-falcon/">Peregrine Falcon</a>, <a href="/birds/cory-s-shearwater/">Cory's Shearwater</a>, <a href="/birds/yellow-legged-gull/">Yellow-legged Gull</a>, <a href="/birds/common-kestrel/">Common Kestrel</a>, <a href="/birds/atlantic-canary/">Atlantic Canary</a>, <a href="/birds/rock-dove/">Rock Dove</a></p>
+        <ul class="wherelist">
+        <li class="where"><b>Look for:</b> <a href="/birds/berthelot-s-pipit/">Berthelot's Pipit</a>, <a href="/birds/peregrine-falcon/">Peregrine Falcon</a>, <a href="/birds/cory-s-shearwater/">Cory's Shearwater</a>, <a href="/birds/yellow-legged-gull/">Yellow-legged Gull</a>, <a href="/birds/common-kestrel/">Common Kestrel</a>, <a href="/birds/atlantic-canary/">Atlantic Canary</a>, <a href="/birds/rock-dove/">Rock Dove</a></li>
 
 
 
 
-        <p class="where wildlife"><b>Also watch for:</b> El Hierro Giant Lizard survives on the Fuga de Gorreta cliff and in a recovery centre at Frontera. The Mar de las Calmas below is one of the richest marine reserves in the archipelago.</p>
+        <li class="where wildlife"><b>Also watch for:</b> El Hierro Giant Lizard survives on the Fuga de Gorreta cliff and in a recovery centre at Frontera. The Mar de las Calmas below is one of the richest marine reserves in the archipelago.</li>
+        </ul>
           </div>
         </div>
 
@@ -4974,17 +5061,19 @@
           <div class="site-intro">
         <p class="blurb">Lanzarote is volcanic desert, and the birding is the eastern-island set on lava rather than in forest. Timanfaya, the Salinas de Janubio for waders and the Famara cliffs, with El Jable holding Houbara Bustard and courser on the sand plain.</p>
 
-        <p class="where"><b>Look for:</b> <a href="/birds/african-houbara/">African Houbara</a>, <a href="/birds/cream-colored-courser/">Cream-colored Courser</a>, <a href="/birds/kentish-plover/">Kentish Plover</a>, <a href="/birds/black-winged-stilt/">Black-winged Stilt</a>, <a href="/birds/trumpeter-finch/">Trumpeter Finch</a>, <a href="/birds/eleonora-s-falcon/">Eleonora's Falcon</a>, <a href="/birds/peregrine-falcon/">Peregrine Falcon</a></p>
+        <ul class="wherelist">
+        <li class="where"><b>Look for:</b> <a href="/birds/african-houbara/">African Houbara</a>, <a href="/birds/cream-colored-courser/">Cream-colored Courser</a>, <a href="/birds/kentish-plover/">Kentish Plover</a>, <a href="/birds/black-winged-stilt/">Black-winged Stilt</a>, <a href="/birds/trumpeter-finch/">Trumpeter Finch</a>, <a href="/birds/eleonora-s-falcon/">Eleonora's Falcon</a>, <a href="/birds/peregrine-falcon/">Peregrine Falcon</a></li>
 
 
 
 
-        <p class="where"><b>Also covers:</b> Playa Blanca, Puerto del Carmen</p><p class="where wildlife"><b>Also watch for:</b> Timanfaya is largely lifeless lava, which is the point of it. The Chinijo waters north of the island carry Bottlenose Dolphin and Loggerhead Turtle, and Atlantic Lizard holds the sand plain at El Jable.</p>
+        <li class="where covers"><b>Also covers:</b> Playa Blanca, Puerto del Carmen</li><li class="where wildlife"><b>Also watch for:</b> Timanfaya is largely lifeless lava, which is the point of it. The Chinijo waters north of the island carry Bottlenose Dolphin and Loggerhead Turtle, and Atlantic Lizard holds the sand plain at El Jable.</li>
+        </ul>
           </div>
         </div>
         <details class="lgroup rblock" id="stay-site-timanfaya-and-the-lanzarote-salinas" data-noun="place to stay|places to stay">
           <summary class="rsub"><span class="rsub-x" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span><span class="rsub-t">Where to Stay</span><span class="rsub-n">6 places to stay</span></summary>
-          <p class="stayrule">The Canary Islands carry no certification scheme of their own. They run on Biosphere, the same Spanish scheme the mainland uses, and on Travelife in the larger island hotels. That matters for a practical reason worth stating plainly: every register and every supplier database files these properties under Spain, so the country field tells a reader nothing about which island a hotel is on. The Biosphere register filters by island, and the listings below are placed by their own coordinates against the regions on this page. Every property holds a certification from a scheme's own record. <a href="/trips/certifications/">What each certification actually means</a></p>
+          <p class="stayrule">The Canary Islands carry no certification scheme of their own. They run on Biosphere, the same Spanish scheme the mainland uses, and on Travelife in the larger island hotels. That matters for a practical reason worth stating plainly: every register and every supplier database files these properties under Spain, so the country field tells you nothing about which island a hotel is on. The Biosphere register filters by island, and the listings below are placed by their own coordinates against the regions above. Every property holds a certification from a scheme's own record. <a href="/trips/certifications/">What each certification actually means</a></p>
           <div class="sortbar staysort">
             <label for="rsort-site-timanfaya-and-the-lanzarote-salinas">Sort</label>
             <select id="rsort-site-timanfaya-and-the-lanzarote-salinas" class="sortsel" data-staysort="stay-site-timanfaya-and-the-lanzarote-salinas">
@@ -5118,17 +5207,19 @@
           <div class="site-intro">
         <p class="blurb">La Gomera's Garajonay is the one place the laurisilva covers a whole summit, and it is a national park and a World Heritage site. Both endemic pigeons on the Alto de Garajonay trails, reached from the Juego de Bolas centre.</p>
 
-        <p class="where"><b>Look for:</b> <a href="/birds/bolle-s-pigeon/">Bolle's Pigeon</a>, <a href="/birds/laurel-pigeon/">Laurel Pigeon</a>, <a href="/birds/goldcrest/">Goldcrest</a>, <a href="/birds/canary-islands-chiffchaff/">Canary Islands Chiffchaff</a>, <a href="/birds/african-blue-tit/">African Blue Tit</a>, <a href="/birds/canary-islands-chaffinch/">Canary Islands Chaffinch</a>, <a href="/birds/plain-swift/">Plain Swift</a></p>
+        <ul class="wherelist">
+        <li class="where"><b>Look for:</b> <a href="/birds/bolle-s-pigeon/">Bolle's Pigeon</a>, <a href="/birds/laurel-pigeon/">Laurel Pigeon</a>, <a href="/birds/goldcrest/">Goldcrest</a>, <a href="/birds/canary-islands-chiffchaff/">Canary Islands Chiffchaff</a>, <a href="/birds/african-blue-tit/">African Blue Tit</a>, <a href="/birds/canary-islands-chaffinch/">Canary Islands Chaffinch</a>, <a href="/birds/plain-swift/">Plain Swift</a></li>
 
 
 
 
-        <p class="where wildlife"><b>Also watch for:</b> La Gomera Giant Lizard was found again in 1999 on a single cliff, with fewer than a hundred animals. The strait between La Gomera and Tenerife holds resident Short-finned Pilot Whale.</p>
+        <li class="where wildlife"><b>Also watch for:</b> La Gomera Giant Lizard was found again in 1999 on a single cliff, with fewer than a hundred animals. The strait between La Gomera and Tenerife holds resident Short-finned Pilot Whale.</li>
+        </ul>
           </div>
         </div>
         <details class="lgroup rblock" id="stay-site-garajonay-and-la-gomera-s-laurisilva" data-noun="place to stay|places to stay">
           <summary class="rsub"><span class="rsub-x" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span><span class="rsub-t">Where to Stay</span><span class="rsub-n">1 place to stay</span></summary>
-          <p class="stayrule">The Canary Islands carry no certification scheme of their own. They run on Biosphere, the same Spanish scheme the mainland uses, and on Travelife in the larger island hotels. That matters for a practical reason worth stating plainly: every register and every supplier database files these properties under Spain, so the country field tells a reader nothing about which island a hotel is on. The Biosphere register filters by island, and the listings below are placed by their own coordinates against the regions on this page. Every property holds a certification from a scheme's own record. <a href="/trips/certifications/">What each certification actually means</a></p>
+          <p class="stayrule">The Canary Islands carry no certification scheme of their own. They run on Biosphere, the same Spanish scheme the mainland uses, and on Travelife in the larger island hotels. That matters for a practical reason worth stating plainly: every register and every supplier database files these properties under Spain, so the country field tells you nothing about which island a hotel is on. The Biosphere register filters by island, and the listings below are placed by their own coordinates against the regions above. Every property holds a certification from a scheme's own record. <a href="/trips/certifications/">What each certification actually means</a></p>
           <div class="list">
       <article class="trip" id="lodge-ww-hotel-jardin-tecina-la-gomera" data-cat="stay" data-tier="0" data-km="2.5" data-region="9" data-certs="1" data-name="hotel jardin tecina">
         <div class="trip-body">
@@ -5166,17 +5257,19 @@
           <div class="site-intro">
         <p class="blurb">The water between the islands is a birding region in its own right, and the grounds a boat works are as named a place as any headland. Ferry crossings give <a href="/birds/bulwer-s-petrel/">Bulwer's Petrel</a> and <a href="/birds/cory-s-shearwater/">Cory's Shearwater</a>, and the dedicated pelagic trips run north to the Banco de la Concepción seamount for <a href="/birds/white-faced-storm-petrel/">White-faced Storm-petrel</a> on a narrow summer window.</p>
 
-        <p class="where"><b>Look for:</b> <a href="/birds/bulwer-s-petrel/">Bulwer's Petrel</a>, <a href="/birds/cory-s-shearwater/">Cory's Shearwater</a>, <a href="/birds/white-faced-storm-petrel/">White-faced Storm Petrel</a>, <a href="/birds/band-rumped-storm-petrel/">Band-rumped Storm Petrel</a>, <a href="/birds/european-storm-petrel/">European Storm Petrel</a>, <a href="/birds/barolo-shearwater/">Barolo Shearwater</a>, <a href="/birds/long-tailed-jaeger/">Long-tailed Jaeger</a></p>
+        <ul class="wherelist">
+        <li class="where"><b>Look for:</b> <a href="/birds/bulwer-s-petrel/">Bulwer's Petrel</a>, <a href="/birds/cory-s-shearwater/">Cory's Shearwater</a>, <a href="/birds/white-faced-storm-petrel/">White-faced Storm Petrel</a>, <a href="/birds/band-rumped-storm-petrel/">Band-rumped Storm Petrel</a>, <a href="/birds/european-storm-petrel/">European Storm Petrel</a>, <a href="/birds/barolo-shearwater/">Barolo Shearwater</a>, <a href="/birds/long-tailed-jaeger/">Long-tailed Jaeger</a></li>
 
 
 
 
-        <p class="where"><b>Also covers:</b> Arona, El Médano, Playa de las Américas, San Miguel de Abona, Tenerife</p><p class="where wildlife"><b>Also watch for:</b> The same trips that find the petrels find Short-finned Pilot Whale, Sperm Whale, Atlantic Spotted Dolphin and Loggerhead Turtle, and the archipelago has recorded around thirty cetacean species in all.</p>
+        <li class="where covers"><b>Also covers:</b> Arona, El Médano, Playa de las Américas, San Miguel de Abona, Tenerife</li><li class="where wildlife"><b>Also watch for:</b> The same trips that find the petrels find Short-finned Pilot Whale, Sperm Whale, Atlantic Spotted Dolphin and Loggerhead Turtle, and the archipelago has recorded around thirty cetacean species in all.</li>
+        </ul>
           </div>
         </div>
         <details class="lgroup rblock" id="stay-site-the-petrel-pelagic-grounds" data-noun="place to stay|places to stay" data-cap="20">
           <summary class="rsub"><span class="rsub-x" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span><span class="rsub-t">Where to Stay</span><span class="rsub-n">32 places to stay</span></summary>
-          <p class="stayrule">The Canary Islands carry no certification scheme of their own. They run on Biosphere, the same Spanish scheme the mainland uses, and on Travelife in the larger island hotels. That matters for a practical reason worth stating plainly: every register and every supplier database files these properties under Spain, so the country field tells a reader nothing about which island a hotel is on. The Biosphere register filters by island, and the listings below are placed by their own coordinates against the regions on this page. Every property holds a certification from a scheme's own record. <a href="/trips/certifications/">What each certification actually means</a></p>
+          <p class="stayrule">The Canary Islands carry no certification scheme of their own. They run on Biosphere, the same Spanish scheme the mainland uses, and on Travelife in the larger island hotels. That matters for a practical reason worth stating plainly: every register and every supplier database files these properties under Spain, so the country field tells you nothing about which island a hotel is on. The Biosphere register filters by island, and the listings below are placed by their own coordinates against the regions above. Every property holds a certification from a scheme's own record. <a href="/trips/certifications/">What each certification actually means</a></p>
           <div class="sortbar staysort">
             <label for="rsort-site-the-petrel-pelagic-grounds">Sort</label>
             <select id="rsort-site-the-petrel-pelagic-grounds" class="sortsel" data-staysort="stay-site-the-petrel-pelagic-grounds">
@@ -5743,36 +5836,6 @@
       </div>
     </section>
 
-    <section id="community">
-      <h2 class="cat-title">Birding Community</h2>
-      <p class="mintro">Birding in the Canary Islands runs through the Spanish national body, the regional environment department and four national park authorities, which is a dense set of institutions for a small archipelago. <a href="/community#ES">Find a birding organisation near you in our worldwide directory</a></p>
-      <p class="mintro">Alongside the national bodies below, the Canary Islands has 27 local bird clubs across 17 regions. They run the walks and the counts, and most of them welcome visitors. <a href="/community#ES">See every Canarian club by region</a>.</p>
-      <div class="cgrid">
-        <a class="ccard" href="https://seo.org/" target="_blank" rel="noopener">
-          <span class="ctop"><b>SEO/BirdLife</b></span>
-          <span class="cblurb">The Spanish BirdLife partner, with a Canary delegation. It runs the Spanish rarities committee, which is where island vagrant records are assessed.</span>
-          <span class="carrow">Visit <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
-        </a>
-        <a class="ccard" href="https://www.gobiernodecanarias.org/medioambiente/" target="_blank" rel="noopener">
-          <span class="ctop"><b>Gobierno de Canarias</b></span>
-          <span class="cblurb">The regional environment department, which manages the reserves and the protection rules for Houbara Bustard and the endemic pigeons.</span>
-          <span class="carrow">Visit <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
-        </a>
-        <a class="ccard" href="https://www.gobiernodecanarias.org/parquesnacionales/" target="_blank" rel="noopener">
-          <span class="ctop"><b>The four national parks</b></span>
-          <span class="cblurb">Teide, Garajonay, Caldera de Taburiente and Timanfaya. Four national parks across four islands, which is a density nowhere else in Spain matches.</span>
-          <span class="carrow">Visit <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
-        </a>
-        <a class="ccard" href="https://www.biospheresustainable.com/" target="_blank" rel="noopener">
-          <span class="ctop"><b>Biosphere, Responsible Tourism Institute</b></span>
-          <span class="cblurb">The certification body behind the accommodation on this page. It certifies destinations as well as businesses, and Lanzarote holds the destination award.</span>
-          <span class="carrow">Visit <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
-        </a>
-      </div>
-    </section>
-
-
-
     <section id="prep">
       <h2 class="cat-title">Preparation</h2>
       <a class="appcard" href="/">
@@ -5839,6 +5902,36 @@
       </details>
       </div>
     </section>
+
+    <section id="community">
+      <h2 class="cat-title">Birding Community</h2>
+      <p class="mintro">Birding in the Canary Islands runs through the Spanish national body, the regional environment department and four national park authorities, which is a dense set of institutions for a small archipelago. <a href="/community#ES">Find a birding organisation near you in our worldwide directory</a></p>
+      <p class="mintro">Alongside the national bodies below, the Canary Islands has 27 local bird clubs across 17 regions. They run the walks and the counts, and most of them welcome visitors. <a href="/community#ES">See every Canarian club by region</a>.</p>
+      <div class="cgrid">
+        <a class="ccard" href="https://seo.org/" target="_blank" rel="noopener">
+          <span class="ctop"><b>SEO/BirdLife</b></span>
+          <span class="cblurb">The Spanish BirdLife partner, with a Canary delegation. It runs the Spanish rarities committee, which is where island vagrant records are assessed.</span>
+          <span class="carrow">Visit <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </a>
+        <a class="ccard" href="https://www.gobiernodecanarias.org/medioambiente/" target="_blank" rel="noopener">
+          <span class="ctop"><b>Gobierno de Canarias</b></span>
+          <span class="cblurb">The regional environment department, which manages the reserves and the protection rules for Houbara Bustard and the endemic pigeons.</span>
+          <span class="carrow">Visit <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </a>
+        <a class="ccard" href="https://www.gobiernodecanarias.org/parquesnacionales/" target="_blank" rel="noopener">
+          <span class="ctop"><b>The four national parks</b></span>
+          <span class="cblurb">Teide, Garajonay, Caldera de Taburiente and Timanfaya. Four national parks across four islands, which is a density nowhere else in Spain matches.</span>
+          <span class="carrow">Visit <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </a>
+        <a class="ccard" href="https://www.biospheresustainable.com/" target="_blank" rel="noopener">
+          <span class="ctop"><b>Biosphere, Responsible Tourism Institute</b></span>
+          <span class="cblurb">The certification body behind the accommodation above. It certifies destinations as well as businesses, and Lanzarote holds the destination award.</span>
+          <span class="carrow">Visit <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </a>
+      </div>
+    </section>
+
+
 
     <p class="pagefoot">Updated August 2026. Spotted an error, or run a Canary Islands operation that belongs here? <a href="mailto:hello@beakbrain.com?subject=Canary%20Islands%20page">Tell us</a>.</p>
   </main>
@@ -6277,9 +6370,12 @@
         // scale) sit later in the cascade and used to clobber both, which scattered
         // every lodge dot to its flow position. The marker gets a bare wrapper now
         // and our CSS only ever touches the button inside it.
-        function mkWrap(el, kind) {
+        // kind is the z-index band (region label vs marker); layer is what the key
+        // filters on. They are separate because a park, a lodge, a tour and a stop all
+        // share one z-index band and are four different answers to "show me only".
+        function mkWrap(el, kind, layer) {
           var w = document.createElement('div');
-          w.className = 'mlmark' + (kind ? ' mlmark-' + kind : '');
+          w.className = 'mlmark' + (kind ? ' mlmark-' + kind : '') + (layer ? ' mlayer-' + layer : '');
           w.appendChild(el);
           return w;
         }
@@ -6301,7 +6397,7 @@
         var rmap = mkMap('regionmap');
         if (rmap) {
           REGIONS.forEach(function (r) {
-            new maplibregl.Marker({ element: mkWrap(regionPin(r, false), 'region'), anchor: 'left', offset: [-8, 0] })
+            new maplibregl.Marker({ element: mkWrap(regionPin(r, false), 'region', 'region'), anchor: 'left', offset: [-8, 0] })
               .setLngLat([r[1], r[2]]).addTo(rmap);
           });
         }
@@ -6312,7 +6408,7 @@
         if (lmap) {
           if (lmap !== rmap) {
             REGIONS.forEach(function (r) {
-              new maplibregl.Marker({ element: mkWrap(regionPin(r, true, true), 'region'), anchor: 'left', offset: [-6, 0] })
+              new maplibregl.Marker({ element: mkWrap(regionPin(r, true, true), 'region', 'region'), anchor: 'left', offset: [-6, 0] })
                 .setLngLat([r[1], r[2]]).addTo(lmap);
             });
           }
@@ -6333,7 +6429,7 @@
             b.addEventListener('mouseleave', function () { pop.remove(); });
             b.addEventListener('blur', function () { pop.remove(); });
             b.addEventListener('click', function (e) { e.stopPropagation(); pop.remove(); jumpTo('lodge-' + d[0]); });
-            new maplibregl.Marker({ element: mkWrap(b, 'dot') }).setLngLat([d[1], d[2]]).addTo(lmap);
+            new maplibregl.Marker({ element: mkWrap(b, 'dot', 'stay') }).setLngLat([d[1], d[2]]).addTo(lmap);
             dots['lodge-' + d[0]] = b;
           });
           // Stops: the smallest marker, a hollow ring, because there are a hundred of
@@ -6355,7 +6451,7 @@
             b.addEventListener('mouseenter', show);
             b.addEventListener('focus', show);
             b.addEventListener('click', function (e) { e.stopPropagation(); show(); });
-            new maplibregl.Marker({ element: mkWrap(b, 'dot') }).setLngLat([d[1], d[2]]).addTo(lmap);
+            new maplibregl.Marker({ element: mkWrap(b, 'dot', 'stop') }).setLngLat([d[1], d[2]]).addTo(lmap);
             stopMarks[d[0]] = { lon: d[1], lat: d[2], show: show };
           });
           // A stop name in the prose brings the map to it rather than sending the reader
@@ -6388,7 +6484,7 @@
             b.addEventListener('mouseleave', function () { pop.remove(); });
             b.addEventListener('blur', function () { pop.remove(); });
             b.addEventListener('click', function (e) { e.stopPropagation(); pop.remove(); jumpTo(d[0]); });
-            new maplibregl.Marker({ element: mkWrap(b, 'dot') }).setLngLat([d[1], d[2]]).addTo(lmap);
+            new maplibregl.Marker({ element: mkWrap(b, 'dot', 'go') }).setLngLat([d[1], d[2]]).addTo(lmap);
             dots[d[0]] = b;
           });
           // A dot whose card is filtered out must not stay live: clicking one used
@@ -6426,11 +6522,48 @@
             b.addEventListener('focus', show);
             b.addEventListener('mouseleave', function () { ppop.remove(); });
             b.addEventListener('blur', function () { ppop.remove(); });
-            new maplibregl.Marker({ element: mkWrap(b, 'dot') }).setLngLat([d[1], d[2]]).addTo(lmap);
+            new maplibregl.Marker({ element: mkWrap(b, 'dot', 'park') }).setLngLat([d[1], d[2]]).addTo(lmap);
           });
         }
         bindLayering(rmap);
         if (lmap && lmap !== rmap) bindLayering(lmap);
+        bindLayerKey(rmap, lmap);
+      }
+      // The key doubles as the filter. A chip whose layer holds no marker on this guide
+      // is removed rather than shown dead: a country with no tour listing would otherwise
+      // offer "Tour or operator" and answer it with an empty map.
+      function bindLayerKey(rmap, lmap) {
+        var bar = document.getElementById('maplayers');
+        if (!bar) return;
+        var note = document.getElementById('maplayers-note');
+        var COUNT = { all: 1, region: REGIONS.length, park: NPARKS.length, stay: LODGES.length, go: GOING.length, stop: STOPS.length };
+        var NOTE = {
+          all: 'Colours match each region. Select a marker to open its entry below.',
+          region: 'Regions only. Select a pin to open that region below.',
+          park: 'National parks and reserves only. Select one for the park site.',
+          stay: 'Places to stay only. Select one to open its entry below.',
+          go: 'Tours and operators only. Select one to open its entry below.',
+          stop: 'Birding stops only. Select one for directions.'
+        };
+        var boxes = [];
+        [rmap, lmap].forEach(function (m) {
+          if (m && boxes.indexOf(m.getContainer()) < 0) boxes.push(m.getContainer());
+        });
+        var btns = [].slice.call(bar.querySelectorAll('.mkey'));
+        btns.forEach(function (b) {
+          var k = b.getAttribute('data-layer');
+          if (!COUNT[k]) { b.hidden = true; return; }
+          b.addEventListener('click', function () {
+            btns.forEach(function (o) {
+              var on = o === b;
+              o.classList.toggle('is-on', on);
+              o.setAttribute('aria-pressed', on ? 'true' : 'false');
+            });
+            boxes.forEach(function (box) { box.setAttribute('data-layer', k); });
+            if (note) note.textContent = NOTE[k] || NOTE.all;
+          });
+        });
+        boxes.forEach(function (box) { box.setAttribute('data-layer', 'all'); });
       }
       boot();
     })();

@@ -234,7 +234,6 @@
     .where.parks .pkind { color: var(--muted); font-weight: 400; font-size: 0.92em; }
     .where.alsorec { color: var(--muted); }
     .where.stops .stopname { color: var(--green-dark); font-weight: 800; }
-    .where.stops .stop + .stop::before { content: ' · '; color: var(--muted); font-weight: 400; }
     .where.stops .parklink { color: var(--green-dark); font-weight: 800; }
     .stoplink { font: inherit; font-weight: 800; color: var(--green-dark); background: none; border: 0; border-bottom: 1px dotted currentColor; padding: 0; cursor: pointer; }
     .stoplink:hover { color: var(--green); border-bottom-style: solid; }
@@ -270,6 +269,31 @@
        shape is what tells them apart, because hue already means region. */
     .mapbar .mkey-park { width: 0; height: 0; background: none; border-left: 6px solid transparent; border-right: 6px solid transparent; border-bottom: 11px solid var(--muted); }
     .mapbar .mkeynote { display: block; margin-top: 4px; }
+    /* The key is also the filter. Five layers on one map is four too many when a reader
+       is looking for one kind of thing, so a key entry is a button: it shows its own
+       layer and hides the rest, and All puts them back. Single-select, because the
+       question being asked is "where are the national parks", not "which combination". */
+    .maplayers { display: flex; flex-wrap: wrap; gap: 6px; }
+    .mapbar .maplayers .mkey { margin-right: 0; font: inherit; font-size: 13px; font-weight: 700;
+      color: var(--ink-soft); background: var(--paper, #fff); border: 1.5px solid #E2D9C2;
+      border-radius: 999px; padding: 5px 12px; cursor: pointer; }
+    .mapbar .maplayers .mkey:hover { border-color: var(--green); color: var(--ink); }
+    .mapbar .maplayers .mkey:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+    .mapbar .maplayers .mkey.is-on { background: var(--green-dark); border-color: var(--green-dark); color: #fff; }
+    .mapbar .maplayers .mkey.is-on .mkey-s { background: #fff; }
+    .mapbar .maplayers .mkey.is-on .mkey-park { background: none; border-bottom-color: #fff; }
+    .mapbar .maplayers .mkey.is-on .mkey-stop { background: transparent; border-color: #fff; }
+    .mapbar .maplayers .mkey[hidden] { display: none; }
+    .mapbar .mkey-all { border-radius: 3px; background: none; border: 1.5px solid currentColor; }
+    /* One attribute on the map container drives the whole stack. A marker wrapper carries
+       its layer, so nothing per-marker has to be tracked and a layer added later is
+       filtered by writing one class on it. */
+    .mlmap[data-layer]:not([data-layer="all"]) .mlmark { display: none; }
+    .mlmap[data-layer="region"] .mlmark.mlayer-region,
+    .mlmap[data-layer="park"] .mlmark.mlayer-park,
+    .mlmap[data-layer="stay"] .mlmark.mlayer-stay,
+    .mlmap[data-layer="go"] .mlmark.mlayer-go,
+    .mlmap[data-layer="stop"] .mlmark.mlayer-stop { display: block; }
     /* Zoomed out, the region label is the thing worth reading and the markers sit behind
        it. Zoomed in, the reader has picked a place and the markers come forward. */
     .mlmark-region { z-index: 4; }
@@ -432,6 +456,23 @@
     .blurb { color: var(--muted); font-size: 14.5px; flex: 1; }
     .where { color: var(--muted); font-size: 13px; }
     .where b { color: var(--ink); font-weight: 800; }
+    /* What a region holds is a list of facts, and it used to be a stack of paragraphs
+       that read as one grey block. Each fact is a bullet now, and the list runs across
+       the width rather than down it: the short facts sit beside each other and only the
+       two long ones, the bird list and the stops, take a full line. The bullet is the
+       region's own colour, which is the same key the map uses. */
+    .wherelist { list-style: none; margin: 12px 0 0; padding: 0; display: flex; flex-wrap: wrap; column-gap: 22px; row-gap: 7px; }
+    .wherelist > li { flex: 1 1 100%; position: relative; padding-left: 15px; min-width: 0; }
+    .wherelist > li::before { content: ""; position: absolute; left: 2px; top: 0.5em; width: 6px; height: 6px;
+      border-radius: 50%; background: var(--rc, var(--sage)); }
+    .wherelist > li.parks, .wherelist > li.centres, .wherelist > li.covers, .wherelist > li.wildlife {
+      flex: 1 1 clamp(240px, 42%, 100%); }
+    /* One bullet per stop. Six stops in one paragraph read as a single long sentence and
+       the note belonging to each name could only be found by counting commas. */
+    .stoplist { list-style: none; margin: 6px 0 0; padding: 0; display: flex; flex-wrap: wrap; column-gap: 20px; row-gap: 5px; }
+    .stoplist > li { position: relative; padding-left: 14px; flex: 1 1 clamp(260px, 30%, 100%); min-width: 0; }
+    .stoplist > li::before { content: ""; position: absolute; left: 2px; top: 0.5em; width: 6px; height: 6px;
+      border-radius: 50%; border: 1.5px solid var(--rc, var(--sage)); }
     .watch-link { font-weight: 800; font-size: 13.5px; color: var(--green); text-decoration: none; }
     .maplink { color: var(--muted); font-weight: 700; }
     .watch-link:hover { text-decoration: underline; }
@@ -529,7 +570,7 @@
     .itinmap-btn { position: absolute; right: 8px; top: 8px; width: 30px; height: 30px; display: grid; place-items: center; padding: 0; border: 1.5px solid var(--border); background: var(--surface); color: var(--green-dark); cursor: zoom-in; border-radius: 999px; box-shadow: 0 2px 6px rgba(46,42,37,.10); }
     .itinmap-btn:hover { border-color: var(--sage); color: var(--green); }
     .itinmap-btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
-    .itinmap { width: 100%; height: auto; max-height: 210px; padding: 10px; background: #EAF0F4; border-radius: 10px; margin-bottom: 4px; display: block; }
+    .itinmap { width: 100%; height: auto; max-height: 260px; padding: 10px; background: #EAF0F4; border-radius: 10px; margin-bottom: 4px; display: block; }
     /* A stop is a link now, so it needs the affordances of one. */
     .rstop-link { cursor: pointer; }
     .rstop-link .rstop { transition: stroke-width .12s ease; }
@@ -546,6 +587,21 @@
     dialog.mapzoom .zoomclose:hover { border-color: var(--sage); color: var(--ink); }
     .rline { fill: none; stroke: var(--live); stroke-width: 7; stroke-dasharray: 16 14; stroke-linecap: round; opacity: .75; }
     .rstop { fill: var(--green); stroke: #fff; stroke-width: 5; }
+    /* Drawn where a numbered disc had to move off its stop to stay readable: the thin
+       line and the small dot say which point on the map the number belongs to. */
+    .rlead { stroke: #fff; stroke-width: 6; stroke-linecap: round; opacity: .95; }
+    .rtrue { fill: #fff; stroke: var(--live); stroke-width: 4; }
+    /* The airport a route starts at. A plane rather than a number, because it is where
+       the trip begins and not a place to go birding, and numbering it would turn every
+       route's stop 1 into a terminal. */
+    .rairdot { fill: var(--ink); stroke: #fff; stroke-width: 5; }
+    .rairicon { color: #fff; }
+    .itinkey-air { font-weight: 700; color: var(--ink); }
+    .itinkey-p { display: inline-grid; place-items: center; width: 19px; height: 19px; border-radius: 50%;
+      background: var(--ink); color: #fff; flex: 0 0 auto; }
+    .itinkey-p svg { width: 12px; height: 12px; }
+    .itinkey-role { margin-left: 5px; font-size: 10.5px; font-weight: 800; letter-spacing: .04em;
+      text-transform: uppercase; color: var(--muted); }
     .rnum { font-family: var(--body); font-weight: 800; font-size: 48px; fill: #fff; }
     .bdg.loop { background: var(--surface-alt); color: #6B5326; border: 1px solid var(--border); }
     /* The app card. This is an advert for our own product and is styled as one:
@@ -1415,7 +1471,7 @@
       <article class="certdef" id="scheme-ecolabel" data-q="eu ecolabel ecolabel european commission austria france italy netherlands austria germany germany england wales iceland portugal spain netherlands">
         <h3>EU Ecolabel<span class="certdef-tag">Ecolabel</span></h3>
         <p class="certdef-by">Run by European Commission, since 1992</p>
-        <p>Present in Austria and used alongside the national scheme. The country-filtered catalogue could not be loaded when this page was last checked, so no Austrian count is stated here.</p>
+        <p>Present in Austria and used alongside the national scheme. The country-filtered catalogue could not be loaded when it was last checked, so no Austrian count is stated here.</p>
         <div class="certwhere">
           <span class="certwhere-label">On these guides</span>
           <a class="certchip" href="/trips/austria/">Austria<span>169 listings</span></a>
