@@ -129,6 +129,11 @@
     .cat-title { font-family: var(--display); font-weight: 700; font-size: 28px; color: var(--green-dark); margin: 0 0 18px; letter-spacing: -.2px; scroll-margin-top: 90px; }
     .cat-sub { color: var(--muted); font-size: 15px; margin-bottom: 16px; max-width: 76ch; }
 
+    /* The h1 names the country and the stats count it. The line between them is the only
+       place on the page that says what the birding is actually LIKE, which is what a
+       reader arriving from a search result is deciding on. Held to one line of prose. */
+    .heroline { max-width: 60ch; margin: 14px 0 0; font-family: var(--body); font-size: 17px; line-height: 1.5; font-weight: 500; color: rgba(255,255,255,.93); text-shadow: 0 1px 3px rgba(0,0,0,.45); }
+    @media (max-width: 640px) { .heroline { font-size: 15px; margin-top: 11px; } }
     .hstats { display: flex; flex-wrap: wrap; gap: 12px 34px; margin-top: 22px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.28); }
     .hstat { display: flex; flex-direction: column; gap: 2px; }
     .hstat b { font-family: var(--display); font-weight: 700; font-size: 31px; line-height: 1; color: #fff; }
@@ -193,6 +198,10 @@
     .showrest:hover { background: var(--surface-alt); border-style: solid; }
     .showrest:focus-visible { outline: 2px solid var(--green-dark); outline-offset: 2px; }
     .stayrule { font-family: var(--body); font-size: 13px; line-height: 1.55; color: var(--muted); margin: 0 2px 12px; max-width: 78ch; }
+    /* The stayrule says why THESE places are listed. The ratebasis says what the number
+       beside each one means, so it sits under the list rather than above it: a reader
+       meets it having just seen a rate, which is the moment the caveat is worth reading. */
+    .ratebasis { font-family: var(--body); font-size: 13px; line-height: 1.55; color: var(--muted); margin: 14px 2px 0; max-width: 78ch; }
     .stayrule a { color: var(--green-dark); font-weight: 800; }
     .where.wildlife { color: var(--muted); }
     .where.wildlife b { color: var(--ink); }
@@ -287,6 +296,13 @@
        shape is what tells them apart, because hue already means region. */
     .mapbar .mkey-park { width: 0; height: 0; background: none; border-left: 6px solid transparent; border-right: 6px solid transparent; border-bottom: 11px solid var(--muted); }
     .mapbar .mkeynote { display: block; margin-top: 4px; }
+    /* The mkeynote reads the key. The mapscope reads the MAP: what the outline covers and
+       how precise a pin is, which a reader has to know before trusting a dot. It sits
+       under the whole widget rather than inside the bar, because it is about the drawing
+       and the bar is about the markers.
+       NOT .mapnote: that class already belongs to parks_note further down the section, and
+       reusing it here restyled the parks line on all 44 pages without touching its code. */
+    .mapscope { margin: 10px 0 0; font-size: 13.5px; line-height: 1.55; color: var(--muted); max-width: 82ch; }
     /* The key is also the filter. Five layers on one map is four too many when a reader
        is looking for one kind of thing, so a key entry is a button: it shows its own
        layer and hides the rest, and All puts them back. Single-select, because the
@@ -892,6 +908,7 @@
     <div class="wrap hero-inner">
       <p class="crumb"><a href="/trips/">Trips</a> / Germany</p>
       <h1>Birding in Germany</h1>
+      <p class="heroline">Cranes staging on the Baltic in their tens of thousands, bustards displaying an hour from Berlin, and a North Sea island that fills with migrants each autumn.</p>
       <div class="hstats">
         <div class="hstat"><b>651</b><span>species with a card here</span></div>
         <div class="hstat"><b>12</b><span>birding regions</span></div>
@@ -3700,6 +3717,7 @@
           </div>
           <p class="mkeynote" id="maplayers-note" role="status" aria-live="polite">Colours match each region. Select a marker to open its entry below.</p>
         </div>
+        <p class="mapscope">One pin per region, and the stops inside each region card carry their own coordinates. Places to stay are pinned from their postcode rather than their street address.</p>
       </div>
       <p class="mapnote">National parks, nature parks, biosphere reserves and nature reserves named in the regions above.</p>
       <div class="subsec" id="trips">
@@ -3841,6 +3859,7 @@
               <option value="name">Name, A to Z</option>
             </select>
           </div>
+          <p class="ratebasis">Rates appear only where the Wild and Worthy supplier archive publishes a band. Neither register carries prices. Each band reads in US dollars, euros and pounds, converted at European Central Bank reference rates for August 2026.</p>
           <div class="list">
       <article class="trip" id="lodge-greensign-25813-best-western-plus-theodor-storm-hotel-best-western-plus-theodor-storm-ho" data-cat="stay" data-tier="2" data-price="100" data-km="0.1" data-region="0" data-certs="1" data-name="best western plus theodor storm hotel">
         <div class="trip-body">
@@ -4223,6 +4242,7 @@
               <option value="name">Name, A to Z</option>
             </select>
           </div>
+          <p class="ratebasis">Rates appear only where the Wild and Worthy supplier archive publishes a band. Neither register carries prices. Each band reads in US dollars, euros and pounds, converted at European Central Bank reference rates for August 2026.</p>
           <div class="list">
       <article class="trip" id="lodge-ww-strandhotel-zingst-zingst-zingst" data-cat="stay" data-tier="2" data-price="100" data-km="0" data-region="2" data-certs="1" data-name="strandhotel zingst, zingst">
         <div class="trip-body">
@@ -4789,6 +4809,7 @@
               <option value="name">Name, A to Z</option>
             </select>
           </div>
+          <p class="ratebasis">Rates appear only where the Wild and Worthy supplier archive publishes a band. Neither register carries prices. Each band reads in US dollars, euros and pounds, converted at European Central Bank reference rates for August 2026.</p>
           <div class="list">
       <article class="trip" id="lodge-ww-pension-zur-fledermaus-waren" data-cat="stay" data-tier="1" data-price="50" data-km="0" data-region="3" data-certs="1" data-name="pension zur fledermaus">
         <div class="trip-body">
@@ -5260,6 +5281,7 @@
               <option value="name">Name, A to Z</option>
             </select>
           </div>
+          <p class="ratebasis">Rates appear only where the Wild and Worthy supplier archive publishes a band. Neither register carries prices. Each band reads in US dollars, euros and pounds, converted at European Central Bank reference rates for August 2026.</p>
           <div class="list">
       <article class="trip" id="lodge-ww-scandic-berlin-kurfuerstendamm-berlin" data-cat="stay" data-tier="0" data-km="43.9" data-region="5" data-certs="1" data-name="scandic berlin kurfuerstendamm">
         <div class="trip-body">
@@ -8866,6 +8888,7 @@
               <option value="name">Name, A to Z</option>
             </select>
           </div>
+          <p class="ratebasis">Rates appear only where the Wild and Worthy supplier archive publishes a band. Neither register carries prices. Each band reads in US dollars, euros and pounds, converted at European Central Bank reference rates for August 2026.</p>
           <div class="list">
       <article class="trip" id="lodge-greensign-02625-hotel-goldener-adler-bautzen-hotel-goldener-adler-bautzen" data-cat="stay" data-tier="2" data-price="100" data-km="0.2" data-region="6" data-certs="1" data-name="hotel goldener adler bautzen">
         <div class="trip-body">
@@ -9125,6 +9148,7 @@
               <option value="name">Name, A to Z</option>
             </select>
           </div>
+          <p class="ratebasis">Rates appear only where the Wild and Worthy supplier archive publishes a band. Neither register carries prices. Each band reads in US dollars, euros and pounds, converted at European Central Bank reference rates for August 2026.</p>
           <div class="list">
       <article class="trip" id="lodge-ww-a-rosa-gothisches-haus-wernigerode-wernigerode" data-cat="stay" data-tier="1" data-price="100" data-km="0" data-region="7" data-certs="1" data-name="a rosa gothisches haus wernigerode">
         <div class="trip-body">
@@ -9552,6 +9576,7 @@
               <option value="name">Name, A to Z</option>
             </select>
           </div>
+          <p class="ratebasis">Rates appear only where the Wild and Worthy supplier archive publishes a band. Neither register carries prices. Each band reads in US dollars, euros and pounds, converted at European Central Bank reference rates for August 2026.</p>
           <div class="list">
       <article class="trip" id="lodge-greensign-32339-schloss-benkhausen-tagungshotel-schloss-benkhausen-tagungshotel" data-cat="stay" data-tier="3" data-price="100" data-km="13.5" data-region="8" data-certs="1" data-name="schloss benkhausen - tagungshotel">
         <div class="trip-body">
@@ -9774,6 +9799,7 @@
               <option value="name">Name, A to Z</option>
             </select>
           </div>
+          <p class="ratebasis">Rates appear only where the Wild and Worthy supplier archive publishes a band. Neither register carries prices. Each band reads in US dollars, euros and pounds, converted at European Central Bank reference rates for August 2026.</p>
           <div class="list">
       <article class="trip" id="lodge-greensign-79822-maritim-titiseehotel-titisee-neustadt-maritim-titiseehotel-titisee-neust" data-cat="stay" data-tier="2" data-price="100" data-km="4.6" data-region="9" data-certs="1" data-name="maritim titiseehotel titisee-neustadt">
         <div class="trip-body">
@@ -13128,6 +13154,7 @@
               <option value="name">Name, A to Z</option>
             </select>
           </div>
+          <p class="ratebasis">Rates appear only where the Wild and Worthy supplier archive publishes a band. Neither register carries prices. Each band reads in US dollars, euros and pounds, converted at European Central Bank reference rates for August 2026.</p>
           <div class="list">
       <article class="trip" id="lodge-greensign-94227-hotel-sonnenhof-hotel-sonnenhof" data-cat="stay" data-tier="2" data-price="100" data-km="3.1" data-region="10" data-certs="1" data-name="hotel sonnenhof">
         <div class="trip-body">
@@ -13559,6 +13586,7 @@
               <option value="name">Name, A to Z</option>
             </select>
           </div>
+          <p class="ratebasis">Rates appear only where the Wild and Worthy supplier archive publishes a band. Neither register carries prices. Each band reads in US dollars, euros and pounds, converted at European Central Bank reference rates for August 2026.</p>
           <div class="list">
       <article class="trip" id="lodge-ww-hotel-alpengluhen-by-coffee-fellows-hotels-olching" data-cat="stay" data-tier="2" data-price="100" data-km="25.8" data-region="11" data-certs="1" data-name="hotel alpengluhen by coffee fellows hotels">
         <div class="trip-body">

@@ -129,6 +129,11 @@
     .cat-title { font-family: var(--display); font-weight: 700; font-size: 28px; color: var(--green-dark); margin: 0 0 18px; letter-spacing: -.2px; scroll-margin-top: 90px; }
     .cat-sub { color: var(--muted); font-size: 15px; margin-bottom: 16px; max-width: 76ch; }
 
+    /* The h1 names the country and the stats count it. The line between them is the only
+       place on the page that says what the birding is actually LIKE, which is what a
+       reader arriving from a search result is deciding on. Held to one line of prose. */
+    .heroline { max-width: 60ch; margin: 14px 0 0; font-family: var(--body); font-size: 17px; line-height: 1.5; font-weight: 500; color: rgba(255,255,255,.93); text-shadow: 0 1px 3px rgba(0,0,0,.45); }
+    @media (max-width: 640px) { .heroline { font-size: 15px; margin-top: 11px; } }
     .hstats { display: flex; flex-wrap: wrap; gap: 12px 34px; margin-top: 22px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.28); }
     .hstat { display: flex; flex-direction: column; gap: 2px; }
     .hstat b { font-family: var(--display); font-weight: 700; font-size: 31px; line-height: 1; color: #fff; }
@@ -193,6 +198,10 @@
     .showrest:hover { background: var(--surface-alt); border-style: solid; }
     .showrest:focus-visible { outline: 2px solid var(--green-dark); outline-offset: 2px; }
     .stayrule { font-family: var(--body); font-size: 13px; line-height: 1.55; color: var(--muted); margin: 0 2px 12px; max-width: 78ch; }
+    /* The stayrule says why THESE places are listed. The ratebasis says what the number
+       beside each one means, so it sits under the list rather than above it: a reader
+       meets it having just seen a rate, which is the moment the caveat is worth reading. */
+    .ratebasis { font-family: var(--body); font-size: 13px; line-height: 1.55; color: var(--muted); margin: 14px 2px 0; max-width: 78ch; }
     .stayrule a { color: var(--green-dark); font-weight: 800; }
     .where.wildlife { color: var(--muted); }
     .where.wildlife b { color: var(--ink); }
@@ -287,6 +296,13 @@
        shape is what tells them apart, because hue already means region. */
     .mapbar .mkey-park { width: 0; height: 0; background: none; border-left: 6px solid transparent; border-right: 6px solid transparent; border-bottom: 11px solid var(--muted); }
     .mapbar .mkeynote { display: block; margin-top: 4px; }
+    /* The mkeynote reads the key. The mapscope reads the MAP: what the outline covers and
+       how precise a pin is, which a reader has to know before trusting a dot. It sits
+       under the whole widget rather than inside the bar, because it is about the drawing
+       and the bar is about the markers.
+       NOT .mapnote: that class already belongs to parks_note further down the section, and
+       reusing it here restyled the parks line on all 44 pages without touching its code. */
+    .mapscope { margin: 10px 0 0; font-size: 13.5px; line-height: 1.55; color: var(--muted); max-width: 82ch; }
     /* The key is also the filter. Five layers on one map is four too many when a reader
        is looking for one kind of thing, so a key entry is a button: it shows its own
        layer and hides the rest, and All puts them back. Single-select, because the
@@ -892,10 +908,10 @@
     <div class="wrap hero-inner">
       <p class="crumb"><a href="/trips/">Trips</a> / Austria</p>
       <h1>Birding in Austria</h1>
+      <p class="heroline">Soda pans on the Hungarian plain, the full woodpecker set in the limestone forests, and an alpine list on a pass road above the treeline.</p>
       <div class="hstats">
         <div class="hstat"><b>424</b><span>species with a card here</span></div>
         <div class="hstat"><b>10</b><span>birding regions</span></div>
-        <div class="hstat"><b>0</b><span>reserves and parks named</span></div>
       </div>
     </div>
 <p class="vidcredit">Video <a href="https://commons.wikimedia.org/wiki/File%3AVideo_of_ural_owl_%28Strix_Uralensis%29_on_the_lookout_and_hunting.webm" target="_blank" rel="noopener">Sillerkiil</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a></p>
@@ -2797,6 +2813,7 @@
           </div>
           <p class="mkeynote" id="maplayers-note" role="status" aria-live="polite">Colours match each region. Select a marker to open its entry below.</p>
         </div>
+        <p class="mapscope">Every marker sits at the level of its area rather than its exact doorstep, because an area is a place a gazetteer can resolve and a farm track is not.</p>
       </div>
       <p class="mapnote">National parks, regional parks and national nature reserves named in the regions above.</p>
       <div class="subsec" id="trips">
@@ -3026,6 +3043,7 @@
         <details class="lgroup rblock" id="stay-site-the-march-floodplains-and-marchegg" data-noun="place to stay|places to stay">
           <summary class="rsub"><span class="rsub-x" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span><span class="rsub-t">Where to Stay</span><span class="rsub-n">1 place to stay</span></summary>
           <p class="stayrule">Austria is the third country in a row where the obvious scheme is the wrong one. Green Key has almost no Austrian presence, and leading on it would produce a near-empty section. What carries the country is the Österreichisches Umweltzeichen, Austria's own national ecolabel, whose tourism register lists on the order of six hundred establishments across all nine states. That figure is a count taken off the register's own listing rather than an official published total, and it is stated that way on purpose. Every property below carries a certification from a scheme's own record and sits within reach of somewhere in the regions above. <a href="/trips/certifications/">What each certification actually means</a></p>
+          <p class="ratebasis">Rates appear only where the Wild and Worthy supplier archive publishes a band. The Green Key register carries no prices, so most rows here have none. Each band reads in US dollars, euros and pounds, converted at European Central Bank reference rates for August 2026.</p>
           <div class="list">
       <article class="trip" id="lodge-ww-veltlinerland-camping-poysdorf-poysdorf" data-cat="stay" data-tier="1" data-price="50" data-km="44.3" data-region="1" data-certs="1" data-name="veltlinerland camping poysdorf">
         <div class="trip-body">
@@ -3093,6 +3111,7 @@
               <option value="name">Name, A to Z</option>
             </select>
           </div>
+          <p class="ratebasis">Rates appear only where the Wild and Worthy supplier archive publishes a band. The Green Key register carries no prices, so most rows here have none. Each band reads in US dollars, euros and pounds, converted at European Central Bank reference rates for August 2026.</p>
           <div class="list">
       <article class="trip" id="lodge-ww-a-o-hostel-wien-hauptbahnhof-vienna" data-cat="stay" data-tier="1" data-price="50" data-km="26.1" data-region="3" data-certs="1" data-name="a o hostel wien hauptbahnhof">
         <div class="trip-body">
@@ -4487,6 +4506,7 @@
               <option value="name">Name, A to Z</option>
             </select>
           </div>
+          <p class="ratebasis">Rates appear only where the Wild and Worthy supplier archive publishes a band. The Green Key register carries no prices, so most rows here have none. Each band reads in US dollars, euros and pounds, converted at European Central Bank reference rates for August 2026.</p>
           <div class="list">
       <article class="trip" id="lodge-ww-a-o-hostel-wien-hauptbahnhof-vienna" data-cat="stay" data-tier="1" data-price="50" data-km="15.7" data-region="3" data-certs="1" data-name="a o hostel wien hauptbahnhof">
         <div class="trip-body">
@@ -5989,6 +6009,7 @@
               <option value="name">Name, A to Z</option>
             </select>
           </div>
+          <p class="ratebasis">Rates appear only where the Wild and Worthy supplier archive publishes a band. The Green Key register carries no prices, so most rows here have none. Each band reads in US dollars, euros and pounds, converted at European Central Bank reference rates for August 2026.</p>
           <div class="list">
       <article class="trip" id="lodge-ww-hotel-outside-matrei-in-osttirol" data-cat="stay" data-tier="2" data-price="100" data-km="0" data-region="5" data-certs="1" data-name="hotel outside">
         <div class="trip-body">
@@ -7945,6 +7966,7 @@
               <option value="name">Name, A to Z</option>
             </select>
           </div>
+          <p class="ratebasis">Rates appear only where the Wild and Worthy supplier archive publishes a band. The Green Key register carries no prices, so most rows here have none. Each band reads in US dollars, euros and pounds, converted at European Central Bank reference rates for August 2026.</p>
           <div class="list">
       <article class="trip" id="lodge-ww-alpenresort-schwarz-mieming" data-cat="stay" data-tier="2" data-price="100" data-km="7.2" data-region="6" data-certs="1" data-name="alpenresort schwarz">
         <div class="trip-body">
@@ -8422,6 +8444,7 @@
               <option value="name">Name, A to Z</option>
             </select>
           </div>
+          <p class="ratebasis">Rates appear only where the Wild and Worthy supplier archive publishes a band. The Green Key register carries no prices, so most rows here have none. Each band reads in US dollars, euros and pounds, converted at European Central Bank reference rates for August 2026.</p>
           <div class="list">
       <article class="trip" id="lodge-ww-harry-s-home-dornbirn-dornbirn" data-cat="stay" data-tier="1" data-km="0" data-region="7" data-certs="1" data-name="harry s home dornbirn">
         <div class="trip-body">
@@ -8830,6 +8853,7 @@
               <option value="name">Name, A to Z</option>
             </select>
           </div>
+          <p class="ratebasis">Rates appear only where the Wild and Worthy supplier archive publishes a band. The Green Key register carries no prices, so most rows here have none. Each band reads in US dollars, euros and pounds, converted at European Central Bank reference rates for August 2026.</p>
           <div class="list">
       <article class="trip" id="lodge-ww-explorer-hotel-hinterstoder-hinterstoder" data-cat="stay" data-tier="0" data-km="13.2" data-region="8" data-certs="1" data-name="explorer hotel hinterstoder">
         <div class="trip-body">
@@ -9135,6 +9159,7 @@
               <option value="name">Name, A to Z</option>
             </select>
           </div>
+          <p class="ratebasis">Rates appear only where the Wild and Worthy supplier archive publishes a band. The Green Key register carries no prices, so most rows here have none. Each band reads in US dollars, euros and pounds, converted at European Central Bank reference rates for August 2026.</p>
           <div class="list">
       <article class="trip" id="lodge-ww-hotel-spirodom-admont-admont" data-cat="stay" data-tier="2" data-price="100" data-km="8.6" data-region="9" data-certs="1" data-name="hotel spirodom admont">
         <div class="trip-body">
