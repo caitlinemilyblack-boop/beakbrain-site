@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Birding in El Salvador</title>
+  <title>The Complete Guide to Birding in El Salvador</title>
   <meta name="description" content="Where to go birding in El Salvador, region by region: Montecristo, the volcanic chain, El Imposible, the Jiquilisco mangroves and the eastern highlands, with when to go and what a room costs." />
   <link rel="icon" href="/assets/favicon.png" />
   <link rel="canonical" href="https://beakbrain.com/trips/el-salvador/" />
-  <meta property="og:title" content="Birding in El Salvador" />
+  <meta property="og:title" content="The Complete Guide to Birding in El Salvador" />
   <meta property="og:description" content="Where to go birding in El Salvador, region by region: Montecristo, the volcanic chain, El Imposible, the Jiquilisco mangroves and the eastern highlands, with when to go and what a room costs." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://beakbrain.com/trips/el-salvador/" />
@@ -205,7 +205,14 @@
     .stayrule a { color: var(--green-dark); font-weight: 800; }
     /* Habitat and When sit above the birds and read as fact rather than as recommendation,
        so they take the body colour and leave the muted grey to the wildlife aside. */
-    .where.habitat b, .where.when b, .where.access b { color: var(--green-dark); }
+    .where.habitat b, .where.when b, .where.access b, .where.base b { color: var(--green-dark); }
+    /* Seasonal lines sit under the all-year list and read as its continuation, so they
+       are indented rather than given a colour of their own. */
+    .where.seasonal { padding-left: .9rem; }
+    .mobility { margin-top: 1.4rem; border-top: 1px solid var(--border); padding-top: 1.1rem; }
+    .mobility h3 { font-size: 1.05rem; margin: 0 0 .45rem; }
+    .prep.fivep li b { color: var(--green-dark); }
+    .where.seasonal b { color: var(--green-dark); font-weight: 600; }
     .where.when { font-variant-numeric: tabular-nums; }
     .where.wildlife { color: var(--muted); }
     .where.wildlife b { color: var(--ink); }
@@ -255,6 +262,10 @@
        side inside one pill and the pill keeps the badge's own shape. */
     .bdg.cert { padding: 0; gap: 0; overflow: hidden; align-items: stretch; }
     .bdg.cert .bdg-sym, .bdg.cert .bdg-lab { display: inline-flex; align-items: center; color: inherit; text-decoration: none; padding: 4px 7px; }
+    /* A name or a chip label with nowhere to go reads as text, not as a dead link. */
+    .nolink { color: inherit; }
+    span.bdg-lab { cursor: default; }
+    .parkname { color: inherit; }
     .bdg.cert .bdg-sym { padding-left: 10px; border-right: 1px solid #D3E0CB; align-items: center; flex: none; }
     .bdg.cert .bdg-lab { padding-right: 11px; }
     .bdg.cert .bdg-sym:hover, .bdg.cert .bdg-lab:hover { background: var(--green); color: #fff; }
@@ -293,7 +304,11 @@
     .biobar i { display: block; height: 100%; background: var(--green); border-radius: 999px; }
     .biomax { color: var(--ink-soft); opacity: .7; }
     .qualifies { margin: 6px 0 0; font-size: 13.5px; font-weight: 700; color: var(--green-dark); }
-    .qualifies.birdlodge { color: var(--green); }
+    /* A MARKER, NOT A SENTENCE. Cat, 2026-08-29: "Birding lodge" sat as bare bold text
+       beside the certification pills and read as an unexplained assertion. It is a
+       badge now, shaped like the certifications, and its tooltip says what the claim
+       covers. PAGE-SPEC.md section 8. */
+    .bdg.birdlodge { background: #EAF2E6; color: var(--green-dark); border: 1px solid #D3E0CB; }
     .mapnote { color: var(--muted); font-size: 14px; margin: -6px 0 18px; }
     .mapbar .mkey { display: inline-flex; align-items: center; gap: 6px; margin-right: 14px; }
     .mapbar .mkey-s { width: 11px; height: 11px; background: var(--muted); flex: none; }
@@ -565,6 +580,9 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
+    .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
+    .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
     .season-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 6px; }
     @media (max-width: 860px) {
       .season { border-right: none; border-bottom: 1px solid #EFE5C6; }
@@ -916,9 +934,9 @@
     <div class="wrap hero-inner">
       <p class="crumb"><a href="/trips/">Trips</a> / El Salvador</p>
       <h1>Birding in El Salvador</h1>
-      <p class="heroline">The smallest country on the isthmus and the only one with no Caribbean coast, holding cloud forest where three borders meet, a chain of live volcanoes, and the largest mangrove bay in Central America's Pacific.</p>
+
       <div class="hstats">
-        <div class="hstat"><b>561</b><span>species with a card here</span></div>
+        <div class="hstat"><b>562</b><span>bird species present</span></div>
         <div class="hstat"><b>5</b><span>regions</span></div>
         <div class="hstat"><b>8</b><span>protected areas listed</span></div>
       </div>
@@ -950,21 +968,21 @@
       <div class="glance">
         <p class="glance-lab">At a glance</p>
         <dl class="glist">
-          <div class="grow"><dt>Best months</dt><dd>November to April for the whole country, and March for quetzals at Montecristo before the upper forest closes in May. The wintering shorebird counts at Jiquilisco peak between December and February.</dd></div>
+          <div class="grow"><dt>Best months</dt><dd><ul class="glance-bullets"><li>November to April for the whole country</li><li>March for quetzals at Montecristo before the upper forest closes in May</li><li>The wintering shorebird counts at Jiquilisco peak between December and February</li></ul></dd></div>
           <div class="grow"><dt>Regions</dt><dd><span class="glinks"><a class="glink" href="#site-montecristo-and-the-northern-cloud-forest"><span class="rdot" style="background:#2E86AB"></span>Montecristo and the northern cloud forest</a><a class="glink" href="#site-the-volcanic-chain-cerro-verde-and-santa-ana"><span class="rdot" style="background:#0F8B8D"></span>The volcanic chain: Cerro Verde and Santa Ana</a><a class="glink" href="#site-el-imposible-and-the-western-hills"><span class="rdot" style="background:#C0392B"></span>El Imposible and the western hills</a><a class="glink" href="#site-the-pacific-coast-and-the-mangrove-estuaries"><span class="rdot" style="background:#D68910"></span>The Pacific coast and the mangrove estuaries</a><a class="glink" href="#site-the-eastern-highlands-perquin-and-the-rio-sapo"><span class="rdot" style="background:#6A994E"></span>The eastern highlands: Perquin and the Rio Sapo</a></span></dd></div>
           <div class="grow"><dt>Routes</dt><dd><span class="glinks"><a class="glink" href="#itin-the-volcanoes-and-the-coast">The volcanoes and the coast<span class="gdays">4 days</span></a><a class="glink" href="#itin-the-classic-west">The classic west<span class="gdays">7 days</span></a><a class="glink" href="#itin-north-to-the-cloud-forest">North to the cloud forest<span class="gdays">6 days</span></a><a class="glink" href="#itin-end-to-end">End to end<span class="gdays">11 days</span></a></span></dd></div>
           <div class="grow"><dt>Getting in</dt><dd>San Salvador (SAL) takes all the international flights and sits on the coast road rather than in the capital, which puts the Pacific reserves closer than the city is.</dd></div>
-          <div class="grow"><dt>Getting around</dt><dd>Everything on this guide is within five hours of the airport and the main roads are surfaced. A hired vehicle with clearance handles the park tracks, and Montecristo and El Imposible both need a permit arranged before arrival rather than at the gate.</dd></div>
+          <div class="grow"><dt>Getting around</dt><dd>Everything here sits within five hours of the airport on surfaced main roads, and a hired vehicle with clearance handles the park tracks, with Montecristo and El Imposible both needing a permit arranged before arrival.</dd></div>
         </dl>
       </div>
       <div class="birdhead">
-      <h2 class="cat-title">Every bird of El Salvador</h2>
+      <h2 class="cat-title">Every Salvadoran Species</h2>
       </div>
       <div class="gchips" role="group" aria-label="Filter the birds">
         <button class="gchip on" type="button" aria-pressed="true" data-group="highlight">Highlights <span class="gcount">8</span></button>
-        <button class="gchip" type="button" aria-pressed="false" data-group="">All birds <span class="gcount">561</span></button>
+        <button class="gchip" type="button" aria-pressed="false" data-group="">All birds <span class="gcount">562</span></button>
         <button class="gchip" type="button" aria-pressed="false" data-group="hummer">Hummingbirds <span class="gcount">24</span></button>
-        <button class="gchip" type="button" aria-pressed="false" data-group="tanager">Tanagers <span class="gcount">18</span></button>
+        <button class="gchip" type="button" aria-pressed="false" data-group="tanager">Tanagers <span class="gcount">19</span></button>
         <button class="gchip" type="button" aria-pressed="false" data-group="antbird">Antbirds and allies <span class="gcount">2</span></button>
         <button class="gchip" type="button" aria-pressed="false" data-group="raptor">Raptors <span class="gcount">42</span></button>
         <button class="gchip" type="button" aria-pressed="false" data-group="parrot">Parrots and macaws <span class="gcount">10</span></button>
@@ -972,7 +990,7 @@
         <button class="gchip" type="button" aria-pressed="false" data-group="warbler">Warblers <span class="gcount">46</span></button>
         <button class="gchip" type="button" aria-pressed="false" data-group="wrenjay">Wrens and jays <span class="gcount">18</span></button>
       </div>
-      <p class="countnote" id="count-group" role="status" aria-live="polite">Showing 8 of 561 birds · Highlights</p>
+      <p class="countnote" id="count-group" role="status" aria-live="polite">Showing 8 of 562 birds · Highlights</p>
       <div class="stripwrap">
         <button type="button" class="stripbtn prev" id="strip-prev" aria-label="Scroll the cards left"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
         <div class="cardstrip mode-hl" id="cardstrip" tabindex="0" aria-label="Collector cards for every Salvadoran bird">
@@ -2576,669 +2594,673 @@
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/reddish-egret/" data-i="396" data-group="waterbird" aria-label="Reddish Egret collector card"><span class="tph"><span class="tph-name">Reddish Egret</span><span class="tph-sci">Egretta rufescens</span></span></a>
+          <a class="tcard tload" href="/birds/red-throated-ant-tanager/" data-i="396" data-group="tanager" aria-label="Red-throated Ant Tanager collector card"><span class="tph"><span class="tph-name">Red-throated Ant Tanager</span><span class="tph-sci">Driophlox fuscicauda</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/rock-wren/" data-i="397" data-group="wrenjay" aria-label="Rock Wren collector card"><span class="tph"><span class="tph-name">Rock Wren</span><span class="tph-sci">Salpinctes obsoletus</span></span></a>
+          <a class="tcard tload" href="/birds/reddish-egret/" data-i="397" data-group="waterbird" aria-label="Reddish Egret collector card"><span class="tph"><span class="tph-name">Reddish Egret</span><span class="tph-sci">Egretta rufescens</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/ruddy-ground-dove/" data-i="398" data-group="" aria-label="Ruddy Ground Dove collector card"><span class="tph"><span class="tph-name">Ruddy Ground Dove</span><span class="tph-sci">Columbina talpacoti</span></span></a>
+          <a class="tcard tload" href="/birds/rock-wren/" data-i="398" data-group="wrenjay" aria-label="Rock Wren collector card"><span class="tph"><span class="tph-name">Rock Wren</span><span class="tph-sci">Salpinctes obsoletus</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/siberian-pipit/" data-i="399" data-group="" aria-label="Siberian Pipit collector card"><span class="tph"><span class="tph-name">Siberian Pipit</span><span class="tph-sci">Anthus japonicus</span></span></a>
+          <a class="tcard tload" href="/birds/ruddy-ground-dove/" data-i="399" data-group="" aria-label="Ruddy Ground Dove collector card"><span class="tph"><span class="tph-name">Ruddy Ground Dove</span><span class="tph-sci">Columbina talpacoti</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/sierra-madre-crow/" data-i="400" data-group="" aria-label="Sierra Madre Crow collector card"><span class="tph"><span class="tph-name">Sierra Madre Crow</span><span class="tph-sci">Corvus sierramadrensis</span></span></a>
+          <a class="tcard tload" href="/birds/siberian-pipit/" data-i="400" data-group="" aria-label="Siberian Pipit collector card"><span class="tph"><span class="tph-name">Siberian Pipit</span><span class="tph-sci">Anthus japonicus</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/slate-throated-whitestart/" data-i="401" data-group="" aria-label="Slate-throated Whitestart collector card"><span class="tph"><span class="tph-name">Slate-throated Whitestart</span><span class="tph-sci">Myioborus miniatus</span></span></a>
+          <a class="tcard tload" href="/birds/sierra-madre-crow/" data-i="401" data-group="" aria-label="Sierra Madre Crow collector card"><span class="tph"><span class="tph-name">Sierra Madre Crow</span><span class="tph-sci">Corvus sierramadrensis</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/snail-kite/" data-i="402" data-group="raptor" aria-label="Snail Kite collector card"><span class="tph"><span class="tph-name">Snail Kite</span><span class="tph-sci">Rostrhamus sociabilis</span></span></a>
+          <a class="tcard tload" href="/birds/slate-throated-whitestart/" data-i="402" data-group="" aria-label="Slate-throated Whitestart collector card"><span class="tph"><span class="tph-name">Slate-throated Whitestart</span><span class="tph-sci">Myioborus miniatus</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/southern-lapwing/" data-i="403" data-group="" aria-label="Southern Lapwing collector card"><span class="tph"><span class="tph-name">Southern Lapwing</span><span class="tph-sci">Vanellus chilensis</span></span></a>
+          <a class="tcard tload" href="/birds/snail-kite/" data-i="403" data-group="raptor" aria-label="Snail Kite collector card"><span class="tph"><span class="tph-name">Snail Kite</span><span class="tph-sci">Rostrhamus sociabilis</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/stilt-sandpiper/" data-i="404" data-group="" aria-label="Stilt Sandpiper collector card"><span class="tph"><span class="tph-name">Stilt Sandpiper</span><span class="tph-sci">Calidris himantopus</span></span></a>
+          <a class="tcard tload" href="/birds/southern-lapwing/" data-i="404" data-group="" aria-label="Southern Lapwing collector card"><span class="tph"><span class="tph-name">Southern Lapwing</span><span class="tph-sci">Vanellus chilensis</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/timor-nightjar/" data-i="405" data-group="" aria-label="Timor Nightjar collector card"><span class="tph"><span class="tph-name">Timor Nightjar</span><span class="tph-sci">Caprimulgus ritae</span></span></a>
+          <a class="tcard tload" href="/birds/stilt-sandpiper/" data-i="405" data-group="" aria-label="Stilt Sandpiper collector card"><span class="tph"><span class="tph-name">Stilt Sandpiper</span><span class="tph-sci">Calidris himantopus</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/townsend-s-warbler/" data-i="406" data-group="warbler" aria-label="Townsend's Warbler collector card"><span class="tph"><span class="tph-name">Townsend's Warbler</span><span class="tph-sci">Setophaga townsendi</span></span></a>
+          <a class="tcard tload" href="/birds/timor-nightjar/" data-i="406" data-group="" aria-label="Timor Nightjar collector card"><span class="tph"><span class="tph-name">Timor Nightjar</span><span class="tph-sci">Caprimulgus ritae</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/tropical-kingbird/" data-i="407" data-group="" aria-label="Tropical Kingbird collector card"><span class="tph"><span class="tph-name">Tropical Kingbird</span><span class="tph-sci">Tyrannus melancholicus</span></span></a>
+          <a class="tcard tload" href="/birds/townsend-s-warbler/" data-i="407" data-group="warbler" aria-label="Townsend's Warbler collector card"><span class="tph"><span class="tph-name">Townsend's Warbler</span><span class="tph-sci">Setophaga townsendi</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/tropical-mockingbird/" data-i="408" data-group="" aria-label="Tropical Mockingbird collector card"><span class="tph"><span class="tph-name">Tropical Mockingbird</span><span class="tph-sci">Mimus gilvus</span></span></a>
+          <a class="tcard tload" href="/birds/tropical-kingbird/" data-i="408" data-group="" aria-label="Tropical Kingbird collector card"><span class="tph"><span class="tph-name">Tropical Kingbird</span><span class="tph-sci">Tyrannus melancholicus</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/vaux-s-swift/" data-i="409" data-group="" aria-label="Vaux's Swift collector card"><span class="tph"><span class="tph-name">Vaux's Swift</span><span class="tph-sci">Chaetura vauxi</span></span></a>
+          <a class="tcard tload" href="/birds/tropical-mockingbird/" data-i="409" data-group="" aria-label="Tropical Mockingbird collector card"><span class="tph"><span class="tph-name">Tropical Mockingbird</span><span class="tph-sci">Mimus gilvus</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/violet-green-swallow/" data-i="410" data-group="" aria-label="Violet-green Swallow collector card"><span class="tph"><span class="tph-name">Violet-green Swallow</span><span class="tph-sci">Tachycineta thalassina</span></span></a>
+          <a class="tcard tload" href="/birds/vaux-s-swift/" data-i="410" data-group="" aria-label="Vaux's Swift collector card"><span class="tph"><span class="tph-name">Vaux's Swift</span><span class="tph-sci">Chaetura vauxi</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/western-sandpiper/" data-i="411" data-group="" aria-label="Western Sandpiper collector card"><span class="tph"><span class="tph-name">Western Sandpiper</span><span class="tph-sci">Calidris mauri</span></span></a>
+          <a class="tcard tload" href="/birds/violet-green-swallow/" data-i="411" data-group="" aria-label="Violet-green Swallow collector card"><span class="tph"><span class="tph-name">Violet-green Swallow</span><span class="tph-sci">Tachycineta thalassina</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/western-tanager/" data-i="412" data-group="tanager" aria-label="Western Tanager collector card"><span class="tph"><span class="tph-name">Western Tanager</span><span class="tph-sci">Piranga ludoviciana</span></span></a>
+          <a class="tcard tload" href="/birds/western-sandpiper/" data-i="412" data-group="" aria-label="Western Sandpiper collector card"><span class="tph"><span class="tph-name">Western Sandpiper</span><span class="tph-sci">Calidris mauri</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/western-wood-pewee/" data-i="413" data-group="" aria-label="Western Wood Pewee collector card"><span class="tph"><span class="tph-name">Western Wood Pewee</span><span class="tph-sci">Contopus sordidulus</span></span></a>
+          <a class="tcard tload" href="/birds/western-tanager/" data-i="413" data-group="tanager" aria-label="Western Tanager collector card"><span class="tph"><span class="tph-name">Western Tanager</span><span class="tph-sci">Piranga ludoviciana</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/white-rumped-sandpiper/" data-i="414" data-group="" aria-label="White-rumped Sandpiper collector card"><span class="tph"><span class="tph-name">White-rumped Sandpiper</span><span class="tph-sci">Calidris fuscicollis</span></span></a>
+          <a class="tcard tload" href="/birds/western-wood-pewee/" data-i="414" data-group="" aria-label="Western Wood Pewee collector card"><span class="tph"><span class="tph-name">Western Wood Pewee</span><span class="tph-sci">Contopus sordidulus</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/white-throated-swift/" data-i="415" data-group="" aria-label="White-throated Swift collector card"><span class="tph"><span class="tph-name">White-throated Swift</span><span class="tph-sci">Aeronautes saxatalis</span></span></a>
+          <a class="tcard tload" href="/birds/white-rumped-sandpiper/" data-i="415" data-group="" aria-label="White-rumped Sandpiper collector card"><span class="tph"><span class="tph-name">White-rumped Sandpiper</span><span class="tph-sci">Calidris fuscicollis</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/willet/" data-i="416" data-group="" aria-label="Willet collector card"><span class="tph"><span class="tph-name">Willet</span><span class="tph-sci">Tringa semipalmata</span></span></a>
+          <a class="tcard tload" href="/birds/white-throated-swift/" data-i="416" data-group="" aria-label="White-throated Swift collector card"><span class="tph"><span class="tph-name">White-throated Swift</span><span class="tph-sci">Aeronautes saxatalis</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/willow-flycatcher/" data-i="417" data-group="" aria-label="Willow Flycatcher collector card"><span class="tph"><span class="tph-name">Willow Flycatcher</span><span class="tph-sci">Empidonax traillii</span></span></a>
+          <a class="tcard tload" href="/birds/willet/" data-i="417" data-group="" aria-label="Willet collector card"><span class="tph"><span class="tph-name">Willet</span><span class="tph-sci">Tringa semipalmata</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/yellow-bellied-flycatcher/" data-i="418" data-group="" aria-label="Yellow-bellied Flycatcher collector card"><span class="tph"><span class="tph-name">Yellow-bellied Flycatcher</span><span class="tph-sci">Empidonax flaviventris</span></span></a>
+          <a class="tcard tload" href="/birds/willow-flycatcher/" data-i="418" data-group="" aria-label="Willow Flycatcher collector card"><span class="tph"><span class="tph-name">Willow Flycatcher</span><span class="tph-sci">Empidonax traillii</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/yellow-faced-grassquit/" data-i="419" data-group="" aria-label="Yellow-faced Grassquit collector card"><span class="tph"><span class="tph-name">Yellow-faced Grassquit</span><span class="tph-sci">Tiaris olivaceus</span></span></a>
+          <a class="tcard tload" href="/birds/yellow-bellied-flycatcher/" data-i="419" data-group="" aria-label="Yellow-bellied Flycatcher collector card"><span class="tph"><span class="tph-name">Yellow-bellied Flycatcher</span><span class="tph-sci">Empidonax flaviventris</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/yellow-olive-flatbill/" data-i="420" data-group="" aria-label="Yellow-olive Flatbill collector card"><span class="tph"><span class="tph-name">Yellow-olive Flatbill</span><span class="tph-sci">Tolmomyias sulphurescens</span></span></a>
+          <a class="tcard tload" href="/birds/yellow-faced-grassquit/" data-i="420" data-group="" aria-label="Yellow-faced Grassquit collector card"><span class="tph"><span class="tph-name">Yellow-faced Grassquit</span><span class="tph-sci">Tiaris olivaceus</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/yellow-throated-euphonia/" data-i="421" data-group="tanager" aria-label="Yellow-throated Euphonia collector card"><span class="tph"><span class="tph-name">Yellow-throated Euphonia</span><span class="tph-sci">Euphonia hirundinacea</span></span></a>
+          <a class="tcard tload" href="/birds/yellow-olive-flatbill/" data-i="421" data-group="" aria-label="Yellow-olive Flatbill collector card"><span class="tph"><span class="tph-name">Yellow-olive Flatbill</span><span class="tph-sci">Tolmomyias sulphurescens</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/yellow-throated-vireo/" data-i="422" data-group="" aria-label="Yellow-throated Vireo collector card"><span class="tph"><span class="tph-name">Yellow-throated Vireo</span><span class="tph-sci">Vireo flavifrons</span></span></a>
+          <a class="tcard tload" href="/birds/yellow-throated-euphonia/" data-i="422" data-group="tanager" aria-label="Yellow-throated Euphonia collector card"><span class="tph"><span class="tph-name">Yellow-throated Euphonia</span><span class="tph-sci">Euphonia hirundinacea</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/american-black-swift/" data-i="423" data-group="" aria-label="American Black Swift collector card"><span class="tph"><span class="tph-name">American Black Swift</span><span class="tph-sci">Cypseloides niger</span></span></a>
+          <a class="tcard tload" href="/birds/yellow-throated-vireo/" data-i="423" data-group="" aria-label="Yellow-throated Vireo collector card"><span class="tph"><span class="tph-name">Yellow-throated Vireo</span><span class="tph-sci">Vireo flavifrons</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/american-pygmy-kingfisher/" data-i="424" data-group="" aria-label="American Pygmy Kingfisher collector card"><span class="tph"><span class="tph-name">American Pygmy Kingfisher</span><span class="tph-sci">Chloroceryle aenea</span></span></a>
+          <a class="tcard tload" href="/birds/american-black-swift/" data-i="424" data-group="" aria-label="American Black Swift collector card"><span class="tph"><span class="tph-name">American Black Swift</span><span class="tph-sci">Cypseloides niger</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/azure-crowned-hummingbird/" data-i="425" data-group="hummer" aria-label="Azure-crowned Hummingbird collector card"><span class="tph"><span class="tph-name">Azure-crowned Hummingbird</span><span class="tph-sci">Saucerottia cyanocephala</span></span></a>
+          <a class="tcard tload" href="/birds/american-pygmy-kingfisher/" data-i="425" data-group="" aria-label="American Pygmy Kingfisher collector card"><span class="tph"><span class="tph-name">American Pygmy Kingfisher</span><span class="tph-sci">Chloroceryle aenea</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/band-backed-wren/" data-i="426" data-group="wrenjay" aria-label="Band-backed Wren collector card"><span class="tph"><span class="tph-name">Band-backed Wren</span><span class="tph-sci">Campylorhynchus zonatus</span></span></a>
+          <a class="tcard tload" href="/birds/azure-crowned-hummingbird/" data-i="426" data-group="hummer" aria-label="Azure-crowned Hummingbird collector card"><span class="tph"><span class="tph-name">Azure-crowned Hummingbird</span><span class="tph-sci">Saucerottia cyanocephala</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/bare-throated-tiger-heron/" data-i="427" data-group="waterbird" aria-label="Bare-throated Tiger Heron collector card"><span class="tph"><span class="tph-name">Bare-throated Tiger Heron</span><span class="tph-sci">Tigrisoma mexicanum</span></span></a>
+          <a class="tcard tload" href="/birds/band-backed-wren/" data-i="427" data-group="wrenjay" aria-label="Band-backed Wren collector card"><span class="tph"><span class="tph-name">Band-backed Wren</span><span class="tph-sci">Campylorhynchus zonatus</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/bat-falcon/" data-i="428" data-group="raptor" aria-label="Bat Falcon collector card"><span class="tph"><span class="tph-name">Bat Falcon</span><span class="tph-sci">Falco rufigularis</span></span></a>
+          <a class="tcard tload" href="/birds/bare-throated-tiger-heron/" data-i="428" data-group="waterbird" aria-label="Bare-throated Tiger Heron collector card"><span class="tph"><span class="tph-name">Bare-throated Tiger Heron</span><span class="tph-sci">Tigrisoma mexicanum</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/berylline-hummingbird/" data-i="429" data-group="hummer" aria-label="Berylline Hummingbird collector card"><span class="tph"><span class="tph-name">Berylline Hummingbird</span><span class="tph-sci">Saucerottia beryllina</span></span></a>
+          <a class="tcard tload" href="/birds/bat-falcon/" data-i="429" data-group="raptor" aria-label="Bat Falcon collector card"><span class="tph"><span class="tph-name">Bat Falcon</span><span class="tph-sci">Falco rufigularis</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/black-storm-petrel/" data-i="430" data-group="" aria-label="Black Storm Petrel collector card"><span class="tph"><span class="tph-name">Black Storm Petrel</span><span class="tph-sci">Hydrobates melania</span></span></a>
+          <a class="tcard tload" href="/birds/berylline-hummingbird/" data-i="430" data-group="hummer" aria-label="Berylline Hummingbird collector card"><span class="tph"><span class="tph-name">Berylline Hummingbird</span><span class="tph-sci">Saucerottia beryllina</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/black-headed-siskin/" data-i="431" data-group="" aria-label="Black-headed Siskin collector card"><span class="tph"><span class="tph-name">Black-headed Siskin</span><span class="tph-sci">Spinus notatus</span></span></a>
+          <a class="tcard tload" href="/birds/black-storm-petrel/" data-i="431" data-group="" aria-label="Black Storm Petrel collector card"><span class="tph"><span class="tph-name">Black Storm Petrel</span><span class="tph-sci">Hydrobates melania</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/black-vented-oriole/" data-i="432" data-group="" aria-label="Black-vented Oriole collector card"><span class="tph"><span class="tph-name">Black-vented Oriole</span><span class="tph-sci">Icterus wagleri</span></span></a>
+          <a class="tcard tload" href="/birds/black-headed-siskin/" data-i="432" data-group="" aria-label="Black-headed Siskin collector card"><span class="tph"><span class="tph-name">Black-headed Siskin</span><span class="tph-sci">Spinus notatus</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/black-vented-shearwater/" data-i="433" data-group="" aria-label="Black-vented Shearwater collector card"><span class="tph"><span class="tph-name">Black-vented Shearwater</span><span class="tph-sci">Puffinus opisthomelas</span></span></a>
+          <a class="tcard tload" href="/birds/black-vented-oriole/" data-i="433" data-group="" aria-label="Black-vented Oriole collector card"><span class="tph"><span class="tph-name">Black-vented Oriole</span><span class="tph-sci">Icterus wagleri</span></span></a>
+
+        </div>
+        <div class="tcell" hidden>
+          <a class="tcard tload" href="/birds/black-vented-shearwater/" data-i="434" data-group="" aria-label="Black-vented Shearwater collector card"><span class="tph"><span class="tph-name">Black-vented Shearwater</span><span class="tph-sci">Puffinus opisthomelas</span></span></a>
 
         </div>
         <div class="tcell is-hl">
-          <a class="tcard tload" href="/birds/blue-and-white-mockingbird/" data-i="434" data-group="highlight" aria-label="Blue-and-white Mockingbird collector card"><span class="tph"><span class="tph-name">Blue-and-white Mockingbird</span><span class="tph-sci">Melanotis hypoleucus</span></span></a>
+          <a class="tcard tload" href="/birds/blue-and-white-mockingbird/" data-i="435" data-group="highlight" aria-label="Blue-and-white Mockingbird collector card"><span class="tph"><span class="tph-name">Blue-and-white Mockingbird</span><span class="tph-sci">Melanotis hypoleucus</span></span></a>
           <div class="tdet">
             <p><b>Where:</b> Metapan and El Congo and <a href="#site-the-eastern-highlands-perquin-and-the-rio-sapo">The eastern highlands: Perquin and the Rio Sapo</a></p>
             <p><b>When:</b> Year round, and singing hardest from February.</p>
           </div>
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/blue-throated-sapphire/" data-i="435" data-group="" aria-label="Blue-throated Sapphire collector card"><span class="tph"><span class="tph-name">Blue-throated Sapphire</span><span class="tph-sci">Chlorestes eliciae</span></span></a>
+          <a class="tcard tload" href="/birds/blue-throated-sapphire/" data-i="436" data-group="" aria-label="Blue-throated Sapphire collector card"><span class="tph"><span class="tph-name">Blue-throated Sapphire</span><span class="tph-sci">Chlorestes eliciae</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/bluish-grey-saltator/" data-i="436" data-group="tanager" aria-label="Bluish-grey Saltator collector card"><span class="tph"><span class="tph-name">Bluish-grey Saltator</span><span class="tph-sci">Saltator coerulescens</span></span></a>
+          <a class="tcard tload" href="/birds/bluish-grey-saltator/" data-i="437" data-group="tanager" aria-label="Bluish-grey Saltator collector card"><span class="tph"><span class="tph-name">Bluish-grey Saltator</span><span class="tph-sci">Saltator coerulescens</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/brown-violetear/" data-i="437" data-group="hummer" aria-label="Brown Violetear collector card"><span class="tph"><span class="tph-name">Brown Violetear</span><span class="tph-sci">Colibri delphinae</span></span></a>
+          <a class="tcard tload" href="/birds/brown-violetear/" data-i="438" data-group="hummer" aria-label="Brown Violetear collector card"><span class="tph"><span class="tph-name">Brown Violetear</span><span class="tph-sci">Colibri delphinae</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/brown-backed-solitaire/" data-i="438" data-group="" aria-label="Brown-backed Solitaire collector card"><span class="tph"><span class="tph-name">Brown-backed Solitaire</span><span class="tph-sci">Myadestes occidentalis</span></span></a>
+          <a class="tcard tload" href="/birds/brown-backed-solitaire/" data-i="439" data-group="" aria-label="Brown-backed Solitaire collector card"><span class="tph"><span class="tph-name">Brown-backed Solitaire</span><span class="tph-sci">Myadestes occidentalis</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/buff-breasted-flycatcher/" data-i="439" data-group="" aria-label="Buff-breasted Flycatcher collector card"><span class="tph"><span class="tph-name">Buff-breasted Flycatcher</span><span class="tph-sci">Empidonax fulvifrons</span></span></a>
+          <a class="tcard tload" href="/birds/buff-breasted-flycatcher/" data-i="440" data-group="" aria-label="Buff-breasted Flycatcher collector card"><span class="tph"><span class="tph-name">Buff-breasted Flycatcher</span><span class="tph-sci">Empidonax fulvifrons</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/cabanis-s-wren/" data-i="440" data-group="wrenjay" aria-label="Cabanis's Wren collector card"><span class="tph"><span class="tph-name">Cabanis's Wren</span><span class="tph-sci">Cantorchilus modestus</span></span></a>
+          <a class="tcard tload" href="/birds/cabanis-s-wren/" data-i="441" data-group="wrenjay" aria-label="Cabanis's Wren collector card"><span class="tph"><span class="tph-name">Cabanis's Wren</span><span class="tph-sci">Cantorchilus modestus</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/canivet-s-emerald/" data-i="441" data-group="hummer" aria-label="Canivet's Emerald collector card"><span class="tph"><span class="tph-name">Canivet's Emerald</span><span class="tph-sci">Cynanthus canivetii</span></span></a>
+          <a class="tcard tload" href="/birds/canivet-s-emerald/" data-i="442" data-group="hummer" aria-label="Canivet's Emerald collector card"><span class="tph"><span class="tph-name">Canivet's Emerald</span><span class="tph-sci">Cynanthus canivetii</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/chestnut-capped-brushfinch/" data-i="442" data-group="" aria-label="Chestnut-capped Brushfinch collector card"><span class="tph"><span class="tph-name">Chestnut-capped Brushfinch</span><span class="tph-sci">Arremon brunneinucha</span></span></a>
+          <a class="tcard tload" href="/birds/chestnut-capped-brushfinch/" data-i="443" data-group="" aria-label="Chestnut-capped Brushfinch collector card"><span class="tph"><span class="tph-name">Chestnut-capped Brushfinch</span><span class="tph-sci">Arremon brunneinucha</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/chestnut-capped-warbler/" data-i="443" data-group="warbler" aria-label="Chestnut-capped Warbler collector card"><span class="tph"><span class="tph-name">Chestnut-capped Warbler</span><span class="tph-sci">Basileuterus delattrii</span></span></a>
+          <a class="tcard tload" href="/birds/chestnut-capped-warbler/" data-i="444" data-group="warbler" aria-label="Chestnut-capped Warbler collector card"><span class="tph"><span class="tph-name">Chestnut-capped Warbler</span><span class="tph-sci">Basileuterus delattrii</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/cinnamon-rumped-seedeater/" data-i="444" data-group="" aria-label="Cinnamon-rumped Seedeater collector card"><span class="tph"><span class="tph-name">Cinnamon-rumped Seedeater</span><span class="tph-sci">Sporophila torqueola</span></span></a>
+          <a class="tcard tload" href="/birds/cinnamon-rumped-seedeater/" data-i="445" data-group="" aria-label="Cinnamon-rumped Seedeater collector card"><span class="tph"><span class="tph-name">Cinnamon-rumped Seedeater</span><span class="tph-sci">Sporophila torqueola</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/common-black-hawk/" data-i="445" data-group="raptor" aria-label="Common Black Hawk collector card"><span class="tph"><span class="tph-name">Common Black Hawk</span><span class="tph-sci">Buteogallus anthracinus</span></span></a>
+          <a class="tcard tload" href="/birds/common-black-hawk/" data-i="446" data-group="raptor" aria-label="Common Black Hawk collector card"><span class="tph"><span class="tph-name">Common Black Hawk</span><span class="tph-sci">Buteogallus anthracinus</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/crane-hawk/" data-i="446" data-group="raptor" aria-label="Crane Hawk collector card"><span class="tph"><span class="tph-name">Crane Hawk</span><span class="tph-sci">Geranospiza caerulescens</span></span></a>
+          <a class="tcard tload" href="/birds/crane-hawk/" data-i="447" data-group="raptor" aria-label="Crane Hawk collector card"><span class="tph"><span class="tph-name">Crane Hawk</span><span class="tph-sci">Geranospiza caerulescens</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/double-toothed-kite/" data-i="447" data-group="raptor" aria-label="Double-toothed Kite collector card"><span class="tph"><span class="tph-name">Double-toothed Kite</span><span class="tph-sci">Harpagus bidentatus</span></span></a>
+          <a class="tcard tload" href="/birds/double-toothed-kite/" data-i="448" data-group="raptor" aria-label="Double-toothed Kite collector card"><span class="tph"><span class="tph-name">Double-toothed Kite</span><span class="tph-sci">Harpagus bidentatus</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/elegant-euphonia/" data-i="448" data-group="tanager" aria-label="Elegant Euphonia collector card"><span class="tph"><span class="tph-name">Elegant Euphonia</span><span class="tph-sci">Chlorophonia elegantissima</span></span></a>
+          <a class="tcard tload" href="/birds/elegant-euphonia/" data-i="449" data-group="tanager" aria-label="Elegant Euphonia collector card"><span class="tph"><span class="tph-name">Elegant Euphonia</span><span class="tph-sci">Chlorophonia elegantissima</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/elegant-trogon/" data-i="449" data-group="" aria-label="Elegant Trogon collector card"><span class="tph"><span class="tph-name">Elegant Trogon</span><span class="tph-sci">Trogon elegans</span></span></a>
+          <a class="tcard tload" href="/birds/elegant-trogon/" data-i="450" data-group="" aria-label="Elegant Trogon collector card"><span class="tph"><span class="tph-name">Elegant Trogon</span><span class="tph-sci">Trogon elegans</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/finsch-s-parakeet/" data-i="450" data-group="parrot" aria-label="Finsch's Parakeet collector card"><span class="tph"><span class="tph-name">Finsch's Parakeet</span><span class="tph-sci">Psittacara finschi</span></span></a>
+          <a class="tcard tload" href="/birds/finsch-s-parakeet/" data-i="451" data-group="parrot" aria-label="Finsch's Parakeet collector card"><span class="tph"><span class="tph-name">Finsch's Parakeet</span><span class="tph-sci">Psittacara finschi</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/flame-colored-tanager/" data-i="451" data-group="tanager" aria-label="Flame-colored Tanager collector card"><span class="tph"><span class="tph-name">Flame-colored Tanager</span><span class="tph-sci">Piranga bidentata</span></span></a>
+          <a class="tcard tload" href="/birds/flame-colored-tanager/" data-i="452" data-group="tanager" aria-label="Flame-colored Tanager collector card"><span class="tph"><span class="tph-name">Flame-colored Tanager</span><span class="tph-sci">Piranga bidentata</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/gartered-trogon/" data-i="452" data-group="" aria-label="Gartered Trogon collector card"><span class="tph"><span class="tph-name">Gartered Trogon</span><span class="tph-sci">Trogon caligatus</span></span></a>
+          <a class="tcard tload" href="/birds/gartered-trogon/" data-i="453" data-group="" aria-label="Gartered Trogon collector card"><span class="tph"><span class="tph-name">Gartered Trogon</span><span class="tph-sci">Trogon caligatus</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/giant-cowbird/" data-i="453" data-group="" aria-label="Giant Cowbird collector card"><span class="tph"><span class="tph-name">Giant Cowbird</span><span class="tph-sci">Molothrus oryzivorus</span></span></a>
+          <a class="tcard tload" href="/birds/giant-cowbird/" data-i="454" data-group="" aria-label="Giant Cowbird collector card"><span class="tph"><span class="tph-name">Giant Cowbird</span><span class="tph-sci">Molothrus oryzivorus</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/golden-browed-warbler/" data-i="454" data-group="warbler" aria-label="Golden-browed Warbler collector card"><span class="tph"><span class="tph-name">Golden-browed Warbler</span><span class="tph-sci">Basileuterus belli</span></span></a>
+          <a class="tcard tload" href="/birds/golden-browed-warbler/" data-i="455" data-group="warbler" aria-label="Golden-browed Warbler collector card"><span class="tph"><span class="tph-name">Golden-browed Warbler</span><span class="tph-sci">Basileuterus belli</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/golden-cheeked-warbler/" data-i="455" data-group="warbler" aria-label="Golden-cheeked Warbler collector card"><span class="tph"><span class="tph-name">Golden-cheeked Warbler</span><span class="tph-sci">Setophaga chrysoparia</span></span></a>
+          <a class="tcard tload" href="/birds/golden-cheeked-warbler/" data-i="456" data-group="warbler" aria-label="Golden-cheeked Warbler collector card"><span class="tph"><span class="tph-name">Golden-cheeked Warbler</span><span class="tph-sci">Setophaga chrysoparia</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/great-black-hawk/" data-i="456" data-group="raptor" aria-label="Great Black Hawk collector card"><span class="tph"><span class="tph-name">Great Black Hawk</span><span class="tph-sci">Buteogallus urubitinga</span></span></a>
+          <a class="tcard tload" href="/birds/great-black-hawk/" data-i="457" data-group="raptor" aria-label="Great Black Hawk collector card"><span class="tph"><span class="tph-name">Great Black Hawk</span><span class="tph-sci">Buteogallus urubitinga</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/greater-pewee/" data-i="457" data-group="" aria-label="Greater Pewee collector card"><span class="tph"><span class="tph-name">Greater Pewee</span><span class="tph-sci">Contopus pertinax</span></span></a>
+          <a class="tcard tload" href="/birds/greater-pewee/" data-i="458" data-group="" aria-label="Greater Pewee collector card"><span class="tph"><span class="tph-name">Greater Pewee</span><span class="tph-sci">Contopus pertinax</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/green-shrike-vireo/" data-i="458" data-group="" aria-label="Green Shrike-Vireo collector card"><span class="tph"><span class="tph-name">Green Shrike-Vireo</span><span class="tph-sci">Vireolanius pulchellus</span></span></a>
+          <a class="tcard tload" href="/birds/green-shrike-vireo/" data-i="459" data-group="" aria-label="Green Shrike-Vireo collector card"><span class="tph"><span class="tph-name">Green Shrike-Vireo</span><span class="tph-sci">Vireolanius pulchellus</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/grey-crowned-yellowthroat/" data-i="459" data-group="warbler" aria-label="Grey-crowned Yellowthroat collector card"><span class="tph"><span class="tph-name">Grey-crowned Yellowthroat</span><span class="tph-sci">Geothlypis poliocephala</span></span></a>
+          <a class="tcard tload" href="/birds/grey-crowned-yellowthroat/" data-i="460" data-group="warbler" aria-label="Grey-crowned Yellowthroat collector card"><span class="tph"><span class="tph-name">Grey-crowned Yellowthroat</span><span class="tph-sci">Geothlypis poliocephala</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/guatemalan-flicker/" data-i="460" data-group="" aria-label="Guatemalan Flicker collector card"><span class="tph"><span class="tph-name">Guatemalan Flicker</span><span class="tph-sci">Colaptes mexicanoides</span></span></a>
+          <a class="tcard tload" href="/birds/guatemalan-flicker/" data-i="461" data-group="" aria-label="Guatemalan Flicker collector card"><span class="tph"><span class="tph-name">Guatemalan Flicker</span><span class="tph-sci">Colaptes mexicanoides</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/hermit-warbler/" data-i="461" data-group="hummer warbler" aria-label="Hermit Warbler collector card"><span class="tph"><span class="tph-name">Hermit Warbler</span><span class="tph-sci">Setophaga occidentalis</span></span></a>
+          <a class="tcard tload" href="/birds/hermit-warbler/" data-i="462" data-group="hummer warbler" aria-label="Hermit Warbler collector card"><span class="tph"><span class="tph-name">Hermit Warbler</span><span class="tph-sci">Setophaga occidentalis</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/leach-s-storm-petrel/" data-i="462" data-group="" aria-label="Leach's Storm Petrel collector card"><span class="tph"><span class="tph-name">Leach's Storm Petrel</span><span class="tph-sci">Hydrobates leucorhous</span></span></a>
+          <a class="tcard tload" href="/birds/leach-s-storm-petrel/" data-i="463" data-group="" aria-label="Leach's Storm Petrel collector card"><span class="tph"><span class="tph-name">Leach's Storm Petrel</span><span class="tph-sci">Hydrobates leucorhous</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/lesser-ground-cuckoo/" data-i="463" data-group="" aria-label="Lesser Ground Cuckoo collector card"><span class="tph"><span class="tph-name">Lesser Ground Cuckoo</span><span class="tph-sci">Morococcyx erythropygus</span></span></a>
+          <a class="tcard tload" href="/birds/lesser-ground-cuckoo/" data-i="464" data-group="" aria-label="Lesser Ground Cuckoo collector card"><span class="tph"><span class="tph-name">Lesser Ground Cuckoo</span><span class="tph-sci">Morococcyx erythropygus</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/mangrove-swallow/" data-i="464" data-group="" aria-label="Mangrove Swallow collector card"><span class="tph"><span class="tph-name">Mangrove Swallow</span><span class="tph-sci">Tachycineta albilinea</span></span></a>
+          <a class="tcard tload" href="/birds/mangrove-swallow/" data-i="465" data-group="" aria-label="Mangrove Swallow collector card"><span class="tph"><span class="tph-name">Mangrove Swallow</span><span class="tph-sci">Tachycineta albilinea</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/mexican-whip-poor-will/" data-i="465" data-group="" aria-label="Mexican Whip-poor-will collector card"><span class="tph"><span class="tph-name">Mexican Whip-poor-will</span><span class="tph-sci">Antrostomus arizonae</span></span></a>
+          <a class="tcard tload" href="/birds/mexican-whip-poor-will/" data-i="466" data-group="" aria-label="Mexican Whip-poor-will collector card"><span class="tph"><span class="tph-name">Mexican Whip-poor-will</span><span class="tph-sci">Antrostomus arizonae</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/mottled-owl/" data-i="466" data-group="" aria-label="Mottled Owl collector card"><span class="tph"><span class="tph-name">Mottled Owl</span><span class="tph-sci">Strix virgata</span></span></a>
+          <a class="tcard tload" href="/birds/mottled-owl/" data-i="467" data-group="" aria-label="Mottled Owl collector card"><span class="tph"><span class="tph-name">Mottled Owl</span><span class="tph-sci">Strix virgata</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/mountain-elaenia/" data-i="467" data-group="" aria-label="Mountain Elaenia collector card"><span class="tph"><span class="tph-name">Mountain Elaenia</span><span class="tph-sci">Elaenia frantzii</span></span></a>
+          <a class="tcard tload" href="/birds/mountain-elaenia/" data-i="468" data-group="" aria-label="Mountain Elaenia collector card"><span class="tph"><span class="tph-name">Mountain Elaenia</span><span class="tph-sci">Elaenia frantzii</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/northern-barred-woodcreeper/" data-i="468" data-group="" aria-label="Northern Barred Woodcreeper collector card"><span class="tph"><span class="tph-name">Northern Barred Woodcreeper</span><span class="tph-sci">Dendrocolaptes sanctithomae</span></span></a>
+          <a class="tcard tload" href="/birds/northern-barred-woodcreeper/" data-i="469" data-group="" aria-label="Northern Barred Woodcreeper collector card"><span class="tph"><span class="tph-name">Northern Barred Woodcreeper</span><span class="tph-sci">Dendrocolaptes sanctithomae</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/northern-beardless-tyrannulet/" data-i="469" data-group="" aria-label="Northern Beardless Tyrannulet collector card"><span class="tph"><span class="tph-name">Northern Beardless Tyrannulet</span><span class="tph-sci">Camptostoma imberbe</span></span></a>
+          <a class="tcard tload" href="/birds/northern-beardless-tyrannulet/" data-i="470" data-group="" aria-label="Northern Beardless Tyrannulet collector card"><span class="tph"><span class="tph-name">Northern Beardless Tyrannulet</span><span class="tph-sci">Camptostoma imberbe</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/northern-bentbill/" data-i="470" data-group="" aria-label="Northern Bentbill collector card"><span class="tph"><span class="tph-name">Northern Bentbill</span><span class="tph-sci">Oncostoma cinereigulare</span></span></a>
+          <a class="tcard tload" href="/birds/northern-bentbill/" data-i="471" data-group="" aria-label="Northern Bentbill collector card"><span class="tph"><span class="tph-name">Northern Bentbill</span><span class="tph-sci">Oncostoma cinereigulare</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/northern-emerald-toucanet/" data-i="471" data-group="hummer" aria-label="Northern Emerald Toucanet collector card"><span class="tph"><span class="tph-name">Northern Emerald Toucanet</span><span class="tph-sci">Aulacorhynchus prasinus</span></span></a>
+          <a class="tcard tload" href="/birds/northern-emerald-toucanet/" data-i="472" data-group="hummer" aria-label="Northern Emerald Toucanet collector card"><span class="tph"><span class="tph-name">Northern Emerald Toucanet</span><span class="tph-sci">Aulacorhynchus prasinus</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/northern-tropical-pewee/" data-i="472" data-group="" aria-label="Northern Tropical Pewee collector card"><span class="tph"><span class="tph-name">Northern Tropical Pewee</span><span class="tph-sci">Contopus bogotensis</span></span></a>
+          <a class="tcard tload" href="/birds/northern-tropical-pewee/" data-i="473" data-group="" aria-label="Northern Tropical Pewee collector card"><span class="tph"><span class="tph-name">Northern Tropical Pewee</span><span class="tph-sci">Contopus bogotensis</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/northern-tufted-flycatcher/" data-i="473" data-group="" aria-label="Northern Tufted Flycatcher collector card"><span class="tph"><span class="tph-name">Northern Tufted Flycatcher</span><span class="tph-sci">Mitrephanes phaeocercus</span></span></a>
+          <a class="tcard tload" href="/birds/northern-tufted-flycatcher/" data-i="474" data-group="" aria-label="Northern Tufted Flycatcher collector card"><span class="tph"><span class="tph-name">Northern Tufted Flycatcher</span><span class="tph-sci">Mitrephanes phaeocercus</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/nutting-s-flycatcher/" data-i="474" data-group="" aria-label="Nutting's Flycatcher collector card"><span class="tph"><span class="tph-name">Nutting's Flycatcher</span><span class="tph-sci">Myiarchus nuttingi</span></span></a>
+          <a class="tcard tload" href="/birds/nutting-s-flycatcher/" data-i="475" data-group="" aria-label="Nutting's Flycatcher collector card"><span class="tph"><span class="tph-name">Nutting's Flycatcher</span><span class="tph-sci">Myiarchus nuttingi</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/ochre-bellied-flycatcher/" data-i="475" data-group="" aria-label="Ochre-bellied Flycatcher collector card"><span class="tph"><span class="tph-name">Ochre-bellied Flycatcher</span><span class="tph-sci">Mionectes oleagineus</span></span></a>
+          <a class="tcard tload" href="/birds/ochre-bellied-flycatcher/" data-i="476" data-group="" aria-label="Ochre-bellied Flycatcher collector card"><span class="tph"><span class="tph-name">Ochre-bellied Flycatcher</span><span class="tph-sci">Mionectes oleagineus</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/orange-billed-nightingale-thrush/" data-i="476" data-group="" aria-label="Orange-billed Nightingale-Thrush collector card"><span class="tph"><span class="tph-name">Orange-billed Nightingale-Thrush</span><span class="tph-sci">Catharus aurantiirostris</span></span></a>
+          <a class="tcard tload" href="/birds/orange-billed-nightingale-thrush/" data-i="477" data-group="" aria-label="Orange-billed Nightingale-Thrush collector card"><span class="tph"><span class="tph-name">Orange-billed Nightingale-Thrush</span><span class="tph-sci">Catharus aurantiirostris</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/ornate-hawk-eagle/" data-i="477" data-group="raptor" aria-label="Ornate Hawk-Eagle collector card"><span class="tph"><span class="tph-name">Ornate Hawk-Eagle</span><span class="tph-sci">Spizaetus ornatus</span></span></a>
+          <a class="tcard tload" href="/birds/ornate-hawk-eagle/" data-i="478" data-group="raptor" aria-label="Ornate Hawk-Eagle collector card"><span class="tph"><span class="tph-name">Ornate Hawk-Eagle</span><span class="tph-sci">Spizaetus ornatus</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/pacific-parakeet/" data-i="478" data-group="parrot" aria-label="Pacific Parakeet collector card"><span class="tph"><span class="tph-name">Pacific Parakeet</span><span class="tph-sci">Psittacara strenuus</span></span></a>
+          <a class="tcard tload" href="/birds/pacific-parakeet/" data-i="479" data-group="parrot" aria-label="Pacific Parakeet collector card"><span class="tph"><span class="tph-name">Pacific Parakeet</span><span class="tph-sci">Psittacara strenuus</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/pink-footed-shearwater/" data-i="479" data-group="" aria-label="Pink-footed Shearwater collector card"><span class="tph"><span class="tph-name">Pink-footed Shearwater</span><span class="tph-sci">Ardenna creatopus</span></span></a>
+          <a class="tcard tload" href="/birds/pink-footed-shearwater/" data-i="480" data-group="" aria-label="Pink-footed Shearwater collector card"><span class="tph"><span class="tph-name">Pink-footed Shearwater</span><span class="tph-sci">Ardenna creatopus</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/plain-breasted-ground-dove/" data-i="480" data-group="" aria-label="Plain-breasted Ground Dove collector card"><span class="tph"><span class="tph-name">Plain-breasted Ground Dove</span><span class="tph-sci">Columbina minuta</span></span></a>
+          <a class="tcard tload" href="/birds/plain-breasted-ground-dove/" data-i="481" data-group="" aria-label="Plain-breasted Ground Dove collector card"><span class="tph"><span class="tph-name">Plain-breasted Ground Dove</span><span class="tph-sci">Columbina minuta</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/plain-capped-starthroat/" data-i="481" data-group="hummer" aria-label="Plain-capped Starthroat collector card"><span class="tph"><span class="tph-name">Plain-capped Starthroat</span><span class="tph-sci">Heliomaster constantii</span></span></a>
+          <a class="tcard tload" href="/birds/plain-capped-starthroat/" data-i="482" data-group="hummer" aria-label="Plain-capped Starthroat collector card"><span class="tph"><span class="tph-name">Plain-capped Starthroat</span><span class="tph-sci">Heliomaster constantii</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/rivoli-s-hummingbird/" data-i="482" data-group="hummer" aria-label="Rivoli's Hummingbird collector card"><span class="tph"><span class="tph-name">Rivoli's Hummingbird</span><span class="tph-sci">Eugenes fulgens</span></span></a>
+          <a class="tcard tload" href="/birds/rivoli-s-hummingbird/" data-i="483" data-group="hummer" aria-label="Rivoli's Hummingbird collector card"><span class="tph"><span class="tph-name">Rivoli's Hummingbird</span><span class="tph-sci">Eugenes fulgens</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/ruddy-crake/" data-i="483" data-group="waterbird" aria-label="Ruddy Crake collector card"><span class="tph"><span class="tph-name">Ruddy Crake</span><span class="tph-sci">Laterallus ruber</span></span></a>
+          <a class="tcard tload" href="/birds/ruddy-crake/" data-i="484" data-group="waterbird" aria-label="Ruddy Crake collector card"><span class="tph"><span class="tph-name">Ruddy Crake</span><span class="tph-sci">Laterallus ruber</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/ruddy-quail-dove/" data-i="484" data-group="" aria-label="Ruddy Quail-Dove collector card"><span class="tph"><span class="tph-name">Ruddy Quail-Dove</span><span class="tph-sci">Geotrygon montana</span></span></a>
+          <a class="tcard tload" href="/birds/ruddy-quail-dove/" data-i="485" data-group="" aria-label="Ruddy Quail-Dove collector card"><span class="tph"><span class="tph-name">Ruddy Quail-Dove</span><span class="tph-sci">Geotrygon montana</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/ruddy-breasted-seedeater/" data-i="485" data-group="" aria-label="Ruddy-breasted Seedeater collector card"><span class="tph"><span class="tph-name">Ruddy-breasted Seedeater</span><span class="tph-sci">Sporophila minuta</span></span></a>
+          <a class="tcard tload" href="/birds/ruddy-breasted-seedeater/" data-i="486" data-group="" aria-label="Ruddy-breasted Seedeater collector card"><span class="tph"><span class="tph-name">Ruddy-breasted Seedeater</span><span class="tph-sci">Sporophila minuta</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/ruddy-capped-nightingale-thrush/" data-i="486" data-group="" aria-label="Ruddy-capped Nightingale-Thrush collector card"><span class="tph"><span class="tph-name">Ruddy-capped Nightingale-Thrush</span><span class="tph-sci">Catharus frantzii</span></span></a>
+          <a class="tcard tload" href="/birds/ruddy-capped-nightingale-thrush/" data-i="487" data-group="" aria-label="Ruddy-capped Nightingale-Thrush collector card"><span class="tph"><span class="tph-name">Ruddy-capped Nightingale-Thrush</span><span class="tph-sci">Catharus frantzii</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/rufous-and-white-wren/" data-i="487" data-group="wrenjay" aria-label="Rufous-and-white Wren collector card"><span class="tph"><span class="tph-name">Rufous-and-white Wren</span><span class="tph-sci">Thryophilus rufalbus</span></span></a>
+          <a class="tcard tload" href="/birds/rufous-and-white-wren/" data-i="488" data-group="wrenjay" aria-label="Rufous-and-white Wren collector card"><span class="tph"><span class="tph-name">Rufous-and-white Wren</span><span class="tph-sci">Thryophilus rufalbus</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/rufous-capped-warbler/" data-i="488" data-group="warbler" aria-label="Rufous-capped Warbler collector card"><span class="tph"><span class="tph-name">Rufous-capped Warbler</span><span class="tph-sci">Basileuterus rufifrons</span></span></a>
+          <a class="tcard tload" href="/birds/rufous-capped-warbler/" data-i="489" data-group="warbler" aria-label="Rufous-capped Warbler collector card"><span class="tph"><span class="tph-name">Rufous-capped Warbler</span><span class="tph-sci">Basileuterus rufifrons</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/rufous-collared-thrush/" data-i="489" data-group="" aria-label="Rufous-collared Thrush collector card"><span class="tph"><span class="tph-name">Rufous-collared Thrush</span><span class="tph-sci">Turdus rufitorques</span></span></a>
+          <a class="tcard tload" href="/birds/rufous-collared-thrush/" data-i="490" data-group="" aria-label="Rufous-collared Thrush collector card"><span class="tph"><span class="tph-name">Rufous-collared Thrush</span><span class="tph-sci">Turdus rufitorques</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/russet-naped-wood-rail/" data-i="490" data-group="waterbird" aria-label="Russet-naped Wood Rail collector card"><span class="tph"><span class="tph-name">Russet-naped Wood Rail</span><span class="tph-sci">Aramides albiventris</span></span></a>
+          <a class="tcard tload" href="/birds/russet-naped-wood-rail/" data-i="491" data-group="waterbird" aria-label="Russet-naped Wood Rail collector card"><span class="tph"><span class="tph-name">Russet-naped Wood Rail</span><span class="tph-sci">Aramides albiventris</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/sabine-s-gull/" data-i="491" data-group="" aria-label="Sabine's Gull collector card"><span class="tph"><span class="tph-name">Sabine's Gull</span><span class="tph-sci">Xema sabini</span></span></a>
+          <a class="tcard tload" href="/birds/sabine-s-gull/" data-i="492" data-group="" aria-label="Sabine's Gull collector card"><span class="tph"><span class="tph-name">Sabine's Gull</span><span class="tph-sci">Xema sabini</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/scaly-throated-foliage-gleaner/" data-i="492" data-group="" aria-label="Scaly-throated Foliage-gleaner collector card"><span class="tph"><span class="tph-name">Scaly-throated Foliage-gleaner</span><span class="tph-sci">Anabacerthia variegaticeps</span></span></a>
+          <a class="tcard tload" href="/birds/scaly-throated-foliage-gleaner/" data-i="493" data-group="" aria-label="Scaly-throated Foliage-gleaner collector card"><span class="tph"><span class="tph-name">Scaly-throated Foliage-gleaner</span><span class="tph-sci">Anabacerthia variegaticeps</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/scrub-euphonia/" data-i="493" data-group="tanager" aria-label="Scrub Euphonia collector card"><span class="tph"><span class="tph-name">Scrub Euphonia</span><span class="tph-sci">Euphonia affinis</span></span></a>
+          <a class="tcard tload" href="/birds/scrub-euphonia/" data-i="494" data-group="tanager" aria-label="Scrub Euphonia collector card"><span class="tph"><span class="tph-name">Scrub Euphonia</span><span class="tph-sci">Euphonia affinis</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/short-tailed-hawk/" data-i="494" data-group="raptor" aria-label="Short-tailed Hawk collector card"><span class="tph"><span class="tph-name">Short-tailed Hawk</span><span class="tph-sci">Buteo brachyurus</span></span></a>
+          <a class="tcard tload" href="/birds/short-tailed-hawk/" data-i="495" data-group="raptor" aria-label="Short-tailed Hawk collector card"><span class="tph"><span class="tph-name">Short-tailed Hawk</span><span class="tph-sci">Buteo brachyurus</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/spot-breasted-wren/" data-i="495" data-group="wrenjay" aria-label="Spot-breasted Wren collector card"><span class="tph"><span class="tph-name">Spot-breasted Wren</span><span class="tph-sci">Pheugopedius maculipectus</span></span></a>
+          <a class="tcard tload" href="/birds/spot-breasted-wren/" data-i="496" data-group="wrenjay" aria-label="Spot-breasted Wren collector card"><span class="tph"><span class="tph-name">Spot-breasted Wren</span><span class="tph-sci">Pheugopedius maculipectus</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/spotted-woodcreeper/" data-i="496" data-group="" aria-label="Spotted Woodcreeper collector card"><span class="tph"><span class="tph-name">Spotted Woodcreeper</span><span class="tph-sci">Xiphorhynchus erythropygius</span></span></a>
+          <a class="tcard tload" href="/birds/spotted-woodcreeper/" data-i="497" data-group="" aria-label="Spotted Woodcreeper collector card"><span class="tph"><span class="tph-name">Spotted Woodcreeper</span><span class="tph-sci">Xiphorhynchus erythropygius</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/stripe-headed-sparrow/" data-i="497" data-group="" aria-label="Stripe-headed Sparrow collector card"><span class="tph"><span class="tph-name">Stripe-headed Sparrow</span><span class="tph-sci">Peucaea ruficauda</span></span></a>
+          <a class="tcard tload" href="/birds/stripe-headed-sparrow/" data-i="498" data-group="" aria-label="Stripe-headed Sparrow collector card"><span class="tph"><span class="tph-name">Stripe-headed Sparrow</span><span class="tph-sci">Peucaea ruficauda</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/thicket-tinamou/" data-i="498" data-group="" aria-label="Thicket Tinamou collector card"><span class="tph"><span class="tph-name">Thicket Tinamou</span><span class="tph-sci">Crypturellus cinnamomeus</span></span></a>
+          <a class="tcard tload" href="/birds/thicket-tinamou/" data-i="499" data-group="" aria-label="Thicket Tinamou collector card"><span class="tph"><span class="tph-name">Thicket Tinamou</span><span class="tph-sci">Crypturellus cinnamomeus</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/trilling-gnatwren/" data-i="499" data-group="" aria-label="Trilling Gnatwren collector card"><span class="tph"><span class="tph-name">Trilling Gnatwren</span><span class="tph-sci">Ramphocaenus melanurus</span></span></a>
+          <a class="tcard tload" href="/birds/trilling-gnatwren/" data-i="500" data-group="" aria-label="Trilling Gnatwren collector card"><span class="tph"><span class="tph-name">Trilling Gnatwren</span><span class="tph-sci">Ramphocaenus melanurus</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/violet-sabrewing/" data-i="500" data-group="hummer" aria-label="Violet Sabrewing collector card"><span class="tph"><span class="tph-name">Violet Sabrewing</span><span class="tph-sci">Campylopterus hemileucurus</span></span></a>
+          <a class="tcard tload" href="/birds/violet-sabrewing/" data-i="501" data-group="hummer" aria-label="Violet Sabrewing collector card"><span class="tph"><span class="tph-name">Violet Sabrewing</span><span class="tph-sci">Campylopterus hemileucurus</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/wandering-tattler/" data-i="501" data-group="" aria-label="Wandering Tattler collector card"><span class="tph"><span class="tph-name">Wandering Tattler</span><span class="tph-sci">Tringa incana</span></span></a>
+          <a class="tcard tload" href="/birds/wandering-tattler/" data-i="502" data-group="" aria-label="Wandering Tattler collector card"><span class="tph"><span class="tph-name">Wandering Tattler</span><span class="tph-sci">Tringa incana</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/white-eared-ground-sparrow/" data-i="502" data-group="" aria-label="White-eared Ground Sparrow collector card"><span class="tph"><span class="tph-name">White-eared Ground Sparrow</span><span class="tph-sci">Melozone leucotis</span></span></a>
+          <a class="tcard tload" href="/birds/white-eared-ground-sparrow/" data-i="503" data-group="" aria-label="White-eared Ground Sparrow collector card"><span class="tph"><span class="tph-name">White-eared Ground Sparrow</span><span class="tph-sci">Melozone leucotis</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/white-eared-hummingbird/" data-i="503" data-group="hummer" aria-label="White-eared Hummingbird collector card"><span class="tph"><span class="tph-name">White-eared Hummingbird</span><span class="tph-sci">Basilinna leucotis</span></span></a>
+          <a class="tcard tload" href="/birds/white-eared-hummingbird/" data-i="504" data-group="hummer" aria-label="White-eared Hummingbird collector card"><span class="tph"><span class="tph-name">White-eared Hummingbird</span><span class="tph-sci">Basilinna leucotis</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/white-fronted-amazon/" data-i="504" data-group="parrot" aria-label="White-fronted Amazon collector card"><span class="tph"><span class="tph-name">White-fronted Amazon</span><span class="tph-sci">Amazona albifrons</span></span></a>
+          <a class="tcard tload" href="/birds/white-fronted-amazon/" data-i="505" data-group="parrot" aria-label="White-fronted Amazon collector card"><span class="tph"><span class="tph-name">White-fronted Amazon</span><span class="tph-sci">Amazona albifrons</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/white-lored-gnatcatcher/" data-i="505" data-group="" aria-label="White-lored Gnatcatcher collector card"><span class="tph"><span class="tph-name">White-lored Gnatcatcher</span><span class="tph-sci">Polioptila albiloris</span></span></a>
+          <a class="tcard tload" href="/birds/white-lored-gnatcatcher/" data-i="506" data-group="" aria-label="White-lored Gnatcatcher collector card"><span class="tph"><span class="tph-name">White-lored Gnatcatcher</span><span class="tph-sci">Polioptila albiloris</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/white-naped-brushfinch/" data-i="506" data-group="" aria-label="White-naped Brushfinch collector card"><span class="tph"><span class="tph-name">White-naped Brushfinch</span><span class="tph-sci">Atlapetes albinucha</span></span></a>
+          <a class="tcard tload" href="/birds/white-naped-brushfinch/" data-i="507" data-group="" aria-label="White-naped Brushfinch collector card"><span class="tph"><span class="tph-name">White-naped Brushfinch</span><span class="tph-sci">Atlapetes albinucha</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/white-winged-tanager/" data-i="507" data-group="tanager" aria-label="White-winged Tanager collector card"><span class="tph"><span class="tph-name">White-winged Tanager</span><span class="tph-sci">Piranga leucoptera</span></span></a>
+          <a class="tcard tload" href="/birds/white-winged-tanager/" data-i="508" data-group="tanager" aria-label="White-winged Tanager collector card"><span class="tph"><span class="tph-name">White-winged Tanager</span><span class="tph-sci">Piranga leucoptera</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/yellow-backed-oriole/" data-i="508" data-group="" aria-label="Yellow-backed Oriole collector card"><span class="tph"><span class="tph-name">Yellow-backed Oriole</span><span class="tph-sci">Icterus chrysater</span></span></a>
+          <a class="tcard tload" href="/birds/yellow-backed-oriole/" data-i="509" data-group="" aria-label="Yellow-backed Oriole collector card"><span class="tph"><span class="tph-name">Yellow-backed Oriole</span><span class="tph-sci">Icterus chrysater</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/yellow-winged-tanager/" data-i="509" data-group="tanager" aria-label="Yellow-winged Tanager collector card"><span class="tph"><span class="tph-name">Yellow-winged Tanager</span><span class="tph-sci">Thraupis abbas</span></span></a>
+          <a class="tcard tload" href="/birds/yellow-winged-tanager/" data-i="510" data-group="tanager" aria-label="Yellow-winged Tanager collector card"><span class="tph"><span class="tph-name">Yellow-winged Tanager</span><span class="tph-sci">Thraupis abbas</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/yellowish-flycatcher/" data-i="510" data-group="" aria-label="Yellowish Flycatcher collector card"><span class="tph"><span class="tph-name">Yellowish Flycatcher</span><span class="tph-sci">Empidonax flavescens</span></span></a>
+          <a class="tcard tload" href="/birds/yellowish-flycatcher/" data-i="511" data-group="" aria-label="Yellowish Flycatcher collector card"><span class="tph"><span class="tph-name">Yellowish Flycatcher</span><span class="tph-sci">Empidonax flavescens</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/zone-tailed-hawk/" data-i="511" data-group="raptor" aria-label="Zone-tailed Hawk collector card"><span class="tph"><span class="tph-name">Zone-tailed Hawk</span><span class="tph-sci">Buteo albonotatus</span></span></a>
+          <a class="tcard tload" href="/birds/zone-tailed-hawk/" data-i="512" data-group="raptor" aria-label="Zone-tailed Hawk collector card"><span class="tph"><span class="tph-name">Zone-tailed Hawk</span><span class="tph-sci">Buteo albonotatus</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/bar-winged-oriole/" data-i="512" data-group="" aria-label="Bar-winged Oriole collector card"><span class="tph"><span class="tph-name">Bar-winged Oriole</span><span class="tph-sci">Icterus maculialatus</span></span></a>
+          <a class="tcard tload" href="/birds/bar-winged-oriole/" data-i="513" data-group="" aria-label="Bar-winged Oriole collector card"><span class="tph"><span class="tph-name">Bar-winged Oriole</span><span class="tph-sci">Icterus maculialatus</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/barred-parakeet/" data-i="513" data-group="parrot" aria-label="Barred Parakeet collector card"><span class="tph"><span class="tph-name">Barred Parakeet</span><span class="tph-sci">Bolborhynchus lineola</span></span></a>
+          <a class="tcard tload" href="/birds/barred-parakeet/" data-i="514" data-group="parrot" aria-label="Barred Parakeet collector card"><span class="tph"><span class="tph-name">Barred Parakeet</span><span class="tph-sci">Bolborhynchus lineola</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/belted-flycatcher/" data-i="514" data-group="" aria-label="Belted Flycatcher collector card"><span class="tph"><span class="tph-name">Belted Flycatcher</span><span class="tph-sci">Xenotriccus callizonus</span></span></a>
+          <a class="tcard tload" href="/birds/belted-flycatcher/" data-i="515" data-group="" aria-label="Belted Flycatcher collector card"><span class="tph"><span class="tph-name">Belted Flycatcher</span><span class="tph-sci">Xenotriccus callizonus</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/black-thrush/" data-i="515" data-group="" aria-label="Black Thrush collector card"><span class="tph"><span class="tph-name">Black Thrush</span><span class="tph-sci">Turdus infuscatus</span></span></a>
+          <a class="tcard tload" href="/birds/black-thrush/" data-i="516" data-group="" aria-label="Black Thrush collector card"><span class="tph"><span class="tph-name">Black Thrush</span><span class="tph-sci">Turdus infuscatus</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/black-banded-woodcreeper/" data-i="516" data-group="" aria-label="Black-banded Woodcreeper collector card"><span class="tph"><span class="tph-name">Black-banded Woodcreeper</span><span class="tph-sci">Dendrocolaptes picumnus</span></span></a>
+          <a class="tcard tload" href="/birds/black-banded-woodcreeper/" data-i="517" data-group="" aria-label="Black-banded Woodcreeper collector card"><span class="tph"><span class="tph-name">Black-banded Woodcreeper</span><span class="tph-sci">Dendrocolaptes picumnus</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/black-throated-jay/" data-i="517" data-group="wrenjay" aria-label="Black-throated Jay collector card"><span class="tph"><span class="tph-name">Black-throated Jay</span><span class="tph-sci">Cyanolyca pumilo</span></span></a>
+          <a class="tcard tload" href="/birds/black-throated-jay/" data-i="518" data-group="wrenjay" aria-label="Black-throated Jay collector card"><span class="tph"><span class="tph-name">Black-throated Jay</span><span class="tph-sci">Cyanolyca pumilo</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/blue-seedeater/" data-i="518" data-group="" aria-label="Blue Seedeater collector card"><span class="tph"><span class="tph-name">Blue Seedeater</span><span class="tph-sci">Amaurospiza concolor</span></span></a>
+          <a class="tcard tload" href="/birds/blue-seedeater/" data-i="519" data-group="" aria-label="Blue Seedeater collector card"><span class="tph"><span class="tph-name">Blue Seedeater</span><span class="tph-sci">Amaurospiza concolor</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/blue-capped-motmot/" data-i="519" data-group="" aria-label="Blue-capped Motmot collector card"><span class="tph"><span class="tph-name">Blue-capped Motmot</span><span class="tph-sci">Momotus coeruliceps</span></span></a>
+          <a class="tcard tload" href="/birds/blue-capped-motmot/" data-i="520" data-group="" aria-label="Blue-capped Motmot collector card"><span class="tph"><span class="tph-name">Blue-capped Motmot</span><span class="tph-sci">Momotus coeruliceps</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/blue-crowned-chlorophonia/" data-i="520" data-group="tanager" aria-label="Blue-crowned Chlorophonia collector card"><span class="tph"><span class="tph-name">Blue-crowned Chlorophonia</span><span class="tph-sci">Chlorophonia occipitalis</span></span></a>
+          <a class="tcard tload" href="/birds/blue-crowned-chlorophonia/" data-i="521" data-group="tanager" aria-label="Blue-crowned Chlorophonia collector card"><span class="tph"><span class="tph-name">Blue-crowned Chlorophonia</span><span class="tph-sci">Chlorophonia occipitalis</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/blue-tailed-hummingbird/" data-i="521" data-group="hummer" aria-label="Blue-tailed Hummingbird collector card"><span class="tph"><span class="tph-name">Blue-tailed Hummingbird</span><span class="tph-sci">Saucerottia cyanura</span></span></a>
+          <a class="tcard tload" href="/birds/blue-tailed-hummingbird/" data-i="522" data-group="hummer" aria-label="Blue-tailed Hummingbird collector card"><span class="tph"><span class="tph-name">Blue-tailed Hummingbird</span><span class="tph-sci">Saucerottia cyanura</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/blue-throated-motmot/" data-i="522" data-group="" aria-label="Blue-throated Motmot collector card"><span class="tph"><span class="tph-name">Blue-throated Motmot</span><span class="tph-sci">Aspatha gularis</span></span></a>
+          <a class="tcard tload" href="/birds/blue-throated-motmot/" data-i="523" data-group="" aria-label="Blue-throated Motmot collector card"><span class="tph"><span class="tph-name">Blue-throated Motmot</span><span class="tph-sci">Aspatha gularis</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/buff-collared-nightjar/" data-i="523" data-group="" aria-label="Buff-collared Nightjar collector card"><span class="tph"><span class="tph-name">Buff-collared Nightjar</span><span class="tph-sci">Antrostomus ridgwayi</span></span></a>
+          <a class="tcard tload" href="/birds/buff-collared-nightjar/" data-i="524" data-group="" aria-label="Buff-collared Nightjar collector card"><span class="tph"><span class="tph-name">Buff-collared Nightjar</span><span class="tph-sci">Antrostomus ridgwayi</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/christmas-shearwater/" data-i="524" data-group="" aria-label="Christmas Shearwater collector card"><span class="tph"><span class="tph-name">Christmas Shearwater</span><span class="tph-sci">Puffinus nativitatis</span></span></a>
+          <a class="tcard tload" href="/birds/christmas-shearwater/" data-i="525" data-group="" aria-label="Christmas Shearwater collector card"><span class="tph"><span class="tph-name">Christmas Shearwater</span><span class="tph-sci">Puffinus nativitatis</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/emerald-chinned-hummingbird/" data-i="525" data-group="hummer" aria-label="Emerald-chinned Hummingbird collector card"><span class="tph"><span class="tph-name">Emerald-chinned Hummingbird</span><span class="tph-sci">Abeillia abeillei</span></span></a>
+          <a class="tcard tload" href="/birds/emerald-chinned-hummingbird/" data-i="526" data-group="hummer" aria-label="Emerald-chinned Hummingbird collector card"><span class="tph"><span class="tph-name">Emerald-chinned Hummingbird</span><span class="tph-sci">Abeillia abeillei</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/fan-tailed-warbler/" data-i="526" data-group="warbler" aria-label="Fan-tailed Warbler collector card"><span class="tph"><span class="tph-name">Fan-tailed Warbler</span><span class="tph-sci">Basileuterus lachrymosus</span></span></a>
+          <a class="tcard tload" href="/birds/fan-tailed-warbler/" data-i="527" data-group="warbler" aria-label="Fan-tailed Warbler collector card"><span class="tph"><span class="tph-name">Fan-tailed Warbler</span><span class="tph-sci">Basileuterus lachrymosus</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/galapagos-shearwater/" data-i="527" data-group="" aria-label="Galapagos Shearwater collector card"><span class="tph"><span class="tph-name">Galapagos Shearwater</span><span class="tph-sci">Puffinus subalaris</span></span></a>
+          <a class="tcard tload" href="/birds/galapagos-shearwater/" data-i="528" data-group="" aria-label="Galapagos Shearwater collector card"><span class="tph"><span class="tph-name">Galapagos Shearwater</span><span class="tph-sci">Puffinus subalaris</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/garnet-throated-hummingbird/" data-i="528" data-group="hummer" aria-label="Garnet-throated Hummingbird collector card"><span class="tph"><span class="tph-name">Garnet-throated Hummingbird</span><span class="tph-sci">Lamprolaima rhami</span></span></a>
+          <a class="tcard tload" href="/birds/garnet-throated-hummingbird/" data-i="529" data-group="hummer" aria-label="Garnet-throated Hummingbird collector card"><span class="tph"><span class="tph-name">Garnet-throated Hummingbird</span><span class="tph-sci">Lamprolaima rhami</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/green-throated-mountaingem/" data-i="529" data-group="hummer" aria-label="Green-throated Mountaingem collector card"><span class="tph"><span class="tph-name">Green-throated Mountaingem</span><span class="tph-sci">Lampornis viridipallens</span></span></a>
+          <a class="tcard tload" href="/birds/green-throated-mountaingem/" data-i="530" data-group="hummer" aria-label="Green-throated Mountaingem collector card"><span class="tph"><span class="tph-name">Green-throated Mountaingem</span><span class="tph-sci">Lampornis viridipallens</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/grey-collared-becard/" data-i="530" data-group="" aria-label="Grey-collared Becard collector card"><span class="tph"><span class="tph-name">Grey-collared Becard</span><span class="tph-sci">Pachyramphus major</span></span></a>
+          <a class="tcard tload" href="/birds/grey-collared-becard/" data-i="531" data-group="" aria-label="Grey-collared Becard collector card"><span class="tph"><span class="tph-name">Grey-collared Becard</span><span class="tph-sci">Pachyramphus major</span></span></a>
 
         </div>
         <div class="tcell is-hl">
-          <a class="tcard tload" href="/birds/highland-guan/" data-i="531" data-group="highlight" aria-label="Highland Guan collector card"><span class="tph"><span class="tph-name">Highland Guan</span><span class="tph-sci">Penelopina nigra</span></span></a>
+          <a class="tcard tload" href="/birds/highland-guan/" data-i="532" data-group="highlight" aria-label="Highland Guan collector card"><span class="tph"><span class="tph-name">Highland Guan</span><span class="tph-sci">Penelopina nigra</span></span></a>
           <div class="tdet">
             <p><b>Where:</b> Metapan</p>
             <p><b>When:</b> January to April, most vocal at dawn.</p>
           </div>
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/hooded-grosbeak/" data-i="532" data-group="" aria-label="Hooded Grosbeak collector card"><span class="tph"><span class="tph-name">Hooded Grosbeak</span><span class="tph-sci">Hesperiphona abeillei</span></span></a>
+          <a class="tcard tload" href="/birds/hooded-grosbeak/" data-i="533" data-group="" aria-label="Hooded Grosbeak collector card"><span class="tph"><span class="tph-name">Hooded Grosbeak</span><span class="tph-sci">Hesperiphona abeillei</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/least-storm-petrel/" data-i="533" data-group="" aria-label="Least Storm Petrel collector card"><span class="tph"><span class="tph-name">Least Storm Petrel</span><span class="tph-sci">Hydrobates microsoma</span></span></a>
+          <a class="tcard tload" href="/birds/least-storm-petrel/" data-i="534" data-group="" aria-label="Least Storm Petrel collector card"><span class="tph"><span class="tph-name">Least Storm Petrel</span><span class="tph-sci">Hydrobates microsoma</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/mangrove-rail/" data-i="534" data-group="waterbird" aria-label="Mangrove Rail collector card"><span class="tph"><span class="tph-name">Mangrove Rail</span><span class="tph-sci">Rallus longirostris</span></span></a>
+          <a class="tcard tload" href="/birds/mangrove-rail/" data-i="535" data-group="waterbird" aria-label="Mangrove Rail collector card"><span class="tph"><span class="tph-name">Mangrove Rail</span><span class="tph-sci">Rallus longirostris</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/maroon-chested-ground-dove/" data-i="535" data-group="" aria-label="Maroon-chested Ground Dove collector card"><span class="tph"><span class="tph-name">Maroon-chested Ground Dove</span><span class="tph-sci">Paraclaravis mondetoura</span></span></a>
+          <a class="tcard tload" href="/birds/maroon-chested-ground-dove/" data-i="536" data-group="" aria-label="Maroon-chested Ground Dove collector card"><span class="tph"><span class="tph-name">Maroon-chested Ground Dove</span><span class="tph-sci">Paraclaravis mondetoura</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/mexican-violetear/" data-i="536" data-group="hummer" aria-label="Mexican Violetear collector card"><span class="tph"><span class="tph-name">Mexican Violetear</span><span class="tph-sci">Colibri thalassinus</span></span></a>
+          <a class="tcard tload" href="/birds/mexican-violetear/" data-i="537" data-group="hummer" aria-label="Mexican Violetear collector card"><span class="tph"><span class="tph-name">Mexican Violetear</span><span class="tph-sci">Colibri thalassinus</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/northern-potoo/" data-i="537" data-group="" aria-label="Northern Potoo collector card"><span class="tph"><span class="tph-name">Northern Potoo</span><span class="tph-sci">Nyctibius jamaicensis</span></span></a>
+          <a class="tcard tload" href="/birds/northern-potoo/" data-i="538" data-group="" aria-label="Northern Potoo collector card"><span class="tph"><span class="tph-name">Northern Potoo</span><span class="tph-sci">Nyctibius jamaicensis</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/pacific-screech-owl/" data-i="538" data-group="" aria-label="Pacific Screech Owl collector card"><span class="tph"><span class="tph-name">Pacific Screech Owl</span><span class="tph-sci">Megascops cooperi</span></span></a>
+          <a class="tcard tload" href="/birds/pacific-screech-owl/" data-i="539" data-group="" aria-label="Pacific Screech Owl collector card"><span class="tph"><span class="tph-name">Pacific Screech Owl</span><span class="tph-sci">Megascops cooperi</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/pheasant-cuckoo/" data-i="539" data-group="" aria-label="Pheasant Cuckoo collector card"><span class="tph"><span class="tph-name">Pheasant Cuckoo</span><span class="tph-sci">Dromococcyx phasianellus</span></span></a>
+          <a class="tcard tload" href="/birds/pheasant-cuckoo/" data-i="540" data-group="" aria-label="Pheasant Cuckoo collector card"><span class="tph"><span class="tph-name">Pheasant Cuckoo</span><span class="tph-sci">Dromococcyx phasianellus</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/ruddy-foliage-gleaner/" data-i="540" data-group="" aria-label="Ruddy Foliage-gleaner collector card"><span class="tph"><span class="tph-name">Ruddy Foliage-gleaner</span><span class="tph-sci">Clibanornis rubiginosus</span></span></a>
+          <a class="tcard tload" href="/birds/ruddy-foliage-gleaner/" data-i="541" data-group="" aria-label="Ruddy Foliage-gleaner collector card"><span class="tph"><span class="tph-name">Ruddy Foliage-gleaner</span><span class="tph-sci">Clibanornis rubiginosus</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/ruddy-woodcreeper/" data-i="541" data-group="" aria-label="Ruddy Woodcreeper collector card"><span class="tph"><span class="tph-name">Ruddy Woodcreeper</span><span class="tph-sci">Dendrocincla homochroa</span></span></a>
+          <a class="tcard tload" href="/birds/ruddy-woodcreeper/" data-i="542" data-group="" aria-label="Ruddy Woodcreeper collector card"><span class="tph"><span class="tph-name">Ruddy Woodcreeper</span><span class="tph-sci">Dendrocincla homochroa</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/rufous-sabrewing/" data-i="542" data-group="hummer" aria-label="Rufous Sabrewing collector card"><span class="tph"><span class="tph-name">Rufous Sabrewing</span><span class="tph-sci">Pampa rufa</span></span></a>
+          <a class="tcard tload" href="/birds/rufous-sabrewing/" data-i="543" data-group="hummer" aria-label="Rufous Sabrewing collector card"><span class="tph"><span class="tph-name">Rufous Sabrewing</span><span class="tph-sci">Pampa rufa</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/rufous-browed-wren/" data-i="543" data-group="wrenjay" aria-label="Rufous-browed Wren collector card"><span class="tph"><span class="tph-name">Rufous-browed Wren</span><span class="tph-sci">Troglodytes rufociliatus</span></span></a>
+          <a class="tcard tload" href="/birds/rufous-browed-wren/" data-i="544" data-group="wrenjay" aria-label="Rufous-browed Wren collector card"><span class="tph"><span class="tph-name">Rufous-browed Wren</span><span class="tph-sci">Troglodytes rufociliatus</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/rufous-necked-wood-rail/" data-i="544" data-group="waterbird" aria-label="Rufous-necked Wood Rail collector card"><span class="tph"><span class="tph-name">Rufous-necked Wood Rail</span><span class="tph-sci">Aramides axillaris</span></span></a>
+          <a class="tcard tload" href="/birds/rufous-necked-wood-rail/" data-i="545" data-group="waterbird" aria-label="Rufous-necked Wood Rail collector card"><span class="tph"><span class="tph-name">Rufous-necked Wood Rail</span><span class="tph-sci">Aramides axillaris</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/singing-quail/" data-i="545" data-group="" aria-label="Singing Quail collector card"><span class="tph"><span class="tph-name">Singing Quail</span><span class="tph-sci">Dactylortyx thoracicus</span></span></a>
+          <a class="tcard tload" href="/birds/singing-quail/" data-i="546" data-group="" aria-label="Singing Quail collector card"><span class="tph"><span class="tph-name">Singing Quail</span><span class="tph-sci">Dactylortyx thoracicus</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/sparkling-tailed-woodstar/" data-i="546" data-group="hummer" aria-label="Sparkling-tailed Woodstar collector card"><span class="tph"><span class="tph-name">Sparkling-tailed Woodstar</span><span class="tph-sci">Tilmatura dupontii</span></span></a>
+          <a class="tcard tload" href="/birds/sparkling-tailed-woodstar/" data-i="547" data-group="hummer" aria-label="Sparkling-tailed Woodstar collector card"><span class="tph"><span class="tph-name">Sparkling-tailed Woodstar</span><span class="tph-sci">Tilmatura dupontii</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/striped-owl/" data-i="547" data-group="" aria-label="Striped Owl collector card"><span class="tph"><span class="tph-name">Striped Owl</span><span class="tph-sci">Asio clamator</span></span></a>
+          <a class="tcard tload" href="/birds/striped-owl/" data-i="548" data-group="" aria-label="Striped Owl collector card"><span class="tph"><span class="tph-name">Striped Owl</span><span class="tph-sci">Asio clamator</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/stub-tailed-spadebill/" data-i="548" data-group="" aria-label="Stub-tailed Spadebill collector card"><span class="tph"><span class="tph-name">Stub-tailed Spadebill</span><span class="tph-sci">Platyrinchus cancrominus</span></span></a>
+          <a class="tcard tload" href="/birds/stub-tailed-spadebill/" data-i="549" data-group="" aria-label="Stub-tailed Spadebill collector card"><span class="tph"><span class="tph-name">Stub-tailed Spadebill</span><span class="tph-sci">Platyrinchus cancrominus</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/tahiti-petrel/" data-i="549" data-group="" aria-label="Tahiti Petrel collector card"><span class="tph"><span class="tph-name">Tahiti Petrel</span><span class="tph-sci">Pseudobulweria rostrata</span></span></a>
+          <a class="tcard tload" href="/birds/tahiti-petrel/" data-i="550" data-group="" aria-label="Tahiti Petrel collector card"><span class="tph"><span class="tph-name">Tahiti Petrel</span><span class="tph-sci">Pseudobulweria rostrata</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/tawny-throated-leaftosser/" data-i="550" data-group="" aria-label="Tawny-throated Leaftosser collector card"><span class="tph"><span class="tph-name">Tawny-throated Leaftosser</span><span class="tph-sci">Sclerurus mexicanus</span></span></a>
+          <a class="tcard tload" href="/birds/tawny-throated-leaftosser/" data-i="551" data-group="" aria-label="Tawny-throated Leaftosser collector card"><span class="tph"><span class="tph-name">Tawny-throated Leaftosser</span><span class="tph-sci">Sclerurus mexicanus</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/tody-motmot/" data-i="551" data-group="" aria-label="Tody Motmot collector card"><span class="tph"><span class="tph-name">Tody Motmot</span><span class="tph-sci">Hylomanes momotula</span></span></a>
+          <a class="tcard tload" href="/birds/tody-motmot/" data-i="552" data-group="" aria-label="Tody Motmot collector card"><span class="tph"><span class="tph-name">Tody Motmot</span><span class="tph-sci">Hylomanes momotula</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/townsend-s-storm-petrel/" data-i="552" data-group="" aria-label="Townsend's Storm Petrel collector card"><span class="tph"><span class="tph-name">Townsend's Storm Petrel</span><span class="tph-sci">Hydrobates socorroensis</span></span></a>
+          <a class="tcard tload" href="/birds/townsend-s-storm-petrel/" data-i="553" data-group="" aria-label="Townsend's Storm Petrel collector card"><span class="tph"><span class="tph-name">Townsend's Storm Petrel</span><span class="tph-sci">Hydrobates socorroensis</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/unicolored-jay/" data-i="553" data-group="wrenjay" aria-label="Unicolored Jay collector card"><span class="tph"><span class="tph-name">Unicolored Jay</span><span class="tph-sci">Aphelocoma unicolor</span></span></a>
+          <a class="tcard tload" href="/birds/unicolored-jay/" data-i="554" data-group="wrenjay" aria-label="Unicolored Jay collector card"><span class="tph"><span class="tph-name">Unicolored Jay</span><span class="tph-sci">Aphelocoma unicolor</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/unspotted-saw-whet-owl/" data-i="554" data-group="" aria-label="Unspotted Saw-whet Owl collector card"><span class="tph"><span class="tph-name">Unspotted Saw-whet Owl</span><span class="tph-sci">Aegolius ridgwayi</span></span></a>
+          <a class="tcard tload" href="/birds/unspotted-saw-whet-owl/" data-i="555" data-group="" aria-label="Unspotted Saw-whet Owl collector card"><span class="tph"><span class="tph-name">Unspotted Saw-whet Owl</span><span class="tph-sci">Aegolius ridgwayi</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/wedge-rumped-storm-petrel/" data-i="555" data-group="" aria-label="Wedge-rumped Storm Petrel collector card"><span class="tph"><span class="tph-name">Wedge-rumped Storm Petrel</span><span class="tph-sci">Hydrobates tethys</span></span></a>
+          <a class="tcard tload" href="/birds/wedge-rumped-storm-petrel/" data-i="556" data-group="" aria-label="Wedge-rumped Storm Petrel collector card"><span class="tph"><span class="tph-name">Wedge-rumped Storm Petrel</span><span class="tph-sci">Hydrobates tethys</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/white-throated-flycatcher/" data-i="556" data-group="" aria-label="White-throated Flycatcher collector card"><span class="tph"><span class="tph-name">White-throated Flycatcher</span><span class="tph-sci">Empidonax albigularis</span></span></a>
+          <a class="tcard tload" href="/birds/white-throated-flycatcher/" data-i="557" data-group="" aria-label="White-throated Flycatcher collector card"><span class="tph"><span class="tph-name">White-throated Flycatcher</span><span class="tph-sci">Empidonax albigularis</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/wine-throated-hummingbird/" data-i="557" data-group="hummer" aria-label="Wine-throated Hummingbird collector card"><span class="tph"><span class="tph-name">Wine-throated Hummingbird</span><span class="tph-sci">Selasphorus ellioti</span></span></a>
+          <a class="tcard tload" href="/birds/wine-throated-hummingbird/" data-i="558" data-group="hummer" aria-label="Wine-throated Hummingbird collector card"><span class="tph"><span class="tph-name">Wine-throated Hummingbird</span><span class="tph-sci">Selasphorus ellioti</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/yellow-throated-nightingale-thrush/" data-i="558" data-group="" aria-label="Yellow-throated Nightingale-Thrush collector card"><span class="tph"><span class="tph-name">Yellow-throated Nightingale-Thrush</span><span class="tph-sci">Catharus dryas</span></span></a>
+          <a class="tcard tload" href="/birds/yellow-throated-nightingale-thrush/" data-i="559" data-group="" aria-label="Yellow-throated Nightingale-Thrush collector card"><span class="tph"><span class="tph-name">Yellow-throated Nightingale-Thrush</span><span class="tph-sci">Catharus dryas</span></span></a>
 
         </div>
         <div class="tcell" hidden>
-          <a class="tcard tload" href="/birds/grey-crowned-ground-sparrow/" data-i="559" data-group="" aria-label="Grey-crowned Ground Sparrow collector card"><span class="tph"><span class="tph-name">Grey-crowned Ground Sparrow</span><span class="tph-sci">Melozone occipitalis</span></span></a>
+          <a class="tcard tload" href="/birds/grey-crowned-ground-sparrow/" data-i="560" data-group="" aria-label="Grey-crowned Ground Sparrow collector card"><span class="tph"><span class="tph-name">Grey-crowned Ground Sparrow</span><span class="tph-sci">Melozone occipitalis</span></span></a>
 
         </div>
         <div class="tcell is-hl">
-          <a class="tcard tload" href="/birds/yellow-naped-amazon/" data-i="560" data-group="highlight parrot" aria-label="Yellow-naped Amazon collector card"><span class="tph"><span class="tph-name">Yellow-naped Amazon</span><span class="tph-sci">Amazona auropalliata</span></span></a>
+          <a class="tcard tload" href="/birds/yellow-naped-amazon/" data-i="561" data-group="highlight parrot" aria-label="Yellow-naped Amazon collector card"><span class="tph"><span class="tph-name">Yellow-naped Amazon</span><span class="tph-sci">Amazona auropalliata</span></span></a>
           <div class="tdet">
             <p><b>Where:</b> Tacuba and Ahuachapan</p>
             <p><b>When:</b> Year round, at dawn and dusk roost flights.</p>
@@ -3259,7 +3281,7 @@
           <p class="season-lead">The dry season across the whole country. The forest tracks are firm, the dry forest at El Imposible is open, and the wintering waders are on the Jiquilisco mudflats.</p>
           <p class="season-row"><b>Go for</b> Quetzals calling at Montecristo from March, the coastal counts at their fullest, and clear weather on the volcanic chain.</p>
           <p class="season-row"><b>Trade off</b> The busiest months, and the Montecristo upper forest closes to visitors in May.</p>
-          <p class="season-row"><b>Typical daily average</b> </p>
+          <div class="season-row"><b>Typical daily average</b> </div>
         </article>
         <article class="season">
           <p class="season-tag">Green</p>
@@ -3267,7 +3289,7 @@
           <p class="season-lead">The rains arrive and the country greens within a fortnight. Afternoon storms rather than all-day rain.</p>
           <p class="season-row"><b>Go for</b> Breeding activity everywhere, the lowest rates of the year, and the rivers running clear again.</p>
           <p class="season-row"><b>Trade off</b> The Montecristo cloud forest is closed for breeding from May to October, which is most of what the north offers.</p>
-          <p class="season-row"><b>Typical daily average</b> </p>
+          <div class="season-row"><b>Typical daily average</b> </div>
         </article>
         <article class="season">
           <p class="season-tag">Migration</p>
@@ -3275,7 +3297,7 @@
           <p class="season-lead">The wettest stretch, and the passage of North American migrants down the Pacific slope.</p>
           <p class="season-row"><b>Go for</b> Autumn passage along the coast, raptor movement over the volcanic chain, and the estuaries filling with arriving waders.</p>
           <p class="season-row"><b>Trade off</b> The wettest travel of the year, and the unsurfaced roads in Morazan turn.</p>
-          <p class="season-row"><b>Typical daily average</b> </p>
+          <div class="season-row"><b>Typical daily average</b> </div>
         </article>
       </div>
 
@@ -3371,12 +3393,12 @@
         <div class="itinmap-wrap">
           <svg class="itinmap" viewBox="0 0 1000 614" preserveAspectRatio="xMidYMid meet" role="group" aria-label="Route sketch. Each numbered stop is named in the key below.">
           <path class="cmland" d="M8 342.6L95.6 381.1L112 412L136.7 435.9L184 434.7L249 450.3L333.4 458.2L538.2 550.9L691.3 582.7L788.8 577.7L884 603.4L918.8 572.1L975.8 543.3L986.5 515.8L970 500.8L944.8 455.7L914.8 433.4L939 419.3L952.4 418.7L955.2 408.8L953.6 393.8L925.6 386.4L929.4 368.2L940.6 354.8L940.2 321L948.9 310.7L947.3 297.7L958.3 275.6L943.7 263.6L941.3 252.7L923.5 240.6L923.1 229.4L911.1 230.2L902.3 239.7L881.9 236.9L876.1 243.7L861.8 236.5L840.5 249L821.7 220L818.2 201L805.2 197.7L783.4 204.4L757.7 198L758.9 222.6L744.2 222.8L743.9 231.8L734.7 231.9L724.1 241.5L713.3 239.1L709 249.3L685.1 243.2L666 257.8L656.7 253.6L649.6 233.2L653.9 211L642.7 203.7L627.3 206.6L620.5 195.1L604.7 188.9L583.2 193.9L562.5 146L538.9 132.8L535.5 151.1L526.4 156.6L512.8 127.2L499.8 122.3L499 116.5L472.2 113.6L464.8 95.6L451.6 90.5L453 73.5L447.6 66.3L429.8 62.9L429.4 47L420.1 36.3L391.6 53.5L380.3 50.5L380.7 44.5L341 33.4L332.4 24.4L325.1 31.4L315.5 24.6L313.4 28.7L310.5 19.4L294.3 34.8L280.5 27.9L272.5 31.7L257.8 47.7L252.9 33.2L240.8 32.9L238 48.4L244.8 58.7L235.6 60.6L233.7 74.6L243.4 72.6L251.7 80.9L259.4 110.9L205.1 124.6L182.5 150.7L174.7 172.8L177.9 185.4L162 184.7L147.5 173L132.3 174.8L130.5 181.5L118.2 180.9L100.5 203.1L68 222.1L63 238.6L45.7 246.6L33.8 263.5L31.9 283.9L41.1 295.5L37.1 300.9L25 298.1L8 342.6Z"/>
-          <path class="rline" d="M322.7 298.9L270.6 235.5L243.2 152.6"/>
+          <path class="rline" d="M440.1 417.9L322.7 298.9L270.6 235.5L243.2 152.6"/>
           
-          <g><title>San Salvador</title><circle cx="324" cy="300.5" r="36" class="rstop"/><text x="324" y="317.5" text-anchor="middle" class="rnum">1</text></g><a class="rstop-link" href="#site-the-pacific-coast-and-the-mangrove-estuaries"><title>La Libertad: go to The Pacific coast and the mangrove estuaries</title><circle cx="269.4" cy="234.2" r="36" class="rstop" style="fill:#D68910"/><text x="269.4" y="251.2" text-anchor="middle" class="rnum">2</text></a><a class="rstop-link" href="#site-the-volcanic-chain-cerro-verde-and-santa-ana"><title>El Congo: go to The volcanic chain: Cerro Verde and Santa Ana</title><circle cx="243.1" cy="152.3" r="36" class="rstop" style="fill:#0F8B8D"/><text x="243.1" y="169.3" text-anchor="middle" class="rnum">3</text></a>
+          <g class="rair"><title>San Salvador (SAL), the airport this route starts at</title><circle cx="440.1" cy="417.9" r="38" class="rairdot"/><g transform="translate(418.5 396.29999999999995) scale(1.8)" class="rairicon" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></g></g><a class="rstop-link" href="#site-the-pacific-coast-and-the-mangrove-estuaries"><title>La Libertad: go to The Pacific coast and the mangrove estuaries</title><circle cx="324" cy="300.5" r="36" class="rstop" style="fill:#D68910"/><text x="324" y="317.5" text-anchor="middle" class="rnum">1</text></a><a class="rstop-link" href="#site-the-volcanic-chain-cerro-verde-and-santa-ana"><title>El Congo: go to The volcanic chain: Cerro Verde and Santa Ana</title><circle cx="269.4" cy="234.2" r="36" class="rstop" style="fill:#0F8B8D"/><text x="269.4" y="251.2" text-anchor="middle" class="rnum">2</text></a><a class="rstop-link" href="#site-the-volcanic-chain-cerro-verde-and-santa-ana"><title>Santa Ana: go to The volcanic chain: Cerro Verde and Santa Ana</title><circle cx="243.1" cy="152.3" r="36" class="rstop" style="fill:#0F8B8D"/><text x="243.1" y="169.3" text-anchor="middle" class="rnum">3</text></a>
         </svg>
           <button class="itinmap-btn" type="button" data-zoom aria-label="Open this route map larger" title="Open larger"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/><line x1="11" x2="11" y1="8" y2="14"/><line x1="8" x2="14" y1="11" y2="11"/></svg></button>
-          <ol class="itinkey"><li><span class="itinkey-n" style="--kc:var(--muted)">1</span>San Salvador</li><li><span class="itinkey-n" style="--kc:#D68910">2</span><a href="#site-the-pacific-coast-and-the-mangrove-estuaries">La Libertad</a></li><li><span class="itinkey-n" style="--kc:#0F8B8D">3</span><a href="#site-the-volcanic-chain-cerro-verde-and-santa-ana">El Congo</a></li></ol>
+          <ol class="itinkey"><li class="itinkey-air"><span class="itinkey-p" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></span>San Salvador (SAL)<span class="itinkey-role">in</span></li><li><span class="itinkey-n" style="--kc:#D68910">1</span><a href="#site-the-pacific-coast-and-the-mangrove-estuaries">La Libertad</a></li><li><span class="itinkey-n" style="--kc:#0F8B8D">2</span><a href="#site-the-volcanic-chain-cerro-verde-and-santa-ana">El Congo</a></li><li><span class="itinkey-n" style="--kc:#0F8B8D">3</span><a href="#site-the-volcanic-chain-cerro-verde-and-santa-ana">Santa Ana</a></li></ol>
         </div>
         <p class="itin-days">4 days</p>
         <h3>The volcanoes and the coast</h3>
@@ -3388,29 +3410,29 @@
         <div class="itinmap-wrap">
           <svg class="itinmap" viewBox="0 0 1000 614" preserveAspectRatio="xMidYMid meet" role="group" aria-label="Route sketch. Each numbered stop is named in the key below.">
           <path class="cmland" d="M8 342.6L95.6 381.1L112 412L136.7 435.9L184 434.7L249 450.3L333.4 458.2L538.2 550.9L691.3 582.7L788.8 577.7L884 603.4L918.8 572.1L975.8 543.3L986.5 515.8L970 500.8L944.8 455.7L914.8 433.4L939 419.3L952.4 418.7L955.2 408.8L953.6 393.8L925.6 386.4L929.4 368.2L940.6 354.8L940.2 321L948.9 310.7L947.3 297.7L958.3 275.6L943.7 263.6L941.3 252.7L923.5 240.6L923.1 229.4L911.1 230.2L902.3 239.7L881.9 236.9L876.1 243.7L861.8 236.5L840.5 249L821.7 220L818.2 201L805.2 197.7L783.4 204.4L757.7 198L758.9 222.6L744.2 222.8L743.9 231.8L734.7 231.9L724.1 241.5L713.3 239.1L709 249.3L685.1 243.2L666 257.8L656.7 253.6L649.6 233.2L653.9 211L642.7 203.7L627.3 206.6L620.5 195.1L604.7 188.9L583.2 193.9L562.5 146L538.9 132.8L535.5 151.1L526.4 156.6L512.8 127.2L499.8 122.3L499 116.5L472.2 113.6L464.8 95.6L451.6 90.5L453 73.5L447.6 66.3L429.8 62.9L429.4 47L420.1 36.3L391.6 53.5L380.3 50.5L380.7 44.5L341 33.4L332.4 24.4L325.1 31.4L315.5 24.6L313.4 28.7L310.5 19.4L294.3 34.8L280.5 27.9L272.5 31.7L257.8 47.7L252.9 33.2L240.8 32.9L238 48.4L244.8 58.7L235.6 60.6L233.7 74.6L243.4 72.6L251.7 80.9L259.4 110.9L205.1 124.6L182.5 150.7L174.7 172.8L177.9 185.4L162 184.7L147.5 173L132.3 174.8L130.5 181.5L118.2 180.9L100.5 203.1L68 222.1L63 238.6L45.7 246.6L33.8 263.5L31.9 283.9L41.1 295.5L37.1 300.9L25 298.1L8 342.6Z"/>
-          <path class="rline" d="M270.6 235.5L174.4 260L103 237.4L64.5 286.1"/>
+          <path class="rline" d="M440.1 417.9L270.6 235.5L174.4 260L103 237.4L64.5 286.1"/>
           <line class="rlead" x1="174.4" y1="260.0" x2="180.9" y2="262.2"/><circle class="rtrue" cx="174.4" cy="260.0" r="8"/><line class="rlead" x1="103.0" y1="237.4" x2="103.6" y2="224.4"/><circle class="rtrue" cx="103.0" cy="237.4" r="8"/><line class="rlead" x1="64.5" y1="286.1" x2="57.4" y2="296.9"/><circle class="rtrue" cx="64.5" cy="286.1" r="8"/>
-          <g><title>San Salvador</title><circle cx="270.6" cy="235.5" r="36" class="rstop"/><text x="270.6" y="252.5" text-anchor="middle" class="rnum">1</text></g><a class="rstop-link" href="#site-the-volcanic-chain-cerro-verde-and-santa-ana"><title>El Congo: go to The volcanic chain: Cerro Verde and Santa Ana</title><circle cx="180.9" cy="262.2" r="36" class="rstop" style="fill:#0F8B8D"/><text x="180.9" y="279.2" text-anchor="middle" class="rnum">2</text></a><a class="rstop-link" href="#site-the-volcanic-chain-cerro-verde-and-santa-ana"><title>Juayua: go to The volcanic chain: Cerro Verde and Santa Ana</title><circle cx="103.6" cy="224.4" r="36" class="rstop" style="fill:#0F8B8D"/><text x="103.6" y="241.4" text-anchor="middle" class="rnum">3</text></a><a class="rstop-link" href="#site-el-imposible-and-the-western-hills"><title>Tacuba: go to El Imposible and the western hills</title><circle cx="57.4" cy="296.9" r="36" class="rstop" style="fill:#C0392B"/><text x="57.4" y="313.9" text-anchor="middle" class="rnum">4</text></a>
+          <g class="rair"><title>San Salvador (SAL), the airport this route starts at</title><circle cx="440.1" cy="417.9" r="38" class="rairdot"/><g transform="translate(418.5 396.29999999999995) scale(1.8)" class="rairicon" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></g></g><a class="rstop-link" href="#site-the-volcanic-chain-cerro-verde-and-santa-ana"><title>El Congo: go to The volcanic chain: Cerro Verde and Santa Ana</title><circle cx="270.6" cy="235.5" r="36" class="rstop" style="fill:#0F8B8D"/><text x="270.6" y="252.5" text-anchor="middle" class="rnum">1</text></a><a class="rstop-link" href="#site-the-volcanic-chain-cerro-verde-and-santa-ana"><title>Juayua: go to The volcanic chain: Cerro Verde and Santa Ana</title><circle cx="180.9" cy="262.2" r="36" class="rstop" style="fill:#0F8B8D"/><text x="180.9" y="279.2" text-anchor="middle" class="rnum">2</text></a><a class="rstop-link" href="#site-el-imposible-and-the-western-hills"><title>Tacuba: go to El Imposible and the western hills</title><circle cx="103.6" cy="224.4" r="36" class="rstop" style="fill:#C0392B"/><text x="103.6" y="241.4" text-anchor="middle" class="rnum">3</text></a><a class="rstop-link" href="#site-el-imposible-and-the-western-hills"><title>Cara Sucia: go to El Imposible and the western hills</title><circle cx="57.4" cy="296.9" r="36" class="rstop" style="fill:#C0392B"/><text x="57.4" y="313.9" text-anchor="middle" class="rnum">4</text></a>
         </svg>
           <button class="itinmap-btn" type="button" data-zoom aria-label="Open this route map larger" title="Open larger"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/><line x1="11" x2="11" y1="8" y2="14"/><line x1="8" x2="14" y1="11" y2="11"/></svg></button>
-          <ol class="itinkey"><li><span class="itinkey-n" style="--kc:var(--muted)">1</span>San Salvador</li><li><span class="itinkey-n" style="--kc:#0F8B8D">2</span><a href="#site-the-volcanic-chain-cerro-verde-and-santa-ana">El Congo</a></li><li><span class="itinkey-n" style="--kc:#0F8B8D">3</span><a href="#site-the-volcanic-chain-cerro-verde-and-santa-ana">Juayua</a></li><li><span class="itinkey-n" style="--kc:#C0392B">4</span><a href="#site-el-imposible-and-the-western-hills">Tacuba</a></li></ol>
+          <ol class="itinkey"><li class="itinkey-air"><span class="itinkey-p" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></span>San Salvador (SAL)<span class="itinkey-role">in</span></li><li><span class="itinkey-n" style="--kc:#0F8B8D">1</span><a href="#site-the-volcanic-chain-cerro-verde-and-santa-ana">El Congo</a></li><li><span class="itinkey-n" style="--kc:#0F8B8D">2</span><a href="#site-the-volcanic-chain-cerro-verde-and-santa-ana">Juayua</a></li><li><span class="itinkey-n" style="--kc:#C0392B">3</span><a href="#site-el-imposible-and-the-western-hills">Tacuba</a></li><li><span class="itinkey-n" style="--kc:#C0392B">4</span><a href="#site-el-imposible-and-the-western-hills">Cara Sucia</a></li></ol>
         </div>
         <p class="itin-days">7 days</p>
         <h3>The classic west</h3>
         <p class="itin-route">San Salvador (SAL), Cerro Verde, the Ruta de las Flores, El Imposible, Barra de Santiago, back to San Salvador</p>
         <p class="itin-drive"><b>Driving:</b> about 10 hours behind the wheel across the whole route, roughly 380 km.</p>
-        <p class="blurb">The volcanic chain, the coffee road and the largest forest block in the country, ending on a mangrove bar. The best week El Salvador offers.</p>
+        <p class="blurb">This week takes the volcanic chain, the coffee road and the largest forest block in the country, and finishes on a mangrove bar. It is the best week El Salvador offers.</p>
       </article>
       <article class="itin" id="itin-north-to-the-cloud-forest">
         <div class="itinmap-wrap">
           <svg class="itinmap" viewBox="0 0 1000 614" preserveAspectRatio="xMidYMid meet" role="group" aria-label="Route sketch. Each numbered stop is named in the key below.">
           <path class="cmland" d="M8 342.6L95.6 381.1L112 412L136.7 435.9L184 434.7L249 450.3L333.4 458.2L538.2 550.9L691.3 582.7L788.8 577.7L884 603.4L918.8 572.1L975.8 543.3L986.5 515.8L970 500.8L944.8 455.7L914.8 433.4L939 419.3L952.4 418.7L955.2 408.8L953.6 393.8L925.6 386.4L929.4 368.2L940.6 354.8L940.2 321L948.9 310.7L947.3 297.7L958.3 275.6L943.7 263.6L941.3 252.7L923.5 240.6L923.1 229.4L911.1 230.2L902.3 239.7L881.9 236.9L876.1 243.7L861.8 236.5L840.5 249L821.7 220L818.2 201L805.2 197.7L783.4 204.4L757.7 198L758.9 222.6L744.2 222.8L743.9 231.8L734.7 231.9L724.1 241.5L713.3 239.1L709 249.3L685.1 243.2L666 257.8L656.7 253.6L649.6 233.2L653.9 211L642.7 203.7L627.3 206.6L620.5 195.1L604.7 188.9L583.2 193.9L562.5 146L538.9 132.8L535.5 151.1L526.4 156.6L512.8 127.2L499.8 122.3L499 116.5L472.2 113.6L464.8 95.6L451.6 90.5L453 73.5L447.6 66.3L429.8 62.9L429.4 47L420.1 36.3L391.6 53.5L380.3 50.5L380.7 44.5L341 33.4L332.4 24.4L325.1 31.4L315.5 24.6L313.4 28.7L310.5 19.4L294.3 34.8L280.5 27.9L272.5 31.7L257.8 47.7L252.9 33.2L240.8 32.9L238 48.4L244.8 58.7L235.6 60.6L233.7 74.6L243.4 72.6L251.7 80.9L259.4 110.9L205.1 124.6L182.5 150.7L174.7 172.8L177.9 185.4L162 184.7L147.5 173L132.3 174.8L130.5 181.5L118.2 180.9L100.5 203.1L68 222.1L63 238.6L45.7 246.6L33.8 263.5L31.9 283.9L41.1 295.5L37.1 300.9L25 298.1L8 342.6Z"/>
-          <path class="rline" d="M243.2 152.6L289.2 66.4L396 72.3"/>
+          <path class="rline" d="M440.1 417.9L243.2 152.6L289.2 66.4L396 72.3"/>
           
-          <g><title>San Salvador</title><circle cx="243.2" cy="152.6" r="36" class="rstop"/><text x="243.2" y="169.6" text-anchor="middle" class="rnum">1</text></g><a class="rstop-link" href="#site-the-volcanic-chain-cerro-verde-and-santa-ana"><title>Santa Ana: go to The volcanic chain: Cerro Verde and Santa Ana</title><circle cx="289.2" cy="66.4" r="36" class="rstop" style="fill:#0F8B8D"/><text x="289.2" y="83.4" text-anchor="middle" class="rnum">2</text></a><a class="rstop-link" href="#site-montecristo-and-the-northern-cloud-forest"><title>Metapan: go to Montecristo and the northern cloud forest</title><circle cx="396" cy="72.3" r="36" class="rstop" style="fill:#2E86AB"/><text x="396" y="89.3" text-anchor="middle" class="rnum">3</text></a>
+          <g class="rair"><title>San Salvador (SAL), the airport this route starts at</title><circle cx="440.1" cy="417.9" r="38" class="rairdot"/><g transform="translate(418.5 396.29999999999995) scale(1.8)" class="rairicon" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></g></g><a class="rstop-link" href="#site-the-volcanic-chain-cerro-verde-and-santa-ana"><title>Santa Ana: go to The volcanic chain: Cerro Verde and Santa Ana</title><circle cx="243.2" cy="152.6" r="36" class="rstop" style="fill:#0F8B8D"/><text x="243.2" y="169.6" text-anchor="middle" class="rnum">1</text></a><a class="rstop-link" href="#site-montecristo-and-the-northern-cloud-forest"><title>Metapan: go to Montecristo and the northern cloud forest</title><circle cx="289.2" cy="66.4" r="36" class="rstop" style="fill:#2E86AB"/><text x="289.2" y="83.4" text-anchor="middle" class="rnum">2</text></a><a class="rstop-link" href="#site-montecristo-and-the-northern-cloud-forest"><title>La Palma: go to Montecristo and the northern cloud forest</title><circle cx="396" cy="72.3" r="36" class="rstop" style="fill:#2E86AB"/><text x="396" y="89.3" text-anchor="middle" class="rnum">3</text></a>
         </svg>
           <button class="itinmap-btn" type="button" data-zoom aria-label="Open this route map larger" title="Open larger"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/><line x1="11" x2="11" y1="8" y2="14"/><line x1="8" x2="14" y1="11" y2="11"/></svg></button>
-          <ol class="itinkey"><li><span class="itinkey-n" style="--kc:var(--muted)">1</span>San Salvador</li><li><span class="itinkey-n" style="--kc:#0F8B8D">2</span><a href="#site-the-volcanic-chain-cerro-verde-and-santa-ana">Santa Ana</a></li><li><span class="itinkey-n" style="--kc:#2E86AB">3</span><a href="#site-montecristo-and-the-northern-cloud-forest">Metapan</a></li></ol>
+          <ol class="itinkey"><li class="itinkey-air"><span class="itinkey-p" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></span>San Salvador (SAL)<span class="itinkey-role">in</span></li><li><span class="itinkey-n" style="--kc:#0F8B8D">1</span><a href="#site-the-volcanic-chain-cerro-verde-and-santa-ana">Santa Ana</a></li><li><span class="itinkey-n" style="--kc:#2E86AB">2</span><a href="#site-montecristo-and-the-northern-cloud-forest">Metapan</a></li><li><span class="itinkey-n" style="--kc:#2E86AB">3</span><a href="#site-montecristo-and-the-northern-cloud-forest">La Palma</a></li></ol>
         </div>
         <p class="itin-days">6 days</p>
         <h3>North to the cloud forest</h3>
@@ -3422,12 +3444,12 @@
         <div class="itinmap-wrap">
           <svg class="itinmap" viewBox="0 0 1000 614" preserveAspectRatio="xMidYMid meet" role="group" aria-label="Route sketch. Each numbered stop is named in the key below.">
           <path class="cmland" d="M8 342.6L95.6 381.1L112 412L136.7 435.9L184 434.7L249 450.3L333.4 458.2L538.2 550.9L691.3 582.7L788.8 577.7L884 603.4L918.8 572.1L975.8 543.3L986.5 515.8L970 500.8L944.8 455.7L914.8 433.4L939 419.3L952.4 418.7L955.2 408.8L953.6 393.8L925.6 386.4L929.4 368.2L940.6 354.8L940.2 321L948.9 310.7L947.3 297.7L958.3 275.6L943.7 263.6L941.3 252.7L923.5 240.6L923.1 229.4L911.1 230.2L902.3 239.7L881.9 236.9L876.1 243.7L861.8 236.5L840.5 249L821.7 220L818.2 201L805.2 197.7L783.4 204.4L757.7 198L758.9 222.6L744.2 222.8L743.9 231.8L734.7 231.9L724.1 241.5L713.3 239.1L709 249.3L685.1 243.2L666 257.8L656.7 253.6L649.6 233.2L653.9 211L642.7 203.7L627.3 206.6L620.5 195.1L604.7 188.9L583.2 193.9L562.5 146L538.9 132.8L535.5 151.1L526.4 156.6L512.8 127.2L499.8 122.3L499 116.5L472.2 113.6L464.8 95.6L451.6 90.5L453 73.5L447.6 66.3L429.8 62.9L429.4 47L420.1 36.3L391.6 53.5L380.3 50.5L380.7 44.5L341 33.4L332.4 24.4L325.1 31.4L315.5 24.6L313.4 28.7L310.5 19.4L294.3 34.8L280.5 27.9L272.5 31.7L257.8 47.7L252.9 33.2L240.8 32.9L238 48.4L244.8 58.7L235.6 60.6L233.7 74.6L243.4 72.6L251.7 80.9L259.4 110.9L205.1 124.6L182.5 150.7L174.7 172.8L177.9 185.4L162 184.7L147.5 173L132.3 174.8L130.5 181.5L118.2 180.9L100.5 203.1L68 222.1L63 238.6L45.7 246.6L33.8 263.5L31.9 283.9L41.1 295.5L37.1 300.9L25 298.1L8 342.6Z"/>
-          <path class="rline" d="M289.2 66.4L270.6 235.5L103 237.4L322.7 298.9L635.7 485.1L784.1 214.4"/>
+          <path class="rline" d="M440.1 417.9L289.2 66.4L270.6 235.5L103 237.4L322.7 298.9L635.7 485.1L784.1 214.4"/>
           
-          <g><title>San Salvador</title><circle cx="289.2" cy="66.4" r="36" class="rstop"/><text x="289.2" y="83.4" text-anchor="middle" class="rnum">1</text></g><a class="rstop-link" href="#site-montecristo-and-the-northern-cloud-forest"><title>Metapan: go to Montecristo and the northern cloud forest</title><circle cx="269.3" cy="234" r="36" class="rstop" style="fill:#2E86AB"/><text x="269.3" y="251" text-anchor="middle" class="rnum">2</text></a><a class="rstop-link" href="#site-the-volcanic-chain-cerro-verde-and-santa-ana"><title>El Congo: go to The volcanic chain: Cerro Verde and Santa Ana</title><circle cx="103" cy="237.4" r="36" class="rstop" style="fill:#0F8B8D"/><text x="103" y="254.4" text-anchor="middle" class="rnum">3</text></a><a class="rstop-link" href="#site-el-imposible-and-the-western-hills"><title>Tacuba: go to El Imposible and the western hills</title><circle cx="324" cy="300.4" r="36" class="rstop" style="fill:#C0392B"/><text x="324" y="317.4" text-anchor="middle" class="rnum">4</text></a><a class="rstop-link" href="#site-the-pacific-coast-and-the-mangrove-estuaries"><title>La Libertad: go to The Pacific coast and the mangrove estuaries</title><circle cx="635.7" cy="485.1" r="36" class="rstop" style="fill:#D68910"/><text x="635.7" y="502.1" text-anchor="middle" class="rnum">5</text></a><a class="rstop-link" href="#site-the-pacific-coast-and-the-mangrove-estuaries"><title>Puerto El Triunfo: go to The Pacific coast and the mangrove estuaries</title><circle cx="784.1" cy="214.4" r="36" class="rstop" style="fill:#D68910"/><text x="784.1" y="231.4" text-anchor="middle" class="rnum">6</text></a>
+          <g class="rair"><title>San Salvador (SAL), the airport this route starts at</title><circle cx="440.1" cy="417.9" r="38" class="rairdot"/><g transform="translate(418.5 396.29999999999995) scale(1.8)" class="rairicon" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></g></g><a class="rstop-link" href="#site-montecristo-and-the-northern-cloud-forest"><title>Metapan: go to Montecristo and the northern cloud forest</title><circle cx="289.2" cy="66.4" r="36" class="rstop" style="fill:#2E86AB"/><text x="289.2" y="83.4" text-anchor="middle" class="rnum">1</text></a><a class="rstop-link" href="#site-the-volcanic-chain-cerro-verde-and-santa-ana"><title>El Congo: go to The volcanic chain: Cerro Verde and Santa Ana</title><circle cx="269.3" cy="234" r="36" class="rstop" style="fill:#0F8B8D"/><text x="269.3" y="251" text-anchor="middle" class="rnum">2</text></a><a class="rstop-link" href="#site-el-imposible-and-the-western-hills"><title>Tacuba: go to El Imposible and the western hills</title><circle cx="103" cy="237.4" r="36" class="rstop" style="fill:#C0392B"/><text x="103" y="254.4" text-anchor="middle" class="rnum">3</text></a><a class="rstop-link" href="#site-the-pacific-coast-and-the-mangrove-estuaries"><title>La Libertad: go to The Pacific coast and the mangrove estuaries</title><circle cx="324" cy="300.4" r="36" class="rstop" style="fill:#D68910"/><text x="324" y="317.4" text-anchor="middle" class="rnum">4</text></a><a class="rstop-link" href="#site-the-pacific-coast-and-the-mangrove-estuaries"><title>Puerto El Triunfo: go to The Pacific coast and the mangrove estuaries</title><circle cx="635.7" cy="485.1" r="36" class="rstop" style="fill:#D68910"/><text x="635.7" y="502.1" text-anchor="middle" class="rnum">5</text></a><a class="rstop-link" href="#site-the-eastern-highlands-perquin-and-the-rio-sapo"><title>Perquin: go to The eastern highlands: Perquin and the Rio Sapo</title><circle cx="784.1" cy="214.4" r="36" class="rstop" style="fill:#6A994E"/><text x="784.1" y="231.4" text-anchor="middle" class="rnum">6</text></a>
         </svg>
           <button class="itinmap-btn" type="button" data-zoom aria-label="Open this route map larger" title="Open larger"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/><line x1="11" x2="11" y1="8" y2="14"/><line x1="8" x2="14" y1="11" y2="11"/></svg></button>
-          <ol class="itinkey"><li><span class="itinkey-n" style="--kc:var(--muted)">1</span>San Salvador</li><li><span class="itinkey-n" style="--kc:#2E86AB">2</span><a href="#site-montecristo-and-the-northern-cloud-forest">Metapan</a></li><li><span class="itinkey-n" style="--kc:#0F8B8D">3</span><a href="#site-the-volcanic-chain-cerro-verde-and-santa-ana">El Congo</a></li><li><span class="itinkey-n" style="--kc:#C0392B">4</span><a href="#site-el-imposible-and-the-western-hills">Tacuba</a></li><li><span class="itinkey-n" style="--kc:#D68910">5</span><a href="#site-the-pacific-coast-and-the-mangrove-estuaries">La Libertad</a></li><li><span class="itinkey-n" style="--kc:#D68910">6</span><a href="#site-the-pacific-coast-and-the-mangrove-estuaries">Puerto El Triunfo</a></li></ol>
+          <ol class="itinkey"><li class="itinkey-air"><span class="itinkey-p" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></span>San Salvador (SAL)<span class="itinkey-role">in</span></li><li><span class="itinkey-n" style="--kc:#2E86AB">1</span><a href="#site-montecristo-and-the-northern-cloud-forest">Metapan</a></li><li><span class="itinkey-n" style="--kc:#0F8B8D">2</span><a href="#site-the-volcanic-chain-cerro-verde-and-santa-ana">El Congo</a></li><li><span class="itinkey-n" style="--kc:#C0392B">3</span><a href="#site-el-imposible-and-the-western-hills">Tacuba</a></li><li><span class="itinkey-n" style="--kc:#D68910">4</span><a href="#site-the-pacific-coast-and-the-mangrove-estuaries">La Libertad</a></li><li><span class="itinkey-n" style="--kc:#D68910">5</span><a href="#site-the-pacific-coast-and-the-mangrove-estuaries">Puerto El Triunfo</a></li><li><span class="itinkey-n" style="--kc:#6A994E">6</span><a href="#site-the-eastern-highlands-perquin-and-the-rio-sapo">Perquin</a></li></ol>
         </div>
         <p class="itin-days">11 days</p>
         <h3>End to end</h3>
@@ -3459,16 +3481,17 @@
         <li class="where access"><b>Getting there:</b> Metapan is three hours northwest of San Salvador on the CA-12, and the park road climbs from there. The last stretch needs clearance and a permit arranged in advance.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/resplendent-quetzal/">Resplendent Quetzal</a>, <a href="/birds/highland-guan/">Highland Guan</a>, <a href="/birds/blue-and-white-mockingbird/">Blue-and-white Mockingbird</a>, <a href="/birds/bushy-crested-jay/">Bushy-crested Jay</a>, <a href="/birds/spotted-wood-quail/">Spotted Wood-Quail</a>, <a href="/birds/green-breasted-mountaingem/">Green-breasted Mountaingem</a></li>
 
+
         <li class="where parks"><b>National parks:</b> <a class="parklink" href="https://www.marn.gob.sv/" target="_blank" rel="noopener">Parque Nacional Montecristo</a>, <a class="parklink" href="https://www.marn.gob.sv/" target="_blank" rel="noopener">Area Natural Protegida San Diego y San Felipe Las Barras</a></li>
         <li class="where stops"><b>Stops:</b>
           <ul class="stoplist">
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-los-planes-and-the-summit-trail" title="Show Los Planes and the summit trail on the map">Los Planes and the summit trail</button>, the campsite at 1,900 metres and the trail to the tri-border point above it, which is where the cloud forest birds are <a class="parklink stopsite" href="https://www.marn.gob.sv/" target="_blank" rel="noopener">marn.gob.sv</a></li>
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-el-pital" title="Show El Pital on the map">El Pital</button>, the highest point in the country at 2,730 metres, reached from La Palma on a rough road through cypress and pine</li>
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-san-diego-y-san-felipe-las-barras" title="Show San Diego y San Felipe Las Barras on the map">San Diego y San Felipe Las Barras</button>, dry forest and lake shore below Metapan, a different community entirely from the massif above it <a class="parklink stopsite" href="https://www.marn.gob.sv/" target="_blank" rel="noopener">marn.gob.sv</a></li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-los-planes-and-the-summit-trail" title="Show Los Planes and the summit trail on the map">Los Planes and the summit trail</button>: The campsite at 1,900 metres, with the trail to the tri-border point above it. The cloud forest birds are up there. <a class="parklink stopsite" href="https://www.marn.gob.sv/" target="_blank" rel="noopener">marn.gob.sv</a></li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-el-pital" title="Show El Pital on the map">El Pital</button>: The highest point in the country at 2,730 metres. A rough road climbs to it from La Palma through cypress and pine.</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-san-diego-y-san-felipe-las-barras" title="Show San Diego y San Felipe Las Barras on the map">San Diego y San Felipe Las Barras</button>: Dry forest and lake shore below Metapan. It is a different community entirely from the massif above it. <a class="parklink stopsite" href="https://www.marn.gob.sv/" target="_blank" rel="noopener">marn.gob.sv</a></li>
           </ul>
         </li>
         <li class="where centres"><b>Visitor centres:</b> <a class="parklink" href="https://www.marn.gob.sv/" target="_blank" rel="noopener">Montecristo Visitor Centre, Los Planes</a></li>
-        <li class="where wildlife"><b>Also watch for:</b> The Trifinio massif is a trinational biosphere reserve, and the Salvadoran side still holds spider monkeys and margay.</li>
+        <li class="where covers"><b>Also covers:</b> Area Natural Protegida San Diego y San Felipe Las Barras, Citala, El Pital, La Palma, Los Planes and the summit trail, Metapan, Montecristo Visitor Centre, Los Planes, Parque Nacional Montecristo, Santa Ana</li><li class="where wildlife"><b>Also watch for:</b> The Trifinio massif is a trinational biosphere reserve, and the Salvadoran side still holds spider monkeys and margay.</li>
         </ul>
           </div>
         </div>
@@ -3496,16 +3519,17 @@
         <li class="where access"><b>Getting there:</b> An hour and a half west of San Salvador on the CA-8, then the park road up from El Congo. Buses run from Santa Ana city to the park gate.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/blue-and-white-mockingbird/">Blue-and-white Mockingbird</a>, <a href="/birds/bushy-crested-jay/">Bushy-crested Jay</a>, <a href="/birds/turquoise-browed-motmot/">Turquoise-browed Motmot</a>, <a href="/birds/long-tailed-manakin/">Long-tailed Manakin</a>, <a href="/birds/collared-aracari/">Collared Aracari</a>, <a href="/birds/white-bellied-chachalaca/">White-bellied Chachalaca</a></li>
 
+
         <li class="where parks"><b>National park:</b> <a class="parklink" href="https://www.marn.gob.sv/" target="_blank" rel="noopener">Parque Nacional Los Volcanes</a></li>
         <li class="where stops"><b>Stops:</b>
           <ul class="stoplist">
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-cerro-verde-crater-trail" title="Show Cerro Verde crater trail on the map">Cerro Verde crater trail</button>, a level loop inside the filled crater, the easiest highland forest walking in the country <a class="parklink stopsite" href="https://www.marn.gob.sv/" target="_blank" rel="noopener">marn.gob.sv</a></li>
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-lake-coatepeque" title="Show Lake Coatepeque on the map">Lake Coatepeque</button>, a caldera lake below the cones, with wooded shore and wintering wildfowl on the water</li>
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-the-ruta-de-las-flores" title="Show The Ruta de las Flores on the map">The Ruta de las Flores</button>, a road through shade coffee between Sonsonate and Ahuachapan, with forest fragments and cloud along its length</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-cerro-verde-crater-trail" title="Show Cerro Verde crater trail on the map">Cerro Verde crater trail</button>: A level loop inside the filled crater. It is the easiest highland forest walking in the country. <a class="parklink stopsite" href="https://www.marn.gob.sv/" target="_blank" rel="noopener">marn.gob.sv</a></li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-lake-coatepeque" title="Show Lake Coatepeque on the map">Lake Coatepeque</button>: A caldera lake below the cones, with a wooded shore. Wintering wildfowl sit on the water.</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-the-ruta-de-las-flores" title="Show The Ruta de las Flores on the map">The Ruta de las Flores</button>: A road through shade coffee between Sonsonate and Ahuachapan. Forest fragments and cloud run along its length.</li>
           </ul>
         </li>
         <li class="where centres"><b>Visitor centres:</b> <a class="parklink" href="https://www.marn.gob.sv/" target="_blank" rel="noopener">Cerro Verde Visitor Centre</a></li>
-        <li class="where wildlife"><b>Also watch for:</b> The Apaneca-Ilamatepec range behind is the country's coffee heartland, and the shade plantations hold much of what the forest fragments do.</li>
+        <li class="where covers"><b>Also covers:</b> Cerro Verde crater trail, Cerro Verde Visitor Centre, El Congo, Juayua, Lake Coatepeque, Parque Nacional Los Volcanes, Santa Ana, Sonsonate, The Ruta de las Flores</li><li class="where wildlife"><b>Also watch for:</b> The Apaneca-Ilamatepec range behind is the country's coffee heartland, and the shade plantations hold much of what the forest fragments do.</li>
         </ul>
           </div>
         </div>
@@ -3533,16 +3557,17 @@
         <li class="where access"><b>Getting there:</b> Two and a half hours west of San Salvador. The San Benito entrance is reached from Cara Sucia on the coast road and the Mixtepe entrance from Tacuba, and the two do not connect by vehicle.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/king-vulture/">King Vulture</a>, <a href="/birds/turquoise-browed-motmot/">Turquoise-browed Motmot</a>, <a href="/birds/long-tailed-manakin/">Long-tailed Manakin</a>, <a href="/birds/lesser-ground-cuckoo/">Lesser Ground Cuckoo</a>, <a href="/birds/yellow-naped-amazon/">Yellow-naped Amazon</a>, <a href="/birds/white-throated-magpie-jay/">White-throated Magpie-Jay</a></li>
 
+
         <li class="where parks"><b>National park:</b> <a class="parklink" href="https://www.marn.gob.sv/" target="_blank" rel="noopener">Parque Nacional El Imposible</a></li>
         <li class="where stops"><b>Stops:</b>
           <ul class="stoplist">
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-san-benito-entrance" title="Show San Benito entrance on the map">San Benito entrance</button>, the main way in from the coast road, with the visitor centre and the mirador trails above it <a class="parklink stopsite" href="https://www.marn.gob.sv/" target="_blank" rel="noopener">marn.gob.sv</a></li>
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-tacuba-and-the-mixtepe-entrance" title="Show Tacuba and the Mixtepe entrance on the map">Tacuba and the Mixtepe entrance</button>, the northern way in, higher and cooler, reached through a coffee town on the ridge</li>
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-barra-de-santiago" title="Show Barra de Santiago on the map">Barra de Santiago</button>, a mangrove estuary and sand bar below the park, worked by boat for herons and waders <a class="parklink stopsite" href="https://www.marn.gob.sv/" target="_blank" rel="noopener">marn.gob.sv</a></li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-san-benito-entrance" title="Show San Benito entrance on the map">San Benito entrance</button>: The main way in from the coast road. The visitor centre is here and the mirador trails climb above it. <a class="parklink stopsite" href="https://www.marn.gob.sv/" target="_blank" rel="noopener">marn.gob.sv</a></li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-tacuba-and-the-mixtepe-entrance" title="Show Tacuba and the Mixtepe entrance on the map">Tacuba and the Mixtepe entrance</button>: The northern way in, higher and cooler. A coffee town on the ridge is the route through.</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-barra-de-santiago" title="Show Barra de Santiago on the map">Barra de Santiago</button>: A mangrove estuary and sand bar below the park. Work it by boat for herons and waders. <a class="parklink stopsite" href="https://www.marn.gob.sv/" target="_blank" rel="noopener">marn.gob.sv</a></li>
           </ul>
         </li>
         <li class="where centres"><b>Visitor centres:</b> <a class="parklink" href="https://www.marn.gob.sv/" target="_blank" rel="noopener">El Imposible Visitor Centre, San Benito</a></li>
-        <li class="where wildlife"><b>Also watch for:</b> The park holds the country's last confirmed puma population, and the eight rivers that rise in it supply much of western El Salvador.</li>
+        <li class="where covers"><b>Also covers:</b> Ahuachapan, Apaneca, Barra de Santiago, Cara Sucia, El Imposible Visitor Centre, San Benito, Parque Nacional El Imposible, San Benito entrance, Tacuba and the Mixtepe entrance</li><li class="where wildlife"><b>Also watch for:</b> The park holds the country's last confirmed puma population, and the eight rivers that rise in it supply much of western El Salvador.</li>
         </ul>
           </div>
         </div>
@@ -3570,16 +3595,17 @@
         <li class="where access"><b>Getting there:</b> Puerto El Triunfo is two hours southeast of San Salvador and the bay is worked by boat from there. Walter Deininger is forty minutes from the capital on the coast road near La Libertad.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/roseate-spoonbill/">Roseate Spoonbill</a>, <a href="/birds/wood-stork/">Wood Stork</a>, <a href="/birds/boat-billed-heron/">Boat-billed Heron</a>, <a href="/birds/bare-throated-tiger-heron/">Bare-throated Tiger Heron</a>, <a href="/birds/white-throated-magpie-jay/">White-throated Magpie-Jay</a>, <a href="/birds/turquoise-browed-motmot/">Turquoise-browed Motmot</a></li>
 
+
         <li class="where parks"><b>National parks:</b> <a class="parklink" href="https://www.marn.gob.sv/" target="_blank" rel="noopener">Bahia de Jiquilisco Biosphere Reserve</a>, <a class="parklink" href="https://www.marn.gob.sv/" target="_blank" rel="noopener">Parque Nacional Walter Thilo Deininger</a>, <a class="parklink" href="https://www.marn.gob.sv/" target="_blank" rel="noopener">Area Natural Protegida Nancuchiname</a></li>
         <li class="where stops"><b>Stops:</b>
           <ul class="stoplist">
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-bahia-de-jiquilisco" title="Show Bahia de Jiquilisco on the map">Bahia de Jiquilisco</button>, mangrove channels and islands worked by boat from Puerto El Triunfo, and the main shorebird count site in the country <a class="parklink stopsite" href="https://www.marn.gob.sv/" target="_blank" rel="noopener">marn.gob.sv</a></li>
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-walter-thilo-deininger" title="Show Walter Thilo Deininger on the map">Walter Thilo Deininger</button>, coastal dry forest above the beach forty minutes from the capital, with marked trails and a camping area <a class="parklink stopsite" href="https://www.marn.gob.sv/" target="_blank" rel="noopener">marn.gob.sv</a></li>
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-nancuchiname" title="Show Nancuchiname on the map">Nancuchiname</button>, gallery forest on the lower Lempa river, one of the last stands of it, reached from the coast highway <a class="parklink stopsite" href="https://www.marn.gob.sv/" target="_blank" rel="noopener">marn.gob.sv</a></li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-bahia-de-jiquilisco" title="Show Bahia de Jiquilisco on the map">Bahia de Jiquilisco</button>: Mangrove channels and islands, worked by boat from Puerto El Triunfo. It is the main shorebird count site in the country. <a class="parklink stopsite" href="https://www.marn.gob.sv/" target="_blank" rel="noopener">marn.gob.sv</a></li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-walter-thilo-deininger" title="Show Walter Thilo Deininger on the map">Walter Thilo Deininger</button>: Coastal dry forest above the beach, forty minutes from the capital. It has marked trails and a camping area. <a class="parklink stopsite" href="https://www.marn.gob.sv/" target="_blank" rel="noopener">marn.gob.sv</a></li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-nancuchiname" title="Show Nancuchiname on the map">Nancuchiname</button>: Gallery forest on the lower Lempa river, one of the last stands of it. Reach it from the coast road. <a class="parklink stopsite" href="https://www.marn.gob.sv/" target="_blank" rel="noopener">marn.gob.sv</a></li>
           </ul>
         </li>
 
-        <li class="where wildlife"><b>Also watch for:</b> Hawksbill turtles nest on the Jiquilisco beaches in one of the largest remaining eastern Pacific populations, and the bay is a UNESCO biosphere reserve.</li>
+        <li class="where covers"><b>Also covers:</b> Area Natural Protegida Nancuchiname, Bahia de Jiquilisco Biosphere Reserve, La Libertad, Parque Nacional Walter Thilo Deininger, Puerto El Triunfo, Usulutan, Zacatecoluca</li><li class="where wildlife"><b>Also watch for:</b> Hawksbill turtles nest on the Jiquilisco beaches in one of the largest remaining eastern Pacific populations, and the bay is a UNESCO biosphere reserve.</li>
         </ul>
           </div>
         </div>
@@ -3607,16 +3633,17 @@
         <li class="where access"><b>Getting there:</b> Perquin is four hours east of San Salvador through San Miguel, and the last hour is a mountain road. The Rio Sapo is reached on tracks from the town.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/bushy-crested-jay/">Bushy-crested Jay</a>, <a href="/birds/blue-and-white-mockingbird/">Blue-and-white Mockingbird</a>, <a href="/birds/spotted-wood-quail/">Spotted Wood-Quail</a>, <a href="/birds/montezuma-oropendola/">Montezuma Oropendola</a>, <a href="/birds/collared-aracari/">Collared Aracari</a>, <a href="/birds/long-tailed-manakin/">Long-tailed Manakin</a></li>
 
+
         <li class="where parks"><b>National park:</b> <a class="parklink" href="https://www.marn.gob.sv/" target="_blank" rel="noopener">Area Natural Protegida Rio Sapo</a></li>
         <li class="where stops"><b>Stops:</b>
           <ul class="stoplist">
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-the-rio-sapo-valley" title="Show The Rio Sapo valley on the map">The Rio Sapo valley</button>, pine and gallery forest along a clear river, with a community campsite at the crossing <a class="parklink stopsite" href="https://www.marn.gob.sv/" target="_blank" rel="noopener">marn.gob.sv</a></li>
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-perquin" title="Show Perquin on the map">Perquin</button>, a pine-forest town on the border road, and the base for the whole eastern highland block</li>
-            <li class="stop"><button type="button" class="stoplink" data-stop="stop-cerro-cacahuatique" title="Show Cerro Cacahuatique on the map">Cerro Cacahuatique</button>, a coffee-and-pine massif above Gotera with a track to the summit and long views into Honduras</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-the-rio-sapo-valley" title="Show The Rio Sapo valley on the map">The Rio Sapo valley</button>: Pine and gallery forest along a clear river. A community campsite sits at the crossing. <a class="parklink stopsite" href="https://www.marn.gob.sv/" target="_blank" rel="noopener">marn.gob.sv</a></li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-perquin" title="Show Perquin on the map">Perquin</button>: A pine-forest town on the border road. It is the base for the whole eastern highland block.</li>
+            <li class="stop"><button type="button" class="stoplink" data-stop="stop-cerro-cacahuatique" title="Show Cerro Cacahuatique on the map">Cerro Cacahuatique</button>: A coffee-and-pine massif above Gotera. A track climbs to the summit, with long views into Honduras.</li>
           </ul>
         </li>
 
-        <li class="where wildlife"><b>Also watch for:</b> The Rio Sapo is one of the cleanest rivers in the country, and the valley is managed by the communities that returned to it after the war.</li>
+        <li class="where covers"><b>Also covers:</b> Arambala, Area Natural Protegida Rio Sapo, Cerro Cacahuatique, Perquin, San Francisco Gotera, San Miguel, The Rio Sapo valley</li><li class="where wildlife"><b>Also watch for:</b> The Rio Sapo is one of the cleanest rivers in the country, and the valley is managed by the communities that returned to it after the war.</li>
         </ul>
           </div>
         </div>
@@ -3635,14 +3662,22 @@
         <span class="appcard-body">
           <b>BeakBrain</b>
           <span class="appcard-note">Every Salvadoran bird here has a card, and the app teaches them by sight and sound.</span>
-          <span class="appcard-cta">Learn these 561 birds before you fly<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          <span class="appcard-cta">Learn these 562 birds before you fly<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
         </span>
       </a>
-      <ul class="prep">
-        <li><b><a href="https://press.princeton.edu/" target="_blank" rel="noopener">Birds of Central America</a></b> · Andrew Vallely and Dale Dyer. The one modern field guide covering the whole isthmus, and the standard book for a trip here.</li>
-        <li><b><a href="https://salvanatura.org/" target="_blank" rel="noopener">SalvaNATURA</a></b> · Co-manager of El Imposible and Los Volcanes. Runs the counts and the park access, and is the first place to ask about permits.</li>
-        <li><b><a href="https://www.marn.gob.sv/" target="_blank" rel="noopener">MARN</a></b> · The environment ministry. Issues the permits for Montecristo and El Imposible, both of which are arranged before arrival.</li>
-      </ul>
+
+      <div class="mobility">
+        <h3>Birding here with limited mobility</h3>
+<p class="mintro">Sites on this page differ from each other more than any rating could carry, so this is the framework the standard British guides use, and the reserve's own page and warden hold the answers.</p>
+        <ul class="prep fivep">
+          <li><b>Permission</b> · some reserves open ground to disabled visitors that is closed to everyone else, and it is granted by asking.</li>
+          <li><b>Priority</b> · parking bays, hides and the nearest paths are often held for disabled visitors. Ask what is reserved and how to claim it.</li>
+          <li><b>Parking</b> · how close a car reaches the birds shapes the whole day. Ring ahead for the nearest hard standing to the water or the hide.</li>
+          <li><b>Paths</b> · surfaces, gradients and gate widths vary inside a single reserve. Ask which trail is boarded, surfaced or level.</li>
+          <li><b>Perches</b> · a hide with a low window, or a bench where the view opens, turns a viewpoint into a morning.</li>
+        </ul>
+        <p class="mintro">Every reserve above with its own link carries its access detail there, and a warden answers what a page cannot.</p>
+      </div>
     </section>
 
     <section id="faq">
@@ -3713,7 +3748,7 @@
 
     <section id="community">
       <h2 class="cat-title">Birding Community</h2>
-      <p class="mintro">National bodies and the people who run the counts. <a href="/community#SV">Find a birding organisation near you in our worldwide directory</a></p>
+      
 
       <div class="cgrid">
         <a class="ccard" href="https://salvanatura.org/" target="_blank" rel="noopener">

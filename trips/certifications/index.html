@@ -187,7 +187,14 @@
     .stayrule a { color: var(--green-dark); font-weight: 800; }
     /* Habitat and When sit above the birds and read as fact rather than as recommendation,
        so they take the body colour and leave the muted grey to the wildlife aside. */
-    .where.habitat b, .where.when b, .where.access b { color: var(--green-dark); }
+    .where.habitat b, .where.when b, .where.access b, .where.base b { color: var(--green-dark); }
+    /* Seasonal lines sit under the all-year list and read as its continuation, so they
+       are indented rather than given a colour of their own. */
+    .where.seasonal { padding-left: .9rem; }
+    .mobility { margin-top: 1.4rem; border-top: 1px solid var(--border); padding-top: 1.1rem; }
+    .mobility h3 { font-size: 1.05rem; margin: 0 0 .45rem; }
+    .prep.fivep li b { color: var(--green-dark); }
+    .where.seasonal b { color: var(--green-dark); font-weight: 600; }
     .where.when { font-variant-numeric: tabular-nums; }
     .where.wildlife { color: var(--muted); }
     .where.wildlife b { color: var(--ink); }
@@ -237,6 +244,10 @@
        side inside one pill and the pill keeps the badge's own shape. */
     .bdg.cert { padding: 0; gap: 0; overflow: hidden; align-items: stretch; }
     .bdg.cert .bdg-sym, .bdg.cert .bdg-lab { display: inline-flex; align-items: center; color: inherit; text-decoration: none; padding: 4px 7px; }
+    /* A name or a chip label with nowhere to go reads as text, not as a dead link. */
+    .nolink { color: inherit; }
+    span.bdg-lab { cursor: default; }
+    .parkname { color: inherit; }
     .bdg.cert .bdg-sym { padding-left: 10px; border-right: 1px solid #D3E0CB; align-items: center; flex: none; }
     .bdg.cert .bdg-lab { padding-right: 11px; }
     .bdg.cert .bdg-sym:hover, .bdg.cert .bdg-lab:hover { background: var(--green); color: #fff; }
@@ -250,8 +261,11 @@
     .where.stops .parklink { color: var(--green-dark); font-weight: 800; }
     /* The host a stop links out to sits at the end of its note and must read as an aside
        rather than compete with the stop's own name, which is the bold green above it. */
-    .where.stops .stopsite { font-weight: 600; font-size: 0.9em; color: var(--muted); border-bottom: 1px dotted currentColor; }
-    .where.stops .stopsite:hover { color: var(--green-dark); border-bottom-style: solid; }
+    .where.stops .stopsite { font-weight: 800; color: var(--green-dark); text-decoration: none; border-bottom: 1px dotted currentColor; }
+    .where.stops .stopsite:hover { border-bottom-style: solid; }
+    .stoppin { background: none; border: 0; padding: 0 0 0 2px; cursor: pointer; color: var(--muted); vertical-align: -2px; line-height: 0; }
+    .stoppin:hover { color: var(--green-dark); }
+    .stoppin:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
     .stoplink { font: inherit; font-weight: 800; color: var(--green-dark); background: none; border: 0; border-bottom: 1px dotted currentColor; padding: 0; cursor: pointer; }
     .stoplink:hover { color: var(--green); border-bottom-style: solid; }
     .stoplink:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
@@ -275,7 +289,11 @@
     .biobar i { display: block; height: 100%; background: var(--green); border-radius: 999px; }
     .biomax { color: var(--ink-soft); opacity: .7; }
     .qualifies { margin: 6px 0 0; font-size: 13.5px; font-weight: 700; color: var(--green-dark); }
-    .qualifies.birdlodge { color: var(--green); }
+    /* A MARKER, NOT A SENTENCE. Cat, 2026-08-29: "Birding lodge" sat as bare bold text
+       beside the certification pills and read as an unexplained assertion. It is a
+       badge now, shaped like the certifications, and its tooltip says what the claim
+       covers. PAGE-SPEC.md section 8. */
+    .bdg.birdlodge { background: #EAF2E6; color: var(--green-dark); border: 1px solid #D3E0CB; }
     .mapnote { color: var(--muted); font-size: 14px; margin: -6px 0 18px; }
     .mapbar .mkey { display: inline-flex; align-items: center; gap: 6px; margin-right: 14px; }
     .mapbar .mkey-s { width: 11px; height: 11px; background: var(--muted); flex: none; }
@@ -547,6 +565,9 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
+    .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
+    .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
     .season-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 6px; }
     @media (max-width: 860px) {
       .season { border-right: none; border-bottom: 1px solid #EFE5C6; }
