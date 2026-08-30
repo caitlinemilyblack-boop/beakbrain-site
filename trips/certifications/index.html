@@ -535,6 +535,13 @@
     .mlpin:hover .mlpin-label { background: var(--pc); color: #fff; }
     .mlpin.small .mlpin-dot { width: 12px; height: 12px; }
     .mlpin.small .mlpin-label { font-size: 11.5px; opacity: .92; }
+    /* A crowded pin keeps its dot and drops its label until you point at it. */
+    /* Flipped: the label sits left of the dot and the dot stays on its coordinate. */
+    .mlpin.flip { flex-direction: row-reverse; transform: translateX(calc(-100% + 16px)); }
+    .mlpin.small.flip { transform: translateX(calc(-100% + 12px)); }
+    .mlpin.crowded .mlpin-label { display: none; }
+    .mlpin.crowded:hover .mlpin-label, .mlpin.crowded:focus-visible .mlpin-label { display: block; }
+    .mlmark-region:has(.mlpin.crowded:hover), .mlmark-region:has(.mlpin.crowded:focus-visible) { z-index: 9; }
     /* Marker wrapper: MapLibre owns its position and transform, so it carries no
        styles of ours beyond collapsing the inline box around the control. */
     .mlmark { line-height: 0; }

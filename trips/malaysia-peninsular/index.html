@@ -553,6 +553,13 @@
     .mlpin:hover .mlpin-label { background: var(--pc); color: #fff; }
     .mlpin.small .mlpin-dot { width: 12px; height: 12px; }
     .mlpin.small .mlpin-label { font-size: 11.5px; opacity: .92; }
+    /* A crowded pin keeps its dot and drops its label until you point at it. */
+    /* Flipped: the label sits left of the dot and the dot stays on its coordinate. */
+    .mlpin.flip { flex-direction: row-reverse; transform: translateX(calc(-100% + 16px)); }
+    .mlpin.small.flip { transform: translateX(calc(-100% + 12px)); }
+    .mlpin.crowded .mlpin-label { display: none; }
+    .mlpin.crowded:hover .mlpin-label, .mlpin.crowded:focus-visible .mlpin-label { display: block; }
+    .mlmark-region:has(.mlpin.crowded:hover), .mlmark-region:has(.mlpin.crowded:focus-visible) { z-index: 9; }
     /* Marker wrapper: MapLibre owns its position and transform, so it carries no
        styles of ours beyond collapsing the inline box around the control. */
     .mlmark { line-height: 0; }
@@ -4476,12 +4483,65 @@
           map.on('zoomend', sync);
           sync();
         }
+        // LABELS COLLIDE AND NOTHING WAS STOPPING THEM. Region pins are HTML markers, so
+        // MapLibre's own symbol collision engine never sees them and every label draws:
+        // on Costa Rica at the default zoom "Monteverde" sat across "Central highlands",
+        // "Manuel Antonio" across "Dota valley" and "San Vito" across "Osa and Golfo
+        // Dulce". PAGE-SPEC 5 and 6 both ask for legible labels.
+        //
+        // Pins are walked in page order, which is the order the regions are written in,
+        // and a label whose box overlaps one already kept is hidden. THE DOT ALWAYS
+        // STAYS, so nothing leaves the map, and hovering or focusing a hidden pin brings
+        // its own label back over the top. Every pin is un-hidden before measuring,
+        // because a label hidden on the previous pass measures its dot and would then
+        // claim to fit anywhere.
+        function declutter(map) {
+          if (!map) return;
+          var host = map.getContainer();
+          var queued = false;
+          function run() {
+            queued = false;
+            var pins = [].slice.call(host.querySelectorAll('.mlmark-region .mlpin'));
+            for (var i = 0; i < pins.length; i++) pins[i].classList.remove('crowded', 'flip');
+            var kept = [];
+            function clashes(r) {
+              for (var k = 0; k < kept.length; k++) {
+                var q = kept[k];
+                if (!(r.right < q.left - 2 || r.left > q.right + 2 || r.bottom < q.top - 2 || r.top > q.bottom + 2)) return true;
+              }
+              return false;
+            }
+            for (var j = 0; j < pins.length; j++) {
+              var pin = pins[j];
+              pin.classList.remove('flip');
+              var r = pin.getBoundingClientRect();
+              if (!r.width) continue;
+              if (!clashes(r)) { kept.push(r); continue; }
+              // TRY THE OTHER SIDE BEFORE GIVING UP. A label that clashes to the right of
+              // its dot often has clear space to the left, and flipping it keeps a name on
+              // the map that would otherwise have been dropped. Costa Rica went from six
+              // hidden labels to two on the same view.
+              pin.classList.add('flip');
+              var f = pin.getBoundingClientRect();
+              if (!clashes(f)) { kept.push(f); continue; }
+              pin.classList.remove('flip');
+              pin.classList.add('crowded');
+            }
+          }
+          function schedule() { if (!queued) { queued = true; requestAnimationFrame(run); } }
+          map.on('move', schedule);
+          map.on('zoom', schedule);
+          map.on('resize', schedule);
+          map.once('idle', schedule);
+          schedule();
+        }
         var rmap = mkMap('regionmap');
         if (rmap) {
           REGIONS.forEach(function (r) {
             new maplibregl.Marker({ element: mkWrap(regionPin(r, false), 'region', 'region'), anchor: 'left', offset: [-8, 0] })
               .setLngLat([r[1], r[2]]).addTo(rmap);
           });
+          declutter(rmap);
         }
         // The lodge layer used to have a map of its own. Both layers ride the one
         // map now, so lmap falls back to the regions map and the region pins are only
