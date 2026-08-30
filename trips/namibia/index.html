@@ -17,7 +17,7 @@
   <meta property="og:image:alt" content="BeakBrain: learn to identify birds by sight and sound." />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://beakbrain.com/assets/og-card.png" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I bird here with limited mobility?","acceptedAnswer":{"@type":"Answer","text":"Sites on this page differ from each other more than any rating could carry, so this is the framework the standard British guides use, and the reserve's own page and warden hold the answers. Permission · some reserves open ground to disabled visitors that is closed to everyone else, and it is granted by asking. Priority · parking bays, hides and the nearest paths are often held for disabled visitors. Ask what is reserved and how to claim it. Parking · how close a car reaches the birds shapes the whole day. Ring ahead for the nearest hard standing to the water or the hide. Paths · surfaces, gradients and gate widths vary inside a single reserve. Ask which trail is boarded, surfaced or level. Perches · a hide with a low window, or a bench where the view opens, turns a viewpoint into a morning. Every reserve above with its own link carries its access detail there, and a warden answers what a page cannot."}}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trips","item":"https://beakbrain.com/trips/"},{"@type":"ListItem","position":2,"name":"Namibia","item":"https://beakbrain.com/trips/namibia/"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Birding in Namibia: When to Go, Where to Bird, What It Costs","description":"Where to go birding in Namibia, region by region: the Namib dunes and Sossusvlei, Walvis Bay and the coast, the Erongo and Damaraland, Waterberg and the highlands, Etosha, the Kavango and Zambezi wetlands, and the south.","dateModified":"2026-08-29","author":{"@type":"Organization","name":"BeakBrain","url":"https://beakbrain.com/"},"mainEntityOfPage":"https://beakbrain.com/trips/namibia/"}</script>
   <!-- maplibre CSS off the critical path: the maps sit four screens down, so a
@@ -279,8 +279,11 @@
     .where.stops .parklink { color: var(--green-dark); font-weight: 800; }
     /* The host a stop links out to sits at the end of its note and must read as an aside
        rather than compete with the stop's own name, which is the bold green above it. */
-    .where.stops .stopsite { font-weight: 600; font-size: 0.9em; color: var(--muted); border-bottom: 1px dotted currentColor; }
-    .where.stops .stopsite:hover { color: var(--green-dark); border-bottom-style: solid; }
+    .where.stops .stopsite { font-weight: 800; color: var(--green-dark); text-decoration: none; border-bottom: 1px dotted currentColor; }
+    .where.stops .stopsite:hover { border-bottom-style: solid; }
+    .stoppin { background: none; border: 0; padding: 0 0 0 2px; cursor: pointer; color: var(--muted); vertical-align: -2px; line-height: 0; }
+    .stoppin:hover { color: var(--green-dark); }
+    .stoppin:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
     .stoplink { font: inherit; font-weight: 800; color: var(--green-dark); background: none; border: 0; border-bottom: 1px dotted currentColor; padding: 0; cursor: pointer; }
     .stoplink:hover { color: var(--green); border-bottom-style: solid; }
     .stoplink:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
@@ -763,7 +766,6 @@
     .cam-body { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 4px; }
     .cam-body h3 { font-family: var(--display); font-weight: 700; font-size: 17px; color: var(--green-dark); }
     .cam-body .meta { font-size: 13px; color: var(--faint, var(--muted)); }
-    .cam-body .season { font-size: 14px; color: var(--muted); }
     .glinks { display: flex; flex-wrap: wrap; gap: 4px 16px; }
     .glink { display: inline-flex; align-items: baseline; gap: 7px; color: var(--green); text-decoration: none; border-bottom: 1px solid transparent; }
     .glink:hover { border-bottom-color: var(--green); }
@@ -963,7 +965,7 @@
       <a class="jump" href="#prep">Prep</a>
       <a class="jump" href="#faq">FAQ</a>
       <a class="jump" href="#community">Community</a>
-
+      <a class="jump" href="#cams">Cams</a>
     </nav>
 
     <section id="species">
@@ -3900,7 +3902,7 @@
         </div>
         <p class="mapscope">One pin per region, and the national parks and stops inside each region beside it.</p>
       </div>
-      <p class="mapnote">National parks and reserves inside each region.</p>
+
       <div class="subsec" id="trips">
         <h3 class="subhead">Itineraries</h3>
         <div class="itingrid">
@@ -4192,24 +4194,17 @@
       <h2 class="cat-title">Preparation</h2>
 
 
-      <div class="mobility">
-        <h3>Birding here with limited mobility</h3>
-<p class="mintro">Sites on this page differ from each other more than any rating could carry, so this is the framework the standard British guides use, and the reserve's own page and warden hold the answers.</p>
-        <ul class="prep fivep">
-          <li><b>Permission</b> · some reserves open ground to disabled visitors that is closed to everyone else, and it is granted by asking.</li>
-          <li><b>Priority</b> · parking bays, hides and the nearest paths are often held for disabled visitors. Ask what is reserved and how to claim it.</li>
-          <li><b>Parking</b> · how close a car reaches the birds shapes the whole day. Ring ahead for the nearest hard standing to the water or the hide.</li>
-          <li><b>Paths</b> · surfaces, gradients and gate widths vary inside a single reserve. Ask which trail is boarded, surfaced or level.</li>
-          <li><b>Perches</b> · a hide with a low window, or a bench where the view opens, turns a viewpoint into a morning.</li>
-        </ul>
-        <p class="mintro">Every reserve above with its own link carries its access detail there, and a warden answers what a page cannot.</p>
-      </div>
     </section>
 
     <section id="faq">
       <h2 class="cat-title">Frequently Asked Questions</h2>
       <div class="faqs">
-
+      <details class="faq">
+        <summary>Can I bird here with limited mobility?</summary>
+        <p>Sites on this page differ from each other more than any rating could carry, so this is the framework the standard British guides use, and the reserve's own page and warden hold the answers.</p>
+        <ul class="faq-list"><li><b>Permission</b> · some reserves open ground to disabled visitors that is closed to everyone else, and it is granted by asking.</li><li><b>Priority</b> · parking bays, hides and the nearest paths are often held for disabled visitors. Ask what is reserved and how to claim it.</li><li><b>Parking</b> · how close a car reaches the birds shapes the whole day. Ring ahead for the nearest hard standing to the water or the hide.</li><li><b>Paths</b> · surfaces, gradients and gate widths vary inside a single reserve. Ask which trail is boarded, surfaced or level.</li><li><b>Perches</b> · a hide with a low window, or a bench where the view opens, turns a viewpoint into a morning.</li></ul>
+        <p>Every reserve above with its own link carries its access detail there, and a warden answers what a page cannot.</p>
+      </details>
       </div>
     </section>
 
@@ -4222,6 +4217,56 @@
       </div>
     </section>
 
+    <section id="cams">
+      <h2 class="cat-title">Live Cameras</h2>
+      <p class="mintro"><a href="/cams/">Check out our worldwide database of live bird cameras</a>.</p>
+      <div class="camgrid">
+        <article class="cam">
+          <a class="thumb ext" href="https://www.youtube.com/@NamibiaCam/live" target="_blank" rel="noopener" aria-label="Watch Kalahari Desert Cam on the host's site">
+            <img src="https://i.ytimg.com/vi/ME0dPuBtzug/hqdefault.jpg" alt="Kalahari Desert Cam stream preview" loading="lazy" decoding="async">
+            <span class="badge live">LIVE</span>
+            <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
+          </a>
+          <div class="cam-body">
+            <h3>Kalahari Desert Cam</h3>
+            <p class="meta">NamibiaCam</p>
+          </div>
+        </article>
+        <article class="cam">
+          <a class="thumb ext" href="https://www.youtube.com/@NamibiaCam/live" target="_blank" rel="noopener" aria-label="Watch Kwando River Cam on the host's site">
+            <img src="https://i.ytimg.com/vi/pH9zeWqhwTA/hqdefault.jpg" alt="Kwando River Cam stream preview" loading="lazy" decoding="async">
+            <span class="badge live">LIVE</span>
+            <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
+          </a>
+          <div class="cam-body">
+            <h3>Kwando River Cam</h3>
+            <p class="meta">NamibiaCam</p>
+          </div>
+        </article>
+        <article class="cam">
+          <a class="thumb ext" href="https://www.youtube.com/@NamibiaCam/live" target="_blank" rel="noopener" aria-label="Watch Namib Desert Waterhole on the host's site">
+            <img src="https://i.ytimg.com/vi/ydYDqZQpim8/hqdefault.jpg" alt="Namib Desert Waterhole stream preview" loading="lazy" decoding="async">
+            <span class="badge live">LIVE</span>
+            <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
+          </a>
+          <div class="cam-body">
+            <h3>Namib Desert Waterhole</h3>
+            <p class="meta">NamibiaCam / Gondwana Collection</p>
+          </div>
+        </article>
+        <article class="cam">
+          <a class="thumb ext" href="https://www.youtube.com/@NamibiaCam/live" target="_blank" rel="noopener" aria-label="Watch Okaukuejo Waterhole, Etosha on the host's site">
+            <img src="https://i.ytimg.com/vi/AeMUdOPFcXI/hqdefault.jpg" alt="Okaukuejo Waterhole, Etosha stream preview" loading="lazy" decoding="async">
+            <span class="badge live">LIVE</span>
+            <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
+          </a>
+          <div class="cam-body">
+            <h3>Okaukuejo Waterhole, Etosha</h3>
+            <p class="meta">NamibiaCam</p>
+          </div>
+        </article>
+      </div>
+    </section>
 
 
     <p class="pagefoot">Updated August 2026. Spotted an error, or run a Namibia operation that belongs here? <a href="mailto:hello@beakbrain.com?subject=Namibia%20page">Tell us</a>.</p>
@@ -4748,7 +4793,7 @@
           // A stop name in the prose brings the map to it rather than sending the reader
           // to another site. The map is the thing that shows where a place sits in its
           // region, which is the question the name is being clicked to answer.
-          document.querySelectorAll('.stoplink').forEach(function (el) {
+          document.querySelectorAll('.stoplink, .stoppin').forEach(function (el) {
             el.addEventListener('click', function () {
               var m = stopMarks[el.getAttribute('data-stop')];
               if (!m) return;
