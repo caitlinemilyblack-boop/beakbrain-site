@@ -619,6 +619,28 @@
     /* A bird present all year gets a lighter bar: the point of the column is the
        birds whose window is narrow, and a solid bar on eight rows says nothing. */
     .tg-b.tg-all { background: var(--sage); opacity: .4; }
+    /* The month ruler lives in the table head, which a stacked row cannot see. */
+    .tg-scale { display: none; }
+    /* PAGE-SPEC 4. THE TABLE COULD NOT ANSWER ITS OWN QUESTION ON A PHONE. At 390px the
+       row is 1,022px wide in a 332px window, so a reader saw the bird name and the first
+       weeks of the calendar while Best Window and Where sat entirely off-screen, reachable
+       only by scrolling every row sideways. "Best Month for Each Bird" is exactly the
+       thing that was cut off. Under 760px the row becomes a card: the bird, then the
+       calendar full width with its own month ruler under it, then the window and the
+       places as labelled lines. Nothing scrolls sideways. */
+    @media (max-width: 760px) {
+      .tg-head { display: none; }
+      .tg-row { grid-template-columns: 46px minmax(0, 1fr); gap: 9px 12px; min-width: 0; padding: 14px 0 16px; align-items: start; }
+      .tg-n { align-self: center; font-size: 16.5px; }
+      .tg-mini { grid-column: 1 / -1; height: 20px; }
+      .tg-scale { display: grid; grid-column: 1 / -1; grid-template-columns: repeat(12, 1fr); margin-top: -3px; }
+      .tg-scale span { font-family: var(--body); font-weight: 800; font-size: 10.5px; color: var(--muted); text-align: center; }
+      .tg-w, .tg-p { grid-column: 1 / -1; }
+      .tg-w::before, .tg-p::before { display: block; font-family: var(--body); font-weight: 800; font-size: 10.5px;
+        letter-spacing: .07em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 1px; }
+      .tg-w::before { content: 'Best window'; }
+      .tg-p::before { content: 'Where'; }
+    }
     @media (max-width: 760px) { .targets { padding: 6px 16px; } }
 
     .offitin { margin-top: 10px; padding: 12px 15px; background: color-mix(in srgb, var(--gold) 10%, transparent); border-radius: 12px; font-size: 14px; color: var(--ink); }
@@ -4791,6 +4813,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/85ba45b1f441.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/cape-rockjumper/">Cape Rockjumper</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">All year</div>
             <div class="tg-p">Betty's Bay, <a href="#site-cape-town-and-the-peninsula">Cape Town and the Peninsula</a></div>
           </div>
@@ -4798,6 +4821,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/09f9f8ac08a6.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/african-penguin/">African Penguin</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:83.33%;width:16.67%"></span><span class="tg-b" style="left:0.00%;width:8.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">November to January</div>
             <div class="tg-p">Simons Town, Betty's Bay</div>
           </div>
@@ -4805,6 +4829,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/85ba45b1f441.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/drakensberg-rockjumper/">Drakensberg Rockjumper</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:66.67%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">March to October</div>
             <div class="tg-p">Underberg, Himeville</div>
           </div>
@@ -4812,6 +4837,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/bearded-vulture/">Bearded Vulture</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:41.67%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">May to September</div>
             <div class="tg-p">Winterton, Underberg</div>
           </div>
@@ -4819,6 +4845,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/rudd-s-lark/">Rudd's Lark</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:75.00%;width:25.00%"></span><span class="tg-b" style="left:0.00%;width:8.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">October to January</div>
             <div class="tg-p">Wakkerstroom, <a href="#site-dullstroom-and-the-highveld-escarpment">Dullstroom and the Highveld Escarpment</a></div>
           </div>
@@ -4826,6 +4853,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/7b2c05c94580.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/pink-throated-twinspot/">Pink-throated Twinspot</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">All year</div>
             <div class="tg-p">Mkuze, St Lucia</div>
           </div>
@@ -4833,6 +4861,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/f2e71b25e474.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/southern-ground-hornbill/">Southern Ground Hornbill</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:41.67%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">May to September</div>
             <div class="tg-p">Skukuza, Hoedspruit</div>
           </div>
@@ -4840,6 +4869,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/pygmy-falcon/">Pygmy Falcon</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:50.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">April to September</div>
             <div class="tg-p">Askham, Upington</div>
           </div>
@@ -5104,7 +5134,7 @@
         <li class="where parks"><b>National parks:</b>
           <ul class="stoplist">
             <li><a class="parklink" href="https://www.sanparks.org/" target="_blank" rel="noopener">Tankwa Karoo National Park</a>, The driest park in the country, on gravel from Ceres. The Karoo endemics hold the plains.</li>
-            <li><a class="parklink" href="https://www.sanparks.org/" target="_blank" rel="noopener">Karoo National Park</a>, Escarpment and plain outside Beaufort West. It is easy from the highway and good for Verreaux's Eagle.</li>
+            <li><a class="parklink" href="https://www.sanparks.org/" target="_blank" rel="noopener">Karoo National Park</a>, Escarpment and plain outside Beaufort West. It is easy from the highway and good for <a href="/birds/verreaux-s-eagle/">Verreaux's Eagle</a>.</li>
           </ul>
         </li>
         <li class="where stops"><b>Stops:</b>
@@ -5352,7 +5382,7 @@
         <li class="where alsorec"><b>Also recorded in the parks here:</b> <a href="/birds/african-barred-owlet/">African Barred Owlet</a>, <a href="/birds/african-cuckoo/">African Cuckoo</a>, <a href="/birds/african-cuckoo-hawk/">African Cuckoo-Hawk</a>, <a href="/birds/allen-s-gallinule/">Allen's Gallinule</a>, <a href="/birds/black-bellied-bustard/">Black-bellied Bustard</a></li>
         <li class="where parks"><b>National park:</b>
           <ul class="stoplist">
-            <li><a class="parklink" href="https://www.sanparks.org/" target="_blank" rel="noopener">Kruger National Park</a>, Two million hectares of *bushveld* (mixed thorn savanna), with tarred roads, rest camps and self-drive access throughout.</li>
+            <li><a class="parklink" href="https://www.sanparks.org/" target="_blank" rel="noopener">Kruger National Park</a>, Two million hectares of <i>bushveld</i> (mixed thorn savanna), with tarred roads, rest camps and self-drive access throughout.</li>
           </ul>
         </li>
         <li class="where stops"><b>Stops:</b>
@@ -5540,7 +5570,7 @@
         <li class="where parks"><b>National parks:</b>
           <ul class="stoplist">
             <li><a class="parklink" href="https://www.sanparks.org/" target="_blank" rel="noopener">Kgalagadi Transfrontier Park</a>, A transfrontier park shared with Botswana. Drive it along two dry riverbeds between waterholes.</li>
-            <li><a class="parklink" href="https://www.sanparks.org/" target="_blank" rel="noopener">Augrabies Falls National Park</a>, A granite gorge on the Orange west of Upington, with Verreaux's Eagle and Rosy-faced Lovebird.</li>
+            <li><a class="parklink" href="https://www.sanparks.org/" target="_blank" rel="noopener">Augrabies Falls National Park</a>, A granite gorge on the Orange west of Upington, with <a href="/birds/verreaux-s-eagle/">Verreaux's Eagle</a> and <a href="/birds/rosy-faced-lovebird/">Rosy-faced Lovebird</a>.</li>
           </ul>
         </li>
         <li class="where stops"><b>Stops:</b>

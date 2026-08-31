@@ -619,6 +619,28 @@
     /* A bird present all year gets a lighter bar: the point of the column is the
        birds whose window is narrow, and a solid bar on eight rows says nothing. */
     .tg-b.tg-all { background: var(--sage); opacity: .4; }
+    /* The month ruler lives in the table head, which a stacked row cannot see. */
+    .tg-scale { display: none; }
+    /* PAGE-SPEC 4. THE TABLE COULD NOT ANSWER ITS OWN QUESTION ON A PHONE. At 390px the
+       row is 1,022px wide in a 332px window, so a reader saw the bird name and the first
+       weeks of the calendar while Best Window and Where sat entirely off-screen, reachable
+       only by scrolling every row sideways. "Best Month for Each Bird" is exactly the
+       thing that was cut off. Under 760px the row becomes a card: the bird, then the
+       calendar full width with its own month ruler under it, then the window and the
+       places as labelled lines. Nothing scrolls sideways. */
+    @media (max-width: 760px) {
+      .tg-head { display: none; }
+      .tg-row { grid-template-columns: 46px minmax(0, 1fr); gap: 9px 12px; min-width: 0; padding: 14px 0 16px; align-items: start; }
+      .tg-n { align-self: center; font-size: 16.5px; }
+      .tg-mini { grid-column: 1 / -1; height: 20px; }
+      .tg-scale { display: grid; grid-column: 1 / -1; grid-template-columns: repeat(12, 1fr); margin-top: -3px; }
+      .tg-scale span { font-family: var(--body); font-weight: 800; font-size: 10.5px; color: var(--muted); text-align: center; }
+      .tg-w, .tg-p { grid-column: 1 / -1; }
+      .tg-w::before, .tg-p::before { display: block; font-family: var(--body); font-weight: 800; font-size: 10.5px;
+        letter-spacing: .07em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 1px; }
+      .tg-w::before { content: 'Best window'; }
+      .tg-p::before { content: 'Where'; }
+    }
     @media (max-width: 760px) { .targets { padding: 6px 16px; } }
 
     .offitin { margin-top: 10px; padding: 12px 15px; background: color-mix(in srgb, var(--gold) 10%, transparent); border-radius: 12px; font-size: 14px; color: var(--ink); }
@@ -2861,6 +2883,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/e58fde9fe327.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/greater-white-fronted-goose/">Greater White-fronted Goose</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:75.00%;width:25.00%"></span><span class="tg-b" style="left:0.00%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">October to April</div>
             <div class="tg-p"><a href="#site-wexford-and-the-southeast">Wexford and the southeast</a></div>
           </div>
@@ -2868,6 +2891,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/4abae2dbed79.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/corn-crake/">Corn Crake</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:25.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">May to July</div>
             <div class="tg-p"><a href="#site-connemara-mayo-and-the-western-seaboard">Connemara, Mayo and the western seaboard</a>, <a href="#site-donegal-and-the-northwest">Donegal and the northwest</a></div>
           </div>
@@ -2875,6 +2899,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/atlantic-puffin/">Atlantic Puffin</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">April to July</div>
             <div class="tg-p"><a href="#site-kerry-and-the-shannon-estuary">Kerry and the Shannon estuary</a>, <a href="#site-wexford-and-the-southeast">Wexford and the southeast</a></div>
           </div>
@@ -2882,6 +2907,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/northern-gannet/">Northern Gannet</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:50.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">April to September</div>
             <div class="tg-p"><a href="#site-kerry-and-the-shannon-estuary">Kerry and the Shannon estuary</a></div>
           </div>
@@ -2889,6 +2915,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/e58fde9fe327.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/whooper-swan/">Whooper Swan</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:75.00%;width:25.00%"></span><span class="tg-b" style="left:0.00%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">October to April</div>
             <div class="tg-p"><a href="#site-the-midlands-loughs-and-callows">The midlands loughs and callows</a>, <a href="#site-the-burren-clare-and-the-shannon-callows">The Burren, Clare and the Shannon callows</a></div>
           </div>
@@ -2896,6 +2923,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/058c1e5c2d2e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/red-billed-chough/">Red-billed Chough</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">All year</div>
             <div class="tg-p"><a href="#site-kerry-and-the-shannon-estuary">Kerry and the Shannon estuary</a>, <a href="#site-cork-cape-clear-and-the-southwest">Cork, Cape Clear and the southwest</a>, <a href="#site-the-burren-clare-and-the-shannon-callows">The Burren, Clare and the Shannon callows</a></div>
           </div>
@@ -2903,6 +2931,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/04468f6de1ec.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/manx-shearwater/">Manx Shearwater</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:50.00%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">July to October</div>
             <div class="tg-p"><a href="#site-cork-cape-clear-and-the-southwest">Cork, Cape Clear and the southwest</a>, <a href="#site-donegal-and-the-northwest">Donegal and the northwest</a></div>
           </div>
@@ -2910,6 +2939,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/de76657567f7.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/red-grouse/">Red Grouse</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">All year</div>
             <div class="tg-p"><a href="#site-dublin-the-east-coast-and-wicklow">Dublin, the east coast and Wicklow</a>, <a href="#site-donegal-and-the-northwest">Donegal and the northwest</a></div>
           </div>
@@ -3789,7 +3819,7 @@
 
         <li class="where parks"><b>Parks and reserves:</b>
           <ul class="stoplist">
-            <li><a class="parklink" href="https://www.nationalparks.ie/killarney/" target="_blank" rel="noopener">Killarney National Park</a>, A National Park, free to enter at any time. Muckross Lake and its woods are walked from the car park, and reintroduced White-tailed Eagle crosses the lakes above the red deer.</li>
+            <li><a class="parklink" href="https://www.nationalparks.ie/killarney/" target="_blank" rel="noopener">Killarney National Park</a>, A National Park, free to enter at any time. Muckross Lake and its woods are walked from the car park, and reintroduced <a href="/birds/white-tailed-eagle/">White-tailed Eagle</a> crosses the lakes above the red deer.</li>
             <li><a class="parklink" href="https://www.npws.ie/nature-reserves/kerry/great-skellig-nature-reserve" target="_blank" rel="noopener">Great Skellig Nature Reserve (Skellig Michael)</a></li>
             <li><a class="parklink" href="https://www.npws.ie/nature-reserves/kerry/little-skellig-nature-reserve" target="_blank" rel="noopener">Little Skellig Nature Reserve</a></li>
             <li><a class="parklink" href="https://www.npws.ie/nature-reserves/kerry/puffin-island-nature-reserve" target="_blank" rel="noopener">Puffin Island Nature Reserve</a></li>
@@ -3863,7 +3893,7 @@
             <li><span class="parkname">Cape Clear Island</span> <span class="pkind">(island reserve)</span></li>
             <li><a class="parklink" href="https://www.npws.ie/nature-reserves/cork/capel-island-and-knockadoon-head-nature-reserve" target="_blank" rel="noopener">Capel Island and Knockadoon Head Nature Reserve</a>, An NPWS reserve covering an island and headland near Youghal, viewed from the shore at any time. Seabirds pass and migrant passerines drop onto the headland.</li>
             <li><span class="parkname">Mizen Head</span> <span class="pkind">(reserve)</span>, A headland and former signal station, open to all on a cliff path from the visitor car park. It is a seabird watchpoint for shearwaters and skuas moving west.</li>
-            <li><span class="parkname">Old Head of Kinsale</span> <span class="pkind">(reserve)</span>, A narrow headland on a public right of way beside the golf course, free to walk at any time. Sooty Shearwater and Great Shearwater pass close in autumn winds.</li>
+            <li><span class="parkname">Old Head of Kinsale</span> <span class="pkind">(reserve)</span>, A narrow headland on a public right of way beside the golf course, free to walk at any time. <a href="/birds/sooty-shearwater/">Sooty Shearwater</a> and <a href="/birds/great-shearwater/">Great Shearwater</a> pass close in autumn winds.</li>
             <li><span class="parkname">Galley Head</span> <span class="pkind">(reserve)</span>, A lighthouse headland with open access at any time, walked from the roadside car park. It is a seabird watchpoint looking south over open Atlantic water for shearwaters and petrels.</li>
           </ul>
         </li>
@@ -4010,9 +4040,9 @@
           <ul class="stoplist">
             <li><a class="parklink" href="https://www.npws.ie/nature-reserves/wexford/wexford-wildfowl-reserve" target="_blank" rel="noopener">Wexford Wildfowl Reserve (North Slob)</a></li>
             <li><a class="parklink" href="https://www.npws.ie/nature-reserves/wexford/raven-nature-reserve" target="_blank" rel="noopener">The Raven Nature Reserve</a>, An NPWS dune and forest reserve at Curracloe, walked from the beach car park. Wintering geese roost in the pines and migrants pass through in autumn.</li>
-            <li><a class="parklink" href="https://www.npws.ie/nature-reserves/wexford/ballyteigue-burrow-nature-reserve" target="_blank" rel="noopener">Ballyteigue Burrow Nature Reserve</a>, An NPWS dune and saltmarsh reserve near Kilmore Quay, walked in from the beach car park. Golden Plover and Black-tailed Godwit flock on the mudflats.</li>
-            <li><span class="parkname">Saltee Islands</span> <span class="pkind">(island reserve)</span>, A privately owned seabird sanctuary on a summer boat trip from Kilmore Quay, weather permitting. Puffin, Common Murre and Razorbill nest on the cliffs of Great Saltee.</li>
-            <li><span class="parkname">Lady's Island Lake</span> <span class="pkind">(island reserve)</span>, A brackish coastal lagoon and bird sanctuary, free to visit any time from the causeway and shoreline track. Common Tern and Roseate Tern nest on the shingle islands.</li>
+            <li><a class="parklink" href="https://www.npws.ie/nature-reserves/wexford/ballyteigue-burrow-nature-reserve" target="_blank" rel="noopener">Ballyteigue Burrow Nature Reserve</a>, An NPWS dune and saltmarsh reserve near Kilmore Quay, walked in from the beach car park. Golden Plover and <a href="/birds/black-tailed-godwit/">Black-tailed Godwit</a> flock on the mudflats.</li>
+            <li><span class="parkname">Saltee Islands</span> <span class="pkind">(island reserve)</span>, A privately owned seabird sanctuary on a summer boat trip from Kilmore Quay, weather permitting. Puffin, <a href="/birds/common-murre/">Common Murre</a> and <a href="/birds/razorbill/">Razorbill</a> nest on the cliffs of Great Saltee.</li>
+            <li><span class="parkname">Lady's Island Lake</span> <span class="pkind">(island reserve)</span>, A brackish coastal lagoon and bird sanctuary, free to visit any time from the causeway and shoreline track. <a href="/birds/common-tern/">Common Tern</a> and <a href="/birds/roseate-tern/">Roseate Tern</a> nest on the shingle islands.</li>
           </ul>
         </li>
         <li class="where stops"><b>Stops:</b>

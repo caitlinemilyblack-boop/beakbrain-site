@@ -619,6 +619,28 @@
     /* A bird present all year gets a lighter bar: the point of the column is the
        birds whose window is narrow, and a solid bar on eight rows says nothing. */
     .tg-b.tg-all { background: var(--sage); opacity: .4; }
+    /* The month ruler lives in the table head, which a stacked row cannot see. */
+    .tg-scale { display: none; }
+    /* PAGE-SPEC 4. THE TABLE COULD NOT ANSWER ITS OWN QUESTION ON A PHONE. At 390px the
+       row is 1,022px wide in a 332px window, so a reader saw the bird name and the first
+       weeks of the calendar while Best Window and Where sat entirely off-screen, reachable
+       only by scrolling every row sideways. "Best Month for Each Bird" is exactly the
+       thing that was cut off. Under 760px the row becomes a card: the bird, then the
+       calendar full width with its own month ruler under it, then the window and the
+       places as labelled lines. Nothing scrolls sideways. */
+    @media (max-width: 760px) {
+      .tg-head { display: none; }
+      .tg-row { grid-template-columns: 46px minmax(0, 1fr); gap: 9px 12px; min-width: 0; padding: 14px 0 16px; align-items: start; }
+      .tg-n { align-self: center; font-size: 16.5px; }
+      .tg-mini { grid-column: 1 / -1; height: 20px; }
+      .tg-scale { display: grid; grid-column: 1 / -1; grid-template-columns: repeat(12, 1fr); margin-top: -3px; }
+      .tg-scale span { font-family: var(--body); font-weight: 800; font-size: 10.5px; color: var(--muted); text-align: center; }
+      .tg-w, .tg-p { grid-column: 1 / -1; }
+      .tg-w::before, .tg-p::before { display: block; font-family: var(--body); font-weight: 800; font-size: 10.5px;
+        letter-spacing: .07em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 1px; }
+      .tg-w::before { content: 'Best window'; }
+      .tg-p::before { content: 'Where'; }
+    }
     @media (max-width: 760px) { .targets { padding: 6px 16px; } }
 
     .offitin { margin-top: 10px; padding: 12px 15px; background: color-mix(in srgb, var(--gold) 10%, transparent); border-radius: 12px; font-size: 14px; color: var(--ink); }
@@ -2511,6 +2533,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/32b16fc2234a.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/kea/">Kea</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:50.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Easiest</div>
             <div class="tg-p"><a href="#site-the-west-coast-and-arthur-s-pass">The West Coast and Arthur's Pass</a>, Aoraki</div>
           </div>
@@ -2518,6 +2541,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/ff7ebfc557ca.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/northern-royal-albatross/">Northern Royal Albatross</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:83.33%;width:16.67%"></span><span class="tg-b" style="left:0.00%;width:25.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Most active</div>
             <div class="tg-p">Dunedin</div>
           </div>
@@ -2525,6 +2549,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/wrybill/">Wrybill</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:0.00%;width:58.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Winter roost</div>
             <div class="tg-p">Miranda, Twizel</div>
           </div>
@@ -2532,6 +2557,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/southern-brown-kiwi/">Southern Brown Kiwi</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:75.00%;width:25.00%"></span><span class="tg-b" style="left:0.00%;width:25.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Best light</div>
             <div class="tg-p">Oban</div>
           </div>
@@ -2539,6 +2565,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/77dfe28995ad.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/black-stilt/">Black Stilt</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:66.67%;width:33.33%"></span><span class="tg-b" style="left:0.00%;width:8.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">nesting</div>
             <div class="tg-p">Twizel</div>
           </div>
@@ -2546,6 +2573,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/65420595740a.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/stitchbird/">Stitchbird</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:50.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">At the feeders</div>
             <div class="tg-p">Tiritiri Matangi, <a href="#site-wellington-and-cook-strait">Wellington and Cook Strait</a></div>
           </div>
@@ -2553,6 +2581,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/09f9f8ac08a6.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/yellow-eyed-penguin/">Yellow-eyed Penguin</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:83.33%;width:16.67%"></span><span class="tg-b" style="left:0.00%;width:16.67%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Chicks ashore</div>
             <div class="tg-p">Owaka, Dunedin</div>
           </div>
@@ -2560,6 +2589,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/65420595740a.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/north-island-kokako/">North Island Kokako</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:66.67%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">In song</div>
             <div class="tg-p">Te Kuiti, Murupara</div>
           </div>
@@ -2892,7 +2922,7 @@
         </li>
         <li class="where centres"><b>Visitor centres:</b>
           <ul class="stoplist">
-            <li><a class="parklink" href="https://pukaha.org.nz/" target="_blank" rel="noopener">Pukaha National Wildlife Centre</a>, A breeding centre with wild forest behind it. [North Island Kokako] and kiwi were reintroduced here and can be heard from the public track.</li>
+            <li><a class="parklink" href="https://pukaha.org.nz/" target="_blank" rel="noopener">Pukaha National Wildlife Centre</a>, A breeding centre with wild forest behind it. <a href="/birds/north-island-kokako/">North Island Kokako</a> and kiwi were reintroduced here and can be heard from the public track.</li>
           </ul>
         </li>
         <li class="where covers"><b>Also covers:</b> Boundary Stream, Cape Kidnappers, Featherston, Lake Wairarapa, Masterton, Napier, Pukaha National Wildlife Centre, Te Awanga</li><li class="where wildlife"><b>Also watch for:</b> The Cape Kidnappers headland is inside a predator-fenced station, and the tuatara and giant weta released there are part of the same programme that keeps the seabirds safe.</li>
@@ -2956,7 +2986,7 @@
         </li>
         <li class="where centres"><b>Visitor centres:</b>
           <ul class="stoplist">
-            <li><a class="parklink" href="https://www.visitzealandia.com/" target="_blank" rel="noopener">Zealandia</a>, A fenced valley inside the city. Its night tour is the only reliable [Little Spotted Kiwi] on the mainland, and the groups are small, so book ahead.</li>
+            <li><a class="parklink" href="https://www.visitzealandia.com/" target="_blank" rel="noopener">Zealandia</a>, A fenced valley inside the city. Its night tour is the only reliable <a href="/birds/little-spotted-kiwi/">Little Spotted Kiwi</a> on the mainland, and the groups are small, so book ahead.</li>
           </ul>
         </li>
         <li class="where covers"><b>Also covers:</b> Cook Strait pelagic, Kāpiti Island Nature Reserve, Paraparaumu, Pauatahanui Inlet, Porirua, Wellington, Zealandia</li><li class="where wildlife"><b>Also watch for:</b> Tuatara breed inside the Zealandia fence, the first time they have bred on the New Zealand mainland in perhaps two hundred years.</li>
