@@ -324,7 +324,7 @@
         <a class="btn btn-light" href="daily/">Play a round now, free</a>
         <a class="btn btn-ghost" href="#get" style="color:#fff;border-color:rgba(255,255,255,0.5);">Get the app</a>
       </div>
-      <p class="note">Free, no account needed. Coming soon to iPhone and Android.</p>
+      <p class="note">Free, no account needed. On the App Store for iPhone and iPad, and Android is on the way.</p>
       <!-- A one-line founder credential stood here and is deleted, 2026-08-14 (Cat).
            It had been moved up into the hero two days earlier on the argument that it
            answers the trust question where the question is first asked. Do not restore
@@ -612,7 +612,7 @@
         </details>
         <details>
           <summary>Is it on iPhone and Android?</summary>
-          <p>The beta is arriving on both. Until it lands you can <a href="https://app.beakbrain.com/">play the full thing in any browser</a>, on a phone or a laptop, with nothing to install.</p>
+          <p>BeakBrain is on the <a href="https://apps.apple.com/app/id6799414340">App Store</a> for iPhone and iPad, free to download. Android is on the way. Wherever you are reading this you can also <a href="https://app.beakbrain.com/">play the full thing in your browser</a>, on a phone or a laptop, with nothing to install.</p>
         </details>
         <details>
           <summary>Is there a dark mode?</summary>
@@ -633,30 +633,38 @@
        the only thing on this site collecting personal data, which took a Turnstile
        widget, two migrations and a Pages Function to defend.
 
-       STORE_IOS and STORE_ANDROID below are empty until the listings are live. While
-       they are empty this section offers the browser version, which is real and
-       playable today, and says the apps are days away. Filling them in switches it to
-       the two store buttons. Same pattern the Turnstile key used, for the same reason:
-       the copy that ships must never point at a link that does not exist yet. -->
+       LAUNCHED 2026-08-31: BeakBrain 1.0 is live on the App Store, Apple ID
+       6799414340. The iOS state is written into the HTML rather than switched on by
+       JavaScript, so the link is in the markup a crawler and a no-JS reader both see,
+       and so the page has one true state instead of two. The Android half is still a
+       switch, because that listing does not exist yet and the copy that ships must
+       never point at a link that does not exist: fill STORE_ANDROID below on Play
+       launch day and the button lights and the tester ask removes itself.
+
+       The store link is deliberately the geo-neutral apps.apple.com/app/id... form,
+       which sends every reader to their own country's storefront. A /us/ link asks
+       everyone else to change country first. -->
   <section class="section" id="get">
     <div class="wrap">
       <div class="cta-band">
         <div class="cta-content">
         <h2>Start learning your first ten birds today</h2>
-        <p id="getLede">Play right now in your browser, free and with no account. Play today's Daily Bird, or open the full app.</p>
+        <p id="getLede">BeakBrain is on the App Store, free. Or play a round in your browser first, right now, with no account.</p>
         <div class="hero-cta" style="justify-content:center;margin-top:26px;">
-          <a class="btn btn-light" href="daily/">Play a round now, free</a>
-          <!-- The only always-visible link to the app on the whole site. Everything
-               else here goes to /daily/, so until the store buttons appear this is
-               how a reader reaches the thing the page spends 600 lines describing —
-               it was reachable only by typing the subdomain (live review, 2026-08-14).
-               It stays visible after launch too: the browser version is a real
-               answer for a laptop, and the FAQ promises it. -->
-          <a class="btn btn-ghost" id="getWeb" href="https://app.beakbrain.com/" style="color:#fff;border-color:rgba(255,255,255,0.5);">Open the full app in your browser</a>
-          <a class="btn btn-ghost" id="getIos" href="https://app.beakbrain.com/" style="color:#fff;border-color:rgba(255,255,255,0.5);display:none;">Get it on iPhone</a>
-          <a class="btn btn-ghost" id="getAndroid" href="https://app.beakbrain.com/" style="color:#fff;border-color:rgba(255,255,255,0.5);display:none;">Get it on Android</a>
+          <!-- Apple's Identity Guidelines set the wording for a text link to a
+               listing: "Download on the App Store", capitalised that way, the app
+               name kept out of it. -->
+          <a class="btn btn-light" id="getIos" href="https://apps.apple.com/app/id6799414340">Download on the App Store</a>
+          <a class="btn btn-ghost" href="daily/" style="color:#fff;border-color:rgba(255,255,255,0.5);">Play a round now, free</a>
+          <!-- The only always-visible link to the web app on the whole site.
+               Everything else here goes to /daily/, so this is how a reader on a
+               laptop or an Android phone reaches the thing the page spends 600 lines
+               describing — it was reachable only by typing the subdomain (live
+               review, 2026-08-14). The FAQ promises it too. -->
+          <a class="btn btn-ghost" id="getWeb" href="https://app.beakbrain.com/" style="color:#fff;border-color:rgba(255,255,255,0.5);">Play in your browser</a>
+          <a class="btn btn-ghost" id="getAndroid" href="https://app.beakbrain.com/" style="color:#fff;border-color:rgba(255,255,255,0.5);display:none;">Get it on Google Play</a>
         </div>
-        <p class="form-note" id="getNote">Works in any browser today. No account, no email, nothing to sign up for.</p>
+        <p class="form-note" id="getNote">Free to start, on iPhone and iPad or in any browser. No account, no email, nothing to sign up for.</p>
         <!-- Android closed testing needs twelve testers opted in for fourteen unbroken
              days before Play will even consider production access, so recruiting them
              is the long pole on the Android launch and it is worth asking for here.
@@ -785,35 +793,31 @@
       img.src = 'assets/cat.jpg';
     })();
 
-    // The two store listings. Empty until they exist, and the section above reads
-    // correctly in both states rather than promising a link that 404s. Fill these in
-    // on launch day and nothing else on the page needs touching.
+    // Google Play. The App Store half of this switch is gone: BeakBrain went live on
+    // 2026-08-31 and that link is now written straight into the markup above, where a
+    // crawler and a reader with JavaScript off can both see it. What is left is the
+    // half that is still unbuilt, kept for the same reason it was built: the copy
+    // that ships must never point at a link that does not exist yet.
+    //
+    // On Play launch day, fill in STORE_ANDROID and nothing else on the page needs
+    // touching. Then delete this block and put the link in the markup too, so the
+    // page keeps one true state rather than two.
     (function () {
-      var STORE_IOS = '';
       var STORE_ANDROID = '';
-      var ios = document.getElementById('getIos');
+      if (!STORE_ANDROID) return;
       var android = document.getElementById('getAndroid');
+      if (!android) return;
+      android.href = STORE_ANDROID;
+      android.style.display = '';
+      // The Android tester ask is only true while the closed test is recruiting.
+      // Once the app is public, asking people to join a closed test would send them
+      // somewhere they cannot go, so it removes itself on the same switch.
+      var androidTest = document.getElementById('androidTest');
+      if (androidTest) androidTest.style.display = 'none';
       var lede = document.getElementById('getLede');
       var note = document.getElementById('getNote');
-      // The browser app. Visible in both states; on launch day the store buttons
-      // lead and this one steps back into a shorter label beside them.
-      var web = document.getElementById('getWeb');
-      // The Android tester ask is only true while the closed test is recruiting.
-      // Once STORE_ANDROID is filled the app is public and asking people to join a
-      // closed test would send them somewhere they cannot go, so it removes itself
-      // on the same one line that lights the store buttons.
-      var androidTest = document.getElementById('androidTest');
-      if (!ios || !android) return;
-      if (STORE_IOS) { ios.href = STORE_IOS; ios.style.display = ''; }
-      if (STORE_ANDROID) {
-        android.href = STORE_ANDROID; android.style.display = '';
-        if (androidTest) androidTest.style.display = 'none';
-      }
-      if (STORE_IOS || STORE_ANDROID) {
-        lede.textContent = 'Download the beta, or play right now in your browser. Free either way, with no account.';
-        note.textContent = 'Free to start. The browser version works everywhere, including on a laptop.';
-        if (web) web.textContent = 'Play in your browser';
-      }
+      if (lede) lede.textContent = 'BeakBrain is on the App Store and Google Play, free. Or play a round in your browser first, right now, with no account.';
+      if (note) note.textContent = 'Free to start, on any phone or in any browser. No account, no email, nothing to sign up for.';
     })();
   </script>
 </body>
