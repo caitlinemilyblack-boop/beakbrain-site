@@ -30,10 +30,18 @@ cross-names clean, stale-access 0, region-photo-dupes 0 across 596 photos, hub r
 
 - [ ] **49 of 66 guides have NO hero clip** and open on the generic site reel, which shows
       a Blue-and-yellow Tanager, a European Goldfinch and a Eurasian Hoopoe: none of them a
-      bird of the country being read about. Every candidate for the recent batch failed the
-      provenance gate as `no_evidence` or `other_country`. This needs a new clip source
-      rather than more searching of the existing library.
+      bird of the country being read about.
       → `build/travel/HERO-CLIP-AUDIT.md`, `project_beakbrain_hero_provenance_gate`
+- [ ] **TEN of them can be filled from clips already reviewed and now verified**, and the
+      work was written up and started before the session limit stopped it: brazil-amazon,
+      brazil-atlantic-forest, the four India guides, the three Indonesia guides, panama.
+      That takes 49 down to 39.
+- [ ] **EIGHTEEN clips marked "use" in `_hero-verdicts.json` are filmed in the wrong country
+      and must never ship.** One Panama clip is approved as the hero for six separate South
+      and Central American guides, a Slovakian bird-feeder clip for both France and Norway,
+      plus three Thailand, two Poland, and one each of Brazil, Japan and Hungary. The gate
+      now catches them (2026-09-01); it previously knew only 28 countries and never read the
+      filename, so it caught almost none. **A "use" verdict is not authority to ship.**
 - [ ] **30 of 66 guides have no stop carrying an openable link.** Several are honest (almost
       no Mozambican site has a web page; `dnpw.gov.mw` does not resolve), but 30 is too many
       to be all honest. A dead link is worse than no link, so anything added must be checked.
@@ -58,20 +66,32 @@ cross-names clean, stale-access 0, region-photo-dupes 0 across 596 photos, hub r
 - [ ] **Brazil** — van Perlo filed 2026-08-31 (`brazil-vanperlo`). Species-level habitat only,
       no site accounts, so lower value; but the four Brazil guides have run on the
       continental Wheatley volume alone until now.
+- [ ] **Mongolia** — Sundev & Leahy, Helm 2019, filed 2026-09-01 (`mongolia-helm`). A new
+      country page. This one has real SITE ACCOUNTS, not just species text: "Hustai National
+      Park (50,600ha). Driving west on the main...", the Onon and Khurkh rivers. So it can
+      support habitat AND access, which most field guides cannot.
+- [ ] **Atlantic Islands** — Clarke, Orgill & Disley, Helm 2020, filed 2026-09-01
+      (`atlantic-isles`). Covers the Canaries, Madeira, the Azores and Cape Verde in one
+      volume. Those three guides have had **no book of their own at all** until now, and it
+      carries per-island geography, climate and habitat including the laurisilva. Highest
+      value of the recent arrivals for existing pages.
 
 ## Books Cat has queued to download
 
 Each unlocks either a new page or practicals for guides sitting empty. Arrived so far:
 Ghana, Borneo, Brazil.
 
+Arrived 2026-09-01: Mongolia, Atlantic Islands.
+
 Still wanted: Helm Argentina, East Africa, Northern/Southern India, Ecuador, Bangladesh,
 Western Africa, Senegal and the Gambia, Japan, Greater Southern Africa, Middle East, East
-Asia, Atlantic Islands. Prefer editions within the last 10 years, most within 5.
+Asia. Prefer editions within the last 10 years, most within 5.
 
 ## Waiting on Cat
 
-- [ ] Five hero clips awaiting her verdict, plus `hero-verdicts.json` sitting in Downloads
-      from 2026-08-29 that may already answer some of them.
+- [ ] Five hero clips awaiting her verdict. The `hero-verdicts.json` in Downloads was
+      checked 2026-09-01 and is a strict SUBSET of the repo's own copy, with no new entries
+      and no changed verdicts, so there is nothing in it to incorporate.
 - [ ] 14 People-Also-Ask searches for the FAQ blocks.
 - [ ] The Falklands national-list figure is currently derived from our own `browse.json`
       rather than a published national list.
