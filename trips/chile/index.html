@@ -619,6 +619,28 @@
     /* A bird present all year gets a lighter bar: the point of the column is the
        birds whose window is narrow, and a solid bar on eight rows says nothing. */
     .tg-b.tg-all { background: var(--sage); opacity: .4; }
+    /* The month ruler lives in the table head, which a stacked row cannot see. */
+    .tg-scale { display: none; }
+    /* PAGE-SPEC 4. THE TABLE COULD NOT ANSWER ITS OWN QUESTION ON A PHONE. At 390px the
+       row is 1,022px wide in a 332px window, so a reader saw the bird name and the first
+       weeks of the calendar while Best Window and Where sat entirely off-screen, reachable
+       only by scrolling every row sideways. "Best Month for Each Bird" is exactly the
+       thing that was cut off. Under 760px the row becomes a card: the bird, then the
+       calendar full width with its own month ruler under it, then the window and the
+       places as labelled lines. Nothing scrolls sideways. */
+    @media (max-width: 760px) {
+      .tg-head { display: none; }
+      .tg-row { grid-template-columns: 46px minmax(0, 1fr); gap: 9px 12px; min-width: 0; padding: 14px 0 16px; align-items: start; }
+      .tg-n { align-self: center; font-size: 16.5px; }
+      .tg-mini { grid-column: 1 / -1; height: 20px; }
+      .tg-scale { display: grid; grid-column: 1 / -1; grid-template-columns: repeat(12, 1fr); margin-top: -3px; }
+      .tg-scale span { font-family: var(--body); font-weight: 800; font-size: 10.5px; color: var(--muted); text-align: center; }
+      .tg-w, .tg-p { grid-column: 1 / -1; }
+      .tg-w::before, .tg-p::before { display: block; font-family: var(--body); font-weight: 800; font-size: 10.5px;
+        letter-spacing: .07em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 1px; }
+      .tg-w::before { content: 'Best window'; }
+      .tg-p::before { content: 'Where'; }
+    }
     @media (max-width: 760px) { .targets { padding: 6px 16px; } }
 
     .offitin { margin-top: 10px; padding: 12px 15px; background: color-mix(in srgb, var(--gold) 10%, transparent); border-radius: 12px; font-size: 14px; color: var(--ink); }
@@ -3308,6 +3330,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/diademed-sandpiper-plover/">Diademed Sandpiper-Plover</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:83.33%;width:16.67%"></span><span class="tg-b" style="left:0.00%;width:8.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Breeding</div>
             <div class="tg-p">San Jose de Maipo</div>
           </div>
@@ -3315,6 +3338,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/0f1e807066af.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/crag-chilia/">Crag Chilia</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:66.67%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Calling</div>
             <div class="tg-p"><a href="#site-santiago-farellones-and-the-cajon-del-maipo">Santiago, Farellones and the Cajon del Maipo</a></div>
           </div>
@@ -3322,6 +3346,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/1239e5cb3801.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/chilean-woodstar/">Chilean Woodstar</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Present</div>
             <div class="tg-p"><a href="#site-arica-the-azapa-valley-and-the-atacama">Arica, the Azapa valley and the Atacama</a></div>
           </div>
@@ -3329,6 +3354,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/4abae2dbed79.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/james-s-flamingo/">James's Flamingo</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:66.67%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Roads open</div>
             <div class="tg-p">Parinacota</div>
           </div>
@@ -3336,6 +3362,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/3c4326048557.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/magellanic-woodpecker/">Magellanic Woodpecker</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Present</div>
             <div class="tg-p">Melipeuco</div>
           </div>
@@ -3343,6 +3370,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/chucao-tapaculo/">Chucao Tapaculo</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:66.67%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Calling</div>
             <div class="tg-p">Castro</div>
           </div>
@@ -3350,6 +3378,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/magellanic-plover/">Magellanic Plover</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:75.00%;width:25.00%"></span><span class="tg-b" style="left:0.00%;width:25.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Breeding</div>
             <div class="tg-p">Porvenir</div>
           </div>
@@ -3357,6 +3386,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/andean-condor/">Andean Condor</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Present</div>
             <div class="tg-p">Puerto Natales</div>
           </div>
@@ -3506,6 +3536,7 @@
         <p class="blurb">Almost every Chilean trip starts here, because the road from Santiago to Farellones climbs from matorral scrub to three thousand metres in an hour. <a href="/birds/moustached-turca/">Moustached Turca</a> and <a href="/birds/crag-chilia/">Crag Chilia</a> hold the rocky slopes on the way up, <a href="/birds/grey-flanked-cinclodes/">Grey-flanked Cinclodes</a> works the boulder fields at the top, and the Yeso valley in the Cajon del Maipo is the classic site for <a href="/birds/diademed-sandpiper-plover/">Diademed Sandpiper-Plover</a> on its bog.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> Santiago stands in the Andean foothills in the middle of the country and opens onto several excellent Andean sites. The road up to the El Yeso reservoir reaches 2,286 metres, and gravelly plains and a mass of streams spread out beyond the reservoir. This is one of the few places in South America, and the only one below 3,048 metres, where <a href="/birds/diademed-sandpiper-plover/">Diademed Sandpiper-Plover</a> occurs. Farellones ski resort sits at 2,134 metres, 51 km northeast of the city.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/moustached-turca/">Moustached Turca</a>, <a href="/birds/crag-chilia/">Crag Chilia</a> and <a href="/birds/grey-flanked-cinclodes/">Grey-flanked Cinclodes</a> hold the ground through the year.</li>
         <li class="where access"><b>Getting there:</b> Chile runs 4,329 km north to south on an average width of 200, so the distances between sites are larger than the map suggests and the internal air network is what makes a short trip work.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/moustached-turca/">Moustached Turca</a>, <a href="/birds/crag-chilia/">Crag Chilia</a>, <a href="/birds/diademed-sandpiper-plover/">Diademed Sandpiper-Plover</a>, <a href="/birds/grey-flanked-cinclodes/">Grey-flanked Cinclodes</a>, <a href="/birds/chilean-tinamou/">Chilean Tinamou</a>, <a href="/birds/dusky-tapaculo/">Dusky Tapaculo</a>, <a href="/birds/white-throated-tapaculo/">White-throated Tapaculo</a>, <a href="/birds/mountain-parakeet/">Mountain Parakeet</a></li>
@@ -3543,7 +3574,9 @@
         <p class="blurb">The Humboldt Current runs cold water up this coast and the shelf edge is close enough to reach on a day trip. Boats out of Quintero and Valparaiso find <a href="/birds/black-browed-albatross/">Black-browed Albatross</a>, <a href="/birds/salvin-s-albatross/">Salvin's Albatross</a> and <a href="/birds/pink-footed-shearwater/">Pink-footed Shearwater</a> within a couple of hours, with <a href="/birds/peruvian-diving-petrel/">Peruvian Diving Petrel</a> on the way out and <a href="/birds/humboldt-penguin/">Humboldt Penguin</a> on the rocks. The coastal wetlands at Con Con and Algarrobo add the shorebirds.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> The nutrient-rich Humboldt current runs a short distance offshore from Valparaiso and Vina del Mar and feeds thousands of seabirds, among them <a href="/birds/humboldt-penguin/">Humboldt Penguin</a>, Royal Albatross, <a href="/birds/pink-footed-shearwater/">Pink-footed Shearwater</a>, <a href="/birds/peruvian-diving-petrel/">Peruvian Diving-Petrel</a> and <a href="/birds/inca-tern/">Inca Tern</a>. North of the city the road to Zapallar passes rocky headlands suited to seawatching, crosses an estuary with reedbeds beside it and reaches the Zapallar valley. Lago Penuelas is a large lake beside the Santiago to Valparaiso road.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/black-browed-albatross/">Black-browed Albatross</a>, <a href="/birds/salvin-s-albatross/">Salvin's Albatross</a> and <a href="/birds/peruvian-diving-petrel/">Peruvian Diving Petrel</a> hold the ground through the year. <a href="/birds/pink-footed-shearwater/">Pink-footed Shearwater</a> is away from June to August.</li>
+        <li class="where access"><b>Getting there:</b> Boat trips are best arranged by asking at the hotels or approaching local fishermen in Valparaiso, and such a trip is likely to be expensive. Punta Concon lies just south of Concon, 6 km north of Vina del Mar, and the Rio Aconcagua estuary is just north of Concon, where the reedy pools and channels on the north side repay exploring. Punta Liles at Quintero is 17 km north of Concon and is also good for seawatching, with a <a href="/birds/humboldt-penguin/">Humboldt Penguin</a> colony just offshore at Isla Cachagua. Lago Penuelas sits opposite the Quintay junction on the north side of the Santiago to Valparaiso road, and a narrow road runs right around the water.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/black-browed-albatross/">Black-browed Albatross</a>, <a href="/birds/salvin-s-albatross/">Salvin's Albatross</a>, <a href="/birds/pink-footed-shearwater/">Pink-footed Shearwater</a>, <a href="/birds/peruvian-diving-petrel/">Peruvian Diving Petrel</a>, <a href="/birds/humboldt-penguin/">Humboldt Penguin</a>, <a href="/birds/westland-petrel/">Westland Petrel</a>, <a href="/birds/inca-tern/">Inca Tern</a>, <a href="/birds/peruvian-booby/">Peruvian Booby</a></li>
 
         <li class="where alsorec"><b>Also recorded in the parks here:</b> <a href="/birds/black-headed-duck/">Black-headed Duck</a>, <a href="/birds/andean-goose/">Andean Goose</a></li>

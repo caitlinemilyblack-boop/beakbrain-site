@@ -619,6 +619,28 @@
     /* A bird present all year gets a lighter bar: the point of the column is the
        birds whose window is narrow, and a solid bar on eight rows says nothing. */
     .tg-b.tg-all { background: var(--sage); opacity: .4; }
+    /* The month ruler lives in the table head, which a stacked row cannot see. */
+    .tg-scale { display: none; }
+    /* PAGE-SPEC 4. THE TABLE COULD NOT ANSWER ITS OWN QUESTION ON A PHONE. At 390px the
+       row is 1,022px wide in a 332px window, so a reader saw the bird name and the first
+       weeks of the calendar while Best Window and Where sat entirely off-screen, reachable
+       only by scrolling every row sideways. "Best Month for Each Bird" is exactly the
+       thing that was cut off. Under 760px the row becomes a card: the bird, then the
+       calendar full width with its own month ruler under it, then the window and the
+       places as labelled lines. Nothing scrolls sideways. */
+    @media (max-width: 760px) {
+      .tg-head { display: none; }
+      .tg-row { grid-template-columns: 46px minmax(0, 1fr); gap: 9px 12px; min-width: 0; padding: 14px 0 16px; align-items: start; }
+      .tg-n { align-self: center; font-size: 16.5px; }
+      .tg-mini { grid-column: 1 / -1; height: 20px; }
+      .tg-scale { display: grid; grid-column: 1 / -1; grid-template-columns: repeat(12, 1fr); margin-top: -3px; }
+      .tg-scale span { font-family: var(--body); font-weight: 800; font-size: 10.5px; color: var(--muted); text-align: center; }
+      .tg-w, .tg-p { grid-column: 1 / -1; }
+      .tg-w::before, .tg-p::before { display: block; font-family: var(--body); font-weight: 800; font-size: 10.5px;
+        letter-spacing: .07em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 1px; }
+      .tg-w::before { content: 'Best window'; }
+      .tg-p::before { content: 'Where'; }
+    }
     @media (max-width: 760px) { .targets { padding: 6px 16px; } }
 
     .offitin { margin-top: 10px; padding: 12px 15px; background: color-mix(in srgb, var(--gold) 10%, transparent); border-radius: 12px; font-size: 14px; color: var(--ink); }
@@ -4296,6 +4318,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/009a6ba16adc.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/hyacinth-macaw/">Hyacinth Macaw</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:50.00%;width:41.67%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Nesting</div>
             <div class="tg-p"><a href="#site-the-transpantaneira-and-pocone">The Transpantaneira and Pocone</a>, Pixaim</div>
           </div>
@@ -4303,6 +4326,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/ae798de40aa3.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/jabiru/">Jabiru</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:41.67%;width:50.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Nesting</div>
             <div class="tg-p"><a href="#site-the-transpantaneira-and-pocone">The Transpantaneira and Pocone</a>, <a href="#site-porto-cercado-the-sesc-reserve-and-barao-de-melgaco">Porto Cercado, the SESC reserve and Barao de Melgaco</a></div>
           </div>
@@ -4310,6 +4334,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/ae798de40aa3.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/agami-heron/">Agami Heron</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:41.67%;width:41.67%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Dry season</div>
             <div class="tg-p"><a href="#site-porto-jofre-and-the-cuiaba-river">Porto Jofre and the Cuiaba River</a></div>
           </div>
@@ -4317,6 +4342,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/4abae2dbed79.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/sunbittern/">Sunbittern</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:41.67%;width:41.67%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Falling water</div>
             <div class="tg-p"><a href="#site-porto-jofre-and-the-cuiaba-river">Porto Jofre and the Cuiaba River</a>, <a href="#site-caceres-and-the-upper-paraguay">Caceres and the upper Paraguay</a></div>
           </div>
@@ -4324,6 +4350,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/717933df000c.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/greater-rhea/">Greater Rhea</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:66.67%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">With chicks</div>
             <div class="tg-p"><a href="#site-aquidauana-and-the-nhecolandia">Aquidauana and the Nhecolandia</a>, <a href="#site-chapada-dos-guimaraes">Chapada dos Guimaraes</a></div>
           </div>
@@ -4331,6 +4358,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/1239e5cb3801.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/horned-sungem/">Horned Sungem</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:58.33%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Flowering</div>
             <div class="tg-p"><a href="#site-chapada-dos-guimaraes">Chapada dos Guimaraes</a></div>
           </div>
@@ -4338,6 +4366,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/009a6ba16adc.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/red-and-green-macaw/">Red-and-green Macaw</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:50.00%;width:50.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Nesting</div>
             <div class="tg-p">Jardim, <a href="#site-bonito-and-the-serra-da-bodoquena">Bonito and the Serra da Bodoquena</a></div>
           </div>
@@ -4345,6 +4374,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/4ee70d2904f5.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/bare-faced-curassow/">Bare-faced Curassow</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">All year</div>
             <div class="tg-p"><a href="#site-the-transpantaneira-and-pocone">The Transpantaneira and Pocone</a>, <a href="#site-the-estrada-parque-and-miranda">The Estrada Parque and Miranda</a></div>
           </div>
@@ -4769,7 +4799,8 @@
         <p class="blurb">Caceres sits where the Paraguay river becomes navigable, and the wetland below it is the least visited part of the northern Pantanal. The Taiama Ecological Station is a river island reserve with one of the highest jaguar densities recorded anywhere, and the boat trips out of town reach it and the channels around it. No operator schedules it, which is its appeal.</p>
 
         <ul class="wherelist">
-
+        <li class="where when"><b>When:</b> The Rio Paraguay rises and floods the Pantanal from October to March. The water is at its lowest in September, when masses of waterbirds throng the pools that remain.</li>
+        <li class="where access"><b>Getting there:</b> The Serra das Araras Ecological Station lies northeast of Caceres and southwest of Cuiaba, and <a href="/birds/blue-eyed-ground-dove/">Blue-eyed Ground-Dove</a> has been recorded there. Birds like those of the Pantanal proper occur around the Hotel Fazenda Barranquinho, 60 km southwest of Caceres.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/jabiru/">Jabiru</a>, <a href="/birds/large-billed-tern/">Large-billed Tern</a>, <a href="/birds/black-skimmer/">Black Skimmer</a>, <a href="/birds/sunbittern/">Sunbittern</a>, <a href="/birds/black-collared-hawk/">Black-collared Hawk</a>, <a href="/birds/green-ibis/">Green Ibis</a>, <a href="/birds/hyacinth-macaw/">Hyacinth Macaw</a>, <a href="/birds/chestnut-eared-aracari/">Chestnut-eared Aracari</a></li>
 
 
@@ -4966,7 +4997,9 @@
         <p class="blurb">Corumba is the Pantanal's only real city and the port for the far west. The Serra do Amolar rises out of the floodplain north of it in a line of forested limestone hills reached by navigating the Paraguay and its tributaries, and the birding there is a genuine mix: wetland species on the water and hill-forest species a few hundred metres above it. The Pantanal Matogrossense National Park sits at the far end of the same run.</p>
 
         <ul class="wherelist">
-
+        <li class="where habitat"><b>Habitat:</b> Corumba sits at the southern end of the Pantanal, where there is less forest and less standing water than along the Transpantaneira in the north. The 403 km of country between Campo Grande and Corumba carries <a href="/birds/greater-rhea/">Greater Rhea</a>, Hyacinth and <a href="/birds/golden-collared-macaw/">Golden-collared Macaws</a>, <a href="/birds/great-rufous-woodcreeper/">Great Rufous Woodcreeper</a> and Rufous Cachalote along with many of the birds of the northern Pantanal.</li>
+        <li class="where when"><b>When:</b> The Rio Paraguay rises and floods the Pantanal from October to March. The water is at its lowest in September, when masses of waterbirds throng the pools that remain.</li>
+        <li class="where access"><b>Getting there:</b> The Pantanal can be reached from Corumba at its southern end, although coming in this way is harder than from the north. The road running the 403 km east to Campo Grande is the line to bird, and Fazenda Santa Clara, 98 km east of Corumba, is a place to stay along it.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/hyacinth-macaw/">Hyacinth Macaw</a>, <a href="/birds/jabiru/">Jabiru</a>, <a href="/birds/blue-throated-piping-guan/">Blue-throated Piping Guan</a>, <a href="/birds/chestnut-eared-aracari/">Chestnut-eared Aracari</a>, <a href="/birds/great-potoo/">Great Potoo</a>, <a href="/birds/blaze-winged-parakeet/">Blaze-winged Parakeet</a>, <a href="/birds/sunbittern/">Sunbittern</a>, <a href="/birds/black-collared-hawk/">Black-collared Hawk</a></li>
 
         <li class="where alsorec"><b>Also recorded in the parks here:</b> <a href="/birds/azure-gallinule/">Azure Gallinule</a>, <a href="/birds/band-tailed-antbird/">Band-tailed Antbird</a></li>

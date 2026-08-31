@@ -619,6 +619,28 @@
     /* A bird present all year gets a lighter bar: the point of the column is the
        birds whose window is narrow, and a solid bar on eight rows says nothing. */
     .tg-b.tg-all { background: var(--sage); opacity: .4; }
+    /* The month ruler lives in the table head, which a stacked row cannot see. */
+    .tg-scale { display: none; }
+    /* PAGE-SPEC 4. THE TABLE COULD NOT ANSWER ITS OWN QUESTION ON A PHONE. At 390px the
+       row is 1,022px wide in a 332px window, so a reader saw the bird name and the first
+       weeks of the calendar while Best Window and Where sat entirely off-screen, reachable
+       only by scrolling every row sideways. "Best Month for Each Bird" is exactly the
+       thing that was cut off. Under 760px the row becomes a card: the bird, then the
+       calendar full width with its own month ruler under it, then the window and the
+       places as labelled lines. Nothing scrolls sideways. */
+    @media (max-width: 760px) {
+      .tg-head { display: none; }
+      .tg-row { grid-template-columns: 46px minmax(0, 1fr); gap: 9px 12px; min-width: 0; padding: 14px 0 16px; align-items: start; }
+      .tg-n { align-self: center; font-size: 16.5px; }
+      .tg-mini { grid-column: 1 / -1; height: 20px; }
+      .tg-scale { display: grid; grid-column: 1 / -1; grid-template-columns: repeat(12, 1fr); margin-top: -3px; }
+      .tg-scale span { font-family: var(--body); font-weight: 800; font-size: 10.5px; color: var(--muted); text-align: center; }
+      .tg-w, .tg-p { grid-column: 1 / -1; }
+      .tg-w::before, .tg-p::before { display: block; font-family: var(--body); font-weight: 800; font-size: 10.5px;
+        letter-spacing: .07em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 1px; }
+      .tg-w::before { content: 'Best window'; }
+      .tg-p::before { content: 'Where'; }
+    }
     @media (max-width: 760px) { .targets { padding: 6px 16px; } }
 
     .offitin { margin-top: 10px; padding: 12px 15px; background: color-mix(in srgb, var(--gold) 10%, transparent); border-radius: 12px; font-size: 14px; color: var(--ink); }
@@ -5404,6 +5426,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/harpy-eagle/">Harpy Eagle</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Nest-dependent</div>
             <div class="tg-p"><a href="#site-alta-floresta-and-the-cristalino">Alta Floresta and the Cristalino</a></div>
           </div>
@@ -5411,6 +5434,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/guianan-cock-of-the-rock/">Guianan Cock-of-the-rock</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:50.00%;width:41.67%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Lekking</div>
             <div class="tg-p">Presidente Figueiredo</div>
           </div>
@@ -5418,6 +5442,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/4ee70d2904f5.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/wattled-curassow/">Wattled Curassow</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:58.33%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Low water</div>
             <div class="tg-p"><a href="#site-mamiraua-tefe-and-the-japura">Mamiraua, Tefe and the Japura</a></div>
           </div>
@@ -5425,6 +5450,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/009a6ba16adc.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/golden-parakeet/">Golden Parakeet</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">All year</div>
             <div class="tg-p">Santarem, <a href="#site-belem-and-the-eastern-amazon">Belem and the eastern Amazon</a></div>
           </div>
@@ -5432,6 +5458,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/rondonia-bushbird/">Rondonia Bushbird</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">All year</div>
             <div class="tg-p"><a href="#site-the-roosevelt-and-the-aripuana">The Roosevelt and the Aripuana</a></div>
           </div>
@@ -5439,6 +5466,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/df453e92599a.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/hoatzin/">Hoatzin</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">All year</div>
             <div class="tg-p"><a href="#site-mamiraua-tefe-and-the-japura">Mamiraua, Tefe and the Japura</a>, <a href="#site-belem-and-the-eastern-amazon">Belem and the eastern Amazon</a></div>
           </div>
@@ -5446,6 +5474,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/3c046347ea38.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/curl-crested-aracari/">Curl-crested Aracari</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">All year</div>
             <div class="tg-p"><a href="#site-alta-floresta-and-the-cristalino">Alta Floresta and the Cristalino</a></div>
           </div>
@@ -5453,6 +5482,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/e58fde9fe327.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/horned-screamer/">Horned Screamer</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">All year</div>
             <div class="tg-p">Parauapebas</div>
           </div>
@@ -5585,7 +5615,9 @@
         <p class="blurb">Manaus is the only place in Amazonia where a birder can be in terra firme forest before breakfast and back at an international airport the same evening. The INPA tower on the ZF-2 research road at km 50 of the BR-174 is the classic dawn, and needs INPA's permission. Downstream the Anavilhanas archipelago is hundreds of black-water islands, and Presidente Figueiredo's sandstone gorges hold <a href="/birds/guianan-cock-of-the-rock/">Guianan Cock-of-the-rock</a> two hours north of the city.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> Manaus is a major Amazon port at the confluence of the Rio Negro, over 2,250 km from the Atlantic, and large tracts of lowland rainforest still stand around it because water levels that swing by up to 12 metres have checked the city's spread. The avifaunas of the north bank, the south bank, the Manacapuru peninsula between the Rio Negro and the Rio Solimoes, and the Anavilhanas islands in the Rio Negro are all different, which makes this one of the richest birding areas on earth with over 600 species recorded. The Anavilhanas islands are permanently flooded igapo forest. Over 275 species have been recorded in the excellent Amazonian rainforest of the Ducke reserve.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/guianan-cock-of-the-rock/">Guianan Cock-of-the-rock</a>, <a href="/birds/capuchinbird/">Capuchinbird</a> and <a href="/birds/amazonian-antshrike/">Amazonian Antshrike</a> are on site in all twelve months.</li>
+        <li class="where access"><b>Getting there:</b> Permission is needed for the best sites, and that includes the two canopy towers. Head north out of the city on the road to Itacoatiara for the Ducke reserve, whose entrance is on the south side of the road just east of the police checkpoint. Birding on the ground is tough there, and the 42 m meteorological tower gives rare views over the canopy, best at dawn. Continue north past the checkpoint on the BR 174 and turn west after 50 km onto the ZF-2 track, where a trail on the south side 15.5 km along leads to a tower better still than the one at Ducke. For the caves near Presidente Figueiredo, carry on north up the BR 174 and turn east just before the town towards Balbina, with the cave entrance 6.5 km along. A ferry from Balsa east of the city crosses to Careiro for the south bank, a ferry from Manaus reaches Cacau Pireira for the Manacapuru peninsula, and boats can be hired for the Anavilhanas archipelago.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/guianan-cock-of-the-rock/">Guianan Cock-of-the-rock</a>, <a href="/birds/capuchinbird/">Capuchinbird</a>, <a href="/birds/pavonine-quetzal/">Pavonine Quetzal</a>, <a href="/birds/tawny-tufted-toucanet/">Tawny-tufted Toucanet</a>, <a href="/birds/amazonian-antshrike/">Amazonian Antshrike</a>, <a href="/birds/sungrebe/">Sungrebe</a>, <a href="/birds/black-necked-red-cotinga/">Black-necked Red Cotinga</a>, <a href="/birds/point-tailed-palmcreeper/">Point-tailed Palmcreeper</a></li>
 
         <li class="where alsorec"><b>Also recorded in the parks here:</b> <a href="/birds/amazonian-grosbeak/">Amazonian Grosbeak</a>, <a href="/birds/amazonian-inezia/">Amazonian Inezia</a></li>
@@ -5799,7 +5831,8 @@
         <p class="blurb">Belem sits at the mouth of the Amazon in the Belem area of endemism, which has lost more of its forest than any other part of the basin and holds birds found in no other interfluvium. What survives is in fragments and in a handful of reserves, so this is the part of Amazonia where the reserve boundaries matter most. Utinga State Park is inside the city.</p>
 
         <ul class="wherelist">
-
+        <li class="where habitat"><b>Habitat:</b> Belem is a major port near the mouth of the Amazon in far north Brazil. Some of the best forest near the city stands on Mosqueiro Island, 65 km to the north, and other forest patches nearby have to be tracked down. Coastal country runs east to the seaside resort of Salinopolis, 228 km from the city, where <a href="/birds/scarlet-ibis/">Scarlet Ibis</a>, <a href="/birds/red-bellied-macaw/">Red-bellied Macaw</a> and <a href="/birds/point-tailed-palmcreeper/">Point-tailed Palmcreeper</a> occur east of Atalaia beach.</li>
+        <li class="where access"><b>Getting there:</b> Permission from EMBRAPA is required to visit the Guama Ecological Research Area just east of town. The forest on Mosqueiro Island lies 65 km north of Belem and begins 7 km into the island from the bridge.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/golden-parakeet/">Golden Parakeet</a>, <a href="/birds/red-necked-aracari/">Red-necked Aracari</a>, <a href="/birds/bare-necked-fruitcrow/">Bare-necked Fruitcrow</a>, <a href="/birds/hoatzin/">Hoatzin</a>, <a href="/birds/paradise-jacamar/">Paradise Jacamar</a>, <a href="/birds/amazonian-umbrellabird/">Amazonian Umbrellabird</a>, <a href="/birds/zigzag-heron/">Zigzag Heron</a>, <a href="/birds/grey-winged-trumpeter/">Grey-winged Trumpeter</a></li>
 
 
@@ -5938,7 +5971,8 @@
         <p class="blurb">The Madeira and its tributaries divide the south-west of the basin into blocks of forest that each hold their own set of birds, and the region has been reached by road only recently. A trip here works Rondonia, southern Amazonas and Acre together along the Madeira, the Machado and the Aripuana.</p>
 
         <ul class="wherelist">
-
+        <li class="where habitat"><b>Habitat:</b> The forests of Rondonia in southern Amazonia are disappearing fast and hold a number of rare endemics and specialities that are hard to see elsewhere in South America. Amazonian rainforest still stands beyond the bridge on the track out of Guajara-Mirim on the Bolivian border, and roadside forest east of Rio Branco in Acre has produced a long list.</li>
+        <li class="where access"><b>Getting there:</b> From Porto Velho head south to Fazenda Rancho Grande, a farm and forest reserve with cabin accommodation and trails. Otherwise this is road and trackside birding country, accessibility changes constantly and any logging track may be worth exploring. The 93 km stretch of road between Ariquemes, 202 km southeast of Porto Velho, and Jaru has been productive in the past. For Guajara-Mirim head southwest out of Porto Velho to Abuna, 215 km away, then 130 km south to the town. Turn left at the roundabout on entering, follow the track straight on after 6 km, take the right fork after 2 km and cross the bridge 1 km later into rainforest.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/rondonia-bushbird/">Rondonia Bushbird</a>, <a href="/birds/crimson-bellied-parakeet/">Crimson-bellied Parakeet</a>, <a href="/birds/white-browed-hawk/">White-browed Hawk</a>, <a href="/birds/bald-parrot/">Bald Parrot</a>, <a href="/birds/snow-capped-manakin/">Snow-capped Manakin</a>, <a href="/birds/point-tailed-palmcreeper/">Point-tailed Palmcreeper</a>, <a href="/birds/paradise-jacamar/">Paradise Jacamar</a>, <a href="/birds/razor-billed-curassow/">Razor-billed Curassow</a></li>
 
 
@@ -5975,7 +6009,7 @@
         <p class="blurb">Mamiraua is 1,124,000 hectares of varzea, flooded forest on white water, and the largest protected area of its kind anywhere. It sits between the Japura and the Solimoes upriver of Tefe and is a sustainable development reserve, meaning the communities inside it manage it. The birds are varzea specialists that the terra firme sites above do not hold.</p>
 
         <ul class="wherelist">
-
+        <li class="where access"><b>Getting there:</b> Tefe sits roughly halfway between Manaus and the far northwestern corner of Brazil. Canoes can be hired for the day at the canoe rank in town to explore the river islands down the Amazon, and reaching good forest around Tefe takes a properly organised expedition.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/wattled-curassow/">Wattled Curassow</a>, <a href="/birds/hoatzin/">Hoatzin</a>, <a href="/birds/zigzag-heron/">Zigzag Heron</a>, <a href="/birds/point-tailed-palmcreeper/">Point-tailed Palmcreeper</a>, <a href="/birds/sungrebe/">Sungrebe</a>, <a href="/birds/horned-screamer/">Horned Screamer</a>, <a href="/birds/red-throated-piping-guan/">Red-throated Piping Guan</a>, <a href="/birds/amazonian-umbrellabird/">Amazonian Umbrellabird</a></li>
 
 

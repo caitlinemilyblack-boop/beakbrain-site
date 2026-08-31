@@ -619,6 +619,28 @@
     /* A bird present all year gets a lighter bar: the point of the column is the
        birds whose window is narrow, and a solid bar on eight rows says nothing. */
     .tg-b.tg-all { background: var(--sage); opacity: .4; }
+    /* The month ruler lives in the table head, which a stacked row cannot see. */
+    .tg-scale { display: none; }
+    /* PAGE-SPEC 4. THE TABLE COULD NOT ANSWER ITS OWN QUESTION ON A PHONE. At 390px the
+       row is 1,022px wide in a 332px window, so a reader saw the bird name and the first
+       weeks of the calendar while Best Window and Where sat entirely off-screen, reachable
+       only by scrolling every row sideways. "Best Month for Each Bird" is exactly the
+       thing that was cut off. Under 760px the row becomes a card: the bird, then the
+       calendar full width with its own month ruler under it, then the window and the
+       places as labelled lines. Nothing scrolls sideways. */
+    @media (max-width: 760px) {
+      .tg-head { display: none; }
+      .tg-row { grid-template-columns: 46px minmax(0, 1fr); gap: 9px 12px; min-width: 0; padding: 14px 0 16px; align-items: start; }
+      .tg-n { align-self: center; font-size: 16.5px; }
+      .tg-mini { grid-column: 1 / -1; height: 20px; }
+      .tg-scale { display: grid; grid-column: 1 / -1; grid-template-columns: repeat(12, 1fr); margin-top: -3px; }
+      .tg-scale span { font-family: var(--body); font-weight: 800; font-size: 10.5px; color: var(--muted); text-align: center; }
+      .tg-w, .tg-p { grid-column: 1 / -1; }
+      .tg-w::before, .tg-p::before { display: block; font-family: var(--body); font-weight: 800; font-size: 10.5px;
+        letter-spacing: .07em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 1px; }
+      .tg-w::before { content: 'Best window'; }
+      .tg-p::before { content: 'Where'; }
+    }
     @media (max-width: 760px) { .targets { padding: 6px 16px; } }
 
     .offitin { margin-top: 10px; padding: 12px 15px; background: color-mix(in srgb, var(--gold) 10%, transparent); border-radius: 12px; font-size: 14px; color: var(--ink); }
@@ -4680,6 +4702,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/4ee70d2904f5.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/red-billed-curassow/">Red-billed Curassow</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">All year</div>
             <div class="tg-p">Linhares</div>
           </div>
@@ -4687,6 +4710,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/7b2c05c94580.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/cherry-throated-tanager/">Cherry-throated Tanager</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">All year</div>
             <div class="tg-p">Domingos Martins</div>
           </div>
@@ -4694,6 +4718,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/6a48d6e3cd44.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/black-and-gold-cotinga/">Black-and-gold Cotinga</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:66.67%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Calling</div>
             <div class="tg-p"><a href="#site-itatiaia-and-the-mantiqueira">Itatiaia and the Mantiqueira</a></div>
           </div>
@@ -4701,6 +4726,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/6a48d6e3cd44.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/bare-throated-bellbird/">Bare-throated Bellbird</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:66.67%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Calling</div>
             <div class="tg-p"><a href="#site-ubatuba-and-the-serra-do-mar-coast">Ubatuba and the Serra do Mar coast</a></div>
           </div>
@@ -4708,6 +4734,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/0f1e807066af.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/pink-legged-graveteiro/">Pink-legged Graveteiro</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">All year</div>
             <div class="tg-p">Camacan</div>
           </div>
@@ -4715,6 +4742,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/009a6ba16adc.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/red-tailed-amazon/">Red-tailed Amazon</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">All year</div>
             <div class="tg-p">Guaraquecaba</div>
           </div>
@@ -4722,6 +4750,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/swallow-tailed-cotinga/">Swallow-tailed Cotinga</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">All year</div>
             <div class="tg-p">Ribeirao Grande</div>
           </div>
@@ -4729,6 +4758,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/97557471d26d.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/great-dusky-swift/">Great Dusky Swift</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">All year</div>
             <div class="tg-p">Foz do Iguacu</div>
           </div>
@@ -4965,13 +4995,15 @@
         <p class="blurb">The Serra do Mar drops to the Atlantic here and takes the forest with it, so lowland species are birded within sight of the beach. The Folha Seca road above Ubatuba is the classic morning, and the feeders in the gardens along it are where most people first see the coquettes and hermits. It pairs with Itatiaia in a few hours' drive.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> Ubatuba is an expensive beach resort 367 km south of Rio. Remnant lowland Atlantic forest stands close by and holds very rare and restricted endemics such as Red-eyed Thornbird, <a href="/birds/black-hooded-antwren/">Black-hooded Antwren</a>, <a href="/birds/slaty-bristlefront/">Slaty Bristlefront</a> and <a href="/birds/buff-throated-purpletuft/">Buff-throated Purpletuft</a>. Mangroves line the coast between Angra dos Reis and Paraty.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/festive-coquette/">Festive Coquette</a>, <a href="/birds/saw-billed-hermit/">Saw-billed Hermit</a> and <a href="/birds/bare-throated-bellbird/">Bare-throated Bellbird</a> are here in every month.</li>
+        <li class="where access"><b>Getting there:</b> The mangroves between Angra dos Reis, 151 km west of Rio, and Paraty, 100 km further west, are worth working. West of Paraty, just east of km post 45 and east of Ubatuba, turn north onto a track to Fazenda Capricornio, where permission to bird is usually given. A second fazenda is reached by turning right before Capricornio, and permission is needed there as well. The Serra da Bocaina park lies inland from Paraty and has been little explored by birders.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/festive-coquette/">Festive Coquette</a>, <a href="/birds/saw-billed-hermit/">Saw-billed Hermit</a>, <a href="/birds/bare-throated-bellbird/">Bare-throated Bellbird</a>, <a href="/birds/blond-crested-woodpecker/">Blond-crested Woodpecker</a>, <a href="/birds/spotted-bamboowren/">Spotted Bamboowren</a>, <a href="/birds/fork-tailed-tody-tyrant/">Fork-tailed Tody-Tyrant</a>, <a href="/birds/buff-throated-purpletuft/">Buff-throated Purpletuft</a>, <a href="/birds/black-hooded-antwren/">Black-hooded Antwren</a></li>
 
 
         <li class="where parks"><b>Parks and reserves:</b>
           <ul class="stoplist">
-            <li><span class="parkname">Serra do Mar State Park, Picinguaba</span>, The coastal section of the largest protected Atlantic Forest in Sao Paulo state. Mangrove, *restinga* (the sandy forest behind a beach) and forest trails sit in one place.</li>
+            <li><span class="parkname">Serra do Mar State Park, Picinguaba</span>, The coastal section of the largest protected Atlantic Forest in Sao Paulo state. Mangrove, <i>restinga</i> (the sandy forest behind a beach) and forest trails sit in one place.</li>
           </ul>
         </li>
         <li class="where stops"><b>Stops:</b>
@@ -5067,7 +5099,8 @@
         <p class="blurb">Almost all the lowland Atlantic Forest north of Rio has gone, and what is left is in Espirito Santo: the Sooretama Biological Reserve and the <a href="#lodge-bird-vale-natural-reserve-linhares">Vale Natural Reserve</a> beside it hold nearly 50,000 hectares between them. It is the ground for <a href="/birds/red-billed-curassow/">Red-billed Curassow</a> and <a href="/birds/cherry-throated-tanager/">Cherry-throated Tanager</a>. Santa Teresa in the hills above is where Augusto Ruschi worked and is still the hummingbird site.</p>
 
         <ul class="wherelist">
-
+        <li class="where habitat"><b>Habitat:</b> The Sooretama reserve, 50 km north of Linhares and 136 km north of Vitoria, protects lowland Atlantic forest and is one of only three sites for <a href="/birds/red-billed-curassow/">Red-billed Curassow</a>, the world's rarest cracid. Over 300 species have been recorded there, among them unusually large numbers of woodpeckers and cotingas. Nova Lombardia, 9 km north of Santa Teresa and 90 km from Vitoria, protects montane Atlantic forest with over 200 species recorded.</li>
+        <li class="where access"><b>Getting there:</b> Permission for both reserves comes from IBAMA, which has an office in Vitoria. For Sooretama head north out of Linhares on the BR 101 towards Sao Mateus and turn northwest after 14 km onto a track to the reserve headquarters. Bird the track northwest of the headquarters, the 6 km trail that leads east before you reach it, and the small trail behind. For Nova Lombardia head west out of Santa Teresa towards Colatina and look for an unmarked track up a steep hill at the northeast edge of town, turn right there and right again at the fork 6 km on. Two roads cross the reserve and paths lead east and west from near the warden's house.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/red-billed-curassow/">Red-billed Curassow</a>, <a href="/birds/cherry-throated-tanager/">Cherry-throated Tanager</a>, <a href="/birds/white-necked-hawk/">White-necked Hawk</a>, <a href="/birds/banded-cotinga/">Banded Cotinga</a>, <a href="/birds/buff-throated-purpletuft/">Buff-throated Purpletuft</a>, <a href="/birds/salvadori-s-antwren/">Salvadori's Antwren</a>, <a href="/birds/plumbeous-antvireo/">Plumbeous Antvireo</a>, <a href="/birds/blue-bellied-parrot/">Blue-bellied Parrot</a></li>
 
 
@@ -5129,7 +5162,9 @@
         <p class="blurb">Southern Bahia holds the wettest and most species-rich Atlantic Forest of all, and much of what survives does so inside cabruca, cocoa grown under the original canopy. Serra Bonita is a private reserve on a ridge above Camacan with its own lodge, and the Una reserve down on the coastal plain is the stronghold of the Golden-headed Lion Tamarin.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> Monte Pascoal National Park, near Porto Seguro roughly halfway between Vitoria and Salvador, protects forest holding a number of spectacular endemics, and much of it is out of reach of anything short of a major expedition. Around Porto Seguro itself the habitat and the birds are much like those at Monte Pascoal and at Sooretama further south, and Banded and <a href="/birds/white-winged-cotinga/">White-winged Cotingas</a> are probably easier to see here.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/pink-legged-graveteiro/">Pink-legged Graveteiro</a>, <a href="/birds/banded-cotinga/">Banded Cotinga</a> and <a href="/birds/bare-throated-bellbird/">Bare-throated Bellbird</a> are here in every month.</li>
+        <li class="where access"><b>Getting there:</b> Access to Monte Pascoal is restricted to the western side of the park, 32 km north of Itamaraju on the BR 101, with the visitor centre 1 km inside. The Porto Seguro reserve and the Pau Brasil ecological station lie on the north side of the road 14 km west of Porto Seguro. They are owned by a mining company and some persuasion may be needed to get in, though roadside birding along there can be very productive once suitable habitat has been found.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/pink-legged-graveteiro/">Pink-legged Graveteiro</a>, <a href="/birds/banded-cotinga/">Banded Cotinga</a>, <a href="/birds/bare-throated-bellbird/">Bare-throated Bellbird</a>, <a href="/birds/buff-throated-purpletuft/">Buff-throated Purpletuft</a>, <a href="/birds/red-billed-curassow/">Red-billed Curassow</a>, <a href="/birds/white-necked-hawk/">White-necked Hawk</a>, <a href="/birds/salvadori-s-antwren/">Salvadori's Antwren</a>, <a href="/birds/plumbeous-antvireo/">Plumbeous Antvireo</a></li>
 
 
@@ -5169,7 +5204,9 @@
         <p class="blurb">Iguacu National Park protects 185,000 hectares of interior Atlantic Forest, a drier semi-deciduous forest with a list of its own. The falls themselves hold <a href="/birds/great-dusky-swift/">Great Dusky Swift</a> roosting on the wet rock behind the water, which happens nowhere else.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> Iguacu falls are the biggest in the world and stand on the border with Argentina. Subtropical forest surrounds them and holds rare birds restricted to south Brazil, northeast Argentina and east Paraguay, among them <a href="/birds/black-fronted-piping-guan/">Black-fronted Piping-Guan</a>, <a href="/birds/helmeted-woodpecker/">Helmeted Woodpecker</a> and <a href="/birds/spotted-bamboowren/">Spotted Bamboowren</a>.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/black-fronted-piping-guan/">Black-fronted Piping Guan</a>, <a href="/birds/solitary-tinamou/">Solitary Tinamou</a> and <a href="/birds/blond-crested-woodpecker/">Blond-crested Woodpecker</a> are on site in all twelve months.</li>
+        <li class="where access"><b>Getting there:</b> The Poco Preto trail, 2.5 km from the park entrance near the falls, is the best place to bird. Permission from the director at the park entrance is needed and is not usually a problem. The Itaipu dam north of Foz do Iguacu is another good site.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/black-fronted-piping-guan/">Black-fronted Piping Guan</a>, <a href="/birds/solitary-tinamou/">Solitary Tinamou</a>, <a href="/birds/vinaceous-breasted-amazon/">Vinaceous-breasted Amazon</a>, <a href="/birds/blond-crested-woodpecker/">Blond-crested Woodpecker</a>, <a href="/birds/saffron-toucanet/">Saffron Toucanet</a>, <a href="/birds/bare-throated-bellbird/">Bare-throated Bellbird</a>, <a href="/birds/toco-toucan/">Toco Toucan</a>, <a href="/birds/plush-crested-jay/">Plush-crested Jay</a></li>
 
 
@@ -5208,13 +5245,14 @@
         <p class="blurb">The Paranagua bay is the largest estuary in southern Brazil and the forest around it is the last stronghold of the <a href="/birds/red-tailed-amazon/">Red-tailed Amazon</a>, which roosts on Superagui island in flocks. Inland, and on south into Santa Catarina, the forest turns to araucaria, the flat-topped conifer that once covered the southern plateau and now covers about two per cent of it.</p>
 
         <ul class="wherelist">
-
+        <li class="where habitat"><b>Habitat:</b> Marumbi National Park is a well-forested mountainous park between Sao Joao da Graciosa, 14 km north of Morretes, and the Curitiba to Sao Paulo road, and lowland forest runs along the nearby Morretes to Matinhos road. Immediately north along the same coast, forest still stands from Iguape south to Ariri and on Ilha do Cardoso, which holds the endemic Red-tailed Parrot.</li>
+        <li class="where access"><b>Getting there:</b> A road crosses Marumbi, which makes access to the park excellent, and several tracks lead into lowland forest off the Morretes to Matinhos road. Morretes makes a good base. Ilha do Cardoso is reached from Cananeia, and the research station on the island is the most reliable place for Red-tailed Parrot.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/red-tailed-amazon/">Red-tailed Amazon</a>, <a href="/birds/marsh-antwren/">Marsh Antwren</a>, <a href="/birds/black-fronted-piping-guan/">Black-fronted Piping Guan</a>, <a href="/birds/vinaceous-breasted-amazon/">Vinaceous-breasted Amazon</a>, <a href="/birds/saffron-toucanet/">Saffron Toucanet</a>, <a href="/birds/purple-winged-ground-dove/">Purple-winged Ground Dove</a>, <a href="/birds/solitary-tinamou/">Solitary Tinamou</a>, <a href="/birds/long-trained-nightjar/">Long-trained Nightjar</a></li>
 
         <li class="where alsorec"><b>Also recorded in the parks here:</b> <a href="/birds/band-winged-nightjar/">Band-winged Nightjar</a>, <a href="/birds/black-capped-screech-owl/">Black-capped Screech Owl</a></li>
         <li class="where parks"><b>National park:</b>
           <ul class="stoplist">
-            <li><a class="parklink" href="https://www.gov.br/icmbio/" target="_blank" rel="noopener">Superagui National Park</a>, Island and mangrove at the mouth of Paranagua bay. A boat takes you across, and the Red-tailed Amazon roost is here.</li>
+            <li><a class="parklink" href="https://www.gov.br/icmbio/" target="_blank" rel="noopener">Superagui National Park</a>, Island and mangrove at the mouth of Paranagua bay. A boat takes you across, and the <a href="/birds/red-tailed-amazon/">Red-tailed Amazon</a> roost is here.</li>
           </ul>
         </li>
         <li class="where stops"><b>Stops:</b>
@@ -5248,7 +5286,9 @@
         <p class="blurb">At its southern end in Rio Grande do Sul the Atlantic Forest gives way to araucaria and then to open grassland, and the Aparados da Serra canyons are where the two meet. The draw is the grassland list: seedeaters, the <a href="/birds/long-tailed-cinclodes/">Long-tailed Cinclodes</a> and a set of birds that share nothing with the coastal forest.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> Aparados da Serra National Park lies 187 km northeast of Porto Alegre and protects high plateau grassland dotted with marshes and stands of araucaria forest around the spectacular Itaimbezinho canyon.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/vinaceous-breasted-amazon/">Vinaceous-breasted Amazon</a>, <a href="/birds/red-legged-seriema/">Red-legged Seriema</a> and <a href="/birds/solitary-tinamou/">Solitary Tinamou</a> hold the ground through the year.</li>
+        <li class="where access"><b>Getting there:</b> Head north out of Porto Alegre towards Taquara and Sao Francisco de Paula, then turn north off the RS 020 3 km west of Sao Francisco de Paula onto the road to Canela, which is good birding in its own right. From Sao Francisco de Paula head north towards Tainhas on an excellent birding road, with a track running east 18 km along. Continue past Tainhas and turn east at the Itaimbezinho sign, and a marsh lies east of that road before the park entrance gate. The canyon can be watched from the cafe.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/vinaceous-breasted-amazon/">Vinaceous-breasted Amazon</a>, <a href="/birds/long-trained-nightjar/">Long-trained Nightjar</a>, <a href="/birds/red-legged-seriema/">Red-legged Seriema</a>, <a href="/birds/buffy-fronted-seedeater/">Buffy-fronted Seedeater</a>, <a href="/birds/purple-winged-ground-dove/">Purple-winged Ground Dove</a>, <a href="/birds/black-fronted-piping-guan/">Black-fronted Piping Guan</a>, <a href="/birds/saffron-toucanet/">Saffron Toucanet</a>, <a href="/birds/solitary-tinamou/">Solitary Tinamou</a></li>
 
         <li class="where alsorec"><b>Also recorded in the parks here:</b> <a href="/birds/biscutate-swift/">Biscutate Swift</a>, <a href="/birds/black-and-white-monjita/">Black-and-white Monjita</a></li>

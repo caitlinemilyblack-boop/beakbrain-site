@@ -619,6 +619,28 @@
     /* A bird present all year gets a lighter bar: the point of the column is the
        birds whose window is narrow, and a solid bar on eight rows says nothing. */
     .tg-b.tg-all { background: var(--sage); opacity: .4; }
+    /* The month ruler lives in the table head, which a stacked row cannot see. */
+    .tg-scale { display: none; }
+    /* PAGE-SPEC 4. THE TABLE COULD NOT ANSWER ITS OWN QUESTION ON A PHONE. At 390px the
+       row is 1,022px wide in a 332px window, so a reader saw the bird name and the first
+       weeks of the calendar while Best Window and Where sat entirely off-screen, reachable
+       only by scrolling every row sideways. "Best Month for Each Bird" is exactly the
+       thing that was cut off. Under 760px the row becomes a card: the bird, then the
+       calendar full width with its own month ruler under it, then the window and the
+       places as labelled lines. Nothing scrolls sideways. */
+    @media (max-width: 760px) {
+      .tg-head { display: none; }
+      .tg-row { grid-template-columns: 46px minmax(0, 1fr); gap: 9px 12px; min-width: 0; padding: 14px 0 16px; align-items: start; }
+      .tg-n { align-self: center; font-size: 16.5px; }
+      .tg-mini { grid-column: 1 / -1; height: 20px; }
+      .tg-scale { display: grid; grid-column: 1 / -1; grid-template-columns: repeat(12, 1fr); margin-top: -3px; }
+      .tg-scale span { font-family: var(--body); font-weight: 800; font-size: 10.5px; color: var(--muted); text-align: center; }
+      .tg-w, .tg-p { grid-column: 1 / -1; }
+      .tg-w::before, .tg-p::before { display: block; font-family: var(--body); font-weight: 800; font-size: 10.5px;
+        letter-spacing: .07em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 1px; }
+      .tg-w::before { content: 'Best window'; }
+      .tg-p::before { content: 'Where'; }
+    }
     @media (max-width: 760px) { .targets { padding: 6px 16px; } }
 
     .offitin { margin-top: 10px; padding: 12px 15px; background: color-mix(in srgb, var(--gold) 10%, transparent); border-radius: 12px; font-size: 14px; color: var(--ink); }
@@ -9199,6 +9221,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/009a6ba16adc.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/santa-marta-parakeet/">Santa Marta Parakeet</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:91.67%;width:8.33%"></span><span class="tg-b" style="left:0.00%;width:25.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">December to March</div>
             <div class="tg-p"><a href="#site-santa-marta-and-the-sierra-nevada">Santa Marta and the Sierra Nevada</a></div>
           </div>
@@ -9206,6 +9229,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/andean-cock-of-the-rock/">Andean Cock-of-the-rock</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">All year</div>
             <div class="tg-p"><a href="#site-the-western-andes-and-jardin">The Western Andes and Jardin</a>, <a href="#site-the-coffee-region-otun-quimbaya-and-montezuma">The Coffee Region: Otun Quimbaya and Montezuma</a>, <a href="#site-the-central-andes-manizales-and-rio-blanco">The Central Andes: Manizales and Rio Blanco</a></div>
           </div>
@@ -9213,6 +9237,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/009a6ba16adc.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/yellow-eared-parrot/">Yellow-eared Parrot</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:0.00%;width:50.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">January to June</div>
             <div class="tg-p"><a href="#site-the-western-andes-and-jardin">The Western Andes and Jardin</a>, <a href="#site-the-coffee-region-otun-quimbaya-and-montezuma">The Coffee Region: Otun Quimbaya and Montezuma</a></div>
           </div>
@@ -9220,6 +9245,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/7b2c05c94580.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/vermilion-cardinal/">Vermilion Cardinal</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:91.67%;width:8.33%"></span><span class="tg-b" style="left:0.00%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">December to April</div>
             <div class="tg-p"><a href="#site-la-guajira-and-the-caribbean-dry-forest">La Guajira and the Caribbean dry forest</a></div>
           </div>
@@ -9227,6 +9253,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/1239e5cb3801.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/buffy-helmetcrest/">Buffy Helmetcrest</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:91.67%;width:8.33%"></span><span class="tg-b" style="left:0.00%;width:25.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">December to March</div>
             <div class="tg-p"><a href="#site-the-central-andes-manizales-and-rio-blanco">The Central Andes: Manizales and Rio Blanco</a></div>
           </div>
@@ -9234,6 +9261,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/a1c2898245cf.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/multicolored-tanager/">Multicolored Tanager</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">All year</div>
             <div class="tg-p"><a href="#site-the-cauca-valley-and-the-km-18-cloud-forest">The Cauca valley and the Km 18 cloud forest</a></div>
           </div>
@@ -9241,6 +9269,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/sapayoa/">Sapayoa</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">All year</div>
             <div class="tg-p"><a href="#site-the-choco-and-the-pacific-coast">The Choco and the Pacific coast</a>, <a href="#site-the-cauca-valley-and-the-km-18-cloud-forest">The Cauca valley and the Km 18 cloud forest</a></div>
           </div>
@@ -9248,6 +9277,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/e58fde9fe327.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/orinoco-goose/">Orinoco Goose</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:91.67%;width:8.33%"></span><span class="tg-b" style="left:0.00%;width:25.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">December to March</div>
             <div class="tg-p"><a href="#site-the-llanos-meta-and-casanare">The Llanos: Meta and Casanare</a></div>
           </div>
@@ -9469,7 +9499,7 @@
 
         <li class="where parks"><b>National parks:</b>
           <ul class="stoplist">
-            <li><a class="parklink" href="https://old.parquesnacionales.gov.co/portal/en/ecotourism/caribbean-region/los-flamencos-fauna-and-flora-sanctuary/" target="_blank" rel="noopener">Los Flamencos Fauna and Flora Sanctuary</a>, A national sanctuary with an entry fee and marked boardwalks through the lagoons. Vermilion Cardinal and Buffy Hummingbird work the surrounding dry scrub alongside the flamingos.</li>
+            <li><a class="parklink" href="https://old.parquesnacionales.gov.co/portal/en/ecotourism/caribbean-region/los-flamencos-fauna-and-flora-sanctuary/" target="_blank" rel="noopener">Los Flamencos Fauna and Flora Sanctuary</a>, A national sanctuary with an entry fee and marked boardwalks through the lagoons. <a href="/birds/vermilion-cardinal/">Vermilion Cardinal</a> and <a href="/birds/buffy-hummingbird/">Buffy Hummingbird</a> work the surrounding dry scrub alongside the flamingos.</li>
             <li><a class="parklink" href="https://old.parquesnacionales.gov.co/portal/es/ecotourism/caribbean-region/macuira-national-natural-park/" target="_blank" rel="noopener">Macuira National Natural Park</a></li>
           </ul>
         </li>
@@ -9506,7 +9536,9 @@
         <p class="blurb">A range on the Venezuelan border with its own set of endemics, described and named only in the last two decades. Access is by rough track and needs arranging ahead, which is why so few people have birded it.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> The Serrania del Perija runs for some 300 km along the Venezuelan border at the northernmost extension of the Andes and reaches around 3,600 metres. The range is poorly researched and carries high floral and faunal endemism, along with wide mountain views.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/perija-metaltail/">Perija Metaltail</a>, <a href="/birds/perija-thistletail/">Perija Thistletail</a> and <a href="/birds/perija-brushfinch/">Perija Brushfinch</a> are here in every month.</li>
+        <li class="where access"><b>Getting there:</b> Approach the range from Valledupar. Security kept the area closed until recently, so tourist infrastructure is thin and private reserves are only slowly emerging. Accommodation is humble and the lodges have to be reserved in advance because of the remoteness. Guides are usually available at the site.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/perija-metaltail/">Perija Metaltail</a>, <a href="/birds/perija-thistletail/">Perija Thistletail</a>, <a href="/birds/perija-brushfinch/">Perija Brushfinch</a>, <a href="/birds/perija-tapaculo/">Perija Tapaculo</a></li>
 
 
@@ -9545,7 +9577,9 @@
         <p class="blurb">The great river valley that splits the Eastern and Central Andes. It holds humid forest at Rio Claro and dry canyon scrub around Chicamocha, two habitats that share almost nothing, a few hours apart.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> The mid Magdalena valley holds the last remnants of lowland tropical rainforest in this part of Colombia. The Pauxi Pauxi reserve near Bucaramanga covers about 1,940 hectares of tropical rainforest and lower cloud forest between 200 and 1,500 metres. On the western side of the valley the Rio Claro reserve protects 500 hectares of ancient rainforest around a canyon cut by a clear river, and more than 540 bird species have been recorded there.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/niceforo-s-wren/">Niceforo's Wren</a>, <a href="/birds/chestnut-bellied-hummingbird/">Chestnut-bellied Hummingbird</a> and <a href="/birds/velvet-fronted-euphonia/">Velvet-fronted Euphonia</a> are on site in all twelve months.</li>
+        <li class="where access"><b>Getting there:</b> Rio Claro sits on the Bogota to Medellin highway, 263 km from Bogota and 152 km from Medellin, with accommodation in and around the reserve and guides for hire locally. The Pauxi Pauxi reserve has limited accommodation on site.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/niceforo-s-wren/">Niceforo's Wren</a>, <a href="/birds/chestnut-bellied-hummingbird/">Chestnut-bellied Hummingbird</a>, <a href="/birds/velvet-fronted-euphonia/">Velvet-fronted Euphonia</a>, <a href="/birds/colombian-chachalaca/">Colombian Chachalaca</a></li>
 
 
@@ -9626,7 +9660,9 @@
         <p class="blurb">The central range rises to the snow of Nevado del Ruiz, and the watershed reserve above the coffee city of Manizales has antpitta feeding stations in its forest. A paved road climbs from there to paramo at 4,000 metres, which makes this the easiest high altitude birding in the country.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> The Rio Blanco reserve covers nearly 5,000 hectares of mainly cloud forest and protects the water catchment for Manizales, and more than 350 bird species have been noted in it. Los Nevados National Park above the city runs from 2,600 to 5,300 metres through montane forest, high-altitude grassland, sub-paramo, paramo and glacier, with snow-capped peaks, an active volcano and over 200 high-altitude species.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/brown-banded-antpitta/">Brown-banded Antpitta</a>, <a href="/birds/bicolored-antpitta/">Bicolored Antpitta</a> and <a href="/birds/rusty-faced-parrot/">Rusty-faced Parrot</a> hold the ground through the year.</li>
+        <li class="where access"><b>Getting there:</b> Rio Blanco can be entered only by prior reservation through the Aguas de Manizales website, and visitors go accompanied by local guides. Los Nevados has accommodation within the park and in the vicinity, and high-altitude precautions matter there. Los Alcazares Ecopark on the edge of Manizales has four comfortable trails and an observation tower for canopy birding.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/brown-banded-antpitta/">Brown-banded Antpitta</a>, <a href="/birds/bicolored-antpitta/">Bicolored Antpitta</a>, <a href="/birds/rusty-faced-parrot/">Rusty-faced Parrot</a>, <a href="/birds/golden-plumed-parakeet/">Golden-plumed Parakeet</a>, <a href="/birds/andean-condor/">Andean Condor</a>, <a href="/birds/buff-winged-starfrontlet/">Buff-winged Starfrontlet</a></li>
 
 
@@ -9673,7 +9709,9 @@
         <p class="blurb">Coffee farms, bamboo and cloud forest on the Central and Western slopes, with a sanctuary river on one side and the long Montezuma road climbing Tatama on the other. Paved roads reach almost all of it.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> Otun Quimbaya sanctuary lies against the southwestern edge of Los Nevados National Park and is mostly wet secondary growth with montane and cloud forest between 1,800 and 2,200 metres, where 330 bird species have been observed. Tatama National Park, which the Montezuma road climbs into, covers over 520 square kilometres of largely undisturbed country from tropical rainforest to paramo between 2,000 and 4,200 metres and carries a list of more than 600 species.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/cauca-guan/">Cauca Guan</a>, <a href="/birds/gold-ringed-tanager/">Gold-ringed Tanager</a> and <a href="/birds/chestnut-wood-quail/">Chestnut Wood Quail</a> hold the ground through the year.</li>
+        <li class="where access"><b>Getting there:</b> Otun Quimbaya is easy to reach from Pereira, and its community-run visitor centre has comfortable accommodation and well-trained guides. Access to Tatama is limited, so a visit is best organised through the national park office. Montezuma Rainforest at Pueblo Rico is the lodge that serves the ridge.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/cauca-guan/">Cauca Guan</a>, <a href="/birds/gold-ringed-tanager/">Gold-ringed Tanager</a>, <a href="/birds/chestnut-wood-quail/">Chestnut Wood Quail</a>, <a href="/birds/tatama-tapaculo/">Tatama Tapaculo</a>, <a href="/birds/chami-antpitta/">Chami Antpitta</a></li>
 
 
@@ -9718,7 +9756,9 @@
         <p class="blurb">A whitewashed town with a cock-of-the-rock lek a few minutes' walk from the square, and wax palm valleys above it where the <a href="/birds/yellow-eared-parrot/">Yellow-eared Parrot</a> came back from the edge. Antioquia's best birding is here.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> Las Tangaras Reserve at El Carmen de Atrato covers 2,900 hectares of tropical forest ecosystems from 1,250 to 3,000 metres on the northern edge of the West Andes, at the natural border between the Colombian interior and the Choco, and more than 250 species have been observed there. The Colibri del Sol reserve holds nearly 730 hectares of northern West Andean montane forest and paramo between 2,700 and 3,800 metres, a wet and cloudy place with at least 370 species.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/yellow-eared-parrot/">Yellow-eared Parrot</a>, <a href="/birds/gold-ringed-tanager/">Gold-ringed Tanager</a> and <a href="/birds/munchique-wood-wren/">Munchique Wood Wren</a> stay through the year.</li>
+        <li class="where access"><b>Getting there:</b> Las Tangaras lies some 140 km south of Medellin, with accommodation booked outside the reserve and guides available. Colibri del Sol has limited accommodation and guides at hand. Around Jardin the birding runs on private reserves, among them the Gallito de Roca reserve, the Loro Orejiamarillo reserve and Mirador el Roble.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/yellow-eared-parrot/">Yellow-eared Parrot</a>, <a href="/birds/gold-ringed-tanager/">Gold-ringed Tanager</a>, <a href="/birds/munchique-wood-wren/">Munchique Wood Wren</a>, <a href="/birds/black-and-gold-tanager/">Black-and-gold Tanager</a>, <a href="/birds/velvet-purple-coronet/">Velvet-purple Coronet</a></li>
 
 
@@ -9766,8 +9806,8 @@
 
         <li class="where parks"><b>National parks:</b>
           <ul class="stoplist">
-            <li><a class="parklink" href="https://www.parquesnacionales.gov.co/nuestros-parques/pnn-farallones-de-cali/" target="_blank" rel="noopener">Parque Nacional Natural Farallones de Cali</a>, A national park whose boundary runs along the Km 18 ridge. An entry fee and reservation are required beyond the roadside strip, and Cock-of-the-rock and Toucan Barbet hold the mist forest.</li>
-            <li><span class="parkname">Laguna de Sonso</span>, A wetland reserve on the Cauca River floodplain, on a raised path from the entrance. Horned Screamer and waterbirds hold the open water and gallery forest.</li>
+            <li><a class="parklink" href="https://www.parquesnacionales.gov.co/nuestros-parques/pnn-farallones-de-cali/" target="_blank" rel="noopener">Parque Nacional Natural Farallones de Cali</a>, A national park whose boundary runs along the Km 18 ridge. An entry fee and reservation are required beyond the roadside strip, and Cock-of-the-rock and <a href="/birds/toucan-barbet/">Toucan Barbet</a> hold the mist forest.</li>
+            <li><span class="parkname">Laguna de Sonso</span>, A wetland reserve on the Cauca River floodplain, on a raised path from the entrance. <a href="/birds/horned-screamer/">Horned Screamer</a> and waterbirds hold the open water and gallery forest.</li>
             <li><span class="parkname">San Cipriano forest reserve</span></li>
             <li><a class="parklink" href="https://www.parquesnacionales.gov.co/" target="_blank" rel="noopener">Parque Nacional Natural Purace</a>, Paramo and elfin forest on a live volcano east of Popayan. A condor viewing point sits above the visitor area.</li>
           </ul>
@@ -9842,7 +9882,8 @@
         <p class="blurb">Rainforest meets the ocean on a coast with no road to it. A small plane or a boat is how you arrive. It is among the wettest places on earth and one of the richest, with humpbacks calving offshore for half the year.</p>
 
         <ul class="wherelist">
-
+        <li class="where habitat"><b>Habitat:</b> Utria National Park spreads over 544 square kilometres along the Pacific shore of the Choco and protects the coastal strip and the ocean beside it. The land is covered by a thick carpet of tropical rainforest, the park is renowned for its orchids, and more than 440 bird species are listed. Whales and turtles are easy to see in season.</li>
+        <li class="where access"><b>Getting there:</b> Getting to the national park is challenging and worth the effort. It is best reached by boat from Bahia Solano or El Valle. Accommodation is available at the visitor centre inside the park and guides are at hand.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/baudo-guan/">Baudo Guan</a>, <a href="/birds/sapayoa/">Sapayoa</a>, <a href="/birds/berlepsch-s-tinamou/">Berlepsch's Tinamou</a>, <a href="/birds/choco-toucan/">Choco Toucan</a>, <a href="/birds/choco-trogon/">Choco Trogon</a>, <a href="/birds/great-curassow/">Great Curassow</a></li>
 
 
@@ -9882,7 +9923,9 @@
         <p class="blurb">Flooded savanna running east towards the Orinoco, worked as cattle country and birded from the same ranches. Waterbirds gather in numbers that few other places in South America can show.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> The Llanos are vast eastern savannas running from the East Andes to the Venezuelan border, and the northern parts flood seasonally into wide shallow water. Bosque Bavaria northwest of Villavicencio holds 30 hectares of well-preserved humid tropical foothill forest between 470 and 650 metres, with adjoining protected land climbing to 1,100 metres and nearly 400 species recorded. Serrania de la Macarena National Park covers 6,293 square kilometres of rainforest, tropical dry forest and shrub savanna where the Amazon, the Llanos and the East Andes meet, and its list runs past 500 species.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/jabiru/">Jabiru</a>, <a href="/birds/sharp-tailed-ibis/">Sharp-tailed Ibis</a> and <a href="/birds/horned-screamer/">Horned Screamer</a> are here in every month.</li>
+        <li class="where access"><b>Getting there:</b> Distances out here are long and reaching the sites takes time, so flying from Bogota is the sensible way in, except for the places along the eastern foothills of the East Andes. Villavicencio is the capital of the Llanos and puts several good sites within easy reach, with accommodation of all classes in the city. The buffer zones around Macarena are best entered through Macarena town by air, and the Casanare reserves including Hato La Aurora are reached via Yopal.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/orinoco-goose/">Orinoco Goose</a>, <a href="/birds/jabiru/">Jabiru</a>, <a href="/birds/sharp-tailed-ibis/">Sharp-tailed Ibis</a>, <a href="/birds/horned-screamer/">Horned Screamer</a>, <a href="/birds/orinoco-softtail/">Orinoco Softtail</a>, <a href="/birds/scarlet-macaw/">Scarlet Macaw</a></li>
 
 
@@ -9926,7 +9969,9 @@
         <p class="blurb">The southern tip of the country, where Colombia, Peru and Brazil meet on the river. Birding here is by boat, on river islands and in terra firme, the forest above the flood line, and the indigenous communities guide it themselves.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> Amacayacu National Park is Colombia's most southerly park and borders the Amazon river and Peru. It extends over 2,935 square kilometres of tropical rainforest and floodplain forest between 100 and 330 metres, and about 500 bird species have been recorded in it.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/hoatzin/">Hoatzin</a>, <a href="/birds/pied-plover/">Pied Plover</a> and <a href="/birds/white-eared-jacamar/">White-eared Jacamar</a> are here in every month.</li>
+        <li class="where access"><b>Getting there:</b> The indigenous village of Puerto Narino is the best entry point to the region and is reached from Leticia by a two-hour boat ride on the Amazon river. The village runs community-based ecotourism and offers accommodation and guides.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/hoatzin/">Hoatzin</a>, <a href="/birds/zigzag-heron/">Zigzag Heron</a>, <a href="/birds/agami-heron/">Agami Heron</a>, <a href="/birds/point-tailed-palmcreeper/">Point-tailed Palmcreeper</a>, <a href="/birds/pied-plover/">Pied Plover</a>, <a href="/birds/white-eared-jacamar/">White-eared Jacamar</a></li>
 
 

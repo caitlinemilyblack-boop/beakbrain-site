@@ -619,6 +619,28 @@
     /* A bird present all year gets a lighter bar: the point of the column is the
        birds whose window is narrow, and a solid bar on eight rows says nothing. */
     .tg-b.tg-all { background: var(--sage); opacity: .4; }
+    /* The month ruler lives in the table head, which a stacked row cannot see. */
+    .tg-scale { display: none; }
+    /* PAGE-SPEC 4. THE TABLE COULD NOT ANSWER ITS OWN QUESTION ON A PHONE. At 390px the
+       row is 1,022px wide in a 332px window, so a reader saw the bird name and the first
+       weeks of the calendar while Best Window and Where sat entirely off-screen, reachable
+       only by scrolling every row sideways. "Best Month for Each Bird" is exactly the
+       thing that was cut off. Under 760px the row becomes a card: the bird, then the
+       calendar full width with its own month ruler under it, then the window and the
+       places as labelled lines. Nothing scrolls sideways. */
+    @media (max-width: 760px) {
+      .tg-head { display: none; }
+      .tg-row { grid-template-columns: 46px minmax(0, 1fr); gap: 9px 12px; min-width: 0; padding: 14px 0 16px; align-items: start; }
+      .tg-n { align-self: center; font-size: 16.5px; }
+      .tg-mini { grid-column: 1 / -1; height: 20px; }
+      .tg-scale { display: grid; grid-column: 1 / -1; grid-template-columns: repeat(12, 1fr); margin-top: -3px; }
+      .tg-scale span { font-family: var(--body); font-weight: 800; font-size: 10.5px; color: var(--muted); text-align: center; }
+      .tg-w, .tg-p { grid-column: 1 / -1; }
+      .tg-w::before, .tg-p::before { display: block; font-family: var(--body); font-weight: 800; font-size: 10.5px;
+        letter-spacing: .07em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 1px; }
+      .tg-w::before { content: 'Best window'; }
+      .tg-p::before { content: 'Where'; }
+    }
     @media (max-width: 760px) { .targets { padding: 6px 16px; } }
 
     .offitin { margin-top: 10px; padding: 12px 15px; background: color-mix(in srgb, var(--gold) 10%, transparent); border-radius: 12px; font-size: 14px; color: var(--ink); }
@@ -8755,6 +8777,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/andean-cock-of-the-rock/">Andean Cock-of-the-rock</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:66.67%;width:33.33%"></span><span class="tg-b" style="left:0.00%;width:16.67%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">September to February</div>
             <div class="tg-p">Paucartambo, Pilcopata</div>
           </div>
@@ -8762,6 +8785,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/1239e5cb3801.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/marvelous-spatuletail/">Marvelous Spatuletail</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:75.00%;width:25.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">October to December</div>
             <div class="tg-p">Pomacochas, Jazan</div>
           </div>
@@ -8769,6 +8793,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/0950b7b233b7.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/long-whiskered-owlet/">Long-whiskered Owlet</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:41.67%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">June to September</div>
             <div class="tg-p">Pomacochas</div>
           </div>
@@ -8776,6 +8801,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/009a6ba16adc.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/red-and-green-macaw/">Red-and-green Macaw</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:41.67%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">May to September</div>
             <div class="tg-p">Infierno, Filadelfia</div>
           </div>
@@ -8783,6 +8809,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/inca-tern/">Inca Tern</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">April to July</div>
             <div class="tg-p">Pucusana, <a href="#site-paracas-and-the-southern-desert-coast">Paracas and the Southern Desert Coast</a></div>
           </div>
@@ -8790,6 +8817,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/09f9f8ac08a6.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/humboldt-penguin/">Humboldt Penguin</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:91.67%;width:8.33%"></span><span class="tg-b" style="left:0.00%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">December to April</div>
             <div class="tg-p"><a href="#site-paracas-and-the-southern-desert-coast">Paracas and the Southern Desert Coast</a>, San Andres</div>
           </div>
@@ -8797,6 +8825,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/andean-condor/">Andean Condor</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:41.67%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">May to September</div>
             <div class="tg-p">Cabanaconde, Chivay</div>
           </div>
@@ -8804,6 +8833,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/30b81362722d.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/titicaca-grebe/">Titicaca Grebe</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:41.67%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">May to September</div>
             <div class="tg-p"><a href="#site-lake-titicaca-and-puno">Lake Titicaca and Puno</a>, Capachica</div>
           </div>
@@ -8970,7 +9000,9 @@
         <p class="blurb">The Manu road is the single most sold piece of ground in the country. It drops from 3,500 metres of grassland through elfin forest and cloud forest to Amazon foothills in one day's driving, and the bird list changes with every few hundred metres.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> The road crosses the east Andean slope and passes through each forest belt in turn. Puna and elfin forest sit at 3,400 metres at the top, temperate forest follows before Pillihuarta, the change to subtropical forest comes at about 2,500 metres, and upper tropical forest begins at 1,650 metres where an <a href="/birds/andean-cock-of-the-rock/">Andean Cock-of-the-rock</a> lek stands. Manu National Park below holds east Andean temperate forest, subtropical forest and west Amazonian lowland rainforest together, and over 1,000 species have been recorded there, more than any other park in the world.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/andean-cock-of-the-rock/">Andean Cock-of-the-rock</a>, <a href="/birds/amazonian-umbrellabird/">Amazonian Umbrellabird</a> and <a href="/birds/versicolored-barbet/">Versicolored Barbet</a> hold the ground through the year.</li>
+        <li class="where access"><b>Getting there:</b> Turn north off the Cuzco to Puno road at the Huacarpay lakes and drive to Paucartambo. Turn right 25 km beyond Paucartambo and work the habitat belts from there downwards. The road reaches Patrias, where a left turn leads to Atalaya and Manu National Park. Camping is the way to stay on the road itself and food is available at Pillihuata and Patrias. Lodge places inside the park have to be booked well in advance.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/andean-cock-of-the-rock/">Andean Cock-of-the-rock</a>, <a href="/birds/amazonian-umbrellabird/">Amazonian Umbrellabird</a>, <a href="/birds/versicolored-barbet/">Versicolored Barbet</a>, <a href="/birds/andean-motmot/">Andean Motmot</a>, <a href="/birds/golden-headed-quetzal/">Golden-headed Quetzal</a>, <a href="/birds/blue-banded-toucanet/">Blue-banded Toucanet</a></li>
 
         <li class="where alsorec"><b>Also recorded in the parks here:</b> <a href="/birds/amazonian-barred-woodcreeper/">Amazonian Barred Woodcreeper</a>, <a href="/birds/amazonian-plain-xenops/">Amazonian Plain Xenops</a>, <a href="/birds/amazonian-pygmy-owl/">Amazonian Pygmy Owl</a>, <a href="/birds/amazonian-streaked-antwren/">Amazonian Streaked Antwren</a></li>
@@ -9159,7 +9191,9 @@
         <p class="blurb">The clay licks on the Tambopata are where macaws gather in numbers found nowhere else, and the lodges along the river reach oxbow lakes with giant otter on them. This is the easiest Amazon in Peru to get to: an hour's flight from Cusco and then a boat.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> The reserve covers 15,000 square kilometres of lowland Amazonian rainforest at the western edge of the Amazon basin. Explorer's Inn on the Rio Tambopata carries the biggest bird list in the world at 587 species, although even a keen birder will do well to see 300 in a week.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/scarlet-macaw/">Scarlet Macaw</a>, <a href="/birds/red-and-green-macaw/">Red-and-green Macaw</a> and <a href="/birds/hoatzin/">Hoatzin</a> are here in every month.</li>
+        <li class="where access"><b>Getting there:</b> Tambopata is reached through Puerto Maldonado, which has road and air links to Lima and Cuzco. The lodge lies four hours and 58 km up the Rio Tambopata from the town. About 30 km of trails run out from the clearing, and the La Torre, Swamp and High Forest trails are the pick of them, along with the Cocacocha oxbow and the canopy walkways. Accommodation has to be booked well in advance.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/scarlet-macaw/">Scarlet Macaw</a>, <a href="/birds/red-and-green-macaw/">Red-and-green Macaw</a>, <a href="/birds/hoatzin/">Hoatzin</a>, <a href="/birds/pale-winged-trumpeter/">Pale-winged Trumpeter</a>, <a href="/birds/amazonian-umbrellabird/">Amazonian Umbrellabird</a>, <a href="/birds/harpy-eagle/">Harpy Eagle</a></li>
 
         <li class="where alsorec"><b>Also recorded in the parks here:</b> <a href="/birds/amethyst-throated-sunangel/">Amethyst-throated Sunangel</a>, <a href="/birds/andean-negrito/">Andean Negrito</a>, <a href="/birds/bamboo-antshrike/">Bamboo Antshrike</a>, <a href="/birds/bar-breasted-piculet/">Bar-breasted Piculet</a></li>
@@ -9267,7 +9301,9 @@
         <p class="blurb">Iquitos is the largest city on earth with no road to it, and the forest around it holds a set of white-sand specialists that live nowhere else. River cruises work the Maranon and Ucayali from here, and the Allpahuayo-Mishana reserve is forty minutes from the airport.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> Lowland Amazonian rainforest surrounds the city, which stands beside the Amazon in northeast Peru. Over 500 species have been recorded here, some 40 of them absent from Tambopata and Manu in the south.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/hoatzin/">Hoatzin</a>, <a href="/birds/horned-screamer/">Horned Screamer</a> and <a href="/birds/wattled-curassow/">Wattled Curassow</a> are on site in all twelve months.</li>
+        <li class="where access"><b>Getting there:</b> No road reaches Iquitos and the air service is the way in. Travel companies in the city sell a wide range of jungle trips. Explorama Lodge at Yanamono lies three hours downriver and has an excellent network of trails, and Explornapo Camp at Llachapa sits 140 km out on the Rio Napo. A canopy walkway over 400 m long runs more than 30 m above the forest floor at one of the lodges, so the roving canopy flocks can be followed on the level.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/hoatzin/">Hoatzin</a>, <a href="/birds/horned-screamer/">Horned Screamer</a>, <a href="/birds/wattled-curassow/">Wattled Curassow</a>, <a href="/birds/pearly-antshrike/">Pearly Antshrike</a>, <a href="/birds/black-collared-hawk/">Black-collared Hawk</a>, <a href="/birds/sand-colored-nighthawk/">Sand-colored Nighthawk</a></li>
 
 
@@ -9330,7 +9366,9 @@
         <p class="blurb">The <a href="/birds/marvelous-spatuletail/">Marvelous Spatuletail</a> lives on this slope and nowhere else, and the feeders at Pomacochas put it within a few metres. Above them, the Abra Patricia forest holds the <a href="/birds/long-whiskered-owlet/">Long-whiskered Owlet</a>, which was known from four specimens until 2007 and is still one of the hardest birds in the Americas.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> Eastern Cordillera temperate forest lines the Pedro Ruiz to Rioja road about 80 km northwest of Rioja, and <a href="/birds/long-whiskered-owlet/">Long-whiskered Owlet</a>, <a href="/birds/pale-billed-antpitta/">Pale-billed Antpitta</a>, <a href="/birds/ochre-fronted-antpitta/">Ochre-fronted Antpitta</a> and <a href="/birds/bar-winged-wood-wren/">Bar-winged Wood-Wren</a> were all discovered along it. Pomacocha holds Marvellous Spatuletail, and the Rio Chido trail climbs from the village past clearings and a lake.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/marvelous-spatuletail/">Marvelous Spatuletail</a>, <a href="/birds/long-whiskered-owlet/">Long-whiskered Owlet</a> and <a href="/birds/royal-sunangel/">Royal Sunangel</a> hold the ground through the year.</li>
+        <li class="where access"><b>Getting there:</b> Head north from Leimebamba towards Chachapoyas, pass the Chachapoyas turning and carry on to Pedro Ruiz at the junction with the Jaen to Rioja road. Turn east there onto the Pedro Ruiz to Rioja road. Rioja has an airstrip with flights to the coastal cities, so this stretch can be reached by air as well as by the long road circuit from the coast.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/marvelous-spatuletail/">Marvelous Spatuletail</a>, <a href="/birds/long-whiskered-owlet/">Long-whiskered Owlet</a>, <a href="/birds/royal-sunangel/">Royal Sunangel</a>, <a href="/birds/lulu-s-tody-flycatcher/">Lulu's Tody-Flycatcher</a>, <a href="/birds/yellow-scarfed-tanager/">Yellow-scarfed Tanager</a>, <a href="/birds/ochre-fronted-antpitta/">Ochre-fronted Antpitta</a></li>
 
 
@@ -9393,14 +9431,16 @@
         <p class="blurb">The Maranon cuts a canyon deep enough to make its own climate, and the dry forest on the Pacific side of the pass is a different country again. Between them they carry the densest run of Peruvian endemics anywhere, and the northern circuit exists because of it.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> Acacia woodland and scrub stand above the farms of Hacienda Limon west of Balsas, and dry forest covers the slopes above Balsas itself. A trail 19 km east of Olmos runs for more than 30 km through dry forest, and more dry forest lies east of the road at Capillo Central, 6 km south of Naupe. On the coast the marshes 16 km south of Chiclayo and the acacia wood 1 km north of Rafan hold the local specialities.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/white-winged-guan/">White-winged Guan</a>, <a href="/birds/peruvian-plantcutter/">Peruvian Plantcutter</a> and <a href="/birds/maranon-crescentchest/">Maranon Crescentchest</a> hold the ground through the year.</li>
+        <li class="where access"><b>Getting there:</b> The circuit runs northeast from the coast to Huamachuco, north to Cajamarca and then east to Leimebamba, and it is over 1,000 km long before any of the diversions. Accommodation is sparse and badly placed for birders, so a camping trip with your own transport sees the most, although the route can be done on public transport. Flights link Chiclayo, Rioja, Cajamarca, Piura and Tumbes.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/white-winged-guan/">White-winged Guan</a>, <a href="/birds/peruvian-plantcutter/">Peruvian Plantcutter</a>, <a href="/birds/maranon-crescentchest/">Maranon Crescentchest</a>, <a href="/birds/buff-bridled-inca-finch/">Buff-bridled Inca Finch</a>, <a href="/birds/tumbes-tyrant/">Tumbes Tyrant</a>, <a href="/birds/rufous-flycatcher/">Rufous Flycatcher</a></li>
 
 
         <li class="where parks"><b>Parks and reserves:</b>
           <ul class="stoplist">
-            <li><span class="parkname">Bosque de Pomac Historic Sanctuary</span>, Dry forest of carob and adobe pyramids north of Chiclayo, and the ground for the Peruvian Plantcutter.</li>
-            <li><span class="parkname">Chaparri Ecological Reserve</span> <span class="pkind">(private reserve)</span>, A community reserve in the dry forest, and where the White-winged Guan was brought back.</li>
+            <li><span class="parkname">Bosque de Pomac Historic Sanctuary</span>, Dry forest of carob and adobe pyramids north of Chiclayo, and the ground for the <a href="/birds/peruvian-plantcutter/">Peruvian Plantcutter</a>.</li>
+            <li><span class="parkname">Chaparri Ecological Reserve</span> <span class="pkind">(private reserve)</span>, A community reserve in the dry forest, and where the <a href="/birds/white-winged-guan/">White-winged Guan</a> was brought back.</li>
           </ul>
         </li>
         <li class="where stops"><b>Stops:</b>
@@ -9434,7 +9474,9 @@
         <p class="blurb">The Humboldt current runs cold water up a desert coast, and the result is seabirds in numbers that belong at a much higher latitude. Pucusana harbour is forty minutes from Lima and puts <a href="/birds/inca-tern/">Inca Tern</a> and <a href="/birds/humboldt-penguin/">Humboldt Penguin</a> within sight of the quay.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> Lima lies next to the Humboldt current, and seabirds pass the shoreline at Miraflores, Chorillos and Villa beaches and along the Callao waterfront. <a href="/birds/parks/">Parks</a> in the centre of town and at San Isidro, Miraflores and Independencia hold most of the landbirds, while fields, riverine scrub and coastal pools north and south of the city carry the rest.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/inca-tern/">Inca Tern</a>, <a href="/birds/humboldt-penguin/">Humboldt Penguin</a> and <a href="/birds/peruvian-booby/">Peruvian Booby</a> are on site in all twelve months.</li>
+        <li class="where access"><b>Getting there:</b> Boats out to the island offshore can be arranged on the Callao waterfront. Puente San Pedro sits 34 km south of Lima: head south on the Pan American highway, turn off towards the Pachacamac ruins at km 34, turn right before the ruins, cross the highway and scan the fields either side of the bridge. San Antonio lies 70 km southeast along the same highway, and the riverine scrub 1 km west of the village repays a stop. Ventanilla is 35 km northwest of Lima, with good pools beside the road that runs the 3 km to Playa Ventanilla.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/inca-tern/">Inca Tern</a>, <a href="/birds/humboldt-penguin/">Humboldt Penguin</a>, <a href="/birds/peruvian-booby/">Peruvian Booby</a>, <a href="/birds/peruvian-pelican/">Peruvian Pelican</a>, <a href="/birds/guanay-cormorant/">Guanay Cormorant</a>, <a href="/birds/grey-gull/">Grey Gull</a></li>
 
 
@@ -9472,7 +9514,9 @@
         <p class="blurb">The Paracas peninsula is desert running straight into a cold sea, and the Ballestas islands offshore hold guano birds in six figures. <a href="/birds/chilean-flamingo/">Chilean Flamingo</a> winter in the bay, and the whole thing is a national reserve.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> The Paracas peninsula and the Ballestas Islands lie 300 km south of Lima along the Pan American highway. Huge numbers of seabirds breed here and their guano has been collected for fertiliser since Inca times. Acacia scrub grows inland of the shore and reedy water sits at Pisco to the north.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/peruvian-booby/">Peruvian Booby</a>, <a href="/birds/guanay-cormorant/">Guanay Cormorant</a> and <a href="/birds/peruvian-pelican/">Peruvian Pelican</a> are here in every month.</li>
+        <li class="where access"><b>Getting there:</b> Boat trips out to the Ballestas Islands are arranged in Paracas and the best of them runs from the Hotel Paracas, which needs booking in advance. The north end of Paracas Bay can be walked from the hotel. Lagunillas is 15 km south of Paracas and opens up Punta Arquillo and several other headlands that are good for seawatching. The road between the Paracas to Pisco road and the Pan American highway just north of Paracas passes the acacia scrub.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/peruvian-booby/">Peruvian Booby</a>, <a href="/birds/guanay-cormorant/">Guanay Cormorant</a>, <a href="/birds/peruvian-pelican/">Peruvian Pelican</a>, <a href="/birds/chilean-flamingo/">Chilean Flamingo</a>, <a href="/birds/inca-tern/">Inca Tern</a>, <a href="/birds/humboldt-penguin/">Humboldt Penguin</a></li>
 
 
@@ -9512,7 +9556,9 @@
         <p class="blurb">The central highway leaves Lima and climbs to nearly five thousand metres in half a day, and the high plateau at the top holds a grebe that lives on one lake and nowhere else. The Satipo road drops off the far side into cloud forest that was properly surveyed only in the last twenty years.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> The central highway climbs inland from Lima to 4,550 metres before dropping towards the Amazonian lowlands near Pucallpa. Milloc Bog sits below a rise beyond Chinchan and is one of the few known sites for <a href="/birds/diademed-sandpiper-plover/">Diademed Sandpiper-Plover</a>. Lake Junin lies at 4,080 metres with wet fields around its shores, and remnant Polylepis woodland stands on the east side of the road just before La Quinua at km post 320. An hour north of Huanuco the highway enters east Andean slope temperate forest with stands of Chusquea bamboo.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/junin-grebe/">Junin Grebe</a>, <a href="/birds/diademed-sandpiper-plover/">Diademed Sandpiper-Plover</a> and <a href="/birds/white-bellied-cinclodes/">White-bellied Cinclodes</a> are on site in all twelve months.</li>
+        <li class="where access"><b>Getting there:</b> Check the shrubby roadsides at km 70, then stop at San Mateo at km 88 and walk the trails above and below the hotel. Carry on to Casapalca at km 139, turn north off the central highway shortly afterwards to Chinchan and take the rough road towards Marcapomacocha. Ignore the right turn to Marcapomacocha after 28 km and continue to the next rise, with Milloc Bog below it on the right. Walk over to the streams slowly, because this is high altitude birding. For Lake Junin turn off the highway into Junin town, take the road west and then northwest around the southern shore to Ondores, and in Ondores take the north fork closest to the lake.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/junin-grebe/">Junin Grebe</a>, <a href="/birds/diademed-sandpiper-plover/">Diademed Sandpiper-Plover</a>, <a href="/birds/white-bellied-cinclodes/">White-bellied Cinclodes</a>, <a href="/birds/junin-canastero/">Junin Canastero</a>, <a href="/birds/black-breasted-hillstar/">Black-breasted Hillstar</a>, <a href="/birds/eye-ringed-thistletail/">Eye-ringed Thistletail</a></li>
 
 
@@ -9551,7 +9597,9 @@
         <p class="blurb">The Colca canyon is deep enough that condors ride out of it every morning past a viewpoint built for watching them, and the puna between Arequipa and the canyon holds flamingos on salt lakes at four thousand metres.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> Arequipa stands at 2,286 metres on the west Andean slope below the El Misti and Chachani volcanoes. The road northeast crosses boggy ground at Pampa de Torca on its way to the Cruz del Condor, a lookout over Colca canyon where condors roost on the cliffs and rise to eye level on the morning thermals. The Lagunas de Mejia reserve on the coast covers 100 hectares, and its lagoons are the largest permanent water in the 1,500 km of desert that lines the Peruvian coast.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/andean-condor/">Andean Condor</a>, <a href="/birds/andean-flamingo/">Andean Flamingo</a> and <a href="/birds/james-s-flamingo/">James's Flamingo</a> are on site in all twelve months.</li>
+        <li class="where access"><b>Getting there:</b> Take the road northeast out of Arequipa towards Chivay and bird the climb, with the highest point worth a stop. Fork left after Sumbay for Chivay and pull up at the boggy ground at Pampa de Torca just after Viscachani. The Cruz del Condor is some 40 km beyond Chivay, before the village of Cabanaconde. The road west from Arequipa runs to the coast at Mollendo, with Mejia 15 km southeast of it and the reserve a further 6 km on.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/andean-condor/">Andean Condor</a>, <a href="/birds/andean-flamingo/">Andean Flamingo</a>, <a href="/birds/james-s-flamingo/">James's Flamingo</a>, <a href="/birds/giant-hummingbird/">Giant Hummingbird</a>, <a href="/birds/andean-goose/">Andean Goose</a>, <a href="/birds/puna-tinamou/">Puna Tinamou</a></li>
 
 
@@ -9593,7 +9641,9 @@
         <p class="blurb">Titicaca sits at 3,800 metres and holds a flightless grebe found on it and nowhere else. The reed beds along the Puno shore are where it is looked for, from the same boats that visit the floating islands.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> The road up from Arequipa crosses arid cacti-clad hillsides, then farmland, Polylepis woodland and puna before it reaches Lake Salinas at 4,267 metres and goes on to Titicaca. Grassland 2 km south of Pucara, 80 km northeast of Puno, holds <a href="/birds/darwin-s-nothura/">Darwin's Nothura</a> and <a href="/birds/puna-tinamou/">Puna Tinamou</a>.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/titicaca-grebe/">Titicaca Grebe</a>, <a href="/birds/puna-ibis/">Puna Ibis</a> and <a href="/birds/andean-negrito/">Andean Negrito</a> are here in every month.</li>
+        <li class="where access"><b>Getting there:</b> Short-winged Grebe occurs either side of the road that links the Hotel Turista to the shore north of Puno, and it is more reliable about 2 km offshore, where boats can be hired. This is high altitude country and altitude sickness is a real risk on the approach from Moquegua and Arequipa.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/titicaca-grebe/">Titicaca Grebe</a>, <a href="/birds/puna-ibis/">Puna Ibis</a>, <a href="/birds/andean-negrito/">Andean Negrito</a>, <a href="/birds/many-colored-rush-tyrant/">Many-colored Rush Tyrant</a>, <a href="/birds/chilean-flamingo/">Chilean Flamingo</a>, <a href="/birds/plumbeous-rail/">Plumbeous Rail</a></li>
 
 

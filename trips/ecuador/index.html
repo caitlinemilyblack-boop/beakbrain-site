@@ -619,6 +619,28 @@
     /* A bird present all year gets a lighter bar: the point of the column is the
        birds whose window is narrow, and a solid bar on eight rows says nothing. */
     .tg-b.tg-all { background: var(--sage); opacity: .4; }
+    /* The month ruler lives in the table head, which a stacked row cannot see. */
+    .tg-scale { display: none; }
+    /* PAGE-SPEC 4. THE TABLE COULD NOT ANSWER ITS OWN QUESTION ON A PHONE. At 390px the
+       row is 1,022px wide in a 332px window, so a reader saw the bird name and the first
+       weeks of the calendar while Best Window and Where sat entirely off-screen, reachable
+       only by scrolling every row sideways. "Best Month for Each Bird" is exactly the
+       thing that was cut off. Under 760px the row becomes a card: the bird, then the
+       calendar full width with its own month ruler under it, then the window and the
+       places as labelled lines. Nothing scrolls sideways. */
+    @media (max-width: 760px) {
+      .tg-head { display: none; }
+      .tg-row { grid-template-columns: 46px minmax(0, 1fr); gap: 9px 12px; min-width: 0; padding: 14px 0 16px; align-items: start; }
+      .tg-n { align-self: center; font-size: 16.5px; }
+      .tg-mini { grid-column: 1 / -1; height: 20px; }
+      .tg-scale { display: grid; grid-column: 1 / -1; grid-template-columns: repeat(12, 1fr); margin-top: -3px; }
+      .tg-scale span { font-family: var(--body); font-weight: 800; font-size: 10.5px; color: var(--muted); text-align: center; }
+      .tg-w, .tg-p { grid-column: 1 / -1; }
+      .tg-w::before, .tg-p::before { display: block; font-family: var(--body); font-weight: 800; font-size: 10.5px;
+        letter-spacing: .07em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 1px; }
+      .tg-w::before { content: 'Best window'; }
+      .tg-p::before { content: 'Where'; }
+    }
     @media (max-width: 760px) { .targets { padding: 6px 16px; } }
 
     .offitin { margin-top: 10px; padding: 12px 15px; background: color-mix(in srgb, var(--gold) 10%, transparent); border-radius: 12px; font-size: 14px; color: var(--ink); }
@@ -7426,6 +7448,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/1239e5cb3801.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/sword-billed-hummingbird/">Sword-billed Hummingbird</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:41.67%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">June to September</div>
             <div class="tg-p"><a href="#site-quito-yanacocha-and-the-northern-highlands">Quito, Yanacocha and the Northern Highlands</a>, Papallacta</div>
           </div>
@@ -7433,6 +7456,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/6e3dc614e6a8.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/giant-antpitta/">Giant Antpitta</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">All year</div>
             <div class="tg-p">Nanegalito, <a href="#site-mindo-and-the-northwest-slope">Mindo and the Northwest Slope</a></div>
           </div>
@@ -7440,6 +7464,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/andean-cock-of-the-rock/">Andean Cock-of-the-rock</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:66.67%;width:33.33%"></span><span class="tg-b" style="left:0.00%;width:16.67%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">September to February</div>
             <div class="tg-p"><a href="#site-mindo-and-the-northwest-slope">Mindo and the Northwest Slope</a>, Nanegalito</div>
           </div>
@@ -7447,6 +7472,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/andean-condor/">Andean Condor</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:41.67%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">June to September</div>
             <div class="tg-p">Pintag, Papallacta</div>
           </div>
@@ -7454,6 +7480,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/6e3dc614e6a8.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/jocotoco-antpitta/">Jocotoco Antpitta</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">All year</div>
             <div class="tg-p">Valladolid, <a href="#site-loja-podocarpus-and-tapichalaca">Loja, Podocarpus and Tapichalaca</a></div>
           </div>
@@ -7461,6 +7488,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/harpy-eagle/">Harpy Eagle</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Nest-dependent</div>
             <div class="tg-p">Coca, Limoncocha</div>
           </div>
@@ -7468,6 +7496,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/6a48d6e3cd44.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/long-wattled-umbrellabird/">Long-wattled Umbrellabird</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:91.67%;width:8.33%"></span><span class="tg-b" style="left:0.00%;width:41.67%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">December to May</div>
             <div class="tg-p">Quininde, <a href="#site-mindo-and-the-northwest-slope">Mindo and the Northwest Slope</a></div>
           </div>
@@ -7475,6 +7504,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/3c046347ea38.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/plate-billed-mountain-toucan/">Plate-billed Mountain Toucan</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">All year</div>
             <div class="tg-p">Nanegalito, <a href="#site-mindo-and-the-northwest-slope">Mindo and the Northwest Slope</a></div>
           </div>
@@ -7728,7 +7758,9 @@
         <p class="blurb">A volcano with an ice cap, and the grassland around it held as a water reserve for the capital and therefore lightly grazed and open. The birding is done from a road at 4,000 m, and it is the most reliable condor watching in Ecuador.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> Papallacta pass sits at 3,960 metres, 58 km east of Quito, with Polylepis patches and high shrub beside the road and marshes either side of the shrine. Cotopaxi National Park, 65 km south of Quito, covers 34,000 hectares of paramo below the cone of the world's highest active volcano at 5,897 metres, and Laguna de Limpiopungo lies inside it at 3,800 metres.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/andean-condor/">Andean Condor</a>, <a href="/birds/andean-lapwing/">Andean Lapwing</a> and <a href="/birds/black-faced-ibis/">Black-faced Ibis</a> stay through the year.</li>
+        <li class="where access"><b>Getting there:</b> For the pass, drive east from Quito through Pifo and work the roadside Polylepis a few km before the shrine, the marshes north and south of it, the 3 km of scrub down to Papallacta village, the stone bridge just before the village and the Datura gardens in it. For Cotopaxi, head south from Quito on the Pan American highway for 53 km, turn east at the park sign and follow the 12 km to the entrance gate. Take the right fork past the museum and the two campsites, then turn left for Laguna de Limpiopungo, where a trail runs around the right side of the lake. Fit walkers can carry on up to the car park at 4,700 metres and leave the track to cross the paramo on foot, and altitude sickness is a real risk that high.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/andean-condor/">Andean Condor</a>, <a href="/birds/andean-lapwing/">Andean Lapwing</a>, <a href="/birds/black-faced-ibis/">Black-faced Ibis</a>, <a href="/birds/silvery-grebe/">Silvery Grebe</a>, <a href="/birds/ecuadorian-hillstar/">Ecuadorian Hillstar</a>, <a href="/birds/tawny-antpitta/">Tawny Antpitta</a>, <a href="/birds/andean-gull/">Andean Gull</a>, <a href="/birds/torrent-duck/">Torrent Duck</a></li>
 
         <li class="where alsorec"><b>Also recorded in the parks here:</b> <a href="/birds/andean-teal/">Andean Teal</a>, <a href="/birds/black-and-white-seedeater/">Black-and-white Seedeater</a></li>
@@ -7791,7 +7823,9 @@
         <p class="blurb">The road east from Papallacta falls through every band of eastern slope forest in a single morning, and two lodges on it are among the best known in the Neotropics. A resident owl at San Isidro has never been assigned to a species.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> Remnant subtropical forest lines the road between Baeza and Tena and holds the big east Andean tanager flocks. The Cordillera de Guacamayos, a spur of the Andes about 65 km south of Baeza, carries clearings at 1,900 metres, a viewpoint trail at 1,700 metres and a pass with a radio station at 2,250 metres. The Loreto road east of the Baeza to Tena road was built in 1988 and gives rare access to foothill forest on the east Andean slope between 610 and 1,219 metres.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/coppery-chested-jacamar/">Coppery-chested Jacamar</a>, <a href="/birds/wire-crested-thorntail/">Wire-crested Thorntail</a> and <a href="/birds/black-billed-mountain-toucan/">Black-billed Mountain Toucan</a> hold the ground through the year.</li>
+        <li class="where access"><b>Getting there:</b> Anywhere along the Baeza to Tena road can be productive, and the Guacamayos stretch 65 km south of Baeza and 40 km north of Tena is the pick of it. For the Loreto road turn east 43 km north of Tena. Tena is the base for the upper part, especially km 13 to 18 from the Baeza to Tena road, and Coca is the base for the lower road. Look for trails that lead away from the roadside into the forest.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/coppery-chested-jacamar/">Coppery-chested Jacamar</a>, <a href="/birds/wire-crested-thorntail/">Wire-crested Thorntail</a>, <a href="/birds/black-billed-mountain-toucan/">Black-billed Mountain Toucan</a>, <a href="/birds/crested-quetzal/">Crested Quetzal</a>, <a href="/birds/white-bellied-antpitta/">White-bellied Antpitta</a>, <a href="/birds/chestnut-crowned-antpitta/">Chestnut-crowned Antpitta</a>, <a href="/birds/andean-potoo/">Andean Potoo</a>, <a href="/birds/golden-plumed-parakeet/">Golden-plumed Parakeet</a></li>
 
         <li class="where alsorec"><b>Also recorded in the parks here:</b> <a href="/birds/amazonian-grosbeak/">Amazonian Grosbeak</a>, <a href="/birds/amazonian-plain-xenops/">Amazonian Plain Xenops</a></li>
@@ -7861,7 +7895,7 @@
         <li class="where parks"><b>National parks:</b>
           <ul class="stoplist">
             <li><a class="parklink" href="https://www.gob.ec/maae" target="_blank" rel="noopener">Yasuni National Park</a>, The largest protected block in the Ecuadorian Amazon, and among the most species-rich places measured anywhere.</li>
-            <li><a class="parklink" href="https://www.gob.ec/maae" target="_blank" rel="noopener">Cuyabeno Wildlife Reserve</a>, *Igapo* (forest flooded by black-water rivers) on the northern rivers, birded almost entirely by canoe.</li>
+            <li><a class="parklink" href="https://www.gob.ec/maae" target="_blank" rel="noopener">Cuyabeno Wildlife Reserve</a>, <i>Igapo</i> (forest flooded by black-water rivers) on the northern rivers, birded almost entirely by canoe.</li>
           </ul>
         </li>
         <li class="where stops"><b>Stops:</b>
@@ -7965,6 +7999,7 @@
         <p class="blurb">Below the Mindo slope the Choco reaches the coast, and almost all of it has gone to oil palm and cattle. What remains is held in a few private reserves, and it carries birds found nowhere on the east slope at all.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> Remnant west Andean slope subtropical forest stands around the villages of the northwest lowlands between about 450 and 1,100 metres. Over 30 Choco endemics have been recorded here, the best selection at any site in the Choco, among them <a href="/birds/banded-ground-cuckoo/">Banded Ground-Cuckoo</a>, <a href="/birds/orange-fronted-barbet/">Orange-fronted Barbet</a>, <a href="/birds/black-tipped-cotinga/">Black-tipped Cotinga</a>, <a href="/birds/orange-breasted-fruiteater/">Orange-breasted Fruiteater</a> and <a href="/birds/long-wattled-umbrellabird/">Long-wattled Umbrellabird</a>.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/long-wattled-umbrellabird/">Long-wattled Umbrellabird</a>, <a href="/birds/rose-faced-parrot/">Rose-faced Parrot</a> and <a href="/birds/choco-toucan/">Choco Toucan</a> are here in every month.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/banded-ground-cuckoo/">Banded Ground Cuckoo</a>, <a href="/birds/long-wattled-umbrellabird/">Long-wattled Umbrellabird</a>, <a href="/birds/great-green-macaw/">Great Green Macaw</a>, <a href="/birds/rose-faced-parrot/">Rose-faced Parrot</a>, <a href="/birds/choco-toucan/">Choco Toucan</a>, <a href="/birds/pale-mandibled-aracari/">Pale-mandibled Aracari</a>, <a href="/birds/scarlet-breasted-dacnis/">Scarlet-breasted Dacnis</a></li>
 
@@ -8044,7 +8079,9 @@
         <p class="blurb">The Andes fall below 3,000 m here and the wet and dry systems meet across a short distance, which is why the south holds so many birds found in no other part of the country. The Jocotoco Foundation was founded on the discovery of an antpitta at Tapichalaca in 1997.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> Podocarpus National Park covers 146,280 hectares and is one of the richest parks in the world for birds, with some 540 species recorded and a potential list put as high as 800. It protects east Andean slope elfin, temperate and subtropical forest along with upper tropical forest that carries an Amazonian influence. The rough road east from Loja climbs to a pass at 2,850 metres and drops through relatively undisturbed temperate and subtropical forest where some 350 species have been recorded.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/jocotoco-antpitta/">Jocotoco Antpitta</a>, <a href="/birds/bearded-guan/">Bearded Guan</a> and <a href="/birds/white-breasted-parakeet/">White-breasted Parakeet</a> are on site in all twelve months.</li>
+        <li class="where access"><b>Getting there:</b> Loja stands at 2,100 metres and is the base for both ends of the park. For the Cajanuma entrance in the north, head south out of Loja towards Vilcabamba and turn east at the park sign after 11 km, then bird the 8 km track up to the ranger station. The Lagunas del Compadre trail, the short Antpitta loop, the Bosque Nublado loop and the long Mirador trail all lead off the headquarters, where there are cabins. The Bombuscaro entrance in the south is signposted from Zamora, 60 km east of Loja: head towards Romerillos and turn south onto a rough track before the bridge over the Rio Bombuscaro, and that track runs to within 1 km of the park headquarters. On the Loja to Zamora road itself the forest is best between 28 and 40 km from Loja, and landslides close the road from time to time.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/jocotoco-antpitta/">Jocotoco Antpitta</a>, <a href="/birds/bearded-guan/">Bearded Guan</a>, <a href="/birds/white-breasted-parakeet/">White-breasted Parakeet</a>, <a href="/birds/neblina-metaltail/">Neblina Metaltail</a>, <a href="/birds/rainbow-starfrontlet/">Rainbow Starfrontlet</a>, <a href="/birds/coppery-chested-jacamar/">Coppery-chested Jacamar</a>, <a href="/birds/grey-breasted-mountain-toucan/">Grey-breasted Mountain Toucan</a></li>
 
         <li class="where alsorec"><b>Also recorded in the parks here:</b> <a href="/birds/ash-browed-spinetail/">Ash-browed Spinetail</a>, <a href="/birds/ash-colored-tapaculo/">Ash-colored Tapaculo</a>, <a href="/birds/ashy-throated-chlorospingus/">Ashy-throated Chlorospingus</a></li>
@@ -8122,7 +8159,9 @@
         <p class="blurb">The Tumbesian region runs down the coast into Peru and holds more restricted-range birds than anywhere else in Ecuador. Two Jocotoco reserves cover its two halves: humid foothill forest at Buenaventura and dry ceibo woodland at Jorupe.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> Buenaventura sits on the west Andean slope at 914 metres, where remnant Pacific slope upper tropical forest still stands and over 250 species have been recorded, a curious mixture of Choco and Tumbesian endemics. Cerro Blanco in the Chongon hills near Guayaquil protects dry, scrubby deciduous woodland of the kind that once covered much of southwest Ecuador. Machalilla National Park runs to 60,000 hectares and takes in 40,000 hectares of remnant dry and humid forest plus two offshore islands. Arid valleys, woodland and cacti-clad slopes line the road from Zaruma to Catacocha and on south to Celica, where virtually untouched west Andean subtropical and deciduous forest holds over 25 Tumbesian endemics.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/el-oro-parakeet/">El Oro Parakeet</a>, <a href="/birds/grey-cheeked-parakeet/">Grey-cheeked Parakeet</a> and <a href="/birds/blackish-headed-spinetail/">Blackish-headed Spinetail</a> stay through the year.</li>
+        <li class="where access"><b>Getting there:</b> For Buenaventura, head for the shrine at the pass 9 km west of Pinas, and just east of it turn north at the Buenaventura sign onto a dirt road and bird both forks a few hundred metres in. Cerro Blanco lies on the north side of the Guayaquil to Santa Elena road about 15 km west of Guayaquil, and a permit from the cement company that owns the reserve is needed. Machalilla is run from Puerto Lopez, with tracks through dry forest around Los Frailes, a 5 km dirt road to Agua Blanca, a 15 km trail up to humid forest at San Sebastian and more humid forest at Ayampe 19 km south of the town. Boat trips to Isla de la Plata are arranged at the Fundacion Natura museum in Puerto Lopez, the island is two hours out and the crossing can be rough. Around Celica, bird the 30 km road from Catacocha northwest to Lauro Guerrero, the 19 km on to Orianga and the road southwest to Guachanama.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/el-oro-parakeet/">El Oro Parakeet</a>, <a href="/birds/grey-cheeked-parakeet/">Grey-cheeked Parakeet</a>, <a href="/birds/blackish-headed-spinetail/">Blackish-headed Spinetail</a>, <a href="/birds/ochraceous-attila/">Ochraceous Attila</a>, <a href="/birds/grey-breasted-flycatcher/">Grey-breasted Flycatcher</a>, <a href="/birds/pale-mandibled-aracari/">Pale-mandibled Aracari</a></li>
 
 

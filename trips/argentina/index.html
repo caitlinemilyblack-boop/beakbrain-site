@@ -619,6 +619,28 @@
     /* A bird present all year gets a lighter bar: the point of the column is the
        birds whose window is narrow, and a solid bar on eight rows says nothing. */
     .tg-b.tg-all { background: var(--sage); opacity: .4; }
+    /* The month ruler lives in the table head, which a stacked row cannot see. */
+    .tg-scale { display: none; }
+    /* PAGE-SPEC 4. THE TABLE COULD NOT ANSWER ITS OWN QUESTION ON A PHONE. At 390px the
+       row is 1,022px wide in a 332px window, so a reader saw the bird name and the first
+       weeks of the calendar while Best Window and Where sat entirely off-screen, reachable
+       only by scrolling every row sideways. "Best Month for Each Bird" is exactly the
+       thing that was cut off. Under 760px the row becomes a card: the bird, then the
+       calendar full width with its own month ruler under it, then the window and the
+       places as labelled lines. Nothing scrolls sideways. */
+    @media (max-width: 760px) {
+      .tg-head { display: none; }
+      .tg-row { grid-template-columns: 46px minmax(0, 1fr); gap: 9px 12px; min-width: 0; padding: 14px 0 16px; align-items: start; }
+      .tg-n { align-self: center; font-size: 16.5px; }
+      .tg-mini { grid-column: 1 / -1; height: 20px; }
+      .tg-scale { display: grid; grid-column: 1 / -1; grid-template-columns: repeat(12, 1fr); margin-top: -3px; }
+      .tg-scale span { font-family: var(--body); font-weight: 800; font-size: 10.5px; color: var(--muted); text-align: center; }
+      .tg-w, .tg-p { grid-column: 1 / -1; }
+      .tg-w::before, .tg-p::before { display: block; font-family: var(--body); font-weight: 800; font-size: 10.5px;
+        letter-spacing: .07em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 1px; }
+      .tg-w::before { content: 'Best window'; }
+      .tg-p::before { content: 'Where'; }
+    }
     @media (max-width: 760px) { .targets { padding: 6px 16px; } }
 
     .offitin { margin-top: 10px; padding: 12px 15px; background: color-mix(in srgb, var(--gold) 10%, transparent); border-radius: 12px; font-size: 14px; color: var(--ink); }
@@ -5286,6 +5308,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/30b81362722d.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/hooded-grebe/">Hooded Grebe</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:83.33%;width:16.67%"></span><span class="tg-b" style="left:0.00%;width:16.67%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">November to February</div>
             <div class="tg-p">El Calafate</div>
           </div>
@@ -5293,6 +5316,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/3c4326048557.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/magellanic-woodpecker/">Magellanic Woodpecker</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">All year</div>
             <div class="tg-p">Ushuaia</div>
           </div>
@@ -5300,6 +5324,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/09f9f8ac08a6.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/magellanic-penguin/">Magellanic Penguin</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:66.67%;width:33.33%"></span><span class="tg-b" style="left:0.00%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">September to April</div>
             <div class="tg-p">Trelew, Puerto Madryn</div>
           </div>
@@ -5307,6 +5332,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/4abae2dbed79.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/andean-flamingo/">Andean Flamingo</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:83.33%;width:16.67%"></span><span class="tg-b" style="left:0.00%;width:25.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">November to March</div>
             <div class="tg-p">Abra Pampa, La Quiaca</div>
           </div>
@@ -5314,6 +5340,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/0950b7b233b7.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/chaco-owl/">Chaco Owl</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:41.67%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">May to September</div>
             <div class="tg-p">Joaquin V. Gonzalez, Las Lomitas</div>
           </div>
@@ -5321,6 +5348,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/strange-tailed-tyrant/">Strange-tailed Tyrant</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:75.00%;width:25.00%"></span><span class="tg-b" style="left:0.00%;width:16.67%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">October to February</div>
             <div class="tg-p">Mercedes, Colonia Carlos Pellegrini</div>
           </div>
@@ -5328,6 +5356,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/0f1e807066af.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/cordoba-cinclodes/">Cordoba Cinclodes</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:75.00%;width:25.00%"></span><span class="tg-b" style="left:0.00%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">October to April</div>
             <div class="tg-p">Mina Clavero, <a href="#site-cordoba-and-the-central-sierras">Cordoba and the Central Sierras</a></div>
           </div>
@@ -5335,6 +5364,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/4ee70d2904f5.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/black-fronted-piping-guan/">Black-fronted Piping Guan</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">All year</div>
             <div class="tg-p">Puerto Iguazu, San Ignacio</div>
           </div>
@@ -5486,6 +5516,7 @@
         <ul class="wherelist">
         <li class="where habitat"><b>Habitat:</b> Nothofagus forest, lakes and wild coast make up the southern extremity of the country.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/magellanic-woodpecker/">Magellanic Woodpecker</a>, <a href="/birds/kelp-goose/">Kelp Goose</a> and <a href="/birds/flying-steamer-duck/">Flying Steamer Duck</a> stay through the year.</li>
+        <li class="where access"><b>Getting there:</b> Ushuaia is the base. Tierra del Fuego National Park lies 10 km west of the town and the rubbish dump 7 km west is worth a stop on the way. Turn north before the bridge over the Lago Roca outlet and pass the park headquarters for the Lago Roca campsite and cafe, and take the track south just inside the park, before Lago Roca, to reach the bay on the channel shore. The scree slopes around the Martial glacier sit 7 km behind town and are reached by chairlift or a 3 km walk, and Garibaldi pass on Route 3 lies 50 km northeast of Ushuaia. Cruises along the Beagle Channel to the penguin colony near Harberton are run by an agency in Ushuaia.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/magellanic-woodpecker/">Magellanic Woodpecker</a>, <a href="/birds/kelp-goose/">Kelp Goose</a>, <a href="/birds/flying-steamer-duck/">Flying Steamer Duck</a>, <a href="/birds/austral-pygmy-owl/">Austral Pygmy Owl</a>, <a href="/birds/magellanic-penguin/">Magellanic Penguin</a>, <a href="/birds/ruddy-headed-goose/">Ruddy-headed Goose</a></li>
 
         <li class="where alsorec"><b>Also recorded in the parks here:</b> <a href="/birds/blackish-cinclodes/">Blackish Cinclodes</a>, <a href="/birds/fuegian-steamer-duck/">Fuegian Steamer Duck</a>, <a href="/birds/gentoo-penguin/">Gentoo Penguin</a>, <a href="/birds/magellanic-diving-petrel/">Magellanic Diving Petrel</a></li>
@@ -5528,12 +5559,13 @@
         <ul class="wherelist">
         <li class="where habitat"><b>Habitat:</b> Arid, lake-dotted, windswept Patagonian steppe covers over a third of the country, bounded to the west by glaciated mountains, with the Valdes peninsula standing out on the east coast.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/hooded-grebe/">Hooded Grebe</a>, <a href="/birds/elegant-crested-tinamou/">Elegant Crested Tinamou</a> and <a href="/birds/rufous-tailed-plantcutter/">Rufous-tailed Plantcutter</a> are on site in all twelve months.</li>
+        <li class="where access"><b>Getting there:</b> Puerto Madryn and Trelew both make good bases, with the Valdes peninsula to the north and Punta Tombo to the south. The peninsula is a headland 100 km long, and the junction between the main peninsula road and the road to Puerto Piramides repays birding. The observatory sits 5 km from Puerto Piramides, with Punta Norte and Punta Cantor further round. Punta Tombo lies 130 km south of Trelew, and Dos Pozos, 95 km south of Trelew on the way to it, is worth a stop around the two derelict buildings. Glacier National Park is 50 km west of Calafate.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/hooded-grebe/">Hooded Grebe</a>, <a href="/birds/elegant-crested-tinamou/">Elegant Crested Tinamou</a>, <a href="/birds/rufous-tailed-plantcutter/">Rufous-tailed Plantcutter</a>, <a href="/birds/black-necked-swan/">Black-necked Swan</a>, <a href="/birds/magellanic-penguin/">Magellanic Penguin</a>, <a href="/birds/andean-condor/">Andean Condor</a></li>
 
         <li class="where alsorec"><b>Also recorded in the parks here:</b> <a href="/birds/great-shrike-tyrant/">Great Shrike-Tyrant</a>, <a href="/birds/white-browed-ground-tyrant/">White-browed Ground Tyrant</a>, <a href="/birds/chilean-flicker/">Chilean Flicker</a>, <a href="/birds/diuca-finch/">Diuca Finch</a></li>
         <li class="where parks"><b>National parks:</b>
           <ul class="stoplist">
-            <li><a class="parklink" href="https://www.argentina.gob.ar/parquesnacionales" target="_blank" rel="noopener">Los Glaciares National Park</a>, The Perito Moreno glacier and the lenga forest around El Calafate, with Andean Condor over the ice.</li>
+            <li><a class="parklink" href="https://www.argentina.gob.ar/parquesnacionales" target="_blank" rel="noopener">Los Glaciares National Park</a>, The Perito Moreno glacier and the lenga forest around El Calafate, with <a href="/birds/andean-condor/">Andean Condor</a> over the ice.</li>
             <li><a class="parklink" href="https://www.argentina.gob.ar/parquesnacionales" target="_blank" rel="noopener">Nahuel Huapi National Park</a>, Andean lakes and araucaria at Bariloche, and the northern end of the Patagonian forest.</li>
           </ul>
         </li>
@@ -5570,6 +5602,7 @@
         <ul class="wherelist">
         <li class="where habitat"><b>Habitat:</b> Mesquite and quebracho dominate the chaco, though years of degradation have turned much of it to thick thorn scrub that goes by the name El Impenetrable. The east stays wet and relatively wild while the west is dry, and the eastern chaco ends at the Ibera wetlands.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/quebracho-crested-tinamou/">Quebracho Crested Tinamou</a>, <a href="/birds/chaco-owl/">Chaco Owl</a> and <a href="/birds/black-bodied-woodpecker/">Black-bodied Woodpecker</a> stay through the year.</li>
+        <li class="where access"><b>Getting there:</b> From Salta head east 43 km to Route 34 and then turn south. For Palomitas turn east onto a 2 km track just north of the Montenegro sign, then work the main track and the side tracks beyond the village, with the ground 14 km east of Palomitas the best of it. For Joaquin V. Gonzalez continue south past the Palomitas turning for about 50 km, turn east onto Route 16 and carry on roughly 100 km to the town. Just south of it turn northeast onto Route 41 towards Santo Domingo and bird the tracks east after 14 km and 17 km.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/quebracho-crested-tinamou/">Quebracho Crested Tinamou</a>, <a href="/birds/chaco-owl/">Chaco Owl</a>, <a href="/birds/black-bodied-woodpecker/">Black-bodied Woodpecker</a>, <a href="/birds/black-legged-seriema/">Black-legged Seriema</a>, <a href="/birds/crested-gallito/">Crested Gallito</a>, <a href="/birds/solitary-eagle/">Solitary Eagle</a></li>
 
         <li class="where alsorec"><b>Also recorded in the parks here:</b> <a href="/birds/cinereous-tyrant/">Cinereous Tyrant</a>, <a href="/birds/golden-green-woodpecker/">Golden-green Woodpecker</a>, <a href="/birds/little-thornbird/">Little Thornbird</a>, <a href="/birds/saffron-billed-sparrow/">Saffron-billed Sparrow</a></li>
@@ -5653,7 +5686,9 @@
         <p class="blurb">The puna is the high Andes at their driest: cold grassland above 3,500 m with brine lagoons in its hollows, and three flamingo species share them. The road from Jujuy climbs to it in a morning, which is why altitude is the thing to plan around here.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> Lago Pozuelos is a high-altitude Andean lake covering 10,000 hectares at 3,670 metres, and Laguna Larga lies 3 km west of the village of Lagunilla nearby. Ravines, cactus scrub and stands of Polylepis woodland break up the puna around them. Further south the road over the Cuesta del Obispo climbs cacti-clad slopes past the Cumbres del Obispo at 3,500 metres.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/andean-flamingo/">Andean Flamingo</a>, <a href="/birds/giant-coot/">Giant Coot</a> and <a href="/birds/horned-coot/">Horned Coot</a> are here in every month.</li>
+        <li class="where access"><b>Getting there:</b> Head west from Abra Pampa, roughly halfway between Humahuaca and La Quiaca, on the road to Rinconada. For the southern end of Lago Pozuelos turn north onto a 6 km track just past the ranger's house and bridge. Continue west and turn north to Lagunilla on the road to Yoscaba at the next junction, from where a 5 km track runs east to the western shore. Take food, warm clothes and a good sleeping bag to Lagunilla, and beware of soft mud on the approach to the lakes.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/james-s-flamingo/">James's Flamingo</a>, <a href="/birds/andean-flamingo/">Andean Flamingo</a>, <a href="/birds/giant-coot/">Giant Coot</a>, <a href="/birds/horned-coot/">Horned Coot</a>, <a href="/birds/puna-ibis/">Puna Ibis</a>, <a href="/birds/puna-teal/">Puna Teal</a>, <a href="/birds/diademed-sandpiper-plover/">Diademed Sandpiper-Plover</a></li>
 
 
@@ -5733,6 +5768,7 @@
 
         <ul class="wherelist">
         <li class="where habitat"><b>Habitat:</b> Vast wet grassland covers Corrientes, and it holds a number of endangered species.</li>
+        <li class="where access"><b>Getting there:</b> Colonia Carlos Pellegrini is best reached from Mercedes to the south, which has much the better road. The 123 km stretch between Route 14 and the town floods easily. At Pellegrini bird the marsh next to the Centro Turistico on the north side of the road west of the Bailey bridge, the ground opposite on the south side, and the woodland at the end of a track north of the road just east of the bridge. Ituzaingo, west of Posadas, is another base for the fringes of this largely inaccessible region.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/strange-tailed-tyrant/">Strange-tailed Tyrant</a>, <a href="/birds/yellow-cardinal/">Yellow Cardinal</a>, <a href="/birds/black-necked-swan/">Black-necked Swan</a>, <a href="/birds/toco-toucan/">Toco Toucan</a></li>
 
 
@@ -5773,6 +5809,8 @@
 
         <ul class="wherelist">
         <li class="where habitat"><b>Habitat:</b> Rolling grassland and marshy flatland cover much of central Argentina. The east is wet and still relatively wild, and the west is dry and largely given over to agriculture.</li>
+        <li class="where when"><b>When:</b> Punta Rasa is good for migrants in the austral spring through October and November and again in autumn through March and April, and seabirds pass offshore when strong onshore winds blow.</li>
+        <li class="where access"><b>Getting there:</b> The Costanera Sur entrance stands opposite Estados Unidos on the east side of Avenida Antartida Argentina, southeast of the city centre and about 30 minutes walk from it. San Clemente lies 330 km southeast of Buenos Aires, and the birding concentrates on the Punta Rasa peninsula just north of the town. Two km after entering the reserve, take the left fork for 3 km to the biological station, observatory and lighthouse, or the right fork for 4 km to the point. The Campos del Tuyu reserve entrance is on the north side of the road 12 km west of San Clemente, with the reserve itself a further 9 km on, and the canal bridge west of General Lavalle lies 28 km west of San Clemente.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/pampas-meadowlark/">Pampas Meadowlark</a>, <a href="/birds/hudsonian-godwit/">Hudsonian Godwit</a>, <a href="/birds/olrog-s-gull/">Olrog's Gull</a>, <a href="/birds/black-necked-swan/">Black-necked Swan</a>, <a href="/birds/yellow-cardinal/">Yellow Cardinal</a></li>
 
 
@@ -5813,7 +5851,9 @@
         <p class="blurb">The Sierras de Cordoba rise out of the pampas to 2,800 m in the central belt of the country and carry their own endemic. North of them Mar Chiquita is the largest salt lake in South America and holds flamingos and Nearctic shorebirds in six figures.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> West of Cordoba the road to San Luis crosses a grey granite plateau known as the Pampa de Achala, in the Sierra de los Comechingones, a range of rugged hills isolated from the Andes. Laguna Mar Chiquita is a huge salt lake some 200 km northeast of Cordoba and it holds thousands of shorebirds along with masses of waterfowl. Chaco scrub runs alongside the Rio San Antonio at Icho Cruz and north out of La Para.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/andean-condor/">Andean Condor</a>, <a href="/birds/olive-crowned-crescentchest/">Olive-crowned Crescentchest</a> and <a href="/birds/andean-flamingo/">Andean Flamingo</a> are on site in all twelve months. <a href="/birds/cordoba-cinclodes/">Cordoba Cinclodes</a> is away from May to August.</li>
+        <li class="where access"><b>Getting there:</b> <a href="/birds/olrog-s-cinclodes/">Olrog's Cinclodes</a> occurs along the creek beside the Cordoba to Villa Dolores road opposite the Parador El Condor cafe, 84 km southwest of Cordoba, and the old dirt road north from there runs past a radio station with a rocky area of tussock grass 1 km along. At Icho Cruz, walk north through the town and past the campsite to reach 3 km of chaco alongside the Rio San Antonio. Miramar is the best base for Mar Chiquita: turn west 8 km south of the town beside the school and head for the river mouth.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/cordoba-cinclodes/">Cordoba Cinclodes</a>, <a href="/birds/andean-condor/">Andean Condor</a>, <a href="/birds/olive-crowned-crescentchest/">Olive-crowned Crescentchest</a>, <a href="/birds/hudsonian-godwit/">Hudsonian Godwit</a>, <a href="/birds/andean-flamingo/">Andean Flamingo</a></li>
 
         <li class="where alsorec"><b>Also recorded in the parks here:</b> <a href="/birds/andean-swift/">Andean Swift</a>, <a href="/birds/andean-tinamou/">Andean Tinamou</a>, <a href="/birds/black-and-chestnut-warbling-finch/">Black-and-chestnut Warbling Finch</a>, <a href="/birds/brown-capped-tit-spinetail/">Brown-capped Tit-Spinetail</a>, <a href="/birds/cordilleran-canastero/">Cordilleran Canastero</a></li>
@@ -5854,7 +5894,9 @@
         <p class="blurb">The Monte is Argentina's warm desert. It runs along the Andean foot and carries a set of scrub birds shared with nowhere else. Above it the cordillera reaches 6,960 m at Aconcagua, and condors work the ridges.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> Mendoza sits at the foot of the Andes, 1,060 km west of Buenos Aires. Potrerillos is a resort 58 km north of the city on the road to Uspallata and Puente del Inca, with an escarpment above the side road to Chacritas. Laguna Horcones lies inside Aconcagua National Park, 166 km west of Mendoza and below Cerro Aconcagua, the highest mountain in South America at 6,960 metres.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/elegant-crested-tinamou/">Elegant Crested Tinamou</a>, <a href="/birds/andean-condor/">Andean Condor</a> and <a href="/birds/rufous-tailed-plantcutter/">Rufous-tailed Plantcutter</a> are here in every month.</li>
+        <li class="where access"><b>Getting there:</b> For Potrerillos, drive out from Mendoza and turn left just after the river and just before the police station, towards Chacritas, then work the escarpment on the right of that road 2.5 km from the Mendoza to Uspallata road. Laguna Horcones sits 6 km northwest of Puente del Inca at 2,720 metres. Take the track north from the main road a few km west of Puente del Inca, after the bridge over the Rio Horcones, and walk the flat ground west of the track 1 km north of the lake.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/sandy-gallito/">Sandy Gallito</a>, <a href="/birds/salinas-monjita/">Salinas Monjita</a>, <a href="/birds/elegant-crested-tinamou/">Elegant Crested Tinamou</a>, <a href="/birds/andean-condor/">Andean Condor</a>, <a href="/birds/rufous-tailed-plantcutter/">Rufous-tailed Plantcutter</a></li>
 
 
