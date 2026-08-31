@@ -619,6 +619,28 @@
     /* A bird present all year gets a lighter bar: the point of the column is the
        birds whose window is narrow, and a solid bar on eight rows says nothing. */
     .tg-b.tg-all { background: var(--sage); opacity: .4; }
+    /* The month ruler lives in the table head, which a stacked row cannot see. */
+    .tg-scale { display: none; }
+    /* PAGE-SPEC 4. THE TABLE COULD NOT ANSWER ITS OWN QUESTION ON A PHONE. At 390px the
+       row is 1,022px wide in a 332px window, so a reader saw the bird name and the first
+       weeks of the calendar while Best Window and Where sat entirely off-screen, reachable
+       only by scrolling every row sideways. "Best Month for Each Bird" is exactly the
+       thing that was cut off. Under 760px the row becomes a card: the bird, then the
+       calendar full width with its own month ruler under it, then the window and the
+       places as labelled lines. Nothing scrolls sideways. */
+    @media (max-width: 760px) {
+      .tg-head { display: none; }
+      .tg-row { grid-template-columns: 46px minmax(0, 1fr); gap: 9px 12px; min-width: 0; padding: 14px 0 16px; align-items: start; }
+      .tg-n { align-self: center; font-size: 16.5px; }
+      .tg-mini { grid-column: 1 / -1; height: 20px; }
+      .tg-scale { display: grid; grid-column: 1 / -1; grid-template-columns: repeat(12, 1fr); margin-top: -3px; }
+      .tg-scale span { font-family: var(--body); font-weight: 800; font-size: 10.5px; color: var(--muted); text-align: center; }
+      .tg-w, .tg-p { grid-column: 1 / -1; }
+      .tg-w::before, .tg-p::before { display: block; font-family: var(--body); font-weight: 800; font-size: 10.5px;
+        letter-spacing: .07em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 1px; }
+      .tg-w::before { content: 'Best window'; }
+      .tg-p::before { content: 'Where'; }
+    }
     @media (max-width: 760px) { .targets { padding: 6px 16px; } }
 
     .offitin { margin-top: 10px; padding: 12px 15px; background: color-mix(in srgb, var(--gold) 10%, transparent); border-radius: 12px; font-size: 14px; color: var(--ink); }
@@ -3017,6 +3039,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/df453e92599a.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/great-bustard/">Great Bustard</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:16.67%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">March to early April for the lek</div>
             <div class="tg-p">Castro Verde</div>
           </div>
@@ -3024,6 +3047,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/ec665a3b6504.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/little-bustard/">Little Bustard</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:25.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">April to June for display</div>
             <div class="tg-p">Castro Verde and the Alentejo plains</div>
           </div>
@@ -3031,6 +3055,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/spanish-imperial-eagle/">Spanish Imperial Eagle</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Resident</div>
             <div class="tg-p">Alentejo and Tejo Internacional</div>
           </div>
@@ -3038,6 +3063,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/black-winged-kite/">Black-winged Kite</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Resident, visible year round</div>
             <div class="tg-p">Alentejo and Algarve farmland</div>
           </div>
@@ -3045,6 +3071,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/bonelli-s-eagle/">Bonelli's Eagle</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Resident</div>
             <div class="tg-p">Tejo Internacional, Douro Internacional and the Guadiana</div>
           </div>
@@ -3052,6 +3079,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/058c1e5c2d2e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/iberian-magpie/">Iberian Magpie</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Resident, easy year round</div>
             <div class="tg-p">The Alentejo and the south</div>
           </div>
@@ -3059,6 +3087,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/cc2cb9c5b35b.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/red-necked-nightjar/">Red-necked Nightjar</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">May to August</div>
             <div class="tg-p">The Alentejo montado and the Sado cork woods</div>
           </div>
@@ -3066,6 +3095,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/griffon-vulture/">Griffon Vulture</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:41.67%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">All year, best February to June</div>
             <div class="tg-p">The Douro and Tejo Internacional gorges</div>
           </div>
@@ -3198,6 +3228,7 @@
         <p class="blurb"><a href="/birds/greater-flamingo/">Greater Flamingo</a>, Spoonbill, <a href="/birds/caspian-tern/">Caspian Tern</a> and <a href="/birds/audouin-s-gull/">Audouin's Gull</a> are on the water most of the year, and the working salt pans at Castro Marim and Tavira concentrate them. A first Portuguese trip usually starts here because the sites sit close together.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> The Algarve runs about 150 km from Cabo de São Vicente in the west to the Spanish border in the east. Long beaches, coves, estuaries, lagoons, dry heathland and stands of stone pine sit among the resorts and the cultivated valleys behind them. Tidal mudflats, freshwater lagoons and a large reedy lake make up the Ria Formosa marshes west of Faro airport. At Castro Marim on the west bank of the Rio Guadiana the ground is salinas, dry saltmarsh and scrub.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/purple-swamphen/">Purple Swamphen</a>, <a href="/birds/greater-flamingo/">Greater Flamingo</a> and <a href="/birds/eurasian-spoonbill/">Eurasian Spoonbill</a> hold the ground through the year.</li>
         <li class="where access"><b>Getting there:</b> Faro takes the flights and the whole of the best birding sits inside an area about 150 by 200 kilometres. The Algarve itself can be worked on public transport, and the Alentejo needs a vehicle. Roads are poor and the accident rate is the worst in Europe, so the driving wants attention.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/purple-swamphen/">Purple Swamphen</a>, <a href="/birds/greater-flamingo/">Greater Flamingo</a>, <a href="/birds/eurasian-spoonbill/">Eurasian Spoonbill</a>, <a href="/birds/caspian-tern/">Caspian Tern</a>, <a href="/birds/audouin-s-gull/">Audouin's Gull</a>, <a href="/birds/kentish-plover/">Kentish Plover</a>, <a href="/birds/black-winged-stilt/">Black-winged Stilt</a></li>
@@ -8287,7 +8318,9 @@
         <p class="blurb">The Guadiana cuts a gorge through the Alentejo schist and the scarps above Mertola hold <a href="/birds/bonelli-s-eagle/">Bonelli's Eagle</a>, <a href="/birds/egyptian-vulture/">Egyptian Vulture</a>, <a href="/birds/black-stork/">Black Stork</a> and <a href="/birds/blue-rock-thrush/">Blue Rock Thrush</a>. Pulo do Lobo is the set piece. The birding here is cliff work and patience rather than the open sweep of the steppe.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> The Baixo Alentejo around the Guadiana is rolling steppe grassland with rocky limestone outcrops, olive groves, extensive cork oak woods and plantations, and river gorges. The medieval town of Mértola stands on a hilltop high above the Rio Guadiana at the eastern edge of the region. Pulo do Lobo, north of the town, is a gorge with a waterfall in the Guadiana valley.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/bonelli-s-eagle/">Bonelli's Eagle</a>, <a href="/birds/black-stork/">Black Stork</a> and <a href="/birds/blue-rock-thrush/">Blue Rock Thrush</a> stay through the year.</li>
+        <li class="where access"><b>Getting there:</b> Two roads reach the area from the Algarve. One heads north from Faro on the N2 to Almodôvar and then east on the N267 to Mértola. The other runs north from Albufeira to Ourique and then east through Castro Verde to Mértola, which takes one to two hours. Almost any likely looking grassland east of Almodôvar and Castro Verde repays a stop, and the tracks off the N123 two to three kilometres east of Castro Verde have been productive. From Mértola the N265 runs northeast to Serpa.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/bonelli-s-eagle/">Bonelli's Eagle</a>, <a href="/birds/black-stork/">Black Stork</a>, <a href="/birds/blue-rock-thrush/">Blue Rock Thrush</a>, <a href="/birds/black-wheatear/">Black Wheatear</a>, <a href="/birds/great-spotted-cuckoo/">Great Spotted Cuckoo</a>, <a href="/birds/alpine-swift/">Alpine Swift</a>, <a href="/birds/eurasian-eagle-owl/">Eurasian Eagle-Owl</a></li>
 
 
@@ -8477,7 +8510,9 @@
         <p class="blurb">The Douro Internacional is a canyon on the Spanish border with one of Iberia's densest raptor cliffs: <a href="/birds/griffon-vulture/">Griffon Vulture</a>, <a href="/birds/egyptian-vulture/">Egyptian Vulture</a>, <a href="/birds/golden-eagle/">Golden Eagle</a>, <a href="/birds/bonelli-s-eagle/">Bonelli's Eagle</a> and <a href="/birds/black-stork/">Black Stork</a> all on the same rock faces. Miranda do Douro is the base, and the river boat gives the view the road cannot.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> The upper Rio Douro runs through a valley in northeast Portugal along the border with Spain.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/griffon-vulture/">Griffon Vulture</a>, <a href="/birds/golden-eagle/">Golden Eagle</a> and <a href="/birds/red-billed-chough/">Red-billed Chough</a> stay through the year.</li>
+        <li class="where access"><b>Getting there:</b> Bird the valley south of the town of Miranda do Douro, especially where the river turns west.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/griffon-vulture/">Griffon Vulture</a>, <a href="/birds/golden-eagle/">Golden Eagle</a>, <a href="/birds/red-billed-chough/">Red-billed Chough</a>, <a href="/birds/rock-bunting/">Rock Bunting</a>, <a href="/birds/common-rock-thrush/">Common Rock Thrush</a>, <a href="/birds/eurasian-crag-martin/">Eurasian Crag Martin</a>, <a href="/birds/ortolan-bunting/">Ortolan Bunting</a></li>
 
 
@@ -9961,6 +9996,7 @@
 
         <ul class="wherelist">
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/cinereous-vulture/">Cinereous Vulture</a> and <a href="/birds/black-winged-kite/">Black-winged Kite</a> are here in every month. <a href="/birds/woodchat-shrike/">Woodchat Shrike</a> is here from March to August.</li>
+        <li class="where access"><b>Getting there:</b> The birding stretch of the upper Rio Tejo lies about 20 km southeast of Castelo Branco along the border with Spain, and the country east of that town holds the same species.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/cinereous-vulture/">Cinereous Vulture</a>, <a href="/birds/spanish-imperial-eagle/">Spanish Imperial Eagle</a>, <a href="/birds/peregrine-falcon/">Peregrine Falcon</a>, <a href="/birds/black-winged-kite/">Black-winged Kite</a>, <a href="/birds/woodchat-shrike/">Woodchat Shrike</a>, <a href="/birds/european-roller/">European Roller</a>, <a href="/birds/western-orphean-warbler/">Western Orphean Warbler</a></li>
 
 
@@ -10184,6 +10220,7 @@
         <p class="blurb">Portugal's central high country, glacial and granite, tops out at Torre. The birds are the mountain set that the lowlands lack: <a href="/birds/bluethroat/">Bluethroat</a>, <a href="/birds/water-pipit/">Water Pipit</a>, <a href="/birds/alpine-accentor/">Alpine Accentor</a>, Rock Thrush and <a href="/birds/red-billed-chough/">Red-billed Chough</a>. Snow closes the top in winter, and the season here runs late spring to early autumn.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> The Serra da Estrela is the western end of the Central Range, the mountain chain that runs east to west across Iberia and reaches into central Portugal. Its summit stands at 1,993 m and is the highest point in the country.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/rock-sparrow/">Rock Sparrow</a> and <a href="/birds/dartford-warbler/">Dartford Warbler</a> stay through the year. <a href="/birds/northern-wheatear/">Northern Wheatear</a> is away from November to March.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/bluethroat/">Bluethroat</a>, <a href="/birds/water-pipit/">Water Pipit</a>, <a href="/birds/alpine-accentor/">Alpine Accentor</a>, <a href="/birds/northern-wheatear/">Northern Wheatear</a>, <a href="/birds/ring-ouzel/">Ring Ouzel</a>, <a href="/birds/rock-sparrow/">Rock Sparrow</a>, <a href="/birds/dartford-warbler/">Dartford Warbler</a></li>
 
@@ -10612,6 +10649,7 @@
         <p class="blurb">The only national park in Portugal, on the Galician border, and a different country from the Alentejo: oak and pine, granite tors and wet Atlantic weather. <a href="/birds/golden-eagle/">Golden Eagle</a>, <a href="/birds/short-toed-snake-eagle/">Short-toed Snake Eagle</a> and <a href="/birds/iberian-green-woodpecker/">Iberian Green Woodpecker</a>, with a wolf population that occasionally shows.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> The highlands of northern Portugal lie mostly above 400 m and reach 1,256 m at Cabreira in the northwest. These hills and mountains support deciduous forest, heathland and coniferous plantations.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/iberian-green-woodpecker/">Iberian Green Woodpecker</a>, <a href="/birds/common-firecrest/">Common Firecrest</a> and <a href="/birds/tawny-pipit/">Tawny Pipit</a> are here in every month. <a href="/birds/red-backed-shrike/">Red-backed Shrike</a> is here from May to September.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/iberian-green-woodpecker/">Iberian Green Woodpecker</a>, <a href="/birds/eurasian-wryneck/">Eurasian Wryneck</a>, <a href="/birds/common-firecrest/">Common Firecrest</a>, <a href="/birds/red-backed-shrike/">Red-backed Shrike</a>, <a href="/birds/whinchat/">Whinchat</a>, <a href="/birds/tawny-pipit/">Tawny Pipit</a>, <a href="/birds/grey-wagtail/">Grey Wagtail</a></li>
 

@@ -619,6 +619,28 @@
     /* A bird present all year gets a lighter bar: the point of the column is the
        birds whose window is narrow, and a solid bar on eight rows says nothing. */
     .tg-b.tg-all { background: var(--sage); opacity: .4; }
+    /* The month ruler lives in the table head, which a stacked row cannot see. */
+    .tg-scale { display: none; }
+    /* PAGE-SPEC 4. THE TABLE COULD NOT ANSWER ITS OWN QUESTION ON A PHONE. At 390px the
+       row is 1,022px wide in a 332px window, so a reader saw the bird name and the first
+       weeks of the calendar while Best Window and Where sat entirely off-screen, reachable
+       only by scrolling every row sideways. "Best Month for Each Bird" is exactly the
+       thing that was cut off. Under 760px the row becomes a card: the bird, then the
+       calendar full width with its own month ruler under it, then the window and the
+       places as labelled lines. Nothing scrolls sideways. */
+    @media (max-width: 760px) {
+      .tg-head { display: none; }
+      .tg-row { grid-template-columns: 46px minmax(0, 1fr); gap: 9px 12px; min-width: 0; padding: 14px 0 16px; align-items: start; }
+      .tg-n { align-self: center; font-size: 16.5px; }
+      .tg-mini { grid-column: 1 / -1; height: 20px; }
+      .tg-scale { display: grid; grid-column: 1 / -1; grid-template-columns: repeat(12, 1fr); margin-top: -3px; }
+      .tg-scale span { font-family: var(--body); font-weight: 800; font-size: 10.5px; color: var(--muted); text-align: center; }
+      .tg-w, .tg-p { grid-column: 1 / -1; }
+      .tg-w::before, .tg-p::before { display: block; font-family: var(--body); font-weight: 800; font-size: 10.5px;
+        letter-spacing: .07em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 1px; }
+      .tg-w::before { content: 'Best window'; }
+      .tg-p::before { content: 'Where'; }
+    }
     @media (max-width: 760px) { .targets { padding: 6px 16px; } }
 
     .offitin { margin-top: 10px; padding: 12px 15px; background: color-mix(in srgb, var(--gold) 10%, transparent); border-radius: 12px; font-size: 14px; color: var(--ink); }
@@ -5384,6 +5406,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/de76657567f7.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/grey-breasted-spurfowl/">Grey-breasted Spurfowl</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">All year</div>
             <div class="tg-p">Seronera, Fort Ikoma</div>
           </div>
@@ -5391,6 +5414,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/e77f239f8995.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/fischer-s-lovebird/">Fischer's Lovebird</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">All year</div>
             <div class="tg-p">Seronera, Mto wa Mbu</div>
           </div>
@@ -5398,6 +5422,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/9e023e4337ab.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/rufous-tailed-weaver/">Rufous-tailed Weaver</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">All year</div>
             <div class="tg-p">Seronera, Minjingu</div>
           </div>
@@ -5405,6 +5430,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/de76657567f7.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/udzungwa-forest-partridge/">Udzungwa Forest Partridge</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">All year</div>
             <div class="tg-p">Mang'ula, Iringa</div>
           </div>
@@ -5412,6 +5438,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/0950b7b233b7.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/pemba-scops-owl/">Pemba Scops Owl</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:41.67%;width:41.67%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">June to October</div>
             <div class="tg-p">Wete, Chake Chake</div>
           </div>
@@ -5419,6 +5446,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/9e023e4337ab.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/usambara-weaver/">Usambara Weaver</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:41.67%;width:41.67%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">June to October</div>
             <div class="tg-p">Amani, Muheza</div>
           </div>
@@ -5426,6 +5454,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/9f0abe73d61c.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/uluguru-bushshrike/">Uluguru Bushshrike</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">All year</div>
             <div class="tg-p">Morogoro</div>
           </div>
@@ -5433,6 +5462,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/afccd0639f10.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/racket-tailed-roller/">Racket-tailed Roller</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:41.67%;width:41.67%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">June to October</div>
             <div class="tg-p">Iringa, Mikumi</div>
           </div>
@@ -5565,6 +5595,7 @@
         <p class="blurb">The Serengeti is 15,000 square kilometres of grassland with rock islands in it, and the wildebeest move round it in a slow annual circuit. The birding is open-country species and raptors on a scale no other park matches.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> The Serengeti is the second largest national park in Tanzania, a vast expanse of plains carrying wildebeest, zebra, gazelle and flat-topped acacias trimmed by giraffe. The short grass plains of the southeast give way to longer grass and more varied country once you pass Naabi Hill Gate on the road to Seronera in the centre. The terrain turns hilly and rocky in the north, and the west is a mosaic of hills, valleys, rivers, ribbons of riverine forest and plains. There is no fence, and animals graze on both sides of the southeastern boundary.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/grey-breasted-spurfowl/">Grey-breasted Spurfowl</a>, <a href="/birds/rufous-tailed-weaver/">Rufous-tailed Weaver</a> and <a href="/birds/kori-bustard/">Kori Bustard</a> stay through the year.</li>
         <li class="where access"><b>Getting there:</b> Seronera is 300 km northwest of Arusha and the park opens year-round, though the long rains in April and May make some areas difficult. Seronera is the visitor hub, with maps, a shop and guides for hire, and guides can also be taken at the main gates.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/grey-breasted-spurfowl/">Grey-breasted Spurfowl</a>, <a href="/birds/rufous-tailed-weaver/">Rufous-tailed Weaver</a>, <a href="/birds/fischer-s-lovebird/">Fischer's Lovebird</a>, <a href="/birds/kori-bustard/">Kori Bustard</a>, <a href="/birds/secretarybird/">Secretarybird</a>, <a href="/birds/southern-ground-hornbill/">Southern Ground Hornbill</a></li>
@@ -5939,6 +5970,7 @@
 
         <ul class="wherelist">
         <li class="where habitat"><b>Habitat:</b> The park runs from 1,500 metres to over 4,500 and holds three distinct features: the inactive volcano of Mt Meru at 4,566 m, the 3-km Ngurdoto Crater, and the Momela Lakes. The hippo pools at Momela teem with waterbirds and the forest near Momela Gate holds colobus and blue monkeys.</li>
+        <li class="where when"><b>When:</b> The dry season is best for mammals and the wet season is best for the migrating birds.</li>
         <li class="where access"><b>Getting there:</b> The park is 21 km from Arusha. Guides are hired at Momela Gate, which is also where all Mt Meru treks are arranged, or at the main Ngongongare Gate. Lodges sit near the entrance, with camping grounds and two trekkers' bunkers on Mt Meru.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/grey-crowned-crane/">Grey Crowned Crane</a>, <a href="/birds/lesser-flamingo/">Lesser Flamingo</a>, <a href="/birds/hartlaub-s-turaco/">Hartlaub's Turaco</a>, <a href="/birds/ashy-starling/">Ashy Starling</a></li>
 
@@ -5981,7 +6013,9 @@
         <p class="blurb">The Eastern Arc mountains have been forested for perhaps thirty million years without interruption, which is why so much in them lives nowhere else. The East Usambaras at Amani are the most accessible piece and the richest.</p>
 
         <ul class="wherelist">
-
+        <li class="where habitat"><b>Habitat:</b> These mountains stand in northeast Tanzania and divide into the East Usambaras at 1500 m and the West Usambaras at 2250 m, separated by the Lwengera Valley. The forested slopes of both blocks carry many restricted range specialities and four endemics, and <a href="/birds/usambara-akalat/">Usambara Akalat</a> lives nowhere else. The East Usambaras alone hold eleven montane and five lowland forest reserves, and many of the specialities keep to either the montane ground or the lowland ground, so at least three reserves are worth working to see the full set.</li>
+        <li class="where when"><b>When:</b> The northeast is very wet from April to June. The two dry seasons run from January to March and from July to November, and both are the better times to come. Nights in the highlands turn chilly.</li>
+        <li class="where access"><b>Getting there:</b> The 1:50000 maps sold by the Lands Office in Dar es Salaam are the surest way to find the sites. Moustached <a href="/birds/green-tinkerbird/">Green-Tinkerbird</a>, Long-billed Tailorbird, <a href="/birds/dapple-throat/">Dapple-throat</a> and the Uluguru Violet-backed and <a href="/birds/amani-sunbird/">Amani Sunbirds</a> are in the Amani forest reserves in the East Usambaras, and Usambara Eagle-Owl is in the lowland Kambai reserve in the same block. Mazumbai forest reserve near Lushoto in the West Usambaras holds <a href="/birds/usambara-akalat/">Usambara Akalat</a> and <a href="/birds/spot-throat/">Spot-throat</a>, and the University of Morogoro research station there has a good trail. <a href="/birds/usambara-weaver/">Usambara Weaver</a> has been recorded at Mount Nilo in the Lutindi reserve.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/usambara-weaver/">Usambara Weaver</a>, <a href="/birds/usambara-akalat/">Usambara Akalat</a>, <a href="/birds/amani-sunbird/">Amani Sunbird</a>, <a href="/birds/long-billed-forest-warbler/">Long-billed Forest Warbler</a>, <a href="/birds/sharpe-s-akalat/">Sharpe's Akalat</a></li>
 
 

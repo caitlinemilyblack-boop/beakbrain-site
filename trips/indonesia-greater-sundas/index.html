@@ -619,6 +619,28 @@
     /* A bird present all year gets a lighter bar: the point of the column is the
        birds whose window is narrow, and a solid bar on eight rows says nothing. */
     .tg-b.tg-all { background: var(--sage); opacity: .4; }
+    /* The month ruler lives in the table head, which a stacked row cannot see. */
+    .tg-scale { display: none; }
+    /* PAGE-SPEC 4. THE TABLE COULD NOT ANSWER ITS OWN QUESTION ON A PHONE. At 390px the
+       row is 1,022px wide in a 332px window, so a reader saw the bird name and the first
+       weeks of the calendar while Best Window and Where sat entirely off-screen, reachable
+       only by scrolling every row sideways. "Best Month for Each Bird" is exactly the
+       thing that was cut off. Under 760px the row becomes a card: the bird, then the
+       calendar full width with its own month ruler under it, then the window and the
+       places as labelled lines. Nothing scrolls sideways. */
+    @media (max-width: 760px) {
+      .tg-head { display: none; }
+      .tg-row { grid-template-columns: 46px minmax(0, 1fr); gap: 9px 12px; min-width: 0; padding: 14px 0 16px; align-items: start; }
+      .tg-n { align-self: center; font-size: 16.5px; }
+      .tg-mini { grid-column: 1 / -1; height: 20px; }
+      .tg-scale { display: grid; grid-column: 1 / -1; grid-template-columns: repeat(12, 1fr); margin-top: -3px; }
+      .tg-scale span { font-family: var(--body); font-weight: 800; font-size: 10.5px; color: var(--muted); text-align: center; }
+      .tg-w, .tg-p { grid-column: 1 / -1; }
+      .tg-w::before, .tg-p::before { display: block; font-family: var(--body); font-weight: 800; font-size: 10.5px;
+        letter-spacing: .07em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 1px; }
+      .tg-w::before { content: 'Best window'; }
+      .tg-p::before { content: 'Where'; }
+    }
     @media (max-width: 760px) { .targets { padding: 6px 16px; } }
 
     .offitin { margin-top: 10px; padding: 12px 15px; background: color-mix(in srgb, var(--gold) 10%, transparent); border-radius: 12px; font-size: 14px; color: var(--ink); }
@@ -3639,6 +3661,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/a91e1cf9c4e0.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/bali-starling/">Bali Starling</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Present</div>
             <div class="tg-p">Gilimanuk</div>
           </div>
@@ -3646,6 +3669,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/javan-hawk-eagle/">Javan Hawk-Eagle</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:41.67%;width:41.67%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Soaring</div>
             <div class="tg-p">Cibodas</div>
           </div>
@@ -3653,6 +3677,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/de76657567f7.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/salvadori-s-pheasant/">Salvadori's Pheasant</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:41.67%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Best access</div>
             <div class="tg-p">Kersik Tuo</div>
           </div>
@@ -3660,6 +3685,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/e58fde9fe327.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/white-winged-duck/">White-winged Duck</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">On the river</div>
             <div class="tg-p"><a href="#site-way-kambas-and-the-sumatran-lowlands">Way Kambas and the Sumatran lowlands</a></div>
           </div>
@@ -3667,6 +3693,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/f2e71b25e474.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/helmeted-hornbill/">Helmeted Hornbill</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Calling</div>
             <div class="tg-p">Ketambe</div>
           </div>
@@ -3674,6 +3701,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/4ee70d2904f5.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/green-peafowl/">Green Peafowl</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:58.33%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Displaying</div>
             <div class="tg-p">Situbondo</div>
           </div>
@@ -3681,6 +3709,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/storm-s-stork/">Storm's Stork</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">On the river</div>
             <div class="tg-p">Kumai</div>
           </div>
@@ -3688,6 +3717,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/775b82c449c7.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/bornean-bristlehead/">Bornean Bristlehead</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Present</div>
             <div class="tg-p"><a href="#site-balikpapan-sungai-wain-and-east-kalimantan">Balikpapan, Sungai Wain and East Kalimantan</a></div>
           </div>
@@ -3969,6 +3999,7 @@
         <ul class="wherelist">
         <li class="where habitat"><b>Habitat:</b> The far west of the island keeps a remnant of the dry savannah-like forest that once covered the lowlands of west and north Bali, and it is the last refuge of the <a href="/birds/bali-starling/">Bali Starling</a>.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/yellow-vented-bulbul/">Yellow-vented Bulbul</a>, <a href="/birds/bar-winged-prinia/">Bar-winged Prinia</a> and <a href="/birds/cerulean-kingfisher/">Cerulean Kingfisher</a> are on site in all twelve months.</li>
+        <li class="where access"><b>Getting there:</b> The park lies three hours by road from Denpasar and two and a half hours from Lovina, and buses run to Gilimanuk from both. Public minibuses and ojek carry you along the north coast road to the birding sites at Sumber Klampok, Labuhan Lalang and Banyuwedang. The park office is at Cekik, 4 km from Gilimanuk. Park staff lead a level two hour walk from Labuhan Lalang, and a rigorous seven to eight hour trek crosses two ridges from Belimbing Sari down to the same village.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/bali-starling/">Bali Starling</a>, <a href="/birds/java-sparrow/">Java Sparrow</a>, <a href="/birds/javan-kingfisher/">Javan Kingfisher</a>, <a href="/birds/yellow-vented-bulbul/">Yellow-vented Bulbul</a>, <a href="/birds/sunda-pygmy-woodpecker/">Sunda Pygmy Woodpecker</a>, <a href="/birds/bar-winged-prinia/">Bar-winged Prinia</a>, <a href="/birds/cerulean-kingfisher/">Cerulean Kingfisher</a>, <a href="/birds/olive-backed-tailorbird/">Olive-backed Tailorbird</a></li>
 
         <li class="where alsorec"><b>Also recorded in the parks here:</b> <a href="/birds/kamchatka-leaf-warbler/">Kamchatka Leaf Warbler</a>, <a href="/birds/lemon-bellied-white-eye/">Lemon-bellied White-eye</a></li>
@@ -4115,6 +4146,7 @@
 
         <ul class="wherelist">
         <li class="where habitat"><b>Habitat:</b> Low-lying terrain of 3,040 square kilometres is cut by blackwater rivers running down to the Java Sea, and the reserve is best known for rehabilitating confiscated orang-utans.</li>
+        <li class="where access"><b>Getting there:</b> A visit starts at Pangkalanbun, which has daily flights from Jakarta, Pontianak and Banjarmasin, and a chartered taxi runs from the airport to the coastal town of Kumai. Rivers are the travel routes inside the reserve, so most visitors charter a longboat or kelotok in Kumai and live aboard it. A daily public water taxi runs upstream from Kumai as the cheap alternative. At Camp Leakey a 200 m boardwalk leads into an extensive trail system.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/storm-s-stork/">Storm's Stork</a>, <a href="/birds/lesser-adjutant/">Lesser Adjutant</a>, <a href="/birds/stork-billed-kingfisher/">Stork-billed Kingfisher</a>, <a href="/birds/black-and-red-broadbill/">Black-and-red Broadbill</a>, <a href="/birds/hook-billed-bulbul/">Hook-billed Bulbul</a>, <a href="/birds/bornean-black-magpie/">Bornean Black Magpie</a>, <a href="/birds/white-bellied-woodpecker/">White-bellied Woodpecker</a>, <a href="/birds/wrinkled-hornbill/">Wrinkled Hornbill</a></li>
 
 

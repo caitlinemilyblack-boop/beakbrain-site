@@ -619,6 +619,28 @@
     /* A bird present all year gets a lighter bar: the point of the column is the
        birds whose window is narrow, and a solid bar on eight rows says nothing. */
     .tg-b.tg-all { background: var(--sage); opacity: .4; }
+    /* The month ruler lives in the table head, which a stacked row cannot see. */
+    .tg-scale { display: none; }
+    /* PAGE-SPEC 4. THE TABLE COULD NOT ANSWER ITS OWN QUESTION ON A PHONE. At 390px the
+       row is 1,022px wide in a 332px window, so a reader saw the bird name and the first
+       weeks of the calendar while Best Window and Where sat entirely off-screen, reachable
+       only by scrolling every row sideways. "Best Month for Each Bird" is exactly the
+       thing that was cut off. Under 760px the row becomes a card: the bird, then the
+       calendar full width with its own month ruler under it, then the window and the
+       places as labelled lines. Nothing scrolls sideways. */
+    @media (max-width: 760px) {
+      .tg-head { display: none; }
+      .tg-row { grid-template-columns: 46px minmax(0, 1fr); gap: 9px 12px; min-width: 0; padding: 14px 0 16px; align-items: start; }
+      .tg-n { align-self: center; font-size: 16.5px; }
+      .tg-mini { grid-column: 1 / -1; height: 20px; }
+      .tg-scale { display: grid; grid-column: 1 / -1; grid-template-columns: repeat(12, 1fr); margin-top: -3px; }
+      .tg-scale span { font-family: var(--body); font-weight: 800; font-size: 10.5px; color: var(--muted); text-align: center; }
+      .tg-w, .tg-p { grid-column: 1 / -1; }
+      .tg-w::before, .tg-p::before { display: block; font-family: var(--body); font-weight: 800; font-size: 10.5px;
+        letter-spacing: .07em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 1px; }
+      .tg-w::before { content: 'Best window'; }
+      .tg-p::before { content: 'Where'; }
+    }
     @media (max-width: 760px) { .targets { padding: 6px 16px; } }
 
     .offitin { margin-top: 10px; padding: 12px 15px; background: color-mix(in srgb, var(--gold) 10%, transparent); border-radius: 12px; font-size: 14px; color: var(--ink); }
@@ -2132,6 +2154,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/775b82c449c7.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/helmet-vanga/">Helmet Vanga</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:66.67%;width:25.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Best access</div>
             <div class="tg-p">Maroantsetra</div>
           </div>
@@ -2139,6 +2162,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/long-tailed-ground-roller/">Long-tailed Ground Roller</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:66.67%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Calling</div>
             <div class="tg-p"><a href="#site-ifaty-and-the-spiny-forest">Ifaty and the spiny forest</a></div>
           </div>
@@ -2146,6 +2170,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/subdesert-mesite/">Subdesert Mesite</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Present</div>
             <div class="tg-p"><a href="#site-ifaty-and-the-spiny-forest">Ifaty and the spiny forest</a></div>
           </div>
@@ -2153,6 +2178,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/yellow-bellied-sunbird-asity/">Yellow-bellied Sunbird-Asity</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:66.67%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">In colour</div>
             <div class="tg-p"><a href="#site-ranomafana">Ranomafana</a></div>
           </div>
@@ -2160,6 +2186,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/short-legged-ground-roller/">Short-legged Ground Roller</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:75.00%;width:25.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Calling</div>
             <div class="tg-p"><a href="#site-andasibe-mantadia-and-the-eastern-rainforest">Andasibe-Mantadia and the eastern rainforest</a></div>
           </div>
@@ -2167,6 +2194,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/schlegel-s-asity/">Schlegel's Asity</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:66.67%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Displaying</div>
             <div class="tg-p">Ampijoroa</div>
           </div>
@@ -2174,6 +2202,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/madagascar-fish-eagle/">Madagascar Fish Eagle</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Present</div>
             <div class="tg-p">Ampijoroa</div>
           </div>
@@ -2181,6 +2210,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/df453e92599a.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/giant-coua/">Giant Coua</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Present</div>
             <div class="tg-p">Amboasary, Morondava</div>
           </div>
@@ -2575,6 +2605,7 @@
 
         <ul class="wherelist">
         <li class="where habitat"><b>Habitat:</b> Mid-altitude forest on an isolated massif in the far north, high enough above the surrounding dry country to hold its own endemics.</li>
+        <li class="where when"><b>When:</b> September to November, in the austral spring, is the best time to visit Madagascar. Away from the humid eastern escarpment the rainy season usually runs from November to March.</li>
         <li class="where access"><b>Getting there:</b> Reached from Diego Suarez through Joffreville.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/amber-mountain-rock-thrush/">Amber Mountain Rock Thrush</a>, <a href="/birds/madagascar-ibis/">Madagascar Ibis</a>, <a href="/birds/pitta-like-ground-roller/">Pitta-like Ground Roller</a>, <a href="/birds/dark-newtonia/">Dark Newtonia</a>, <a href="/birds/madagascar-scops-owl/">Madagascar Scops Owl</a>, <a href="/birds/madagascar-blue-vanga/">Madagascar Blue Vanga</a>, <a href="/birds/malagasy-green-sunbird/">Malagasy Green Sunbird</a></li>
 
@@ -2610,7 +2641,9 @@
         <p class="blurb">The road north from Morondava passes the baobab avenue, the Kirindy dry forest and two river ferries before it reaches the tsingy at Bekopaka, and it is closed for months of the year. Kirindy is the reliable place for <a href="/birds/giant-coua/">Giant Coua</a> and for the Fosa, and the wetlands and mangroves along this coast hold <a href="/birds/bernier-s-teal/">Bernier's Teal</a> and <a href="/birds/black-winged-stilt/">Black-winged Stilt</a>, both of which are hard anywhere else.</p>
 
         <ul class="wherelist">
-
+        <li class="where habitat"><b>Habitat:</b> The Tsingy de Bemaraha covers 152,000 hectares and is the largest protected area in Madagascar. Its highlight is a vast forest of eroded karst pinnacles, more rugged even than those at Ankarana in the north. Remoteness has kept the records thin, and 53 birds, eight reptiles and six lemurs have been logged so far, among them Decken's sifaka and the grey mouse, fork-marked, grey bamboo, sportive and brown lemurs. Belo-sur-Tsiribihina, the usual starting point for the reserve, sits among the vast marshes, mangroves and barrier islands of the Tsiribihina delta.</li>
+        <li class="where when"><b>When:</b> The reserve can be visited from April to November.</li>
+        <li class="where access"><b>Getting there:</b> Reaching Bekopaka and the Tsingy de Bemaraha independently is very difficult, and in the wet season it is close to impossible. Bekopaka is the nearest village to the reserve, and tours run in from Belo-sur-Tsiribihina or Morondava, some of them taking a canoe trip down the Manambolo River from Bekopaka. Check that the road from Belo to Bekopaka is passable before setting off in any vehicle. Taxis-brousse cover the two to three hours between Belo and Morondava frequently, and Air Mad flies the route occasionally. Independent travellers need a permit from the ANGAP office in Antananarivo. The Petit Tsingy is open and is nearly as good as the Grand Tsingy, which is currently off limits to visitors.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/bernier-s-teal/">Bernier's Teal</a>, <a href="/birds/black-winged-stilt/">Black-winged Stilt</a>, <a href="/birds/malagasy-sacred-ibis/">Malagasy Sacred Ibis</a>, <a href="/birds/sakalava-rail/">Sakalava Rail</a>, <a href="/birds/white-breasted-mesite/">White-breasted Mesite</a>, <a href="/birds/crested-coua/">Crested Coua</a>, <a href="/birds/humblot-s-heron/">Humblot's Heron</a>, <a href="/birds/madagascar-pratincole/">Madagascar Pratincole</a></li>
 
         <li class="where alsorec"><b>Also recorded in the parks here:</b> <a href="/birds/crab-plover/">Crab-plover</a>, <a href="/birds/giant-coua/">Giant Coua</a></li>

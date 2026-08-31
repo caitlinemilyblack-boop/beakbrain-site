@@ -619,6 +619,28 @@
     /* A bird present all year gets a lighter bar: the point of the column is the
        birds whose window is narrow, and a solid bar on eight rows says nothing. */
     .tg-b.tg-all { background: var(--sage); opacity: .4; }
+    /* The month ruler lives in the table head, which a stacked row cannot see. */
+    .tg-scale { display: none; }
+    /* PAGE-SPEC 4. THE TABLE COULD NOT ANSWER ITS OWN QUESTION ON A PHONE. At 390px the
+       row is 1,022px wide in a 332px window, so a reader saw the bird name and the first
+       weeks of the calendar while Best Window and Where sat entirely off-screen, reachable
+       only by scrolling every row sideways. "Best Month for Each Bird" is exactly the
+       thing that was cut off. Under 760px the row becomes a card: the bird, then the
+       calendar full width with its own month ruler under it, then the window and the
+       places as labelled lines. Nothing scrolls sideways. */
+    @media (max-width: 760px) {
+      .tg-head { display: none; }
+      .tg-row { grid-template-columns: 46px minmax(0, 1fr); gap: 9px 12px; min-width: 0; padding: 14px 0 16px; align-items: start; }
+      .tg-n { align-self: center; font-size: 16.5px; }
+      .tg-mini { grid-column: 1 / -1; height: 20px; }
+      .tg-scale { display: grid; grid-column: 1 / -1; grid-template-columns: repeat(12, 1fr); margin-top: -3px; }
+      .tg-scale span { font-family: var(--body); font-weight: 800; font-size: 10.5px; color: var(--muted); text-align: center; }
+      .tg-w, .tg-p { grid-column: 1 / -1; }
+      .tg-w::before, .tg-p::before { display: block; font-family: var(--body); font-weight: 800; font-size: 10.5px;
+        letter-spacing: .07em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 1px; }
+      .tg-w::before { content: 'Best window'; }
+      .tg-p::before { content: 'Where'; }
+    }
     @media (max-width: 760px) { .targets { padding: 6px 16px; } }
 
     .offitin { margin-top: 10px; padding: 12px 15px; background: color-mix(in srgb, var(--gold) 10%, transparent); border-radius: 12px; font-size: 14px; color: var(--ink); }
@@ -3263,6 +3285,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/8c2c1e922eb2.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/standardwing/">Standardwing</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:50.00%;width:41.67%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Lekking</div>
             <div class="tg-p">Sidangoli</div>
           </div>
@@ -3270,6 +3293,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/919504927ea5.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/maleo/">Maleo</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Laying</div>
             <div class="tg-p">Kotamobagu</div>
           </div>
@@ -3277,6 +3301,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/knobbed-hornbill/">Knobbed Hornbill</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">At the figs</div>
             <div class="tg-p">Batuputih</div>
           </div>
@@ -3284,6 +3309,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/27d9475c0fad.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/geomalia/">Geomalia</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:58.33%;width:25.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Best access</div>
             <div class="tg-p">Wuasa</div>
           </div>
@@ -3291,6 +3317,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/cc2cb9c5b35b.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/satanic-nightjar/">Satanic Nightjar</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Calling</div>
             <div class="tg-p">Wuasa</div>
           </div>
@@ -3298,6 +3325,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/1662f4d9bfb4.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/salmon-crested-cockatoo/">Salmon-crested Cockatoo</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Present</div>
             <div class="tg-p">Masohi</div>
           </div>
@@ -3305,6 +3333,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/7f954f11df23.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/ivory-breasted-pitta/">Ivory-breasted Pitta</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Calling</div>
             <div class="tg-p">Sidangoli, Weda</div>
           </div>
@@ -3312,6 +3341,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/058c1e5c2d2e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/banggai-crow/">Banggai Crow</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:58.33%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Crossings settled</div>
             <div class="tg-p">Luwuk</div>
           </div>
@@ -3571,7 +3601,7 @@
         <p class="blurb">Gunung Ambang is a short, steep morning above the village of Modayag and it exists on an itinerary for two birds. <a href="/birds/matinan-blue-flycatcher/">Matinan Blue Flycatcher</a> holds the mossy ridge forest and is found nowhere else, and <a href="/birds/cinnabar-boobook/">Cinnabar Boobook</a> is a small rufous owl of the same altitude. The walk up is on a farm track through clove and vegetable plots before the forest begins.</p>
 
         <ul class="wherelist">
-
+        <li class="where habitat"><b>Habitat:</b> Thermal vents warm patches of open ground at Mount Ambang, and <a href="/birds/maleo/">Maleo</a> have long used them as nesting grounds. Scrub has grown over the nest grounds in recent decades.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/matinan-blue-flycatcher/">Matinan Blue Flycatcher</a>, <a href="/birds/cinnabar-boobook/">Cinnabar Boobook</a>, <a href="/birds/sulawesi-myzomela/">Sulawesi Myzomela</a>, <a href="/birds/scaly-breasted-kingfisher/">Scaly-breasted Kingfisher</a>, <a href="/birds/sulawesi-thrush/">Sulawesi Thrush</a>, <a href="/birds/fiery-browed-starling/">Fiery-browed Starling</a>, <a href="/birds/indonesian-serin/">Indonesian Serin</a></li>
 
 
@@ -3678,6 +3708,7 @@
         <p class="blurb">Halmahera is the Moluccan island every itinerary reaches, and the bird it is sold on is <a href="/birds/standardwing/">Standardwing</a>, a bird-of-paradise whose males gather at dawn in a tall tree and hang from the branches with two long white flags off each wing. The lek above Sidangoli or Foli is walked to before four in the morning. The rest of the list is as good: <a href="/birds/ivory-breasted-pitta/">Ivory-breasted Pitta</a> on the forest floor, <a href="/birds/halmahera-paradise-crow/">Halmahera Paradise-crow</a>, and <a href="/birds/moluccan-owlet-nightjar/">Moluccan Owlet-nightjar</a> on a night walk.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> Tanah Batu Putih is logged and disturbed forest in the hills leading out of Sidangoli, and mangroves and the Akelolo sago swamp lie along the coast below it. The standardwing lek at Labi-labi, on the east side of Kao Bay, sits in limestone forest. On Ternate the emerald crater lake of Tolire Besar is ringed by 50 m cliffs, with the forested slopes of the Gamalama volcano rising behind it.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/standardwing/">Standardwing</a>, <a href="/birds/ivory-breasted-pitta/">Ivory-breasted Pitta</a> and <a href="/birds/halmahera-paradise-crow/">Halmahera Paradise-crow</a> stay through the year.</li>
         <li class="where access"><b>Getting there:</b> Ternate takes the flight and a ferry crosses the narrow strait to Halmahera, where the forest around Kali Batu Putih sits just 8 km from the jetty.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/standardwing/">Standardwing</a>, <a href="/birds/ivory-breasted-pitta/">Ivory-breasted Pitta</a>, <a href="/birds/halmahera-paradise-crow/">Halmahera Paradise-crow</a>, <a href="/birds/moluccan-owlet-nightjar/">Moluccan Owlet-nightjar</a>, <a href="/birds/chattering-lory/">Chattering Lory</a>, <a href="/birds/white-cockatoo/">White Cockatoo</a>, <a href="/birds/halmahera-boobook/">Halmahera Boobook</a>, <a href="/birds/azure-dollarbird/">Azure Dollarbird</a></li>
@@ -3717,6 +3748,7 @@
         <ul class="wherelist">
         <li class="where habitat"><b>Habitat:</b> Seram runs 340 km east to west and is three times the size of Bali. Mangrove and sago swamp, flooded rainforest and high-altitude elfin forest cover it, above an interior of awesome mountains and endless forest.</li>
         <li class="where when"><b>When:</b> The heavy rains fall between April and September.</li>
+        <li class="where access"><b>Getting there:</b> Buses leave Ambon for Saka on the north coast of Seram and take about eight hours, and public speedboats meet them for the two hour run along the coast to Wahai. Wahai is the better of the two park entrances, because the trail up from Mosso on the south coast is punishingly steep. Entering Manusela means expedition trekking with a guide and porters, with days of three to seven hours between villages and worn in boots, a compass and rain gear all essential. Roadside birding is easier: the road from Wahai to Pasahari passes through forest for 10 km and can be walked or covered by chartered bemo.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/salmon-crested-cockatoo/">Salmon-crested Cockatoo</a>, <a href="/birds/purple-naped-lory/">Purple-naped Lory</a>, <a href="/birds/moluccan-king-parrot/">Moluccan King Parrot</a>, <a href="/birds/lazuli-kingfisher/">Lazuli Kingfisher</a>, <a href="/birds/seram-boobook/">Seram Boobook</a>, <a href="/birds/south-moluccan-pitta/">South Moluccan Pitta</a>, <a href="/birds/moluccan-megapode/">Moluccan Megapode</a>, <a href="/birds/wallace-s-fruit-dove/">Wallace's Fruit Dove</a></li>
 
         <li class="where alsorec"><b>Also recorded in the parks here:</b> <a href="/birds/amboyna-cuckoo-dove/">Amboyna Cuckoo-Dove</a>, <a href="/birds/ashy-flowerpecker/">Ashy Flowerpecker</a></li>
@@ -3786,7 +3818,9 @@
         <p class="blurb">This is the leg that needs a boat. The Tanimbar and Kai groups sit closer to Australia than to Java and carry their own endemics on each cluster, and the schooner voyages that reach them also call at Banda Neira, the nutmeg island the Dutch traded Manhattan for. The birding is short, sharp landings rather than days in one forest.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> Yamdena in the Tanimbars holds pristine tropical forest. A forest and grassland mosaic lies behind the southeast coast road, tall forest stands south of the large tidal channel, and mangrove and swamp forest fringes Salwassa Bay on the western seaboard. On the Kai Islands the vegetation is mainly scrub, with good forest remaining on Kai Besar and on the islands of Warbala and Manir. Manuk Island, about 120 km southeast of Banda, carries the largest seabird colony in Indonesia.</li>
         <li class="where when"><b>When:</b> Best from July to December. <a href="/birds/tanimbar-eclectus/">Tanimbar Eclectus</a>, <a href="/birds/banda-sea-pitta/">Banda Sea Pitta</a> and <a href="/birds/banda-myzomela/">Banda Myzomela</a> are here in every month.</li>
+        <li class="where access"><b>Getting there:</b> Merpati flies from Ambon to Banda three mornings a week in an 18 seater with a 10 kg baggage limit, and the Pelni liner Rinjani calls every second week. Yamdena is served by Merpati pioneer flights twice a week to Saumlaki, and travellers have waited days for a seat out again. One road runs along the southeast coast of Yamdena, so arrange a vehicle and driver through your hotel and work the roadside and an old logging track about 20 km out of Saumlaki. Kai Kecil has daily flights to Langgur, and buses and chartered bemos from the Langgur terminal reach the forest trails behind Ohoidertawun beach.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/tanimbar-corella/">Tanimbar Corella</a>, <a href="/birds/tanimbar-megapode/">Tanimbar Megapode</a>, <a href="/birds/tanimbar-eclectus/">Tanimbar Eclectus</a>, <a href="/birds/tanimbar-boobook/">Tanimbar Boobook</a>, <a href="/birds/banda-sea-pitta/">Banda Sea Pitta</a>, <a href="/birds/banda-myzomela/">Banda Myzomela</a>, <a href="/birds/elegant-pitta/">Elegant Pitta</a>, <a href="/birds/wallace-s-owlet-nightjar/">Wallace's Owlet-nightjar</a></li>
 
 
@@ -3822,7 +3856,8 @@
         <p class="blurb">North of Manado the sea carries a line of volcanic islands towards Mindanao, and each of them has kept something. Sangihe's remnant forest on Mount Sahendaruman is one of the most threatened bird habitats on earth, a few hundred hectares holding several birds and nothing else anywhere. Talaud further north is larger and greener, with a rail and a kingfisher of its own.</p>
 
         <ul class="wherelist">
-
+        <li class="where habitat"><b>Habitat:</b> The trail up Mount Awu climbs a ridge with plantations along its top and forest in the valleys on either side. Above Kentuhang the tracks to the crater rim pass through two to three hours of secondary scrub before they enter forest.</li>
+        <li class="where access"><b>Getting there:</b> Merpati flies four times a week from Manado to Naha airport near Tahuna, and passenger ferries leave the harbour every other evening for the 12 hour crossing. For Mount Awu take the bus to Talawid Atas, get off at the school, and pick up the trail that starts between two houses about 100 m along the road. It climbs through plantations for an hour and continues for three to four hours more. Tamoko is five hours by bus from Tahuna, and from Kentuhang two unsurfaced tracks climb steeply to the crater rim.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/talaud-rail/">Talaud Rail</a>, <a href="/birds/sangihe-lilac-kingfisher/">Sangihe Lilac Kingfisher</a>, <a href="/birds/sangihe-hanging-parrot/">Sangihe Hanging Parrot</a>, <a href="/birds/elegant-sunbird/">Elegant Sunbird</a>, <a href="/birds/talaud-kingfisher/">Talaud Kingfisher</a>, <a href="/birds/sangihe-scops-owl/">Sangihe Scops Owl</a>, <a href="/birds/sangihe-whistler/">Sangihe Whistler</a></li>
 
 
@@ -3857,7 +3892,7 @@
         <p class="blurb">The eastern arm of Sulawesi trails off into island groups that were birded seriously only recently, and the results were startling. The <a href="/birds/banggai-crow/">Banggai Crow</a> was known from two specimens taken in 1900 and was rediscovered on Peleng in 2007. The Togian islands have their own boobook and a white-eye, and the Sula group carries a megapode and a pitta. These are pioneering legs and the logistics are the hard part.</p>
 
         <ul class="wherelist">
-
+        <li class="where access"><b>Getting there:</b> The Togian Islands are reached as a stopover on the ferry that crosses Tomini Bay from Poso to Gorontalo.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/banggai-crow/">Banggai Crow</a>, <a href="/birds/togian-boobook/">Togian Boobook</a>, <a href="/birds/sula-megapode/">Sula Megapode</a>, <a href="/birds/sula-pitta/">Sula Pitta</a>, <a href="/birds/banggai-fruit-dove/">Banggai Fruit Dove</a>, <a href="/birds/taliabu-myzomela/">Taliabu Myzomela</a>, <a href="/birds/sula-hanging-parrot/">Sula Hanging Parrot</a>, <a href="/birds/togian-white-eye/">Togian White-eye</a></li>
 
 

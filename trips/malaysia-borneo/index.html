@@ -619,6 +619,28 @@
     /* A bird present all year gets a lighter bar: the point of the column is the
        birds whose window is narrow, and a solid bar on eight rows says nothing. */
     .tg-b.tg-all { background: var(--sage); opacity: .4; }
+    /* The month ruler lives in the table head, which a stacked row cannot see. */
+    .tg-scale { display: none; }
+    /* PAGE-SPEC 4. THE TABLE COULD NOT ANSWER ITS OWN QUESTION ON A PHONE. At 390px the
+       row is 1,022px wide in a 332px window, so a reader saw the bird name and the first
+       weeks of the calendar while Best Window and Where sat entirely off-screen, reachable
+       only by scrolling every row sideways. "Best Month for Each Bird" is exactly the
+       thing that was cut off. Under 760px the row becomes a card: the bird, then the
+       calendar full width with its own month ruler under it, then the window and the
+       places as labelled lines. Nothing scrolls sideways. */
+    @media (max-width: 760px) {
+      .tg-head { display: none; }
+      .tg-row { grid-template-columns: 46px minmax(0, 1fr); gap: 9px 12px; min-width: 0; padding: 14px 0 16px; align-items: start; }
+      .tg-n { align-self: center; font-size: 16.5px; }
+      .tg-mini { grid-column: 1 / -1; height: 20px; }
+      .tg-scale { display: grid; grid-column: 1 / -1; grid-template-columns: repeat(12, 1fr); margin-top: -3px; }
+      .tg-scale span { font-family: var(--body); font-weight: 800; font-size: 10.5px; color: var(--muted); text-align: center; }
+      .tg-w, .tg-p { grid-column: 1 / -1; }
+      .tg-w::before, .tg-p::before { display: block; font-family: var(--body); font-weight: 800; font-size: 10.5px;
+        letter-spacing: .07em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 1px; }
+      .tg-w::before { content: 'Best window'; }
+      .tg-p::before { content: 'Where'; }
+    }
     @media (max-width: 760px) { .targets { padding: 6px 16px; } }
 
     .offitin { margin-top: 10px; padding: 12px 15px; background: color-mix(in srgb, var(--gold) 10%, transparent); border-radius: 12px; font-size: 14px; color: var(--ink); }
@@ -3296,6 +3318,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/775b82c449c7.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/bornean-bristlehead/">Bornean Bristlehead</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Present</div>
             <div class="tg-p">Lahad Datu</div>
           </div>
@@ -3303,6 +3326,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/f2e71b25e474.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/whitehead-s-trogon/">Whitehead's Trogon</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:50.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Present</div>
             <div class="tg-p">Kundasang</div>
           </div>
@@ -3310,6 +3334,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/86d63a6a1ff6.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/whitehead-s-broadbill/">Whitehead's Broadbill</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Present</div>
             <div class="tg-p">Kundasang</div>
           </div>
@@ -3317,6 +3342,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/storm-s-stork/">Storm's Stork</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">On the river</div>
             <div class="tg-p">Sukau</div>
           </div>
@@ -3324,6 +3350,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/7f954f11df23.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/blue-headed-pitta/">Blue-headed Pitta</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:41.67%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Calling</div>
             <div class="tg-p">Lahad Datu</div>
           </div>
@@ -3331,6 +3358,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/f2e71b25e474.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/helmeted-hornbill/">Helmeted Hornbill</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Calling</div>
             <div class="tg-p">Lahad Datu</div>
           </div>
@@ -3338,6 +3366,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/df453e92599a.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/bornean-ground-cuckoo/">Bornean Ground Cuckoo</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Present</div>
             <div class="tg-p"><a href="#site-tabin-and-the-eastern-lowlands">Tabin and the eastern lowlands</a></div>
           </div>
@@ -3345,6 +3374,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/86d63a6a1ff6.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/hose-s-broadbill/">Hose's Broadbill</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Present</div>
             <div class="tg-p">Bario</div>
           </div>
@@ -3519,6 +3549,7 @@
         <ul class="wherelist">
         <li class="where habitat"><b>Habitat:</b> Luxuriant lowland dipterocarp forest, which is what sustains most of Borneo's birdlife and where most of the island's remaining lowland forest survives.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/bornean-bristlehead/">Bornean Bristlehead</a>, <a href="/birds/blue-headed-pitta/">Blue-headed Pitta</a> and <a href="/birds/bornean-banded-pitta/">Bornean Banded Pitta</a> are on site in all twelve months.</li>
+        <li class="where access"><b>Getting there:</b> The <a href="#lodge-borneo-rainforest-lodge-malaysia">Borneo Rainforest Lodge</a> is 97 km west of Lahad Datu by rough road, and the Field Centre is 85 km west, 36 km short of the lodge. Permits, transport and accommodation should all be booked well in advance. Around the lodge, walk the short Danum Trail behind the buildings, the Segama Trail across the suspension bridge and the canopy walkway. From the Field Centre the Rhino Ridge Trail runs 6.4 km, the Elephant Ridge Trail holds two dancing grounds of <a href="/birds/great-argus/">Great Argus</a>, and the Perwina Trail leads on from it.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/bornean-bristlehead/">Bornean Bristlehead</a>, <a href="/birds/blue-headed-pitta/">Blue-headed Pitta</a>, <a href="/birds/bornean-banded-pitta/">Bornean Banded Pitta</a>, <a href="/birds/bornean-crested-fireback/">Bornean Crested Fireback</a>, <a href="/birds/great-argus/">Great Argus</a>, <a href="/birds/helmeted-hornbill/">Helmeted Hornbill</a>, <a href="/birds/bornean-ground-cuckoo/">Bornean Ground Cuckoo</a>, <a href="/birds/white-crowned-shama/">White-crowned Shama</a></li>
 
 
@@ -3553,7 +3584,9 @@
         <p class="blurb">The Kinabatangan is a corridor of forest along a muddy river with oil palm behind it, and that concentration is exactly why the wildlife watching is so good. Boats out of Sukau at first light find all eight Bornean hornbill species over the season, <a href="/birds/storm-s-stork/">Storm's Stork</a> on the snags and <a href="/birds/oriental-darter/">Oriental Darter</a> on the oxbows. It is the easiest big-wildlife river in Asia and its context is uncomfortable.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> Ox-bow lakes and secondary forest line the Kinabatangan. Near Sandakan Bay the river runs out through mangrove-lined creeks and mud flats.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/storm-s-stork/">Storm's Stork</a>, <a href="/birds/rhinoceros-hornbill/">Rhinoceros Hornbill</a> and <a href="/birds/wrinkled-hornbill/">Wrinkled Hornbill</a> are on site in all twelve months.</li>
+        <li class="where access"><b>Getting there:</b> The bridge over the Kinabatangan is an hour by road from Sandakan towards Lahad Datu, and the jungle camp lies an hour downstream from the bridge. The tributaries above Sukau are worked by boat.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/storm-s-stork/">Storm's Stork</a>, <a href="/birds/rhinoceros-hornbill/">Rhinoceros Hornbill</a>, <a href="/birds/wrinkled-hornbill/">Wrinkled Hornbill</a>, <a href="/birds/wreathed-hornbill/">Wreathed Hornbill</a>, <a href="/birds/oriental-darter/">Oriental Darter</a>, <a href="/birds/western-hooded-pitta/">Western Hooded Pitta</a>, <a href="/birds/black-and-red-broadbill/">Black-and-red Broadbill</a>, <a href="/birds/buffy-fish-owl/">Buffy Fish Owl</a></li>
 
 
@@ -3622,7 +3655,8 @@
         <p class="blurb">Sarawak is the half of Malaysian Borneo almost no birding itinerary reaches. Bario in the Kelabit Highlands sits at 1,000 m on a plateau with no road to it, and it holds montane birds that in Sabah need Kinabalu. Bako near Kuching is the opposite: an hour by boat from the city, heath forest and cliff, with proboscis monkeys on the beach.</p>
 
         <ul class="wherelist">
-
+        <li class="where habitat"><b>Habitat:</b> Bako is a small rugged headland of 27 sq km, 37 km northeast of Kuching, and it carries a variety of habitats where shore and lowland forest birds occur side by side. Gunung Mulu to the northeast is a land of limestone rising to 2,376 m, with pinnacles standing high above the forest and the most extensive cave system on earth beneath it.</li>
+        <li class="where access"><b>Getting there:</b> The Bako headquarters is at Telok Assam, 30 minutes by boat from Kampung Bako, which is 45 minutes by road from Kuching. Permits and accommodation are booked in advance in Kuching. An elevated boardwalk runs just north of Telok Assam, Telok Delima is an hour's walk south, and the 5 km Lintang Loop is the best of the 30 km of marked trails because it crosses most of the habitats.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/bornean-barbet/">Bornean Barbet</a>, <a href="/birds/dulit-frogmouth/">Dulit Frogmouth</a>, <a href="/birds/hose-s-broadbill/">Hose's Broadbill</a>, <a href="/birds/blue-banded-pitta/">Blue-banded Pitta</a>, <a href="/birds/black-oriole/">Black Oriole</a>, <a href="/birds/bornean-bulbul/">Bornean Bulbul</a>, <a href="/birds/bornean-whistler/">Bornean Whistler</a>, <a href="/birds/mountain-barbet/">Mountain Barbet</a></li>
 
         <li class="where alsorec"><b>Also recorded in the parks here:</b> <a href="/birds/black-backed-dwarf-kingfisher/">Black-backed Dwarf Kingfisher</a>, <a href="/birds/blue-and-white-flycatcher/">Blue-and-white Flycatcher</a></li>

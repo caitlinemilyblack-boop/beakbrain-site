@@ -619,6 +619,28 @@
     /* A bird present all year gets a lighter bar: the point of the column is the
        birds whose window is narrow, and a solid bar on eight rows says nothing. */
     .tg-b.tg-all { background: var(--sage); opacity: .4; }
+    /* The month ruler lives in the table head, which a stacked row cannot see. */
+    .tg-scale { display: none; }
+    /* PAGE-SPEC 4. THE TABLE COULD NOT ANSWER ITS OWN QUESTION ON A PHONE. At 390px the
+       row is 1,022px wide in a 332px window, so a reader saw the bird name and the first
+       weeks of the calendar while Best Window and Where sat entirely off-screen, reachable
+       only by scrolling every row sideways. "Best Month for Each Bird" is exactly the
+       thing that was cut off. Under 760px the row becomes a card: the bird, then the
+       calendar full width with its own month ruler under it, then the window and the
+       places as labelled lines. Nothing scrolls sideways. */
+    @media (max-width: 760px) {
+      .tg-head { display: none; }
+      .tg-row { grid-template-columns: 46px minmax(0, 1fr); gap: 9px 12px; min-width: 0; padding: 14px 0 16px; align-items: start; }
+      .tg-n { align-self: center; font-size: 16.5px; }
+      .tg-mini { grid-column: 1 / -1; height: 20px; }
+      .tg-scale { display: grid; grid-column: 1 / -1; grid-template-columns: repeat(12, 1fr); margin-top: -3px; }
+      .tg-scale span { font-family: var(--body); font-weight: 800; font-size: 10.5px; color: var(--muted); text-align: center; }
+      .tg-w, .tg-p { grid-column: 1 / -1; }
+      .tg-w::before, .tg-p::before { display: block; font-family: var(--body); font-weight: 800; font-size: 10.5px;
+        letter-spacing: .07em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 1px; }
+      .tg-w::before { content: 'Best window'; }
+      .tg-p::before { content: 'Where'; }
+    }
     @media (max-width: 760px) { .targets { padding: 6px 16px; } }
 
     .offitin { margin-top: 10px; padding: 12px 15px; background: color-mix(in srgb, var(--gold) 10%, transparent); border-radius: 12px; font-size: 14px; color: var(--ink); }
@@ -2790,6 +2812,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/df453e92599a.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/great-bustard/">Great Bustard</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:25.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Resident, display in spring</div>
             <div class="tg-p">Parndorfer Platte and the Hansag</div>
           </div>
@@ -2797,6 +2820,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/0950b7b233b7.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/ural-owl/">Ural Owl</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Resident, calling from late winter</div>
             <div class="tg-p">Biosphere Park Wienerwald</div>
           </div>
@@ -2804,6 +2828,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/3c4326048557.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/white-backed-woodpecker/">White-backed Woodpecker</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Resident, drumming from February</div>
             <div class="tg-p">Kalkalpen and the Reichraminger Hintergebirge</div>
           </div>
@@ -2811,6 +2836,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/6b65b8d99927.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/red-footed-falcon/">Red-footed Falcon</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:41.67%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Summer visitor, May to August</div>
             <div class="tg-p">The Seewinkel and Parndorf Plain</div>
           </div>
@@ -2818,6 +2844,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/6b65b8d99927.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/saker-falcon/">Saker Falcon</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Resident</div>
             <div class="tg-p">The Seewinkel and Parndorf Plain</div>
           </div>
@@ -2825,6 +2852,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/bearded-vulture/">Bearded Vulture</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Resident, best in settled weather</div>
             <div class="tg-p">Hohe Tauern and the Tyrolean Alps</div>
           </div>
@@ -2832,6 +2860,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/b0bb4d827272.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/alpine-accentor/">Alpine Accentor</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:50.00%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">High ground in summer, lower in winter</div>
             <div class="tg-p">The Grossglockner and the Tyrolean tops</div>
           </div>
@@ -2839,6 +2868,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/ae798de40aa3.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/eurasian-spoonbill/">Eurasian Spoonbill</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:41.67%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Breeding season, April to August</div>
             <div class="tg-p">The Neusiedler See soda pans</div>
           </div>
@@ -3095,7 +3125,9 @@
         <p class="blurb">The storks nest in the crowns of the oaks rather than on roofs, which is what makes the colony unusual as well as large. <a href="/birds/black-stork/">Black Stork</a>, <a href="/birds/white-tailed-eagle/">White-tailed Eagle</a> and the woodpeckers use the floodplain behind, and it is forty minutes from Vienna.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> Seasonally flooded meadows and damp deciduous woods run alongside the River March. The 800 ha WWF reserve at Marchegg lies 40 km northeast of Vienna, and <a href="/birds/black-stork/">Black Stork</a>, <a href="/birds/collared-flycatcher/">Collared Flycatcher</a> and Eurasian <a href="/birds/river-warbler/">River Warbler</a> all breed within it.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/middle-spotted-woodpecker/">Middle Spotted Woodpecker</a> and <a href="/birds/common-kingfisher/">Common Kingfisher</a> are here in every month.</li>
+        <li class="where access"><b>Getting there:</b> Marchegg sits on Route 49. A track leaves the north end of the village and runs east to the reserve car park, and <a href="/birds/collared-flycatcher/">Collared Flycatcher</a> often shows along that entrance track. A walk north from the car park along the floodbank covers the ground for <a href="/birds/black-stork/">Black Stork</a> and Eurasian <a href="/birds/river-warbler/">River Warbler</a>.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/white-stork/">White Stork</a>, <a href="/birds/black-stork/">Black Stork</a>, <a href="/birds/middle-spotted-woodpecker/">Middle Spotted Woodpecker</a>, <a href="/birds/collared-flycatcher/">Collared Flycatcher</a>, <a href="/birds/red-breasted-flycatcher/">Red-breasted Flycatcher</a>, <a href="/birds/common-kingfisher/">Common Kingfisher</a>, <a href="/birds/lesser-spotted-eagle/">Lesser Spotted Eagle</a></li>
 
 
@@ -4549,7 +4581,9 @@
         <p class="blurb">The limestone hills southwest of Vienna, and the Wienerwald biosphere park where <a href="/birds/ural-owl/">Ural Owl</a> was reintroduced. Rax and Schneeberg both top two thousand metres and give the Alpine species on a cable car ride rather than a two-day walk.</p>
 
         <ul class="wherelist">
-
+        <li class="where habitat"><b>Habitat:</b> The high Eastern Austrian Alps rise southwest of Vienna and hold <a href="/birds/rock-ptarmigan/">Rock Ptarmigan</a>, <a href="/birds/white-winged-snowfinch/">White-winged Snowfinch</a>, <a href="/birds/alpine-accentor/">Alpine Accentor</a> and <a href="/birds/citril-finch/">Citril Finch</a> alongside <a href="/birds/golden-eagle/">Golden Eagle</a>, <a href="/birds/black-woodpecker/">Black Woodpecker</a>, Eurasian Nutcracker, Yellow-billed Chough and <a href="/birds/eurasian-crag-martin/">Eurasian Crag-Martin</a>. The Schneeberg massif stands southwest of the forested limestone outcrop of Hohe Wand and gives up the same high-altitude specialities more readily.</li>
+        <li class="where when"><b>When:</b> Late May to early June is the peak of the breeding season and a good time for alpine flowers.</li>
+        <li class="where access"><b>Getting there:</b> The high Eastern Austrian Alps lie within a couple of hours of Vienna by road and rail. A rack and pinion railway climbs from Puchberg to a top station at about 2000 m in an hour and a half, and the birding runs from there up to and around the summit some 600 m higher.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/ural-owl/">Ural Owl</a>, <a href="/birds/eurasian-pygmy-owl/">Eurasian Pygmy Owl</a>, <a href="/birds/boreal-owl/">Boreal Owl</a>, <a href="/birds/ring-ouzel/">Ring Ouzel</a>, <a href="/birds/water-pipit/">Water Pipit</a>, <a href="/birds/alpine-swift/">Alpine Swift</a>, <a href="/birds/rock-bunting/">Rock Bunting</a></li>
 
 
@@ -8013,7 +8047,9 @@
         <p class="blurb">Ehrwald is the base, and the cable car reaches <a href="/birds/alpine-accentor/">Alpine Accentor</a> and <a href="/birds/wallcreeper/">Wallcreeper</a> ground before the day warms. The Karwendel behind holds the same set for anyone willing to walk in.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> The mountains around Innsbruck carry <a href="/birds/alpine-swift/">Alpine Swift</a>, <a href="/birds/white-winged-snowfinch/">White-winged Snowfinch</a>, <a href="/birds/alpine-accentor/">Alpine Accentor</a> and <a href="/birds/citril-finch/">Citril Finch</a>. The Karwendel reserve covers 720 sq km and rises to 2700 m at Birkkarspitze, between the A12 and the German border to the north.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/wallcreeper/">Wallcreeper</a> and <a href="/birds/northern-nutcracker/">Northern Nutcracker</a> hold the ground through the year.</li>
+        <li class="where access"><b>Getting there:</b> Numerous minor roads run into the Karwendel reserve. The slopes above Achensee, the glacial lake east of the reserve, have also been productive, and a cable car serves the high tops at Penkenbahn.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/wallcreeper/">Wallcreeper</a>, <a href="/birds/northern-nutcracker/">Northern Nutcracker</a>, <a href="/birds/black-grouse/">Black Grouse</a>, <a href="/birds/rock-partridge/">Rock Partridge</a>, <a href="/birds/rock-ptarmigan/">Rock Ptarmigan</a>, <a href="/birds/eurasian-crag-martin/">Eurasian Crag Martin</a>, <a href="/birds/red-billed-chough/">Red-billed Chough</a></li>
 
 
@@ -8494,6 +8530,7 @@
         <ul class="wherelist">
         <li class="where habitat"><b>Habitat:</b> The small Rhein Delta at the southeast end of Lake Constance is one of the very few lowlands in the country.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/great-crested-grebe/">Great Crested Grebe</a>, <a href="/birds/common-pochard/">Common Pochard</a> and <a href="/birds/tufted-duck/">Tufted Duck</a> are on site in all twelve months.</li>
+        <li class="where access"><b>Getting there:</b> The east end of the Old Rhein is reached through the village of Fussach and the west end through Gaissau, where the road runs down to the Seerestaurant on the lakeshore and gives a good place to scan the water. East of the restaurant a dyke separates Bodensee from the delta and runs alongside Fussacher Bucht, a large bay worth a thorough scan. The long spits that push into the lake from the ends of the Old and New Rhein repay a walk. The cliffs behind Dornbirn hold <a href="/birds/eurasian-eagle-owl/">Eurasian Eagle-Owl</a> and <a href="/birds/wallcreeper/">Wallcreeper</a>, and the road up to Ebnit reaches the subalpine zone above 1000 m where Three-toed Woodpecker occurs.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/great-crested-grebe/">Great Crested Grebe</a>, <a href="/birds/common-pochard/">Common Pochard</a>, <a href="/birds/tufted-duck/">Tufted Duck</a>, <a href="/birds/common-goldeneye/">Common Goldeneye</a>, <a href="/birds/water-rail/">Water Rail</a>, <a href="/birds/bluethroat/">Bluethroat</a>, <a href="/birds/common-reed-warbler/">Common Reed Warbler</a></li>
 
 

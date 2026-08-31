@@ -619,6 +619,28 @@
     /* A bird present all year gets a lighter bar: the point of the column is the
        birds whose window is narrow, and a solid bar on eight rows says nothing. */
     .tg-b.tg-all { background: var(--sage); opacity: .4; }
+    /* The month ruler lives in the table head, which a stacked row cannot see. */
+    .tg-scale { display: none; }
+    /* PAGE-SPEC 4. THE TABLE COULD NOT ANSWER ITS OWN QUESTION ON A PHONE. At 390px the
+       row is 1,022px wide in a 332px window, so a reader saw the bird name and the first
+       weeks of the calendar while Best Window and Where sat entirely off-screen, reachable
+       only by scrolling every row sideways. "Best Month for Each Bird" is exactly the
+       thing that was cut off. Under 760px the row becomes a card: the bird, then the
+       calendar full width with its own month ruler under it, then the window and the
+       places as labelled lines. Nothing scrolls sideways. */
+    @media (max-width: 760px) {
+      .tg-head { display: none; }
+      .tg-row { grid-template-columns: 46px minmax(0, 1fr); gap: 9px 12px; min-width: 0; padding: 14px 0 16px; align-items: start; }
+      .tg-n { align-self: center; font-size: 16.5px; }
+      .tg-mini { grid-column: 1 / -1; height: 20px; }
+      .tg-scale { display: grid; grid-column: 1 / -1; grid-template-columns: repeat(12, 1fr); margin-top: -3px; }
+      .tg-scale span { font-family: var(--body); font-weight: 800; font-size: 10.5px; color: var(--muted); text-align: center; }
+      .tg-w, .tg-p { grid-column: 1 / -1; }
+      .tg-w::before, .tg-p::before { display: block; font-family: var(--body); font-weight: 800; font-size: 10.5px;
+        letter-spacing: .07em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 1px; }
+      .tg-w::before { content: 'Best window'; }
+      .tg-p::before { content: 'Where'; }
+    }
     @media (max-width: 760px) { .targets { padding: 6px 16px; } }
 
     .offitin { margin-top: 10px; padding: 12px 15px; background: color-mix(in srgb, var(--gold) 10%, transparent); border-radius: 12px; font-size: 14px; color: var(--ink); }
@@ -2886,6 +2908,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/3237cadd96d2.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/sarus-crane/">Sarus Crane</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Present</div>
             <div class="tg-p"><a href="#site-bharatpur-and-the-keoladeo-wetland">Bharatpur and the Keoladeo wetland</a></div>
           </div>
@@ -2893,6 +2916,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/df453e92599a.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/great-indian-bustard/">Great Indian Bustard</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:41.67%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Displaying</div>
             <div class="tg-p">Solapur</div>
           </div>
@@ -2900,6 +2924,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/27d9475c0fad.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/grey-hypocolius/">Grey Hypocolius</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:83.33%;width:16.67%"></span><span class="tg-b" style="left:0.00%;width:25.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Wintering</div>
             <div class="tg-p">Bhuj</div>
           </div>
@@ -2907,6 +2932,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/indian-skimmer/">Indian Skimmer</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Breeding</div>
             <div class="tg-p">Sawai Madhopur</div>
           </div>
@@ -2914,6 +2940,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/df453e92599a.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/lesser-florican/">Lesser Florican</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:50.00%;width:25.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Displaying</div>
             <div class="tg-p">Solapur</div>
           </div>
@@ -2921,6 +2948,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/indian-vulture/">Indian Vulture</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:91.67%;width:8.33%"></span><span class="tg-b" style="left:0.00%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Nesting</div>
             <div class="tg-p">Sawai Madhopur</div>
           </div>
@@ -2928,6 +2956,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/f2e71b25e474.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/malabar-pied-hornbill/">Malabar Pied Hornbill</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Present</div>
             <div class="tg-p">Madhai</div>
           </div>
@@ -2935,6 +2964,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/73ddbe6fa51c.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/painted-sandgrouse/">Painted Sandgrouse</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">At water</div>
             <div class="tg-p">Sawai Madhopur</div>
           </div>
@@ -3069,6 +3099,7 @@
         <ul class="wherelist">
         <li class="where habitat"><b>Habitat:</b> A 29-square-kilometre oasis of shallow lakes, the jheels, ringed by woodland, savanna and scrub. It sits at the edge of the heavily cultivated Gangetic Plain, and over 400 species have been recorded.</li>
         <li class="where when"><b>When:</b> The winter months, November to March, are when the wetlands fill. About 180 species in a day is possible then, with masses of waterbirds and over 25 raptors.</li>
+        <li class="where access"><b>Getting there:</b> The town of Bharatpur is reached by road and rail, 177 km south of Delhi and 50 km west of Agra. The reserve lies a couple of kilometres outside the town and is best explored by bicycle, which can be hired in town or at some of the lodges nearby. Guides are available and the best of them know where to find the specialities, above all the nightbirds.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/sarus-crane/">Sarus Crane</a>, <a href="/birds/painted-stork/">Painted Stork</a>, <a href="/birds/asian-openbill/">Asian Openbill</a>, <a href="/birds/indian-courser/">Indian Courser</a>, <a href="/birds/sirkeer-malkoha/">Sirkeer Malkoha</a>, <a href="/birds/dusky-eagle-owl/">Dusky Eagle-Owl</a>, <a href="/birds/bar-headed-goose/">Bar-headed Goose</a>, <a href="/birds/indian-spotted-eagle/">Indian Spotted Eagle</a></li>
 
 
@@ -3102,7 +3133,8 @@
         <p class="blurb">Ranthambhore is a tiger park with good birding attached rather than the other way round, and the game-drive format is what it is. The lakes below the fort hold <a href="/birds/painted-stork/">Painted Stork</a> and <a href="/birds/indian-spot-billed-duck/">Indian Spot-billed Duck</a>, the dry forest carries <a href="/birds/painted-sandgrouse/">Painted Sandgrouse</a> and <a href="/birds/indian-vulture/">Indian Vulture</a>, and the Chambal river north of it is the reason to add a day: <a href="/birds/indian-skimmer/">Indian Skimmer</a> breeds on its sandbars and almost nowhere else.</p>
 
         <ul class="wherelist">
-
+        <li class="where habitat"><b>Habitat:</b> Dry deciduous forests and grasslands cover this large park of 400 sq km in eastern Rajasthan.</li>
+        <li class="where access"><b>Getting there:</b> Ranthambore is reached by road from Sawai Madhopur, which is connected to Delhi by rail. Access within the reserve is limited to expensive vehicles, so many birders stay in Sawai Madhopur, hire bicycles and work the fringes, where many of the best birds occur. The entrance road and the fort complex near the reserve headquarters are the best sites outside the park.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/indian-skimmer/">Indian Skimmer</a>, <a href="/birds/painted-sandgrouse/">Painted Sandgrouse</a>, <a href="/birds/indian-vulture/">Indian Vulture</a>, <a href="/birds/indian-spot-billed-duck/">Indian Spot-billed Duck</a>, <a href="/birds/brown-fish-owl/">Brown Fish Owl</a>, <a href="/birds/rufous-treepie/">Rufous Treepie</a>, <a href="/birds/indian-courser/">Indian Courser</a>, <a href="/birds/indian-stone-curlew/">Indian Stone-curlew</a></li>
 
 
@@ -3136,7 +3168,9 @@
         <p class="blurb">Kutch is India's Central Asian corner. The Banni grasslands hold <a href="/birds/grey-hypocolius/">Grey Hypocolius</a>, a bird whose whole family has one member and whose nearest population is in Iran, and the Naliya plains carry <a href="/birds/asian-houbara/">Asian Houbara</a> and <a href="/birds/white-naped-tit/">White-naped Tit</a>. The Little Rann to the east is a salt flat with wild ass on it and flamingo colonies at its edge.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> The Rann of Kutch is a vast, shallow inland lake. Much of it has dried out by February and March, and the shallow lagoons that remain still hold wintering wetland birds.</li>
         <li class="where when"><b>When:</b> Best from September to April. <a href="/birds/sykes-s-nightjar/">Sykes's Nightjar</a>, <a href="/birds/greater-flamingo/">Greater Flamingo</a> and <a href="/birds/indian-courser/">Indian Courser</a> hold the ground through the year.</li>
+        <li class="where access"><b>Getting there:</b> The Rann is three hours by road from Ahmadabad. The monsoon between June and September closes it off.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/grey-hypocolius/">Grey Hypocolius</a>, <a href="/birds/asian-houbara/">Asian Houbara</a>, <a href="/birds/white-naped-tit/">White-naped Tit</a>, <a href="/birds/sykes-s-nightjar/">Sykes's Nightjar</a>, <a href="/birds/greater-flamingo/">Greater Flamingo</a>, <a href="/birds/marshall-s-iora/">Marshall's Iora</a>, <a href="/birds/sykes-s-lark/">Sykes's Lark</a>, <a href="/birds/indian-courser/">Indian Courser</a></li>
 
 
@@ -3171,7 +3205,9 @@
         <p class="blurb">The central Indian forests are tiger parks that also hold the peninsular birds, and Satpura is the one where you can walk. Boat, canoe and foot safaris are allowed there and nowhere else in a major tiger reserve, which changes the birding completely. <a href="/birds/malabar-pied-hornbill/">Malabar Pied Hornbill</a>, <a href="/birds/indian-scops-owl/">Indian Scops Owl</a> and <a href="/birds/white-naped-woodpecker/">White-naped Woodpecker</a> are on the walks, and Kanha's meadows carry the open-country raptors.</p>
 
         <ul class="wherelist">
-
+        <li class="where habitat"><b>Habitat:</b> Sal forest and grassland cover the 940 sq km of Kanha in Madhya Pradesh, which also carries a good cross section of the birds of India.</li>
+        <li class="where when"><b>When:</b> April is the best month at Kanha, when the grass is short and the prey of the tigers gathers at the few waterholes that remain.</li>
+        <li class="where access"><b>Getting there:</b> Kanha is six hours by road from Jabalpur, which is reached by train from Delhi, and two hours by road from Gondia, which is reached by train from Calcutta.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/malabar-pied-hornbill/">Malabar Pied Hornbill</a>, <a href="/birds/indian-scops-owl/">Indian Scops Owl</a>, <a href="/birds/white-naped-woodpecker/">White-naped Woodpecker</a>, <a href="/birds/indian-pitta/">Indian Pitta</a>, <a href="/birds/crested-serpent-eagle/">Crested Serpent Eagle</a>, <a href="/birds/jungle-owlet/">Jungle Owlet</a>, <a href="/birds/indian-grey-hornbill/">Indian Grey Hornbill</a>, <a href="/birds/white-rumped-vulture/">White-rumped Vulture</a></li>
 
 

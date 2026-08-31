@@ -619,6 +619,28 @@
     /* A bird present all year gets a lighter bar: the point of the column is the
        birds whose window is narrow, and a solid bar on eight rows says nothing. */
     .tg-b.tg-all { background: var(--sage); opacity: .4; }
+    /* The month ruler lives in the table head, which a stacked row cannot see. */
+    .tg-scale { display: none; }
+    /* PAGE-SPEC 4. THE TABLE COULD NOT ANSWER ITS OWN QUESTION ON A PHONE. At 390px the
+       row is 1,022px wide in a 332px window, so a reader saw the bird name and the first
+       weeks of the calendar while Best Window and Where sat entirely off-screen, reachable
+       only by scrolling every row sideways. "Best Month for Each Bird" is exactly the
+       thing that was cut off. Under 760px the row becomes a card: the bird, then the
+       calendar full width with its own month ruler under it, then the window and the
+       places as labelled lines. Nothing scrolls sideways. */
+    @media (max-width: 760px) {
+      .tg-head { display: none; }
+      .tg-row { grid-template-columns: 46px minmax(0, 1fr); gap: 9px 12px; min-width: 0; padding: 14px 0 16px; align-items: start; }
+      .tg-n { align-self: center; font-size: 16.5px; }
+      .tg-mini { grid-column: 1 / -1; height: 20px; }
+      .tg-scale { display: grid; grid-column: 1 / -1; grid-template-columns: repeat(12, 1fr); margin-top: -3px; }
+      .tg-scale span { font-family: var(--body); font-weight: 800; font-size: 10.5px; color: var(--muted); text-align: center; }
+      .tg-w, .tg-p { grid-column: 1 / -1; }
+      .tg-w::before, .tg-p::before { display: block; font-family: var(--body); font-weight: 800; font-size: 10.5px;
+        letter-spacing: .07em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 1px; }
+      .tg-w::before { content: 'Best window'; }
+      .tg-p::before { content: 'Where'; }
+    }
     @media (max-width: 760px) { .targets { padding: 6px 16px; } }
 
     .offitin { margin-top: 10px; padding: 12px 15px; background: color-mix(in srgb, var(--gold) 10%, transparent); border-radius: 12px; font-size: 14px; color: var(--ink); }
@@ -2515,6 +2537,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/tenerife-blue-chaffinch/">Tenerife Blue Chaffinch</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Resident, easiest at pine-belt picnic sites</div>
             <div class="tg-p">Teide and Las Canadas</div>
           </div>
@@ -2522,6 +2545,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/gran-canaria-blue-chaffinch/">Gran Canaria Blue Chaffinch</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Resident, in the Inagua pine reserve</div>
             <div class="tg-p">Inagua, Ojeda and Pajonales</div>
           </div>
@@ -2529,6 +2553,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/bolle-s-pigeon/">Bolle's Pigeon</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Resident, best at dawn from a ridge viewpoint</div>
             <div class="tg-p">Teno, Anaga, La Palma and Garajonay</div>
           </div>
@@ -2536,6 +2561,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/laurel-pigeon/">Laurel Pigeon</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Resident</div>
             <div class="tg-p">La Palma, La Gomera and Tenerife</div>
           </div>
@@ -2543,6 +2569,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/4da14b5d9847.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/canary-islands-stonechat/">Canary Islands Stonechat</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Resident</div>
             <div class="tg-p">Betancuria's barrancos</div>
           </div>
@@ -2550,6 +2577,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/df453e92599a.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/african-houbara/">African Houbara</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:100.00%;width:0.00%"></span><span class="tg-b" style="left:0.00%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Resident, display in winter and early spring</div>
             <div class="tg-p">Fuerteventura's plains and El Jable</div>
           </div>
@@ -2557,6 +2585,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/cream-colored-courser/">Cream-colored Courser</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Resident</div>
             <div class="tg-p">The Fuerteventura plains and El Jable</div>
           </div>
@@ -2564,6 +2593,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/04468f6de1ec.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/white-faced-storm-petrel/">White-faced Storm Petrel</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:50.00%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Summer pelagics in settled weather</div>
             <div class="tg-p">Banco de la Concepcion seamount</div>
           </div>
@@ -2698,6 +2728,7 @@
         <ul class="wherelist">
         <li class="where habitat"><b>Habitat:</b> Thermophilous woodland covers the lower ground on Olea, Dracaena, Sideroxylon, Phoenix, Juniperus and Pistacia. It is the sole habitat of the <a href="/birds/laurel-pigeon/">Laurel Pigeon</a>, and the sea cliffs below hold breeding seabirds.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/bolle-s-pigeon/">Bolle's Pigeon</a>, <a href="/birds/laurel-pigeon/">Laurel Pigeon</a> and <a href="/birds/peregrine-falcon/">Peregrine Falcon</a> are on site in all twelve months.</li>
+        <li class="where access"><b>Getting there:</b> The Monte del Agua forest is entered at Erjos, where a dirt track beside the visitor centre runs to a barrier that closes the forest to cars. Follow the main track on foot to the wooden viewpoints and watch for pigeons flying over the canopy. Teno Bajo is reached by road, and the seawatching point is its lighthouse.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/bolle-s-pigeon/">Bolle's Pigeon</a>, <a href="/birds/laurel-pigeon/">Laurel Pigeon</a>, <a href="/birds/peregrine-falcon/">Peregrine Falcon</a>, <a href="/birds/plain-swift/">Plain Swift</a>, <a href="/birds/canary-islands-chiffchaff/">Canary Islands Chiffchaff</a>, <a href="/birds/atlantic-canary/">Atlantic Canary</a>, <a href="/birds/african-blue-tit/">African Blue Tit</a></li>
 
 
@@ -2759,6 +2790,7 @@
         <ul class="wherelist">
         <li class="where habitat"><b>Habitat:</b> Summit scrub sits on the highest ground of Tenerife, built on Spartocytisus and Adenocarpus, and several lowland birds come up into it, <a href="/birds/spectacled-warbler/">Spectacled Warbler</a> and <a href="/birds/great-grey-shrike/">Great Grey Shrike</a> among them. Izaña at 2,367 metres records 514 mm of rain and a mean of 9.7 °C.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/tenerife-blue-chaffinch/">Tenerife Blue Chaffinch</a>, <a href="/birds/berthelot-s-pipit/">Berthelot's Pipit</a> and <a href="/birds/eurasian-sparrowhawk/">Eurasian Sparrowhawk</a> are on site in all twelve months.</li>
+        <li class="where access"><b>Getting there:</b> Las Lajas is a picnic site a short drive above the town of Vilaflor, and it is the reliable stop in the pine belt at any time of year.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/tenerife-blue-chaffinch/">Tenerife Blue Chaffinch</a>, <a href="/birds/berthelot-s-pipit/">Berthelot's Pipit</a>, <a href="/birds/rock-sparrow/">Rock Sparrow</a>, <a href="/birds/eurasian-sparrowhawk/">Eurasian Sparrowhawk</a>, <a href="/birds/common-kestrel/">Common Kestrel</a>, <a href="/birds/great-spotted-woodpecker/">Great Spotted Woodpecker</a>, <a href="/birds/trumpeter-finch/">Trumpeter Finch</a></li>
 
 
@@ -3051,6 +3083,7 @@
         <ul class="wherelist">
         <li class="where habitat"><b>Habitat:</b> Laurel forest dominates the mid-altitudes: a dense cloud forest with a canopy over 30 metres of Picconia, Laurus, Ilex, Prunus, Myrica, Apollonia, Persea and Ocotea. It is an impoverished survivor of the Palaeotropical laurisilva that covered southern Europe and North Africa until the late Pliocene, and it is where <a href="/birds/bolle-s-pigeon/">Bolle's Pigeon</a> lives.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/goldcrest/">Goldcrest</a>, <a href="/birds/canary-islands-chaffinch/">Canary Islands Chaffinch</a> and <a href="/birds/grey-wagtail/">Grey Wagtail</a> are on site in all twelve months.</li>
+        <li class="where access"><b>Getting there:</b> Pico del Inglés is a roadside viewpoint that repays a quick visit, and the endemic pigeons range across the whole of the Anaga park. Valle Molina reservoir is closed to the public, so take the northern road and scan it with a telescope.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/goldcrest/">Goldcrest</a>, <a href="/birds/eurasian-woodcock/">Eurasian Woodcock</a>, <a href="/birds/canary-islands-chaffinch/">Canary Islands Chaffinch</a>, <a href="/birds/grey-wagtail/">Grey Wagtail</a>, <a href="/birds/common-blackbird/">Common Blackbird</a>, <a href="/birds/european-robin/">European Robin</a>, <a href="/birds/eurasian-sparrowhawk/">Eurasian Sparrowhawk</a></li>
 
 
@@ -3111,6 +3144,7 @@
         <ul class="wherelist">
         <li class="where habitat"><b>Habitat:</b> Coastal desert scrub, also called subdesert succulent coastal scrub, runs on endemic spurge shrubs of Euphorbia balsamifera, E. obtusifolia and E. lamarckii, and is the African face of the archipelago. It carries the steppe birds: Houbara Bustard, <a href="/birds/black-bellied-sandgrouse/">Black-bellied Sandgrouse</a>, Cream-coloured Courser, <a href="/birds/eurasian-stone-curlew/">Eurasian Stone-curlew</a>, Lesser Short-toed Lark and <a href="/birds/trumpeter-finch/">Trumpeter Finch</a>.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/african-houbara/">African Houbara</a>, <a href="/birds/cream-colored-courser/">Cream-colored Courser</a> and <a href="/birds/black-bellied-sandgrouse/">Black-bellied Sandgrouse</a> are on site in all twelve months.</li>
+        <li class="where access"><b>Getting there:</b> The Tindaya plains are worked from the car, which doubles as a hide. Stop systematically every 500 metres and search with binoculars and a telescope. A dirt track past a goat farm leads in to Los Molinos dam. At La Oliva the cultivated ground near the school is walkable, and the stonechat slopes rise to the south.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/african-houbara/">African Houbara</a>, <a href="/birds/cream-colored-courser/">Cream-colored Courser</a>, <a href="/birds/black-bellied-sandgrouse/">Black-bellied Sandgrouse</a>, <a href="/birds/mediterranean-short-toed-lark/">Mediterranean Short-toed Lark</a>, <a href="/birds/trumpeter-finch/">Trumpeter Finch</a>, <a href="/birds/ruddy-shelduck/">Ruddy Shelduck</a>, <a href="/birds/barbary-partridge/">Barbary Partridge</a></li>
 
 
@@ -3188,6 +3222,7 @@
         <ul class="wherelist">
         <li class="where habitat"><b>Habitat:</b> Desert scrub and farmland run together in the barrancos, and the farmland birds established here are <a href="/birds/common-quail/">Common Quail</a>, <a href="/birds/common-linnet/">Common Linnet</a>, <a href="/birds/corn-bunting/">Corn Bunting</a> and <a href="/birds/rock-sparrow/">Rock Sparrow</a>. The artificial ponds, dams and reservoirs in this zone pull in migrants and let the <a href="/birds/ruddy-shelduck/">Ruddy Shelduck</a> colonise.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/canary-islands-stonechat/">Canary Islands Stonechat</a>, <a href="/birds/egyptian-vulture/">Egyptian Vulture</a> and <a href="/birds/great-grey-shrike/">Great Grey Shrike</a> hold the ground through the year.</li>
+        <li class="where access"><b>Getting there:</b> The gully at Vega de Río Palmas is walked from the entrance of the town down to the reservoir, and the Las Peñitas dam is worth checking whenever it holds water.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/canary-islands-stonechat/">Canary Islands Stonechat</a>, <a href="/birds/egyptian-vulture/">Egyptian Vulture</a>, <a href="/birds/great-grey-shrike/">Great Grey Shrike</a>, <a href="/birds/spectacled-warbler/">Spectacled Warbler</a>, <a href="/birds/rock-dove/">Rock Dove</a>, <a href="/birds/laughing-dove/">Laughing Dove</a>, <a href="/birds/berthelot-s-pipit/">Berthelot's Pipit</a></li>
 
 
@@ -3737,6 +3772,7 @@
         <ul class="wherelist">
         <li class="where habitat"><b>Habitat:</b> Los Tilos is laurel forest and Taburiente is Canary Pine above it, on the wettest island in the archipelago at a mean 731 mm of rain a year.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/laurel-pigeon/">Laurel Pigeon</a>, <a href="/birds/bolle-s-pigeon/">Bolle's Pigeon</a> and <a href="/birds/canary-islands-chiffchaff/">Canary Islands Chiffchaff</a> stay through the year.</li>
+        <li class="where access"><b>Getting there:</b> The entrance to the Los Tilos gully is signposted from the road, which runs on to a visitor centre and bar. The viewpoint over lower Los Tilos makes it easy to watch <a href="/birds/laurel-pigeon/">Laurel Pigeons</a> in their circling display flights. On the Taburiente side, the road from the national park visitor centre ends at a parking place called La Cumbrecita, with pine forest on either side.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/laurel-pigeon/">Laurel Pigeon</a>, <a href="/birds/bolle-s-pigeon/">Bolle's Pigeon</a>, <a href="/birds/canary-islands-chiffchaff/">Canary Islands Chiffchaff</a>, <a href="/birds/peregrine-falcon/">Peregrine Falcon</a>, <a href="/birds/northern-raven/">Northern Raven</a>, <a href="/birds/canary-islands-chaffinch/">Canary Islands Chaffinch</a>, <a href="/birds/grey-wagtail/">Grey Wagtail</a></li>
 
 
@@ -3775,6 +3811,7 @@
         <ul class="wherelist">
         <li class="where habitat"><b>Habitat:</b> The sabinar is thermophilous woodland of juniper wind-shaped by the trade winds, and the cliffs and rocky islets below are where the seabirds breed in colonies or in pairs.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/berthelot-s-pipit/">Berthelot's Pipit</a>, <a href="/birds/yellow-legged-gull/">Yellow-legged Gull</a> and <a href="/birds/common-kestrel/">Common Kestrel</a> are on site in all twelve months.</li>
+        <li class="where access"><b>Getting there:</b> For Mencafete, follow the road towards Frontera and turn on to the dirt track that leaves it. The road on from Llano de las Brujas to Frontera runs through laurel forest and can be birded along its length. Terifabe dam is reached by a dirt track off the San Andrés road.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/berthelot-s-pipit/">Berthelot's Pipit</a>, <a href="/birds/peregrine-falcon/">Peregrine Falcon</a>, <a href="/birds/cory-s-shearwater/">Cory's Shearwater</a>, <a href="/birds/yellow-legged-gull/">Yellow-legged Gull</a>, <a href="/birds/common-kestrel/">Common Kestrel</a>, <a href="/birds/atlantic-canary/">Atlantic Canary</a>, <a href="/birds/rock-dove/">Rock Dove</a></li>
 
 
@@ -3814,6 +3851,7 @@
         <ul class="wherelist">
         <li class="where habitat"><b>Habitat:</b> Lanzarote is one of the two dry eastern islands, and Arrecife records just 139 mm of rain a year against a mean of 20.2 °C. Coastal desert scrub covers the lava, and the salinas hold the migrant waders.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/african-houbara/">African Houbara</a>, <a href="/birds/cream-colored-courser/">Cream-colored Courser</a> and <a href="/birds/kentish-plover/">Kentish Plover</a> stay through the year.</li>
+        <li class="where access"><b>Getting there:</b> The Famara plains hold the highest density of Houbara Bustards in the Canaries and are the classic ground for the other steppe birds. The Guinate viewpoint looks over cliffs where Barbary Falcons nest, and <a href="/birds/eleonora-s-falcon/">Eleonora's Falcons</a> from the northern islets sometimes patrol past it.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/african-houbara/">African Houbara</a>, <a href="/birds/cream-colored-courser/">Cream-colored Courser</a>, <a href="/birds/kentish-plover/">Kentish Plover</a>, <a href="/birds/black-winged-stilt/">Black-winged Stilt</a>, <a href="/birds/trumpeter-finch/">Trumpeter Finch</a>, <a href="/birds/eleonora-s-falcon/">Eleonora's Falcon</a>, <a href="/birds/peregrine-falcon/">Peregrine Falcon</a></li>
 
 
@@ -3970,6 +4008,7 @@
         <ul class="wherelist">
         <li class="where habitat"><b>Habitat:</b> Garajonay is laurel forest, the cloud forest of the mid-altitudes with a canopy above 30 metres. La Gomera is the one central or western island with no pine forest at all.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/bolle-s-pigeon/">Bolle's Pigeon</a>, <a href="/birds/laurel-pigeon/">Laurel Pigeon</a> and <a href="/birds/goldcrest/">Goldcrest</a> hold the ground through the year.</li>
+        <li class="where access"><b>Getting there:</b> From San Sebastián take the road towards Hermigua and park just past a series of small tunnels for La Carbonera, where the forest is watched for flying pigeons. A kilometre further on, a left turn climbs to Monte El Cedro inside Garajonay National Park. Stop at the vantage points along that road, watch out for traffic, and scan as wide a stretch of forest as you can.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/bolle-s-pigeon/">Bolle's Pigeon</a>, <a href="/birds/laurel-pigeon/">Laurel Pigeon</a>, <a href="/birds/goldcrest/">Goldcrest</a>, <a href="/birds/canary-islands-chiffchaff/">Canary Islands Chiffchaff</a>, <a href="/birds/african-blue-tit/">African Blue Tit</a>, <a href="/birds/canary-islands-chaffinch/">Canary Islands Chaffinch</a>, <a href="/birds/plain-swift/">Plain Swift</a></li>
 
 
@@ -4030,6 +4069,7 @@
         <ul class="wherelist">
         <li class="where habitat"><b>Habitat:</b> The rocky islets and coastline are where the seabirds gather to breed, <a href="/birds/barolo-shearwater/">Barolo Shearwater</a>, <a href="/birds/bulwer-s-petrel/">Bulwer's Petrel</a>, Madeiran Storm-petrel and <a href="/birds/white-faced-storm-petrel/">White-faced Storm-petrel</a> among them.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/barolo-shearwater/">Barolo Shearwater</a> is here in every month. <a href="/birds/cory-s-shearwater/">Cory's Shearwater</a> is away from December to January.</li>
+        <li class="where access"><b>Getting there:</b> The scheduled ferry between Los Cristianos on Tenerife and San Sebastián on La Gomera is the seawatching platform, and it needs no charter. The lava coastline at Órzola on Lanzarote is reached by road and repays a short stop.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/bulwer-s-petrel/">Bulwer's Petrel</a>, <a href="/birds/cory-s-shearwater/">Cory's Shearwater</a>, <a href="/birds/white-faced-storm-petrel/">White-faced Storm Petrel</a>, <a href="/birds/band-rumped-storm-petrel/">Band-rumped Storm Petrel</a>, <a href="/birds/european-storm-petrel/">European Storm Petrel</a>, <a href="/birds/barolo-shearwater/">Barolo Shearwater</a>, <a href="/birds/long-tailed-jaeger/">Long-tailed Jaeger</a></li>
 
 

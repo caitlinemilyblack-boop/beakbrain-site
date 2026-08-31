@@ -619,6 +619,28 @@
     /* A bird present all year gets a lighter bar: the point of the column is the
        birds whose window is narrow, and a solid bar on eight rows says nothing. */
     .tg-b.tg-all { background: var(--sage); opacity: .4; }
+    /* The month ruler lives in the table head, which a stacked row cannot see. */
+    .tg-scale { display: none; }
+    /* PAGE-SPEC 4. THE TABLE COULD NOT ANSWER ITS OWN QUESTION ON A PHONE. At 390px the
+       row is 1,022px wide in a 332px window, so a reader saw the bird name and the first
+       weeks of the calendar while Best Window and Where sat entirely off-screen, reachable
+       only by scrolling every row sideways. "Best Month for Each Bird" is exactly the
+       thing that was cut off. Under 760px the row becomes a card: the bird, then the
+       calendar full width with its own month ruler under it, then the window and the
+       places as labelled lines. Nothing scrolls sideways. */
+    @media (max-width: 760px) {
+      .tg-head { display: none; }
+      .tg-row { grid-template-columns: 46px minmax(0, 1fr); gap: 9px 12px; min-width: 0; padding: 14px 0 16px; align-items: start; }
+      .tg-n { align-self: center; font-size: 16.5px; }
+      .tg-mini { grid-column: 1 / -1; height: 20px; }
+      .tg-scale { display: grid; grid-column: 1 / -1; grid-template-columns: repeat(12, 1fr); margin-top: -3px; }
+      .tg-scale span { font-family: var(--body); font-weight: 800; font-size: 10.5px; color: var(--muted); text-align: center; }
+      .tg-w, .tg-p { grid-column: 1 / -1; }
+      .tg-w::before, .tg-p::before { display: block; font-family: var(--body); font-weight: 800; font-size: 10.5px;
+        letter-spacing: .07em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 1px; }
+      .tg-w::before { content: 'Best window'; }
+      .tg-p::before { content: 'Where'; }
+    }
     @media (max-width: 760px) { .targets { padding: 6px 16px; } }
 
     .offitin { margin-top: 10px; padding: 12px 15px; background: color-mix(in srgb, var(--gold) 10%, transparent); border-radius: 12px; font-size: 14px; color: var(--ink); }
@@ -6477,6 +6499,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/de76657567f7.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/chinese-monal/">Chinese Monal</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:25.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Pass open</div>
             <div class="tg-p"><a href="#site-western-sichuan-balang-shan-and-wolong">Western Sichuan: Balang Shan and Wolong</a></div>
           </div>
@@ -6484,6 +6507,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/spoon-billed-sandpiper/">Spoon-billed Sandpiper</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:58.33%;width:25.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Staging</div>
             <div class="tg-p"><a href="#site-the-yellow-sea-coast-rudong-and-the-jiangsu-mudflats">The Yellow Sea coast: Rudong and the Jiangsu mudflats</a></div>
           </div>
@@ -6491,6 +6515,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/4ee70d2904f5.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/temminck-s-tragopan/">Temminck's Tragopan</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:25.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Displaying</div>
             <div class="tg-p"><a href="#site-western-sichuan-balang-shan-and-wolong">Western Sichuan: Balang Shan and Wolong</a></div>
           </div>
@@ -6498,6 +6523,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/3237cadd96d2.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/black-necked-crane/">Black-necked Crane</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Breeding</div>
             <div class="tg-p">Zoige, Shangri-La</div>
           </div>
@@ -6505,6 +6531,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/c6c44d11763b.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/przevalski-s-finch/">Przevalski's Finch</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:41.67%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Present</div>
             <div class="tg-p">Qinghai Lake</div>
           </div>
@@ -6512,6 +6539,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/3237cadd96d2.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/red-crowned-crane/">Red-crowned Crane</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:50.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Breeding</div>
             <div class="tg-p">Zhalong, Yancheng</div>
           </div>
@@ -6519,6 +6547,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/4ee70d2904f5.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/mrs-hume-s-pheasant/">Mrs. Hume's Pheasant</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:83.33%;width:16.67%"></span><span class="tg-b" style="left:0.00%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">At the hides</div>
             <div class="tg-p">Baihualing</div>
           </div>
@@ -6526,6 +6555,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/ibisbill/">Ibisbill</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:50.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">On the rivers</div>
             <div class="tg-p">Urumqi</div>
           </div>
@@ -6711,6 +6741,7 @@
         <ul class="wherelist">
         <li class="where habitat"><b>Habitat:</b> Wolong was set up for giant pandas, and the habitat inside it is being degraded like most of China's 400-odd reserves. Over 600 of the country's 1,244 recorded species occur in Sichuan.</li>
         <li class="where when"><b>When:</b> Best from April to July. <a href="/birds/chinese-monal/">Chinese Monal</a>, <a href="/birds/temminck-s-tragopan/">Temminck's Tragopan</a> and <a href="/birds/golden-pheasant/">Golden Pheasant</a> stay through the year.</li>
+        <li class="where access"><b>Getting there:</b> Wolong village lies about 100 km west of Chengdu, six hours away on a rough road. Most of the birding is done from the road and the few trails, above all at the meadows and scree slopes beyond the Balang Shan pass at 4,300 m, the headquarters area in the Valley of the Heroes and the Ting Fang Pass at 3,658 m. A track leaving a small suspension bridge 10 km out of the village climbs to the observation station in about two hours on foot.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/chinese-monal/">Chinese Monal</a>, <a href="/birds/blue-eared-pheasant/">Blue Eared Pheasant</a>, <a href="/birds/temminck-s-tragopan/">Temminck's Tragopan</a>, <a href="/birds/golden-pheasant/">Golden Pheasant</a>, <a href="/birds/grandala/">Grandala</a>, <a href="/birds/snow-partridge/">Snow Partridge</a>, <a href="/birds/firethroat/">Firethroat</a>, <a href="/birds/chinese-fulvetta/">Chinese Fulvetta</a></li>
 
 
@@ -6745,7 +6776,9 @@
         <p class="blurb">North of Chengdu the country changes twice. Tangjiahe is bamboo and broadleaf forest with the tamest large mammals in China, Jiuzhaigou's travertine lakes hold the montane forest birds, and beyond them the road climbs onto the Ruoergai grassland at 3,400 m, which is <a href="/birds/black-necked-crane/">Black-necked Crane</a> country and the southern edge of the Tibetan plateau.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> Jiuzhaigou in north Sichuan is a wild land of lakes, streams and waterfalls set among forested peaks capped with snow. The road in from the southwest crosses the Zhegu Shan pass at 4,000 m and the eastern edge of the Tibetan Plateau, and high altitude scrub covers the ground between Ruoergai and the reserve.</li>
         <li class="where when"><b>When:</b> Best from March to July. <a href="/birds/black-necked-crane/">Black-necked Crane</a>, <a href="/birds/golden-pheasant/">Golden Pheasant</a> and <a href="/birds/blood-pheasant/">Blood Pheasant</a> are on site in all twelve months.</li>
+        <li class="where access"><b>Getting there:</b> Jiuzhaigou is about 430 km north of Chengdu by way of Sunpang. A 15 km road runs from the reserve entrance to Nuorilang and a second 15 km road carries on to Swan Lake, and the birding is done on foot from these two roads. A steep yak trail above Zechawa climbs to meadows and a yak shed, and a trail follows the normally dry river bed above the Swan Lake car park into forest.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/black-necked-crane/">Black-necked Crane</a>, <a href="/birds/golden-pheasant/">Golden Pheasant</a>, <a href="/birds/blood-pheasant/">Blood Pheasant</a>, <a href="/birds/sichuan-jay/">Sichuan Jay</a>, <a href="/birds/przevalski-s-nuthatch/">Przevalski's Nuthatch</a>, <a href="/birds/chinese-grouse/">Chinese Grouse</a>, <a href="/birds/sichuan-treecreeper/">Sichuan Treecreeper</a>, <a href="/birds/white-browed-tit/">White-browed Tit</a></li>
 
 
@@ -6780,7 +6813,9 @@
         <p class="blurb">Qinghai is the accessible Tibetan plateau: a paved road from Xining to Golmud crossing steppe, salt lake and 4,800 m passes, with the birds getting stranger as the altitude climbs. <a href="/birds/tibetan-sandgrouse/">Tibetan Sandgrouse</a> and <a href="/birds/tibetan-snowcock/">Tibetan Snowcock</a> are on the high ground, <a href="/birds/przevalski-s-finch/">Przevalski's Finch</a> is a Chinese endemic in a family of one, and Qinghai Lake holds breeding <a href="/birds/bar-headed-goose/">Bar-headed Goose</a> and <a href="/birds/brown-headed-gull/">Brown-headed Gull</a> in thousands.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> Marshes, meadows and scrubby mountain slopes surround Qinghai Hu, the largest lake in China, which measures 100 km by 60 km and sits at 3,200 m. Xining stands at 2,500 m on the northeastern edge of the Tibetan Plateau below barren hills. Golmud lies at the southern edge of the Zaidam Depression, with reservoirs to the north of the town and sand dunes on its southeastern outskirts.</li>
         <li class="where when"><b>When:</b> Best from April to October. <a href="/birds/przevalski-s-finch/">Przevalski's Finch</a>, <a href="/birds/bar-headed-goose/">Bar-headed Goose</a> and <a href="/birds/black-necked-crane/">Black-necked Crane</a> are on site in all twelve months.</li>
+        <li class="where access"><b>Getting there:</b> The wet meadows along the southwest shore of the lake near Heimahe, 200 km west of Xining, are the richest ground, together with the scrubby hillsides and the high plateau behind the town. Bird Island lies in the northwest corner of the lake, about 70 km from Heimahe and 16 km from the nearest accommodation. South of Xining the road to Nangqen climbs onto the plateau and crosses the Er La Pass at 4,482 m.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/tibetan-sandgrouse/">Tibetan Sandgrouse</a>, <a href="/birds/tibetan-snowcock/">Tibetan Snowcock</a>, <a href="/birds/przevalski-s-finch/">Przevalski's Finch</a>, <a href="/birds/bar-headed-goose/">Bar-headed Goose</a>, <a href="/birds/black-necked-crane/">Black-necked Crane</a>, <a href="/birds/tibetan-partridge/">Tibetan Partridge</a>, <a href="/birds/ground-tit/">Ground Tit</a>, <a href="/birds/blanford-s-snowfinch/">Blanford's Snowfinch</a></li>
 
 
@@ -6816,7 +6851,8 @@
         <p class="blurb">Western Yunnan is the only place Indo-Burmese lowland forest reaches Chinese territory, and the village of Baihualing has built a birding economy on it: dozens of paid hides at feeding and bathing pools, run by families, where laughingthrushes and pheasants come in at a few metres. <a href="/birds/mrs-hume-s-pheasant/">Mrs. Hume's Pheasant</a> and <a href="/birds/lady-amherst-s-pheasant/">Lady Amherst's Pheasant</a> both come to hides here, and the Yingjiang lowlands to the west add hornbills.</p>
 
         <ul class="wherelist">
-
+        <li class="where habitat"><b>Habitat:</b> The Gaoligong Shan reserve lies in the mountains of northwest Yunnan. Further south at Ruili, on the border with Burma, excellent deciduous forest grows beside a broad, shallow river.</li>
+        <li class="where access"><b>Getting there:</b> At Ruili the birding is done in the forested hills northwest of the town.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/mrs-hume-s-pheasant/">Mrs. Hume's Pheasant</a>, <a href="/birds/lady-amherst-s-pheasant/">Lady Amherst's Pheasant</a>, <a href="/birds/rufous-necked-hornbill/">Rufous-necked Hornbill</a>, <a href="/birds/silver-eared-mesia/">Silver-eared Mesia</a>, <a href="/birds/rusty-naped-pitta/">Rusty-naped Pitta</a>, <a href="/birds/grey-lored-broadbill/">Grey-lored Broadbill</a>, <a href="/birds/beautiful-nuthatch/">Beautiful Nuthatch</a>, <a href="/birds/blyth-s-tragopan/">Blyth's Tragopan</a></li>
 
 
@@ -6851,7 +6887,8 @@
         <p class="blurb">Northwest Yunnan is the softer version of the Tibetan plateau: pine forest, alpine meadow and snow peaks with roads and towns among them. Napahai marsh outside Zhongdian holds wintering <a href="/birds/black-necked-crane/">Black-necked Crane</a>, the Baima Shan pass gives the high pheasants, and the forests around Lijiang carry a laughingthrush and parrotbill list that takes days to work through.</p>
 
         <ul class="wherelist">
-
+        <li class="where habitat"><b>Habitat:</b> Remnant pine forests stand around Lijiang in northwest Yunnan. Jade Dragon Snow Mountain rises to the northwest of the town and carries the best of the remaining forest above its temple.</li>
+        <li class="where access"><b>Getting there:</b> Lijiang is six hours by bus from Dali. Work the park and the hills beyond it to the north of town, and the low hills alongside the Dali road 3 km to the west. Jade Dragon Snow Mountain is 1.5 hours from town and the forest above the temple takes four hours of hard hiking to reach.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/white-eared-pheasant/">White Eared Pheasant</a>, <a href="/birds/chinese-grouse/">Chinese Grouse</a>, <a href="/birds/yunnan-nuthatch/">Yunnan Nuthatch</a>, <a href="/birds/giant-laughingthrush/">Giant Laughingthrush</a>, <a href="/birds/chinese-white-browed-rosefinch/">Chinese White-browed Rosefinch</a>, <a href="/birds/grey-headed-parrotbill/">Grey-headed Parrotbill</a>, <a href="/birds/yunnan-fulvetta/">Yunnan Fulvetta</a>, <a href="/birds/bar-tailed-treecreeper/">Bar-tailed Treecreeper</a></li>
 
 
@@ -6886,6 +6923,7 @@
         <p class="blurb">The Jiangsu mudflats are where the East Asian-Australasian flyway narrows to a point. <a href="/birds/spoon-billed-sandpiper/">Spoon-billed Sandpiper</a> stages here in autumn in numbers that represent a large share of the world population, and <a href="/birds/nordmann-s-greenshank/">Nordmann's Greenshank</a> with it. The flats are watched from sea walls on a rising tide, and the reclamation that has taken most of this coastline is the reason the two species are where they are.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> Grassy marshes run along the coast at Yancheng, north of Shanghai, and a small reserve protects part of them.</li>
         <li class="where when"><b>When:</b> Best from August to November. <a href="/birds/spoon-billed-sandpiper/">Spoon-billed Sandpiper</a>, <a href="/birds/nordmann-s-greenshank/">Nordmann's Greenshank</a> and <a href="/birds/black-faced-spoonbill/">Black-faced Spoonbill</a> are here in every month.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/spoon-billed-sandpiper/">Spoon-billed Sandpiper</a>, <a href="/birds/nordmann-s-greenshank/">Nordmann's Greenshank</a>, <a href="/birds/great-knot/">Great Knot</a>, <a href="/birds/black-faced-spoonbill/">Black-faced Spoonbill</a>, <a href="/birds/saunders-s-gull/">Saunders's Gull</a>, <a href="/birds/reed-parrotbill/">Reed Parrotbill</a>, <a href="/birds/red-crowned-crane/">Red-crowned Crane</a>, <a href="/birds/far-eastern-curlew/">Far Eastern Curlew</a></li>
 
@@ -6921,7 +6959,9 @@
         <p class="blurb">The northeast is where the Siberian avifauna reaches China. Zhalong and Momoge hold breeding <a href="/birds/red-crowned-crane/">Red-crowned Crane</a> and passage <a href="/birds/siberian-crane/">Siberian Crane</a>, the Changbai Shan on the Korean border carries boreal forest with <a href="/birds/hazel-grouse/">Hazel Grouse</a> and <a href="/birds/black-woodpecker/">Black Woodpecker</a>, and winter here brings <a href="/birds/steller-s-sea-eagle/">Steller's Sea Eagle</a> to the coast. It is cold beyond most people's expectations, at minus thirty in January.</p>
 
         <ul class="wherelist">
-
+        <li class="where habitat"><b>Habitat:</b> Wetlands fill the Zhalong reserve in northeast China. Reedy wetland, grassland and scattered elm woods cover the larger Xianghai reserve, which holds three cranes and the highly localised Rufous-backed Bunting.</li>
+        <li class="where when"><b>When:</b> Most of the birds of both reserves are present only in summer, between May and September.</li>
+        <li class="where access"><b>Getting there:</b> Zhalong is about 25 km from Qiqihar, which is reached by air and by rail from Beijing in 24 hours and from Kaitong in six hours. Two lakes either side of the entrance road just before the headquarters are worth checking, and a 1 km track at KM 24 leads to fields that repay long birding. Xianghai is about an hour by road from Kaitong.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/red-crowned-crane/">Red-crowned Crane</a>, <a href="/birds/siberian-crane/">Siberian Crane</a>, <a href="/birds/white-naped-crane/">White-naped Crane</a>, <a href="/birds/steller-s-sea-eagle/">Steller's Sea Eagle</a>, <a href="/birds/hazel-grouse/">Hazel Grouse</a>, <a href="/birds/baikal-teal/">Baikal Teal</a>, <a href="/birds/scaly-sided-merganser/">Scaly-sided Merganser</a>, <a href="/birds/jankowski-s-bunting/">Jankowski's Bunting</a></li>
 
 
@@ -6993,7 +7033,7 @@
         <p class="blurb">Hainan is China's tropical corner, and its interior mountains hold a set of endemics split from mainland forms: <a href="/birds/hainan-partridge/">Hainan Partridge</a>, <a href="/birds/hainan-leaf-warbler/">Hainan Leaf Warbler</a> and <a href="/birds/hainan-blue-flycatcher/">Hainan Blue Flycatcher</a> among them. The forest reserves at Jianfengling and Bawangling are worked on made trails, and the island is warm and green when the rest of the country is frozen.</p>
 
         <ul class="wherelist">
-
+        <li class="where habitat"><b>Habitat:</b> Hainan is an island off the south coast of China. Its two endemic birds, a partridge and a leaf warbler, occur in the Bawangling, Jianfengling and Wuzhishan reserves.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/hainan-partridge/">Hainan Partridge</a>, <a href="/birds/hainan-leaf-warbler/">Hainan Leaf Warbler</a>, <a href="/birds/hainan-blue-flycatcher/">Hainan Blue Flycatcher</a>, <a href="/birds/silver-pheasant/">Silver Pheasant</a>, <a href="/birds/ratchet-tailed-treepie/">Ratchet-tailed Treepie</a>, <a href="/birds/blue-rumped-pitta/">Blue-rumped Pitta</a>, <a href="/birds/orange-breasted-trogon/">Orange-breasted Trogon</a>, <a href="/birds/white-bellied-erpornis/">White-bellied Erpornis</a></li>
 
 
@@ -7028,7 +7068,9 @@
         <p class="blurb">Xinjiang is Central Asia inside Chinese borders, and its birds are Central Asian: <a href="/birds/xinjiang-ground-jay/">Xinjiang Ground Jay</a> on the Taklamakan gravel, <a href="/birds/ibisbill/">Ibisbill</a> on the mountain rivers, <a href="/birds/altai-snowcock/">Altai Snowcock</a> on the ridges above Kanas in the far north. The distances are the difficulty, with Urumqi to Kashgar a day and a half by road, and it is the least visited of the birding regions above.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> Xinjiang in the extreme west of China holds poplar stands, barren desert, lakes and pine forest. Semi-desert runs between Kuytun and Altai, forested hills surround Hanas Hu, and Tien Che, the Heavenly Lake near Urumqi, lies below the mountain of Bogda Feng.</li>
         <li class="where when"><b>When:</b> Best from April to September. <a href="/birds/ibisbill/">Ibisbill</a>, <a href="/birds/himalayan-snowcock/">Himalayan Snowcock</a> and <a href="/birds/pallas-s-sandgrouse/">Pallas's Sandgrouse</a> are on site in all twelve months.</li>
+        <li class="where access"><b>Getting there:</b> Permits may still be required for much of Xinjiang and are issued by the Forestry Bureau in Urumqi, which asks for an itinerary and at least two letters of introduction. The west end of Tien Che is popular with tourists, so the foothills to the south and east repay the walk. Bicycles can be hired in Bofur for the 12 km ride to Boshteng Hu, and permission to visit Hanas Hu is obtained in Burgin.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/xinjiang-ground-jay/">Xinjiang Ground Jay</a>, <a href="/birds/ibisbill/">Ibisbill</a>, <a href="/birds/altai-snowcock/">Altai Snowcock</a>, <a href="/birds/himalayan-snowcock/">Himalayan Snowcock</a>, <a href="/birds/pallas-s-sandgrouse/">Pallas's Sandgrouse</a>, <a href="/birds/saxaul-sparrow/">Saxaul Sparrow</a>, <a href="/birds/white-winged-woodpecker/">White-winged Woodpecker</a>, <a href="/birds/black-throated-accentor/">Black-throated Accentor</a></li>
 
 
@@ -7548,7 +7590,7 @@
       setTimeout(function () { flashTo(id); }, 120);
     });
     (function () {
-      var REGIONS = [["site-western-sichuan-balang-shan-and-wolong",103.0144,31.0189,"Balang Shan","#2E86AB",0],["site-northern-sichuan-tangjiahe-jiuzhaigou-and-ruoergai",104.0986,33.0819,"Tangjiahe","#0F8B8D",1],["site-qinghai-and-the-tibetan-plateau",98.9097,36.637,"Qinghai","#C0392B",2],["site-yunnan-gaoligongshan-and-the-far-west",98.6487,25.1568,"Gaoligongshan","#D68910",3],["site-yunnan-lijiang-zhongdian-and-the-northwest",99.9646,27.348,"Zhongdian","#6A994E",4],["site-the-yellow-sea-coast-rudong-and-the-jiangsu-mudflats",120.669,32.8418,"Rudong","#7D5BA6",5],["site-the-northeast-jilin-heilongjiang-and-the-crane-marshes",124.7596,45.549,"Jilin","#386641",6],["site-beidaihe-beijing-and-the-bohai-coast",117.9392,39.8638,"Beidaihe","#8A5A44",7],["site-hainan-and-the-tropical-south",109.8543,19.4119,"Hainan","#C2185B",8],["site-xinjiang-and-the-tian-shan",81.6535,41.4451,"Tian Shan","#4E7AC7",9]];
+      var REGIONS = [["site-western-sichuan-balang-shan-and-wolong",103.0144,31.0189,"Balang Shan","#2E86AB",0],["site-northern-sichuan-tangjiahe-jiuzhaigou-and-ruoergai",104.0986,33.0819,"Tangjiahe","#0F8B8D",1],["site-qinghai-and-the-tibetan-plateau",98.9097,36.637,"Qinghai","#C0392B",2],["site-yunnan-gaoligongshan-and-the-far-west",98.6487,25.1568,"Gaoligongshan","#D68910",3],["site-yunnan-lijiang-zhongdian-and-the-northwest",99.9646,27.348,"Zhongdian","#6A994E",4],["site-the-yellow-sea-coast-rudong-and-the-jiangsu-mudflats",120.669,32.8418,"Rudong","#7D5BA6",5],["site-the-northeast-jilin-heilongjiang-and-the-crane-marshes",124.7596,45.549,"Jilin","#386641",6],["site-beidaihe-beijing-and-the-bohai-coast",117.9392,39.8638,"Beidaihe","#8A5A44",7],["site-hainan-and-the-tropical-south",109.8543,19.4119,"Hainan","#C2185B",8],["site-xinjiang-and-the-tian-shan",83.8096,42.2593,"Tian Shan","#4E7AC7",9]];
       var LODGES = [];
       var GOING = [];
       var NPARKS = [["site-western-sichuan-balang-shan-and-wolong",103.1833,31.0426,"Wolong National Nature Reserve","Western Sichuan: Balang Shan and Wolong","#2E86AB",null],["site-yunnan-lijiang-zhongdian-and-the-northwest",99.9031,27.9128,"Pudacuo National Park","Yunnan: Lijiang, Zhongdian and the northwest","#6A994E",null],["site-the-yellow-sea-coast-rudong-and-the-jiangsu-mudflats",120.5924,33.5631,"Yancheng National Nature Reserve","The Yellow Sea coast: Rudong and the Jiangsu mudflats","#7D5BA6",null]];

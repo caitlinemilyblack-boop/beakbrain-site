@@ -619,6 +619,28 @@
     /* A bird present all year gets a lighter bar: the point of the column is the
        birds whose window is narrow, and a solid bar on eight rows says nothing. */
     .tg-b.tg-all { background: var(--sage); opacity: .4; }
+    /* The month ruler lives in the table head, which a stacked row cannot see. */
+    .tg-scale { display: none; }
+    /* PAGE-SPEC 4. THE TABLE COULD NOT ANSWER ITS OWN QUESTION ON A PHONE. At 390px the
+       row is 1,022px wide in a 332px window, so a reader saw the bird name and the first
+       weeks of the calendar while Best Window and Where sat entirely off-screen, reachable
+       only by scrolling every row sideways. "Best Month for Each Bird" is exactly the
+       thing that was cut off. Under 760px the row becomes a card: the bird, then the
+       calendar full width with its own month ruler under it, then the window and the
+       places as labelled lines. Nothing scrolls sideways. */
+    @media (max-width: 760px) {
+      .tg-head { display: none; }
+      .tg-row { grid-template-columns: 46px minmax(0, 1fr); gap: 9px 12px; min-width: 0; padding: 14px 0 16px; align-items: start; }
+      .tg-n { align-self: center; font-size: 16.5px; }
+      .tg-mini { grid-column: 1 / -1; height: 20px; }
+      .tg-scale { display: grid; grid-column: 1 / -1; grid-template-columns: repeat(12, 1fr); margin-top: -3px; }
+      .tg-scale span { font-family: var(--body); font-weight: 800; font-size: 10.5px; color: var(--muted); text-align: center; }
+      .tg-w, .tg-p { grid-column: 1 / -1; }
+      .tg-w::before, .tg-p::before { display: block; font-family: var(--body); font-weight: 800; font-size: 10.5px;
+        letter-spacing: .07em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 1px; }
+      .tg-w::before { content: 'Best window'; }
+      .tg-p::before { content: 'Where'; }
+    }
     @media (max-width: 760px) { .targets { padding: 6px 16px; } }
 
     .offitin { margin-top: 10px; padding: 12px 15px; background: color-mix(in srgb, var(--gold) 10%, transparent); border-radius: 12px; font-size: 14px; color: var(--ink); }
@@ -4122,6 +4144,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/f2e71b25e474.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/resplendent-quetzal/">Resplendent Quetzal</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Nesting</div>
             <div class="tg-p">Purulha, Coban</div>
           </div>
@@ -4129,6 +4152,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/4ee70d2904f5.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/horned-guan/">Horned Guan</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:83.33%;width:16.67%"></span><span class="tg-b" style="left:0.00%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Dry months easiest</div>
             <div class="tg-p">San Pedro La Laguna, Santiago Atitlan</div>
           </div>
@@ -4136,6 +4160,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/7b2c05c94580.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/pink-headed-warbler/">Pink-headed Warbler</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Singing</div>
             <div class="tg-p">Todos Santos Cuchumatan, Chiantla</div>
           </div>
@@ -4143,6 +4168,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/a1c2898245cf.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/azure-rumped-tanager/">Azure-rumped Tanager</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">All year</div>
             <div class="tg-p">Patulul</div>
           </div>
@@ -4150,6 +4176,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/4ee70d2904f5.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/ocellated-turkey/">Ocellated Turkey</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:25.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Display</div>
             <div class="tg-p"><a href="#site-tikal-and-the-peten-forest">Tikal and the Peten forest</a>, El Remate</div>
           </div>
@@ -4157,6 +4184,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/009a6ba16adc.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/scarlet-macaw/">Scarlet Macaw</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:0.00%;width:41.67%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Nesting</div>
             <div class="tg-p">Paso Caballos, <a href="#site-laguna-del-tigre-and-the-western-peten">Laguna del Tigre and the western Peten</a></div>
           </div>
@@ -4164,6 +4192,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/6b65b8d99927.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/orange-breasted-falcon/">Orange-breasted Falcon</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">At the nest</div>
             <div class="tg-p"><a href="#site-tikal-and-the-peten-forest">Tikal and the Peten forest</a></div>
           </div>
@@ -4171,6 +4200,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/a6944bb858bf.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/keel-billed-motmot/">Keel-billed Motmot</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Calling</div>
             <div class="tg-p">Izabal, <a href="#site-the-caribbean-coast-rio-dulce-and-cerro-san-gil">The Caribbean coast: Rio Dulce and Cerro San Gil</a></div>
           </div>
@@ -4303,6 +4333,7 @@
         <p class="blurb">The forest around Tikal is the most reachable lowland rainforest in the country, and the ruins are the reason it survived: the park protects a block of Peten forest that farming took almost everywhere else. Temple IV rises above the canopy, so a bird that would be a silhouette from a trail is at eye level from the top at dawn.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> Tikal preserves an accessible example of the forest that once covered most of northern Guatemala, and it sits inside the Maya Biosphere Reserve, which runs to almost 2 million ha before the contiguous protected areas across the borders are counted. Over 300 species have been found within 20 km of the ruins. Hunting is prohibited, so the large gamebirds show far better here than almost anywhere else, with <a href="/birds/ocellated-turkey/">Ocellated Turkey</a> common, tame and wild alongside <a href="/birds/great-curassow/">Great Curassow</a> and <a href="/birds/crested-guan/">Crested Guan</a>.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/ocellated-turkey/">Ocellated Turkey</a>, <a href="/birds/great-curassow/">Great Curassow</a> and <a href="/birds/crested-guan/">Crested Guan</a> are here in every month.</li>
         <li class="where access"><b>Getting there:</b> Flores has daily flights from the capital, and the road on to the Tikal entrance takes an hour to an hour and a half. Cars are hired at Flores airport, buses leave the main hotels several times each morning and return in the evening, and a taxi runs about $40 return. Tikal repays several days, and the first hour of light is the one that counts.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/ocellated-turkey/">Ocellated Turkey</a>, <a href="/birds/great-curassow/">Great Curassow</a>, <a href="/birds/crested-guan/">Crested Guan</a>, <a href="/birds/keel-billed-toucan/">Keel-billed Toucan</a>, <a href="/birds/collared-aracari/">Collared Aracari</a>, <a href="/birds/orange-breasted-falcon/">Orange-breasted Falcon</a>, <a href="/birds/ornate-hawk-eagle/">Ornate Hawk-Eagle</a>, <a href="/birds/montezuma-oropendola/">Montezuma Oropendola</a></li>
@@ -4541,7 +4572,9 @@
         <p class="blurb">Atitlan is a flooded caldera with three volcanoes on its southern rim, and the forest above about two thousand metres on them holds the <a href="/birds/horned-guan/">Horned Guan</a>. The climb is steep and starts before dawn, and the reward is a bird that lives only in the Guatemalan highlands and just over the border in southern Mexico.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> Lago de Atitlan is a large and stunningly beautiful mountain lake ringed by high volcanoes. Volcan Toliman rises to 3158 m and Volcan Atitlan to 3537 m on the south side, and both hold the rare <a href="/birds/horned-guan/">Horned Guan</a>. Reedbeds lie 2 km northwest of Santiago, and forest stands along the road west of the town. The lake was once the sole home of the Atitlan Grebe.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/horned-guan/">Horned Guan</a>, <a href="/birds/blue-throated-motmot/">Blue-throated Motmot</a> and <a href="/birds/rufous-browed-wren/">Rufous-browed Wren</a> hold the ground through the year.</li>
+        <li class="where access"><b>Getting there:</b> The Pan-American Highway skirts the northeast of the lake and passes through the resort town of Panajachel. South of San Andres Semetabaj a surfaced road, No. 11, forks right toward San Lucas Toliman, and a very poor road carries on from there to Santiago de Atitlan. The reedbeds northwest of Santiago are reached by hiring a boat in Santiago or by walking the road toward San Lucas for 30 minutes to the park entrance signed Pachaval. Boats also run between Panajachel and Santiago. Reaching the two volcanoes from Santiago is difficult, and trails run up from near San Lucas.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/horned-guan/">Horned Guan</a>, <a href="/birds/blue-throated-motmot/">Blue-throated Motmot</a>, <a href="/birds/rufous-browed-wren/">Rufous-browed Wren</a>, <a href="/birds/black-throated-jay/">Black-throated Jay</a>, <a href="/birds/wine-throated-hummingbird/">Wine-throated Hummingbird</a>, <a href="/birds/bushy-crested-jay/">Bushy-crested Jay</a>, <a href="/birds/rufous-sabrewing/">Rufous Sabrewing</a>, <a href="/birds/mottled-owl/">Mottled Owl</a></li>
 
 
@@ -4673,7 +4706,9 @@
         <p class="blurb">The Cuchumatanes are a limestone plateau rising above three thousand metres, the highest ground in Guatemala outside the volcanoes, and high enough to carry a different set of birds from the volcanic highlands to the south. The <a href="/birds/pink-headed-warbler/">Pink-headed Warbler</a> lives in the scrubby pine and oak up here and in the highlands just across the Mexican border, and nowhere else at all.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> Todos Santos Cuchumatan is a traditional Mayan village at 2450 m in the heart of the Cordillera de los Cuchumatanes, the most extensive area of high altitude habitat in Guatemala. The trail to San Juan Atitan carries <a href="/birds/pink-headed-warbler/">Pink-headed Warbler</a>, White-breasted Hawk, <a href="/birds/white-faced-quail-dove/">White-faced Quail-Dove</a>, <a href="/birds/grey-silky-flycatcher/">Grey Silky-Flycatcher</a>, <a href="/birds/black-capped-swallow/">Black-capped Swallow</a>, <a href="/birds/rufous-browed-wren/">Rufous-browed Wren</a>, Rufous-collared Robin and Spotted Nightingale-Thrush. Altiplano opens out about 20 km southeast of the village near a junction known as Tres Caminos, and it holds <a href="/birds/black-capped-siskin/">Black-capped Siskin</a> and the local Goldman's Warbler.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/pink-headed-warbler/">Pink-headed Warbler</a>, <a href="/birds/black-capped-siskin/">Black-capped Siskin</a> and <a href="/birds/unspotted-saw-whet-owl/">Unspotted Saw-whet Owl</a> are here in every month.</li>
+        <li class="where access"><b>Getting there:</b> Leave Huehuetenango north towards Chiantla and La Capellania, then go northeast on Highway 9N. Todos Santos lies about 40 km from Huehuetenango and four buses a day make the run. Local tracks reach the highland habitat, and directions for them are best asked for on site.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/pink-headed-warbler/">Pink-headed Warbler</a>, <a href="/birds/black-capped-siskin/">Black-capped Siskin</a>, <a href="/birds/wine-throated-hummingbird/">Wine-throated Hummingbird</a>, <a href="/birds/unspotted-saw-whet-owl/">Unspotted Saw-whet Owl</a>, <a href="/birds/black-throated-jay/">Black-throated Jay</a>, <a href="/birds/rufous-browed-wren/">Rufous-browed Wren</a>, <a href="/birds/fulvous-owl/">Fulvous Owl</a>, <a href="/birds/green-jay/">Green Jay</a></li>
 
 

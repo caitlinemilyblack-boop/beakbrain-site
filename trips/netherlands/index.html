@@ -619,6 +619,28 @@
     /* A bird present all year gets a lighter bar: the point of the column is the
        birds whose window is narrow, and a solid bar on eight rows says nothing. */
     .tg-b.tg-all { background: var(--sage); opacity: .4; }
+    /* The month ruler lives in the table head, which a stacked row cannot see. */
+    .tg-scale { display: none; }
+    /* PAGE-SPEC 4. THE TABLE COULD NOT ANSWER ITS OWN QUESTION ON A PHONE. At 390px the
+       row is 1,022px wide in a 332px window, so a reader saw the bird name and the first
+       weeks of the calendar while Best Window and Where sat entirely off-screen, reachable
+       only by scrolling every row sideways. "Best Month for Each Bird" is exactly the
+       thing that was cut off. Under 760px the row becomes a card: the bird, then the
+       calendar full width with its own month ruler under it, then the window and the
+       places as labelled lines. Nothing scrolls sideways. */
+    @media (max-width: 760px) {
+      .tg-head { display: none; }
+      .tg-row { grid-template-columns: 46px minmax(0, 1fr); gap: 9px 12px; min-width: 0; padding: 14px 0 16px; align-items: start; }
+      .tg-n { align-self: center; font-size: 16.5px; }
+      .tg-mini { grid-column: 1 / -1; height: 20px; }
+      .tg-scale { display: grid; grid-column: 1 / -1; grid-template-columns: repeat(12, 1fr); margin-top: -3px; }
+      .tg-scale span { font-family: var(--body); font-weight: 800; font-size: 10.5px; color: var(--muted); text-align: center; }
+      .tg-w, .tg-p { grid-column: 1 / -1; }
+      .tg-w::before, .tg-p::before { display: block; font-family: var(--body); font-weight: 800; font-size: 10.5px;
+        letter-spacing: .07em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 1px; }
+      .tg-w::before { content: 'Best window'; }
+      .tg-p::before { content: 'Where'; }
+    }
     @media (max-width: 760px) { .targets { padding: 6px 16px; } }
 
     .offitin { margin-top: 10px; padding: 12px 15px; background: color-mix(in srgb, var(--gold) 10%, transparent); border-radius: 12px; font-size: 14px; color: var(--ink); }
@@ -3246,6 +3268,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/black-tailed-godwit/">Black-tailed Godwit</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">March to June</div>
             <div class="tg-p"><a href="#site-the-frisian-lakes-and-meadow-bird-country">The Frisian Lakes and Meadow-Bird Country</a>, <a href="#site-the-biesbosch-and-the-great-rivers">The Biesbosch and the Great Rivers</a></div>
           </div>
@@ -3253,6 +3276,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/ae798de40aa3.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/eurasian-spoonbill/">Eurasian Spoonbill</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:58.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">March to September</div>
             <div class="tg-p"><a href="#site-the-wadden-islands">The Wadden Islands</a>, <a href="#site-the-wadden-coast-and-lauwersmeer">The Wadden Coast and Lauwersmeer</a></div>
           </div>
@@ -3260,6 +3284,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/white-tailed-eagle/">White-tailed Eagle</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Any month, best in winter</div>
             <div class="tg-p"><a href="#site-flevoland-and-the-oostvaardersplassen">Flevoland and the Oostvaardersplassen</a>, <a href="#site-the-biesbosch-and-the-great-rivers">The Biesbosch and the Great Rivers</a></div>
           </div>
@@ -3267,6 +3292,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/e58fde9fe327.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/barnacle-goose/">Barnacle Goose</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:75.00%;width:25.00%"></span><span class="tg-b" style="left:0.00%;width:25.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">October to March</div>
             <div class="tg-p"><a href="#site-the-wadden-coast-and-lauwersmeer">The Wadden Coast and Lauwersmeer</a>, <a href="#site-the-zeeland-delta">The Zeeland Delta</a></div>
           </div>
@@ -3274,6 +3300,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/4da14b5d9847.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/bluethroat/">Bluethroat</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:25.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">April to June</div>
             <div class="tg-p"><a href="#site-the-wadden-coast-and-lauwersmeer">The Wadden Coast and Lauwersmeer</a>, <a href="#site-the-biesbosch-and-the-great-rivers">The Biesbosch and the Great Rivers</a></div>
           </div>
@@ -3281,6 +3308,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/red-knot/">Red Knot</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:58.33%;width:25.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">August to October, and May</div>
             <div class="tg-p"><a href="#site-the-wadden-islands">The Wadden Islands</a>, <a href="#site-the-wadden-coast-and-lauwersmeer">The Wadden Coast and Lauwersmeer</a></div>
           </div>
@@ -3288,6 +3316,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/3c4326048557.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/middle-spotted-woodpecker/">Middle Spotted Woodpecker</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:25.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">February to April</div>
             <div class="tg-p"><a href="#site-the-veluwe">The Veluwe</a>, <a href="#site-limburg-and-the-southern-hills">Limburg and the Southern Hills</a></div>
           </div>
@@ -3295,6 +3324,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/kentish-plover/">Kentish Plover</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">April to July</div>
             <div class="tg-p"><a href="#site-the-zeeland-delta">The Zeeland Delta</a>, <a href="#site-flevoland-and-the-oostvaardersplassen">Flevoland and the Oostvaardersplassen</a></div>
           </div>
@@ -4187,7 +4217,9 @@
         <p class="blurb">The two northern provinces hold the country's driest heath and its oldest peat bog at Dwingelderveld. Old pine and oak carry the woodpeckers, the open heath churrs after dusk from late May, and the heather is at its best from late July into September.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> Drenthe is largely sandy ground carrying heathland and mixed forest, with more farmland and younger woods than the Veluwe. Dwingelderveld National Park holds the best of the heath, fen and mostly coniferous forest, and huge numbers of waders roost there in summer, mainly <a href="/birds/black-tailed-godwit/">Black-tailed Godwit</a> and Whimbrel. Outstanding peat moor reserves survive at Fochtelooerveen in the extreme northwest and Bargerveen in the southeast. Most of Groningen is arable field on clay with a few large lakes and some mature wood in the southeast, and Zuidlaardermeer carries wide reedbeds along its west and south shores above some of the province's best bird meadows.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/black-woodpecker/">Black Woodpecker</a> and <a href="/birds/woodlark/">Woodlark</a> are on site in all twelve months.</li>
+        <li class="where access"><b>Getting there:</b> Zuidlaardermeer lies 10 km southeast of the city of Groningen, between Haren, Hoogezand and Zuidlaren. Dwingelderveld has a nature information centre near Ruinen. In the southern outskirts of the city the Hoornse Dijk cycle track crosses the Hoornse Meer pool on a bridge that is one of the easiest spots in the country for nesting Penduline Tit. Schildmeer has a raised hide at Vossenbult, and the Veenhuizerstukken pools near Stadskanaal have hides on either side of the N33 and N366 junction.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/black-woodpecker/">Black Woodpecker</a>, <a href="/birds/woodlark/">Woodlark</a>, <a href="/birds/european-nightjar/">European Nightjar</a>, <a href="/birds/red-backed-shrike/">Red-backed Shrike</a></li>
 
 
@@ -7089,6 +7121,7 @@
         <ul class="wherelist">
         <li class="where habitat"><b>Habitat:</b> A dune belt running the North Sea coast from Katwijk south past Scheveningen, narrow along much of its length and backed by the Randstad cities, with wooded and canalised sections inland where water purification keeps pools ice-free through hard weather.</li>
         <li class="where when"><b>When:</b> September and October, when the coast north of Katwijk aan Zee carries one of the heaviest landbird migrations in the country. The purification canals farther inland stay open in severe winters and hold Common Bittern, <a href="/birds/smew/">Smew</a>, Goosander and <a href="/birds/common-kingfisher/">Common Kingfisher</a> at close range.</li>
+        <li class="where access"><b>Getting there:</b> Kwade Hoek sits southwest of the Haringvlietdam beside the marina harbour of Stellendam Buitenhaven. Snijderweg runs past the harbour, and a right turn opposite the Zuiderdiep pool reaches the high concrete coastal dike along the western edge of the harbour. A walk along the top of that dike gives a telescope view over the wide Kwade Hoek mudflats, which lie exposed at low tide.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/sandwich-tern/">Sandwich Tern</a>, <a href="/birds/common-hoopoe/">Common Hoopoe</a>, <a href="/birds/common-redstart/">Common Redstart</a>, <a href="/birds/icterine-warbler/">Icterine Warbler</a></li>
 
 

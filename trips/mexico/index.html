@@ -619,6 +619,28 @@
     /* A bird present all year gets a lighter bar: the point of the column is the
        birds whose window is narrow, and a solid bar on eight rows says nothing. */
     .tg-b.tg-all { background: var(--sage); opacity: .4; }
+    /* The month ruler lives in the table head, which a stacked row cannot see. */
+    .tg-scale { display: none; }
+    /* PAGE-SPEC 4. THE TABLE COULD NOT ANSWER ITS OWN QUESTION ON A PHONE. At 390px the
+       row is 1,022px wide in a 332px window, so a reader saw the bird name and the first
+       weeks of the calendar while Best Window and Where sat entirely off-screen, reachable
+       only by scrolling every row sideways. "Best Month for Each Bird" is exactly the
+       thing that was cut off. Under 760px the row becomes a card: the bird, then the
+       calendar full width with its own month ruler under it, then the window and the
+       places as labelled lines. Nothing scrolls sideways. */
+    @media (max-width: 760px) {
+      .tg-head { display: none; }
+      .tg-row { grid-template-columns: 46px minmax(0, 1fr); gap: 9px 12px; min-width: 0; padding: 14px 0 16px; align-items: start; }
+      .tg-n { align-self: center; font-size: 16.5px; }
+      .tg-mini { grid-column: 1 / -1; height: 20px; }
+      .tg-scale { display: grid; grid-column: 1 / -1; grid-template-columns: repeat(12, 1fr); margin-top: -3px; }
+      .tg-scale span { font-family: var(--body); font-weight: 800; font-size: 10.5px; color: var(--muted); text-align: center; }
+      .tg-w, .tg-p { grid-column: 1 / -1; }
+      .tg-w::before, .tg-p::before { display: block; font-family: var(--body); font-weight: 800; font-size: 10.5px;
+        letter-spacing: .07em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 1px; }
+      .tg-w::before { content: 'Best window'; }
+      .tg-p::before { content: 'Where'; }
+    }
     @media (max-width: 760px) { .targets { padding: 6px 16px; } }
 
     .offitin { margin-top: 10px; padding: 12px 15px; background: color-mix(in srgb, var(--gold) 10%, transparent); border-radius: 12px; font-size: 14px; color: var(--ink); }
@@ -5716,6 +5738,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/4ee70d2904f5.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/horned-guan/">Horned Guan</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">February to May</div>
             <div class="tg-p">Jaltenango, San Cristobal de las Casas</div>
           </div>
@@ -5723,6 +5746,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/4ee70d2904f5.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/ocellated-turkey/">Ocellated Turkey</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:25.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">March to May</div>
             <div class="tg-p">Felipe Carrillo Puerto, Merida</div>
           </div>
@@ -5730,6 +5754,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/058c1e5c2d2e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/dwarf-jay/">Dwarf Jay</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">All year</div>
             <div class="tg-p">Oaxaca de Juarez</div>
           </div>
@@ -5737,6 +5762,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/f2e71b25e474.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/eared-quetzal/">Eared Quetzal</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">May to August</div>
             <div class="tg-p">El Salto, Creel</div>
           </div>
@@ -5744,6 +5770,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/009a6ba16adc.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/thick-billed-parrot/">Thick-billed Parrot</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:50.00%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">July to October</div>
             <div class="tg-p">Creel, Chihuahua</div>
           </div>
@@ -5751,6 +5778,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/058c1e5c2d2e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/san-blas-jay/">San Blas Jay</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">All year</div>
             <div class="tg-p"><a href="#site-san-blas-and-the-west-coast">San Blas and the West Coast</a>, Tepic</div>
           </div>
@@ -5758,6 +5786,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/7b2c05c94580.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/pink-headed-warbler/">Pink-headed Warbler</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:41.67%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">February to June</div>
             <div class="tg-p">San Cristobal de las Casas</div>
           </div>
@@ -5765,6 +5794,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/009a6ba16adc.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/military-macaw/">Military Macaw</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:41.67%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">February to June</div>
             <div class="tg-p"><a href="#site-san-blas-and-the-west-coast">San Blas and the West Coast</a>, Xilitla</div>
           </div>
@@ -5914,7 +5944,9 @@
         <p class="blurb">Oaxaca holds more endemic birds than any other Mexican state, and the reason is altitude: the Sierra Madre del Sur, the dry Tlacolula valley and the Atlantic-slope cloud forest all meet within a short drive of the city. Most Mexican trips include it.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> Oaxaca City stands at 1500 m in a dry valley ringed by mountains and reaches a wide spread of habitats within a day. Cerro San Felipe rises north of the city in the Sierra de Aloapaneca, where the highway tops the first main ridge at about 2700 m. Its humid pine and oak highland forest is the readily accessible site for the endemic <a href="/birds/dwarf-jay/">Dwarf Jay</a>, and great mixed flocks of warblers wintering from western North America work the same woods.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/dwarf-jay/">Dwarf Jay</a>, <a href="/birds/oaxaca-sparrow/">Oaxaca Sparrow</a> and <a href="/birds/bridled-sparrow/">Bridled Sparrow</a> hold the ground through the year.</li>
+        <li class="where access"><b>Getting there:</b> Oaxaca City lies about 450 km and 4.5 to 5.5 hours from Mexico City on the cuota highways by way of Puebla and Tehuacan. Monte Alban, Teotitlan del Valle, Yagul, Route 175 North and Cerro San Felipe all make easy day trips from the city. For Cerro San Felipe, head east out of the city on Route 190, turn north onto Route 175 and climb 22.5 km to the roadside huts at La Cumbre by Km Post 192, which takes about an hour once the slow trucks are allowed for. Second class buses between Oaxaca and Guelatao or Tuxtepec set down there. Dirt logging roads on either side of the highway carry the birding and good habitat sits close enough to the road to walk to, though a chain across the entrance may need someone from the nearest hut to unlock it.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/dwarf-jay/">Dwarf Jay</a>, <a href="/birds/oaxaca-sparrow/">Oaxaca Sparrow</a>, <a href="/birds/bridled-sparrow/">Bridled Sparrow</a>, <a href="/birds/slaty-vireo/">Slaty Vireo</a>, <a href="/birds/ocellated-thrasher/">Ocellated Thrasher</a>, <a href="/birds/red-warbler/">Red Warbler</a>, <a href="/birds/oaxaca-hummingbird/">Oaxaca Hummingbird</a>, <a href="/birds/long-tailed-wood-partridge/">Long-tailed Wood Partridge</a></li>
 
 
@@ -6043,7 +6075,9 @@
         <p class="blurb">Every autumn the whole eastern flyway funnels between the Gulf of Mexico and the Sierra Madre Oriental and passes over a coastal plain twenty kilometres wide. Counts from Cardel and Chichicaxtle have exceeded five million birds in a season, which is more raptors than are counted anywhere else, and the Gulf slope above the plain holds cloud forest within half an hour of the count site.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> The Sierra de Los Tuxtlas is a volcanic massif rising from the Gulf Slope lowlands of southern Veracruz, and together with the lowlands of northern Oaxaca it holds the northernmost tropical rain forest in the Americas. Volcan San Martin Tuxtla is the highest peak in the west at 1650 m, and a second high volcano stands in the east. Habitats run from mangrove to cloud forest, with an area of pine and oak forest on the southern slopes of the eastern volcano, and over 400 species have been recorded. Farther south the Uxpanapa region straddles the Veracruz and Oaxaca state line in the central Isthmus of Tehuantepec, where pockets of forest cling to jagged limestone karst beside a well graded dirt road.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/bat-falcon/">Bat Falcon</a>, <a href="/birds/crimson-collared-grosbeak/">Crimson-collared Grosbeak</a> and <a href="/birds/bearded-wood-partridge/">Bearded Wood Partridge</a> hold the ground through the year. <a href="/birds/military-macaw/">Military Macaw</a> is away from October to November.</li>
+        <li class="where access"><b>Getting there:</b> Catemaco sits at 350 m on the shore of Lake Catemaco in the heart of the Tuxtlas, about 170 km and two to three hours southeast of Veracruz City on Route 180. First class and second class buses serve it regularly from Veracruz City. Most of the birding lies along the road from Catemaco through Sontecomapan to the coast at Montepio, some 40 km and an hour and a half to two hours away, and second class buses ply that road too. The Uxpanapa forests are birded most easily from a base in or near Matias Romero on Route 185, about 370 km and four to five hours from Veracruz City by the cuota highways through La Tinaja, Sayula and Acayucan. A paved road leads east off Route 185 at the village of Boca del Monte, 109 km south of Sayula.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/bat-falcon/">Bat Falcon</a>, <a href="/birds/crimson-collared-grosbeak/">Crimson-collared Grosbeak</a>, <a href="/birds/military-macaw/">Military Macaw</a>, <a href="/birds/turquoise-browed-motmot/">Turquoise-browed Motmot</a>, <a href="/birds/bearded-wood-partridge/">Bearded Wood Partridge</a></li>
 
 
@@ -6127,7 +6161,9 @@
         <p class="blurb">A 1,200 km desert peninsula with its own endemic birds at the southern tip and one of the most productive seas on earth alongside it. The birding and the whale watching are the same trip, and the boat is how you reach both.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> The Cape at the southern tip of the peninsula is dominated by the Sierra Victoria, whose northern mountains are known as the Sierra de la Laguna and carry high forest holding <a href="/birds/band-tailed-pigeon/">Band-tailed Pigeon</a>, Cape Pygmy-Owl, Xantus' Hummingbird, San Lucas Robin and <a href="/birds/baird-s-junco/">Baird's Junco</a>. Boca de la Sierra in the Cape foothills has a freshwater spring, desert runs up to the village and the slopes above it carry oaks. The desert around Guerrero Negro is bleak and often cool under a sheet of coastal cloud off the cold Pacific water offshore, and salt flats, ponds and excellent salt marsh run west of the town to the tidal lagoon of the Estero de San Jose.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/xantus-s-hummingbird/">Xantus's Hummingbird</a>, <a href="/birds/grey-thrasher/">Grey Thrasher</a> and <a href="/birds/belding-s-yellowthroat/">Belding's Yellowthroat</a> hold the ground through the year.</li>
+        <li class="where access"><b>Getting there:</b> Los Cabos at the southern tip takes flights and has car hire from several companies at the airport, while driving in from California suits the northern third to half of the peninsula. Ferries run between Santa Rosalia and Guaymas and from La Paz to Topolobampo and Mazatlan, and a vehicle crossing wants booking a month ahead in holiday periods. A well signed paved turn leads off Route 1 into Guerrero Negro, and the graded dirt road along the north edge of the town park runs 6.5 miles west through the salt flats to a disused wharf overlooking the lagoon. Boca de la Sierra is reached from San Jose del Cabo by heading north on Route 1 for about 28 km to the Miraflores junction, then on graded dirt for about 6 km. The high forest of the Sierra de la Laguna is reached on foot, either from near Todos Santos in the west or from Route 1 in the east, and the hike wants a guide, a pack animal and at least two nights of camping. The western trail is steep, steadily uphill and short of shade, so an early start pays.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/xantus-s-hummingbird/">Xantus's Hummingbird</a>, <a href="/birds/grey-thrasher/">Grey Thrasher</a>, <a href="/birds/belding-s-yellowthroat/">Belding's Yellowthroat</a>, <a href="/birds/craveri-s-murrelet/">Craveri's Murrelet</a>, <a href="/birds/yellow-footed-gull/">Yellow-footed Gull</a></li>
 
 
@@ -6206,7 +6242,9 @@
         <p class="blurb">The Sierra Madre Occidental runs the length of northern Mexico and carries the largest pine-oak forest in North America. Copper Canyon cuts through it, and the train that crosses it is how most people arrive.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> The Durango Highway cuts a spectacular route through the Sierra Madre Occidental from the coast up to the plateau, and birding is good almost anywhere along it where a car can pull off safely. The Barranca Rancho Liebre at Km 200.5 is the famous site for <a href="/birds/tufted-jay/">Tufted Jay</a>, and <a href="/birds/thick-billed-parrot/">Thick-billed Parrot</a> and <a href="/birds/eared-quetzal/">Eared Quetzal</a> have been seen there as well. Many species move up and down the slope with the season, so lowland nesters climb into the mountains in autumn and mountain nesters drop to the foothills and even the coast in winter. Farther north the Barranca del Cobre is a spectacular canyon system, and Cascadas de Cusarare within it is a good site for <a href="/birds/eared-quetzal/">Eared Quetzal</a> alongside Northern Goshawk, <a href="/birds/mountain-trogon/">Mountain Trogon</a>, <a href="/birds/american-dipper/">American Dipper</a> and <a href="/birds/striped-sparrow/">Striped Sparrow</a>.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/eared-quetzal/">Eared Quetzal</a>, <a href="/birds/tufted-jay/">Tufted Jay</a> and <a href="/birds/red-warbler/">Red Warbler</a> are on site in all twelve months.</li>
+        <li class="where access"><b>Getting there:</b> The Durango Highway leaves Route 15 at a major signed junction on the south side of Villa Union, 7 km south of the Mazatlan airport junction. A day trip from Mazatlan works best with a start before dawn, since the Panuco Road is one to one and a half hours up and the Barranca Rancho Liebre another one and a half to two. Many birders instead base themselves at La Capilla de Taxte at 1200 m, about 61 km up the highway, or at Potrerillos near Km 222, from where buses reach the Barranca and the Panuco Road. For the Barranca del Cobre, the daily first class train runs between Ciudad Chihuahua and Los Mochis in about fourteen hours, and a winter start from Los Mochis keeps the best scenery in daylight. Ciudad Chihuahua lies 375 km and four and a half to five and a half hours south of the El Paso border crossing on Route 45.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/eared-quetzal/">Eared Quetzal</a>, <a href="/birds/thick-billed-parrot/">Thick-billed Parrot</a>, <a href="/birds/tufted-jay/">Tufted Jay</a>, <a href="/birds/military-macaw/">Military Macaw</a>, <a href="/birds/red-warbler/">Red Warbler</a></li>
 
 
@@ -6247,6 +6285,7 @@
 
         <ul class="wherelist">
         <li class="where habitat"><b>Habitat:</b> Tropical evergreen forest at 350 m rising into cloud forest on the eastern escarpment of the Sierra Madre Oriental, the northernmost tropical forest in the Americas.</li>
+        <li class="where when"><b>When:</b> December to April is the dry season and the period most birders choose, and February to April is better again as resident birds start to sing and nest. Nights around Gomez Farias can be misty or rainy at any time of year.</li>
         <li class="where access"><b>Getting there:</b> Gomez Farias sits about 260 mi, 425 km and five and a half to six and a half hours, south of the Brownsville and Matamoros border crossing. From Matamoros take Route 101 to Ciudad Victoria and skirt the town on the periferico.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/bearded-wood-partridge/">Bearded Wood Partridge</a>, <a href="/birds/maroon-fronted-parrot/">Maroon-fronted Parrot</a>, <a href="/birds/tamaulipas-crow/">Tamaulipas Crow</a>, <a href="/birds/crimson-collared-grosbeak/">Crimson-collared Grosbeak</a>, <a href="/birds/military-macaw/">Military Macaw</a></li>
 

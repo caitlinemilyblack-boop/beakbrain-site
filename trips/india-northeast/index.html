@@ -619,6 +619,28 @@
     /* A bird present all year gets a lighter bar: the point of the column is the
        birds whose window is narrow, and a solid bar on eight rows says nothing. */
     .tg-b.tg-all { background: var(--sage); opacity: .4; }
+    /* The month ruler lives in the table head, which a stacked row cannot see. */
+    .tg-scale { display: none; }
+    /* PAGE-SPEC 4. THE TABLE COULD NOT ANSWER ITS OWN QUESTION ON A PHONE. At 390px the
+       row is 1,022px wide in a 332px window, so a reader saw the bird name and the first
+       weeks of the calendar while Best Window and Where sat entirely off-screen, reachable
+       only by scrolling every row sideways. "Best Month for Each Bird" is exactly the
+       thing that was cut off. Under 760px the row becomes a card: the bird, then the
+       calendar full width with its own month ruler under it, then the window and the
+       places as labelled lines. Nothing scrolls sideways. */
+    @media (max-width: 760px) {
+      .tg-head { display: none; }
+      .tg-row { grid-template-columns: 46px minmax(0, 1fr); gap: 9px 12px; min-width: 0; padding: 14px 0 16px; align-items: start; }
+      .tg-n { align-self: center; font-size: 16.5px; }
+      .tg-mini { grid-column: 1 / -1; height: 20px; }
+      .tg-scale { display: grid; grid-column: 1 / -1; grid-template-columns: repeat(12, 1fr); margin-top: -3px; }
+      .tg-scale span { font-family: var(--body); font-weight: 800; font-size: 10.5px; color: var(--muted); text-align: center; }
+      .tg-w, .tg-p { grid-column: 1 / -1; }
+      .tg-w::before, .tg-p::before { display: block; font-family: var(--body); font-weight: 800; font-size: 10.5px;
+        letter-spacing: .07em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 1px; }
+      .tg-w::before { content: 'Best window'; }
+      .tg-p::before { content: 'Where'; }
+    }
     @media (max-width: 760px) { .targets { padding: 6px 16px; } }
 
     .offitin { margin-top: 10px; padding: 12px 15px; background: color-mix(in srgb, var(--gold) 10%, transparent); border-radius: 12px; font-size: 14px; color: var(--ink); }
@@ -4149,6 +4171,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/0996038f1e97.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/bugun-liocichla/">Bugun Liocichla</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:25.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Calling</div>
             <div class="tg-p">Lama Camp</div>
           </div>
@@ -4156,6 +4179,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/df453e92599a.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/bengal-florican/">Bengal Florican</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:25.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Displaying</div>
             <div class="tg-p">Kohora</div>
           </div>
@@ -4163,6 +4187,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/e58fde9fe327.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/white-winged-duck/">White-winged Duck</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:83.33%;width:16.67%"></span><span class="tg-b" style="left:0.00%;width:25.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Present</div>
             <div class="tg-p"><a href="#site-nameri-pakke-and-the-assam-foothills">Nameri, Pakke and the Assam foothills</a></div>
           </div>
@@ -4170,6 +4195,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/f2e71b25e474.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/ward-s-trogon/">Ward's Trogon</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Calling</div>
             <div class="tg-p">Lama Camp</div>
           </div>
@@ -4177,6 +4203,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/fac8c376e110.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/mishmi-wren-babbler/">Mishmi Wren-Babbler</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:25.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Calling</div>
             <div class="tg-p">Roing, Mayodia</div>
           </div>
@@ -4184,6 +4211,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/ae798de40aa3.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/greater-adjutant/">Greater Adjutant</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:75.00%;width:25.00%"></span><span class="tg-b" style="left:0.00%;width:25.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Nesting</div>
             <div class="tg-p">Kohora</div>
           </div>
@@ -4191,6 +4219,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/black-breasted-parrotbill/">Black-breasted Parrotbill</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:83.33%;width:16.67%"></span><span class="tg-b" style="left:0.00%;width:25.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Present</div>
             <div class="tg-p">Tinsukia</div>
           </div>
@@ -4198,6 +4227,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/f2e71b25e474.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/rufous-necked-hornbill/">Rufous-necked Hornbill</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Present</div>
             <div class="tg-p"><a href="#site-nameri-pakke-and-the-assam-foothills">Nameri, Pakke and the Assam foothills</a></div>
           </div>
@@ -4367,6 +4397,7 @@
 
         <ul class="wherelist">
         <li class="where when"><b>When:</b> Best from November to May. <a href="/birds/bugun-liocichla/">Bugun Liocichla</a>, <a href="/birds/ward-s-trogon/">Ward's Trogon</a> and <a href="/birds/beautiful-nuthatch/">Beautiful Nuthatch</a> stay through the year.</li>
+        <li class="where access"><b>Getting there:</b> The Eagle's Nest sanctuary lies north of Tezpur, close to the Bhutanese border in west Arunachal Pradesh. Permission to visit Arunachal Pradesh is usually given only to groups of four or more and for a maximum of ten days, and permits are expensive.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/bugun-liocichla/">Bugun Liocichla</a>, <a href="/birds/ward-s-trogon/">Ward's Trogon</a>, <a href="/birds/beautiful-nuthatch/">Beautiful Nuthatch</a>, <a href="/birds/fire-tailed-myzornis/">Fire-tailed Myzornis</a>, <a href="/birds/blyth-s-tragopan/">Blyth's Tragopan</a>, <a href="/birds/rufous-necked-hornbill/">Rufous-necked Hornbill</a>, <a href="/birds/long-billed-wren-babbler/">Long-billed Wren-Babbler</a>, <a href="/birds/purple-cochoa/">Purple Cochoa</a></li>
 
 
@@ -4471,7 +4502,7 @@
         <p class="blurb">The Mishmi Hills are the farthest thing from a developed birding destination in India: one road from Roing up to the Mayodia pass at 2,655 m and on towards Anini, with forest on both sides most of the way. <a href="/birds/mishmi-wren-babbler/">Mishmi Wren-Babbler</a> lives here and nowhere else, <a href="/birds/sclater-s-monal/">Sclater's Monal</a> is on the highest ground, and the whole area was only opened to foreign visitors recently.</p>
 
         <ul class="wherelist">
-
+        <li class="where access"><b>Getting there:</b> Permission to visit Arunachal Pradesh is usually given only to groups of four or more and for a maximum of ten days, and permits are expensive.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/mishmi-wren-babbler/">Mishmi Wren-Babbler</a>, <a href="/birds/sclater-s-monal/">Sclater's Monal</a>, <a href="/birds/blyth-s-tragopan/">Blyth's Tragopan</a>, <a href="/birds/ward-s-trogon/">Ward's Trogon</a>, <a href="/birds/rusty-bellied-shortwing/">Rusty-bellied Shortwing</a>, <a href="/birds/beautiful-sibia/">Beautiful Sibia</a>, <a href="/birds/gould-s-shortwing/">Gould's Shortwing</a>, <a href="/birds/slender-billed-scimitar-babbler/">Slender-billed Scimitar Babbler</a></li>
 
 

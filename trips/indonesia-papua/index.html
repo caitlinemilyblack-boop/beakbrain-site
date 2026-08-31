@@ -619,6 +619,28 @@
     /* A bird present all year gets a lighter bar: the point of the column is the
        birds whose window is narrow, and a solid bar on eight rows says nothing. */
     .tg-b.tg-all { background: var(--sage); opacity: .4; }
+    /* The month ruler lives in the table head, which a stacked row cannot see. */
+    .tg-scale { display: none; }
+    /* PAGE-SPEC 4. THE TABLE COULD NOT ANSWER ITS OWN QUESTION ON A PHONE. At 390px the
+       row is 1,022px wide in a 332px window, so a reader saw the bird name and the first
+       weeks of the calendar while Best Window and Where sat entirely off-screen, reachable
+       only by scrolling every row sideways. "Best Month for Each Bird" is exactly the
+       thing that was cut off. Under 760px the row becomes a card: the bird, then the
+       calendar full width with its own month ruler under it, then the window and the
+       places as labelled lines. Nothing scrolls sideways. */
+    @media (max-width: 760px) {
+      .tg-head { display: none; }
+      .tg-row { grid-template-columns: 46px minmax(0, 1fr); gap: 9px 12px; min-width: 0; padding: 14px 0 16px; align-items: start; }
+      .tg-n { align-self: center; font-size: 16.5px; }
+      .tg-mini { grid-column: 1 / -1; height: 20px; }
+      .tg-scale { display: grid; grid-column: 1 / -1; grid-template-columns: repeat(12, 1fr); margin-top: -3px; }
+      .tg-scale span { font-family: var(--body); font-weight: 800; font-size: 10.5px; color: var(--muted); text-align: center; }
+      .tg-w, .tg-p { grid-column: 1 / -1; }
+      .tg-w::before, .tg-p::before { display: block; font-family: var(--body); font-weight: 800; font-size: 10.5px;
+        letter-spacing: .07em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 1px; }
+      .tg-w::before { content: 'Best window'; }
+      .tg-p::before { content: 'Where'; }
+    }
     @media (max-width: 760px) { .targets { padding: 6px 16px; } }
 
     .offitin { margin-top: 10px; padding: 12px 15px; background: color-mix(in srgb, var(--gold) 10%, transparent); border-radius: 12px; font-size: 14px; color: var(--ink); }
@@ -3336,6 +3358,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/8c2c1e922eb2.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/wilson-s-bird-of-paradise/">Wilson's Bird-of-paradise</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:41.67%;width:50.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Displaying</div>
             <div class="tg-p">Waisai</div>
           </div>
@@ -3343,6 +3366,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/8c2c1e922eb2.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/western-parotia/">Western Parotia</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:50.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Displaying</div>
             <div class="tg-p">Mokwam</div>
           </div>
@@ -3350,6 +3374,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/c4cdc86f321a.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/vogelkop-bowerbird/">Vogelkop Bowerbird</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Bowers attended</div>
             <div class="tg-p">Mokwam</div>
           </div>
@@ -3357,6 +3382,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/775b82c449c7.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/red-bird-of-paradise/">Red Bird-of-paradise</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:41.67%;width:50.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Displaying</div>
             <div class="tg-p">Waisai</div>
           </div>
@@ -3364,6 +3390,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/775b82c449c7.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/king-bird-of-paradise/">King Bird-of-paradise</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Displaying</div>
             <div class="tg-p">Klayili</div>
           </div>
@@ -3371,6 +3398,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/775b82c449c7.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/twelve-wired-bird-of-paradise/">Twelve-wired Bird-of-paradise</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Displaying</div>
             <div class="tg-p">Klayili, <a href="#site-nimbokrang-and-the-jayapura-lowlands">Nimbokrang and the Jayapura lowlands</a></div>
           </div>
@@ -3378,6 +3406,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/79a53b7ec3d0.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/biak-paradise-kingfisher/">Biak Paradise Kingfisher</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Calling</div>
             <div class="tg-p"><a href="#site-biak-and-numfor">Biak and Numfor</a></div>
           </div>
@@ -3385,6 +3414,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/de76657567f7.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/snow-mountain-quail/">Snow Mountain Quail</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:41.67%;width:33.33%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Best walking</div>
             <div class="tg-p">Ibele</div>
           </div>
@@ -3590,7 +3620,9 @@
         <p class="blurb">Raja Ampat sells itself on coral, and the birding sits inside the same trip. <a href="/birds/wilson-s-bird-of-paradise/">Wilson's Bird-of-paradise</a> displays on Waigeo and nowhere else on earth, on a cleared patch of forest floor a walk inland from the beach, and <a href="/birds/red-bird-of-paradise/">Red Bird-of-paradise</a> holds lek trees on the ridges above. Both are reached before dawn from a homestay or a liveaboard, and both are back at the boat by mid-morning. The karst itself carries <a href="/birds/western-crowned-pigeon/">Western Crowned Pigeon</a> on the bigger islands and <a href="/birds/palm-cockatoo/">Palm Cockatoo</a> along the shore, and <a href="/birds/beach-kingfisher/">Beach Kingfisher</a> sits on the mangrove edge in plain view.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> On Batanta the forest meets the sea along the shore east of Wai Lebed, and lowland forest holds Red Bird of paradise a few hundred metres inland. The Wilson's Bird of paradise lek stands on a ridge on the flank of Mount Batanta.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/wilson-s-bird-of-paradise/">Wilson's Bird-of-paradise</a>, <a href="/birds/red-bird-of-paradise/">Red Bird-of-paradise</a> and <a href="/birds/beach-kingfisher/">Beach Kingfisher</a> stay through the year.</li>
+        <li class="where access"><b>Getting there:</b> Boats for Batanta are hired at the jetty in Sorong, the regional capital of the Vogelkop peninsula, which has daily flights from Ambon, Biak, Jayapura and Jakarta. The crossing to Yenenes takes three to three and a half hours, and Wai Lebed is a further hour and a half east along the coast. A village guide leads the tough hour and a half climb to the lek, and you start at dawn.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/wilson-s-bird-of-paradise/">Wilson's Bird-of-paradise</a>, <a href="/birds/red-bird-of-paradise/">Red Bird-of-paradise</a>, <a href="/birds/western-crowned-pigeon/">Western Crowned Pigeon</a>, <a href="/birds/palm-cockatoo/">Palm Cockatoo</a>, <a href="/birds/beach-kingfisher/">Beach Kingfisher</a>, <a href="/birds/common-paradise-kingfisher/">Common Paradise Kingfisher</a>, <a href="/birds/hook-billed-kingfisher/">Hook-billed Kingfisher</a>, <a href="/birds/papuan-eclectus/">Papuan Eclectus</a></li>
 
 
@@ -3665,6 +3697,7 @@
         <ul class="wherelist">
         <li class="where habitat"><b>Habitat:</b> The Bird's Head Peninsula carries lowland alluvial forest, and Bintuni Bay beside it holds some of the most extensive mangrove swamp in the world.</li>
         <li class="where when"><b>When:</b> Best from June to December. <a href="/birds/king-bird-of-paradise/">King Bird-of-paradise</a>, <a href="/birds/lesser-bird-of-paradise/">Lesser Bird-of-paradise</a> and <a href="/birds/twelve-wired-bird-of-paradise/">Twelve-wired Bird-of-paradise</a> stay through the year.</li>
+        <li class="where access"><b>Getting there:</b> Sorong is the regional capital of the Vogelkop peninsula and has daily flights from Ambon, Biak, Jayapura and Jakarta. Boats for the offshore islands are hired at the town jetty.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/king-bird-of-paradise/">King Bird-of-paradise</a>, <a href="/birds/lesser-bird-of-paradise/">Lesser Bird-of-paradise</a>, <a href="/birds/twelve-wired-bird-of-paradise/">Twelve-wired Bird-of-paradise</a>, <a href="/birds/northern-cassowary/">Northern Cassowary</a>, <a href="/birds/blyth-s-hornbill/">Blyth's Hornbill</a>, <a href="/birds/pale-billed-sicklebill/">Pale-billed Sicklebill</a>, <a href="/birds/brown-headed-crow/">Brown-headed Crow</a>, <a href="/birds/golden-myna/">Golden Myna</a></li>
 
 
@@ -3700,7 +3733,8 @@
         <p class="blurb">Biak is an island of raised coral and secondary forest with an airport on it, which makes an extraordinary endemic list unusually easy to reach. <a href="/birds/biak-scops-owl/">Biak Scops Owl</a> answers tape from roadside scrub, <a href="/birds/biak-paradise-kingfisher/">Biak Paradise Kingfisher</a> calls from the forest edge at dawn, and <a href="/birds/biak-monarch/">Biak Monarch</a> and <a href="/birds/biak-coucal/">Biak Coucal</a> are worked in the remnant forest in the north of the island. Numfor is a short flight or a long boat ride away and holds its own paradise kingfisher, which is the reason anyone makes the crossing.</p>
 
         <ul class="wherelist">
-
+        <li class="where habitat"><b>Habitat:</b> Biak itself is largely deforested, and the endemics hold on in mixed degraded and primary forest at the far eastern tip of the island. Supiori next door is a nature reserve of steep terrain that makes for difficult walking, with primary forest on the slopes behind Korido village.</li>
+        <li class="where access"><b>Getting there:</b> Fly in to Biak from Jayapura or Sorong. Charter a vehicle in Biak town for the hour long drive east along the southern coast road through Mokmer and Bosnik to Warafri, and bird from the road and the logging tracks. For Supiori, hire a powered longboat for the five hour sea trip to Korido on the southwest coast, which can be wet, and allow two to three days there. A steep trail climbs into primary forest behind the village, and other trails run inland and parallel to the coast in both directions.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/biak-scops-owl/">Biak Scops Owl</a>, <a href="/birds/biak-paradise-kingfisher/">Biak Paradise Kingfisher</a>, <a href="/birds/biak-monarch/">Biak Monarch</a>, <a href="/birds/biak-coucal/">Biak Coucal</a>, <a href="/birds/numfor-paradise-kingfisher/">Numfor Paradise Kingfisher</a>, <a href="/birds/geelvink-pygmy-parrot/">Geelvink Pygmy Parrot</a>, <a href="/birds/biak-white-eye/">Biak White-eye</a>, <a href="/birds/long-tailed-starling/">Long-tailed Starling</a></li>
 
 

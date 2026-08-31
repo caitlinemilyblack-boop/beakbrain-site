@@ -619,6 +619,28 @@
     /* A bird present all year gets a lighter bar: the point of the column is the
        birds whose window is narrow, and a solid bar on eight rows says nothing. */
     .tg-b.tg-all { background: var(--sage); opacity: .4; }
+    /* The month ruler lives in the table head, which a stacked row cannot see. */
+    .tg-scale { display: none; }
+    /* PAGE-SPEC 4. THE TABLE COULD NOT ANSWER ITS OWN QUESTION ON A PHONE. At 390px the
+       row is 1,022px wide in a 332px window, so a reader saw the bird name and the first
+       weeks of the calendar while Best Window and Where sat entirely off-screen, reachable
+       only by scrolling every row sideways. "Best Month for Each Bird" is exactly the
+       thing that was cut off. Under 760px the row becomes a card: the bird, then the
+       calendar full width with its own month ruler under it, then the window and the
+       places as labelled lines. Nothing scrolls sideways. */
+    @media (max-width: 760px) {
+      .tg-head { display: none; }
+      .tg-row { grid-template-columns: 46px minmax(0, 1fr); gap: 9px 12px; min-width: 0; padding: 14px 0 16px; align-items: start; }
+      .tg-n { align-self: center; font-size: 16.5px; }
+      .tg-mini { grid-column: 1 / -1; height: 20px; }
+      .tg-scale { display: grid; grid-column: 1 / -1; grid-template-columns: repeat(12, 1fr); margin-top: -3px; }
+      .tg-scale span { font-family: var(--body); font-weight: 800; font-size: 10.5px; color: var(--muted); text-align: center; }
+      .tg-w, .tg-p { grid-column: 1 / -1; }
+      .tg-w::before, .tg-p::before { display: block; font-family: var(--body); font-weight: 800; font-size: 10.5px;
+        letter-spacing: .07em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 1px; }
+      .tg-w::before { content: 'Best window'; }
+      .tg-p::before { content: 'Where'; }
+    }
     @media (max-width: 760px) { .targets { padding: 6px 16px; } }
 
     .offitin { margin-top: 10px; padding: 12px 15px; background: color-mix(in srgb, var(--gold) 10%, transparent); border-radius: 12px; font-size: 14px; color: var(--ink); }
@@ -3576,6 +3598,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/7f954f11df23.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/garnet-pitta/">Garnet Pitta</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:41.67%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Calling</div>
             <div class="tg-p">Kuala Tahan</div>
           </div>
@@ -3583,6 +3606,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/4da14b5d9847.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/malayan-whistling-thrush/">Malayan Whistling Thrush</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">On the road</div>
             <div class="tg-p"><a href="#site-fraser-s-hill">Fraser's Hill</a></div>
           </div>
@@ -3590,6 +3614,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/65420595740a.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/rail-babbler/">Rail-babbler</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:41.67%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Calling</div>
             <div class="tg-p">Kota Tinggi, Kuala Tahan</div>
           </div>
@@ -3597,6 +3622,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/de76657567f7.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/mountain-peacock-pheasant/">Mountain Peacock-Pheasant</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Calling</div>
             <div class="tg-p">Tanah Rata</div>
           </div>
@@ -3604,6 +3630,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/nordmann-s-greenshank/">Nordmann's Greenshank</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:75.00%;width:25.00%"></span><span class="tg-b" style="left:0.00%;width:25.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Wintering</div>
             <div class="tg-p"><a href="#site-kuala-selangor-and-the-west-coast-wetlands">Kuala Selangor and the west coast wetlands</a></div>
           </div>
@@ -3611,6 +3638,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/4ee70d2904f5.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/great-argus/">Great Argus</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:41.67%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Calling</div>
             <div class="tg-p">Kuala Tahan</div>
           </div>
@@ -3618,6 +3646,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/86d63a6a1ff6.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/green-broadbill/">Green Broadbill</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Present</div>
             <div class="tg-p">Kota Tinggi</div>
           </div>
@@ -3625,6 +3654,7 @@
             <div class="tg-ill"><img src="/birds/assets/sprites/7f954f11df23.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
             <div class="tg-n"><a href="/birds/mangrove-pitta/">Mangrove Pitta</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:41.67%"></span></div>
+            <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
             <div class="tg-w">Calling</div>
             <div class="tg-p"><a href="#site-kuala-selangor-and-the-west-coast-wetlands">Kuala Selangor and the west coast wetlands</a></div>
           </div>
@@ -3867,7 +3897,9 @@
         <p class="blurb">Panti is a lowland forest reserve in Johor birded along the Bunker Trail, a straight logging road that cuts through it, and it is the accessible end of the Sundaic lowland list. The birding is done from the track: broadbills, trogons and woodpeckers in the roadside canopy, pittas calling from either side, and the whole reserve an hour and a half from Singapore.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> Lowland, swamp and montane forest cover this reserve of 275 sq km at the southern end of Peninsular Malaysia, and over 250 species have been recorded in it.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/banded-broadbill/">Banded Broadbill</a>, <a href="/birds/green-broadbill/">Green Broadbill</a> and <a href="/birds/red-naped-trogon/">Red-naped Trogon</a> stay through the year.</li>
+        <li class="where access"><b>Getting there:</b> The reserve is 20 km north of Kota Tinggi, which is 41 km north of Johor Bahru. For the Gunung Panti Trail, take the road northwest out of Kota Tinggi towards Lombong Waterfall, turn east beside the police station after 6 km and carry on 4 km to Batu Empat village, then walk 2 km through farmland, old rubber and scrub before the trail climbs into logged foothill forest on the slopes of Gunung Panti. It is easy to get lost here and guides can be hired in the village. The Ridge Trail heads west from the 270 km post about 40 km north of Kota Tinggi, and the Bunker Track leaves the same road near the 266 km post, where quarry trucks make weekends the better time to walk.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/banded-broadbill/">Banded Broadbill</a>, <a href="/birds/green-broadbill/">Green Broadbill</a>, <a href="/birds/red-naped-trogon/">Red-naped Trogon</a>, <a href="/birds/rufous-collared-kingfisher/">Rufous-collared Kingfisher</a>, <a href="/birds/banded-kingfisher/">Banded Kingfisher</a>, <a href="/birds/chestnut-necklaced-partridge/">Chestnut-necklaced Partridge</a>, <a href="/birds/grey-and-buff-woodpecker/">Grey-and-buff Woodpecker</a>, <a href="/birds/black-and-red-broadbill/">Black-and-red Broadbill</a></li>
 
 
@@ -3902,6 +3934,7 @@
 
         <ul class="wherelist">
         <li class="where habitat"><b>Habitat:</b> The long coastline carries mangrove-lined mudflats, which is where the shorebirds concentrate.</li>
+        <li class="where access"><b>Getting there:</b> The park sits just southwest of the town of Kuala Selangor, 35 km northwest of Kuala Lumpur. Six signposted trails run inside it, and a riverside trail to the north is the best of them for the mangrove specialities. Five hides stand on the reserve, two of them overlooking a brackish lagoon of 55 ha and one at the end of a boardwalk through the mangroves above the tidal mud flats.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/nordmann-s-greenshank/">Nordmann's Greenshank</a>, <a href="/birds/chinese-egret/">Chinese Egret</a>, <a href="/birds/milky-stork/">Milky Stork</a>, <a href="/birds/mangrove-pitta/">Mangrove Pitta</a>, <a href="/birds/great-knot/">Great Knot</a>, <a href="/birds/kentish-plover/">Kentish Plover</a>, <a href="/birds/mangrove-blue-flycatcher/">Mangrove Blue Flycatcher</a>, <a href="/birds/ashy-tailorbird/">Ashy Tailorbird</a></li>
 
 
