@@ -33,20 +33,31 @@ things move rather than writing a fresh handover for each one.
 Measured 2026-08-31: 0 blocking selfcheck findings on every guide, render-check clean,
 cross-names clean, stale-access 0, region-photo-dupes 0 across 596 photos, hub reconciles.
 
-- [ ] **49 of 66 guides have NO hero clip** and open on the generic site reel, which shows
-      a Blue-and-yellow Tanager, a European Goldfinch and a Eurasian Hoopoe: none of them a
-      bird of the country being read about.
+- [ ] **52 of 66 guides open on the generic site reel**, which shows a Blue-and-yellow
+      Tanager, a European Goldfinch and a Eurasian Hoopoe: none of them a bird of the country
+      being read about. Only **14 heroes are genuinely live**. Corrected 2026-09-01: an
+      earlier count of 49 missed that australia, brazil-cerrado-caatinga, brazil-pantanal and
+      china each RECORD a chosen clip whose mp4 was never produced and fall through in
+      silence. generate.js warns about that now.
       → `build/travel/HERO-CLIP-AUDIT.md`, `project_beakbrain_hero_provenance_gate`
-- [ ] **TEN of them can be filled from clips already reviewed and now verified**, and the
-      work was written up and started before the session limit stopped it: brazil-amazon,
-      brazil-atlantic-forest, the four India guides, the three Indonesia guides, panama.
-      That takes 49 down to 39.
-- [ ] **EIGHTEEN clips marked "use" in `_hero-verdicts.json` are filmed in the wrong country
-      and must never ship.** One Panama clip is approved as the hero for six separate South
-      and Central American guides, a Slovakian bird-feeder clip for both France and Norway,
-      plus three Thailand, two Poland, and one each of Brazil, Japan and Hungary. The gate
-      now catches them (2026-09-01); it previously knew only 28 countries and never read the
-      filename, so it caught almost none. **A "use" verdict is not authority to ship.**
+- [ ] **Produce the mp4 for those four**, which is 2 files each and the provenance is already
+      good for three of them (australia Perth, cerrado Serra do Cipo, china Shangrao).
+- [ ] **The other nine of the "ten easy wins" were refused, and the reason is structural.**
+      They are all `_splits.json` pages, countries split on avifauna rather than borders, and
+      selfcheck hard-fails a hero whose bird the guide never names. Beneath that the files are
+      in the wrong PART of the country: the brazil-amazon clip was shot in Minas Gerais about
+      2,000 km from Amazonia, and ONE Brown Boobook file from coastal Odisha was proposed for
+      all four India guides. A split page needs a clip from its own region, not its own
+      country. `_hero-region-scope.json` exists for exactly this and should gate the picker.
+- [ ] **24 clips in the library must not ship**: 19 contradicted and 5 CAPTIVE, including an
+      Andean Cock-of-the-rock in a zoo for Peru, a zoo macaw for the Pantanal and a Shoebill
+      filed "in zoos" for DR Congo. The locked candidate set holds 28 more contradicted.
+      **None is live**, but they keep their `use` verdict and pass `provenance_ok()`, so the
+      next `pick-hero-clips.py --write` will propose them again. The verdict file needs
+      re-cutting against the fixed gate.
+- [ ] One candidate is a **Sora AI-generated video** ("AI-generated videos of animals"),
+      proposed for indonesia-greater-sundas. It is not a bird and not a place. Worth a filter
+      rule of its own.
 - [ ] **30 of 66 guides have no stop carrying an openable link.** Several are honest (almost
       no Mozambican site has a web page; `dnpw.gov.mw` does not resolve), but 30 is too many
       to be all honest. A dead link is worse than no link, so anything added must be checked.
