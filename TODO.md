@@ -131,7 +131,17 @@ cross-names clean across 68, stale-access 0, region-photo-dupes clean, hub recon
 Each unlocks either a new page or practicals for guides sitting empty. Arrived so far:
 Ghana, Borneo, Brazil.
 
-Arrived 2026-09-01: Mongolia, Atlantic Islands.
+Arrived 2026-09-01: Mongolia, Atlantic Islands, Indian Subcontinent, Kenya and Northern
+Tanzania, Middle East, South East Asia.
+
+**Probe every new book before planning work on it**, because whether it carries site
+accounts decides whether it can drive a new page at all:
+- `mongolia-helm` HAS site accounts, which is why Mongolia could be written.
+- `india-sub`, `kenya-ntz`, `middle-east` and `se-asia` do NOT. They are species sources.
+  Porter's Middle East names no site at all (Azraq, Eilat and Al Ain are all absent), and
+  Robson names localities only inside distribution strings, as `NE Thailand (Khao Yai NP)`.
+- So a **Middle East or Thailand page still needs a site guide** for habitat and access.
+  Robson would give it a species list and its named parks; Porter would give species only.
 
 Still wanted: Helm Argentina, East Africa, Northern/Southern India, Ecuador, Bangladesh,
 Western Africa, Senegal and the Gambia, Japan, Greater Southern Africa, Middle East, East
