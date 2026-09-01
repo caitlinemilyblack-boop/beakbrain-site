@@ -28,11 +28,11 @@ things move rather than writing a fresh handover for each one.
       Parked 2026-08-31 at Cat's request. The survey is done and three questions need her
       answer before Phase 1. → `HANDOVER-2026-08-31-website-translations.md`
 
-## Country guides — 67 live, all checks green
+## Country guides — 68 live, all checks green
 
-Measured 2026-09-01: 0 blocking selfcheck findings on every guide, render-check 68/68,
-cross-names clean across 67, stale-access 0, region-photo-dupes 0 across 607 photos, hub
-reconciles 67 of 67. `./deploy.sh --dry-run` stages 23,945.
+Measured 2026-09-01: 0 blocking selfcheck findings on every guide, render-check 69/69,
+cross-names clean across 68, stale-access 0, region-photo-dupes clean, hub reconciles 68 of
+68. `./deploy.sh --dry-run` stages 23,967.
 
 - [ ] **49 of 67 guides open on the generic site reel**, which shows a Blue-and-yellow
       Tanager, a European Goldfinch and a Eurasian Hoopoe: none of them a bird of the country
@@ -86,10 +86,14 @@ reconciles 67 of 67. `./deploy.sh --dry-run` stages 23,945.
 - [ ] **Brazil** — van Perlo filed 2026-08-31 (`brazil-vanperlo`). Species-level habitat only,
       no site accounts, so lower value; but the four Brazil guides have run on the
       continental Wheatley volume alone until now.
-- [ ] **Mongolia** — Sundev & Leahy, Helm 2019, filed 2026-09-01 (`mongolia-helm`). A new
-      country page. This one has real SITE ACCOUNTS, not just species text: "Hustai National
-      Park (50,600ha). Driving west on the main...", the Onon and Khurkh rivers. So it can
-      support habitat AND access, which most field guides cannot.
+- [x] **Mongolia** — DONE 2026-09-01, guide 68, live on the hub. 13 regions, and the book
+      delivered: 13 habitat, 12 when, 10 access. A **fourteenth region for the Mongol-Altai
+      is a real gap**, deliberately unwritten because neither book has a site account for it
+      and it would have to come from operator itineraries. Seven parks in `mn.json` are
+      claimed by nothing as a result.
+- [ ] **`mos.mn` is now an online casino.** The Mongolian Ornithological Society's address,
+      printed three times in the 2019 Helm book. It is on no page and must never be added.
+      Same family as the expired `wildandworthyco.com`.
 - [ ] **Atlantic Islands** — Clarke, Orgill & Disley, Helm 2020, filed 2026-09-01
       (`atlantic-isles`). Covers the Canaries, Madeira, the Azores and Cape Verde in one
       volume. Those three guides have had **no book of their own at all** until now, and it
