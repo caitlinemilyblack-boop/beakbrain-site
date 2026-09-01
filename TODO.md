@@ -43,8 +43,23 @@ cross-names clean across 68, stale-access 0, region-photo-dupes clean, hub recon
 - [x] The provenance cache is refreshed from the repaired gate, so the picker no longer
       proposes the 18 wrong-country clips. It now reports **26 guides as owing a fresh
       candidate search**, which is the honest state.
-- [ ] **Those 26 need new candidates.** Nothing on the current sheet was accepted for them.
-      This is a fresh Commons search, not more filtering of what is already there.
+- [ ] **Those 26 need new candidates, and it is a SOURCE CEILING rather than a search
+      failure.** Measured 2026-09-01: `build/species/videos.json` covers all **9,516**
+      species and only **385** have an openly licensed Commons video at all. Of those, none
+      is both a bird of those 26 countries and correctly provenanced. The harvest is
+      complete, not lazy; it dates from 2026-08-09, so a re-run would only pick up three
+      weeks of new uploads, which will not move 385 far.
+
+      So this will not be solved by searching Commons harder. Three real options, and the
+      choice is Cat's:
+      1. Accept the generic reel on those guides. Honest, but it opens a Mongolia page on a
+         Blue-and-yellow Tanager.
+      2. Source clips elsewhere. Pexels cuts and Cat's own footage already carry several of
+         the live heroes, and neither needs a credit.
+      3. **Let a guide with no clip use a STILL hero instead.** Every guide already has
+         region photographs that are country-specific and reviewed by eye. A still of a bird
+         that actually lives there beats a video of three that do not, and it costs no new
+         sourcing. This is the cheapest good answer and it needs a template change.
 - [ ] **A split page needs a clip from its own REGION, not its own country.** Nine of the
       ten "easy wins" failed on this: one Brown Boobook file from coastal Odisha was proposed
       for all four India guides, and the brazil-amazon candidate was shot in Minas Gerais
