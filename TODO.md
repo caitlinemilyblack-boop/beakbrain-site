@@ -34,31 +34,30 @@ Measured 2026-09-01: 0 blocking selfcheck findings on every guide, render-check 
 cross-names clean across 67, stale-access 0, region-photo-dupes 0 across 607 photos, hub
 reconciles 67 of 67. `./deploy.sh --dry-run` stages 23,945.
 
-- [ ] **52 of 66 guides open on the generic site reel**, which shows a Blue-and-yellow
+- [ ] **49 of 67 guides open on the generic site reel**, which shows a Blue-and-yellow
       Tanager, a European Goldfinch and a Eurasian Hoopoe: none of them a bird of the country
-      being read about. Only **14 heroes are genuinely live**. Corrected 2026-09-01: an
-      earlier count of 49 missed that australia, brazil-cerrado-caatinga, brazil-pantanal and
-      china each RECORD a chosen clip whose mp4 was never produced and fall through in
-      silence. generate.js warns about that now.
+      being read about. **18 heroes are live** as of 2026-09-01, up from 14.
       → `build/travel/HERO-CLIP-AUDIT.md`, `project_beakbrain_hero_provenance_gate`
-- [ ] **Produce the mp4 for those four**, which is 2 files each and the provenance is already
-      good for three of them (australia Perth, cerrado Serra do Cipo, china Shangrao).
-- [ ] **The other nine of the "ten easy wins" were refused, and the reason is structural.**
-      They are all `_splits.json` pages, countries split on avifauna rather than borders, and
-      selfcheck hard-fails a hero whose bird the guide never names. Beneath that the files are
-      in the wrong PART of the country: the brazil-amazon clip was shot in Minas Gerais about
-      2,000 km from Amazonia, and ONE Brown Boobook file from coastal Odisha was proposed for
-      all four India guides. A split page needs a clip from its own region, not its own
-      country. `_hero-region-scope.json` exists for exactly this and should gate the picker.
-- [ ] **24 clips in the library must not ship**: 19 contradicted and 5 CAPTIVE, including an
-      Andean Cock-of-the-rock in a zoo for Peru, a zoo macaw for the Pantanal and a Shoebill
-      filed "in zoos" for DR Congo. The locked candidate set holds 28 more contradicted.
-      **None is live**, but they keep their `use` verdict and pass `provenance_ok()`, so the
-      next `pick-hero-clips.py --write` will propose them again. The verdict file needs
-      re-cutting against the fixed gate.
+- [x] Panama wired, and the four guides that had chosen a clip and never produced the file
+      (australia, brazil-cerrado-caatinga, brazil-pantanal, china) now have one.
+- [x] The provenance cache is refreshed from the repaired gate, so the picker no longer
+      proposes the 18 wrong-country clips. It now reports **26 guides as owing a fresh
+      candidate search**, which is the honest state.
+- [ ] **Those 26 need new candidates.** Nothing on the current sheet was accepted for them.
+      This is a fresh Commons search, not more filtering of what is already there.
+- [ ] **A split page needs a clip from its own REGION, not its own country.** Nine of the
+      ten "easy wins" failed on this: one Brown Boobook file from coastal Odisha was proposed
+      for all four India guides, and the brazil-amazon candidate was shot in Minas Gerais
+      about 2,000 km from Amazonia. `_hero-region-scope.json` exists for exactly this and
+      should gate the picker. Portugal currently holds 4 candidates back for want of a
+      region verdict; `hero-region-scope.py --write` is the unblock.
+- [ ] Two heroes show a bird their guide never names: australia's Common Bronzewing and
+      china's Spotted Elachura. Both clips are confirmed in-country and both birds genuinely
+      belong, so this is a copy gap rather than a data fault. China's is the more interesting
+      one: the clip is from Shangrao in Jiangxi, and the guide has **no southeast China
+      region at all**.
 - [ ] One candidate is a **Sora AI-generated video** ("AI-generated videos of animals"),
-      proposed for indonesia-greater-sundas. It is not a bird and not a place. Worth a filter
-      rule of its own.
+      proposed for indonesia-greater-sundas. It is not a bird and not a place.
 - [ ] **30 of 66 guides have no stop carrying an openable link.** Several are honest (almost
       no Mozambican site has a web page; `dnpw.gov.mw` does not resolve), but 30 is too many
       to be all honest. A dead link is worse than no link, so anything added must be checked.
