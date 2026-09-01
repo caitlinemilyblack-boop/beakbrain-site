@@ -1,0 +1,57 @@
+{
+  // beakbrain.com on Workers static assets, replacing the Cloudflare Pages project
+  // `beakbrain-site`. Pages reads the ZONE plan for its 20,000-file ceiling and this
+  // zone is Free; Workers static assets reads the ACCOUNT plan, and this account is on
+  // Workers Paid, where the ceiling is 100,000. See project_beakbrain_file_budget.
+  //
+  // Deploy with ./deploy-worker.sh, never `npx wrangler deploy` from the repo root.
+  // The script stages a clean tree first: the repo root contains build/ (the PRIVATE
+  // pipeline repo), the handover notes and this config, none of which belong on the
+  // public site.
+  "name": "beakbrain-web",
+  "main": "./worker/index.js",
+  "compatibility_date": "2026-09-01",
+
+  // The staged tree, built by deploy-worker.sh. A sibling of the repo rather than a
+  // directory inside it, so rsync cannot recurse into its own output.
+  "assets": {
+    "directory": "../.beakbrain-web-deploy",
+    "binding": "ASSETS",
+
+    // Matches what Pages served, measured path by path on 2026-09-01 before cutover:
+    //   /birds/arctic-tern  -> 308 -> /birds/arctic-tern/   (folder index gets a slash)
+    //   /community.html     -> 308 -> /community            (a file loses .html)
+    "html_handling": "auto-trailing-slash",
+
+    // Also measured: an unknown path on Pages answered 404 with the site's own 404
+    // page, not 200 with the homepage. Workers makes this explicit where Pages guessed.
+    "not_found_handling": "404-page",
+
+    // The three former Pages Functions, and ONLY those. Every other URL is served
+    // straight from the asset store without invoking the Worker, so a species page
+    // costs nothing and stays as fast as it was on Pages.
+    "run_worker_first": ["/go", "/audio/*", "/api/*"]
+  },
+
+  // THE CUTOVER. A route, not a Custom Domain, and deliberately: the Pages project
+  // keeps its own `beakbrain.com` custom domain attached underneath, a Worker route
+  // wins over it, and so ROLLING BACK IS DELETING THIS LINE AND REDEPLOYING. A Custom
+  // Domain would have meant detaching Pages first, which is a one-way door.
+  //
+  // Apex only. www.beakbrain.com is already 301'd to the apex by a zone rule for every
+  // path, so a route here would override that redirect and serve the whole site twice
+  // under two hostnames. Verified 2026-09-01: www.beakbrain.com/cams/ answers
+  // 301 -> https://beakbrain.com/cams/.
+  "routes": [
+    { "pattern": "beakbrain.com/*", "zone_name": "beakbrain.com" }
+  ],
+
+  // OFF since the cutover on 2026-09-01. It existed to compare the Worker against the
+  // live Pages site before the domain moved, and leaving it on afterwards would publish
+  // all 9,921 compare pages and 68 guides a second time under a hostname Google can
+  // index, competing with beakbrain.com for the clicks those pages already earn. Turn
+  // it back on only to stage a comparison, and turn it off again after.
+  "workers_dev": false,
+
+  "observability": { "enabled": true }
+}

@@ -1,21 +1,24 @@
 #!/bin/zsh
-# Deploy beakbrain.com to Cloudflare Pages (project: beakbrain-site).
+# RETIRED 2026-09-01. beakbrain.com is no longer served by Cloudflare Pages.
 #
-# Use this instead of `wrangler pages deploy .`.
+# Pages reads the ZONE plan for its file ceiling and beakbrain.com is a Free zone, so
+# this script could not deploy anything from 24 August onward: the tree needed more than
+# 20,000 files and the upload token kept issuing `max_file_count_allowed: 20000`.
+# Workers static assets reads the ACCOUNT plan instead, and this account is on Workers
+# Paid, where the ceiling is 100,000. The site moved there on 2026-09-01.
 #
-# Running wrangler against the repo root uploads build/ as well, and build/ is the
-# PRIVATE pipeline repo. On 2026-08-12 that put build/README.md and
-# build/verify-report.txt on the public site. This script stages a clean copy first,
-# so only the deployed site ships.
+#   USE ./deploy-worker.sh INSTEAD.
 #
-# Usage:
-#   ./deploy.sh              deploy to production (beakbrain.com)
-#   ./deploy.sh --dry-run    stage and report, upload nothing
-#   ./deploy.sh --preview    upload to a preview branch, NOT beakbrain.com
-#
-# --preview exists to test the raised file limit safely. Preview deployments are
-# unlimited, get their own *.pages.dev URL, and cannot affect the live site: a
-# rejected upload leaves production exactly as it was.
+# The Pages project `beakbrain-site` still exists with its custom domain attached, on
+# purpose: the Worker takes the domain with a ROUTE, which wins over a Pages custom
+# domain, so deleting the route in wrangler.jsonc and redeploying rolls the whole
+# migration back to Pages. Do not delete the Pages project while that is still the
+# rollback. Deploying to it now changes nothing anybody can see, because the route
+# means Pages no longer answers for beakbrain.com.
+
+print -u2 "RETIRED: beakbrain.com is served by the Worker 'beakbrain-web', not Pages."
+print -u2 "         Use ./deploy-worker.sh. See the comment at the top of this file."
+exit 1
 
 set -euo pipefail
 
