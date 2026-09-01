@@ -7,10 +7,15 @@ things move rather than writing a fresh handover for each one.
 
 ## Blocking everything
 
-- [ ] **Lift the 20,000-file deploy ceiling.** The tree is **29,069 files**, 9,069 over,
-      and `birds/` alone is 21,672. Nothing on the site can deploy at all today, which is
-      why `beakbrain.com/` is served by the `beakbrain-home-patch` Worker. Zone plan
-      (~$20/mo) or migrate Pages to Workers static assets. Workers Paid does NOT lift it.
+- [ ] **Lift the 20,000-file deploy ceiling.** `./deploy.sh --dry-run` stages **23,927
+      files**, so the site is **3,927 over**, and `birds/` alone is 21,672. Nothing can
+      deploy today, which is why `beakbrain.com/` is served by the `beakbrain-home-patch`
+      Worker. Zone plan (~$20/mo) or migrate Pages to Workers static assets.
+      **CORRECTED 2026-09-01: I twice reported 29,069 files and 9,069 over.** That was a raw
+      `find` over the working tree, which counts source and build files deploy.sh never
+      stages. Use the dry run, not a find. The script also reports the paid ceiling as
+      **100,000 files**, not unlimited, which is the number any multi-language plan has to
+      fit inside.
       → `HANDOVER-2026-08-31-deploy-ceiling.md`, `project_beakbrain_file_budget`
 - [ ] **Delete the home-patch Worker** the day a real deploy goes out, then confirm the
       homepage's App Store link is coming from Pages. → `~/Developer/beakbrain-home-patch/REMOVING.md`

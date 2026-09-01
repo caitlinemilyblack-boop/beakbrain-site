@@ -8,14 +8,20 @@ and free, and the order the work has to happen in. **Nothing has been started.**
 
 ## 1. The blocker, and it is not translation
 
-The site is **29,069 files**. Cloudflare Pages refuses a deployment over **20,000**. The
-site is **9,069 files over the ceiling today** and cannot deploy at all; that is why
+`./deploy.sh --dry-run` stages **23,927 files**. Cloudflare Pages refuses a deployment over
+**20,000** on the free tier, so the site is **3,927 over today** and cannot deploy at all;
+
+(Corrected 2026-09-01. An earlier draft said 29,069 and 9,069 over, taken from a raw `find`
+over the working tree, which counts source and build files that are never staged. Always
+take this number from the dry run.) that is why
 `beakbrain.com/` is currently served by the `beakbrain-home-patch` Worker rather than by
 Pages, and why the App Store link fix is live on the homepage alone. See
 `HANDOVER-2026-08-31-deploy-ceiling.md` and the `project_beakbrain_file_budget` note.
 
 **Workers Paid does not lift the ceiling. The zone plan does (~$20/month), and migrating
-Pages to Workers static assets removes it.** Until one of those happens, no translation can
+Pages to Workers static assets removes it.** deploy.sh reports the paid ceiling as
+**100,000 files**, so it is raised rather than removed, and that is the number a
+multi-language plan has to fit inside. Until one of those happens, no translation can
 ship no matter how good it is. Phase 0 below is not optional.
 
 ## 2. The shape of the site decides the whole approach
@@ -32,7 +38,9 @@ country guides together are 68 files. That asymmetry is the single most useful f
 - Translating the guides is **cheap**: 68 pages, and six languages of them is ~470 files,
   which is noise against the ceiling once it is lifted.
 - Translating the species pages the same way is **impossible**: 21,672 × 6 = **130,032
-  files**, against a ceiling of 20,000. It is not a budgeting problem, it is a wrong shape.
+  files**, over even the 100,000 paid ceiling and five times the free one. It is not a
+  budgeting problem, it is a wrong shape. Three languages would fit inside 100,000, which is
+  worth knowing, but it spends the entire budget on one surface.
 
 So the two surfaces need two different answers. Do not write a plan that treats them alike.
 
