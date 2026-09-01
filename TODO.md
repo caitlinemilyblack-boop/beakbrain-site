@@ -63,10 +63,21 @@ cross-names clean across 68, stale-access 0, region-photo-dupes clean, hub recon
       to be all honest. A dead link is worse than no link, so anything added must be checked.
       → `project_beakbrain_link_evidence`
 - [ ] **255 species carry an empty range** and are invisible to every guide: on no card wall,
-      and refused by the check that stops a region naming a species. 54 genus-rename aliases
-      are committed to `pipeline/synonym_map.json` and **the species pipeline has never been
-      re-run to activate them**. Angola Lark is one example, kept off its own country's page.
+      and refused by the check that stops a region naming a species. Angola Lark is one
+      example, kept off its own country's page.
       → `build/travel/range-aliases.js`, `project_beakbrain_species_ranges`
+
+      **Measured 2026-09-01, and the aliases are inert.** `synonym_map.json` holds 823
+      aliases, 55 of which target one of the 255. But `world.json`, which is where
+      browse.json's ranges actually come from, carries **zero regions for all 55**, so it has
+      not been regenerated since the aliases were added. The aliases do nothing until it is.
+
+      The chain is `pipeline -> world.json -> birds/browse.json -> rebuild all 68 guides`,
+      and it is cross-repo, into `~/Developer/Birding-Quiz-App/pipeline`. Several scripts
+      write world.json and the run order is not obvious from the outside, so **this needs
+      somebody who knows the pipeline, not a guess**. Blast radius is every guide: a range
+      change adds or removes card species fleet-wide, and a guide whose prose names a species
+      that loses its range fails selfcheck as blocking. Worth doing, worth doing awake.
 - [ ] `area-scatter` warnings on Malawi, Zambia and Zimbabwe are unresolved judgement calls,
       not faults: a region genuinely spread over 145 km reads the same as a bad geocode.
       Malawi's Liwonde sits 94 km from its region's median, Zambia's worst is 181 km.
