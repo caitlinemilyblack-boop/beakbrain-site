@@ -9,14 +9,14 @@ and free, and the order the work has to happen in. **Nothing has been started.**
 ## 1. The blocker, and it is not translation
 
 `./deploy.sh --dry-run` stages **23,927 files**. Cloudflare Pages refuses a deployment over
-**20,000** on the free tier, so the site is **3,927 over today** and cannot deploy at all;
-
-(Corrected 2026-09-01. An earlier draft said 29,069 and 9,069 over, taken from a raw `find`
-over the working tree, which counts source and build files that are never staged. Always
-take this number from the dry run.) that is why
-`beakbrain.com/` is currently served by the `beakbrain-home-patch` Worker rather than by
-Pages, and why the App Store link fix is live on the homepage alone. See
+**20,000** on the free tier, so the site is **3,927 over today** and cannot deploy at all.
+That is why `beakbrain.com/` is currently served by the `beakbrain-home-patch` Worker rather
+than by Pages, and why the App Store link fix is live on the homepage alone. See
 `HANDOVER-2026-08-31-deploy-ceiling.md` and the `project_beakbrain_file_budget` note.
+
+Corrected 2026-09-01: an earlier draft of this said 29,069 files and 9,069 over. That came
+from a raw `find` over the working tree, which counts source and build files deploy.sh never
+stages. **Take this number from the dry run, never from a find.**
 
 **Workers Paid does not lift the ceiling. The zone plan does (~$20/month), and migrating
 Pages to Workers static assets removes it.** deploy.sh reports the paid ceiling as
