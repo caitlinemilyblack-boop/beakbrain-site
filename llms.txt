@@ -31,5 +31,4 @@ with recordist credit via xeno-canto.
 
 ## App
 
-- [BeakBrain on the App Store](https://apps.apple.com/app/id6799414340): the iPhone and iPad app, free, released 2026-08-31
-- [BeakBrain in a browser](https://app.beakbrain.com/): the same app, no install, free to play
+- [BeakBrain](https://beakbrain-app.pages.dev): learn birds by photo and call, free to play
