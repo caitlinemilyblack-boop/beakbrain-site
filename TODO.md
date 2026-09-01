@@ -28,10 +28,11 @@ things move rather than writing a fresh handover for each one.
       Parked 2026-08-31 at Cat's request. The survey is done and three questions need her
       answer before Phase 1. → `HANDOVER-2026-08-31-website-translations.md`
 
-## Country guides — 66 live, all checks green
+## Country guides — 67 live, all checks green
 
-Measured 2026-08-31: 0 blocking selfcheck findings on every guide, render-check clean,
-cross-names clean, stale-access 0, region-photo-dupes 0 across 596 photos, hub reconciles.
+Measured 2026-09-01: 0 blocking selfcheck findings on every guide, render-check 68/68,
+cross-names clean across 67, stale-access 0, region-photo-dupes 0 across 607 photos, hub
+reconciles 67 of 67. `./deploy.sh --dry-run` stages 23,945.
 
 - [ ] **52 of 66 guides open on the generic site reel**, which shows a Blue-and-yellow
       Tanager, a European Goldfinch and a Eurasian Hoopoe: none of them a bird of the country
@@ -73,12 +74,16 @@ cross-names clean, stale-access 0, region-photo-dupes 0 across 596 photos, hub r
 
 ## New pages the shelf can now support
 
-- [ ] **Ghana** — book filed and registered 2026-08-31 (`ghana-helm`, Borrow/Demey/Owusu,
-      Helm 2nd ed). No "Where to see" lines, but a full IBA list with GH0xx codes and a
-      habitat introduction, which is enough to drive the regions. *In progress.*
-- [ ] **Borneo** — a later Helm edition (`borneo-helm2`) filed 2026-08-31, verified to carry
-      "Where to see" lines, so it can fill practicals on `malaysia-borneo` and
-      `indonesia-greater-sundas` through `book-species-sites.py`. *In progress.*
+- [x] **Ghana** — DONE 2026-09-01, guide 67, live on the hub. Eleven regions driven by the
+      book's IBA table. **Its `access` is empty on all eleven regions and cannot be filled
+      from the shelf**: the Ghana book is a field guide with no site accounts and Wheatley's
+      Ghana chapter is a country essay. Ghana is the only guide of 67 with no Getting there
+      line. A Ghanaian site guide is the thing that would fix it.
+- [x] **Borneo** — DONE 2026-09-01. Six empty practical fields filled on `malaysia-borneo`
+      and `indonesia-greater-sundas` from the new Helm edition, plus one species correction.
+- [x] **Atlantic Islands** — DONE 2026-09-01. Corrected three birds the Azores named that
+      have never occurred there, two wrong habitat descriptions, a muddled storm-petrel
+      season, and a Canaries region carrying Madeira's text.
 - [ ] **Brazil** — van Perlo filed 2026-08-31 (`brazil-vanperlo`). Species-level habitat only,
       no site accounts, so lower value; but the four Brazil guides have run on the
       continental Wheatley volume alone until now.
