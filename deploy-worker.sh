@@ -22,6 +22,19 @@ SRC="${0:A:h}"
 STAGE="$SRC/../.beakbrain-web-deploy"
 WORKER="beakbrain-web"
 
+# macOS 15 replaced GNU rsync with Apple's openrsync, which still announces itself as
+# "rsync version 2.6.9 compatible" and is a different implementation. Staging 24,000
+# files under it exhausts the process file-descriptor limit and dies partway with
+#   copy_file fromfd: openat: Too many open files
+# leaving a half-built tree that the guards below would happily have deployed.
+#
+# `launchctl limit maxfiles` on this Mac is 256, so every shell starts there and a
+# terminal inherits it. The hard limit is unlimited, so the soft limit is ours to
+# raise, and the script raises it itself rather than trusting whatever shell invoked
+# it. --link-dest still hardlinks correctly under openrsync (verified by inode), so
+# the staged tree costs no extra disk once it can finish.
+ulimit -n 65536 2>/dev/null || print -u2 "WARNING: could not raise the file-descriptor limit; staging may die partway."
+
 print "staging $SRC"
 rm -rf "$STAGE"
 mkdir -p "$STAGE"
@@ -49,8 +62,12 @@ leaked=0
 for bad in build .gitignore wrangler.jsonc worker functions deploy.sh deploy-worker.sh; do
   if [[ -e "$STAGE/$bad" ]]; then print -u2 "ABORT: $bad reached the staging tree."; leaked=1; fi
 done
-if ls "$STAGE"/HANDOVER-*.md "$STAGE"/TODO.md >/dev/null 2>&1; then
-  print -u2 "ABORT: internal notes reached the staging tree."
+# The (N) qualifier is load-bearing. Written as a bare `ls "$STAGE"/HANDOVER-*.md`, zsh
+# aborts the glob with "no matches found" on stderr whenever the tree is CLEAN, which is
+# every healthy run, and prints it in the same place an ABORT would appear.
+notes=( "$STAGE"/HANDOVER-*.md(N) "$STAGE"/TODO.md(N) )
+if (( ${#notes} )); then
+  print -u2 "ABORT: internal notes reached the staging tree: ${notes:t}"
   leaked=1
 fi
 (( leaked )) && exit 1
