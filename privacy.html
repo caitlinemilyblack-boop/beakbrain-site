@@ -11,7 +11,7 @@
     @font-face { font-family: 'Nunito';size-adjust:103.31%; font-weight: 700; font-display: swap; src: url('fonts/Nunito-700.woff') format('woff'); }
     :root { --green:#386641; --ink:#2E2A25; --muted:#6B6155; --bg:#F2E8CF; --border:#DDCBA0; }
     body { margin:0; font-family:'Nunito', system-ui, sans-serif; color:var(--ink); background:var(--bg); line-height:1.7; }
-    main { max-width: 760px; margin: 0 auto; padding: 56px 24px 96px; }
+    main { max-width: 760px; margin: 0 auto; padding: 56px 24px 72px; }
     a { color: var(--green); }
     h1 { font-family:'Fredoka', system-ui, sans-serif; color:var(--green); font-size:34px; margin:0 0 6px; }
     h2 { font-family:'Fredoka', system-ui, sans-serif; color:var(--green); font-size:22px; margin:40px 0 10px; }
@@ -24,6 +24,12 @@
     table { border-collapse: collapse; width:100%; margin:14px 0; }
     th, td { text-align:left; vertical-align:top; padding:10px 12px; border-bottom:1px solid var(--border); }
     th { font-family:'Fredoka', system-ui, sans-serif; color:var(--green); }
+    footer { background:#1F281F; margin-top:48px; padding:44px 0; }
+    .foot { max-width:760px; margin:0 auto; padding:0 24px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px; }
+    .foot .wordmark { font-family:'Fredoka', system-ui, sans-serif; font-weight:700; font-size:20px; color:#fff; }
+    .foot nav a { color:#EAF1E4; text-decoration:none; margin-left:22px; font-weight:700; }
+    .foot nav a:first-child { margin-left:0; }
+    .foot .copy { color:#E3ECDD; font-size:13px; width:100%; }
   </style>
 </head>
 <body>
@@ -175,5 +181,17 @@
     <h2>Contact</h2>
     <p>Questions, requests, or deletion: <a href="mailto:hello@beakbrain.com">hello@beakbrain.com</a></p>
   </main>
+  <footer>
+    <div class="foot">
+      <span class="wordmark">BeakBrain</span>
+      <nav>
+        <a href="/contribute">Contribute</a>
+        <a href="mailto:hello@beakbrain.com">Contact</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </nav>
+      <div class="copy">Greet every bird by name. &copy; 2026 BeakBrain.</div>
+    </div>
+  </footer>
 </body>
 </html>
