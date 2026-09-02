@@ -78,14 +78,33 @@ first one's ground.
 
 ## Dead data the dead-copy check cannot see
 
-- [ ] **`bird_calendar` is written on 62 guides and rendered on none.** `generate.js` never
-      mentions the field. Found 2026-09-02 while correcting the corncrake line the four
-      nation guides shared: the correction is right and reaches no reader.
-      **`dead-copy.js` walks scalar copy fields only**, so it lists `bird_calendar_note`, the
-      subtitle, among its 24 retired fields while missing the calendar the subtitle belongs
-      to. Any field holding a LIST OF OBJECTS is invisible to it: `bird_calendar`, and worth
-      checking whether `seasons`, `glance_rows`, `hero_stats` and `tier_bands` all render.
-      Either render the calendar or retire it, and widen the check either way.
+- [x] **`dead-copy.js` now reads lists, and the report went from 24 dead fields to 30.**
+      It tested strings only, and every list field was NAMED IN ITS SKIP LIST to keep the
+      noise out, so the exclusion was invisible: it reported `bird_calendar_note`, the
+      subtitle, among the retired fields while the calendar it introduces was skipped by
+      name two screens above. Three things it taught, each bought once:
+
+      - **A list is live only when MOST of its entries are on the page.** Probing the single
+        longest string reported `bird_calendar` live because 18 guides of 62 carry one of
+        their labels elsewhere in their own copy. Kenya's "Short rains" is a season name too.
+      - **Report a list PER KEY.** `species_tourism` drives the target timing bars and the
+        card wall from its slug, window, where and when, and its heading and blurb reach
+        nobody. As one field it reads "delete this", which would be wrong and expensive.
+      - `heading` and `title` had to join the prose keys before `prep` and `species_tourism`
+        could be read at all.
+
+- [ ] **WRITING THAT REACHES NO READER, measured 2026-09-02.** Decide render or retire:
+
+      | field | guides | what it is |
+      |---|---:|---|
+      | `species_tourism.heading` + `.blurb` | 68 | eight species write-ups a guide, ~544 in all |
+      | `bird_calendar.label` | 62 | the per-species timing bands; `generate.js` never mentions the field |
+      | `months.note` | 57 | month-by-month prose, from the chart replaced by the season blocks |
+      | `prep.note` | 55 | the app card's note renders, the field guide, driver and altitude notes do not |
+      | `community_note`, `lodge_intro`, `lodge_rate_note` | 62/61/53 | already known |
+
+      `species_tourism` is the big one and the best writing of the four. `bird_calendar` and
+      `months.note` both belong to the retired months chart and are the obvious retirements.
 
 ## Parked, with the ground surveyed
 
