@@ -184,8 +184,16 @@ guide, so a sweep over `trips/*/` yields 69 directories and 68 slugs.
       Umhverfisstofnun (Iceland) all 404 a decoy and are usable, but their park URLs are not
       guessable from the park name, so a pattern has to be found before they can be used.
       Adding an agency is a two-line entry in the AGENCIES table.
-- [ ] **Fleet warning census, 2026-09-02.** Nothing here is blocking; this is where the
-      remaining guide work actually is, largest first:
+- [ ] **Fleet warning census, re-measured after the 2026-09-02 recalibration.** Nothing
+      here is blocking. The four checks that were guessing now say what they know:
+      `area-scatter` 289 to **54**, `country-leak` 179 to **123**, `region-coherence` 111 to
+      **24**, `hero-clip` 60 to **16**, and the prose five to **0**. The table below is the
+      OLD reading, kept because the numbers were measured; the live ones are above.
+
+      Where the work is now: `country-leak` 123 (mostly honest neighbour geography, which
+      the check warns on by design), `stop-contact` 55, `area-scatter` 54, `stop-coords` 43,
+      `tag-echo` 31.
+
 
       | count | check | what it means |
       |---:|---|---|
