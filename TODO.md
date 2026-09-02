@@ -244,12 +244,29 @@ guide, so a sweep over `trips/*/` yields 69 directories and 68 slugs.
       browse.json's ranges actually come from, carries **zero regions for all 55**, so it has
       not been regenerated since the aliases were added. The aliases do nothing until it is.
 
-      The chain is `pipeline -> world.json -> birds/browse.json -> rebuild all 68 guides`,
-      and it is cross-repo, into `~/Developer/Birding-Quiz-App/pipeline`. Several scripts
-      write world.json and the run order is not obvious from the outside, so **this needs
-      somebody who knows the pipeline, not a guess**. Blast radius is every guide: a range
-      change adds or removes card species fleet-wide, and a guide whose prose names a species
-      that loses its range fails selfcheck as blocking. Worth doing, worth doing awake.
+      **THE PIPELINE RUN IS NOT NEEDED, 2026-09-02.** `travel/data/range-overrides.json` is
+      TRACKED and is applied over browse.json at guide build time, so an alias sitting inert
+      in `synonym_map.json` can be made live by reading the old name's row out of
+      `02_region_world.csv` and writing the codes into the override file. No world.json, no
+      cross-repo rebuild, no blast radius beyond the guides that gain a card.
+
+      **13 recovered, 61 of the 255 now carry an override, 194 still invisible.**
+      `build/travel/range-recover.py` is the tool and it records the method:
+
+      | test | strength |
+      |---|---|
+      | epithet matches | pairs Xenops mexicanus with Onychorhynchus mexicanus. Never sufficient |
+      | same family | rejected 69 of 105, and STILL passed Sooty Flycatcher (African) onto Rhyacornis fuliginosa (Asian). A filter, not a proof |
+      | `synonym_map.json` names the alias | strong |
+      | AviList `range_text` does not contradict the codes | the one that caught Malaita Cicadabird |
+
+      **Malaita Cicadabird is the case worth remembering**: `synonym_map` paired it with
+      Lalage tricolor, giving AU and PG, and its own range text reads "Malaita (central
+      Solomon Islands)". Two tests of three agreed and the bird was still wrong.
+
+      **26 more were dropped for having a single code**, which `generate.js` reads as an
+      endemism claim: Tibetan Sand Plover would have become a Norwegian endemic on one
+      vagrant record. The 194 left are mostly genuine splits with no old row to inherit from.
 - [ ] `area-scatter` warnings on Malawi, Zambia and Zimbabwe are unresolved judgement calls,
       not faults: a region genuinely spread over 145 km reads the same as a bad geocode.
       Malawi's Liwonde sits 94 km from its region's median, Zambia's worst is 181 km.
