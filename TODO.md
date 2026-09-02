@@ -166,10 +166,24 @@ guide, so a sweep over `trips/*/` yields 69 directories and 68 slugs.
       region at all**.
 - [ ] One candidate is a **Sora AI-generated video** ("AI-generated videos of animals"),
       proposed for indonesia-greater-sundas. It is not a bird and not a place.
-- [ ] **29 of 68 guides have no stop carrying an openable link** (re-measured 2026-09-02). Several are honest (almost
-      no Mozambican site has a web page; `dnpw.gov.mw` does not resolve), but 30 is too many
-      to be all honest. A dead link is worse than no link, so anything added must be checked.
+- [ ] **26 of 68 guides have no stop carrying an openable link** (re-measured 2026-09-02,
+      after Australia went 0 to 8 of 93). Worst: australia 93 stops, morocco 65, ethiopia 60,
+      peru 55, galapagos 45, portugal 45, mozambique 43. A dead link is worse than no link.
       → `project_beakbrain_link_evidence`
+
+      **`build/travel/stop-links.py` is the tool for this**, written 2026-09-02. It proposes
+      an official park-agency URL for any stop whose name says National Park, Nature Reserve,
+      Conservation Park, State Forest or Regional Park, and then has to PROVE it three ways:
+      the host must 404 a decoy path, the page must return 200, and the page TITLE must carry
+      the stop's own distinctive words. Anything else is refused and the report says why.
+
+      **The decoy test is what makes it safe, and it disqualified more hosts than it passed.**
+      Northern Territory and Queensland parks answer 403 to a probe; ICNF (Portugal) and NWR
+      (Namibia) answer **200 to a nonsense path**, so a 200 from them proves nothing and they
+      are excluded rather than trusted. SERNANP (Peru), Galapagos National Park and
+      Umhverfisstofnun (Iceland) all 404 a decoy and are usable, but their park URLs are not
+      guessable from the park name, so a pattern has to be found before they can be used.
+      Adding an agency is a two-line entry in the AGENCIES table.
 - [ ] **Fleet warning census, 2026-09-02.** Nothing here is blocking; this is where the
       remaining guide work actually is, largest first:
 
