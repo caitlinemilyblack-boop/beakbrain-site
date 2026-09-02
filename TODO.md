@@ -7,20 +7,21 @@ things move rather than writing a fresh handover for each one.
 
 ## Blocking everything
 
-- [ ] **Lift the 20,000-file deploy ceiling.** `./deploy.sh --dry-run` stages **23,927
-      files**, so the site is **3,927 over**, and `birds/` alone is 21,672. Nothing can
-      deploy today, which is why `beakbrain.com/` is served by the `beakbrain-home-patch`
-      Worker. Zone plan (~$20/mo) or migrate Pages to Workers static assets.
-      **CORRECTED 2026-09-01: I twice reported 29,069 files and 9,069 over.** That was a raw
-      `find` over the working tree, which counts source and build files deploy.sh never
-      stages. Use the dry run, not a find. The script also reports the paid ceiling as
-      **100,000 files**, not unlimited, which is the number any multi-language plan has to
-      fit inside.
-      → `HANDOVER-2026-08-31-deploy-ceiling.md`, `project_beakbrain_file_budget`
-- [ ] **Delete the home-patch Worker** the day a real deploy goes out, then confirm the
-      homepage's App Store link is coming from Pages. → `~/Developer/beakbrain-home-patch/REMOVING.md`
-- [ ] The homepage is the only page carrying the App Store link change. Every other page
-      keeps the `/#get` anchor until the ceiling is lifted. The anchor still works.
+**NOTHING IS BLOCKING. This whole section closed on 2026-09-01 and the entries below are
+kept only so the numbers are not re-measured.** Re-verified 2026-09-02.
+
+- [x] **The 20,000-file deploy ceiling is gone.** The site left Pages for Workers static
+      assets, where the 100,000 ceiling comes with Workers Paid and carries no zone
+      condition. Deploy with `./deploy-worker.sh`; `./deploy.sh` is retired.
+      → `project_beakbrain_workers_migration`, `project_beakbrain_file_budget`
+      Kept from the diagnosis: measure with the dry run, never a raw `find` over the working
+      tree, and the real asset count is files PLUS directories, roughly double every figure
+      the old notes report.
+- [x] **The home-patch Worker is deleted.** `beakbrain-home-patch` went on 2026-09-01 when a
+      real deploy went out. The whole domain is the Worker `beakbrain-web` now.
+      `~/Developer/beakbrain-home-patch/` still holds source that serves nothing.
+- [x] **Every page carries the App Store link.** Verified 2026-09-02: **77 pages** hold the
+      direct `apps.apple.com` link and **0** still use the `/#get` anchor.
 
 ## Parked, with the ground surveyed
 
@@ -30,36 +31,36 @@ things move rather than writing a fresh handover for each one.
 
 ## Country guides — 68 live, all checks green
 
-Measured 2026-09-01: 0 blocking selfcheck findings on every guide, render-check 69/69,
-cross-names clean across 68, stale-access 0, region-photo-dupes clean, hub reconciles 68 of
-68. `./deploy.sh --dry-run` stages 23,967.
+Measured 2026-09-01, re-measured 2026-09-02: **68 guides, 0 blocking selfcheck findings on
+every one**, render-check **69 of 69** clean. Note that `trips/certifications/` is not a
+guide, so a sweep over `trips/*/` yields 69 directories and 68 slugs.
 
-- [ ] **49 of 67 guides open on the generic site reel**, which shows a Blue-and-yellow
-      Tanager, a European Goldfinch and a Eurasian Hoopoe: none of them a bird of the country
-      being read about. **18 heroes are live** as of 2026-09-01, up from 14.
-      → `build/travel/HERO-CLIP-AUDIT.md`, `project_beakbrain_hero_provenance_gate`
-- [x] Panama wired, and the four guides that had chosen a clip and never produced the file
-      (australia, brazil-cerrado-caatinga, brazil-pantanal, china) now have one.
-- [x] The provenance cache is refreshed from the repaired gate, so the picker no longer
-      proposes the 18 wrong-country clips. It now reports **26 guides as owing a fresh
-      candidate search**, which is the honest state.
-- [ ] **Those 26 need new candidates, and it is a SOURCE CEILING rather than a search
-      failure.** Measured 2026-09-01: `build/species/videos.json` covers all **9,516**
-      species and only **385** have an openly licensed Commons video at all. Of those, none
-      is both a bird of those 26 countries and correctly provenanced. The harvest is
-      complete, not lazy; it dates from 2026-08-09, so a re-run would only pick up three
-      weeks of new uploads, which will not move 385 far.
+- [x] **The hero rule changed on 2026-09-01 and this section is rewritten around it.**
+      Cat's rule: the hero shows a **highlight species of that country**, it may be **filmed
+      anywhere**, and it may **never** show a captive bird. That retired the
+      country-of-filming gate. → `project_beakbrain_hero_rule`
+- [x] **Heroes went 18 to 59.** Re-measured 2026-09-02: **59 of 68 guides carry their own
+      hero**, drawn from **54 live clips** (some shared), and **9 open on the generic reel**.
+      The old figures here, 49 of 67 on the reel and 26 owing a candidate search, are dead.
+- [x] **The live gate passes.** `check-hero-captive.py`: 54 clips, 53 Commons-clean, **0
+      flagged captive**, 1 from Pexels (Kenya, verified by hand), 0 unchecked.
+- [ ] **TWO CHECKS STILL ENFORCE THE RETIRED RULE and their output is noise.** Found
+      2026-09-02, and worth fixing because it will scare the next reader exactly as it
+      scared this one:
+      - `check-hero-provenance.py` ends with **"21 clip(s) must not ship"**, calling Italy's
+        clip contradicted for being filmed in South Africa, Mongolia's in Japan, Spain's in
+        France. Under the current rule every one of those is fine.
+      - `selfcheck.js` emits **44 `hero-clip` warnings** reading "does not record where it
+        was filmed", which is now a thing nobody gates on.
 
-      So this will not be solved by searching Commons harder. Three real options, and the
-      choice is Cat's:
-      1. Accept the generic reel on those guides. Honest, but it opens a Mongolia page on a
-         Blue-and-yellow Tanager.
-      2. Source clips elsewhere. Pexels cuts and Cat's own footage already carry several of
-         the live heroes, and neither needs a credit.
-      3. **Let a guide with no clip use a STILL hero instead.** Every guide already has
-         region photographs that are country-specific and reviewed by eye. A still of a bird
-         that actually lives there beats a video of three that do not, and it costs no new
-         sourcing. This is the cheapest good answer and it needs a template change.
+      Recalibrate both to the captive rule, or retire the provenance gate and keep it only
+      as a record. → `project_beakbrain_check_calibration`
+- [ ] **Nine guides keep the generic reel and it is a genuine source ceiling**: angola,
+      el-salvador, ethiopia, india-south, indonesia-sulawesi-moluccas, madagascar, mexico,
+      zambia, zimbabwe. No highlight species of theirs has any Commons video. The three
+      options below (accept it, source outside Commons, or allow a STILL hero) still stand,
+      and the choice is still Cat's. A still of a bird that lives there beats a video of
+      three that do not, and it needs a template change rather than new sourcing.
 - [ ] **A split page needs a clip from its own REGION, not its own country.** Nine of the
       ten "easy wins" failed on this: one Brown Boobook file from coastal Odisha was proposed
       for all four India guides, and the brazil-amazon candidate was shot in Minas Gerais
@@ -73,10 +74,32 @@ cross-names clean across 68, stale-access 0, region-photo-dupes clean, hub recon
       region at all**.
 - [ ] One candidate is a **Sora AI-generated video** ("AI-generated videos of animals"),
       proposed for indonesia-greater-sundas. It is not a bird and not a place.
-- [ ] **30 of 66 guides have no stop carrying an openable link.** Several are honest (almost
+- [ ] **29 of 68 guides have no stop carrying an openable link** (re-measured 2026-09-02). Several are honest (almost
       no Mozambican site has a web page; `dnpw.gov.mw` does not resolve), but 30 is too many
       to be all honest. A dead link is worse than no link, so anything added must be checked.
       → `project_beakbrain_link_evidence`
+- [ ] **Fleet warning census, 2026-09-02.** Nothing here is blocking; this is where the
+      remaining guide work actually is, largest first:
+
+      | count | check | what it means |
+      |---:|---|---|
+      | 289 | `area-scatter` | a region spread wide reads like a bad geocode |
+      | 179 | `country-leak` | text reaching outside the guide's own country |
+      | 111 | `region-coherence` | fields in a region disagreeing with each other |
+      | 60 | `hero-clip` | 44 of these are the retired provenance rule, see above |
+      | 55 | `stop-contact` | stops with no link a reader can open |
+      | 43 | `stop-coords` | stops that will not be pinned on the map |
+      | 31 | `tag-echo` | a tag repeating what the prose already said |
+      | 29 | `voice-copy` | Cat's voice rules |
+      | 15 | `sentences` | participles tacked on a comma, the standing prose fault |
+      | 15 | `outline-outlier` | |
+      | 12 | `region-wildlife-empty` | no "Also watch for" line |
+      | 11 | `jargon` | |
+      | 10 | `species-range` | |
+
+      `voice-copy`, `voice`, `voice-caps`, `jargon` and `sentences` total **67** and are the
+      cheapest to clear, because they are prose rather than data and the rules are written
+      down in `ai-writing-signs`.
 - [ ] **255 species carry an empty range** and are invisible to every guide: on no card wall,
       and refused by the check that stops a region naming a species. Angola Lark is one
       example, kept off its own country's page.
@@ -161,5 +184,16 @@ Asia. Prefer editions within the last 10 years, most within 5.
 
 Cat scoped this work to the trips build on 2026-08-31. Not being worked:
 
-- [ ] Password reset returns a 500 and shows the raw Supabase JSON to the user.
+- [x] **Password reset no longer returns a 500.** Probed 2026-09-02 with a deliberately
+      bad token: GoTrue answers **303** and redirects to
+      `app.beakbrain.com/reset-password#error=access_denied&error_code=otp_expired`, which is
+      a clean error fragment rather than raw JSON. The `/reset-password` route it lands on
+      went live on the web the same day.
+- [ ] **An expired reset link now says nothing, which is the small fault left behind.**
+      `app/reset-password.tsx` carries no error handling on purpose (the deep-link handler
+      owns the session), so a link that fails shows a spinner for 8 seconds and then bounces
+      home. Reading `error_description` out of the fragment and saying it would close this.
+      Worth a device test rather than a blind fix, because it touches password recovery.
+      Note the redirect echo proves nothing about the allow-list: GoTrue echoes whatever
+      `redirect_to` you hand it and substitutes the Site URL only at the callback.
 - [ ] "Netherlands" wraps mid-word in the app UI.
