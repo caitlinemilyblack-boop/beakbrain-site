@@ -76,11 +76,28 @@ first one's ground.
       "97 of 620 regions" in memory is true and counts regions that already have listings, so
       wiring the register in adds no coverage. → `project_beakbrain_accommodation_wall`
 
+## Dead data the dead-copy check cannot see
+
+- [ ] **`bird_calendar` is written on 62 guides and rendered on none.** `generate.js` never
+      mentions the field. Found 2026-09-02 while correcting the corncrake line the four
+      nation guides shared: the correction is right and reaches no reader.
+      **`dead-copy.js` walks scalar copy fields only**, so it lists `bird_calendar_note`, the
+      subtitle, among its 24 retired fields while missing the calendar the subtitle belongs
+      to. Any field holding a LIST OF OBJECTS is invisible to it: `bird_calendar`, and worth
+      checking whether `seasons`, `glance_rows`, `hero_stats` and `tier_bands` all render.
+      Either render the calendar or retire it, and widen the check either way.
+
 ## Parked, with the ground surveyed
 
 - [ ] **Website translations** (fr, es, pt, de, nl, it, and possibly the Nordics).
-      Parked 2026-08-31 at Cat's request. The survey is done and three questions need her
-      answer before Phase 1. → `HANDOVER-2026-08-31-website-translations.md`
+      Parked 2026-08-31 and **re-confirmed parked by Cat on 2026-09-02: "ok no translations
+      yet"**. The survey is done and three questions need her answer before Phase 1.
+      → `HANDOVER-2026-08-31-website-translations.md`
+
+      **Phase 0 is no longer a blocker.** The survey said nothing could ship until the
+      20,000-file Pages ceiling was lifted; the Workers migration on 2026-09-01 removed it,
+      and the site now stages 45,597 assets against 100,000. Phase 1 is ~470 files at six
+      languages and fits with room to spare. The three questions are all that is in the way.
 
 ## Country guides — 68 live, all checks green
 
