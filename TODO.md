@@ -23,6 +23,59 @@ kept only so the numbers are not re-measured.** Re-verified 2026-09-02.
 - [x] **Every page carries the App Store link.** Verified 2026-09-02: **77 pages** hold the
       direct `apps.apple.com` link and **0** still use the `/#get` anchor.
 
+## The lodge rule changed on 2026-09-02, and it changed everywhere
+
+Cat: **"all accomodation needs a certification or be birding focused"**, and asked
+explicitly for it to hold outside Europe too: *"make sure that's the rule for europe too
+(worldwide)"*. Her reason is the whole product argument for the section: **"its easy for
+people to find accomodtion nearby but hard for them to know whats certified and whats
+birding focused/relevant"**. That reverses the 2026-09-01 loosening.
+
+Also hers, on how wide "relevant" is allowed to be: *"if it's mentioned thats already a
+good relevance but not all relevant accomodation on w&w list will mention birds but still
+have birding relevance or focus in that particular country or with a closer look."*
+
+**Shipped.** 9,085 rows to **6,732**. Regions with nowhere to stay 152 to **172**. Gone:
+Park Hyatt Mendoza and nine more Mendoza wine hotels, Shangri-La Changchun, Conrad Urumqi,
+Waldorf Astoria and JW Marriott Panama, Barcelo San Salvador, Longitude 131, Hyatt Canberra.
+**0 hand-researched rows lost**, proved by the snapshot.
+
+The five doors a row can come through, each recorded BY NAME on the row in
+`birding_relevance` so the data says which:
+
+| door | rows | what it means |
+|---|---:|---|
+| certified | 6,039 | a scheme's own register names it |
+| wildlife | 533 | its Activity Type or prose is about animals and land |
+| bird | 241 | its prose says bird, birding, ornithology or avian |
+| stay-type | 127 | the archive's own Property Type is a safari lodge, tented camp, eco lodge, bush camp |
+| named-for-a-park | 77 | its NAME contains a park this guide lists |
+| inside | 36 | its coordinate falls inside an OSM protected-area polygon |
+
+`WILD` deliberately excludes "eco", "green" and "sustainable": those describe how a place is
+run, which is the certification question, and letting them in opens the second door onto the
+first one's ground.
+
+- [ ] **9 guides lost region coverage** and it is all city, wine and beach hotels:
+      el-salvador 1→5, bolivia 4→7, china 3→6, ecuador 1→3, morocco 3→5, argentina 2→4,
+      australia 1→3, madagascar 3→4, india-himalaya 1→2. Each needs hand research now, and
+      that research has to clear the same two doors.
+- [x] **`build/travel/fetch-protected.js` is new.** It caches the OSM protected-area rings
+      of each guide's bbox to `data/_protected-<slug>.json`, **gitignored** because Australia
+      alone is 20 MB and the fleet is over 100. The import writes the verdict onto the row,
+      and the lodge files ARE tracked, so the answer is preserved and only the input is
+      refetchable. Three bugs worth remembering, all of which made the cache look like it
+      was working: `.map(simplify)` passes the ARRAY INDEX as the tolerance; Douglas-Peucker
+      on a CLOSED ring measures against a zero-length segment and keeps everything; and the
+      archive writes **"-" for no certification**, which is truthy, so those rows skipped the
+      relevance test, were rejected as booking-club-only, and were then silently PRESERVED by
+      the keep-what-cannot-be-rebuilt rule. Galapagos looked untouched while six lodges were
+      being refused and resurrected on the same run.
+- [x] **Green Key's global register reaches ZERO of the empty regions.** Measured 2026-09-02
+      against all 153 then-empty regions at 45 km: no awarded row is near any of them. The
+      "97 of 620 regions" in memory is true and counts regions that already have listings, so
+      wiring the register in adds no coverage. → `project_beakbrain_accommodation_wall`
+
 ## Parked, with the ground surveyed
 
 - [ ] **Website translations** (fr, es, pt, de, nl, it, and possibly the Nordics).
@@ -44,17 +97,20 @@ guide, so a sweep over `trips/*/` yields 69 directories and 68 slugs.
       The old figures here, 49 of 67 on the reel and 26 owing a candidate search, are dead.
 - [x] **The live gate passes.** `check-hero-captive.py`: 54 clips, 53 Commons-clean, **0
       flagged captive**, 1 from Pexels (Kenya, verified by hand), 0 unchecked.
-- [ ] **TWO CHECKS STILL ENFORCE THE RETIRED RULE and their output is noise.** Found
-      2026-09-02, and worth fixing because it will scare the next reader exactly as it
-      scared this one:
-      - `check-hero-provenance.py` ends with **"21 clip(s) must not ship"**, calling Italy's
-        clip contradicted for being filmed in South Africa, Mongolia's in Japan, Spain's in
-        France. Under the current rule every one of those is fine.
-      - `selfcheck.js` emits **44 `hero-clip` warnings** reading "does not record where it
-        was filmed", which is now a thing nobody gates on.
+- [x] **BOTH CHECKS RECALIBRATED 2026-09-02.** `check-hero-provenance.py` records where a
+      clip was filmed and blocks only on captive footage or missing attribution;
+      `selfcheck.js` dropped the filmed-in rules entirely rather than softening them, since
+      a rule kept as a warning is still a rule a reader has to learn to ignore. `hero-clip`
+      findings went **60 to 16, and all 16 are real**.
 
-      Recalibrate both to the captive rule, or retire the provenance gate and keep it only
-      as a record. → `project_beakbrain_check_calibration`
+      **It found five heroes with no attribution at all.** Three (wales, ireland,
+      northern-ireland) had their Pexels licence and source URL sitting in CREDITS.csv and
+      never carried into the guide file; written in. **costa-rica and netherlands have no
+      record anywhere**: nothing in CREDITS.csv, no download provenance on the files, no
+      credit in the guide. Those two need Cat or replacing.
+- [ ] **Two hero clips cannot be attributed.** `costa-rica-hero.mp4` (2026-08-19) and
+      `netherlands-hero.mp4` (2026-08-20). A clip we cannot show the source of is one we
+      cannot show the terms of.
 - [ ] **Nine guides keep the generic reel and it is a genuine source ceiling**: angola,
       el-salvador, ethiopia, india-south, indonesia-sulawesi-moluccas, madagascar, mexico,
       zambia, zimbabwe. No highlight species of theirs has any Commons video. The three
@@ -85,7 +141,7 @@ guide, so a sweep over `trips/*/` yields 69 directories and 68 slugs.
       |---:|---|---|
       | 289 | `area-scatter` | a region spread wide reads like a bad geocode |
       | 179 | `country-leak` | text reaching outside the guide's own country |
-      | 111 | `region-coherence` | fields in a region disagreeing with each other |
+      | 24 | `region-coherence` | was 111; see below |
       | 60 | `hero-clip` | 44 of these are the retired provenance rule, see above |
       | 55 | `stop-contact` | stops with no link a reader can open |
       | 43 | `stop-coords` | stops that will not be pinned on the map |
@@ -97,9 +153,29 @@ guide, so a sweep over `trips/*/` yields 69 directories and 68 slugs.
       | 11 | `jargon` | |
       | 10 | `species-range` | |
 
-      `voice-copy`, `voice`, `voice-caps`, `jargon` and `sentences` total **67** and are the
-      cheapest to clear, because they are prose rather than data and the rules are written
-      down in `ai-writing-signs`.
+      **The 67 prose findings are CLEARED, 2026-09-02.** `voice-copy`, `voice`,
+      `voice-caps`, `jargon` and `sentences` all read 0. Three of them were the CHECK being
+      wrong rather than the copy: "GPS 41.72 -72.63" is a coordinate and not shouting,
+      Barranco is a Belize village the guide lists as one of its own areas and not the
+      Canarian word for a ravine, and a habitat word that is also a place on the guide now
+      excuses itself from needing a gloss.
+
+      **The jargon check turned up a real content fault.** All four nation guides shipped a
+      byte-identical `bird_calendar`, and England's copy had been "fixed" by GLOSSING
+      "Corncrakes calling on the machair" rather than by noticing that England has no
+      machair and no wild corncrake. A gloss makes a false sentence clearer, never truer.
+      Corncrake last bred in Wales in 1992; in Northern Ireland it breeds only on Rathlin,
+      six calling males in 2025. Now: Scotland and Ireland keep the line with the gloss,
+      Northern Ireland says Rathlin, Wales gets Manx Shearwaters on Skomer and Skokholm,
+      England gets nightjars on the lowland heaths.
+- [x] **`region-coherence` went 111 warnings to 24.** Every one of the 111 ended "so this is
+      a big region or a big protected area", which is a check publishing its own guess 111
+      times. It now tests the stop's coordinate against the OSM protected-area rings and
+      says which park and how wide: "Pacaya-Samiria sits 178 km from anything in Iquitos and
+      the Upper Amazon because it is inside Reserva Nacional Pacaya Samiria, which spans
+      306 km." 86 became NOTEs. **The 24 left are stops no protected area contains**, and
+      those are the coordinates worth reading: La Macarena town at 217 km, Magdalena Bay at
+      166, Golmud at 127.
 - [ ] **255 species carry an empty range** and are invisible to every guide: on no card wall,
       and refused by the check that stops a region naming a species. Angola Lark is one
       example, kept off its own country's page.
