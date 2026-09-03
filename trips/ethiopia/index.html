@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1012,6 +1023,59 @@
           <div class="grow"><dt>Getting in</dt><dd>Addis Ababa is the international gateway, and every route above starts and finishes there.</dd></div>
           <div class="grow"><dt>Getting around</dt><dd>Trips are driven in a hired 4WD with a driver, and self-drive is unavailable. Internal flights shorten the long runs to Bahir Dar, Jinka and Gambela.</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/ruspoli-s-turaco/">Ruspoli's Turaco on the Genale</a></h3>
+          <p class="hl-blurb">A green turaco with a white crown that lives in a scatter of juniper woods and fig-lined riverbeds in southern Ethiopia and nowhere else. It was known from one 1892 specimen for ninety years. The fig trees on the Genale tributaries and the juniper at Arero are where people find it.</p>
+          <p class="hl-row"><b>When</b> The dry season concentrates it on fruiting figs, so December to March is best.</p>
+          <p class="hl-row"><b>Where</b> Wadera, Arero</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/ethiopian-bushcrow/">Ethiopian Bushcrow around Yabello</a></h3>
+          <p class="hl-blurb">A grey and black crow the size of a jay, with bare blue skin around the eye. Its entire world range is about 100 km across in Borana country, and nobody has explained why it stops where it does. It builds bulky stick nests in acacias beside villages and cattle.</p>
+          <p class="hl-row"><b>When</b> Resident all year and easy to find within its range.</p>
+          <p class="hl-row"><b>Where</b> Yabello, Mega</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/white-tailed-swallow/">White-tailed Swallow over the Borana bush</a></h3>
+          <p class="hl-blurb">A small blue and white swallow with white outer tail feathers, confined to the same small block of southern acacia as the bushcrow. It hunts low over open bush and perches on huts and wires in the villages.</p>
+          <p class="hl-row"><b>When</b> Resident all year, and easiest along the gravel roads to Soda.</p>
+          <p class="hl-row"><b>Where</b> Yabello, Mega</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/spot-breasted-lapwing/">Spot-breasted Lapwing on Sanetti</a></h3>
+          <p class="hl-blurb">A heavy black-crowned lapwing with a spotted breast that lives on wet Afro-alpine grassland above 3,000 m. Sanetti and the Web valley carry it in the open, and it has become scarce on the plateau grassland further north.</p>
+          <p class="hl-row"><b>When</b> Present all year on the plateau, and the pairs are easiest to see in the June to August wet season.</p>
+          <p class="hl-row"><b>Where</b> Dinsho, Goba</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/harwood-s-spurfowl/">Harwood's Spurfowl in the Jemma valley</a></h3>
+          <p class="hl-blurb">A dark francolin with a red bill and bare red skin round the eye, restricted to the gorges of the Jemma and Blue Nile drainage. It calls from the rocky acacia slopes at first light and goes quiet soon after.</p>
+          <p class="hl-row"><b>When</b> Dawn from the valley descent, and November to March keeps the gravel firm.</p>
+          <p class="hl-row"><b>Where</b> Alem Ketema, Debre Libanos</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/ankober-serin/">Ankober Serin on the escarpment</a></h3>
+          <p class="hl-blurb">A small streaky finch found in 1976 and known from a thin band of cliff and moorland along the eastern escarpment. It feeds among lichens on sheer rock faces and in the fields directly above them.</p>
+          <p class="hl-row"><b>When</b> Present all year, and cloud often covers the cliffs, so early mornings work best.</p>
+          <p class="hl-row"><b>Where</b> Ankober, Debre Birhan</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/arabian-bustard/">Arabian Bustard on the Awash plains</a></h3>
+          <p class="hl-blurb">A tall grey and brown bustard of Sahelian dry country, and the Awash region is one of the easiest places in the world to see it. Birds walk the open plains north-east of the national park and the road down from the escarpment.</p>
+          <p class="hl-row"><b>When</b> Resident all year, and the coolest walking is October to March.</p>
+          <p class="hl-row"><b>Where</b> Awash, Metahara</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/egyptian-plover/">Egyptian Plover on the Baro</a></h3>
+          <p class="hl-blurb">A grey, black and apricot wader of large sandy rivers, and one of the most wanted birds in Africa. It feeds on the exposed banks and rocks of the Baro at Gambela, and a second population uses the Gibe gorge closer to the capital.</p>
+          <p class="hl-row"><b>When</b> December to April, when the rivers are low and the sandbanks are exposed.</p>
+          <p class="hl-row"><b>Where</b> Gambela, Welkite</p>
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every Ethiopian Species</h2>
@@ -4279,7 +4343,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ae5dfbe79028.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/ruspoli-s-turaco/">Ruspoli's Turaco</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:91.67%;width:8.33%"></span><span class="tg-b" style="left:0.00%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4287,7 +4351,7 @@
             <div class="tg-p">Wadera, Arero</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/058c1e5c2d2e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/ethiopian-bushcrow/">Ethiopian Bushcrow</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4295,7 +4359,7 @@
             <div class="tg-p"><a href="#site-yabello-and-the-borana-acacia">Yabello and the Borana Acacia</a>, Mega</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/7e20d1833e90.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/white-tailed-swallow/">White-tailed Swallow</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4303,7 +4367,7 @@
             <div class="tg-p"><a href="#site-yabello-and-the-borana-acacia">Yabello and the Borana Acacia</a>, Mega</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/spot-breasted-lapwing/">Spot-breasted Lapwing</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4311,7 +4375,7 @@
             <div class="tg-p">Dinsho, Goba</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/de76657567f7.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/harwood-s-spurfowl/">Harwood's Spurfowl</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:83.33%;width:16.67%"></span><span class="tg-b" style="left:0.00%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4319,7 +4383,7 @@
             <div class="tg-p">Alem Ketema, Debre Libanos</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/ankober-serin/">Ankober Serin</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4327,7 +4391,7 @@
             <div class="tg-p">Ankober, Debre Birhan</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/df453e92599a.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/arabian-bustard/">Arabian Bustard</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:75.00%;width:25.00%"></span><span class="tg-b" style="left:0.00%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4335,7 +4399,7 @@
             <div class="tg-p"><a href="#site-awash-and-the-eastern-lowlands">Awash and the Eastern Lowlands</a>, Metahara</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/egyptian-plover/">Egyptian Plover</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:91.67%;width:8.33%"></span><span class="tg-b" style="left:0.00%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>

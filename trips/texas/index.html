@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1012,6 +1023,59 @@
           <div class="grow"><dt>Getting in</dt><dd>Houston, Dallas, Austin and San Antonio take long-haul flights, and McAllen, Harlingen, Corpus Christi, Midland and Amarillo cover the regions a birder wants</dd></div>
           <div class="grow"><dt>Getting around</dt><dd>A hire car, always. The state is a thousand kilometres across in both directions and no birding region is served by public transport</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/golden-cheeked-warbler/">Golden-cheeked Warbler on the Balcones escarpment</a></h3>
+          <p class="hl-blurb">The <a href="/birds/golden-cheeked-warbler/">Golden-cheeked Warbler</a> breeds in Texas and nowhere else on earth, in ashe juniper and oak woodland along the Balcones escarpment. Balcones Canyonlands was established for it, and refuge staff run guided walks while the birds hold territory.</p>
+          <p class="hl-row"><b>When</b> Mid-March to mid-June, while the birds are on their breeding ground in the juniper brakes.</p>
+          <p class="hl-row"><b>Where</b> Balcones Canyonlands National Wildlife Refuge, Lost Maples State Natural Area, Pedernales Falls State Park</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/colima-warbler/">Colima Warbler in the Chisos Mountains</a></h3>
+          <p class="hl-blurb">The Chisos Mountains hold the only <a href="/birds/colima-warbler/">Colima Warblers</a> in the United States, in the oak and maple woodland near the top. Reaching them means the climb from the Chisos Basin to Boot Canyon, which is a long day on foot and the reason the bird is a Texas pilgrimage.</p>
+          <p class="hl-row"><b>When</b> April into summer, once the birds are back on their breeding ground high in the Chisos.</p>
+          <p class="hl-row"><b>Where</b> Chisos Basin, Big Bend National Park</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/whooping-crane/">Whooping Crane at Aransas</a></h3>
+          <p class="hl-blurb">The only self-sustaining wild flock of <a href="/birds/whooping-crane/">Whooping Crane</a> in the world winters on the salt marshes at Aransas. Boats out of Rockport and Port Aransas reach the birds at the water, and the refuge tower looks over the same marsh from land.</p>
+          <p class="hl-row"><b>When</b> Late October to early April, while the flock is on the wintering grounds.</p>
+          <p class="hl-row"><b>Where</b> Aransas National Wildlife Refuge, Rockport</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/green-jay/">Green Jay in the Lower Rio Grande Valley</a></h3>
+          <p class="hl-blurb"><a href="/birds/green-jay/">Green Jay</a> reaches the United States only in the last few Texas counties of the Rio Grande, and it is common wherever the riparian forest survives. Santa Ana and Bentsen both hold it, and it comes readily to the feeding stations at the World Birding Center sites.</p>
+          <p class="hl-row"><b>When</b> All year, with the feeders busiest from November through the winter.</p>
+          <p class="hl-row"><b>Where</b> Santa Ana National Wildlife Refuge, Bentsen-Rio Grande Valley State Park</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/greater-prairie-chicken/">Attwater’s prairie chickens on the coastal prairie</a></h3>
+          <p class="hl-blurb">The Attwater’s race of the <a href="/birds/greater-prairie-chicken/">Greater Prairie Chicken</a> survives on its own refuge west of Houston and almost nowhere else. Regular tours to the booming grounds ended as the population fell, and the festival weekend in April is the way in.</p>
+          <p class="hl-row"><b>When</b> The second weekend of April, when the refuge festival runs guided tours.</p>
+          <p class="hl-row"><b>Where</b> Attwater Prairie Chicken National Wildlife Refuge</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/black-capped-vireo/">Black-capped Vireo in the shin oak</a></h3>
+          <p class="hl-blurb"><a href="/birds/black-capped-vireo/">Black-capped Vireo</a> holds the shin oak thickets on the plateau divides, and the Kerr Wildlife Management Area manages its habitat deliberately. Around six hundred birders a season come for it, and visitors check in at the area office first.</p>
+          <p class="hl-row"><b>When</b> April to August, with the birds arriving a month after the warblers.</p>
+          <p class="hl-row"><b>Where</b> Kerr Wildlife Management Area, Devils River State Natural Area, Lost Maples State Natural Area</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/ferruginous-pygmy-owl/">Ferruginous Pygmy Owl on the South Texas ranches</a></h3>
+          <p class="hl-blurb">The brushland on the King and Kenedy ranches carries <a href="/birds/ferruginous-pygmy-owl/">Ferruginous Pygmy Owl</a> in numbers the public land further south cannot match. Both ranches are visited on organised tours, and the owls call best in the first hour of daylight.</p>
+          <p class="hl-row"><b>When</b> All year, and easiest early on a spring morning while the birds are calling.</p>
+          <p class="hl-row"><b>Where</b> King Ranch, Kenedy Ranch</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/broad-winged-hawk/">The Hazel Bazemore hawk flight</a></h3>
+          <p class="hl-blurb">The hawk watch on the bluff above the Nueces River counts one of the largest raptor flights in North America, and <a href="/birds/broad-winged-hawk/">Broad-winged Hawk</a> makes up most of it. The count runs from mid-August to mid-November and peaks in the second half of September.</p>
+          <p class="hl-row"><b>When</b> Mid-to-late September for the peak, with hawks moving from mid-August to mid-November.</p>
+          <p class="hl-row"><b>Where</b> Hazel Bazemore County Park, Corpus Christi</p>
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every bird of Texas</h2>

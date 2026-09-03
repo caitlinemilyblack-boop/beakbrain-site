@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1021,6 +1032,59 @@
           <div class="grow"><dt>Getting in</dt><dd></dd></div>
           <div class="grow"><dt>Getting around</dt><dd></dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/atlantic-puffin/">Atlantic Puffin at Witless Bay</a></h3>
+          <p class="hl-blurb">Witless Bay holds more than 260,000 pairs, the largest <a href="/birds/atlantic-puffin/">Atlantic Puffin</a> colony in North America, on four low islands a few kilometres off the Avalon peninsula. The islands can only be seen from the water, and the boats leave from Bay Bulls half an hour south of St John's.</p>
+          <p class="hl-row"><b>When</b> The nesting season runs from 1 April to 1 September, and boat regulations apply throughout it.</p>
+          <p class="hl-row"><b>Where</b> Witless Bay, St. John's</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/northern-gannet/">Northern Gannet on Bonaventure Island</a></h3>
+          <p class="hl-blurb">Around 110,000 gannets breed on Bonaventure Island off Perce, which makes it the most accessible large colony of the species anywhere. The boat around the island also passes <a href="/birds/black-legged-kittiwake/">Black-legged Kittiwake</a>, <a href="/birds/razorbill/">Razorbill</a>, <a href="/birds/atlantic-puffin/">Atlantic Puffin</a>, <a href="/birds/black-guillemot/">Black Guillemot</a> and <a href="/birds/common-murre/">Common Murre</a>.</p>
+          <p class="hl-row"><b>When</b> Gannets return at the beginning of April and stay to the end of September. Boats run from early June to mid October.</p>
+          <p class="hl-row"><b>Where</b> Bonaventure Island, Forillon National Park</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/burrowing-owl/">Burrowing Owl in Grasslands National Park</a></h3>
+          <p class="hl-blurb">Grasslands National Park is possibly the only place left in Saskatchewan where <a href="/birds/burrowing-owl/">Burrowing Owl</a> can be counted on. Look carefully in the black-tailed prairie dog colonies, because the owls are close to the prairie dogs in size and colour and are easy to miss.</p>
+          <p class="hl-row"><b>When</b> Late May through July, while the birds are nesting.</p>
+          <p class="hl-row"><b>Where</b> Grasslands National Park</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/semipalmated-sandpiper/">Semipalmated Sandpiper at Mary's Point</a></h3>
+          <p class="hl-blurb">Up to two million <a href="/birds/semipalmated-sandpiper/">Semipalmated Sandpipers</a> stage at the head of the Bay of Fundy in a season, close to three quarters of the world population, with as many as 200,000 present at once. They feed on the mud shrimp Corophium volutator, which reaches 60,000 per square metre here, and roughly double their weight before flying on.</p>
+          <p class="hl-row"><b>When</b> The first birds arrive in mid July and passage runs to October, with August the peak.</p>
+          <p class="hl-row"><b>Where</b> Mary's Point</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/willow-ptarmigan/">Willow Ptarmigan around Churchill</a></h3>
+          <p class="hl-blurb">Both <a href="/birds/willow-ptarmigan/">Willow Ptarmigan</a> and <a href="/birds/rock-ptarmigan/">Rock Ptarmigan</a> occur around Churchill, where the boreal forest gives out onto Hudson Bay. The road system is short enough that a few days covers every habitat the town reaches.</p>
+          <p class="hl-row"><b>When</b> Present year round, and most visible in autumn and early winter alongside <a href="/birds/gyrfalcon/">Gyrfalcon</a> and <a href="/birds/snowy-owl/">Snowy Owl</a>.</p>
+          <p class="hl-row"><b>Where</b> Churchill, Cape Merry</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/prothonotary-warbler/">Prothonotary Warbler in the Carolinian woods</a></h3>
+          <p class="hl-blurb">The Carolinian forest of the Lake Erie shore carries a set of southern birds that reach Canada only here. Point Pelee and Rondeau are the two places to try, and the peninsula concentrates migrants onto a few square kilometres.</p>
+          <p class="hl-row"><b>When</b> May, when the park opens earlier and closes later to take the migration.</p>
+          <p class="hl-row"><b>Where</b> Point Pelee National Park, Rondeau Provincial Park</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/sage-thrasher/">Sage Thrasher in the Okanagan</a></h3>
+          <p class="hl-blurb">The antelope-brush and sagebrush of the southern Okanagan is the only shrub-steppe of its kind in Canada, and it carries <a href="/birds/sage-thrasher/">Sage Thrasher</a>, <a href="/birds/brewer-s-sparrow/">Brewer's Sparrow</a> and <a href="/birds/lark-sparrow/">Lark Sparrow</a> at the northern edge of their range.</p>
+          <p class="hl-row"><b>When</b> Late May and June, while the shrub-steppe birds are singing.</p>
+          <p class="hl-row"><b>Where</b> Osoyoos, Oliver, Vaseux Lake</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/gyrfalcon/">Gyrfalcon on the Dempster</a></h3>
+          <p class="hl-blurb">The Dempster Highway is the one road into the arctic tundra, and it is a good route for the large predators. <a href="/birds/gyrfalcon/">Gyrfalcon</a>, <a href="/birds/peregrine-falcon/">Peregrine Falcon</a> and <a href="/birds/golden-eagle/">Golden Eagle</a> all hunt the country it crosses.</p>
+          <p class="hl-row"><b>When</b> Through the short summer season, when the tundra nesting birds are present.</p>
+          <p class="hl-row"><b>Where</b> Dempster Highway, Tombstone Territorial Park</p>
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every bird of Canada</h2>
@@ -4030,7 +4094,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/atlantic-puffin/">Atlantic Puffin</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4038,7 +4102,7 @@
             <div class="tg-p">Witless Bay, St. John's</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/northern-gannet/">Northern Gannet</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:41.67%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4046,7 +4110,7 @@
             <div class="tg-p">Bonaventure Island, Forillon National Park</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/0950b7b233b7.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/burrowing-owl/">Burrowing Owl</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4054,7 +4118,7 @@
             <div class="tg-p">Grasslands National Park</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/semipalmated-sandpiper/">Semipalmated Sandpiper</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:50.00%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4062,7 +4126,7 @@
             <div class="tg-p">Mary's Point</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/de76657567f7.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/willow-ptarmigan/">Willow Ptarmigan</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:41.67%;width:50.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4070,7 +4134,7 @@
             <div class="tg-p"><a href="#site-churchill-and-hudson-bay">Churchill and Hudson Bay</a>, Cape Merry</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/7b2c05c94580.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/prothonotary-warbler/">Prothonotary Warbler</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4078,7 +4142,7 @@
             <div class="tg-p">Point Pelee National Park, Rondeau Provincial Park</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/27d9475c0fad.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/sage-thrasher/">Sage Thrasher</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4086,7 +4150,7 @@
             <div class="tg-p">Osoyoos, Oliver, Vaseux Lake</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/6b65b8d99927.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/gyrfalcon/">Gyrfalcon</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:41.67%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>

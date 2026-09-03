@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1004,6 +1015,59 @@
           <div class="grow"><dt>Getting in</dt><dd>Delhi (DEL) for Bharatpur and Ranthambhore, Ahmedabad (AMD) or Bhuj (BHJ) for Kutch, Bhopal (BHO) or Jabalpur (JLR) for the central highlands, Pune (PNQ) for the Deccan</dd></div>
           <div class="grow"><dt>Getting around</dt><dd>A car and driver throughout, plus booked jeeps with licensed guides inside every tiger reserve</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/sarus-crane/">Sarus Crane at Keoladeo</a></h3>
+          <p class="hl-blurb">The tallest flying bird in the world at over a metre and a half, and a resident breeder on the Bharatpur marsh. Pairs stay together for life and display with a bugling duet that carries across the whole park.</p>
+          <p class="hl-row"><b>When</b> All year, and it breeds in the monsoon.</p>
+          <p class="hl-row"><b>Where</b> Bharatpur</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/great-indian-bustard/">Great Indian Bustard at Nannaj</a></h3>
+          <p class="hl-blurb">Under two hundred birds left nationally, in a species that was a candidate for the national bird. Nannaj near Solapur is one of a handful of places it survives and the grassland it needs is disappearing under law that calls it wasteland.</p>
+          <p class="hl-row"><b>When</b> All year, and it displays in the monsoon.</p>
+          <p class="hl-row"><b>Where</b> Solapur</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/grey-hypocolius/">Grey Hypocolius in the Banni grassland</a></h3>
+          <p class="hl-blurb">A bird in a family of one. It winters in the Kutch scrub and its nearest other population is in Iran. It comes to fruiting salvadora bushes in flocks at dawn, which puts it on almost every Gujarat itinerary.</p>
+          <p class="hl-row"><b>When</b> November to March.</p>
+          <p class="hl-row"><b>Where</b> Bhuj</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/indian-skimmer/">Indian Skimmer on the Chambal</a></h3>
+          <p class="hl-blurb">A tern-like bird whose lower mandible is longer than the upper. It ploughs the water surface as it flies. The Chambal sandbars are its main remaining breeding ground, and the boat trips there are timed for it.</p>
+          <p class="hl-row"><b>When</b> March to June, and it breeds on the sandbars.</p>
+          <p class="hl-row"><b>Where</b> Sawai Madhopur</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/lesser-florican/">Lesser Florican in the monsoon grass</a></h3>
+          <p class="hl-blurb">A small bustard whose male leaps two metres above the grass in display, five hundred times a day, and then vanishes for the rest of the year. It displays only in the monsoon, which is why the wet season has any birding case at all.</p>
+          <p class="hl-row"><b>When</b> July to September.</p>
+          <p class="hl-row"><b>Where</b> Solapur</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/indian-vulture/">Indian Vulture at Ranthambhore</a></h3>
+          <p class="hl-blurb">One of three Gyps vultures that fell by more than ninety-five per cent in the 1990s after diclofenac entered the cattle they fed on. The Ranthambhore cliffs hold a small breeding colony and the recovery is being fought for.</p>
+          <p class="hl-row"><b>When</b> All year, and it nests from December to April.</p>
+          <p class="hl-row"><b>Where</b> Sawai Madhopur</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/malabar-pied-hornbill/">Malabar Pied Hornbill at Satpura</a></h3>
+          <p class="hl-blurb">A large black and white hornbill of riverine forest. Watch it from the boat on the Denwa at Satpura, one of very few reserves in India where a boat is an option.</p>
+          <p class="hl-row"><b>When</b> All year.</p>
+          <p class="hl-row"><b>Where</b> Madhai</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/painted-sandgrouse/">Painted Sandgrouse at Ranthambhore</a></h3>
+          <p class="hl-blurb">A sandgrouse of dry rocky scrub rather than open desert. It comes to water at dusk in small parties, and the Ranthambhore forest roads are where it is looked for on the way back from a drive.</p>
+          <p class="hl-row"><b>When</b> All year, at water in the late afternoon.</p>
+          <p class="hl-row"><b>Where</b> Sawai Madhopur</p>
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every Indian Species</h2>
@@ -2905,7 +2969,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/3237cadd96d2.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/sarus-crane/">Sarus Crane</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2913,7 +2977,7 @@
             <div class="tg-p"><a href="#site-bharatpur-and-the-keoladeo-wetland">Bharatpur and the Keoladeo wetland</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/df453e92599a.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/great-indian-bustard/">Great Indian Bustard</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:41.67%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2921,7 +2985,7 @@
             <div class="tg-p">Solapur</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/27d9475c0fad.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/grey-hypocolius/">Grey Hypocolius</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:83.33%;width:16.67%"></span><span class="tg-b" style="left:0.00%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2929,7 +2993,7 @@
             <div class="tg-p">Bhuj</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/indian-skimmer/">Indian Skimmer</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2937,7 +3001,7 @@
             <div class="tg-p">Sawai Madhopur</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/df453e92599a.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/lesser-florican/">Lesser Florican</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:50.00%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2945,7 +3009,7 @@
             <div class="tg-p">Solapur</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/indian-vulture/">Indian Vulture</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:91.67%;width:8.33%"></span><span class="tg-b" style="left:0.00%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2953,7 +3017,7 @@
             <div class="tg-p">Sawai Madhopur</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/f2e71b25e474.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/malabar-pied-hornbill/">Malabar Pied Hornbill</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2961,7 +3025,7 @@
             <div class="tg-p">Madhai</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/73ddbe6fa51c.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/painted-sandgrouse/">Painted Sandgrouse</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>

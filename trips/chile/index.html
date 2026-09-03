@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1008,6 +1019,59 @@
           <div class="grow"><dt>Getting in</dt><dd>Santiago (SCL) for everything, with internal flights to Arica (ARI), La Serena (LSC), Temuco (ZCO), Puerto Montt (PMC) and Punta Arenas (PUQ)</dd></div>
           <div class="grow"><dt>Getting around</dt><dd>A hire car, which Chile makes easier than anywhere else in South America, plus internal flights between the far north, the centre and Patagonia</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/diademed-sandpiper-plover/">Diademed Sandpiper-Plover in the Yeso valley</a></h3>
+          <p class="hl-blurb">A wader that breeds on high Andean bogs and belongs to a genus with one member. The Yeso valley at 2,500 m in the Cajon del Maipo is the standard site, walked slowly across the cushion bog.</p>
+          <p class="hl-row"><b>When</b> November to January, on the breeding bogs.</p>
+          <p class="hl-row"><b>Where</b> San Jose de Maipo</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/crag-chilia/">Crag Chilia above Farellones</a></h3>
+          <p class="hl-blurb">A Chilean endemic in a genus of its own. It hops among boulders on the steep slopes of the Andean foothills, and the road up to Farellones passes through its habitat for several kilometres.</p>
+          <p class="hl-row"><b>When</b> All year, most vocal September to December.</p>
+          <p class="hl-row"><b>Where</b> Farellones</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/chilean-woodstar/">Chilean Woodstar at Azapa</a></h3>
+          <p class="hl-blurb">One of the most threatened hummingbirds in the Americas, down to a few hundred birds in two irrigated valleys behind Arica. Conservation work in the Azapa valley is what stands between it and extinction.</p>
+          <p class="hl-row"><b>When</b> All year, most active in the southern spring.</p>
+          <p class="hl-row"><b>Where</b> Azapa</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/james-s-flamingo/">James's Flamingo on the altiplano lakes</a></h3>
+          <p class="hl-blurb">The scarcest of the three South American flamingos, and it was thought extinct until 1957. It feeds on the salt lakes above 4,000 m, and Surire and the Lauca lakes hold all three species together.</p>
+          <p class="hl-row"><b>When</b> April to November, when the high roads are dry.</p>
+          <p class="hl-row"><b>Where</b> Parinacota</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/magellanic-woodpecker/">Magellanic Woodpecker in the araucarias</a></h3>
+          <p class="hl-blurb">The largest woodpecker in South America, the male with a curled crimson crest. It works the monkey puzzle trunks at Conguillio, and it is loud, slow and unmistakable once found.</p>
+          <p class="hl-row"><b>When</b> All year.</p>
+          <p class="hl-row"><b>Where</b> Melipeuco</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/chucao-tapaculo/">Chucao Tapaculo in the Valdivian understorey</a></h3>
+          <p class="hl-blurb">A tapaculo that walks out into the open when it is called, which almost no tapaculo does. It is the sound of the southern rainforest and the easiest of the family anywhere.</p>
+          <p class="hl-row"><b>When</b> All year, most vocal in the southern spring.</p>
+          <p class="hl-row"><b>Where</b> Castro</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/magellanic-plover/">Magellanic Plover on Tierra del Fuego</a></h3>
+          <p class="hl-blurb">A wader in a family of its own. It feeds by turning stones on the lagoon margins of the far south. It is closer to sheathbills than to plovers, and there is nothing else like it.</p>
+          <p class="hl-row"><b>When</b> October to March, on the breeding lagoons.</p>
+          <p class="hl-row"><b>Where</b> Porvenir</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/andean-condor/">Andean Condor over Torres del Paine</a></h3>
+          <p class="hl-blurb">A three-metre wingspan riding the wind off the granite. Paine is one of the places it is simply expected rather than hoped for, and the cliffs above Lago Grey hold a roost.</p>
+          <p class="hl-row"><b>When</b> All year, best on windy days.</p>
+          <p class="hl-row"><b>Where</b> Puerto Natales</p>
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every Chilean Species</h2>
@@ -3335,7 +3399,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/diademed-sandpiper-plover/">Diademed Sandpiper-Plover</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:83.33%;width:16.67%"></span><span class="tg-b" style="left:0.00%;width:8.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3343,7 +3407,7 @@
             <div class="tg-p">San Jose de Maipo</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/0f1e807066af.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/crag-chilia/">Crag Chilia</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:66.67%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3351,7 +3415,7 @@
             <div class="tg-p"><a href="#site-santiago-farellones-and-the-cajon-del-maipo">Santiago, Farellones and the Cajon del Maipo</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/1239e5cb3801.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/chilean-woodstar/">Chilean Woodstar</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3359,7 +3423,7 @@
             <div class="tg-p"><a href="#site-arica-the-azapa-valley-and-the-atacama">Arica, the Azapa valley and the Atacama</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/4abae2dbed79.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/james-s-flamingo/">James's Flamingo</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:66.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3367,7 +3431,7 @@
             <div class="tg-p">Parinacota</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/3c4326048557.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/magellanic-woodpecker/">Magellanic Woodpecker</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3375,7 +3439,7 @@
             <div class="tg-p">Melipeuco</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/chucao-tapaculo/">Chucao Tapaculo</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:66.67%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3383,7 +3447,7 @@
             <div class="tg-p">Castro</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/magellanic-plover/">Magellanic Plover</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:75.00%;width:25.00%"></span><span class="tg-b" style="left:0.00%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3391,7 +3455,7 @@
             <div class="tg-p">Porvenir</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/andean-condor/">Andean Condor</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4155,7 +4219,9 @@
         <p class="blurb">Fray Jorge is a patch of Valdivian rainforest sitting on a coastal ridge seven hundred kilometres north of the nearest other one, kept alive entirely by fog that rolls in off the Humboldt. The trees are the same species as those at Chiloe and the birds around it are desert birds, which is a boundary you can stand on. The scrub inland holds the endemic canasteros.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> A pocket of Valdivian forest standing in coastal desert, about 400 hectares of it, kept alive entirely by condensation from the camanchaca fog where the rain never exceeds 113 mm a year. Cinnamon and tepa trees and ferns grow in it, with dry scrub all around.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/dusky-tailed-canastero/">Dusky-tailed Canastero</a>, <a href="/birds/chilean-mockingbird/">Chilean Mockingbird</a> and <a href="/birds/band-tailed-sierra-finch/">Band-tailed Sierra Finch</a> are here in every month. <a href="/birds/giant-hummingbird/">Giant Hummingbird</a> is away from April to May.</li>
+        <li class="where access"><b>Getting there:</b> Fray Jorge lies about 100 km south of La Serena. Route 5 south to km 389, then 22 km of dirt road to the park entrance, open all year. A car makes it straightforward and public transport does not.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/dusky-tailed-canastero/">Dusky-tailed Canastero</a>, <a href="/birds/chilean-mockingbird/">Chilean Mockingbird</a>, <a href="/birds/band-tailed-sierra-finch/">Band-tailed Sierra Finch</a>, <a href="/birds/chilean-seaside-cinclodes/">Chilean Seaside Cinclodes</a>, <a href="/birds/rufous-tailed-plantcutter/">Rufous-tailed Plantcutter</a>, <a href="/birds/moustached-turca/">Moustached Turca</a>, <a href="/birds/giant-hummingbird/">Giant Hummingbird</a>, <a href="/birds/peruvian-pelican/">Peruvian Pelican</a></li>
 
         <li class="where alsorec"><b>Also recorded in the parks here:</b> <a href="/birds/black-winged-ground-dove/">Black-winged Ground Dove</a>, <a href="/birds/white-throated-tapaculo/">White-throated Tapaculo</a></li>
@@ -4213,7 +4279,9 @@
         <p class="blurb">Conguillio's araucaria stands grow on lava flows under the Llaima volcano and look like nothing else on the continent. The birding is austral forest at its most accessible: <a href="/birds/magellanic-woodpecker/">Magellanic Woodpecker</a> on the monkey puzzle trunks, <a href="/birds/chestnut-throated-huet-huet/">Chestnut-throated Huet-huet</a> and <a href="/birds/chucao-tapaculo/">Chucao Tapaculo</a> on the forest floor, and <a href="/birds/austral-pygmy-owl/">Austral Pygmy Owl</a> answering in the middle of the afternoon.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> Dense araucaria forest in the Andes east of Temuco, with Nothofagus behind it and the lakes and lagoons of Captren and Conguillio holding migrant waterbirds.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/magellanic-woodpecker/">Magellanic Woodpecker</a>, <a href="/birds/chucao-tapaculo/">Chucao Tapaculo</a> and <a href="/birds/austral-pygmy-owl/">Austral Pygmy Owl</a> are on site in all twelve months.</li>
+        <li class="where access"><b>Getting there:</b> East of Temuco, which has the airport and the car hire. Leave Route 5 at Vilcun coming from the north or Cherquenco from the south, and enter at Curacautin or at Melipeuco to the south. A bus from Temuco takes about two hours.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/magellanic-woodpecker/">Magellanic Woodpecker</a>, <a href="/birds/chestnut-throated-huet-huet/">Chestnut-throated Huet-huet</a>, <a href="/birds/chucao-tapaculo/">Chucao Tapaculo</a>, <a href="/birds/austral-pygmy-owl/">Austral Pygmy Owl</a>, <a href="/birds/chilean-pigeon/">Chilean Pigeon</a>, <a href="/birds/thorn-tailed-rayadito/">Thorn-tailed Rayadito</a>, <a href="/birds/white-throated-treerunner/">White-throated Treerunner</a>, <a href="/birds/patagonian-sierra-finch/">Patagonian Sierra Finch</a></li>
 
         <li class="where alsorec"><b>Also recorded in the parks here:</b> <a href="/birds/slender-billed-parakeet/">Slender-billed Parakeet</a>, <a href="/birds/black-throated-huet-huet/">Black-throated Huet-huet</a></li>

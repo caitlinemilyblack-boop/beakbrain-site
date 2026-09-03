@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1009,6 +1020,59 @@
           <div class="grow"><dt>Routes</dt><dd><span class="glinks"><a class="glink" href="#itin-nairobi-and-the-rift">Nairobi and the Rift<span class="gdays">4 days</span></a><a class="glink" href="#itin-the-classic-circuit">The Classic Circuit<span class="gdays">8 days</span></a><a class="glink" href="#itin-the-endemic-run">The Endemic Run<span class="gdays">10 days</span></a><a class="glink" href="#itin-the-coast-and-taita">The Coast and Taita<span class="gdays">9 days</span></a><a class="glink" href="#itin-end-to-end">End to End<span class="gdays">17 days</span></a></span></dd></div>
           <div class="grow"><dt>Getting around</dt><dd>Nairobi is the hub and most routes drive. The Mara, Samburu and the coast all have airstrips, and a short internal flight saves a long day on the road.</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/lesser-flamingo/">Lesser Flamingos on the soda lakes</a></h3>
+          <p class="hl-blurb">Three quarters of the world population lives on the East African soda lakes, and when the algae bloom is right Bogoria or Nakuru carries them in six figures. Which lake holds them moves with the water chemistry, so ask before you drive.</p>
+          <p class="hl-row"><b>When</b> All year somewhere on the chain, with the largest gatherings usually from July to October.</p>
+          <p class="hl-row"><b>Where</b> Nakuru, Marigat</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/great-blue-turaco/">Great Blue Turaco at Kakamega</a></h3>
+          <p class="hl-blurb">A turaco the size of a small goose, blue with a yellow and red bill. It crashes about the canopy in noisy parties. Kakamega is the only Kenyan forest that has it, because it is the only Kenyan piece of the Guinea-Congo belt.</p>
+          <p class="hl-row"><b>When</b> All year, and the parties are loud enough to find by ear.</p>
+          <p class="hl-row"><b>Where</b> Kakamega</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/vulturine-guineafowl/">Vulturine Guineafowl in Samburu</a></h3>
+          <p class="hl-blurb">The largest guineafowl, cobalt-breasted with a bare vulture-like head. It walks the dry acacia in parties of dozens. It is a northern dryland bird and it stops where the dry country stops.</p>
+          <p class="hl-row"><b>When</b> All year, and the parties come to water in the heat of the day.</p>
+          <p class="hl-row"><b>Where</b> Archers Post, Isiolo</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/taita-thrush/">Taita Thrush in the last fragments</a></h3>
+          <p class="hl-blurb">A thrush confined to a few hundred hectares of cloud forest in three fragments on the Taita Hills, with a world population estimated in the low thousands. Ngangao is the fragment most people find it in.</p>
+          <p class="hl-row"><b>When</b> All year, on the forest floor, and the walk in is steep.</p>
+          <p class="hl-row"><b>Where</b> Wundanyi, Mwatate</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/sokoke-scops-owl/">Sokoke Scops Owl at Arabuko</a></h3>
+          <p class="hl-blurb">A tiny owl found in the Cynometra woodland of Arabuko-Sokoke and one forest in Tanzania, and nowhere else. It is searched for at dusk on the forest tracks with a local guide who knows the territories.</p>
+          <p class="hl-row"><b>When</b> All year, at dusk, and the dry months from January to March are easiest underfoot.</p>
+          <p class="hl-row"><b>Where</b> Gede, Watamu</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/secretarybird/">Secretarybirds on the plains</a></h3>
+          <p class="hl-blurb">A terrestrial raptor that walks grassland on stilt legs and kills snakes by stamping on them. The Mara and Amboseli hold them in the open where a vehicle can follow at a distance.</p>
+          <p class="hl-row"><b>When</b> All year, and the short-grass months from July to October make them easiest to see.</p>
+          <p class="hl-row"><b>Where</b> Narok, Amboseli</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/sharpe-s-longclaw/">Sharpe's Longclaw on the Kinangop</a></h3>
+          <p class="hl-blurb">A grassland pipit relative confined to high tussock grassland in central Kenya, and almost all of that grassland has gone to smallholdings. The Kinangop plateau holds what is left, in fields that are being ploughed.</p>
+          <p class="hl-row"><b>When</b> All year on the remaining tussock, and a local guide is effectively required to find the right field.</p>
+          <p class="hl-row"><b>Where</b> Nyahururu, Nyeri</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/grey-crowned-crane/">Grey Crowned Cranes in the Rift</a></h3>
+          <p class="hl-blurb">The national bird of Uganda and a familiar sight across the Kenyan Rift, and it has fallen far enough to be listed as endangered. Pairs display on wet grassland and roost communally in the shallows.</p>
+          <p class="hl-row"><b>When</b> All year, with display and breeding through the rains from March to June.</p>
+          <p class="hl-row"><b>Where</b> Naivasha, Narok</p>
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every Kenyan Species</h2>
@@ -5764,7 +5828,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/4abae2dbed79.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/lesser-flamingo/">Lesser Flamingo</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:50.00%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -5772,7 +5836,7 @@
             <div class="tg-p">Nakuru, Marigat</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/df453e92599a.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/great-blue-turaco/">Great Blue Turaco</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -5780,7 +5844,7 @@
             <div class="tg-p"><a href="#site-kakamega-and-the-western-forests">Kakamega and the Western Forests</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/3f9c98564602.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/vulturine-guineafowl/">Vulturine Guineafowl</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -5788,7 +5852,7 @@
             <div class="tg-p">Archers Post, Isiolo</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/27d9475c0fad.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/taita-thrush/">Taita Thrush</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -5796,7 +5860,7 @@
             <div class="tg-p">Wundanyi, Mwatate</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/0950b7b233b7.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/sokoke-scops-owl/">Sokoke Scops Owl</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:0.00%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -5804,7 +5868,7 @@
             <div class="tg-p">Gede, Watamu</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/secretarybird/">Secretarybird</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:50.00%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -5812,7 +5876,7 @@
             <div class="tg-p">Narok, <a href="#site-amboseli-tsavo-and-the-southern-parks">Amboseli, Tsavo and the Southern Parks</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/c6291e85bffc.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/sharpe-s-longclaw/">Sharpe's Longclaw</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -5820,7 +5884,7 @@
             <div class="tg-p">Nyahururu, Nyeri</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/3237cadd96d2.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/grey-crowned-crane/">Grey Crowned Crane</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>

@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1007,6 +1018,71 @@
           <div class="grow"><dt>Getting around</dt><dd>A visit runs entirely from the ship. Landings are made by inflatable boat and depend on the swell and the ice, and the International Association of Antarctica Tour Operators sets how many people may be ashore at a site and how close anyone may come to the wildlife.</dd></div>
         </dl>
       </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/emperor-penguin/">Emperor Penguin at Snow Hill Island</a></h3>
+          <p class="hl-blurb">The only bird that breeds through the Antarctic winter, and the colony off Snow Hill Island is the one a tourist voyage can reach. Getting there needs an icebreaker with helicopters aboard, and the sea ice cancels the attempt in many seasons.</p>
+          <p class="hl-row"><b>When</b> October and November</p>
+          <p class="hl-row"><b>Where</b> Weddell</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/adelie-penguin/">Adelie Penguin at Paulet Island</a></h3>
+          <p class="hl-blurb">This is the true Antarctic penguin and it nests further south than any other bird. Paulet Island and Hope Bay each hold more than 100,000 pairs, and Cape Adare in the Ross Sea holds the largest rookery on earth.</p>
+          <p class="hl-row"><b>When</b> November to February</p>
+          <p class="hl-row"><b>Where</b> Weddell, Ross Sea</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/chinstrap-penguin/">Chinstrap Penguin at Baily Head</a></h3>
+          <p class="hl-blurb">Tens of thousands of pairs nest in a natural amphitheatre behind the beach on the outer side of Deception Island, and the birds file through one narrow valley to reach the sea. The surf allows a landing only in calm weather.</p>
+          <p class="hl-row"><b>When</b> November to February</p>
+          <p class="hl-row"><b>Where</b> South Shetland</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/gentoo-penguin/">Gentoo Penguin in the Gerlache Strait</a></h3>
+          <p class="hl-blurb">This is the commonest penguin of the landings and it nests on almost every ice-free point between the South Shetland Islands and Petermann Island. The colony at Port Lockroy lives among the buildings of a restored British base.</p>
+          <p class="hl-row"><b>When</b> November to March</p>
+          <p class="hl-row"><b>Where</b> Gerlache</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/snow-petrel/">Snow Petrel over the pack ice</a></h3>
+          <p class="hl-blurb">An entirely white petrel that feeds along the edge of the pack ice and nests on cliff ledges inland. The birds at Brown Bluff nest low enough on the slope to be seen on the nest, which is rare anywhere.</p>
+          <p class="hl-row"><b>When</b> November to February</p>
+          <p class="hl-row"><b>Where</b> Weddell, Antarctic Circle</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/antarctic-petrel/">Antarctic Petrel on the Weddell ice</a></h3>
+          <p class="hl-blurb">A brown and white fulmarine petrel that breeds on inland cliffs hundreds of kilometres from the sea and feeds at the pack ice edge. Ships working the Weddell Sea and the Ross Sea meet it in flocks over the floes.</p>
+          <p class="hl-row"><b>When</b> November to February</p>
+          <p class="hl-row"><b>Where</b> Weddell, Ross Sea</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/snowy-albatross/">Snowy Albatross across the Drake</a></h3>
+          <p class="hl-blurb">The largest wingspan of any living bird, and the crossing is where a visitor meets it. The birds hang off the stern for hours at a time and cover the passage without a wingbeat.</p>
+          <p class="hl-row"><b>When</b> November to March</p>
+          <p class="hl-row"><b>Where</b> Drake</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/wilson-s-storm-petrel/">Wilson's Storm Petrel at the colonies</a></h3>
+          <p class="hl-blurb">This is one of the most numerous birds on earth and it nests in the scree of the same islands the penguins use. The birds flutter over the water with their feet down and return to the talus slopes at all hours.</p>
+          <p class="hl-row"><b>When</b> November to March</p>
+          <p class="hl-row"><b>Where</b> South Shetland, Gerlache</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/snowy-sheathbill/">Snowy Sheathbill at the penguin colonies</a></h3>
+          <p class="hl-blurb">The only Antarctic bird with no webbed feet, and it walks between the nests taking eggs, spilled food and scraps it can reach. Every large colony on the peninsula has a few.</p>
+          <p class="hl-row"><b>When</b> November to March</p>
+          <p class="hl-row"><b>Where</b> South Shetland, Gerlache</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/south-polar-skua/">South Polar Skua at the rookeries</a></h3>
+          <p class="hl-blurb">A migrant that breeds beside the penguin colonies and winters as far north as Greenland and Japan. It nests on the high ground above the rookeries and takes eggs and chicks from them.</p>
+          <p class="hl-row"><b>When</b> November to February</p>
+          <p class="hl-row"><b>Where</b> Gerlache, Ross Sea</p>
+        </article>
+        </div>
+      </div>
       <div class="birdhead">
       <h2 class="cat-title">Every Antarctic Species</h2>
       </div>
@@ -1259,7 +1335,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/09f9f8ac08a6.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/emperor-penguin/">Emperor Penguin</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:75.00%;width:16.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -1267,7 +1343,7 @@
             <div class="tg-p"><a href="#site-the-weddell-sea-and-snow-hill-island">The Weddell Sea and Snow Hill Island</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/04468f6de1ec.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/adelie-penguin/">Adelie Penguin</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:83.33%;width:16.67%"></span><span class="tg-b" style="left:0.00%;width:16.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -1275,7 +1351,7 @@
             <div class="tg-p"><a href="#site-the-weddell-sea-and-snow-hill-island">The Weddell Sea and Snow Hill Island</a>, <a href="#site-the-ross-sea-and-mcmurdo-sound">The Ross Sea and McMurdo Sound</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/04468f6de1ec.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/chinstrap-penguin/">Chinstrap Penguin</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:83.33%;width:16.67%"></span><span class="tg-b" style="left:0.00%;width:16.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -1283,7 +1359,7 @@
             <div class="tg-p"><a href="#site-the-south-shetland-islands">The South Shetland Islands</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/04468f6de1ec.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/gentoo-penguin/">Gentoo Penguin</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:83.33%;width:16.67%"></span><span class="tg-b" style="left:0.00%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -1291,7 +1367,7 @@
             <div class="tg-p"><a href="#site-the-gerlache-strait-and-paradise-harbour">The Gerlache Strait and Paradise Harbour</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/04468f6de1ec.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/snow-petrel/">Snow Petrel</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:83.33%;width:16.67%"></span><span class="tg-b" style="left:0.00%;width:16.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -1299,7 +1375,7 @@
             <div class="tg-p"><a href="#site-the-weddell-sea-and-snow-hill-island">The Weddell Sea and Snow Hill Island</a>, <a href="#site-the-antarctic-circle-and-marguerite-bay">The Antarctic Circle and Marguerite Bay</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/04468f6de1ec.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/antarctic-petrel/">Antarctic Petrel</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:83.33%;width:16.67%"></span><span class="tg-b" style="left:0.00%;width:16.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -1307,7 +1383,7 @@
             <div class="tg-p"><a href="#site-the-weddell-sea-and-snow-hill-island">The Weddell Sea and Snow Hill Island</a>, <a href="#site-the-ross-sea-and-mcmurdo-sound">The Ross Sea and McMurdo Sound</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ff7ebfc557ca.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/snowy-albatross/">Snowy Albatross</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:83.33%;width:16.67%"></span><span class="tg-b" style="left:0.00%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -1315,7 +1391,7 @@
             <div class="tg-p"><a href="#site-the-drake-passage">The Drake Passage</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/04468f6de1ec.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/wilson-s-storm-petrel/">Wilson's Storm Petrel</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:83.33%;width:16.67%"></span><span class="tg-b" style="left:0.00%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -1323,7 +1399,7 @@
             <div class="tg-p"><a href="#site-the-south-shetland-islands">The South Shetland Islands</a>, <a href="#site-the-gerlache-strait-and-paradise-harbour">The Gerlache Strait and Paradise Harbour</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/snowy-sheathbill/">Snowy Sheathbill</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:83.33%;width:16.67%"></span><span class="tg-b" style="left:0.00%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -1331,7 +1407,7 @@
             <div class="tg-p"><a href="#site-the-south-shetland-islands">The South Shetland Islands</a>, <a href="#site-the-gerlache-strait-and-paradise-harbour">The Gerlache Strait and Paradise Harbour</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/south-polar-skua/">South Polar Skua</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:83.33%;width:16.67%"></span><span class="tg-b" style="left:0.00%;width:16.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>

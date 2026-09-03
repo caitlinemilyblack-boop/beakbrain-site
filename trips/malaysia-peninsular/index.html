@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1004,6 +1015,59 @@
           <div class="grow"><dt>Getting in</dt><dd>Kuala Lumpur (KUL) for all five regions, none of them more than four hours by road</dd></div>
           <div class="grow"><dt>Getting around</dt><dd>A hire car, which is straightforward here, plus a three-hour riverboat into Taman Negara</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/garnet-pitta/">Garnet Pitta at Taman Negara</a></h3>
+          <p class="hl-blurb">A crimson and black pitta of the lowland forest floor, and the bird most people come to Taman Negara for. It is found by call and it is worth the sweat.</p>
+          <p class="hl-row"><b>When</b> February to June, when it is calling.</p>
+          <p class="hl-row"><b>Where</b> Kuala Tahan</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/malayan-whistling-thrush/">Malayan Whistling Thrush at Fraser's</a></h3>
+          <p class="hl-blurb">A blue-black thrush that feeds on the tarmac of the hill-station road at dawn, before the traffic. Fraser's Hill is the site everybody uses and it takes a five in the morning start.</p>
+          <p class="hl-row"><b>When</b> All year, at first light.</p>
+          <p class="hl-row"><b>Where</b> Fraser's Hill</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/rail-babbler/">Rail-babbler at Panti and Taman Negara</a></h3>
+          <p class="hl-blurb">A bird in a family of its own. It walks the lowland leaf litter with a long neck and a blue eye patch, and it is heard far more often than it is seen.</p>
+          <p class="hl-row"><b>When</b> February to June.</p>
+          <p class="hl-row"><b>Where</b> Kota Tinggi, Kuala Tahan</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/mountain-peacock-pheasant/">Mountain Peacock-Pheasant in the Camerons</a></h3>
+          <p class="hl-blurb">A peninsular Malaysian endemic of montane forest above 1,000 m, and one of the hardest birds in the country. Gunung Brinchang is the site and patience is the method.</p>
+          <p class="hl-row"><b>When</b> All year, and it calls in the early morning.</p>
+          <p class="hl-row"><b>Where</b> Tanah Rata</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/nordmann-s-greenshank/">Nordmann's Greenshank on the Straits</a></h3>
+          <p class="hl-blurb">A critically endangered wader with a few hundred pairs left. It winters on the west coast mudflats, and Kapar and Kuala Selangor hold small numbers from October.</p>
+          <p class="hl-row"><b>When</b> October to March.</p>
+          <p class="hl-row"><b>Where</b> Kuala Selangor</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/great-argus/">Great Argus at Taman Negara</a></h3>
+          <p class="hl-blurb">A pheasant whose wing feathers run a metre long and carry false eyes. It calls all day from the lowland forest, clears a dancing ground on the floor and displays there alone.</p>
+          <p class="hl-row"><b>When</b> All year, and it calls loudest from February to June.</p>
+          <p class="hl-row"><b>Where</b> Kuala Tahan</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/green-broadbill/">Green Broadbill at Panti</a></h3>
+          <p class="hl-blurb">A bird the exact green of the leaf it sits under, with a black spot behind the eye. It sits motionless in the mid-storey until it moves, and the Bunker Trail is the reliable place.</p>
+          <p class="hl-row"><b>When</b> All year.</p>
+          <p class="hl-row"><b>Where</b> Kota Tinggi</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/mangrove-pitta/">Mangrove Pitta at Kuala Selangor</a></h3>
+          <p class="hl-blurb">A pitta that lives in mangrove rather than forest, which makes it far easier to see than its relatives. The boardwalks at the nature park put you in its habitat at eye level.</p>
+          <p class="hl-row"><b>When</b> All year, and it calls from March to July.</p>
+          <p class="hl-row"><b>Where</b> Kuala Selangor</p>
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every Peninsular Malaysian Species</h2>
@@ -3595,7 +3659,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/7f954f11df23.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/garnet-pitta/">Garnet Pitta</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3603,7 +3667,7 @@
             <div class="tg-p">Kuala Tahan</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/4da14b5d9847.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/malayan-whistling-thrush/">Malayan Whistling Thrush</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3611,7 +3675,7 @@
             <div class="tg-p"><a href="#site-fraser-s-hill">Fraser's Hill</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/65420595740a.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/rail-babbler/">Rail-babbler</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3619,7 +3683,7 @@
             <div class="tg-p">Kota Tinggi, Kuala Tahan</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/de76657567f7.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/mountain-peacock-pheasant/">Mountain Peacock-Pheasant</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3627,7 +3691,7 @@
             <div class="tg-p">Tanah Rata</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/nordmann-s-greenshank/">Nordmann's Greenshank</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:75.00%;width:25.00%"></span><span class="tg-b" style="left:0.00%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3635,7 +3699,7 @@
             <div class="tg-p"><a href="#site-kuala-selangor-and-the-west-coast-wetlands">Kuala Selangor and the west coast wetlands</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/4ee70d2904f5.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/great-argus/">Great Argus</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3643,7 +3707,7 @@
             <div class="tg-p">Kuala Tahan</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/86d63a6a1ff6.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/green-broadbill/">Green Broadbill</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3651,7 +3715,7 @@
             <div class="tg-p">Kota Tinggi</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/7f954f11df23.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/mangrove-pitta/">Mangrove Pitta</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3978,6 +4042,7 @@
 
         <ul class="wherelist">
         <li class="where habitat"><b>Habitat:</b> The long coastline carries mangrove-lined mudflats, which is where the shorebirds concentrate.</li>
+        <li class="where when"><b>When:</b> Mid September to late April for the migrants, with October to March the wader months on the mudflats: <a href="/birds/terek-sandpiper/">Terek Sandpiper</a>, greenshank, sand plovers, curlew and whimbrel.</li>
         <li class="where access"><b>Getting there:</b> The park sits just southwest of the town of Kuala Selangor, 35 km northwest of Kuala Lumpur. Six signposted trails run inside it, and a riverside trail to the north is the best of them for the mangrove specialities. Five hides stand on the reserve, two of them overlooking a brackish lagoon of 55 ha and one at the end of a boardwalk through the mangroves above the tidal mud flats.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/nordmann-s-greenshank/">Nordmann's Greenshank</a>, <a href="/birds/chinese-egret/">Chinese Egret</a>, <a href="/birds/milky-stork/">Milky Stork</a>, <a href="/birds/mangrove-pitta/">Mangrove Pitta</a>, <a href="/birds/great-knot/">Great Knot</a>, <a href="/birds/kentish-plover/">Kentish Plover</a>, <a href="/birds/mangrove-blue-flycatcher/">Mangrove Blue Flycatcher</a>, <a href="/birds/ashy-tailorbird/">Ashy Tailorbird</a></li>
 

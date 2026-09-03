@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1011,6 +1022,59 @@
           <div class="grow"><dt>Routes</dt><dd><span class="glinks"><a class="glink" href="#itin-the-cape-in-five-days">The Cape in Five Days<span class="gdays">5 days</span></a><a class="glink" href="#itin-cape-and-west-coast">Cape and West Coast<span class="gdays">8 days</span></a><a class="glink" href="#itin-the-kgalagadi">The Kgalagadi<span class="gdays">8 days</span></a><a class="glink" href="#itin-kruger-and-the-escarpment">Kruger and the Escarpment<span class="gdays">9 days</span></a><a class="glink" href="#itin-the-eastern-circuit">The Eastern Circuit<span class="gdays">12 days</span></a><a class="glink" href="#itin-endemics-end-to-end">Endemics End to End<span class="gdays">21 days</span></a></span></dd></div>
           <div class="grow"><dt>Getting around</dt><dd>This is the easiest country in Africa to self-drive. Roads are good, Kruger and the national parks take your own car, and the only 4x4 needed is the Sani Pass.</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/cape-rockjumper/">Cape Rockjumper at Rooi Els</a></h3>
+          <p class="hl-blurb">A rufous and slate bird of high fynbos boulder fields, one of two members of a family found nowhere but southern Africa. The coast road at Rooi Els puts it within a short walk of a parked car, which is unusual for a bird of its habitat.</p>
+          <p class="hl-row"><b>When</b> All year, best in the first two hours and on a still morning.</p>
+          <p class="hl-row"><b>Where</b> Betty's Bay, Cape Town</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/african-penguin/">African Penguins at Boulders</a></h3>
+          <p class="hl-blurb">The only penguin that breeds in Africa, and down by more than ninety per cent in a century. Boulders Beach in Simon's Town holds a colony on a suburban shore, walked on boardwalks a few metres from the birds.</p>
+          <p class="hl-row"><b>When</b> Present all year, with the most birds ashore while moulting from November to January.</p>
+          <p class="hl-row"><b>Where</b> Simons Town, Betty's Bay</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/drakensberg-rockjumper/">Drakensberg Rockjumper on the Sani Pass</a></h3>
+          <p class="hl-blurb">The other rockjumper, on high alpine grassland above 2,400 m, and the Sani Pass is the only road a vehicle takes into its habitat. It runs on the scree rather than flying, which is how you find it.</p>
+          <p class="hl-row"><b>When</b> All year at the top of the pass, and the road is more reliable from March to October.</p>
+          <p class="hl-row"><b>Where</b> Underberg, Himeville</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/bearded-vulture/">Bearded Vultures over the berg</a></h3>
+          <p class="hl-blurb">A bone-eating vulture with a wingspan near three metres, down to a few hundred birds in the Maloti-Drakensberg and nowhere else in southern Africa. The hide at Giant's Castle is baited in winter and booked well ahead.</p>
+          <p class="hl-row"><b>When</b> The Giant's Castle hide runs from May to September, which is when the birds come to bait.</p>
+          <p class="hl-row"><b>Where</b> Winterton, Underberg</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/rudd-s-lark/">Rudd's Lark at Wakkerstroom</a></h3>
+          <p class="hl-blurb">A small brown lark confined to a shrinking band of high Highveld grassland, and among the most threatened birds in South Africa. Local guides at Wakkerstroom know which paddocks hold singing males, which is the only practical way to find it.</p>
+          <p class="hl-row"><b>When</b> Singing from October to January, and effectively invisible outside that.</p>
+          <p class="hl-row"><b>Where</b> Wakkerstroom, Dullstroom</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/pink-throated-twinspot/">Pink-throated Twinspot in the sand forest</a></h3>
+          <p class="hl-blurb">A small red and spotted finch of Zululand sand forest, a habitat that occurs in a narrow band from Mkhuze north into Mozambique. It feeds on the ground on shaded paths and is easiest at a drinking pool.</p>
+          <p class="hl-row"><b>When</b> All year, and the pans hides at Mkhuze are the reliable way.</p>
+          <p class="hl-row"><b>Where</b> Mkuze, St Lucia</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/southern-ground-hornbill/">Southern Ground Hornbills in Kruger</a></h3>
+          <p class="hl-blurb">A turkey-sized black hornbill with red facial skin that walks the bushveld in family groups and takes decades to raise a single successful chick. Kruger holds one of the last strongholds and the birds are seen from the road.</p>
+          <p class="hl-row"><b>When</b> All year, and easiest in the dry season from May to September when the grass is short.</p>
+          <p class="hl-row"><b>Where</b> Skukuza, Hoedspruit</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/pygmy-falcon/">Pygmy Falcons in the Kgalagadi</a></h3>
+          <p class="hl-blurb">Africa's smallest raptor. It lives inside the communal nests of <a href="/birds/sociable-weaver/">Sociable Weavers</a> and uses a chamber of the same haystack it hunts around. The Kgalagadi camelthorns carry both, often in the same tree.</p>
+          <p class="hl-row"><b>When</b> All year in the Kalahari, with the most activity in the cooler months from April to September.</p>
+          <p class="hl-row"><b>Where</b> Askham, Upington</p>
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every South African Species</h2>
@@ -4822,7 +4886,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/85ba45b1f441.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/cape-rockjumper/">Cape Rockjumper</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4830,7 +4894,7 @@
             <div class="tg-p">Betty's Bay, <a href="#site-cape-town-and-the-peninsula">Cape Town and the Peninsula</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/09f9f8ac08a6.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/african-penguin/">African Penguin</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:83.33%;width:16.67%"></span><span class="tg-b" style="left:0.00%;width:8.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4838,7 +4902,7 @@
             <div class="tg-p">Simons Town, Betty's Bay</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/85ba45b1f441.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/drakensberg-rockjumper/">Drakensberg Rockjumper</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:66.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4846,7 +4910,7 @@
             <div class="tg-p">Underberg, Himeville</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/bearded-vulture/">Bearded Vulture</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4854,7 +4918,7 @@
             <div class="tg-p">Winterton, Underberg</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/rudd-s-lark/">Rudd's Lark</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:75.00%;width:25.00%"></span><span class="tg-b" style="left:0.00%;width:8.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4862,7 +4926,7 @@
             <div class="tg-p">Wakkerstroom, <a href="#site-dullstroom-and-the-highveld-escarpment">Dullstroom and the Highveld Escarpment</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/7b2c05c94580.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/pink-throated-twinspot/">Pink-throated Twinspot</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4870,7 +4934,7 @@
             <div class="tg-p">Mkuze, St Lucia</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/f2e71b25e474.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/southern-ground-hornbill/">Southern Ground Hornbill</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4878,7 +4942,7 @@
             <div class="tg-p">Skukuza, Hoedspruit</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/pygmy-falcon/">Pygmy Falcon</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:50.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>

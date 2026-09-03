@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1007,6 +1018,59 @@
           <div class="grow"><dt>Getting around</dt><dd>A hire car on the mainland. Lisbon, Porto and Faro carry the full desks, and the country is small enough to cross in a day</dd></div>
           <div class="grow"><dt>The one thing to know</dt><dd>Castro Verde is a working farmed steppe rather than a reserve, so the birds are on private land seen from public tracks. The Liga para a Protecao da Natureza programme is what keeps the farming compatible with the bustards</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/great-bustard/">Great Bustard in Portugal</a></h3>
+          <p class="hl-blurb">Castro Verde is the stronghold and the birds are on open cereal steppe, so they are visible at range through a scope from the tracks. Displaying males inflate in March and early April.</p>
+          <p class="hl-row"><b>When</b> March to early April for the lek</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/little-bustard/">Little Bustard in Portugal</a></h3>
+          <p class="hl-blurb">The Alentejo plains hold over ninety-five per cent of the Portuguese population. Males give the snorting call from the grass in spring, before the harvest strips the cover.</p>
+          <p class="hl-row"><b>When</b> April to June for display</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/spanish-imperial-eagle/">Spanish Imperial Eagle in Portugal</a></h3>
+          <p class="hl-blurb">Recovered in Portugal through the LIFE Imperial work, and now resident across the southern half of the country. Tejo Internacional and the Alentejo estates are where itineraries look for it.</p>
+          <p class="hl-row"><b>When</b> Resident</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/black-winged-kite/">Black-winged Kite in Portugal</a></h3>
+          <p class="hl-blurb">Portugal is the most reliable country in Europe for it. It hovers over field edges on Alentejo and Algarve farmland, and it sits on the wires along the Castro Verde roads.</p>
+          <p class="hl-row"><b>When</b> Resident, visible year round</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/bonelli-s-eagle/">Bonelli's Eagle in Portugal</a></h3>
+          <p class="hl-blurb">The cliff eagle of the border canyons. Tejo Internacional, Douro Internacional and the Guadiana scarps above Mertola all hold pairs, and the viewpoints show them year round.</p>
+          <p class="hl-row"><b>When</b> Resident</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/iberian-magpie/">Iberian Magpie in Portugal</a></h3>
+          <p class="hl-blurb">Resident through the southern half of the country and largely absent from the north. Noisy parties in the cork oak montado, and one of the first birds a visitor to the Alentejo meets.</p>
+          <p class="hl-row"><b>When</b> Resident, easy year round</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/red-necked-nightjar/">Red-necked Nightjar in the cork oak</a></h3>
+          <p class="hl-blurb">The largest nightjar in Europe, and the montado of cork oak and open grazing is where it lives. It hunts the tracks at dusk through the Alentejo and the Tagus and Sado cork woods.</p>
+          <p class="hl-row"><b>When</b> May to August</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/griffon-vulture/">Griffon Vulture over the Douro</a></h3>
+          <p class="hl-blurb">The Douro and Tejo Internacional gorges hold the densest cliff-nesting raptor community in the country, and <a href="/birds/griffon-vulture/">Griffon Vulture</a> is the bird that fills the airspace above them.</p>
+          <p class="hl-row"><b>When</b> All year, best February to June</p>
+
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every Portuguese Species</h2>
@@ -3036,7 +3100,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/df453e92599a.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/great-bustard/">Great Bustard</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:16.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3044,7 +3108,7 @@
             <div class="tg-p">Castro Verde</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ec665a3b6504.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/little-bustard/">Little Bustard</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3052,7 +3116,7 @@
             <div class="tg-p">Castro Verde and the Alentejo plains</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/spanish-imperial-eagle/">Spanish Imperial Eagle</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3060,7 +3124,7 @@
             <div class="tg-p">Alentejo and Tejo Internacional</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/black-winged-kite/">Black-winged Kite</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3068,7 +3132,7 @@
             <div class="tg-p">Alentejo and Algarve farmland</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/bonelli-s-eagle/">Bonelli's Eagle</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3076,7 +3140,7 @@
             <div class="tg-p">Tejo Internacional, Douro Internacional and the Guadiana</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/058c1e5c2d2e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/iberian-magpie/">Iberian Magpie</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3084,7 +3148,7 @@
             <div class="tg-p">The Alentejo and the south</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/cc2cb9c5b35b.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/red-necked-nightjar/">Red-necked Nightjar</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3092,7 +3156,7 @@
             <div class="tg-p">The Alentejo montado and the Sado cork woods</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/griffon-vulture/">Griffon Vulture</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>

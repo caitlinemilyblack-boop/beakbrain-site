@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1008,6 +1019,59 @@
           <div class="grow"><dt>Getting in</dt><dd>Lilongwe takes most international flights and serves the north, and Blantyre serves the southern highlands and the Shire.</dd></div>
           <div class="grow"><dt>Getting around</dt><dd>The main road runs the length of the country on good tar and covers long distances quickly. The unsurfaced access roads to the best sites are the difficulty, and a 4WD is often essential on them during the rains.</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/yellow-throated-apalis/">Yellow-throated Apalis, the country's only endemic</a></h3>
+          <p class="hl-blurb">A small warbler of montane forest and forest edge, and the one bird that lives in Malawi and nowhere else. It is easiest on the two big southern massifs, where it works the canopy in mixed parties.</p>
+          <p class="hl-row"><b>When</b> All year, and most vocal from August to October.</p>
+          <p class="hl-row"><b>Where</b> Zomba, Mulanje</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/thyolo-alethe/">Thyolo Alethe in the southern forests</a></h3>
+          <p class="hl-blurb">A shy understorey thrush that follows ant columns and lives in a handful of forest patches in this country and on one massif across the border. The forests behind Zomba town and on the tea estates are the places to try.</p>
+          <p class="hl-row"><b>When</b> All year, and it is found by working ant columns and listening at dawn.</p>
+          <p class="hl-row"><b>Where</b> Zomba, Thyolo, Mulanje</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/white-winged-apalis/">White-winged Apalis behind Zomba town</a></h3>
+          <p class="hl-blurb">A highly localised apalis with a plopping call, and the forest galleries at the base of the Zomba escarpment are the convenient place to hear it. It also occurs, more scarcely, on Mulanje.</p>
+          <p class="hl-row"><b>When</b> All year, and listening for the call along the roadside trees is how it is found.</p>
+          <p class="hl-row"><b>Where</b> Zomba, Mulanje</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/green-headed-oriole/">Green-headed Oriole on Mount Thyolo</a></h3>
+          <p class="hl-blurb">A canopy oriole of montane forest, and in this country the tea estate forests on Mount Thyolo are the reliable place for it. Patience is needed for a clear view because the birds stay high.</p>
+          <p class="hl-row"><b>When</b> Easiest in September and October, when it calls constantly, and much quieter through November.</p>
+          <p class="hl-row"><b>Where</b> Thyolo, Mulanje</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/stierling-s-woodpecker/">Stierling's Woodpecker at Dzalanyama</a></h3>
+          <p class="hl-blurb">A miombo woodpecker with a small world range, and this reserve is probably the most accessible site for it anywhere. Pairs join the mixed foraging flocks in the middle stratum.</p>
+          <p class="hl-row"><b>When</b> All year, and easiest inside a foraging flock from May to August.</p>
+          <p class="hl-row"><b>Where</b> Dzalanyama Forest Reserve, Lilongwe</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/olive-headed-weaver/">Olive-headed Weaver in the lichen</a></h3>
+          <p class="hl-blurb">A rotund, short-tailed weaver that forages along branches draped in old-man's-beard lichen and builds its nest from the same lichen. Dzalanyama holds it in pairs inside the bird parties.</p>
+          <p class="hl-row"><b>When</b> All year, in mixed parties in the cool months and in isolated pairs in the rains.</p>
+          <p class="hl-row"><b>Where</b> Dzalanyama Forest Reserve, Chikangawa</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/blue-swallow/">Blue Swallow over the Nyika marshes</a></h3>
+          <p class="hl-blurb">A glossy blue swallow of high montane grassland, and the plateau holds around three hundred pairs. The marshy ground below the dam wall at the headquarters is the easiest place to watch them.</p>
+          <p class="hl-row"><b>When</b> On the plateau from mid September to March, and absent for the rest of the year.</p>
+          <p class="hl-row"><b>Where</b> Chelinda, Nyika National Park</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/lilian-s-lovebird/">Lilian's Lovebird in the Liwonde mopane</a></h3>
+          <p class="hl-blurb">Small flocks cross the mopane early in the morning on their way to water, and their shrill metallic screeching gives them away first. They also come into the thickets at the edge of the camp on the river.</p>
+          <p class="hl-row"><b>When</b> All year in the park, and easiest early in the morning when the birds move to water.</p>
+          <p class="hl-row"><b>Where</b> Liwonde, Mangochi</p>
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every Malawi Species</h2>
@@ -3724,7 +3788,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/85ba45b1f441.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/yellow-throated-apalis/">Yellow-throated Apalis</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:58.33%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3732,7 +3796,7 @@
             <div class="tg-p"><a href="#site-the-zomba-plateau">The Zomba Plateau</a>, <a href="#site-mount-mulanje-and-the-thyolo-forests">Mount Mulanje and the Thyolo forests</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/4da14b5d9847.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/thyolo-alethe/">Thyolo Alethe</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3740,7 +3804,7 @@
             <div class="tg-p"><a href="#site-the-zomba-plateau">The Zomba Plateau</a>, <a href="#site-mount-mulanje-and-the-thyolo-forests">Mount Mulanje and the Thyolo forests</a>, <a href="#site-mount-mulanje-and-the-thyolo-forests">Mount Mulanje and the Thyolo forests</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/85ba45b1f441.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/white-winged-apalis/">White-winged Apalis</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3748,7 +3812,7 @@
             <div class="tg-p"><a href="#site-the-zomba-plateau">The Zomba Plateau</a>, <a href="#site-mount-mulanje-and-the-thyolo-forests">Mount Mulanje and the Thyolo forests</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/green-headed-oriole/">Green-headed Oriole</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:66.67%;width:16.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3756,7 +3820,7 @@
             <div class="tg-p"><a href="#site-mount-mulanje-and-the-thyolo-forests">Mount Mulanje and the Thyolo forests</a>, <a href="#site-mount-mulanje-and-the-thyolo-forests">Mount Mulanje and the Thyolo forests</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/3c4326048557.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/stierling-s-woodpecker/">Stierling's Woodpecker</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3764,7 +3828,7 @@
             <div class="tg-p">Dzalanyama Forest Reserve, <a href="#site-dzalanyama-and-lilongwe">Dzalanyama and Lilongwe</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/9e023e4337ab.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/olive-headed-weaver/">Olive-headed Weaver</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:50.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3772,7 +3836,7 @@
             <div class="tg-p">Dzalanyama Forest Reserve, Chikangawa</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/7e20d1833e90.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/blue-swallow/">Blue Swallow</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:66.67%;width:33.33%"></span><span class="tg-b" style="left:0.00%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3780,7 +3844,7 @@
             <div class="tg-p">Chelinda, <a href="#site-nyika-national-park">Nyika National Park</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/e77f239f8995.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/lilian-s-lovebird/">Lilian's Lovebird</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:58.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>

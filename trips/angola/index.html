@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1006,6 +1017,59 @@
           <div class="grow"><dt>Getting in</dt><dd>Luanda takes the international flights and is the usual way in. The alternative is a long drive north in a 4WD from the south.</dd></div>
           <div class="grow"><dt>Getting around</dt><dd>Travel is expensive and a visitor has to be self sufficient. Portuguese is the working language and a 4WD is needed off the coast road. Landmines are a danger over large parts of the country and local advice on safe ground matters before leaving a made road.</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/red-crested-turaco/">Red-crested Turaco at Kumbira</a></h3>
+          <p class="hl-blurb">The national bird, and an endemic that bounds through the remnant canopy in full view. It is common in the scarp forest and the whole slope rings with its raucous choruses.</p>
+          <p class="hl-row"><b>When</b> All year in the scarp forest, and reachable from April to late October while the road holds.</p>
+          <p class="hl-row"><b>Where</b> Kumbira, Conda</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/swierstra-s-spurfowl/">Swierstra's Spurfowl on Mount Moco</a></h3>
+          <p class="hl-blurb">An endemic francolin of the highland grassland and forest edge that went unrecorded for thirty years. Mount Moco is the one site that produces it, and the search starts on foot above the end of the track.</p>
+          <p class="hl-row"><b>When</b> All year on the higher slopes, which have to be walked.</p>
+          <p class="hl-row"><b>Where</b> Mount Moco, Huambo</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/gabela-akalat/">Gabela Akalat above Conda</a></h3>
+          <p class="hl-blurb">A small endemic robin of the forest floor and the old coffee plantations beside it. Like most akalats it is easily missed when it stays quiet, so dawn is the time to look.</p>
+          <p class="hl-row"><b>When</b> All year, and worth the first hour of light rather than any other part of the day.</p>
+          <p class="hl-row"><b>Where</b> Kumbira, Bango</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/angola-cave-chat/">Angola Cave Chat at Tundavala</a></h3>
+          <p class="hl-blurb">An endemic chat of rock faces and lichen covered outcrops, and the reason the southern escarpment is worth the drive. It is common on the rocks at the lip of the plateau.</p>
+          <p class="hl-row"><b>When</b> All year on the outcrops, and it also lives on the rock above the forest at Kumbira.</p>
+          <p class="hl-row"><b>Where</b> Tundavala, Lubango</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/pulitzer-s-longbill/">Pulitzer's Longbill on the Seles road</a></h3>
+          <p class="hl-blurb">A drab endemic warbler with a powder blue eye and a repetitive three note call. The scrappy bush around Bango carries more of them than the good forest does.</p>
+          <p class="hl-row"><b>When</b> All year, and located by call before it is seen.</p>
+          <p class="hl-row"><b>Where</b> Bango, Kumbira</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/grey-striped-spurfowl/">Grey-striped Spurfowl at Kissama</a></h3>
+          <p class="hl-blurb">A locally common endemic that keeps to dense grass and rarely walks into the open on its own. Park guides whistle it out, which is why it is worth hiring one at the camp.</p>
+          <p class="hl-row"><b>When</b> All year in the park, and easiest with a guide who knows the call.</p>
+          <p class="hl-row"><b>Where</b> Quiçama National Park, Luanda</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/white-fronted-wattle-eye/">White-fronted Wattle-eye on the coast and the scarp</a></h3>
+          <p class="hl-blurb">An endemic of riverine forest and thicket that turns up both on the coastal plain and higher up the escarpment. The riverine strip on the southern boundary of Kissama is the easiest place to start.</p>
+          <p class="hl-row"><b>When</b> All year at both elevations.</p>
+          <p class="hl-row"><b>Where</b> Quiçama National Park, Kumbira</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/golden-backed-bishop/">Golden-backed Bishop on the Kissama grassland</a></h3>
+          <p class="hl-blurb">Small flocks work well grassed savanna and the rank growth around wetland edges. Males in breeding plumage are unmistakable and the birds are easy to walk past at any other time.</p>
+          <p class="hl-row"><b>When</b> Best while the males hold breeding plumage in the rains, from November to March.</p>
+          <p class="hl-row"><b>Where</b> Quiçama National Park, Mussulo</p>
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every Angola Species</h2>
@@ -4282,7 +4346,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ae5dfbe79028.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/red-crested-turaco/">Red-crested Turaco</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:58.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4290,7 +4354,7 @@
             <div class="tg-p"><a href="#site-gabela-and-the-kumbira-forest">Gabela and the Kumbira forest</a>, Conda</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/de76657567f7.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/swierstra-s-spurfowl/">Swierstra's Spurfowl</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4298,7 +4362,7 @@
             <div class="tg-p"><a href="#site-mount-moco-and-the-huambo-highlands">Mount Moco and the Huambo highlands</a>, <a href="#site-mount-moco-and-the-huambo-highlands">Mount Moco and the Huambo highlands</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/4da14b5d9847.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/gabela-akalat/">Gabela Akalat</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:58.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4306,7 +4370,7 @@
             <div class="tg-p"><a href="#site-gabela-and-the-kumbira-forest">Gabela and the Kumbira forest</a>, <a href="#site-the-seles-road-and-bango">The Seles road and Bango</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/4da14b5d9847.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/angola-cave-chat/">Angola Cave Chat</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4314,7 +4378,7 @@
             <div class="tg-p"><a href="#site-tundavala-and-the-lubango-escarpment">Tundavala and the Lubango escarpment</a>, <a href="#site-tundavala-and-the-lubango-escarpment">Tundavala and the Lubango escarpment</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/pulitzer-s-longbill/">Pulitzer's Longbill</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:58.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4322,7 +4386,7 @@
             <div class="tg-p"><a href="#site-the-seles-road-and-bango">The Seles road and Bango</a>, <a href="#site-gabela-and-the-kumbira-forest">Gabela and the Kumbira forest</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/de76657567f7.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/grey-striped-spurfowl/">Grey-striped Spurfowl</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4330,7 +4394,7 @@
             <div class="tg-p">Quiçama National Park, <a href="#site-kissama-and-the-luanda-coast">Kissama and the Luanda coast</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/white-fronted-wattle-eye/">White-fronted Wattle-eye</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4338,7 +4402,7 @@
             <div class="tg-p">Quiçama National Park, <a href="#site-gabela-and-the-kumbira-forest">Gabela and the Kumbira forest</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/9e023e4337ab.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/golden-backed-bishop/">Golden-backed Bishop</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:83.33%;width:16.67%"></span><span class="tg-b" style="left:0.00%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>

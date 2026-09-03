@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1008,6 +1019,59 @@
           <div class="grow"><dt>Getting in</dt><dd>Labuan Bajo (LBJ) for Komodo and western Flores, Ende (ENE) for the eastern half, Waingapu (WGP) for Sumba, Kupang (KOE) for Timor and Rote, and Lombok (LOP) for the western end</dd></div>
           <div class="grow"><dt>Getting around</dt><dd>Short domestic hops between the island airports, a hired car and driver on Flores, Sumba and Timor, and a fast ferry for Rote</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/yellow-crested-cockatoo/">Yellow-crested Cockatoo on Komodo</a></h3>
+          <p class="hl-blurb">A cockatoo the cage trade has taken out of most of its range. It survives in numbers on the Komodo islands because the park is patrolled. You pick it up in flight over burnt savanna, which is what makes the dry months the ones to come in.</p>
+          <p class="hl-row"><b>When</b> All year, easiest June to October.</p>
+          <p class="hl-row"><b>Where</b> Labuan Bajo</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/bare-throated-whistler/">Bare-throated Whistler at Ruteng</a></h3>
+          <p class="hl-blurb">A small grey bird with an enormous mimetic song, delivered from an exposed perch with the bare throat skin inflated. It is the sound of the Flores cloud forest and the reason the highland leg is worth a day of its own.</p>
+          <p class="hl-row"><b>When</b> All year, and it sings hardest from August to November.</p>
+          <p class="hl-row"><b>Where</b> Ruteng</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/sumba-hornbill/">Sumba Hornbill in the Manupeu forest</a></h3>
+          <p class="hl-blurb">A hornbill confined to Sumba and down to a few thousand birds, met in the forest blocks either side of the road at Lewa. It flies between fruiting trees in the early morning and is heard long before it is seen.</p>
+          <p class="hl-row"><b>When</b> All year, best in the dry from June.</p>
+          <p class="hl-row"><b>Where</b> Lewa</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/flores-monarch/">Flores Monarch at Puarlolo</a></h3>
+          <p class="hl-blurb">Known from very few records until the Mbeliling hill forest was worked properly, and now found reliably by call in roadside forest an hour from Labuan Bajo. Black and white, and it comes in close.</p>
+          <p class="hl-row"><b>When</b> All year.</p>
+          <p class="hl-row"><b>Where</b> Werang</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/citron-crested-cockatoo/">Citron-crested Cockatoo on Sumba</a></h3>
+          <p class="hl-blurb">The Sumba form of the Yellow-crested, with an orange crest, and among the most threatened cockatoos in the world. The Manupeu forest holds the largest remaining population.</p>
+          <p class="hl-row"><b>When</b> All year, easiest in the dry.</p>
+          <p class="hl-row"><b>Where</b> Lewa</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/rinjani-scops-owl/">Rinjani Scops Owl on Lombok</a></h3>
+          <p class="hl-blurb">Described in 2013 and found on one mountain on earth. It is worked at dusk in the forest above Senaru, and a four-day extension exists purely to get it.</p>
+          <p class="hl-row"><b>When</b> All year, called at dusk.</p>
+          <p class="hl-row"><b>Where</b> Senaru</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/sumba-buttonquail/">Sumba Buttonquail in the Yumbu grasslands</a></h3>
+          <p class="hl-blurb">A buttonquail known from a small area of Sumba grassland and seen by very few people. Finding it means walking the grass in line at first light and waiting for one to flush.</p>
+          <p class="hl-row"><b>When</b> May to September, when the grass is dry.</p>
+          <p class="hl-row"><b>Where</b> Waingapu</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/black-banded-flycatcher/">Black-banded Flycatcher at Bipolo</a></h3>
+          <p class="hl-blurb">A striking black and white flycatcher of Timorese monsoon forest, and one of the birds that makes a small forest patch beside rice fields worth an entire morning.</p>
+          <p class="hl-row"><b>When</b> All year.</p>
+          <p class="hl-row"><b>Where</b> Kupang</p>
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every Lesser Sundas Species</h2>
@@ -2513,7 +2577,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/1662f4d9bfb4.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/yellow-crested-cockatoo/">Yellow-crested Cockatoo</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:41.67%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2521,7 +2585,7 @@
             <div class="tg-p"><a href="#site-komodo-rinca-and-labuan-bajo">Komodo, Rinca and Labuan Bajo</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/775b82c449c7.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/bare-throated-whistler/">Bare-throated Whistler</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:58.33%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2529,7 +2593,7 @@
             <div class="tg-p"><a href="#site-central-flores-kelimutu-and-the-ruteng-highlands">Central Flores: Kelimutu and the Ruteng highlands</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/sumba-hornbill/">Sumba Hornbill</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:41.67%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2537,7 +2601,7 @@
             <div class="tg-p">Lewa</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/781bd46de875.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/flores-monarch/">Flores Monarch</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2545,7 +2609,7 @@
             <div class="tg-p">Werang</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/1662f4d9bfb4.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/citron-crested-cockatoo/">Citron-crested Cockatoo</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:41.67%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2553,7 +2617,7 @@
             <div class="tg-p">Lewa</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/0950b7b233b7.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/rinjani-scops-owl/">Rinjani Scops Owl</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2561,7 +2625,7 @@
             <div class="tg-p">Senaru</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/d79c4761b133.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/sumba-buttonquail/">Sumba Buttonquail</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2569,7 +2633,7 @@
             <div class="tg-p">Waingapu</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/4da14b5d9847.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/black-banded-flycatcher/">Black-banded Flycatcher</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>

@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1007,6 +1018,59 @@
           <div class="grow"><dt>Itineraries</dt><dd><span class="glinks"><a class="glink" href="#itin-an-edinburgh-layover">An Edinburgh Layover<span class="gdays">1 day</span></a><a class="glink" href="#itin-the-forth-seabird-weekend">The Forth Seabird Weekend<span class="gdays">3 days</span></a><a class="glink" href="#itin-the-solway-and-galloway">The Solway and Galloway<span class="gdays">4 days</span></a><a class="glink" href="#itin-speyside-and-the-cairngorms">Speyside and the Cairngorms<span class="gdays">5 days</span></a><a class="glink" href="#itin-islay-and-mull">Islay and Mull<span class="gdays">8 days</span></a><a class="glink" href="#itin-the-northern-isles">The Northern Isles<span class="gdays">10 days</span></a></span></dd></div>
           <div class="grow"><dt>Getting around</dt><dd>A hire car reaches every region here, and the train reaches Speyside, the Firth of Forth and the west coast ferry ports on its own</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/western-capercaillie/">Western Capercaillie in Scotland</a></h3>
+          <p class="hl-blurb">The whole British population lives in the pinewoods of Strathspey and Deeside and is small enough that disturbance matters. The responsible way to look for one is from the RSPB's own watch at Loch Garten in spring, or by walking the forest tracks and accepting a low chance.</p>
+          <p class="hl-row"><b>When</b> April and May, at first light</p>
+          <p class="hl-row"><b>Where</b> Highlands</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/northern-gannet/">Northern Gannets in Scotland</a></h3>
+          <p class="hl-blurb">The Bass Rock is the largest single gannet colony anywhere, and boats run out to it from North Berwick from spring into autumn. St Kilda and Sula Sgeir hold tens of thousands more on cliffs few people ever reach.</p>
+          <p class="hl-row"><b>When</b> February to October, at their busiest from May to July</p>
+          <p class="hl-row"><b>Where</b> Firth of Forth, Outer Hebrides</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/atlantic-puffin/">Atlantic Puffins in Scotland</a></h3>
+          <p class="hl-blurb">Puffins come ashore only to breed, so the season is short and fixed. The Isle of May, Handa and Sumburgh Head all put them within a few metres of a footpath, and the birds are gone from the ledges by early August.</p>
+          <p class="hl-row"><b>When</b> Late April to late July</p>
+          <p class="hl-row"><b>Where</b> Firth of Forth, Shetland, Northwest Highlands</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/golden-eagle/">Golden Eagles in Scotland</a></h3>
+          <p class="hl-blurb">Almost every British golden eagle lives here, spread thinly across the Highlands and the Hebrides. Mull and the northwest give the best chance, and the way to see one is to find a good vantage point and watch the ridge lines for an hour.</p>
+          <p class="hl-row"><b>When</b> All year, easiest on a bright day with some wind</p>
+          <p class="hl-row"><b>Where</b> Argyll, Northwest Highlands, Outer Hebrides</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/corn-crake/">Corncrakes in Scotland</a></h3>
+          <p class="hl-blurb">Corncrakes hold on where hay is cut late and iris beds are left standing, which today means the Hebrides and Orkney. They call through the night from deep cover, so this is a bird you hear and only occasionally glimpse.</p>
+          <p class="hl-row"><b>When</b> Late April to July, and it calls loudest after dark.</p>
+          <p class="hl-row"><b>Where</b> Outer Hebrides, Shetland</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/barnacle-goose/">Barnacle Geese in Scotland</a></h3>
+          <p class="hl-blurb">Two separate populations winter here. The whole Svalbard population comes to the Solway, and the Greenland birds go to Islay and the Hebrides, which is why both places count them in tens of thousands from October.</p>
+          <p class="hl-row"><b>When</b> October to April, at their peak from November to February</p>
+          <p class="hl-row"><b>Where</b> Solway, Argyll</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/rock-ptarmigan/">Rock Ptarmigan in Scotland</a></h3>
+          <p class="hl-blurb">Ptarmigan live above about 900 metres and turn white for winter, which makes the Cairngorm plateau the one place in Britain to look. A settled day is worth waiting for, because the ground is serious and the cloud comes down fast.</p>
+          <p class="hl-row"><b>When</b> All year, easiest from May to September when the plateau is walkable</p>
+          <p class="hl-row"><b>Where</b> Highlands</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/great-skua/">Great Skuas in Scotland</a></h3>
+          <p class="hl-blurb">Most of the world's great skuas breed on the northern isles, and they defend their moorland territories at head height. Hermaness, Noss and Handa all hold colonies you walk past on a marked path.</p>
+          <p class="hl-row"><b>When</b> May to August</p>
+          <p class="hl-row"><b>Where</b> Shetland, Northwest Highlands</p>
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every Scottish Species</h2>
@@ -3148,7 +3212,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/4ee70d2904f5.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/western-capercaillie/">Western Capercaillie</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:16.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3156,7 +3220,7 @@
             <div class="tg-p"><a href="#site-the-northwest-highlands-and-sutherland">The Northwest Highlands and Sutherland</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/northern-gannet/">Northern Gannet</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:75.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3164,7 +3228,7 @@
             <div class="tg-p"><a href="#site-the-firth-of-forth-fife-and-the-borders-coast">The Firth of Forth, Fife and the Borders coast</a>, <a href="#site-the-outer-hebrides">The Outer Hebrides</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/atlantic-puffin/">Atlantic Puffin</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3172,7 +3236,7 @@
             <div class="tg-p"><a href="#site-the-firth-of-forth-fife-and-the-borders-coast">The Firth of Forth, Fife and the Borders coast</a>, <a href="#site-shetland-and-orkney">Shetland and Orkney</a>, <a href="#site-the-northwest-highlands-and-sutherland">The Northwest Highlands and Sutherland</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/golden-eagle/">Golden Eagle</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3180,7 +3244,7 @@
             <div class="tg-p"><a href="#site-argyll-mull-and-islay">Argyll, Mull and Islay</a>, <a href="#site-the-northwest-highlands-and-sutherland">The Northwest Highlands and Sutherland</a>, <a href="#site-the-outer-hebrides">The Outer Hebrides</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/4abae2dbed79.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/corn-crake/">Corn Crake</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3188,7 +3252,7 @@
             <div class="tg-p"><a href="#site-the-outer-hebrides">The Outer Hebrides</a>, <a href="#site-shetland-and-orkney">Shetland and Orkney</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/e58fde9fe327.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/barnacle-goose/">Barnacle Goose</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:75.00%;width:25.00%"></span><span class="tg-b" style="left:0.00%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3196,7 +3260,7 @@
             <div class="tg-p"><a href="#site-the-solway-and-galloway">The Solway and Galloway</a>, <a href="#site-argyll-mull-and-islay">Argyll, Mull and Islay</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/de76657567f7.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/rock-ptarmigan/">Rock Ptarmigan</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3204,7 +3268,7 @@
             <div class="tg-p"><a href="#site-the-northwest-highlands-and-sutherland">The Northwest Highlands and Sutherland</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/great-skua/">Great Skua</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>

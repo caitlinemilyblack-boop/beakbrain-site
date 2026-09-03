@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1007,6 +1018,59 @@
           <div class="grow"><dt>Getting in</dt><dd>Windhoek Hosea Kutako (WDH) takes the international flights and is 45 km east of the city. Every itinerary here starts and ends there.</dd></div>
           <div class="grow"><dt>Getting around</dt><dd>Self-drive, and the main routes are tarred. A saloon car covers the classic loop, and a 4x4 is worth it for the Kavango sand tracks and the deep sand near the coast.</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/dune-lark/">Dune Lark in the Namib</a></h3>
+          <p class="hl-blurb">Namibia's only endemic bird, and it lives nowhere but the grassy hollows between the dunes. Walk out from the dune faces in the first cool hour and listen for a thin song from a grass clump, because it runs rather than flies.</p>
+          <p class="hl-row"><b>When</b> Present all year on the same dunes. Records concentrate in February and March, and early morning matters far more than the month.</p>
+          <p class="hl-row"><b>Where</b> Sossusvlei, Kuiseb River</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/damara-tern/">Damara Tern at Walvis Bay</a></h3>
+          <p class="hl-blurb">The smallest tern here. It nests on bare gravel behind the beach, in a scrape with no cover. Watch it fish the shallows off the lagoon, and keep to the tracks, because the nests sit on open ground and cannot be seen.</p>
+          <p class="hl-row"><b>When</b> Present all year at the lagoon, with the heaviest records in January and February.</p>
+          <p class="hl-row"><b>Where</b> Walvis Bay lagoon, Pelican Point</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/monteiro-s-hornbill/">Monteiro's Hornbill in the Erongo</a></h3>
+          <p class="hl-blurb">Found in Namibia and a strip of southern Angola, and nowhere else on earth. It works boulder-strewn hillsides rather than open plains, and the camps here have birds coming to water through the middle of the day.</p>
+          <p class="hl-row"><b>When</b> Reported most from July to November, when the dry months concentrate birds at standing water.</p>
+          <p class="hl-row"><b>Where</b> Erongo Mountains, Spitzkoppe</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/herero-chat/">Herero Chat on the escarpment</a></h3>
+          <p class="hl-blurb">One of the hardest birds in the country to find, and one of the reasons people come. Give a full morning to a single steep, bushy slope rather than an hour to several, and watch for a plain bird perched upright on a bush top.</p>
+          <p class="hl-row"><b>When</b> Present all year and thinly spread in every month. Time of day and patience matter more than season.</p>
+          <p class="hl-row"><b>Where</b> Erongo Mountains, Brandberg</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/rockrunner/">Rockrunner at Waterberg</a></h3>
+          <p class="hl-blurb">A long-tailed bird that spends most of its time hidden in grass between boulders. The way to see one is to find a singing male, which climbs onto an exposed rock and carries across the whole slope.</p>
+          <p class="hl-row"><b>When</b> Reported most from August to December, which covers the main singing period.</p>
+          <p class="hl-row"><b>Where</b> Waterberg Plateau Park, Daan Viljoen Game Park</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/kori-bustard/">Kori Bustard on the Etosha plains</a></h3>
+          <p class="hl-blurb">The heaviest bird in the world that still flies. It walks the pan edges in plain view and the males stand chest high. Drive between waterholes instead of sitting at one, because these birds keep moving.</p>
+          <p class="hl-row"><b>When</b> Reported most from July to November, and the display is at its most obvious late in that window.</p>
+          <p class="hl-row"><b>Where</b> Okaukuejo waterhole, Hobatere</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/southern-carmine-bee-eater/">Southern Carmine Bee-eaters on the Zambezi</a></h3>
+          <p class="hl-blurb">They breed in colonies dug into river banks, and a working colony is the loudest and most colourful thing in the country. Hundreds hawk insects over the water and pour back into the bank face, and a boat gives the view a road cannot.</p>
+          <p class="hl-row"><b>When</b> Present from September to March, with the heaviest records in October when the colonies are active.</p>
+          <p class="hl-row"><b>Where</b> Mahango Game Reserve, Katima Mulilo</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/pel-s-fishing-owl/">Pel's Fishing Owl on the Kavango</a></h3>
+          <p class="hl-blurb">A very large ginger owl that hunts fish from low branches over slow water. Its night call sounds like a large mammal. Ask the lodges which roost is occupied, because the same trees are used for years.</p>
+          <p class="hl-row"><b>When</b> Reported most from June to October, when lower water concentrates fish and the riverine trees are easier to work.</p>
+          <p class="hl-row"><b>Where</b> Mahango Game Reserve, Popa Falls</p>
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every Namibian Species</h2>
@@ -3867,7 +3931,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/dune-lark/">Dune Lark</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3875,7 +3939,7 @@
             <div class="tg-p"><a href="#site-the-namib-sossusvlei-and-the-naukluft">The Namib: Sossusvlei and the Naukluft</a>, Kuiseb River</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/aa315e867896.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/damara-tern/">Damara Tern</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3883,7 +3947,7 @@
             <div class="tg-p">Walvis Bay lagoon, Pelican Point</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/monteiro-s-hornbill/">Monteiro's Hornbill</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:50.00%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3891,7 +3955,7 @@
             <div class="tg-p">Erongo Mountains, Spitzkoppe</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/4da14b5d9847.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/herero-chat/">Herero Chat</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3899,7 +3963,7 @@
             <div class="tg-p">Erongo Mountains, <a href="#site-the-erongo-brandberg-and-damaraland">The Erongo, Brandberg and Damaraland</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/85ba45b1f441.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/rockrunner/">Rockrunner</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:58.33%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3907,7 +3971,7 @@
             <div class="tg-p">Waterberg Plateau Park, Daan Viljoen Game Park</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/df453e92599a.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/kori-bustard/">Kori Bustard</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:50.00%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3915,7 +3979,7 @@
             <div class="tg-p">Okaukuejo waterhole, Hobatere</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/southern-carmine-bee-eater/">Southern Carmine Bee-eater</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:66.67%;width:33.33%"></span><span class="tg-b" style="left:0.00%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3923,7 +3987,7 @@
             <div class="tg-p">Mahango Game Reserve, Katima Mulilo</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/0950b7b233b7.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/pel-s-fishing-owl/">Pel's Fishing Owl</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:41.67%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>

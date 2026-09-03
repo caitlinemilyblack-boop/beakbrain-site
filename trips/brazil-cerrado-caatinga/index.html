@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1009,6 +1020,59 @@
           <div class="grow"><dt>Getting in</dt><dd>Belo Horizonte (CNF) for the Minas cerrado, Brasilia (BSB) for the plateau, Salvador (SSA) for Bahia, Recife (REC) or Fortaleza (FOR) for the north-east</dd></div>
           <div class="grow"><dt>Getting around</dt><dd>A hired vehicle with clearance. The distances are long, several parks are unmade road inside, and two sites need a permit arranged in advance</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/lear-s-macaw/">Lear's Macaw at the Canudos roost</a></h3>
+          <p class="hl-blurb">A deep blue macaw that was known from trade birds for a century and a half before anyone found where it lived. Almost the whole population roosts on the sandstone cliffs at Canudos, and dawn there is the reason this corner of Bahia is on any itinerary.</p>
+          <p class="hl-row"><b>When</b> All year, and easiest from June to August with the caatinga bare.</p>
+          <p class="hl-row"><b>Where</b> Canudos</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/brazilian-merganser/">Brazilian Merganser on a clear stream</a></h3>
+          <p class="hl-blurb">One of the most threatened birds in the Americas, down to a few hundred, and needing clear fast water that has not been dammed or silted. Serra da Canastra is where it is looked for.</p>
+          <p class="hl-row"><b>When</b> All year, on the plateau streams at first light.</p>
+          <p class="hl-row"><b>Where</b> Sao Roque de Minas</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/slender-antbird/">Slender Antbird in the vine forest</a></h3>
+          <p class="hl-blurb">Confined to the mata de cipo of southern Bahia, a vegetation type found nowhere else, and Boa Nova is the place it is seen.</p>
+          <p class="hl-row"><b>When</b> All year, most vocal after rain.</p>
+          <p class="hl-row"><b>Where</b> Boa Nova</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/hyacinth-visorbearer/">Hyacinth Visorbearer on the campo rupestre</a></h3>
+          <p class="hl-blurb">A hummingbird of the Espinhaco rocky grassland with a shining violet face, endemic to the range and found from Serra do Cipo north into Chapada Diamantina.</p>
+          <p class="hl-row"><b>When</b> All year, on flowering vellozia.</p>
+          <p class="hl-row"><b>Where</b> Serra do Cipo, Lencois</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/cock-tailed-tyrant/">Cock-tailed Tyrant over the grass</a></h3>
+          <p class="hl-blurb">A small tyrant that displays by flying with its tail cocked vertically over its back, which is a thing to see rather than to describe. It needs unburnt native grassland, which is why Emas and Canastra hold it and the soya does not.</p>
+          <p class="hl-row"><b>When</b> Displaying from September to December.</p>
+          <p class="hl-row"><b>Where</b> Mineiros, Sao Roque de Minas</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/blue-eyed-ground-dove/">Blue-eyed Ground Dove in the Minas cerrado</a></h3>
+          <p class="hl-blurb">Unrecorded for seventy-five years and found again in 2015 in a patch of cerrado in Minas Gerais. A reserve was created around it and the known population is still counted in dozens.</p>
+          <p class="hl-row"><b>When</b> All year, and access is arranged with the reserve.</p>
+          <p class="hl-row"><b>Where</b> Montes Claros</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/alagoas-antwren/">Alagoas Antwren at Murici</a></h3>
+          <p class="hl-blurb">Down to a handful of birds in the last fragments of Pernambuco forest, and one of the most likely birds above to be lost within a working lifetime.</p>
+          <p class="hl-row"><b>When</b> All year, in the understorey of the surviving fragments.</p>
+          <p class="hl-row"><b>Where</b> Murici</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/brasilia-tapaculo/">Brasilia Tapaculo inside the capital</a></h3>
+          <p class="hl-blurb">Described in 1998 from gallery forest in and around Brasilia, and it can be heard inside the national park that sits within the city boundary.</p>
+          <p class="hl-row"><b>When</b> All year, and it is heard long before it is seen.</p>
+          <p class="hl-row"><b>Where</b> Brasilia</p>
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every interior Brazilian Species</h2>
@@ -4449,7 +4513,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/009a6ba16adc.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/lear-s-macaw/">Lear's Macaw</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:41.67%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4457,7 +4521,7 @@
             <div class="tg-p"><a href="#site-canudos-and-the-raso-da-catarina">Canudos and the Raso da Catarina</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/e58fde9fe327.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/brazilian-merganser/">Brazilian Merganser</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4465,7 +4529,7 @@
             <div class="tg-p">Sao Roque de Minas</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/slender-antbird/">Slender Antbird</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4473,7 +4537,7 @@
             <div class="tg-p"><a href="#site-boa-nova-and-the-mata-de-cipo">Boa Nova and the mata de cipo</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/1239e5cb3801.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/hyacinth-visorbearer/">Hyacinth Visorbearer</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4481,7 +4545,7 @@
             <div class="tg-p"><a href="#site-serra-do-cipo-and-the-caraca-sanctuary">Serra do Cipo and the Caraca sanctuary</a>, Lencois</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/cock-tailed-tyrant/">Cock-tailed Tyrant</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:66.67%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4489,7 +4553,7 @@
             <div class="tg-p">Mineiros, Sao Roque de Minas</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/blue-eyed-ground-dove/">Blue-eyed Ground Dove</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4497,7 +4561,7 @@
             <div class="tg-p">Montes Claros</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/alagoas-antwren/">Alagoas Antwren</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4505,7 +4569,7 @@
             <div class="tg-p">Murici</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/9eaad74b7bd8.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/brasilia-tapaculo/">Brasilia Tapaculo</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>

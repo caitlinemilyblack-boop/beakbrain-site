@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1005,6 +1016,59 @@
           <div class="grow"><dt>Getting in</dt><dd>Managua (MGA) takes almost all the international flights, and Granada is an hour away on a surfaced road. Internal flights to San Carlos, Bluefields and Puerto Cabezas take about an hour each and save a day or more of road and river.</dd></div>
           <div class="grow"><dt>Getting around</dt><dd>A hired vehicle covers the Pacific side and the northern highlands on surfaced main roads, while the Rio San Juan and the whole Caribbean half have no road network and are reached by air and boat.</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/great-green-macaw/">Great Green Macaw in Indio Maiz</a></h3>
+          <p class="hl-blurb">Gone from most of Central America and still present in the Rio San Juan forest, which is the reason the reserve matters beyond its size. Birds cross the river morning and evening.</p>
+          <p class="hl-row"><b>When</b> Year round, and the river trip rather than the bird decides the season.</p>
+          <p class="hl-row"><b>Where</b> Bartola, El Castillo</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/yellow-naped-amazon/">Yellow-naped Amazon on the Pacific side</a></h3>
+          <p class="hl-blurb">A parrot in steep decline across its range through trapping, and the Nicaraguan dry forest and volcano slopes still hold it. Masaya's crater colony is the best-known site.</p>
+          <p class="hl-row"><b>When</b> Year round, and noisiest at dawn and dusk roost flights.</p>
+          <p class="hl-row"><b>Where</b> Masaya, Rivas</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/turquoise-browed-motmot/">Turquoise-browed Motmot in the dry forest</a></h3>
+          <p class="hl-blurb">The national bird, and common enough on the Pacific side that it perches on roadside wires. Chacocente and the Granada isthmus are both reliable.</p>
+          <p class="hl-row"><b>When</b> Year round, and easiest when the dry forest is leafless.</p>
+          <p class="hl-row"><b>Where</b> Granada, Rivas</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/resplendent-quetzal/">Resplendent Quetzal in the northern highlands</a></h3>
+          <p class="hl-blurb">The southern highlands of Nicaragua are the northern limit of a Costa Rican population and the reserves above Jinotega hold territories. Datanli is the usual place to try.</p>
+          <p class="hl-row"><b>When</b> March to June, when pairs are calling at nest holes.</p>
+          <p class="hl-row"><b>Where</b> Jinotega, Matagalpa</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/three-wattled-bellbird/">Three-wattled Bellbird above Matagalpa</a></h3>
+          <p class="hl-blurb">A call that carries further than any other in the American tropics, from a bird that moves up and down the mountains with the fruiting season rather than holding one place.</p>
+          <p class="hl-row"><b>When</b> March to July, when males are calling from the cloud forest.</p>
+          <p class="hl-row"><b>Where</b> Matagalpa, Jinotega</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/agami-heron/">Agami Heron on the Bartola</a></h3>
+          <p class="hl-blurb">A heron of shaded creek edges, missed far more often than seen, and the blackwater tributaries of the San Juan are as good a chance as Central America offers.</p>
+          <p class="hl-row"><b>When</b> Year round, and easiest from a boat in the first hour of light.</p>
+          <p class="hl-row"><b>Where</b> Bartola</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/snail-kite/">Snail Kite at Lake Apanas</a></h3>
+          <p class="hl-blurb">A kite that eats one thing and follows the apple snails that supply it. Apanas above Jinotega holds the country's largest concentration.</p>
+          <p class="hl-row"><b>When</b> Year round, with numbers highest through the dry season.</p>
+          <p class="hl-row"><b>Where</b> Jinotega</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/white-throated-magpie-jay/">White-throated Magpie-Jay in the dry country</a></h3>
+          <p class="hl-blurb">A long-tailed, crested jay that travels in noisy family parties, and the most conspicuous bird of the Pacific plain. Nicaragua is the easiest country in its range to find one in.</p>
+          <p class="hl-row"><b>When</b> Year round, and unmissable in the dry season.</p>
+          <p class="hl-row"><b>Where</b> Leon, Rivas</p>
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every Nicaraguan Species</h2>
@@ -4113,7 +4177,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/009a6ba16adc.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/great-green-macaw/">Great Green Macaw</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4121,7 +4185,7 @@
             <div class="tg-p">Bartola, El Castillo</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/009a6ba16adc.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/yellow-naped-amazon/">Yellow-naped Amazon</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:91.67%;width:8.33%"></span><span class="tg-b" style="left:0.00%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4129,7 +4193,7 @@
             <div class="tg-p">Masaya, Rivas</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/f2e71b25e474.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/turquoise-browed-motmot/">Turquoise-browed Motmot</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:91.67%;width:8.33%"></span><span class="tg-b" style="left:0.00%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4137,7 +4201,7 @@
             <div class="tg-p">Granada, Rivas</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/f2e71b25e474.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/resplendent-quetzal/">Resplendent Quetzal</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4145,7 +4209,7 @@
             <div class="tg-p"><a href="#site-the-northern-highlands-matagalpa-and-jinotega">The northern highlands: Matagalpa and Jinotega</a>, <a href="#site-the-northern-highlands-matagalpa-and-jinotega">The northern highlands: Matagalpa and Jinotega</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/6a48d6e3cd44.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/three-wattled-bellbird/">Three-wattled Bellbird</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4153,7 +4217,7 @@
             <div class="tg-p"><a href="#site-the-northern-highlands-matagalpa-and-jinotega">The northern highlands: Matagalpa and Jinotega</a>, <a href="#site-the-northern-highlands-matagalpa-and-jinotega">The northern highlands: Matagalpa and Jinotega</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ae798de40aa3.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/agami-heron/">Agami Heron</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4161,7 +4225,7 @@
             <div class="tg-p">Bartola</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/snail-kite/">Snail Kite</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:91.67%;width:8.33%"></span><span class="tg-b" style="left:0.00%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4169,7 +4233,7 @@
             <div class="tg-p"><a href="#site-the-northern-highlands-matagalpa-and-jinotega">The northern highlands: Matagalpa and Jinotega</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/058c1e5c2d2e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/white-throated-magpie-jay/">White-throated Magpie-Jay</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:91.67%;width:8.33%"></span><span class="tg-b" style="left:0.00%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>

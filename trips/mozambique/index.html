@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1013,6 +1024,59 @@
           <div class="grow"><dt>Getting in</dt><dd>Maputo takes the international flights. Beira, Vilanculos, Chimoio, Tete, Quelimane and Lichinga are the domestic airports the routes here open at.</dd></div>
           <div class="grow"><dt>Getting around</dt><dd>The EN1 up the coast and the EN6 inland from Beira are tar. Everything else on this list wants high clearance, and the forest and delta tracks want a 4WD in any month.</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/namuli-apalis/">Namuli Apalis on the Namuli massif</a></h3>
+          <p class="hl-blurb">The only bird that lives in Mozambique and nowhere else. It was rediscovered in 1998 after a gap of 66 years and it is locally common in the montane forest, down to about 1,200 m in patches of riparian forest.</p>
+          <p class="hl-row"><b>When</b> All year, and it is easy to find once the call is known.</p>
+          <p class="hl-row"><b>Where</b> Gurue, Molumbo</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/green-headed-oriole/">Green-headed Oriole on Mount Gorongosa</a></h3>
+          <p class="hl-blurb">The mountain is the only site south of the Zambezi for this oriole and the birds here belong to an endemic subspecies. It is common in the tall montane forest and it comes out to the forest edge, so it can be seen without going in.</p>
+          <p class="hl-row"><b>When</b> All year, and noisiest in September and October.</p>
+          <p class="hl-row"><b>Where</b> Vinduzi, Gorongosa</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/crab-plover/">Crab-plover on the Bazaruto flats</a></h3>
+          <p class="hl-blurb">A bird of the Indian Ocean shore with a bill built for crabs, and it comes to Mozambique in small groups through the southern summer. The mudflats off Benguerra and the spit north of the Sao Sebastiao peninsula are the two places to look.</p>
+          <p class="hl-row"><b>When</b> October to March, and flocks of several hundred have been counted at Ilha do Barro.</p>
+          <p class="hl-row"><b>Where</b> Benguerra Island, Vilanculos</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/african-pitta/">African Pitta in the lowland forest</a></h3>
+          <p class="hl-blurb">It arrives with the rains, calls from riverine thicket and displays with a short vertical jump off a fallen branch. Sitting still and watching the leaf litter works better than walking.</p>
+          <p class="hl-row"><b>When</b> Late November to January, and it is silent and close to impossible outside that.</p>
+          <p class="hl-row"><b>Where</b> Muanza, Marromeu</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/olive-headed-weaver/">Olive-headed Weaver in the miombo</a></h3>
+          <p class="hl-blurb">A rotund, short-tailed weaver that forages along branches and hangs from clumps of old-man's-beard lichen, which it also builds its nest from. Panda holds an estimated 100 breeding pairs and is the only site left south of the Zambezi.</p>
+          <p class="hl-row"><b>When</b> All year. It joins mixed bird parties in winter and sits in isolated pairs in summer.</p>
+          <p class="hl-row"><b>Where</b> Panda, Furancungo</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/east-coast-akalat/">East Coast Akalat at Chinizuia</a></h3>
+          <p class="hl-blurb">Common and very vocal at dawn and dusk in the lowland forest, and unobtrusive even while it sings. It perches motionless in the understorey less than a metre off the ground, so patience finds it.</p>
+          <p class="hl-row"><b>When</b> All year in the forest, and the roads in are far easier in the dry season.</p>
+          <p class="hl-row"><b>Where</b> Muanza, Marromeu</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/dapple-throat/">Dapple-throat on Namuli</a></h3>
+          <p class="hl-blurb">A skulker of the forest understorey that otherwise occurs only in the Udzungwa mountains to the north. It calls mostly at dawn and dusk, so knowing the voice is the whole of finding it.</p>
+          <p class="hl-row"><b>When</b> All year, around the base of the granite dome in the Ukalini forest.</p>
+          <p class="hl-row"><b>Where</b> Gurue</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/locust-finch/">Locust Finch on the Savane grassland</a></h3>
+          <p class="hl-blurb">A tiny red-faced finch of wet grassland that is almost always seen in flight after being flushed. The flooded meadows on the Savane road hold it in grass up to about 50 cm.</p>
+          <p class="hl-row"><b>When</b> All year on the grassland, and easiest when the meadows are flooded.</p>
+          <p class="hl-row"><b>Where</b> Savane, Beira</p>
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every Mozambique Species</h2>
@@ -3934,7 +3998,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/85ba45b1f441.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/namuli-apalis/">Namuli Apalis</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3942,7 +4006,7 @@
             <div class="tg-p">Gurue, Molumbo</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/green-headed-oriole/">Green-headed Oriole</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:66.67%;width:16.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3950,7 +4014,7 @@
             <div class="tg-p">Vinduzi, <a href="#site-gorongosa-national-park-and-mount-gorongosa">Gorongosa National Park and Mount Gorongosa</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/crab-plover/">Crab-plover</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:75.00%;width:25.00%"></span><span class="tg-b" style="left:0.00%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3958,7 +4022,7 @@
             <div class="tg-p">Benguerra Island, <a href="#site-vilanculos-and-the-bazaruto-archipelago">Vilanculos and the Bazaruto archipelago</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/7f954f11df23.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/african-pitta/">African Pitta</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:83.33%;width:16.67%"></span><span class="tg-b" style="left:0.00%;width:8.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3966,7 +4030,7 @@
             <div class="tg-p">Muanza, <a href="#site-the-zambezi-delta-and-marromeu">The Zambezi delta and Marromeu</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/9e023e4337ab.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/olive-headed-weaver/">Olive-headed Weaver</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3974,7 +4038,7 @@
             <div class="tg-p"><a href="#site-panda-and-the-inland-miombo">Panda and the inland miombo</a>, <a href="#site-tete-cahora-bassa-and-furancungo">Tete, Cahora Bassa and Furancungo</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/4da14b5d9847.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/east-coast-akalat/">East Coast Akalat</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:58.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3982,7 +4046,7 @@
             <div class="tg-p">Muanza, <a href="#site-the-zambezi-delta-and-marromeu">The Zambezi delta and Marromeu</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/dapple-throat/">Dapple-throat</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3990,7 +4054,7 @@
             <div class="tg-p">Gurue</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/locust-finch/">Locust Finch</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>

@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1004,6 +1015,59 @@
           <div class="grow"><dt>Getting in</dt><dd>Kochi (COK) for Thattekad and Munnar, Bengaluru (BLR) or Mysuru for Kabini, Goa (GOI) for the Konkan, and Port Blair (IXZ) by flight from Chennai or Kolkata</dd></div>
           <div class="grow"><dt>Getting around</dt><dd>A car and driver on the mainland, and a flight to the Andamans with local taxis once there</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/sri-lanka-frogmouth/">Sri Lanka Frogmouth at Thattekad</a></h3>
+          <p class="hl-blurb">A frogmouth of Western Ghats and Sri Lankan forest. It roosts in dense thicket by day and you find it only because a guide knows the tree. Thattekad is where almost everybody sees it.</p>
+          <p class="hl-row"><b>When</b> All year, at a known day roost.</p>
+          <p class="hl-row"><b>Where</b> Thattekad</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/nilgiri-pipit/">Nilgiri Pipit at Eravikulam</a></h3>
+          <p class="hl-blurb">A pipit of high shola grassland above 1,800 m, confined to the southern Western Ghats, and one of very few Indian birds that lives entirely on montane grass. Eravikulam is where it is looked for.</p>
+          <p class="hl-row"><b>When</b> All year, most vocal in the dry.</p>
+          <p class="hl-row"><b>Where</b> Munnar</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/malabar-trogon/">Malabar Trogon in the Ghats forest</a></h3>
+          <p class="hl-blurb">A crimson and slate trogon of Western Ghats evergreen forest. It sits motionless in the mid-storey until it drops for an insect. Thattekad and the Goan Ghats camps both hold it.</p>
+          <p class="hl-row"><b>When</b> All year.</p>
+          <p class="hl-row"><b>Where</b> Thattekad, Backwoods</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/andaman-crake/">Andaman Crake near Port Blair</a></h3>
+          <p class="hl-blurb">A crake that lives on these islands and nowhere else. It walks damp forest edges at dawn. It is one of about twenty Andaman endemics and the reason the archipelago has its own itineraries.</p>
+          <p class="hl-row"><b>When</b> All year, easiest in the dry from December.</p>
+          <p class="hl-row"><b>Where</b> Port Blair</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/nilgiri-flycatcher/">Nilgiri Flycatcher in the shola</a></h3>
+          <p class="hl-blurb">An indigo flycatcher of southern Western Ghats shola forest, in the wooded folds between the grassland tops. Munnar's estate ridges hold it in every patch of remaining shola.</p>
+          <p class="hl-row"><b>When</b> All year.</p>
+          <p class="hl-row"><b>Where</b> Munnar</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/malabar-pied-hornbill/">Malabar Pied Hornbill over the Kabini</a></h3>
+          <p class="hl-blurb">A large black and white hornbill of riverine and deciduous forest. It crosses the Kabini backwaters in the early morning, and the boat safaris are the way to watch it.</p>
+          <p class="hl-row"><b>When</b> All year, and it nests from January to April.</p>
+          <p class="hl-row"><b>Where</b> Kabini</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/indian-pitta/">Indian Pitta in the Goan Ghats</a></h3>
+          <p class="hl-blurb">A pitta in nine colours that winters in the Western Ghats forests and calls at dawn and dusk from the leaf litter. The Backwoods camp at Tambdi Surla is where most visitors meet their first.</p>
+          <p class="hl-row"><b>When</b> October to April, when it winters here.</p>
+          <p class="hl-row"><b>Where</b> Backwoods</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/palani-laughingthrush/">Palani Laughingthrush above Munnar</a></h3>
+          <p class="hl-blurb">A laughingthrush of the high southern shola, split from the Nilgiri birds, and confined to the hills above 1,500 m in Kerala and Tamil Nadu. It comes to the Eravikulam paths in parties.</p>
+          <p class="hl-row"><b>When</b> All year.</p>
+          <p class="hl-row"><b>Where</b> Munnar</p>
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every South Indian Species</h2>
@@ -3475,7 +3539,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/f5caa70c4dfa.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/sri-lanka-frogmouth/">Sri Lanka Frogmouth</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3483,7 +3547,7 @@
             <div class="tg-p"><a href="#site-thattekad-and-the-kerala-lowlands">Thattekad and the Kerala lowlands</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/c6291e85bffc.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/nilgiri-pipit/">Nilgiri Pipit</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3491,7 +3555,7 @@
             <div class="tg-p"><a href="#site-munnar-eravikulam-and-the-high-western-ghats">Munnar, Eravikulam and the high Western Ghats</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/f2e71b25e474.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/malabar-trogon/">Malabar Trogon</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3499,7 +3563,7 @@
             <div class="tg-p"><a href="#site-thattekad-and-the-kerala-lowlands">Thattekad and the Kerala lowlands</a>, Backwoods</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/4abae2dbed79.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/andaman-crake/">Andaman Crake</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:91.67%;width:8.33%"></span><span class="tg-b" style="left:0.00%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3507,7 +3571,7 @@
             <div class="tg-p">Port Blair</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/4da14b5d9847.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/nilgiri-flycatcher/">Nilgiri Flycatcher</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3515,7 +3579,7 @@
             <div class="tg-p"><a href="#site-munnar-eravikulam-and-the-high-western-ghats">Munnar, Eravikulam and the high Western Ghats</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/f2e71b25e474.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/malabar-pied-hornbill/">Malabar Pied Hornbill</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:0.00%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3523,7 +3587,7 @@
             <div class="tg-p">Kabini</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/7f954f11df23.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/indian-pitta/">Indian Pitta</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:75.00%;width:25.00%"></span><span class="tg-b" style="left:0.00%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3531,7 +3595,7 @@
             <div class="tg-p">Backwoods</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/0996038f1e97.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/palani-laughingthrush/">Palani Laughingthrush</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3667,7 +3731,9 @@
         <p class="blurb">Salim Ali called Thattekad the richest bird habitat in peninsular India and the twenty-five square kilometres of it still deliver. The guiding is done by a handful of local men who know individual roosts, which is how <a href="/birds/sri-lanka-frogmouth/">Sri Lanka Frogmouth</a> and <a href="/birds/oriental-bay-owl/">Oriental Bay Owl</a> are found here reliably. <a href="/birds/malabar-trogon/">Malabar Trogon</a> and <a href="/birds/malabar-grey-hornbill/">Malabar Grey Hornbill</a> are on the same morning.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> Evergreen and semi-evergreen lowland forest on the north bank of the Periyar, with rubber and cardamom around it, holding over 300 species in a small area Salim Ali called the richest bird habitat in peninsular India.</li>
         <li class="where when"><b>When:</b> Good all year. <a href="/birds/sri-lanka-frogmouth/">Sri Lanka Frogmouth</a>, <a href="/birds/malabar-trogon/">Malabar Trogon</a> and <a href="/birds/malabar-grey-hornbill/">Malabar Grey Hornbill</a> are here in every month. <a href="/birds/indian-pitta/">Indian Pitta</a> is away from May to September.</li>
+        <li class="where access"><b>Getting there:</b> About 71 km from Kochi airport and 48 km from the railway at Aluva, by bus or taxi to Kothamangalam and on to the sanctuary.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/sri-lanka-frogmouth/">Sri Lanka Frogmouth</a>, <a href="/birds/malabar-trogon/">Malabar Trogon</a>, <a href="/birds/malabar-grey-hornbill/">Malabar Grey Hornbill</a>, <a href="/birds/heart-spotted-woodpecker/">Heart-spotted Woodpecker</a>, <a href="/birds/malabar-barbet/">Malabar Barbet</a>, <a href="/birds/indian-pitta/">Indian Pitta</a>, <a href="/birds/flame-throated-bulbul/">Flame-throated Bulbul</a>, <a href="/birds/oriental-bay-owl/">Oriental Bay Owl</a></li>
 
 

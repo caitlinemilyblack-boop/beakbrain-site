@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1008,6 +1019,59 @@
           <div class="grow"><dt>Getting around</dt><dd>Austria is the easiest country on this site to bird by train, with rail reaching the Seewinkel, the Wienerwald and the Gesause and cable cars the high ground, though the Grossglockner road wants a car.</dd></div>
           <div class="grow"><dt>The one thing to know</dt><dd>The Grossglockner Hochalpenstrasse closes for the winter and late snow can delay the reopening, so an Alpine trip is planned around the road rather than the other way round</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/great-bustard/">Great Bustard in Austria</a></h3>
+          <p class="hl-blurb">The Parndorf Plain and the Hansag hold the Austrian population, on farmland managed for them either side of the Hungarian border. Watched from the road at range, because the birds are protected from disturbance.</p>
+          <p class="hl-row"><b>When</b> Resident, display in spring</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/ural-owl/">Ural Owl in Austria</a></h3>
+          <p class="hl-blurb">Reintroduced to the Wienerwald biosphere park and the wilderness area south of Vienna, and now breeding. A large forest owl that had been absent from Austria for most of a century.</p>
+          <p class="hl-row"><b>When</b> Resident, and it calls from late winter.</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/white-backed-woodpecker/">White-backed Woodpecker in Austria</a></h3>
+          <p class="hl-blurb">The Kalkalpen national park holds the largest unbroken forest wilderness in Austria, and the Reichraminger Hintergebirge core zone is where the dead-wood specialists survive. Austria's full woodpecker set is the draw.</p>
+          <p class="hl-row"><b>When</b> Resident, and it drums from February.</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/red-footed-falcon/">Red-footed Falcon in Austria</a></h3>
+          <p class="hl-blurb">A summer visitor to the Seewinkel soda pans and the Parndorf Plain. It hunts insects over the grassland in loose groups, and numbers vary with how far west the species pushes each year.</p>
+          <p class="hl-row"><b>When</b> Summer visitor, May to August</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/saker-falcon/">Saker Falcon in Austria</a></h3>
+          <p class="hl-blurb">The Seewinkel and the Parndorf steppe hold one of the healthier western populations, much of it on artificial nest platforms on pylons. It hunts the same open ground as the bustards.</p>
+          <p class="hl-row"><b>When</b> Resident</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/bearded-vulture/">Bearded Vulture in Austria</a></h3>
+          <p class="hl-blurb">Part of the Alpine reintroduction. It ranges over the Hohe Tauern and the Tyrolean limestone around Ehrwald and the Zugspitze, and the Grossglockner road is the practical place to watch for it.</p>
+          <p class="hl-row"><b>When</b> Resident, best in settled weather</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/alpine-accentor/">Alpine Accentor in Austria</a></h3>
+          <p class="hl-blurb">On the high ground above two thousand metres, around the Grossglockner passes and the Tyrolean cable car tops. Confiding at the summit car parks, which is how most people see it.</p>
+          <p class="hl-row"><b>When</b> High ground in summer, lower in winter</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/eurasian-spoonbill/">Spoonbill in Austria</a></h3>
+          <p class="hl-blurb">Breeds on the Neusiedler See-Seewinkel soda pans, at the northwestern edge of its European range. The shallow alkaline water is what suits it, and the reed belt holds the colonies.</p>
+          <p class="hl-row"><b>When</b> Breeding season, April to August</p>
+
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every Austrian Species</h2>
@@ -2809,7 +2873,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/df453e92599a.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/great-bustard/">Great Bustard</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2817,7 +2881,7 @@
             <div class="tg-p">Parndorfer Platte and the Hansag</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/0950b7b233b7.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/ural-owl/">Ural Owl</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2825,7 +2889,7 @@
             <div class="tg-p">Biosphere Park Wienerwald</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/3c4326048557.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/white-backed-woodpecker/">White-backed Woodpecker</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2833,7 +2897,7 @@
             <div class="tg-p">Kalkalpen and the Reichraminger Hintergebirge</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/6b65b8d99927.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/red-footed-falcon/">Red-footed Falcon</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:41.67%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2841,7 +2905,7 @@
             <div class="tg-p">The Seewinkel and Parndorf Plain</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/6b65b8d99927.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/saker-falcon/">Saker Falcon</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2849,7 +2913,7 @@
             <div class="tg-p">The Seewinkel and Parndorf Plain</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/bearded-vulture/">Bearded Vulture</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2857,7 +2921,7 @@
             <div class="tg-p">Hohe Tauern and the Tyrolean Alps</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/b0bb4d827272.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/alpine-accentor/">Alpine Accentor</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:50.00%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2865,7 +2929,7 @@
             <div class="tg-p">The Grossglockner and the Tyrolean tops</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ae798de40aa3.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/eurasian-spoonbill/">Eurasian Spoonbill</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -5946,7 +6010,9 @@
         <p class="blurb">Thayatal national park sits on the river meanders at Hardegg, with <a href="/birds/black-stork/">Black Stork</a> on the Thaya. The forest woodpeckers are through the woods around it.</p>
 
         <ul class="wherelist">
-
+        <li class="where habitat"><b>Habitat:</b> A deep river valley on the Czech border, continuous with Podyji on the far side, holding over forty per cent of Austria's plant species across meadow, bare rock and lush riverside forest.</li>
+        <li class="where when"><b>When:</b> Spring and early summer, when <a href="/birds/black-stork/">Black Stork</a> and the falcons are on territory over the valley.</li>
+        <li class="where access"><b>Getting there:</b> About 100 km of marked trails run through the valley. The Uberstieg viewpoint above the Thaya is the vantage the raptors are watched from, and the park's own visitor centre at Hardegg is the way in.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/white-backed-woodpecker/">White-backed Woodpecker</a>, <a href="/birds/hazel-grouse/">Hazel Grouse</a>, <a href="/birds/eurasian-three-toed-woodpecker/">Eurasian Three-toed Woodpecker</a>, <a href="/birds/northern-raven/">Northern Raven</a>, <a href="/birds/common-redstart/">Common Redstart</a>, <a href="/birds/eurasian-wryneck/">Eurasian Wryneck</a>, <a href="/birds/black-redstart/">Black Redstart</a></li>
 
 
@@ -6023,6 +6089,7 @@
         <ul class="wherelist">
         <li class="where habitat"><b>Habitat:</b> The country is almost all alpine and steep slopes rise to 3,798 metres at Grossglockner. Coniferous forest covers about 45% of the land surface, the highest share outside Scandinavia, and though most of it was planted commercially it still carries a typical alpine forest avifauna.</li>
         <li class="where when"><b>When:</b> Best from May to October. <a href="/birds/bearded-vulture/">Bearded Vulture</a>, <a href="/birds/golden-eagle/">Golden Eagle</a> and <a href="/birds/alpine-accentor/">Alpine Accentor</a> are on site in all twelve months.</li>
+        <li class="where access"><b>Getting there:</b> The Grossglockner High Alpine Road is open early May to early November and passes a raptor viewpoint where twenty birds of prey a day is normal. The Krumltal above Rauris, the valley of the vultures, is walked from the road head.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/bearded-vulture/">Bearded Vulture</a>, <a href="/birds/golden-eagle/">Golden Eagle</a>, <a href="/birds/alpine-accentor/">Alpine Accentor</a>, <a href="/birds/white-winged-snowfinch/">White-winged Snowfinch</a>, <a href="/birds/rock-ptarmigan/">Rock Ptarmigan</a>, <a href="/birds/alpine-chough/">Alpine Chough</a>, <a href="/birds/common-rock-thrush/">Common Rock Thrush</a>, <a href="/birds/citril-finch/">Citril Finch</a></li>
 
 
@@ -8737,7 +8804,9 @@
         <p class="blurb">The Reichraminger Hintergebirge core zone is why every woodpecker on the Austrian list is here, White-backed among them. Sengsengebirge above it adds the mountain birds.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> Austria's largest forest wilderness on heavily karst limestone, with dolomite gorges and more than 800 springs feeding the longest intact stream system in the Eastern Alps, and over 80 breeding bird species in unbroken natural forest.</li>
         <li class="where when"><b>When:</b> Best from February to August. <a href="/birds/western-capercaillie/">Western Capercaillie</a>, <a href="/birds/eurasian-nuthatch/">Eurasian Nuthatch</a> and <a href="/birds/boreal-owl/">Boreal Owl</a> are here in every month.</li>
+        <li class="where access"><b>Getting there:</b> The A9 Pyhrn motorway reaches the valleys around the park at Reichraming, Grossraming, Molln and Windischgarsten. By rail, Kirchdorf an der Krems or Reichraming, with buses on into the park.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/western-capercaillie/">Western Capercaillie</a>, <a href="/birds/eurasian-nuthatch/">Eurasian Nuthatch</a>, <a href="/birds/boreal-owl/">Boreal Owl</a>, <a href="/birds/eurasian-treecreeper/">Eurasian Treecreeper</a>, <a href="/birds/willow-tit/">Willow Tit</a>, <a href="/birds/crested-tit/">Crested Tit</a>, <a href="/birds/eurasian-bullfinch/">Eurasian Bullfinch</a></li>
 
 
@@ -9044,7 +9113,9 @@
         <p class="blurb">The Enns cuts a gorge through limestone at the Gesause, and the walls give <a href="/birds/wallcreeper/">Wallcreeper</a>, <a href="/birds/golden-eagle/">Golden Eagle</a> and Peregrine. The Xeis plateau above and the Hartelsgraben side valley carry the forest and mountain birds together.</p>
 
         <ul class="wherelist">
-
+        <li class="where habitat"><b>Habitat:</b> Nine kilometres of unaltered river running between rock walls, mountain pasture and forest, with <a href="/birds/golden-eagle/">Golden Eagle</a> over the crags and Dipper and <a href="/birds/grey-wagtail/">Grey Wagtail</a> on the water.</li>
+        <li class="where when"><b>When:</b> Late spring through summer, once the high paths clear.</li>
+        <li class="where access"><b>Getting there:</b> Visitor centres at the Weidendom and at Gstatterboden, with marked paths from both and rafting on the Enns itself.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/peregrine-falcon/">Peregrine Falcon</a>, <a href="/birds/white-throated-dipper/">White-throated Dipper</a>, <a href="/birds/red-crossbill/">Red Crossbill</a>, <a href="/birds/goldcrest/">Goldcrest</a>, <a href="/birds/grey-wagtail/">Grey Wagtail</a>, <a href="/birds/fieldfare/">Fieldfare</a>, <a href="/birds/coal-tit/">Coal Tit</a></li>
 
 

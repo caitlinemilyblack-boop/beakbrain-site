@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1006,6 +1017,59 @@
           <div class="grow"><dt>Routes</dt><dd><span class="glinks"><a class="glink" href="#itin-the-canal-zone-in-four-days">The Canal Zone in Four Days<span class="gdays">4 days</span></a><a class="glink" href="#itin-canal-zone-and-el-valle">Canal Zone and El Valle<span class="gdays">7 days</span></a><a class="glink" href="#itin-the-azuero-and-coiba">The Azuero and Coiba<span class="gdays">7 days</span></a><a class="glink" href="#itin-the-darien-and-the-canal">The Darien and the Canal<span class="gdays">9 days</span></a><a class="glink" href="#itin-western-panama">Western Panama<span class="gdays">11 days</span></a><a class="glink" href="#itin-end-to-end">End to End<span class="gdays">16 days</span></a></span></dd></div>
           <div class="grow"><dt>Getting around</dt><dd>Panama City is the hub and the Canal Zone forest starts twenty minutes from the airport. The Darien is a day on the road, and Bocas and Chiriqui are short domestic flights or a long drive.</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/harpy-eagle/">Harpy Eagle in the Darien</a></h3>
+          <p class="hl-blurb">The heaviest eagle in the Americas and Panama's national bird. Nests in the accessible Darien are tracked by local guides and a chick will hold birds in view for months, which is why almost every Darien itinerary is built around one.</p>
+          <p class="hl-row"><b>When</b> Nest-dependent rather than seasonal; ask what is active before booking.</p>
+          <p class="hl-row"><b>Where</b> Meteti, Yaviza</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/great-green-macaw/">Great Green Macaws over the canal</a></h3>
+          <p class="hl-blurb">A large macaw down to a few thousand birds across its range, and the canal forest holds a population that flies over Pipeline Road and the Gamboa clearings morning and evening.</p>
+          <p class="hl-row"><b>When</b> All year, most reliably in the first and last hour of daylight.</p>
+          <p class="hl-row"><b>Where</b> Gamboa, Achiote</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/resplendent-quetzal/">Resplendent Quetzals above Boquete</a></h3>
+          <p class="hl-blurb">The Talamanca range crosses from Costa Rica into Chiriqui and brings the quetzal with it. The Sendero Los Quetzales and the trails above Boquete hold nesting pairs, and the birds commute to fruiting wild avocado.</p>
+          <p class="hl-row"><b>When</b> Nesting from March to June is the most reliable window; present all year.</p>
+          <p class="hl-row"><b>Where</b> Boquete, Cerro Punta</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/rufous-vented-ground-cuckoo/">Rufous-vented Ground Cuckoo on Pipeline Road</a></h3>
+          <p class="hl-blurb">A ground cuckoo that follows army ant swarms and is heard far more often than seen. Pipeline Road is among the most reliable places anywhere, which mostly means finding the swarm first.</p>
+          <p class="hl-row"><b>When</b> All year, and it comes down to whether a swarm is running.</p>
+          <p class="hl-row"><b>Where</b> Gamboa</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/sapayoa/">Sapayoa in the Darien</a></h3>
+          <p class="hl-blurb">A small green bird whose nearest relatives are the broadbills of Africa and Asia, the only New World member of its lineage, and the reason some birders come to Panama at all. It lives along shaded forest streams in the Darien.</p>
+          <p class="hl-row"><b>When</b> All year, along stream courses, and it needs a guide who knows the calls.</p>
+          <p class="hl-row"><b>Where</b> Meteti, El Real</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/three-wattled-bellbird/">Three-wattled Bellbird in Chiriqui</a></h3>
+          <p class="hl-blurb">A cotinga whose call is among the loudest bird sounds measured, and the male grows three worm-like wattles from the base of the bill. It moves up and down the mountain through the year and reaches the Chiriqui highlands to breed.</p>
+          <p class="hl-row"><b>When</b> Calling on the highland breeding grounds from March to June.</p>
+          <p class="hl-row"><b>Where</b> Boquete, Cerro Punta</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/snowcap/">Snowcap on the Caribbean slope</a></h3>
+          <p class="hl-blurb">A tiny hummingbird, wine-purple with a pure white cap, restricted to the Caribbean foothills from Honduras to western Panama. Feeders and flowering verbena on the wet slope are where it shows.</p>
+          <p class="hl-row"><b>When</b> All year, with the best feeder activity from January to May.</p>
+          <p class="hl-row"><b>Where</b> Bocas del Toro, El Valle de Anton</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/blue-cotinga/">Blue Cotinga from the canopy towers</a></h3>
+          <p class="hl-blurb">A turquoise cotinga that perches on bare canopy branches at first light, which is exactly what a canopy tower is for. The towers in the canal forest put you level with the crowns rather than looking up through them.</p>
+          <p class="hl-row"><b>When</b> All year, in the first two hours after dawn.</p>
+          <p class="hl-row"><b>Where</b> Gamboa, Panama City</p>
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every Panamanian Species</h2>
@@ -5121,7 +5185,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/harpy-eagle/">Harpy Eagle</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -5129,7 +5193,7 @@
             <div class="tg-p">Meteti, Yaviza</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/009a6ba16adc.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/great-green-macaw/">Great Green Macaw</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -5137,7 +5201,7 @@
             <div class="tg-p">Gamboa, Achiote</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/f2e71b25e474.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/resplendent-quetzal/">Resplendent Quetzal</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -5145,7 +5209,7 @@
             <div class="tg-p"><a href="#site-the-chiriqui-highlands-boquete-and-volcan">The Chiriqui Highlands: Boquete and Volcan</a>, Cerro Punta</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/df453e92599a.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/rufous-vented-ground-cuckoo/">Rufous-vented Ground Cuckoo</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -5153,7 +5217,7 @@
             <div class="tg-p">Gamboa</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/sapayoa/">Sapayoa</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -5161,7 +5225,7 @@
             <div class="tg-p">Meteti, El Real</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/6a48d6e3cd44.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/three-wattled-bellbird/">Three-wattled Bellbird</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -5169,7 +5233,7 @@
             <div class="tg-p"><a href="#site-the-chiriqui-highlands-boquete-and-volcan">The Chiriqui Highlands: Boquete and Volcan</a>, Cerro Punta</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/1239e5cb3801.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/snowcap/">Snowcap</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:0.00%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -5177,7 +5241,7 @@
             <div class="tg-p"><a href="#site-bocas-del-toro-and-the-caribbean-coast">Bocas del Toro and the Caribbean Coast</a>, <a href="#site-el-valle-de-anton-and-the-central-highlands">El Valle de Anton and the Central Highlands</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/6a48d6e3cd44.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/blue-cotinga/">Blue Cotinga</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -5545,6 +5609,7 @@
 
         <ul class="wherelist">
         <li class="where habitat"><b>Habitat:</b> Ever-wet evergreen tropical forest on the Atlantic slope, with an archipelago offshore that holds specialities of its own.</li>
+        <li class="where when"><b>When:</b> December to April is the dry window with the best visibility for the residents, and September to November brings the northern migrants through on a calm sea.</li>
         <li class="where access"><b>Getting there:</b> Reached either by driving from Panama City or by flying to Bocas del Toro and exploring from there.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/bare-necked-umbrellabird/">Bare-necked Umbrellabird</a>, <a href="/birds/snowcap/">Snowcap</a>, <a href="/birds/sunbittern/">Sunbittern</a>, <a href="/birds/agami-heron/">Agami Heron</a>, <a href="/birds/black-cheeked-woodpecker/">Black-cheeked Woodpecker</a>, <a href="/birds/fiery-billed-aracari/">Fiery-billed Aracari</a></li>
 
@@ -5825,6 +5890,7 @@
 
         <ul class="wherelist">
         <li class="where habitat"><b>Habitat:</b> Dry savanna and woodland on the Pacific slope, deforested to cattle pasture across much of the Azuero, with mangrove and dry scrub on the coast and freshwater marsh inland. Isla Coiba, 34 km by 21 km, is the largest island off the Pacific coast of Central America.</li>
+        <li class="where when"><b>When:</b> September into early November for the migration, with October the peak. Coiba holds over 145 species including <a href="/birds/scarlet-macaw/">Scarlet Macaw</a> and its own spinetail.</li>
         <li class="where access"><b>Getting there:</b> Santiago on the Interamericana is the staging point, and the usual place to overnight before a trip out to Coiba.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/yellow-billed-cotinga/">Yellow-billed Cotinga</a>, <a href="/birds/fiery-billed-aracari/">Fiery-billed Aracari</a>, <a href="/birds/sunbittern/">Sunbittern</a>, <a href="/birds/spectacled-owl/">Spectacled Owl</a>, <a href="/birds/keel-billed-toucan/">Keel-billed Toucan</a></li>
 

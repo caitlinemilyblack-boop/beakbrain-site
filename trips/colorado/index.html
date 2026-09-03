@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1008,6 +1019,59 @@
           <div class="grow"><dt>Getting in</dt><dd>Denver takes long-haul flights and is within three hours of most of the state. Grand Junction and Alamosa cover the Western Slope and the San Luis Valley</dd></div>
           <div class="grow"><dt>Getting around</dt><dd>A hire car. Several of the best sites are on gravel, and the mountain passes close from October to May</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/gunnison-grouse/">The Gunnison Grouse at the Waunita lek</a></h3>
+          <p class="hl-blurb">The <a href="/birds/gunnison-grouse/">Gunnison Grouse</a> was separated from the <a href="/birds/sage-grouse/">Sage Grouse</a> in 2000 on size, plumage and display, and the Gunnison Basin holds most of the world population. Waunita is the lek set aside for watching, which keeps pressure off the rest of the basin.</p>
+          <p class="hl-row"><b>When</b> April, from the road before first light.</p>
+          <p class="hl-row"><b>Where</b> Gunnison, Curecanti National Recreation Area</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/white-tailed-ptarmigan/">White-tailed Ptarmigan on Guanella Pass</a></h3>
+          <p class="hl-blurb">Guanella Pass reaches 3,570 metres on a paved road ninety minutes from Denver, and the willow above the car park holds ptarmigan all year. They are white in winter and mottled grey in summer, and both plumages sit still until you are very close.</p>
+          <p class="hl-row"><b>When</b> July and August for the easiest walking, though the birds are resident.</p>
+          <p class="hl-row"><b>Where</b> Guanella Pass, Rocky Mountain National Park</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/brown-capped-rosy-finch/">Three rosy finches at one feeder</a></h3>
+          <p class="hl-blurb"><a href="/birds/brown-capped-rosy-finch/">Brown-capped Rosy Finch</a> breeds almost entirely in Colorado, and in winter it joins Black and <a href="/birds/grey-crowned-rosy-finch/">Grey-crowned Rosy Finch</a> at feeders in the valley towns below the passes. Very few places in the world offer all three together.</p>
+          <p class="hl-row"><b>When</b> November to March, at the feeders once snow closes the tops.</p>
+          <p class="hl-row"><b>Where</b> Georgetown, Arapaho National Wildlife Refuge</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/sandhill-crane/">Sandhill Cranes in the San Luis Valley</a></h3>
+          <p class="hl-blurb">The Rocky Mountain population of <a href="/birds/sandhill-crane/">Sandhill Crane</a> stops in the San Luis Valley twice a year on the way between its breeding grounds and Bosque del Apache. The birds feed in barley stubble with the Sangre de Cristo range behind them.</p>
+          <p class="hl-row"><b>When</b> March for the spring peak, and again in October.</p>
+          <p class="hl-row"><b>Where</b> Monte Vista National Wildlife Refuge, Alamosa National Wildlife Refuge</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/mountain-plover/">Mountain Plover on the Pawnee</a></h3>
+          <p class="hl-blurb"><a href="/birds/mountain-plover/">Mountain Plover</a> wants bare dirt rather than grass, which is why it is missed by people looking in the wrong habitat. Prairie dog towns and heavily grazed patches on the Pawnee are where it nests, and the birds are watched from the county roads.</p>
+          <p class="hl-row"><b>When</b> April through June, while the birds are nesting.</p>
+          <p class="hl-row"><b>Where</b> Pawnee National Grassland, Crow Valley</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/lesser-prairie-chicken/">Lesser Prairie Chickens at Campo</a></h3>
+          <p class="hl-blurb">The species survives in Colorado only in the southeastern corner, in Baca and Prowers Counties, after a century of decline. The leks near Campo are watched from a blind booked through the grassland office at Springfield.</p>
+          <p class="hl-row"><b>When</b> Late March and April, from the blind before dawn.</p>
+          <p class="hl-row"><b>Where</b> Comanche National Grassland, Campo</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/american-black-swift/">American Black Swift behind a Colorado waterfall</a></h3>
+          <p class="hl-blurb">Six breeding colonies sit inside Rocky Mountain National Park, on wet cliffs behind falling water. The birds leave at first light and return at dusk, so the watching is done at the ends of the day.</p>
+          <p class="hl-row"><b>When</b> June to August, at dawn and dusk at the falls.</p>
+          <p class="hl-row"><b>Where</b> Rocky Mountain National Park, Estes Park</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/sage-grouse/">Sage Grouse at Walden</a></h3>
+          <p class="hl-blurb">Around two hundred <a href="/birds/sage-grouse/">Sage Grouse</a> breed on the Arapaho refuge in North Park. The lek tours run for two weekends in spring, led by the North Park Chamber of Commerce with the state wildlife department, and they fill quickly.</p>
+          <p class="hl-row"><b>When</b> Late April and early May, at weekends.</p>
+          <p class="hl-row"><b>Where</b> Arapaho National Wildlife Refuge, Walden</p>
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every bird of Colorado</h2>

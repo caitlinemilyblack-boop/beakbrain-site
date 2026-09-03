@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1009,6 +1020,59 @@
           <div class="grow"><dt>Getting around</dt><dd>A hire car on each island, plus ferries and inter-island flights. Connections take a real share of any trip covering more than two islands</dd></div>
           <div class="grow"><dt>The one thing to know</dt><dd>The endemics are split across islands on purpose of geography, so the list you get is decided by which islands you book rather than by how long you stay</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/tenerife-blue-chaffinch/">Tenerife Blue Chaffinch in the Canary Islands</a></h3>
+          <p class="hl-blurb">Lives in the Canary pine around Las Cañadas and is straightforward at the pine-belt picnic sites. Split from the Gran Canaria bird as a separate species in 2016.</p>
+          <p class="hl-row"><b>When</b> Resident, easiest at pine-belt picnic sites</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/gran-canaria-blue-chaffinch/">Gran Canaria Blue Chaffinch in the Canary Islands</a></h3>
+          <p class="hl-blurb">A separate species since 2016, confined to the Inagua pines on Gran Canaria in numbers counted in the hundreds. One of the rarest songbirds in Europe.</p>
+          <p class="hl-row"><b>When</b> Resident, in the Inagua pine reserve</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/bolle-s-pigeon/">Bolle's Pigeon in the Canary Islands</a></h3>
+          <p class="hl-blurb">One of the two laurel forest pigeons, and the one that feeds higher in the canopy. Teno and Anaga on Tenerife, the La Palma laurisilva and Garajonay on La Gomera. Early morning from a ridge viewpoint is how it is seen.</p>
+          <p class="hl-row"><b>When</b> Resident, best at dawn from a ridge viewpoint</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/laurel-pigeon/">Laurel Pigeon in the Canary Islands</a></h3>
+          <p class="hl-blurb">The second endemic pigeon. Its largest subpopulation is on La Palma, and it lives on La Gomera and Tenerife too. It uses the forest edge and the barranco slopes more than the closed canopy.</p>
+          <p class="hl-row"><b>When</b> Resident</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/canary-islands-stonechat/">Fuerteventura Stonechat in the Canary Islands</a></h3>
+          <p class="hl-blurb">Found on Fuerteventura and nowhere else on earth. It holds the barranco floors and the stonier higher ground around Betancuria, and it is confiding once located.</p>
+          <p class="hl-row"><b>When</b> Resident</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/african-houbara/">Houbara Bustard in the Canary Islands</a></h3>
+          <p class="hl-blurb">The Canary Islands subspecies, on the open plains of Fuerteventura and Lanzarote's El Jable. It is protected and disturbance-sensitive, so it is watched from the track at range rather than approached.</p>
+          <p class="hl-row"><b>When</b> Resident, display in winter and early spring</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/cream-colored-courser/">Cream-coloured Courser in the Canary Islands</a></h3>
+          <p class="hl-blurb">A desert wader of the stony plains. It shares ground with the Houbara on Fuerteventura and Lanzarote. It runs rather than flies, and it disappears against the ground the moment it stops.</p>
+          <p class="hl-row"><b>When</b> Resident</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/white-faced-storm-petrel/">White-faced Storm-petrel in the Canary Islands</a></h3>
+          <p class="hl-blurb">The reason the pelagic trips exist. Birds are found over the Banco de la Concepción seamount north of Lanzarote, on a narrow summer window and in settled weather.</p>
+          <p class="hl-row"><b>When</b> Summer pelagics in settled weather</p>
+
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every Canarian Species</h2>
@@ -2534,7 +2598,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/tenerife-blue-chaffinch/">Tenerife Blue Chaffinch</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2542,7 +2606,7 @@
             <div class="tg-p">Teide and Las Canadas</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/gran-canaria-blue-chaffinch/">Gran Canaria Blue Chaffinch</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2550,7 +2614,7 @@
             <div class="tg-p">Inagua, Ojeda and Pajonales</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/bolle-s-pigeon/">Bolle's Pigeon</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2558,7 +2622,7 @@
             <div class="tg-p">Teno, Anaga, La Palma and Garajonay</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/laurel-pigeon/">Laurel Pigeon</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2566,7 +2630,7 @@
             <div class="tg-p">La Palma, La Gomera and Tenerife</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/4da14b5d9847.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/canary-islands-stonechat/">Canary Islands Stonechat</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2574,7 +2638,7 @@
             <div class="tg-p">Betancuria's barrancos</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/df453e92599a.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/african-houbara/">African Houbara</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:100.00%;width:0.00%"></span><span class="tg-b" style="left:0.00%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2582,7 +2646,7 @@
             <div class="tg-p">Fuerteventura's plains and El Jable</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/cream-colored-courser/">Cream-colored Courser</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2590,7 +2654,7 @@
             <div class="tg-p">The Fuerteventura plains and El Jable</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/04468f6de1ec.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/white-faced-storm-petrel/">White-faced Storm Petrel</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:50.00%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>

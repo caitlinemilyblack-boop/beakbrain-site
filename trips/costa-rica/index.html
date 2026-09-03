@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1014,6 +1025,59 @@
           <div class="grow"><dt>Itineraries</dt><dd><span class="glinks"><a class="glink" href="#itin-san-vito-and-the-coto-brus">San Vito and the Coto Brus<span class="gdays">5 days</span></a><a class="glink" href="#itin-the-central-highlands-and-boca-tapada">The Central Highlands and Boca Tapada<span class="gdays">6 days</span></a><a class="glink" href="#itin-the-quetzal-week">The Quetzal Week<span class="gdays">7 days</span></a><a class="glink" href="#itin-both-slopes-in-nine-days">Both Slopes in Nine Days<span class="gdays">9 days</span></a><a class="glink" href="#itin-the-raptor-passage">The Raptor Passage<span class="gdays">10 days</span></a><a class="glink" href="#itin-the-classic-fortnight">The Classic Fortnight<span class="gdays">14 days</span></a><a class="glink" href="#itin-the-full-sweep">The Full Sweep<span class="gdays">19 days</span></a></span></dd></div>
           <div class="grow"><dt>Transport</dt><dd>Fly into San Jose (SJO) or Liberia (LIR). Most of the country is self-drive; <a href="#site-tortuguero">Tortuguero</a> is reached by boat or light aircraft.</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/resplendent-quetzal/">Resplendent Quetzals in Costa Rica</a></h3>
+          <p class="hl-blurb">The most famous bird in Central America is a daily sight in the right valley. Pairs nest in cavities in the high oak forests and commute to fruiting wild avocado trees, and the lodge guides at San Gerardo de Dota track both the nest trees and the fruit. Monteverde adds the classic cloud forest setting where the species was made famous.</p>
+          <p class="hl-row"><b>When</b> February to April is nesting season and the most reliable window, with strong viewing from December into June.</p>
+          <p class="hl-row"><b>Where</b> San Gerardo de Dota, Monteverde</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/scarlet-macaw/">Scarlet Macaws in Costa Rica</a></h3>
+          <p class="hl-blurb">Costa Rica holds two strongholds. At Carara and the Tarcoles river mouth on the central Pacific, pairs commute over the coast at dawn and dusk within an hour of San Jose. On the Osa Peninsula they feed in the beach almonds directly over the lodges, often in double figures.</p>
+          <p class="hl-row"><b>When</b> Resident year round, and the morning and evening flights are dependable in any month.</p>
+          <p class="hl-row"><b>Where</b> Carara, The Osa Peninsula</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/great-green-macaw/">Great Green Macaws in Costa Rica</a></h3>
+          <p class="hl-blurb">One of the rarest parrots in the Americas follows the fruiting of the great almendro trees through the northern Caribbean lowlands. Sarapiqui sits at the heart of the recovery effort, and sightings around the lodges have climbed as protection and replanting take hold.</p>
+          <p class="hl-row"><b>When</b> Present all year in the northern lowlands, with the breeding months from December to April drawing pairs back to traditional sites.</p>
+          <p class="hl-row"><b>Where</b> Sarapiqui</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/three-wattled-bellbird/">Three-wattled Bellbirds in Costa Rica</a></h3>
+          <p class="hl-blurb">One of the loudest birds in the world. The male's metallic bonk is audible about a kilometre away through cloud forest. Males display on exposed snags around Monteverde while the fruit crop lasts, then follow it downslope.</p>
+          <p class="hl-row"><b>When</b> March to June is display season on the <a href="#site-monteverde">Monteverde</a> ridgelines, and several tours above time themselves to it.</p>
+          <p class="hl-row"><b>Where</b> Monteverde</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/snowcap/">Snowcaps in Costa Rica</a></h3>
+          <p class="hl-blurb">A thumb sized hummingbird in wine red with a snow white cap, and the single biggest reason birders base themselves in the Caribbean foothills. The feeders and verbena hedges around <a href="#lodge-rancho-naturalista-costa-rica">Rancho Naturalista</a> in the Turrialba hills made it famous.</p>
+          <p class="hl-row"><b>When</b> Resident all year at foothill feeders, with mornings the busiest.</p>
+          <p class="hl-row"><b>Where</b> Turrialba</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/agami-heron/">Agami Herons in Costa Rica</a></h3>
+          <p class="hl-blurb">The most beautiful heron in the world hunts from shaded banks where canal meets forest, and a quiet boat at first light is the way to meet one. Tortuguero's backwaters are the most dependable place in the country.</p>
+          <p class="hl-row"><b>When</b> Present all year; September and October bring the calmest water and the Caribbean side's driest window.</p>
+          <p class="hl-row"><b>Where</b> Tortuguero</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/sunbittern/">Sunbitterns in Costa Rica</a></h3>
+          <p class="hl-blurb">A quiet river bird that opens its wings into twin sunset eyes. It stalks boulder strewn streams on both slopes, and foothill rivers around Sarapiqui and the Pacuare valley are reliable.</p>
+          <p class="hl-row"><b>When</b> Resident all year along forested rivers; scan mid river boulders on any boat trip or bridge stop.</p>
+          <p class="hl-row"><b>Where</b> Sarapiqui, Turrialba</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/jabiru/">Jabirus in Costa Rica</a></h3>
+          <p class="hl-blurb">A stork as tall as a child, which stalks the marshes of the far northwest. The Palo Verde and Cano Negro wetlands hold Costa Rica's few pairs, alongside huge dry season concentrations of waterbirds.</p>
+          <p class="hl-row"><b>When</b> January to April, when the shrinking lagoons concentrate the waterbirds, is the classic window.</p>
+          <p class="hl-row"><b>Where</b> Guanacaste</p>
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every Costa Rican Species</h2>
@@ -5037,7 +5101,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/f2e71b25e474.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/resplendent-quetzal/">Resplendent Quetzal</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -5045,7 +5109,7 @@
             <div class="tg-p"><a href="#site-san-gerardo-de-dota-and-the-talamanca-highlands">San Gerardo de Dota and the Talamanca Highlands</a>, <a href="#site-monteverde">Monteverde</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/009a6ba16adc.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/scarlet-macaw/">Scarlet Macaw</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -5053,7 +5117,7 @@
             <div class="tg-p"><a href="#site-carara-and-the-tarcoles-river">Carara and the Tarcoles River</a>, <a href="#site-the-osa-peninsula-corcovado-and-golfo-dulce">The Osa Peninsula, Corcovado and Golfo Dulce</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/009a6ba16adc.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/great-green-macaw/">Great Green Macaw</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:91.67%;width:8.33%"></span><span class="tg-b" style="left:0.00%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -5061,7 +5125,7 @@
             <div class="tg-p"><a href="#site-sarapiqui-and-la-selva">Sarapiqui and La Selva</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/6a48d6e3cd44.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/three-wattled-bellbird/">Three-wattled Bellbird</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -5069,7 +5133,7 @@
             <div class="tg-p"><a href="#site-monteverde">Monteverde</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/1239e5cb3801.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/snowcap/">Snowcap</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -5077,7 +5141,7 @@
             <div class="tg-p"><a href="#site-turrialba-and-the-pacuare-valley">Turrialba and the Pacuare Valley</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ae798de40aa3.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/agami-heron/">Agami Heron</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:66.67%;width:16.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -5085,7 +5149,7 @@
             <div class="tg-p"><a href="#site-tortuguero">Tortuguero</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/4abae2dbed79.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/sunbittern/">Sunbittern</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -5093,7 +5157,7 @@
             <div class="tg-p"><a href="#site-sarapiqui-and-la-selva">Sarapiqui and La Selva</a>, <a href="#site-turrialba-and-the-pacuare-valley">Turrialba and the Pacuare Valley</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ae798de40aa3.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/jabiru/">Jabiru</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:0.00%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>

@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1004,6 +1015,59 @@
           <div class="grow"><dt>Getting in</dt><dd>Delhi (DEL) for Corbett and the Kumaon hills, Bhuntar (KUU) for Himachal, Leh (IXL) for Ladakh, and Bagdogra (IXB) for Darjeeling and Sikkim</dd></div>
           <div class="grow"><dt>Getting around</dt><dd>A car and driver in the foothills and hills, a flight into Leh and two nights at 3,500 m before going any higher</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/ibisbill/">Ibisbill on the Ramganga</a></h3>
+          <p class="hl-blurb">A grey wader with a downcurved red bill that walks shingle rivers and belongs to a family of one. It winters on the Corbett and Kosi river beds and is looked for by scanning stone for something the same colour.</p>
+          <p class="hl-row"><b>When</b> November to March.</p>
+          <p class="hl-row"><b>Where</b> Ramnagar</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/western-tragopan/">Western Tragopan in the Great Himalayan National Park</a></h3>
+          <p class="hl-blurb">A tragopan with white spots on crimson and a blue throat lappet. Its largest remaining population is in a park with no road through it, so seeing one means walking in and waiting.</p>
+          <p class="hl-row"><b>When</b> April to June, when it is calling.</p>
+          <p class="hl-row"><b>Where</b> Kullu</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/cheer-pheasant/">Cheer Pheasant above Pangot</a></h3>
+          <p class="hl-blurb">A long-tailed grey pheasant of steep grassy slopes. It calls at dawn from ridges above the Kumaon hill stations. It is scarce, local, and heard far more often than seen.</p>
+          <p class="hl-row"><b>When</b> March to May, and it calls at first light.</p>
+          <p class="hl-row"><b>Where</b> Nainital</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/black-necked-crane/">Black-necked Crane at Tso Kar</a></h3>
+          <p class="hl-blurb">The only crane that lives its whole life at high altitude. It breeds on Ladakhi marshes above 4,000 m in a population of a few dozen pairs, at Tso Kar and on the Hanle plains.</p>
+          <p class="hl-row"><b>When</b> June to September on the breeding marshes.</p>
+          <p class="hl-row"><b>Where</b> Leh, Hanle</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/satyr-tragopan/">Satyr Tragopan on Singalila</a></h3>
+          <p class="hl-blurb">Crimson with white ocelli and a blue face, on the Singalila ridge above Darjeeling. The eastern Himalaya holds it and the western does not, which is the difference between the two ends of the range.</p>
+          <p class="hl-row"><b>When</b> April to June.</p>
+          <p class="hl-row"><b>Where</b> Darjeeling</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/fire-tailed-myzornis/">Fire-tailed Myzornis in the Neora valley</a></h3>
+          <p class="hl-blurb">A small green bird with a scarlet tail flash. It works rhododendron flowers in eastern Himalayan cloud forest, and it is the bird photographers go to Lava and Neora for.</p>
+          <p class="hl-row"><b>When</b> March to May, at the rhododendron flowering.</p>
+          <p class="hl-row"><b>Where</b> Darjeeling</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/himalayan-monal/">Himalayan Monal above the treeline</a></h3>
+          <p class="hl-blurb">A pheasant that looks like it has been dipped in oil, on alpine meadow above 3,000 m. It is the state bird of Uttarakhand and it is on the high ground in both the Kumaon hills and Himachal.</p>
+          <p class="hl-row"><b>When</b> April to June.</p>
+          <p class="hl-row"><b>Where</b> Kullu</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/tibetan-sandgrouse/">Tibetan Sandgrouse on the Ladakh plains</a></h3>
+          <p class="hl-blurb">A sandgrouse of high cold desert above 4,000 m, on the gravel plains around Hanle and Tso Kar. It comes to water at dawn and is otherwise the colour of the ground it sits on.</p>
+          <p class="hl-row"><b>When</b> June to September.</p>
+          <p class="hl-row"><b>Where</b> Hanle</p>
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every Himalayan Species</h2>
@@ -4671,7 +4735,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/ibisbill/">Ibisbill</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:83.33%;width:16.67%"></span><span class="tg-b" style="left:0.00%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4679,7 +4743,7 @@
             <div class="tg-p">Ramnagar</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/4ee70d2904f5.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/western-tragopan/">Western Tragopan</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4687,7 +4751,7 @@
             <div class="tg-p">Kullu</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/4ee70d2904f5.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/cheer-pheasant/">Cheer Pheasant</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4695,7 +4759,7 @@
             <div class="tg-p"><a href="#site-sattal-pangot-and-the-nainital-hills">Sattal, Pangot and the Nainital hills</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/3237cadd96d2.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/black-necked-crane/">Black-necked Crane</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:41.67%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4703,7 +4767,7 @@
             <div class="tg-p">Leh, Hanle</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/4ee70d2904f5.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/satyr-tragopan/">Satyr Tragopan</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4711,7 +4775,7 @@
             <div class="tg-p"><a href="#site-sikkim-and-the-darjeeling-hills">Sikkim and the Darjeeling hills</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/85ba45b1f441.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/fire-tailed-myzornis/">Fire-tailed Myzornis</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4719,7 +4783,7 @@
             <div class="tg-p"><a href="#site-sikkim-and-the-darjeeling-hills">Sikkim and the Darjeeling hills</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/de76657567f7.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/himalayan-monal/">Himalayan Monal</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4727,7 +4791,7 @@
             <div class="tg-p">Kullu</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/tibetan-sandgrouse/">Tibetan Sandgrouse</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:41.67%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4981,6 +5045,7 @@
 
         <ul class="wherelist">
         <li class="where habitat"><b>Habitat:</b> The Great Himalayan National Park covers 620 sq km of Himachal Pradesh and holds west Himalayan birds including <a href="/birds/western-tragopan/">Western Tragopan</a>, <a href="/birds/himalayan-monal/">Himalayan Monal</a> and <a href="/birds/cheer-pheasant/">Cheer Pheasant</a>. Alpine ground lies higher up at the Rohtang Pass between Manali and Lahul.</li>
+        <li class="where when"><b>When:</b> April to May and October to November are the birding windows. Heavy snow from October to February pushes the higher birds down, and the low-altitude forest holds minivets, fantails and <a href="/birds/wallcreeper/">Wallcreeper</a> through the winter.</li>
         <li class="where access"><b>Getting there:</b> Several trails run into the park and there are huts to stay in, and a visit has to be arranged in advance. Many of the same species come more easily in the forest at The Glen, within an hour's walk of Shimla, and on treks out of Manali.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/western-tragopan/">Western Tragopan</a>, <a href="/birds/himalayan-monal/">Himalayan Monal</a>, <a href="/birds/snow-partridge/">Snow Partridge</a>, <a href="/birds/himalayan-snowcock/">Himalayan Snowcock</a>, <a href="/birds/bearded-vulture/">Bearded Vulture</a>, <a href="/birds/rufous-bellied-niltava/">Rufous-bellied Niltava</a>, <a href="/birds/yellow-billed-blue-magpie/">Yellow-billed Blue Magpie</a>, <a href="/birds/wallcreeper/">Wallcreeper</a></li>
 

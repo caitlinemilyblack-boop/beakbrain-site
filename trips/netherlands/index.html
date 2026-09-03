@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1012,6 +1023,59 @@
           <div class="grow"><dt>Itineraries</dt><dd><span class="glinks"><a class="glink" href="#itin-a-schiphol-layover">A Schiphol Layover<span class="gdays">1 day</span></a><a class="glink" href="#itin-the-ijsselmeer-and-the-afsluitdijk">The IJsselmeer and the Afsluitdijk<span class="gdays">3 days</span></a><a class="glink" href="#itin-the-islands-long-weekend">The Islands Long Weekend<span class="gdays">4 days</span></a><a class="glink" href="#itin-the-winter-goose-trip">The Winter Goose Trip<span class="gdays">8 days</span></a><a class="glink" href="#itin-the-spring-circuit">The Spring Circuit<span class="gdays">11 days</span></a><a class="glink" href="#itin-the-full-length-of-the-country">The Full Length of the Country<span class="gdays">14 days</span></a></span></dd></div>
           <div class="grow"><dt>Getting around</dt><dd>A hire car reaches every region here within two hours of Schiphol, and the train reaches most of them</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/black-tailed-godwit/">Black-tailed Godwits in the Netherlands</a></h3>
+          <p class="hl-blurb">The Netherlands carries a large share of the western European breeding population, and the wet meadows of Friesland are where they are managed for. Display flights run through April and May, and the birds are gone again by July.</p>
+          <p class="hl-row"><b>When</b> April and May, with the first birds back in late February</p>
+          <p class="hl-row"><b>Where</b> The Frisian Lakes and Meadow-Bird Country, The Biesbosch and the Great Rivers</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/eurasian-spoonbill/">Eurasian Spoonbills in the Netherlands</a></h3>
+          <p class="hl-blurb">Spoonbills nest on the Wadden islands and feed on the flats at low water. The colonies were down to a few dozen pairs in the 1960s and have recovered since. They are here from March and mostly gone by September.</p>
+          <p class="hl-row"><b>When</b> March to September, easiest on a falling tide</p>
+          <p class="hl-row"><b>Where</b> The Wadden Islands, The Wadden Coast and Lauwersmeer</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/white-tailed-eagle/">White-tailed Eagles in the Netherlands</a></h3>
+          <p class="hl-blurb">The first Dutch pair bred at Oostvaardersplassen in 2006 and the species has spread to the Biesbosch and the river floodplains since. Winter is the easiest time to see one, when birds from further north add to the resident pairs.</p>
+          <p class="hl-row"><b>When</b> All year, with the best viewing from November to March</p>
+          <p class="hl-row"><b>Where</b> Flevoland and the Oostvaardersplassen, The Biesbosch and the Great Rivers</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/barnacle-goose/">Barnacle Geese in the Netherlands</a></h3>
+          <p class="hl-blurb">Hundreds of thousands of geese winter on Dutch grassland, and <a href="/birds/barnacle-goose/">Barnacle Goose</a> is the one that arrives in the tightest flocks. They come in from October, spread across the north and the delta, and leave again through March.</p>
+          <p class="hl-row"><b>When</b> October to March, at their peak in December and January</p>
+          <p class="hl-row"><b>Where</b> The Wadden Coast and Lauwersmeer, The Zeeland Delta</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/bluethroat/">Bluethroats in the Netherlands</a></h3>
+          <p class="hl-blurb">A reedbed bird that sings from an exposed perch early in the season and becomes hard to find once the reed is up. Lauwersmeer and the Biesbosch are both reliable, and the second half of April is the window.</p>
+          <p class="hl-row"><b>When</b> Mid April to May, and they sing at first light.</p>
+          <p class="hl-row"><b>Where</b> The Wadden Coast and Lauwersmeer, The Biesbosch and the Great Rivers</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/red-knot/">Red Knots in the Netherlands</a></h3>
+          <p class="hl-blurb">Knot pass through the Wadden Sea in tens of thousands on their way between the Arctic and west Africa. They feed spread across the flats and pack together on high water roosts, which is when they are worth timing a visit for.</p>
+          <p class="hl-row"><b>When</b> August to October and again in May, on a rising tide</p>
+          <p class="hl-row"><b>Where</b> The Wadden Islands, The Wadden Coast and Lauwersmeer</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/middle-spotted-woodpecker/">Middle Spotted Woodpeckers in the Netherlands</a></h3>
+          <p class="hl-blurb">A bird that was barely Dutch until the 1990s and now holds a good population in old oak on the Veluwe and in Limburg. It calls most in early spring, before the leaves make the canopy hard to work.</p>
+          <p class="hl-row"><b>When</b> February to April, when the calling is at its most persistent</p>
+          <p class="hl-row"><b>Where</b> The Veluwe, Limburg and the Southern Hills</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/kentish-plover/">Kentish Plovers in the Netherlands</a></h3>
+          <p class="hl-blurb">A small, scarce breeder now largely confined to the shell banks and bare sand of the delta and the newly built islands. Numbers are low enough that the nesting areas are fenced, and the birds are watched from the edge.</p>
+          <p class="hl-row"><b>When</b> April to July, from the marked edge of a breeding area</p>
+          <p class="hl-row"><b>Where</b> The Zeeland Delta, Flevoland and the Oostvaardersplassen</p>
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every Dutch Species</h2>
@@ -3265,7 +3329,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/black-tailed-godwit/">Black-tailed Godwit</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3273,7 +3337,7 @@
             <div class="tg-p"><a href="#site-the-frisian-lakes-and-meadow-bird-country">The Frisian Lakes and Meadow-Bird Country</a>, <a href="#site-the-biesbosch-and-the-great-rivers">The Biesbosch and the Great Rivers</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ae798de40aa3.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/eurasian-spoonbill/">Eurasian Spoonbill</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:58.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3281,7 +3345,7 @@
             <div class="tg-p"><a href="#site-the-wadden-islands">The Wadden Islands</a>, <a href="#site-the-wadden-coast-and-lauwersmeer">The Wadden Coast and Lauwersmeer</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/white-tailed-eagle/">White-tailed Eagle</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3289,7 +3353,7 @@
             <div class="tg-p"><a href="#site-flevoland-and-the-oostvaardersplassen">Flevoland and the Oostvaardersplassen</a>, <a href="#site-the-biesbosch-and-the-great-rivers">The Biesbosch and the Great Rivers</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/e58fde9fe327.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/barnacle-goose/">Barnacle Goose</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:75.00%;width:25.00%"></span><span class="tg-b" style="left:0.00%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3297,7 +3361,7 @@
             <div class="tg-p"><a href="#site-the-wadden-coast-and-lauwersmeer">The Wadden Coast and Lauwersmeer</a>, <a href="#site-the-zeeland-delta">The Zeeland Delta</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/4da14b5d9847.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/bluethroat/">Bluethroat</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3305,7 +3369,7 @@
             <div class="tg-p"><a href="#site-the-wadden-coast-and-lauwersmeer">The Wadden Coast and Lauwersmeer</a>, <a href="#site-the-biesbosch-and-the-great-rivers">The Biesbosch and the Great Rivers</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/red-knot/">Red Knot</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:58.33%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3313,7 +3377,7 @@
             <div class="tg-p"><a href="#site-the-wadden-islands">The Wadden Islands</a>, <a href="#site-the-wadden-coast-and-lauwersmeer">The Wadden Coast and Lauwersmeer</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/3c4326048557.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/middle-spotted-woodpecker/">Middle Spotted Woodpecker</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3321,7 +3385,7 @@
             <div class="tg-p"><a href="#site-the-veluwe">The Veluwe</a>, <a href="#site-limburg-and-the-southern-hills">Limburg and the Southern Hills</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/kentish-plover/">Kentish Plover</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>

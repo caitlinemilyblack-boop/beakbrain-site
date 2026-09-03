@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1004,6 +1015,59 @@
           <div class="grow"><dt>Getting in</dt><dd>Kota Kinabalu (BKI) for Kinabalu and the Sabah circuit, Sandakan (SDK) or Lahad Datu (LDU) for the east, and Kuching (KCH) or Miri for Sarawak</dd></div>
           <div class="grow"><dt>Getting around</dt><dd>A car and driver in Sabah, boats on the Kinabatangan, and a small plane to Bario because there is no road</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/bornean-bristlehead/">Bornean Bristlehead at Danum</a></h3>
+          <p class="hl-blurb">A bird in a family of its own, black and red with a bare yellow crown. It moves through the canopy in noisy parties. It lives on Borneo and nowhere else, and it is the island's most wanted bird.</p>
+          <p class="hl-row"><b>When</b> All year.</p>
+          <p class="hl-row"><b>Where</b> Lahad Datu</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/whitehead-s-trogon/">Whitehead's Trogon on Kinabalu</a></h3>
+          <p class="hl-blurb">A trogon with a scarlet head and a blue eye ring, confined to Bornean montane forest. The trails around Kinabalu Park headquarters are where the whole world looks for it.</p>
+          <p class="hl-row"><b>When</b> All year, best March to August.</p>
+          <p class="hl-row"><b>Where</b> Kundasang</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/whitehead-s-broadbill/">Whitehead's Broadbill on Kinabalu</a></h3>
+          <p class="hl-blurb">A large green broadbill with a blue bill. It sits motionless in the mossy canopy. It is the hardest of the three <a href="/birds/whitehead/">Whitehead's</a> birds, and the one that decides how a Kinabalu trip is remembered.</p>
+          <p class="hl-row"><b>When</b> All year.</p>
+          <p class="hl-row"><b>Where</b> Kundasang</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/storm-s-stork/">Storm's Stork on the Kinabatangan</a></h3>
+          <p class="hl-blurb">A stork of Sundaic swamp forest with a global population in the low thousands, perched on dead snags over the river and watched from a boat at first light.</p>
+          <p class="hl-row"><b>When</b> All year.</p>
+          <p class="hl-row"><b>Where</b> Sukau</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/blue-headed-pitta/">Blue-headed Pitta at Danum</a></h3>
+          <p class="hl-blurb">A Bornean endemic pitta with a cobalt crown, on the floor of primary lowland forest. Danum is the site and the trails there are the only realistic access.</p>
+          <p class="hl-row"><b>When</b> All year, and it calls from February to June.</p>
+          <p class="hl-row"><b>Where</b> Lahad Datu</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/helmeted-hornbill/">Helmeted Hornbill at Danum</a></h3>
+          <p class="hl-blurb">A hornbill with a solid casque that has made it a target for carving, and it has fallen faster than any other Asian hornbill. Danum still holds it and the cackling call carries for kilometres.</p>
+          <p class="hl-row"><b>When</b> All year.</p>
+          <p class="hl-row"><b>Where</b> Lahad Datu</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/bornean-ground-cuckoo/">Bornean Ground Cuckoo at Tabin</a></h3>
+          <p class="hl-blurb">A large terrestrial cuckoo that walks the forest floor and is seen by very few people. Tabin and Danum are the two places it is looked for and the reserve road is the way.</p>
+          <p class="hl-row"><b>When</b> All year.</p>
+          <p class="hl-row"><b>Where</b> Tabin</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/hose-s-broadbill/">Hose's Broadbill in Sarawak</a></h3>
+          <p class="hl-blurb">A broadbill of the Bornean hill forest that almost nobody sees, because almost nobody birds the interior of Sarawak. The Kelabit Highlands are reached only by a small plane and that is the point.</p>
+          <p class="hl-row"><b>When</b> All year, weather permitting on the flight.</p>
+          <p class="hl-row"><b>Where</b> Bario</p>
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every Bornean Species</h2>
@@ -3315,7 +3379,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/775b82c449c7.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/bornean-bristlehead/">Bornean Bristlehead</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3323,7 +3387,7 @@
             <div class="tg-p">Lahad Datu</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/f2e71b25e474.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/whitehead-s-trogon/">Whitehead's Trogon</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:50.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3331,7 +3395,7 @@
             <div class="tg-p">Kundasang</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/86d63a6a1ff6.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/whitehead-s-broadbill/">Whitehead's Broadbill</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3339,7 +3403,7 @@
             <div class="tg-p">Kundasang</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/storm-s-stork/">Storm's Stork</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3347,7 +3411,7 @@
             <div class="tg-p">Sukau</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/7f954f11df23.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/blue-headed-pitta/">Blue-headed Pitta</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3355,7 +3419,7 @@
             <div class="tg-p">Lahad Datu</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/f2e71b25e474.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/helmeted-hornbill/">Helmeted Hornbill</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3363,7 +3427,7 @@
             <div class="tg-p">Lahad Datu</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/df453e92599a.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/bornean-ground-cuckoo/">Bornean Ground Cuckoo</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3371,7 +3435,7 @@
             <div class="tg-p"><a href="#site-tabin-and-the-eastern-lowlands">Tabin and the eastern lowlands</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/86d63a6a1ff6.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/hose-s-broadbill/">Hose's Broadbill</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3704,6 +3768,7 @@
         <p class="blurb">Tabin is a 1,200 square kilometre wildlife reserve east of Lahad Datu, most of it regenerating forest with a primary core, and it holds the same list as Danum with more of the mammals showing. The road through it is birded from a vehicle and the mud volcano at Lipad brings everything in to the mineral licks.</p>
 
         <ul class="wherelist">
+        <li class="where habitat"><b>Habitat:</b> About 122,539 hectares of primary and secondary lowland dipterocarp forest 48 km east of Lahad Datu, with over 300 bird species including the hornbills and the ground pittas.</li>
         <li class="where when"><b>When:</b> Birding is good at any time outside the rainy season of November to January, when flooding can limit access to some sites.</li>
         <li class="where access"><b>Getting there:</b> Tabin is four hours by shuttle bus from Lahad Datu, and the bus runs when accommodation in the reserve has been prearranged.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/bornean-bristlehead/">Bornean Bristlehead</a>, <a href="/birds/bornean-ground-cuckoo/">Bornean Ground Cuckoo</a>, <a href="/birds/black-crowned-pitta/">Black-crowned Pitta</a>, <a href="/birds/bushy-crested-hornbill/">Bushy-crested Hornbill</a>, <a href="/birds/white-fronted-falconet/">White-fronted Falconet</a>, <a href="/birds/rufous-collared-kingfisher/">Rufous-collared Kingfisher</a>, <a href="/birds/scarlet-rumped-trogon/">Scarlet-rumped Trogon</a>, <a href="/birds/blue-eared-kingfisher/">Blue-eared Kingfisher</a></li>

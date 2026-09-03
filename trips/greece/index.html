@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1010,6 +1021,59 @@
           <div class="grow"><dt>Getting around</dt><dd>A hire car on the mainland and on Lesvos. Thessaloniki serves the northern wetlands, Athens the south, and Mytilene the island</dd></div>
           <div class="grow"><dt>The one thing to know</dt><dd>The Evros Delta sits on the Turkish border under military restriction in parts, so access is controlled and wants arranging through the management authority or a local guide</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/dalmatian-pelican/">Dalmatian Pelican in Greece</a></h3>
+          <p class="hl-blurb">Greece is the stronghold. Micro Prespa holds the largest breeding colony in the world, and Lake Kerkini gives the close view, with birds coming to the boats. Winter brings the biggest flocks to Kerkini and Porto Lagos.</p>
+          <p class="hl-row"><b>When</b> Winter for the large flocks, spring for the breeding colony</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/cinereous-vulture/">Cinereous Vulture in Greece</a></h3>
+          <p class="hl-blurb">Dadia holds the only breeding population left in the Balkans, and the feeding station hide gives it year round. Griffon and Egyptian come to the same carcass, which makes this the best vulture watching in the eastern Mediterranean.</p>
+          <p class="hl-row"><b>When</b> Resident, viewed year round from the hide</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/egyptian-vulture/">Egyptian Vulture in Greece</a></h3>
+          <p class="hl-blurb">A summer visitor to the Dadia feeding station and the Evros and Rhodope cliffs. It arrives in spring. The Balkan population has fallen hard, which makes the Thracian birds the ones to see.</p>
+          <p class="hl-row"><b>When</b> A summer visitor that arrives in spring.</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/eastern-imperial-eagle/">Eastern Imperial Eagle in Greece</a></h3>
+          <p class="hl-blurb">The Thracian borderlands between the Evros Delta and Dadia are the Greek range, and the transfer between the two is where most groups connect with it. A scarce bird anywhere in the Balkans.</p>
+          <p class="hl-row"><b>When</b> Resident, most often on the Evros to Dadia transfer</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/kruper-s-nuthatch/">Krüper's Nuthatch in Greece</a></h3>
+          <p class="hl-blurb">A pine forest nuthatch with a tiny European range, and Achladeri on Lesvos is the reliable site for it. Best located in spring when birds are calling around the nest holes.</p>
+          <p class="hl-row"><b>When</b> Resident, best located in spring</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/cinereous-bunting/">Cinereous Bunting in Greece</a></h3>
+          <p class="hl-blurb">The western Lesvos garrigue is the only regular European site. Males sing from the rocky hillsides in April and May and the birds are gone again by high summer.</p>
+          <p class="hl-row"><b>When</b> Spring, April to May</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/eleonora-s-falcon/">Eleonora's Falcon in Greece</a></h3>
+          <p class="hl-blurb">Greece holds a large share of the world population on its Aegean island cliffs, Lesvos among them. It breeds late so its young coincide with the autumn passage of small migrants.</p>
+          <p class="hl-row"><b>When</b> Spring arrival through to autumn</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/ruppell-s-warbler/">Rüppell's Warbler in Greece</a></h3>
+          <p class="hl-blurb">A Greek and Turkish speciality of low scrub, and Lesvos in spring is where visiting birders meet it. The male's black throat and white moustache separate it from every other Sylvia on the island.</p>
+          <p class="hl-row"><b>When</b> Spring, April to May</p>
+
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every Greek Species</h2>
@@ -2903,7 +2967,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ae798de40aa3.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/dalmatian-pelican/">Dalmatian Pelican</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:91.67%;width:8.33%"></span><span class="tg-b" style="left:0.00%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2911,7 +2975,7 @@
             <div class="tg-p">Kerkini, Prespa and Porto Lagos</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/cinereous-vulture/">Cinereous Vulture</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2919,7 +2983,7 @@
             <div class="tg-p">Dadia Forest</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/egyptian-vulture/">Egyptian Vulture</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:50.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2927,7 +2991,7 @@
             <div class="tg-p">Dadia and the Thracian cliffs</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/eastern-imperial-eagle/">Eastern Imperial Eagle</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2935,7 +2999,7 @@
             <div class="tg-p">The Thracian borderlands</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/kruper-s-nuthatch/">Krüper's Nuthatch</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2943,7 +3007,7 @@
             <div class="tg-p">Achladeri Pine Forest, Lesvos</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/cinereous-bunting/">Cinereous Bunting</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:16.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2951,7 +3015,7 @@
             <div class="tg-p">Western Lesvos garrigue</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/6b65b8d99927.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/eleonora-s-falcon/">Eleonora's Falcon</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:41.67%;width:50.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2959,7 +3023,7 @@
             <div class="tg-p">Lesvos and the Aegean cliffs</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/13ca9147a946.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/ruppell-s-warbler/">Rüppell's Warbler</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>

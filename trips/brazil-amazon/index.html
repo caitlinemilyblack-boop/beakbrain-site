@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1008,6 +1019,59 @@
           <div class="grow"><dt>Getting in</dt><dd>Manaus (MAO) for the centre, Belem (BEL) for the east, Santarem (STM) for the Tapajos, Alta Floresta (AFL) for the Cristalino, Porto Velho (PVH) for the south-west</dd></div>
           <div class="grow"><dt>Getting around</dt><dd>Domestic flights between the hubs and a boat from there. Very little of the region is reachable by road</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/harpy-eagle/">Harpy Eagle from a canopy tower</a></h3>
+          <p class="hl-blurb">The heaviest eagle in the Americas. Known nests are watched for months at a time, and a chick on a nest holds birders in one place in a way nothing else in the forest does.</p>
+          <p class="hl-row"><b>When</b> Nest-dependent rather than seasonal; ask what is active before booking.</p>
+          <p class="hl-row"><b>Where</b> Alta Floresta</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/guianan-cock-of-the-rock/">Guianan Cock-of-the-rock at a lek</a></h3>
+          <p class="hl-blurb">An orange bird with a disc for a head. It displays in groups on rock faces, and Presidente Figueiredo north of Manaus is the accessible place for it in Brazil.</p>
+          <p class="hl-row"><b>When</b> Displaying from about July to November.</p>
+          <p class="hl-row"><b>Where</b> Presidente Figueiredo</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/wattled-curassow/">Wattled Curassow in the varzea</a></h3>
+          <p class="hl-blurb">One of the most threatened curassows in South America, hunted out across most of its range and holding on in the protected flooded forest around Mamiraua.</p>
+          <p class="hl-row"><b>When</b> All year, easiest at low water when the birds are on the ground.</p>
+          <p class="hl-row"><b>Where</b> Tefe</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/golden-parakeet/">Golden Parakeet in eastern Amazonia</a></h3>
+          <p class="hl-blurb">A pure yellow parakeet found only in a block of forest south of the Amazon between the Tapajos and the Tocantins, which is the block that has lost the most forest.</p>
+          <p class="hl-row"><b>When</b> All year, in noisy flocks.</p>
+          <p class="hl-row"><b>Where</b> Santarem, Belem</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/rondonia-bushbird/">Rondonia Bushbird on the Roosevelt</a></h3>
+          <p class="hl-blurb">Known from a handful of records and described properly only in recent decades. The Roosevelt and Aripuana trips exist partly because of birds like it.</p>
+          <p class="hl-row"><b>When</b> All year, and it is a matter of luck rather than season.</p>
+          <p class="hl-row"><b>Where</b> Aripuana</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/hoatzin/">Hoatzin on a river edge</a></h3>
+          <p class="hl-blurb">A bird with no close living relatives, a fermenting foregut and chicks that climb with claws on their wings. Common on quiet varzea creeks and impossible to mistake.</p>
+          <p class="hl-row"><b>When</b> All year, on still water with overhanging growth.</p>
+          <p class="hl-row"><b>Where</b> Tefe, Belem</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/curl-crested-aracari/">Curl-crested Aracari from the tower</a></h3>
+          <p class="hl-blurb">A toucan whose head feathers are curled and shining like plastic shavings. It lives between the Madeira and the Tapajos and is reliable from the Cristalino towers.</p>
+          <p class="hl-row"><b>When</b> All year, most active early from a canopy tower.</p>
+          <p class="hl-row"><b>Where</b> Alta Floresta</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/horned-screamer/">Horned Screamer at Carajas</a></h3>
+          <p class="hl-blurb">A goose-sized marsh bird with a wire growing out of its forehead and a call that carries kilometres. Carajas holds it on the lakes below the canga plateau.</p>
+          <p class="hl-row"><b>When</b> All year.</p>
+          <p class="hl-row"><b>Where</b> Parauapebas</p>
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every Amazonian Species</h2>
@@ -5423,7 +5487,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/harpy-eagle/">Harpy Eagle</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -5431,7 +5495,7 @@
             <div class="tg-p"><a href="#site-alta-floresta-and-the-cristalino">Alta Floresta and the Cristalino</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/guianan-cock-of-the-rock/">Guianan Cock-of-the-rock</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:50.00%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -5439,7 +5503,7 @@
             <div class="tg-p">Presidente Figueiredo</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/4ee70d2904f5.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/wattled-curassow/">Wattled Curassow</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:58.33%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -5447,7 +5511,7 @@
             <div class="tg-p"><a href="#site-mamiraua-tefe-and-the-japura">Mamiraua, Tefe and the Japura</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/009a6ba16adc.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/golden-parakeet/">Golden Parakeet</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -5455,7 +5519,7 @@
             <div class="tg-p">Santarem, <a href="#site-belem-and-the-eastern-amazon">Belem and the eastern Amazon</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/rondonia-bushbird/">Rondonia Bushbird</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -5463,7 +5527,7 @@
             <div class="tg-p"><a href="#site-the-roosevelt-and-the-aripuana">The Roosevelt and the Aripuana</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/df453e92599a.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/hoatzin/">Hoatzin</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -5471,7 +5535,7 @@
             <div class="tg-p"><a href="#site-mamiraua-tefe-and-the-japura">Mamiraua, Tefe and the Japura</a>, <a href="#site-belem-and-the-eastern-amazon">Belem and the eastern Amazon</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/3c046347ea38.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/curl-crested-aracari/">Curl-crested Aracari</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -5479,7 +5543,7 @@
             <div class="tg-p"><a href="#site-alta-floresta-and-the-cristalino">Alta Floresta and the Cristalino</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/e58fde9fe327.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/horned-screamer/">Horned Screamer</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>

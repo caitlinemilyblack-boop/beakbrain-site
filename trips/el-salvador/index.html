@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1005,6 +1016,59 @@
           <div class="grow"><dt>Getting in</dt><dd>San Salvador (SAL) takes all the international flights and sits on the coast road rather than in the capital, which puts the Pacific reserves closer than the city is.</dd></div>
           <div class="grow"><dt>Getting around</dt><dd>Everything here sits within five hours of the airport on surfaced main roads, and a hired vehicle with clearance handles the park tracks, with Montecristo and El Imposible both needing a permit arranged before arrival.</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/resplendent-quetzal/">Resplendent Quetzal at Montecristo</a></h3>
+          <p class="hl-blurb">The whole Salvadoran population is on one massif, and the park closes its upper forest from May to October to let them breed. March and April are the window.</p>
+          <p class="hl-row"><b>When</b> January to April, and calling from March.</p>
+          <p class="hl-row"><b>Where</b> Metapan</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/turquoise-browed-motmot/">Turquoise-browed Motmot on the Pacific slope</a></h3>
+          <p class="hl-blurb">The most conspicuous bird of the dry country and common enough to perch on roadside wires. El Imposible and the coastal reserves both hold it.</p>
+          <p class="hl-row"><b>When</b> Year round, and easiest when the dry forest is leafless.</p>
+          <p class="hl-row"><b>Where</b> Tacuba, La Libertad</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/highland-guan/">Highland Guan at Montecristo</a></h3>
+          <p class="hl-blurb">A large forest guan of the northern Central American highlands, and Montecristo is the only place in the country that holds it.</p>
+          <p class="hl-row"><b>When</b> January to April, most vocal at dawn.</p>
+          <p class="hl-row"><b>Where</b> Metapan</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/blue-and-white-mockingbird/">Blue-and-white Mockingbird in the highlands</a></h3>
+          <p class="hl-blurb">A skulking highland mimic with a song out of all proportion to how often it is seen. Montecristo, Cerro Verde and the eastern pine all have it.</p>
+          <p class="hl-row"><b>When</b> Year round, and singing hardest from February.</p>
+          <p class="hl-row"><b>Where</b> Metapan, El Congo, Perquin</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/king-vulture/">King Vulture over El Imposible</a></h3>
+          <p class="hl-blurb">Gone from most of the Salvadoran lowlands and still over the western hills, where the forest block is large enough to feed one.</p>
+          <p class="hl-row"><b>When</b> Year round, and seen from the miradors in the middle of the day.</p>
+          <p class="hl-row"><b>Where</b> Tacuba, Cara Sucia</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/roseate-spoonbill/">Roseate Spoonbill at Jiquilisco</a></h3>
+          <p class="hl-blurb">The bay is a Ramsar site and a biosphere reserve, and the spoonbills feed on the mudflats with wintering waders through the northern winter.</p>
+          <p class="hl-row"><b>When</b> October to March, on a falling tide.</p>
+          <p class="hl-row"><b>Where</b> Puerto El Triunfo</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/yellow-naped-amazon/">Yellow-naped Amazon in the west</a></h3>
+          <p class="hl-blurb">In steep decline across its range through trapping, and the western hills still hold it. Roost flights at dusk are the way to find them.</p>
+          <p class="hl-row"><b>When</b> Year round, at dawn and dusk roost flights.</p>
+          <p class="hl-row"><b>Where</b> Tacuba, Ahuachapan</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/long-tailed-manakin/">Long-tailed Manakin in the dry forest</a></h3>
+          <p class="hl-blurb">Two males dance together for one female on a shared perch, and the call carries through the understorey long before the birds show.</p>
+          <p class="hl-row"><b>When</b> February to July, when the leks are active.</p>
+          <p class="hl-row"><b>Where</b> Tacuba, Juayua</p>
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every Salvadoran Species</h2>
@@ -3340,7 +3404,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/f2e71b25e474.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/resplendent-quetzal/">Resplendent Quetzal</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:16.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3348,7 +3412,7 @@
             <div class="tg-p">Metapan</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/f2e71b25e474.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/turquoise-browed-motmot/">Turquoise-browed Motmot</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:83.33%;width:16.67%"></span><span class="tg-b" style="left:0.00%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3356,7 +3420,7 @@
             <div class="tg-p">Tacuba, La Libertad</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/4ee70d2904f5.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/highland-guan/">Highland Guan</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:0.00%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3364,7 +3428,7 @@
             <div class="tg-p">Metapan</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/09cbd926174a.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/blue-and-white-mockingbird/">Blue-and-white Mockingbird</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3372,7 +3436,7 @@
             <div class="tg-p">Metapan, El Congo, <a href="#site-the-eastern-highlands-perquin-and-the-rio-sapo">The eastern highlands: Perquin and the Rio Sapo</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/king-vulture/">King Vulture</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:83.33%;width:16.67%"></span><span class="tg-b" style="left:0.00%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3380,7 +3444,7 @@
             <div class="tg-p">Tacuba, Cara Sucia</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ae798de40aa3.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/roseate-spoonbill/">Roseate Spoonbill</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:75.00%;width:25.00%"></span><span class="tg-b" style="left:0.00%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3388,7 +3452,7 @@
             <div class="tg-p">Puerto El Triunfo</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/009a6ba16adc.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/yellow-naped-amazon/">Yellow-naped Amazon</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:83.33%;width:16.67%"></span><span class="tg-b" style="left:0.00%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3396,7 +3460,7 @@
             <div class="tg-p">Tacuba, Ahuachapan</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/18e4645d9ded.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/long-tailed-manakin/">Long-tailed Manakin</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:50.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>

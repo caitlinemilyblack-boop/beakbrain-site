@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1007,6 +1018,59 @@
           <div class="grow"><dt>Itineraries</dt><dd><span class="glinks"><a class="glink" href="#itin-a-dublin-layover">A Dublin Layover<span class="gdays">1 day</span></a><a class="glink" href="#itin-the-wexford-weekend">The Wexford Weekend<span class="gdays">3 days</span></a><a class="glink" href="#itin-the-southwest-islands">The Southwest Islands<span class="gdays">6 days</span></a><a class="glink" href="#itin-the-western-seaboard">The Western Seaboard<span class="gdays">8 days</span></a><a class="glink" href="#itin-ireland-end-to-end">Ireland End to End<span class="gdays">11 days</span></a></span></dd></div>
           <div class="grow"><dt>Getting around</dt><dd>A hire car reaches every region here. The island is small enough that the far southwest is five hours from the far north, and the border crosses without a stop</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/greater-white-fronted-goose/">Greenland White-fronted Geese in Ireland</a></h3>
+          <p class="hl-blurb">The Wexford Slobs hold a large share of the world population every winter, on reclaimed polder beside the harbour, with a visitor centre and hides looking over it. The birds arrive in October and leave in April.</p>
+          <p class="hl-row"><b>When</b> October to April</p>
+          <p class="hl-row"><b>Where</b> Wexford and the southeast</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/corn-crake/">Corncrakes in Ireland</a></h3>
+          <p class="hl-blurb">A last few strongholds remain on the Mullet peninsula, the Donegal islands and parts of Connacht, where late mowing is paid for to keep them. The bird calls through the short summer night and is heard far more often than seen.</p>
+          <p class="hl-row"><b>When</b> Late May to July, at night</p>
+          <p class="hl-row"><b>Where</b> Connemara, Mayo and the western seaboard, Donegal and the northwest</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/atlantic-puffin/">Puffins in Ireland</a></h3>
+          <p class="hl-blurb">The Skelligs, the Saltees and Rathlin all hold puffins, and the Great Saltee off Wexford is the easiest to reach by day boat. Birds are ashore from April and gone by early August.</p>
+          <p class="hl-row"><b>When</b> April to July</p>
+          <p class="hl-row"><b>Where</b> Kerry and the Shannon estuary, Wexford and the southeast</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/northern-gannet/">Gannets in Ireland</a></h3>
+          <p class="hl-blurb">Little Skellig carries one of the largest gannetries in the world, and the boats that run to Skellig Michael pass close beneath it. Landing is on the other island; the gannets are watched from the water.</p>
+          <p class="hl-row"><b>When</b> April to September</p>
+          <p class="hl-row"><b>Where</b> Kerry and the Shannon estuary</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/whooper-swan/">Whooper Swans in Ireland</a></h3>
+          <p class="hl-blurb">Icelandic whoopers winter across the Irish midlands and the Shannon callows in thousands, on flooded grassland and stubble. They arrive in October and are gone by April.</p>
+          <p class="hl-row"><b>When</b> October to April</p>
+          <p class="hl-row"><b>Where</b> The midlands loughs and callows, The Burren, Clare and the Shannon callows</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/red-billed-chough/">Choughs in Ireland</a></h3>
+          <p class="hl-blurb">Ireland holds a large part of the north-west European population, on the short grazed turf of the western and southern sea cliffs. Loop Head, the Dingle peninsula and the Cork headlands are all reliable.</p>
+          <p class="hl-row"><b>When</b> All year</p>
+          <p class="hl-row"><b>Where</b> Kerry and the Shannon estuary, Cork, Cape Clear and the southwest, The Burren, Clare and the Shannon callows</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/manx-shearwater/">Manx Shearwaters in Ireland</a></h3>
+          <p class="hl-blurb">Huge numbers pass the southern and western headlands on an onshore wind in autumn, and Cape Clear is where Irish birders watch them from. The birds breed on the islands offshore.</p>
+          <p class="hl-row"><b>When</b> July to October for passage</p>
+          <p class="hl-row"><b>Where</b> Cork, Cape Clear and the southwest, Donegal and the northwest</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/red-grouse/">Red Grouse in Ireland</a></h3>
+          <p class="hl-blurb">Thin on the ground and declining, but the Wicklow uplands half an hour from Dublin remain the most reliable place to walk one up, on heather moor above the treeline.</p>
+          <p class="hl-row"><b>When</b> All year</p>
+          <p class="hl-row"><b>Where</b> Dublin, the east coast and Wicklow, Donegal and the northwest</p>
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every Irish Species</h2>
@@ -2880,7 +2944,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/e58fde9fe327.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/greater-white-fronted-goose/">Greater White-fronted Goose</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:75.00%;width:25.00%"></span><span class="tg-b" style="left:0.00%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2888,7 +2952,7 @@
             <div class="tg-p"><a href="#site-wexford-and-the-southeast">Wexford and the southeast</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/4abae2dbed79.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/corn-crake/">Corn Crake</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2896,7 +2960,7 @@
             <div class="tg-p"><a href="#site-connemara-mayo-and-the-western-seaboard">Connemara, Mayo and the western seaboard</a>, <a href="#site-donegal-and-the-northwest">Donegal and the northwest</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/atlantic-puffin/">Atlantic Puffin</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2904,7 +2968,7 @@
             <div class="tg-p"><a href="#site-kerry-and-the-shannon-estuary">Kerry and the Shannon estuary</a>, <a href="#site-wexford-and-the-southeast">Wexford and the southeast</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/northern-gannet/">Northern Gannet</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:50.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2912,7 +2976,7 @@
             <div class="tg-p"><a href="#site-kerry-and-the-shannon-estuary">Kerry and the Shannon estuary</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/e58fde9fe327.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/whooper-swan/">Whooper Swan</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:75.00%;width:25.00%"></span><span class="tg-b" style="left:0.00%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2920,7 +2984,7 @@
             <div class="tg-p"><a href="#site-the-midlands-loughs-and-callows">The midlands loughs and callows</a>, <a href="#site-the-burren-clare-and-the-shannon-callows">The Burren, Clare and the Shannon callows</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/058c1e5c2d2e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/red-billed-chough/">Red-billed Chough</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2928,7 +2992,7 @@
             <div class="tg-p"><a href="#site-kerry-and-the-shannon-estuary">Kerry and the Shannon estuary</a>, <a href="#site-cork-cape-clear-and-the-southwest">Cork, Cape Clear and the southwest</a>, <a href="#site-the-burren-clare-and-the-shannon-callows">The Burren, Clare and the Shannon callows</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/04468f6de1ec.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/manx-shearwater/">Manx Shearwater</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:50.00%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2936,7 +3000,7 @@
             <div class="tg-p"><a href="#site-cork-cape-clear-and-the-southwest">Cork, Cape Clear and the southwest</a>, <a href="#site-donegal-and-the-northwest">Donegal and the northwest</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/de76657567f7.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/red-grouse/">Red Grouse</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>

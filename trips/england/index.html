@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1012,6 +1023,59 @@
           <div class="grow"><dt>Itineraries</dt><dd><span class="glinks"><a class="glink" href="#itin-a-london-layover">A London Layover<span class="gdays">1 day</span></a><a class="glink" href="#itin-the-north-norfolk-weekend">The North Norfolk Weekend<span class="gdays">3 days</span></a><a class="glink" href="#itin-the-north-west-estuaries">The North-West Estuaries<span class="gdays">4 days</span></a><a class="glink" href="#itin-seabird-cities">Seabird Cities<span class="gdays">5 days</span></a><a class="glink" href="#itin-the-southwest-in-autumn">The Southwest in Autumn<span class="gdays">7 days</span></a><a class="glink" href="#itin-england-end-to-end">England End to End<span class="gdays">12 days</span></a></span></dd></div>
           <div class="grow"><dt>Getting around</dt><dd>A hire car reaches every region here, and the train reaches Norfolk, the Chilterns, the Yorkshire coast and the West <a href="/birds/country/">Country</a> on its own</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/atlantic-puffin/">Puffins in England</a></h3>
+          <p class="hl-blurb">The Farne Islands put you closer to breeding puffins than almost anywhere in Britain, because the birds nest beside the visitor paths and ignore you completely. Boats run from Seahouses and land on Inner Farne and Staple Island through the season.</p>
+          <p class="hl-row"><b>When</b> Late April to late July, with the birds gone by early August</p>
+          <p class="hl-row"><b>Where</b> Northumberland and the Farne Islands, The Yorkshire coast: Bempton and Spurn</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/northern-gannet/">Gannets in England</a></h3>
+          <p class="hl-blurb">Bempton Cliffs is the only mainland gannetry in England, and the birds pass the clifftop viewpoints at eye level all day. It is the easiest seabird colony in the country to reach: a car park, a path and a set of railed platforms.</p>
+          <p class="hl-row"><b>When</b> March to October, at its fullest from May to July</p>
+          <p class="hl-row"><b>Where</b> The Yorkshire coast: Bempton and Spurn</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/eurasian-bittern/">Bitterns in England</a></h3>
+          <p class="hl-blurb">English bitterns came within a handful of booming males in the 1990s and have recovered on reedbeds created for them. The <a href="#lodge-green-tourism-25432-norfolk-broads">Norfolk Broads</a>, the Somerset Levels and the Suffolk coast hold most of them, and booming carries a long way over flat ground on a still morning.</p>
+          <p class="hl-row"><b>When</b> February to May for booming; winter for birds feeding in the open</p>
+          <p class="hl-row"><b>Where</b> The Norfolk coast and the Broads, The Somerset Levels and the Severn, Suffolk and the Essex coast</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/common-crane/">Cranes in England</a></h3>
+          <p class="hl-blurb">Cranes returned to Norfolk on their own in 1979 and were reintroduced to the Somerset Levels from 2010. Both populations breed now, and the Somerset Levels flock is the easier of the two to find, usually on the wet grassland around Ham Wall and Greylake.</p>
+          <p class="hl-row"><b>When</b> All year; easiest in winter when the birds flock</p>
+          <p class="hl-row"><b>Where</b> The Somerset Levels and the Severn, The Norfolk coast and the Broads</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/red-kite/">Red Kites in England</a></h3>
+          <p class="hl-blurb">The Chilterns reintroduction that began in 1989 is one of the most visible conservation successes in Britain. Kites are now unmissable over the M40 corridor and have spread across southern and central England from there.</p>
+          <p class="hl-row"><b>When</b> All year</p>
+          <p class="hl-row"><b>Where</b> The Chilterns, the Thames and the London reservoirs</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/black-tailed-godwit/">Black-tailed Godwits in England</a></h3>
+          <p class="hl-blurb">The Wash and the Ribble take godwits in tens of thousands on passage and through the winter, and the Ouse and <a href="/birds/nene/">Nene</a> Washes hold the small breeding population that has been nursed back from almost nothing.</p>
+          <p class="hl-row"><b>When</b> Passage in spring and autumn, biggest counts October to March</p>
+          <p class="hl-row"><b>Where</b> The Wash and the Lincolnshire coast, Morecambe Bay and the Cumbrian coast</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/dartford-warbler/">Dartford Warblers in England</a></h3>
+          <p class="hl-blurb">A resident warbler on lowland heath, and one that a hard winter can still knock back badly. The <a href="#lodge-green-tourism-21572-new-forest">New Forest</a> and the Dorset heaths hold the strongest populations, and the birds sing from gorse tops on a calm morning.</p>
+          <p class="hl-row"><b>When</b> All year; easiest March to June when singing</p>
+          <p class="hl-row"><b>Where</b> The New Forest, Dorset and Poole Harbour, Kent, Sussex and the south coast</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/eurasian-spoonbill/">Spoonbills in England</a></h3>
+          <p class="hl-blurb">Spoonbills began breeding again in England in 2010 after an absence of three centuries, and Holkham in north Norfolk now holds the largest colony. Birds feed on the shallow pools and creeks along the same coast.</p>
+          <p class="hl-row"><b>When</b> March to September</p>
+          <p class="hl-row"><b>Where</b> The Norfolk coast and the Broads, Suffolk and the Essex coast</p>
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every English Species</h2>
@@ -3821,7 +3885,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/atlantic-puffin/">Atlantic Puffin</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3829,7 +3893,7 @@
             <div class="tg-p"><a href="#site-northumberland-and-the-farne-islands">Northumberland and the Farne Islands</a>, <a href="#site-the-yorkshire-coast-bempton-and-spurn">The Yorkshire coast: Bempton and Spurn</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/northern-gannet/">Northern Gannet</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:66.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3837,7 +3901,7 @@
             <div class="tg-p"><a href="#site-the-yorkshire-coast-bempton-and-spurn">The Yorkshire coast: Bempton and Spurn</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ae798de40aa3.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/eurasian-bittern/">Eurasian Bittern</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3845,7 +3909,7 @@
             <div class="tg-p"><a href="#site-the-norfolk-coast-and-the-broads">The Norfolk coast and the Broads</a>, <a href="#site-the-somerset-levels-and-the-severn">The Somerset Levels and the Severn</a>, <a href="#site-suffolk-and-the-essex-coast">Suffolk and the Essex coast</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/3237cadd96d2.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/common-crane/">Common Crane</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3853,7 +3917,7 @@
             <div class="tg-p"><a href="#site-the-somerset-levels-and-the-severn">The Somerset Levels and the Severn</a>, <a href="#site-the-norfolk-coast-and-the-broads">The Norfolk coast and the Broads</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/red-kite/">Red Kite</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3861,7 +3925,7 @@
             <div class="tg-p"><a href="#site-the-chilterns-the-thames-and-the-london-reservoirs">The Chilterns, the Thames and the London reservoirs</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/black-tailed-godwit/">Black-tailed Godwit</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:75.00%;width:25.00%"></span><span class="tg-b" style="left:0.00%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3869,7 +3933,7 @@
             <div class="tg-p"><a href="#site-the-wash-and-the-lincolnshire-coast">The Wash and the Lincolnshire coast</a>, <a href="#site-morecambe-bay-and-the-cumbrian-coast">Morecambe Bay and the Cumbrian coast</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/13ca9147a946.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/dartford-warbler/">Dartford Warbler</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3877,7 +3941,7 @@
             <div class="tg-p"><a href="#site-the-new-forest-dorset-and-poole-harbour">The New Forest, Dorset and Poole Harbour</a>, <a href="#site-kent-sussex-and-the-south-coast">Kent, Sussex and the south coast</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ae798de40aa3.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/eurasian-spoonbill/">Eurasian Spoonbill</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:58.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>

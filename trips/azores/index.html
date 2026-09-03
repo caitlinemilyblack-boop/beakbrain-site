@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1006,6 +1017,59 @@
           <div class="grow"><dt>Getting in</dt><dd>Ponta Delgada (PDL) on São Miguel takes most international flights, with Terceira (TER) as the second gateway. Both connect to Lisbon in about two and a half hours.</dd></div>
           <div class="grow"><dt>Getting around</dt><dd>Inter-island flights and ferries, and the weather cancels both. A hire car covers each island, and Corvo is small enough to walk.</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/monteiro-s-storm-petrel/">Monteiro's Storm Petrel on the Graciosa islets</a></h3>
+          <p class="hl-blurb">Described as a species in 1998 and breeding on three rocks off Graciosa and nowhere else on earth. It is the hot-season breeder in a pair of storm petrels that share the same islets at different times of year, and it is watched from a boat.</p>
+          <p class="hl-row"><b>When</b> April to October</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/azores-bullfinch/">Azores Bullfinch in the Priolo forest</a></h3>
+          <p class="hl-blurb">The Priolo holds a few hundred hectares of native laurel forest at the eastern end of São Miguel and has never lived anywhere else. It came back from fewer than 120 pairs under the LIFE Priolo programme.</p>
+          <p class="hl-row"><b>When</b> All year, easiest May to September</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/red-eyed-vireo/">Corvo in October</a></h3>
+          <p class="hl-blurb">Seventeen square kilometres of crater and pasture a third of the way to Newfoundland. Atlantic westerlies drop American passerines and waders onto it every autumn, and no site in Europe compares.</p>
+          <p class="hl-row"><b>When</b> October</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/cory-s-shearwater/">Cory's Shearwater over the whole archipelago</a></h3>
+          <p class="hl-blurb">The commonest large seabird here, and the Azores hold a large share of the world population. It calls over the breeding cliffs after dark through the summer.</p>
+          <p class="hl-row"><b>When</b> March to October</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/roseate-tern/">Roseate Tern on the islet colonies</a></h3>
+          <p class="hl-blurb">The Azores hold the largest <a href="/birds/roseate-tern/">Roseate Tern</a> colonies in Europe, on islets off Terceira, Graciosa and Santa Maria. The birds are away from November to March.</p>
+          <p class="hl-row"><b>When</b> April to October</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/barolo-shearwater/">Barolo Shearwater on the offshore banks</a></h3>
+          <p class="hl-blurb">A small black and white shearwater of Macaronesian water, resident here and hard to catch up with. The boats out of Horta and Madalena are the way.</p>
+          <p class="hl-row"><b>When</b> All year</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/semipalmated-plover/">Cabo da Praia in autumn</a></h3>
+          <p class="hl-blurb">A flooded quarry beside the sea on Terceira that pulls in Nearctic waders every autumn. It is small enough to scan from the bank and is worth checking on any October day.</p>
+          <p class="hl-row"><b>When</b> August to November</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/azores-chaffinch/">Azores Chaffinch across the islands</a></h3>
+          <p class="hl-blurb">Split from the Common Chaffinch and found on these islands alone. It is common in gardens and woodland edge on every inhabited island.</p>
+          <p class="hl-row"><b>When</b> All year</p>
+
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every Azorean Species</h2>
@@ -2454,7 +2518,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/04468f6de1ec.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/monteiro-s-storm-petrel/">Monteiro's Storm Petrel</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:58.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2462,7 +2526,7 @@
             <div class="tg-p">The Graciosa islets of Praia, Baixo and Baleia</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/azores-bullfinch/">Azores Bullfinch</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2470,7 +2534,7 @@
             <div class="tg-p">Pico da Vara and the Nordeste forest</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/775b82c449c7.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/red-eyed-vireo/">Red-eyed Vireo</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:75.00%;width:8.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2478,7 +2542,7 @@
             <div class="tg-p">Corvo, and Flores across the channel</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/04468f6de1ec.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/cory-s-shearwater/">Cory's Shearwater</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:66.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2486,7 +2550,7 @@
             <div class="tg-p">Every island, and the channel between Pico and Faial</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/aa315e867896.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/roseate-tern/">Roseate Tern</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:58.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2494,7 +2558,7 @@
             <div class="tg-p">The islets off Terceira, Graciosa and Santa Maria</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/04468f6de1ec.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/barolo-shearwater/">Barolo Shearwater</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2502,7 +2566,7 @@
             <div class="tg-p">The channel and the offshore banks</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/semipalmated-plover/">Semipalmated Plover</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:58.33%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2510,7 +2574,7 @@
             <div class="tg-p">Cabo da Praia, Terceira</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/azores-chaffinch/">Azores Chaffinch</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>

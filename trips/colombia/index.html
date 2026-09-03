@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1013,6 +1024,59 @@
           <div class="grow"><dt>Routes</dt><dd><span class="glinks"><a class="glink" href="#itin-a-bogota-layover">A Bogota Layover<span class="gdays">1 day</span></a><a class="glink" href="#itin-the-santa-marta-endemics">The Santa Marta Endemics<span class="gdays">5 days</span></a><a class="glink" href="#itin-the-llanos">The Llanos<span class="gdays">6 days</span></a><a class="glink" href="#itin-leticia-and-the-amazon">Leticia and the Amazon<span class="gdays">6 days</span></a><a class="glink" href="#itin-the-coffee-triangle-loop">The Coffee Triangle Loop<span class="gdays">8 days</span></a><a class="glink" href="#itin-north-and-centre">North and Centre<span class="gdays">14 days</span></a><a class="glink" href="#itin-the-full-country">The Full Country<span class="gdays">21 days</span></a></span></dd></div>
           <div class="grow"><dt>Getting around</dt><dd>Bogota is the hub and domestic flights are cheap and frequent. The Andes are three separate ranges with deep valleys between them, so a road route between two of them takes a day.</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/santa-marta-parakeet/">Santa Marta Endemics in Colombia</a></h3>
+          <p class="hl-blurb">The Sierra Nevada de Santa Marta is an isolated massif rising from the Caribbean to snow in forty kilometres, and it carries more endemic birds than any comparable area on earth. The upper reserves reach most of them in two full days.</p>
+          <p class="hl-row"><b>When</b> December to March, when the track up is at its most reliable</p>
+          <p class="hl-row"><b>Where</b> Santa Marta</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/andean-cock-of-the-rock/">Andean Cock-of-the-rock in Colombia</a></h3>
+          <p class="hl-blurb">Males gather at dawn leks in steep humid forest on both Andean slopes, and several sites have built a hide within a few metres of one. Jardin's lek in the town itself is the easiest anywhere.</p>
+          <p class="hl-row"><b>When</b> All year, with the leks at their loudest from January to June</p>
+          <p class="hl-row"><b>Where</b> Jardin, Coffee Region, Central Andes</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/yellow-eared-parrot/">Yellow-eared Parrots in Colombia</a></h3>
+          <p class="hl-blurb">This parrot nests only in wax palms and came within a few dozen birds of loss before a campaign to stop the palms being cut for Palm Sunday. It now flies over the valleys of the Western Andes in flocks again.</p>
+          <p class="hl-row"><b>When</b> January to June, when pairs are at the nest palms</p>
+          <p class="hl-row"><b>Where</b> Jardin, Coffee Region</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/vermilion-cardinal/">Vermilion Cardinals in Colombia</a></h3>
+          <p class="hl-blurb">The dry thorn scrub of La Guajira holds a set of birds found nowhere else in the country, and the cardinal is the one people travel for. The habitat is roadside and flat, so this is the least demanding endemic hunting in Colombia.</p>
+          <p class="hl-row"><b>When</b> December to April, in the dry season</p>
+          <p class="hl-row"><b>Where</b> La Guajira</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/buffy-helmetcrest/">Helmetcrests in Colombia</a></h3>
+          <p class="hl-blurb">Four helmetcrests divide the Colombian paramo between them, each on its own massif. The Buffy is the one reachable on a paved road, at Los Nevados above Manizales, where it feeds low on frailejon flowers.</p>
+          <p class="hl-row"><b>When</b> December to March for the clearest paramo mornings</p>
+          <p class="hl-row"><b>Where</b> Central Andes</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/multicolored-tanager/">Multicoloured Tanagers in Colombia</a></h3>
+          <p class="hl-blurb">An endemic of the Western Andes cloud forest that joins mixed flocks with a dozen other tanagers. The forest above Cali is where most people find it, and the feeders there bring the whole flock into view.</p>
+          <p class="hl-row"><b>When</b> All year, with mixed flocks moving through from first light</p>
+          <p class="hl-row"><b>Where</b> Cauca valley</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/sapayoa/">Sapayoa in Colombia</a></h3>
+          <p class="hl-blurb">A small olive bird of Choco stream ravines whose nearest relatives are in Africa and Asia, which is why birders travel for it. The Pacific lowlands and the wet foothills above Buenaventura are where it lives.</p>
+          <p class="hl-row"><b>When</b> All year, though the Choco is wet in every month</p>
+          <p class="hl-row"><b>Where</b> Choco, Cauca valley</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/orinoco-goose/">Orinoco Geese in Colombia</a></h3>
+          <p class="hl-blurb">The flooded savanna of the Llanos holds waterbirds in numbers that recall an African floodplain, and the working cattle hatos are how you see them. The birds concentrate on shrinking pools as the plains dry.</p>
+          <p class="hl-row"><b>When</b> December to March, when the savanna dries and the wildlife concentrates</p>
+          <p class="hl-row"><b>Where</b> Llanos</p>
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every Colombian Species</h2>
@@ -9238,7 +9302,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/009a6ba16adc.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/santa-marta-parakeet/">Santa Marta Parakeet</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:91.67%;width:8.33%"></span><span class="tg-b" style="left:0.00%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -9246,7 +9310,7 @@
             <div class="tg-p"><a href="#site-santa-marta-and-the-sierra-nevada">Santa Marta and the Sierra Nevada</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/andean-cock-of-the-rock/">Andean Cock-of-the-rock</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -9254,7 +9318,7 @@
             <div class="tg-p"><a href="#site-the-western-andes-and-jardin">The Western Andes and Jardin</a>, <a href="#site-the-coffee-region-otun-quimbaya-and-montezuma">The Coffee Region: Otun Quimbaya and Montezuma</a>, <a href="#site-the-central-andes-manizales-and-rio-blanco">The Central Andes: Manizales and Rio Blanco</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/009a6ba16adc.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/yellow-eared-parrot/">Yellow-eared Parrot</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:0.00%;width:50.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -9262,7 +9326,7 @@
             <div class="tg-p"><a href="#site-the-western-andes-and-jardin">The Western Andes and Jardin</a>, <a href="#site-the-coffee-region-otun-quimbaya-and-montezuma">The Coffee Region: Otun Quimbaya and Montezuma</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/7b2c05c94580.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/vermilion-cardinal/">Vermilion Cardinal</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:91.67%;width:8.33%"></span><span class="tg-b" style="left:0.00%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -9270,7 +9334,7 @@
             <div class="tg-p"><a href="#site-la-guajira-and-the-caribbean-dry-forest">La Guajira and the Caribbean dry forest</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/1239e5cb3801.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/buffy-helmetcrest/">Buffy Helmetcrest</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:91.67%;width:8.33%"></span><span class="tg-b" style="left:0.00%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -9278,7 +9342,7 @@
             <div class="tg-p"><a href="#site-the-central-andes-manizales-and-rio-blanco">The Central Andes: Manizales and Rio Blanco</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a1c2898245cf.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/multicolored-tanager/">Multicolored Tanager</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -9286,7 +9350,7 @@
             <div class="tg-p"><a href="#site-the-cauca-valley-and-the-km-18-cloud-forest">The Cauca valley and the Km 18 cloud forest</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/sapayoa/">Sapayoa</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -9294,7 +9358,7 @@
             <div class="tg-p"><a href="#site-the-choco-and-the-pacific-coast">The Choco and the Pacific coast</a>, <a href="#site-the-cauca-valley-and-the-km-18-cloud-forest">The Cauca valley and the Km 18 cloud forest</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/e58fde9fe327.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/orinoco-goose/">Orinoco Goose</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:91.67%;width:8.33%"></span><span class="tg-b" style="left:0.00%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -10177,6 +10241,7 @@
 
         <ul class="wherelist">
         <li class="where habitat"><b>Habitat:</b> Wet Choco forest on the Pacific slope, from the 3,600 ha reserve at La Planada at 1,800 m down through the Rio Nambi and Rio Ramos valleys, with a 25 km stretch of forest between 1,800 and 2,300 m on the Pasto to Mocoa road.</li>
+        <li class="where when"><b>When:</b> January to April and September to December, the two migration peaks. El Pangan on the Pacific slope holds 49 Choco endemics.</li>
         <li class="where access"><b>Getting there:</b> La Planada is reached from Ricaurte on the Pasto to Tumaco road. Ask at Rio Nambi for a guide and take supplies for camping. The Narino to Putumayo border stretch is one-way and demands the most experienced driver, or the bus.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/chestnut-crowned-antpitta/">Chestnut-crowned Antpitta</a>, <a href="/birds/andean-cock-of-the-rock/">Andean Cock-of-the-rock</a>, <a href="/birds/crested-quetzal/">Crested Quetzal</a>, <a href="/birds/masked-saltator/">Masked Saltator</a>, <a href="/birds/gold-ringed-tanager/">Gold-ringed Tanager</a></li>
 
@@ -10239,6 +10304,7 @@
 
         <ul class="wherelist">
         <li class="where habitat"><b>Habitat:</b> Utria National Park spreads over 544 square kilometres along the Pacific shore of the Choco and protects the coastal strip and the ocean beside it. The land is covered by a thick carpet of tropical rainforest, the park is renowned for its orchids, and more than 440 bird species are listed. Whales and turtles are easy to see in season.</li>
+        <li class="where when"><b>When:</b> January to April and September to December, when migration is at its peak and the northern birds are added to the Choco endemics.</li>
         <li class="where access"><b>Getting there:</b> Getting to the national park is challenging and worth the effort. It is best reached by boat from Bahia Solano or El Valle. Accommodation is available at the visitor centre inside the park and guides are at hand.</li>
         <li class="where"><b>Look for:</b> <a href="/birds/baudo-guan/">Baudo Guan</a>, <a href="/birds/sapayoa/">Sapayoa</a>, <a href="/birds/berlepsch-s-tinamou/">Berlepsch's Tinamou</a>, <a href="/birds/choco-toucan/">Choco Toucan</a>, <a href="/birds/choco-trogon/">Choco Trogon</a>, <a href="/birds/great-curassow/">Great Curassow</a></li>
 

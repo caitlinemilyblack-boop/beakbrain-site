@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1009,6 +1020,59 @@
           <div class="grow"><dt>Getting around</dt><dd>A hire car for the wetlands, the parks and the islands. The rail network is good between cities and reaches none of the birding</dd></div>
           <div class="grow"><dt>The one thing to know</dt><dd>The hunting season is a real planning factor from autumn through winter across much of the country, and the national and regional parks are where to be in those months</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/european-honey-buzzard/">European Honey Buzzard in Italy</a></h3>
+          <p class="hl-blurb">The Strait of Messina is one of the great raptor bottlenecks of the western Palearctic, and Honey Buzzard is the bird that makes it. Watchpoints run on the Peloritani ridges on the Sicilian side through the spring passage.</p>
+          <p class="hl-row"><b>When</b> Spring passage, April to May</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/lanner-falcon/">Lanner Falcon in Italy</a></h3>
+          <p class="hl-blurb">Sicily holds the Italian stronghold, on inland reserve crags and the western sea cliffs around Custonaci and Zingaro. The Gargano crags carry it on the mainland.</p>
+          <p class="hl-row"><b>When</b> Resident</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/bearded-vulture/">Bearded Vulture in Italy</a></h3>
+          <p class="hl-blurb">Gran Paradiso is the centre of the Alpine reintroduction and the most reliable Italian ground for it. Birds range widely across the western Alps and the park publishes its own sightings.</p>
+          <p class="hl-row"><b>When</b> Resident</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/marmora-s-warbler/">Marmora's Warbler in Italy</a></h3>
+          <p class="hl-blurb">A Sardinian speciality of low maquis and burnt scrub. Best found by song in spring, when males sing from the top of a bush rather than skulking in it.</p>
+          <p class="hl-row"><b>When</b> Resident, located by song in spring</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/eleonora-s-falcon/">Eleonora's Falcon in Italy</a></h3>
+          <p class="hl-blurb">Colonies sit on San Pietro island off Sardinia and on the Sicilian coast. It breeds late on purpose and times its young to the autumn passage of small migrants crossing the Mediterranean.</p>
+          <p class="hl-row"><b>When</b> Colonies active June to October</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/greater-flamingo/">Greater Flamingo in Italy</a></h3>
+          <p class="hl-blurb">Molentargius-Saline sits inside Cagliari and holds one of the largest colonies in the Mediterranean. Orbetello and the Comacchio valli carry the mainland birds.</p>
+          <p class="hl-row"><b>When</b> Year round, largest counts in summer</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/rock-partridge/">Rock Partridge in Italy</a></h3>
+          <p class="hl-blurb">Abruzzo and the neighbouring Maiella and Velino-Sirente parks hold the Apennine population. Dawn on open stony slopes is the way to find it, when calling birds give themselves away.</p>
+          <p class="hl-row"><b>When</b> Resident, most visible at dawn</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/italian-sparrow/">Italian Sparrow in Italy</a></h3>
+          <p class="hl-blurb">The endemic sparrow of the peninsula, a stabilised hybrid between House and <a href="/birds/spanish-sparrow/">Spanish Sparrow</a>, and the first Italian bird most visitors add. Present the length of the country and on Sicily.</p>
+          <p class="hl-row"><b>When</b> Resident, unavoidable in any town</p>
+
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every Italian Species</h2>
@@ -3162,7 +3226,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/european-honey-buzzard/">European Honey Buzzard</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:16.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3170,7 +3234,7 @@
             <div class="tg-p">The Strait of Messina</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/6b65b8d99927.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/lanner-falcon/">Lanner Falcon</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3178,7 +3242,7 @@
             <div class="tg-p">Sicily and the Gargano</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/bearded-vulture/">Bearded Vulture</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3186,7 +3250,7 @@
             <div class="tg-p">Gran Paradiso and the western Alps</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/13ca9147a946.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/marmora-s-warbler/">Marmora's Warbler</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3194,7 +3258,7 @@
             <div class="tg-p">Sardinian maquis</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/6b65b8d99927.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/eleonora-s-falcon/">Eleonora's Falcon</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:50.00%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3202,7 +3266,7 @@
             <div class="tg-p">San Pietro island and Sicily</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/172a0556764c.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/greater-flamingo/">Greater Flamingo</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3210,7 +3274,7 @@
             <div class="tg-p">Molentargius, Orbetello and Comacchio</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/de76657567f7.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/rock-partridge/">Rock Partridge</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3218,7 +3282,7 @@
             <div class="tg-p">Abruzzo, Maiella and Velino-Sirente</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/italian-sparrow/">Italian Sparrow</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>

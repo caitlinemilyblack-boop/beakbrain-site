@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1024,6 +1035,59 @@
           <div class="grow"><dt>Getting in</dt><dd>Sydney, Melbourne, Brisbane, Perth and Darwin all take long-haul flights, and the domestic network reaches every regional base in the country.</dd></div>
           <div class="grow"><dt>Getting around</dt><dd>A hire car is the only practical way to bird most of these regions, and the distances between them are continental. Internal flights save days on the Top End, Cape York and the west.</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/southern-cassowary/">Southern Cassowary in the Wet Tropics</a></h3>
+          <p class="hl-blurb">A flightless bird as tall as a person, with a blue neck, red wattles and a tall horn casque. It walks the rainforest floor and swallows fruit whole, and it spreads the seeds of dozens of trees no other animal can move. The coastal lowlands around Mission Beach and the roads of the Atherton Tableland hold most of the birds a visitor can reach.</p>
+          <p class="hl-row"><b>When</b> All year, and birds cross quiet forest roads and clearing edges most often in the first hours of daylight.</p>
+          <p class="hl-row"><b>Where</b> Wet Tropics</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/gouldian-finch/">Gouldian Finch at the northern waterholes</a></h3>
+          <p class="hl-blurb">A grass finch painted in blocks of purple, yellow and green, with a black or red face. Flocks drink at waterholes and river pools across the tropical savannah, and the parties grow as the dry season empties the country of surface water. Sandstone hills over spinifex hold the strongest populations.</p>
+          <p class="hl-row"><b>When</b> July to October, when the last waterholes concentrate the finches and the birds come in to drink early in the morning.</p>
+          <p class="hl-row"><b>Where</b> north Kimberley, Queensland inland</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/golden-shouldered-parrot/">Golden-shouldered Parrot on Cape York</a></h3>
+          <p class="hl-blurb">A small turquoise parrot that digs its nest chamber into living termite mounds on the savannah of central Cape York. The world population is small and it holds on across a handful of cattle properties. Pairs feed on grass seed among the mounds and perch on dead timber close by.</p>
+          <p class="hl-row"><b>When</b> May to November, which is the dry season and the stretch when the tracks north are passable.</p>
+          <p class="hl-row"><b>Where</b> Cape York</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/noisy-scrubbird/">Noisy Scrubbird on the south coast heath</a></h3>
+          <p class="hl-blurb">A brown, nearly tailless bird that runs through dense coastal heath and almost never flies. It went unrecorded for most of a century until a small population turned up near Albany in 1961. The song is loud enough to hurt at close range, so the bird is far easier to hear than to see.</p>
+          <p class="hl-row"><b>When</b> All year, and males sing hardest at first light and again in the last hour of the day.</p>
+          <p class="hl-row"><b>Where</b> Southwest Western Australia</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/malleefowl/">Malleefowl at the mound</a></h3>
+          <p class="hl-blurb">A ground bird the size of a small turkey that rakes sand and leaf litter into a mound and lets the rotting compost inside incubate its eggs. The male tends that mound for months and adjusts it a beakful at a time. Mature mallee with a deep litter layer is the habitat, and the bird walks quietly off long before most people see it.</p>
+          <p class="hl-row"><b>When</b> September to December, when the mounds are in use and the male attends through much of the day.</p>
+          <p class="hl-row"><b>Where</b> Victorian Mallee, Riverina</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/albert-s-lyrebird/">Albert's Lyrebird on the Scenic Rim</a></h3>
+          <p class="hl-blurb">The rarer of the two Australian lyrebirds lives only in the upland rainforest and Antarctic Beech of the ranges on the Queensland and New South Wales border. Males clear a platform of trampled vines and stamp on it as they sing, and the song runs through the calls of every other bird in the forest.</p>
+          <p class="hl-row"><b>When</b> June to August, when males display at dawn and cold still air carries the song a long way.</p>
+          <p class="hl-row"><b>Where</b> Southeast Queensland</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/plains-wanderer/">Plains-wanderer on the native grassland</a></h3>
+          <p class="hl-blurb">A quail-shaped bird that is the only living member of its family, and the female is the larger and the brighter of the pair. It needs sparse native grassland with bare ground between the tussocks, a habitat that cropping and heavy grazing have cut to fragments. Night surveys with a spotlight are the standard way to find it.</p>
+          <p class="hl-row"><b>When</b> All year on the remaining grassland, and the surveys run best on mild still nights in spring and autumn.</p>
+          <p class="hl-row"><b>Where</b> Victorian Mallee</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/abbott-s-booby/">Abbott's Booby over the Christmas Island plateau</a></h3>
+          <p class="hl-blurb">A large black and white booby that nests in the crowns of tall rainforest trees, and the entire world population breeds on Christmas Island. A pair raises one chick over more than a year, so a nest tree stays occupied almost continuously. Birds come in high above the canopy and drop into it.</p>
+          <p class="hl-row"><b>When</b> April to November covers the return of the adults and the main nesting months, and birds are on the island in every season.</p>
+          <p class="hl-row"><b>Where</b> Christmas Island</p>
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every Australian Species</h2>
@@ -4907,7 +4971,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/55f0ee13a2b4.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/southern-cassowary/">Southern Cassowary</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4915,7 +4979,7 @@
             <div class="tg-p"><a href="#site-the-wet-tropics-cairns-the-atherton-tableland-and-the-tropical-coast">The Wet Tropics: Cairns, the Atherton Tableland and the tropical coast</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/gouldian-finch/">Gouldian Finch</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:50.00%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4923,7 +4987,7 @@
             <div class="tg-p"><a href="#site-the-north-kimberley-kununurra-the-ord-and-the-mitchell-plateau">The north Kimberley: Kununurra, the Ord and the Mitchell Plateau</a>, <a href="#site-the-queensland-inland-the-gulf-savannah-and-cloncurry">The Queensland inland: the Gulf savannah and Cloncurry</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/e77f239f8995.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/golden-shouldered-parrot/">Golden-shouldered Parrot</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:58.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4931,7 +4995,7 @@
             <div class="tg-p"><a href="#site-cape-york-kutini-payamu-rinyirru-and-weipa">Cape York: Kutini-Payamu, Rinyirru and Weipa</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/noisy-scrubbird/">Noisy Scrubbird</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4939,7 +5003,7 @@
             <div class="tg-p"><a href="#site-southwest-western-australia-cheynes-beach-and-the-stirlings">Southwest Western Australia: Cheynes Beach and the Stirlings</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/919504927ea5.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/malleefowl/">Malleefowl</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:66.67%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4947,7 +5011,7 @@
             <div class="tg-p"><a href="#site-the-victorian-mallee-and-the-box-ironbark">The Victorian Mallee and the box-ironbark</a>, <a href="#site-the-riverina-and-the-central-west">The Riverina and the central west</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/99c3fd80cd2c.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/albert-s-lyrebird/">Albert's Lyrebird</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:41.67%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4955,7 +5019,7 @@
             <div class="tg-p"><a href="#site-southeast-queensland-and-the-border-ranges">Southeast Queensland and the border ranges</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ef6ce062122a.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/plains-wanderer/">Plains-wanderer</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4963,7 +5027,7 @@
             <div class="tg-p"><a href="#site-the-victorian-mallee-and-the-box-ironbark">The Victorian Mallee and the box-ironbark</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/abbott-s-booby/">Abbott's Booby</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:66.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>

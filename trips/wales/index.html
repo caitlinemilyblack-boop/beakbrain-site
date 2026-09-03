@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1005,6 +1016,59 @@
           <div class="grow"><dt>Itineraries</dt><dd><span class="glinks"><a class="glink" href="#itin-a-cardiff-or-bristol-layover">A Cardiff or Bristol Layover<span class="gdays">1 day</span></a><a class="glink" href="#itin-the-pembrokeshire-islands">The Pembrokeshire Islands<span class="gdays">4 days</span></a><a class="glink" href="#itin-the-dyfi-and-the-kites">The Dyfi and the Kites<span class="gdays">5 days</span></a><a class="glink" href="#itin-north-wales-in-a-week">North Wales in a Week<span class="gdays">7 days</span></a><a class="glink" href="#itin-the-length-of-wales">The Length of Wales<span class="gdays">12 days</span></a></span></dd></div>
           <div class="grow"><dt>Getting around</dt><dd>A hire car reaches every region here, and the coast railway reaches Anglesey, the Dyfi and Pembrokeshire on its own</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/manx-shearwater/">Manx Shearwaters in Wales</a></h3>
+          <p class="hl-blurb">Skomer and Skokholm together hold one of the largest Manx shearwater populations on earth. The birds come to their burrows only after dark, so the way to experience it is an overnight stay on the island itself.</p>
+          <p class="hl-row"><b>When</b> April to August, at night</p>
+          <p class="hl-row"><b>Where</b> Pembrokeshire</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/red-kite/">Red Kites in Wales</a></h3>
+          <p class="hl-blurb">Red kites in Wales came back from a handful of pairs in the mid Cambrians and are now common across the uplands. The feeding stations in Powys put several hundred over one field at a set time each afternoon.</p>
+          <p class="hl-row"><b>When</b> All year, with the biggest gatherings in winter</p>
+          <p class="hl-row"><b>Where</b> Dyfi</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/atlantic-puffin/">Atlantic Puffins in Wales</a></h3>
+          <p class="hl-blurb">Skomer's puffins nest beside the visitor paths and take almost no notice of people, which makes it one of the easiest colonies anywhere to watch. Day boats run from Martin's Haven through the breeding season.</p>
+          <p class="hl-row"><b>When</b> Late April to late July</p>
+          <p class="hl-row"><b>Where</b> Pembrokeshire</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/red-billed-chough/">Red-billed Chough in Wales</a></h3>
+          <p class="hl-blurb">Chough need short coastal turf grazed close, which is why they survive along the Pembrokeshire cliffs, on the Llyn and on Anglesey. They call constantly, so you usually hear them first.</p>
+          <p class="hl-row"><b>When</b> All year, easiest on a bright day with a light wind</p>
+          <p class="hl-row"><b>Where</b> Anglesey, Pembrokeshire</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/osprey/">Ospreys in Wales</a></h3>
+          <p class="hl-blurb">A pair has nested on the Dyfi since 2011 and the project runs a hide and a nest camera through the season. The birds fish the estuary in front of it, which makes this the most reliable osprey watching in Britain.</p>
+          <p class="hl-row"><b>When</b> April to early September</p>
+          <p class="hl-row"><b>Where</b> Dyfi</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/european-pied-flycatcher/">Pied Flycatchers in Wales</a></h3>
+          <p class="hl-blurb">The hanging oakwoods of mid and north Wales fill with pied flycatchers, redstarts and wood warblers from mid April. Nest boxes in the reserve woods put them at eye level for a few weeks each spring.</p>
+          <p class="hl-row"><b>When</b> Mid April to June</p>
+          <p class="hl-row"><b>Where</b> Dyfi, Eryri</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/northern-gannet/">Northern Gannets in Wales</a></h3>
+          <p class="hl-blurb">Grassholm carries tens of thousands of gannets on a bare rock eighteen kilometres out. There is no landing, so this is a bird watched from a boat that circles the island, or streaming past a headland in a westerly.</p>
+          <p class="hl-row"><b>When</b> March to September</p>
+          <p class="hl-row"><b>Where</b> Pembrokeshire</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/ring-ouzel/">Ring Ouzels in Wales</a></h3>
+          <p class="hl-blurb">Ring ouzels breed on the crags and steep gullies of the high ground and are among the first summer migrants back. A morning above the treeline in April or May is the way to find one.</p>
+          <p class="hl-row"><b>When</b> April to July</p>
+          <p class="hl-row"><b>Where</b> Eryri, Bannau</p>
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every Welsh Species</h2>
@@ -2790,7 +2854,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/04468f6de1ec.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/manx-shearwater/">Manx Shearwater</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2798,7 +2862,7 @@
             <div class="tg-p"><a href="#site-pembrokeshire-and-the-islands">Pembrokeshire and the islands</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/red-kite/">Red Kite</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2806,7 +2870,7 @@
             <div class="tg-p"><a href="#site-the-dyfi-and-the-cambrian-mountains">The Dyfi and the Cambrian Mountains</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/atlantic-puffin/">Atlantic Puffin</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2814,7 +2878,7 @@
             <div class="tg-p"><a href="#site-pembrokeshire-and-the-islands">Pembrokeshire and the islands</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/058c1e5c2d2e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/red-billed-chough/">Red-billed Chough</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2822,7 +2886,7 @@
             <div class="tg-p"><a href="#site-anglesey-and-the-north-wales-coast">Anglesey and the north Wales coast</a>, <a href="#site-pembrokeshire-and-the-islands">Pembrokeshire and the islands</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/osprey/">Osprey</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:50.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2830,7 +2894,7 @@
             <div class="tg-p"><a href="#site-the-dyfi-and-the-cambrian-mountains">The Dyfi and the Cambrian Mountains</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/4da14b5d9847.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/european-pied-flycatcher/">European Pied Flycatcher</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2838,7 +2902,7 @@
             <div class="tg-p"><a href="#site-the-dyfi-and-the-cambrian-mountains">The Dyfi and the Cambrian Mountains</a>, <a href="#site-eryri-and-the-conwy-valley">Eryri and the Conwy valley</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/northern-gannet/">Northern Gannet</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:58.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2846,7 +2910,7 @@
             <div class="tg-p"><a href="#site-pembrokeshire-and-the-islands">Pembrokeshire and the islands</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/27d9475c0fad.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/ring-ouzel/">Ring Ouzel</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>

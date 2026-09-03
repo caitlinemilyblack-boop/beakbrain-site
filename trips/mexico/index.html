@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1008,6 +1019,59 @@
           <div class="grow"><dt>Routes</dt><dd><span class="glinks"><a class="glink" href="#itin-oaxaca-in-a-week">Oaxaca in a Week<span class="gdays">6 days</span></a><a class="glink" href="#itin-the-yucatan-loop">The Yucatan Loop<span class="gdays">7 days</span></a><a class="glink" href="#itin-veracruz-and-the-river-of-raptors">Veracruz and the River of Raptors<span class="gdays">8 days</span></a><a class="glink" href="#itin-baja-and-the-sea-of-cortez">Baja and the Sea of Cortez<span class="gdays">10 days</span></a><a class="glink" href="#itin-the-sierra-madre-occidental">The Sierra Madre Occidental<span class="gdays">10 days</span></a><a class="glink" href="#itin-the-southern-endemics">The Southern Endemics<span class="gdays">17 days</span></a></span></dd></div>
           <div class="grow"><dt>Getting around</dt><dd>Mexico City is the hub but most regions have their own airport and a domestic flight beats a long drive, on roads that are good in the Yucatan and the Bajio and rough into El Cielo and El Triunfo.</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/horned-guan/">Horned Guan at El Triunfo</a></h3>
+          <p class="hl-blurb">A turkey-sized cracid with a red horn on its crown, down to a few thousand birds in the cloud forest of Chiapas and Guatemala. Reaching it means a two-day walk in from Jaltenango, which is why the trip exists at all.</p>
+          <p class="hl-row"><b>When</b> The reserve is walked from February to May, before the rains close the trail.</p>
+          <p class="hl-row"><b>Where</b> Jaltenango, San Cristobal de las Casas</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/ocellated-turkey/">Ocellated Turkey in the Yucatan</a></h3>
+          <p class="hl-blurb">A turkey with a bare blue head and bronze eyespots on the tail. It lives only on the Yucatan peninsula and into Guatemala and Belize. The entrance road at Calakmul is the reliable place, often on foot in the road itself.</p>
+          <p class="hl-row"><b>When</b> All year, best in the early morning, with displaying males from March to May.</p>
+          <p class="hl-row"><b>Where</b> Felipe Carrillo Puerto, Merida</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/dwarf-jay/">Dwarf Jay above Oaxaca</a></h3>
+          <p class="hl-blurb">A small blue jay restricted to humid pine and oak on the highest ridges of Oaxaca and Veracruz, and one of the harder Mexican endemics. Cerro San Felipe on the Ixtlan road is where most people find it.</p>
+          <p class="hl-row"><b>When</b> All year in the roving flocks, and the first two hours after dawn are what matter.</p>
+          <p class="hl-row"><b>Where</b> Oaxaca de Juarez</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/eared-quetzal/">Eared Quetzal in the northern sierra</a></h3>
+          <p class="hl-blurb">A trogon of high pine-oak canyons in the Sierra Madre Occidental, larger and shyer than the <a href="/birds/resplendent-quetzal/">Resplendent Quetzal</a> and heard far more often than seen. The Durango highway barrancas are the classic ground.</p>
+          <p class="hl-row"><b>When</b> Present all year, most vocal from May to August when it is breeding.</p>
+          <p class="hl-row"><b>Where</b> El Salto, Creel</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/thick-billed-parrot/">Thick-billed Parrots in the pine forest</a></h3>
+          <p class="hl-blurb">A green parrot with a red face that lives on pine seed in the Sierra Madre Occidental, the last of the two parrots that once reached Arizona. Flocks are noisy and mobile and follow the cone crop rather than a place.</p>
+          <p class="hl-row"><b>When</b> Best from July to October, when the flocks gather on the cone crop.</p>
+          <p class="hl-row"><b>Where</b> Creel, Chihuahua</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/san-blas-jay/">San Blas Jay on the west coast</a></h3>
+          <p class="hl-blurb">A dark blue jay of coastal thorn forest and mangrove edge in Nayarit and Sinaloa, one of a set of west Mexican endemics concentrated around a single small port. Noisy family parties move through the Singayta track most mornings.</p>
+          <p class="hl-row"><b>When</b> All year, and the family parties are loud enough to find by ear.</p>
+          <p class="hl-row"><b>Where</b> San Blas, Tepic</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/pink-headed-warbler/">Pink-headed Warbler in Chiapas</a></h3>
+          <p class="hl-blurb">A warbler that is silver-pink on the head and deep red elsewhere. It lives in the highland pine-oak of Chiapas and Guatemala and almost nowhere else, and the ridges above San Cristobal hold it within a short drive.</p>
+          <p class="hl-row"><b>When</b> All year in the highland pine-oak, and easiest when it is singing from February to June.</p>
+          <p class="hl-row"><b>Where</b> San Cristobal de las Casas</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/military-macaw/">Military Macaws at the cliff roosts</a></h3>
+          <p class="hl-blurb">A green macaw that nests in cliff cavities in several separate parts of Mexico, from the Nayarit coast to the Huasteca and the slope above the Gulf of Mexico. Roost cliffs hold birds morning and evening and are the way to see them well.</p>
+          <p class="hl-row"><b>When</b> All year at the roosts, with nesting from February to June.</p>
+          <p class="hl-row"><b>Where</b> San Blas, Xilitla</p>
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every Mexican Species</h2>
@@ -5743,7 +5807,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/4ee70d2904f5.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/horned-guan/">Horned Guan</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -5751,7 +5815,7 @@
             <div class="tg-p">Jaltenango, San Cristobal de las Casas</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/4ee70d2904f5.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/ocellated-turkey/">Ocellated Turkey</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -5759,7 +5823,7 @@
             <div class="tg-p">Felipe Carrillo Puerto, Merida</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/058c1e5c2d2e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/dwarf-jay/">Dwarf Jay</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -5767,7 +5831,7 @@
             <div class="tg-p">Oaxaca de Juarez</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/f2e71b25e474.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/eared-quetzal/">Eared Quetzal</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -5775,7 +5839,7 @@
             <div class="tg-p">El Salto, Creel</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/009a6ba16adc.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/thick-billed-parrot/">Thick-billed Parrot</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:50.00%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -5783,7 +5847,7 @@
             <div class="tg-p">Creel, Chihuahua</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/058c1e5c2d2e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/san-blas-jay/">San Blas Jay</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -5791,7 +5855,7 @@
             <div class="tg-p"><a href="#site-san-blas-and-the-west-coast">San Blas and the West Coast</a>, Tepic</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/7b2c05c94580.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/pink-headed-warbler/">Pink-headed Warbler</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -5799,7 +5863,7 @@
             <div class="tg-p">San Cristobal de las Casas</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/009a6ba16adc.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/military-macaw/">Military Macaw</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>

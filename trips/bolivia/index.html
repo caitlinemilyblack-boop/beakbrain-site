@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1007,6 +1018,59 @@
           <div class="grow"><dt>Getting in</dt><dd>Santa Cruz (VVI) takes most of the international flights and is the practical entry for the lowlands and the dry valleys. La Paz (LPB) sits at 4,061 metres, which is the highest international airport in the world and needs a day before any walking.</dd></div>
           <div class="grow"><dt>Getting around</dt><dd>A hired four-wheel drive covers the roads here and internal flights save days, with Santa Cruz to Trinidad an hour against two by road and Noel Kempff and Barba Azul reached by charter, though altitude constrains a route far more than distance.</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/blue-throated-macaw/">Blue-throated Macaw on the Beni savanna</a></h3>
+          <p class="hl-blurb">A macaw whose entire world population is a few hundred birds, all of them on the Beni plain. Barba Azul was bought and fenced for it, and the birds gather at the motacu palm islands to feed.</p>
+          <p class="hl-row"><b>When</b> June to October, when the plain is dry and the birds gather at the palms.</p>
+          <p class="hl-row"><b>Where</b> Santa Ana del Yacuma, Trinidad</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/red-fronted-macaw/">Red-fronted Macaw in the dry valleys</a></h3>
+          <p class="hl-blurb">The other Bolivian endemic macaw. It lives in dry river valleys between Cochabamba and Santa Cruz and nests in the cliffs above them. The Perereta colony is the largest known.</p>
+          <p class="hl-row"><b>When</b> Year round at the cliffs, and it breeds from October.</p>
+          <p class="hl-row"><b>Where</b> Saipina, Mizque</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/titicaca-grebe/">Titicaca Grebe on the lake</a></h3>
+          <p class="hl-blurb">A flightless grebe confined to the Titicaca system and the lakes below it, and one of the few birds a visitor can see on its entire world range in a morning.</p>
+          <p class="hl-row"><b>When</b> Year round, on open water off the headlands.</p>
+          <p class="hl-row"><b>Where</b> Copacabana</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/horned-curassow/">Horned Curassow at Amboro</a></h3>
+          <p class="hl-blurb">A curassow restricted to the foothill forest of central Bolivia and the Peruvian border, and the Amboro front is where it is looked for. Scarce, shy and heard more than seen.</p>
+          <p class="hl-row"><b>When</b> Year round, and it calls at dawn from April.</p>
+          <p class="hl-row"><b>Where</b> Buena Vista</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/andean-cock-of-the-rock/">Andean Cock-of-the-rock on the Yungas road</a></h3>
+          <p class="hl-blurb">Males gather at leks in steep wooded gullies off the old Yungas road, and the noise carries further than the birds show.</p>
+          <p class="hl-row"><b>When</b> Year round, with leks most active from September.</p>
+          <p class="hl-row"><b>Where</b> Coroico, Caranavi</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/andean-flamingo/">Andean Flamingo in the Avaroa lagoons</a></h3>
+          <p class="hl-blurb">Three flamingo species use the same brine lagoons in the far southwest, and this is the scarcest of them. Laguna Colorada holds them against red water and white borax.</p>
+          <p class="hl-row"><b>When</b> Year round, with the largest numbers from November.</p>
+          <p class="hl-row"><b>Where</b> Uyuni</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/hooded-mountain-toucan/">Hooded Mountain Toucan in the cloud forest</a></h3>
+          <p class="hl-blurb">A high-altitude toucan of the upper Yungas and the Siberia ridge. It moves in small parties through mossy forest between 2,000 and 3,300 metres.</p>
+          <p class="hl-row"><b>When</b> Year round, and easiest in the first two hours of light.</p>
+          <p class="hl-row"><b>Where</b> Coroico, Comarapa</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/harpy-eagle/">Harpy Eagle at Noel Kempff</a></h3>
+          <p class="hl-blurb">The park's forest is large enough and undisturbed enough to hold nesting <a href="/birds/harpy-eagle/">Harpy Eagle</a>, which is why the camps keep a record of active nests.</p>
+          <p class="hl-row"><b>When</b> May to October, which is when the park can be reached at all.</p>
+          <p class="hl-row"><b>Where</b> Flor de Oro, Los Fierros</p>
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every Bolivian Species</h2>
@@ -6834,7 +6898,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/009a6ba16adc.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/blue-throated-macaw/">Blue-throated Macaw</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:41.67%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -6842,7 +6906,7 @@
             <div class="tg-p">Santa Ana del Yacuma, Trinidad</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/009a6ba16adc.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/red-fronted-macaw/">Red-fronted Macaw</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:75.00%;width:25.00%"></span><span class="tg-b" style="left:0.00%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -6850,7 +6914,7 @@
             <div class="tg-p">Saipina, Mizque</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/30b81362722d.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/titicaca-grebe/">Titicaca Grebe</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -6858,7 +6922,7 @@
             <div class="tg-p">Copacabana</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/4ee70d2904f5.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/horned-curassow/">Horned Curassow</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:50.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -6866,7 +6930,7 @@
             <div class="tg-p">Buena Vista</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/andean-cock-of-the-rock/">Andean Cock-of-the-rock</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:66.67%;width:33.33%"></span><span class="tg-b" style="left:0.00%;width:16.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -6874,7 +6938,7 @@
             <div class="tg-p"><a href="#site-the-yungas-coroico-and-the-cotapata-road">The Yungas: Coroico and the Cotapata road</a>, Caranavi</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/4abae2dbed79.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/andean-flamingo/">Andean Flamingo</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:83.33%;width:16.67%"></span><span class="tg-b" style="left:0.00%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -6882,7 +6946,7 @@
             <div class="tg-p">Uyuni</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/3c046347ea38.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/hooded-mountain-toucan/">Hooded Mountain Toucan</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:58.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -6890,7 +6954,7 @@
             <div class="tg-p"><a href="#site-the-yungas-coroico-and-the-cotapata-road">The Yungas: Coroico and the Cotapata road</a>, Comarapa</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/harpy-eagle/">Harpy Eagle</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:50.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>

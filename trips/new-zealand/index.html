@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1011,6 +1022,59 @@
           <div class="grow"><dt>Getting in</dt><dd>Auckland (AKL) for the North Island and Christchurch (CHC) for the South, with Wellington (WLG), Queenstown (ZQN), Dunedin (DUD) and Invercargill (IVC) all useful for an open jaw</dd></div>
           <div class="grow"><dt>Getting around</dt><dd>A hire car throughout, the Wellington to Picton ferry between the islands, and booked boats for Tiritiri Matangi, Kapiti, Ulva Island and the Kaikoura pelagic</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/kea/">Kea at Arthur's Pass</a></h3>
+          <p class="hl-blurb">The only alpine parrot in the world, and it will be on your car. <a href="/birds/kea/">Kea</a> take windscreen rubber apart for entertainment and there are perhaps four thousand left, so the birds working the Arthur's Pass car parks are a real proportion of the species.</p>
+          <p class="hl-row"><b>When</b> All year, easiest when snow pushes them to the road.</p>
+          <p class="hl-row"><b>Where</b> Arthur's Pass, Aoraki</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/northern-royal-albatross/">Northern Royal Albatross at Taiaroa Head</a></h3>
+          <p class="hl-blurb">About forty pairs nest here, the only mainland albatross colony on earth, and an observatory window at the end of the Otago Peninsula looks straight onto them. A three metre wingspan lands twenty metres away.</p>
+          <p class="hl-row"><b>When</b> Birds present all year, chicks from February, best on a windy afternoon.</p>
+          <p class="hl-row"><b>Where</b> Dunedin</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/wrybill/">Wrybill on the Firth of Thames</a></h3>
+          <p class="hl-blurb">The only bird in the world with a bill bent sideways, always to the right. It breeds on the braided rivers of Canterbury and winters in thousands on the Miranda shellbanks, where a rising tide walks the flock in front of the hide.</p>
+          <p class="hl-row"><b>When</b> Firth of Thames from January to July, Canterbury rivers from September to December.</p>
+          <p class="hl-row"><b>Where</b> Miranda, Twizel</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/southern-brown-kiwi/">Southern Brown Kiwi on Stewart Island</a></h3>
+          <p class="hl-blurb">The one kiwi that feeds in daylight. It works the beach wrack at Mason Bay and the Ocean Beach dunes. Every other kiwi is a torch and a wait; this one is a walk at dusk with a reasonable chance of a bird in the open.</p>
+          <p class="hl-row"><b>When</b> All year, with the dusk trips running most nights the sea allows.</p>
+          <p class="hl-row"><b>Where</b> Oban</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/black-stilt/">Black Stilt in the Mackenzie</a></h3>
+          <p class="hl-blurb">The rarest wading bird in the world, with about forty breeding pairs left in the wild and every one of them in the Mackenzie Basin. The captive rearing programme at Twizel is the reason there are that many, and its hide is where the bird is seen.</p>
+          <p class="hl-row"><b>When</b> Best from September to January while birds are nesting.</p>
+          <p class="hl-row"><b>Where</b> Twizel</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/stitchbird/">Stitchbird on Tiritiri Matangi</a></h3>
+          <p class="hl-blurb">A honeyeater in a family of one, wiped off the mainland by 1885 and held on a single island until the translocations began. It feeds at the sugar stations on Tiritiri Matangi and can be watched from a metre away.</p>
+          <p class="hl-row"><b>When</b> All year, and the feeding stations are busiest in winter.</p>
+          <p class="hl-row"><b>Where</b> Tiritiri Matangi, Wellington</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/yellow-eyed-penguin/">Yellow-eyed Penguin in the Catlins</a></h3>
+          <p class="hl-blurb">A penguin that nests out of sight of other penguins, in coastal forest and scrub rather than a colony, which is why it is watched from a hide and why disturbance matters so much. Fewer than three thousand remain.</p>
+          <p class="hl-row"><b>When</b> Ashore at dusk all year, with chicks from November to February.</p>
+          <p class="hl-row"><b>Where</b> Owaka, Dunedin</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/north-island-kokako/">North Island Kokako at Pureora</a></h3>
+          <p class="hl-blurb">A wattlebird that sings a slow organ note carrying a kilometre through the canopy, and hops rather than flies. Pureora was saved from the chainsaws by a tree occupation in 1978, and the kokako is what the occupation was about.</p>
+          <p class="hl-row"><b>When</b> Singing hardest from September to December, at first light.</p>
+          <p class="hl-row"><b>Where</b> Te Kuiti, Murupara</p>
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every New Zealand Species</h2>
@@ -2530,7 +2594,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/32b16fc2234a.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/kea/">Kea</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:50.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2538,7 +2602,7 @@
             <div class="tg-p"><a href="#site-the-west-coast-and-arthur-s-pass">The West Coast and Arthur's Pass</a>, Aoraki</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ff7ebfc557ca.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/northern-royal-albatross/">Northern Royal Albatross</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:83.33%;width:16.67%"></span><span class="tg-b" style="left:0.00%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2546,7 +2610,7 @@
             <div class="tg-p">Dunedin</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/wrybill/">Wrybill</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:0.00%;width:58.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2554,7 +2618,7 @@
             <div class="tg-p">Miranda, Twizel</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/southern-brown-kiwi/">Southern Brown Kiwi</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:75.00%;width:25.00%"></span><span class="tg-b" style="left:0.00%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2562,7 +2626,7 @@
             <div class="tg-p">Oban</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/77dfe28995ad.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/black-stilt/">Black Stilt</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:66.67%;width:33.33%"></span><span class="tg-b" style="left:0.00%;width:8.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2570,7 +2634,7 @@
             <div class="tg-p">Twizel</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/65420595740a.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/stitchbird/">Stitchbird</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:50.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2578,7 +2642,7 @@
             <div class="tg-p">Tiritiri Matangi, <a href="#site-wellington-and-cook-strait">Wellington and Cook Strait</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/09f9f8ac08a6.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/yellow-eyed-penguin/">Yellow-eyed Penguin</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:83.33%;width:16.67%"></span><span class="tg-b" style="left:0.00%;width:16.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2586,7 +2650,7 @@
             <div class="tg-p">Owaka, Dunedin</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/65420595740a.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/north-island-kokako/">North Island Kokako</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:66.67%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>

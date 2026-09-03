@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1008,6 +1019,59 @@
           <div class="grow"><dt>Getting in</dt><dd>Cuiaba (CGB) for the northern Pantanal and the Chapada, Campo Grande (CGR) for the southern, Corumba (CMG) for the far west</dd></div>
           <div class="grow"><dt>Getting around</dt><dd>A hired vehicle with clearance for the Transpantaneira and the Estrada Parque, and a boat for everything past Porto Jofre</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/hyacinth-macaw/">Hyacinth Macaws on the Transpantaneira</a></h3>
+          <p class="hl-blurb">The largest flying parrot on earth and the bird the Pantanal is sold on. It nests in manduvi trees along the road, and the fazendas at the Pocone end keep known nests in view through the season.</p>
+          <p class="hl-row"><b>When</b> All year, and it nests from July to November.</p>
+          <p class="hl-row"><b>Where</b> Pocone, Pixaim</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/jabiru/">Jabiru, the bird the region is named for</a></h3>
+          <p class="hl-blurb">The tallest flying bird in South America, and the Pantanal's own emblem: tuiuiu is the name every local sign uses. Nests are enormous stick platforms in isolated trees, visible from the road for months.</p>
+          <p class="hl-row"><b>When</b> All year, and it nests from the start of the dry season.</p>
+          <p class="hl-row"><b>Where</b> Pocone, Porto Cercado</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/agami-heron/">Agami Heron on the Cuiaba channels</a></h3>
+          <p class="hl-blurb">A heron that spends its life inside overhanging bank vegetation and is missed on most Neotropical trips. The jaguar boats work exactly that habitat at exactly that range, which is why Porto Jofre turns it into a routine sighting.</p>
+          <p class="hl-row"><b>When</b> Dry season, when the boats are running.</p>
+          <p class="hl-row"><b>Where</b> Porto Jofre</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/sunbittern/">Sunbittern on a shrinking bank</a></h3>
+          <p class="hl-blurb">A bird with no close relatives and a wing pattern it opens only when alarmed. It works exposed mud and shingle, so it is easiest exactly when the water is lowest.</p>
+          <p class="hl-row"><b>When</b> June to October, on falling water.</p>
+          <p class="hl-row"><b>Where</b> Porto Jofre, Caceres</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/greater-rhea/">Greater Rhea on the open ground</a></h3>
+          <p class="hl-blurb">South America's largest bird, and the Nhecolandia and the Chapada cerrado are where the Pantanal shows it. Males run the nest and the chicks, so a bird with a dozen striped young behind it is a father.</p>
+          <p class="hl-row"><b>When</b> All year, chicks from September.</p>
+          <p class="hl-row"><b>Where</b> Aquidauana, Chapada dos Guimaraes</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/horned-sungem/">Horned Sungem on the escarpment</a></h3>
+          <p class="hl-blurb">A cerrado hummingbird with two iridescent horns and almost no reason to come down to a feeder. Chapada dos Guimaraes is the accessible place for it, on flowering scrub between the sandstone cliffs.</p>
+          <p class="hl-row"><b>When</b> August to November, on the cerrado flowering.</p>
+          <p class="hl-row"><b>Where</b> Chapada dos Guimaraes</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/red-and-green-macaw/">Red-and-green Macaws in a sinkhole</a></h3>
+          <p class="hl-blurb">The Buraco das Araras is a hole 100 m deep and 500 m round with macaws nesting on the walls, so the birds are watched from above rather than from below. No other macaw site works like it.</p>
+          <p class="hl-row"><b>When</b> All year, and it nests from July to December.</p>
+          <p class="hl-row"><b>Where</b> Jardim, Bonito</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/bare-faced-curassow/">Bare-faced Curassow on the road</a></h3>
+          <p class="hl-blurb">A large ground bird that is hunted out across most of its range and walks the verges here. Both the Transpantaneira and the Estrada Parque hold it, which says more about those two roads than about the bird.</p>
+          <p class="hl-row"><b>When</b> All year, easiest early.</p>
+          <p class="hl-row"><b>Where</b> Pocone, Miranda</p>
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every Pantanal Species</h2>
@@ -4315,7 +4379,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/009a6ba16adc.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/hyacinth-macaw/">Hyacinth Macaw</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:50.00%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4323,7 +4387,7 @@
             <div class="tg-p"><a href="#site-the-transpantaneira-and-pocone">The Transpantaneira and Pocone</a>, Pixaim</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ae798de40aa3.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/jabiru/">Jabiru</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:41.67%;width:50.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4331,7 +4395,7 @@
             <div class="tg-p"><a href="#site-the-transpantaneira-and-pocone">The Transpantaneira and Pocone</a>, <a href="#site-porto-cercado-the-sesc-reserve-and-barao-de-melgaco">Porto Cercado, the SESC reserve and Barao de Melgaco</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ae798de40aa3.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/agami-heron/">Agami Heron</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:41.67%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4339,7 +4403,7 @@
             <div class="tg-p"><a href="#site-porto-jofre-and-the-cuiaba-river">Porto Jofre and the Cuiaba River</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/4abae2dbed79.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/sunbittern/">Sunbittern</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:41.67%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4347,7 +4411,7 @@
             <div class="tg-p"><a href="#site-porto-jofre-and-the-cuiaba-river">Porto Jofre and the Cuiaba River</a>, <a href="#site-caceres-and-the-upper-paraguay">Caceres and the upper Paraguay</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/717933df000c.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/greater-rhea/">Greater Rhea</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:66.67%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4355,7 +4419,7 @@
             <div class="tg-p"><a href="#site-aquidauana-and-the-nhecolandia">Aquidauana and the Nhecolandia</a>, <a href="#site-chapada-dos-guimaraes">Chapada dos Guimaraes</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/1239e5cb3801.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/horned-sungem/">Horned Sungem</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:58.33%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4363,7 +4427,7 @@
             <div class="tg-p"><a href="#site-chapada-dos-guimaraes">Chapada dos Guimaraes</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/009a6ba16adc.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/red-and-green-macaw/">Red-and-green Macaw</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:50.00%;width:50.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4371,7 +4435,7 @@
             <div class="tg-p">Jardim, <a href="#site-bonito-and-the-serra-da-bodoquena">Bonito and the Serra da Bodoquena</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/4ee70d2904f5.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/bare-faced-curassow/">Bare-faced Curassow</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>

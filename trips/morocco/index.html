@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1012,6 +1023,65 @@
           <div class="grow"><dt>Getting around</dt><dd>Hire a car. Buses and trains connect the cities, and almost every birding site named here sits on a road no bus takes</dd></div>
           <div class="grow"><dt>The one thing to know</dt><dd>Heat decides the day south of the Atlas. Tata has recorded 52 degrees, so desert birding runs at dawn and again in late afternoon</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/northern-bald-ibis/">Northern Bald Ibis in Morocco</a></h3>
+          <p class="hl-blurb">The Moroccan coast holds the only wild breeding population left in the world. Surveys in 1998 and 1999 found 60 breeding pairs and 200 to 250 birds, on cliffs at Tamri and inside Souss-Massa National Park.</p>
+          <p class="hl-row"><b>When</b> Present all year, with birds on the nest from March to June</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/crimson-winged-finch/">Crimson-winged Finch at Oukaimeden</a></h3>
+          <p class="hl-blurb">A high mountain finch of North Africa and Asia Minor, and Oukaimeden is the reliable European-season site for it. Small flocks feed on the plateau in summer and come down to the buildings in cold weather.</p>
+          <p class="hl-row"><b>When</b> Late spring to autumn on the plateau</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/dupont-s-lark/">Dupont's Lark on the Moulouya</a></h3>
+          <p class="hl-blurb">Morocco holds the species west of Spain, and the Halfa grass steppe around Zeida is the western edge of its range. It sings from before first light and stops soon after dawn, so hearing it is far easier than seeing it.</p>
+          <p class="hl-row"><b>When</b> Sings from before dawn in spring</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/desert-sparrow/">Desert Sparrow at the Erg Chebbi</a></h3>
+          <p class="hl-blurb">One of only six birds that breed on the dunes themselves. It nests around the inns along the northern edge of the Erg Chebbi and is the reason most birders drive to Merzouga.</p>
+          <p class="hl-row"><b>When</b> Resident on the dune edge</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/eleonora-s-falcon/">Eleonora's Falcon at Essaouira</a></h3>
+          <p class="hl-blurb">The islands off Essaouira held 675 breeding pairs in 2000 and 2001, up from about 230 in the mid 1990s, which makes this one of the largest colonies in the world. The reserve is closed, and the jetty on the west side of the harbour looks straight at it.</p>
+          <p class="hl-row"><b>When</b> Present from late April to October</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/pharaoh-eagle-owl/">Pharaoh Eagle-Owl in the desert</a></h3>
+          <p class="hl-blurb">A pale desert owl of cliffs, burnt rock and the banks of dry river beds. It turns up right across the pre-desert, from the Ziz valley and the Tagdilt steppe to the Jbel Bani and the Saharan coast, and it is looked for at dusk.</p>
+          <p class="hl-row"><b>When</b> Resident, and it calls at dusk</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/levaillant-s-woodpecker/">Levaillant's Woodpecker in the Middle Atlas</a></h3>
+          <p class="hl-blurb">A green woodpecker found only in northwest Africa. The poplars around Dayet Aoua and Dayet Hachlaf hold it, and so do the walnut groves at Imlil and the forest around Toufliath on the Tizi n'Tichka.</p>
+          <p class="hl-row"><b>When</b> Resident, most vocal in spring</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/lichtenstein-s-sandgrouse/">Lichtenstein's Sandgrouse in the Jbel Bani</a></h3>
+          <p class="hl-blurb">The hardest of the five Moroccan sandgrouse. It keeps to acacia country south of Tata and along the lower Draa, feeds after dark, and comes to water at dusk rather than at dawn like the others.</p>
+          <p class="hl-row"><b>When</b> Comes to water at dusk</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/bar-tailed-godwit/">Wintering waders at Dakhla Bay</a></h3>
+          <p class="hl-blurb">Dakhla Bay holds more than 21 per cent of all the waders that winter in Morocco, and 36,000 were counted there in January 1995. <a href="/birds/red-knot/">Red Knot</a>, <a href="/birds/dunlin/">Dunlin</a> and <a href="/birds/bar-tailed-godwit/">Bar-tailed Godwit</a> each run to between 7,000 and 9,000 birds.</p>
+          <p class="hl-row"><b>When</b> Peak numbers from November to February</p>
+
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every Moroccan Species</h2>
@@ -2801,7 +2871,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ae798de40aa3.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/northern-bald-ibis/">Northern Bald Ibis</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2809,7 +2879,7 @@
             <div class="tg-p">Tamri and Souss-Massa National Park</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/crimson-winged-finch/">Crimson-winged Finch</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:50.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2817,7 +2887,7 @@
             <div class="tg-p">Oukaimeden</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/dupont-s-lark/">Dupont's Lark</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2825,7 +2895,7 @@
             <div class="tg-p">The steppe south of Zeida</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/desert-sparrow/">Desert Sparrow</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:66.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2833,7 +2903,7 @@
             <div class="tg-p">The northern edge of the Erg Chebbi</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/6b65b8d99927.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/eleonora-s-falcon/">Eleonora's Falcon</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:50.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2841,7 +2911,7 @@
             <div class="tg-p">The islands off Essaouira</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/0950b7b233b7.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/pharaoh-eagle-owl/">Pharaoh Eagle-Owl</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2849,7 +2919,7 @@
             <div class="tg-p">Tagdilt, the Ziz valley and the Jbel Bani</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/3c4326048557.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/levaillant-s-woodpecker/">Levaillant's Woodpecker</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2857,7 +2927,7 @@
             <div class="tg-p">Dayet Aoua and the cedar forest near Ifrane</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/73ddbe6fa51c.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/lichtenstein-s-sandgrouse/">Lichtenstein's Sandgrouse</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2865,7 +2935,7 @@
             <div class="tg-p">Acacia country around Tissint and south of Tata</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/bar-tailed-godwit/">Bar-tailed Godwit</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:83.33%;width:16.67%"></span><span class="tg-b" style="left:0.00%;width:16.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>

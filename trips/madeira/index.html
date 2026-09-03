@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1005,6 +1016,59 @@
           <div class="grow"><dt>Getting in</dt><dd>Funchal (FNC) takes the international flights and sits fifteen minutes from Machico. Porto Santo has its own airport and a ferry from Funchal.</dd></div>
           <div class="grow"><dt>Getting around</dt><dd>A hire car covers the island in a day and the tunnels have made every road short. The boats are booked ahead from Funchal marina.</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/zino-s-petrel/">Zino's Petrel on the Areeiro ledges</a></h3>
+          <p class="hl-blurb">The rarest seabird in Europe breeds on the Pico do Areeiro ledges and nowhere else on earth. The colony is guarded and the birds return after dark, so it is heard from the ridge rather than seen at the nest, and the day boats out of Funchal are where it is watched.</p>
+          <p class="hl-row"><b>When</b> April to September at the colony</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/trocaz-pigeon/">Trocaz Pigeon in the laurisilva</a></h3>
+          <p class="hl-blurb">A large dark pigeon that lives in Madeiran laurel forest and nowhere else. Ribeiro Frio and the Balcões levada are the reliable ground, and it is easiest in the first hour of light.</p>
+          <p class="hl-row"><b>When</b> All year</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/madeira-firecrest/">Madeira Firecrest at Ribeiro Frio</a></h3>
+          <p class="hl-blurb">Split from the <a href="/birds/common-firecrest/">Common Firecrest</a> and confined to this island. It works the laurel canopy in small parties and comes low along the levada paths.</p>
+          <p class="hl-row"><b>When</b> All year</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/desertas-petrel/">Desertas Petrel off the Desertas</a></h3>
+          <p class="hl-blurb">Breeds on Bugio in the Desertas chain and feeds in the deep water the Funchal boats run to. It is the second of the two gadfly petrels a Madeira pelagic is built around.</p>
+          <p class="hl-row"><b>When</b> July to October</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/band-rumped-storm-petrel/">Band-rumped Storm Petrel on the pelagics</a></h3>
+          <p class="hl-blurb">Small, fast and low to the water, and the chum slick behind a Funchal boat is how it is seen. It is the storm petrel the Madeira trips are most likely to produce.</p>
+          <p class="hl-row"><b>When</b> May to September</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/bulwer-s-petrel/">Bulwer's Petrel over the deep water</a></h3>
+          <p class="hl-blurb">All dark and long tailed, and it shears low over the swell well offshore. Summer is the only time it is on the Madeiran water.</p>
+          <p class="hl-row"><b>When</b> May to September</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/berthelot-s-pipit/">Berthelot's Pipit on Ponta de São Lourenço</a></h3>
+          <p class="hl-blurb">A Macaronesian bird of bare open ground, so it wants the treeless peninsula rather than the forest. It is common on the São Lourenço path and on Porto Santo.</p>
+          <p class="hl-row"><b>When</b> All year</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/cory-s-shearwater/">Cory's Shearwater around the archipelago</a></h3>
+          <p class="hl-blurb">The commonest large seabird here through the summer, and it calls over the breeding cliffs after dark. Every boat trip and most headland watches produce it.</p>
+          <p class="hl-row"><b>When</b> March to October</p>
+
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every Madeiran Species</h2>
@@ -1902,7 +1966,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/04468f6de1ec.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/zino-s-petrel/">Zino's Petrel</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:50.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -1910,7 +1974,7 @@
             <div class="tg-p">Pico do Areeiro, and the Funchal pelagics</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/trocaz-pigeon/">Trocaz Pigeon</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -1918,7 +1982,7 @@
             <div class="tg-p">Ribeiro Frio and Fanal</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/4a15a659ac49.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/madeira-firecrest/">Madeira Firecrest</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -1926,7 +1990,7 @@
             <div class="tg-p">Ribeiro Frio, Balcões, Fanal</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/04468f6de1ec.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/desertas-petrel/">Desertas Petrel</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:50.00%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -1934,7 +1998,7 @@
             <div class="tg-p">The pelagic grounds south of Funchal</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/04468f6de1ec.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/band-rumped-storm-petrel/">Band-rumped Storm Petrel</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -1942,7 +2006,7 @@
             <div class="tg-p">The pelagic grounds south of Funchal</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/04468f6de1ec.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/bulwer-s-petrel/">Bulwer's Petrel</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -1950,7 +2014,7 @@
             <div class="tg-p">South of Funchal and around the Desertas</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/c6291e85bffc.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/berthelot-s-pipit/">Berthelot's Pipit</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -1958,7 +2022,7 @@
             <div class="tg-p">Ponta de São Lourenço and Porto Santo</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/04468f6de1ec.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/cory-s-shearwater/">Cory's Shearwater</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:66.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>

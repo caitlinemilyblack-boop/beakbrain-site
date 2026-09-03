@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1007,6 +1018,59 @@
           <div class="grow"><dt>Getting around</dt><dd>Fly to Kirkenes for Varanger and Pasvik, and hire a car. Winter driving needs studded tyres, and covering the length of the country means internal flights</dd></div>
           <div class="grow"><dt>The one thing to know</dt><dd>Norway is genuinely expensive and the far north adds internal flights on top, so the budget wants settling before the itinerary does</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/steller-s-eider/">Steller's Eider in Norway</a></h3>
+          <p class="hl-blurb">Varanger holds the wintering flock, and Båtsfjord harbour is where it is watched from the quay. A seaduck that breeds in Siberia and winters on one Norwegian fjord, which is why the trip exists.</p>
+          <p class="hl-row"><b>When</b> Winter, roughly November to March</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/king-eider/">King Eider in Norway</a></h3>
+          <p class="hl-blurb">Winters along the Varanger coast with the Common and Steller's flocks, and the drakes are the reason people stand in the cold. Vadsø and Ekkerøy give the reliable views.</p>
+          <p class="hl-row"><b>When</b> Winter, roughly November to March</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/gyrfalcon/">Gyrfalcon in Norway</a></h3>
+          <p class="hl-blurb">The tundra behind Varanger and the Dovrefjell plateau both hold it, and it hunts ptarmigan over open ground. It is scarce, and it wants patience and a scope.</p>
+          <p class="hl-row"><b>When</b> Resident, most visible in winter and early spring</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/thick-billed-murre/">Thick-billed Murre in Norway</a></h3>
+          <p class="hl-blurb">Hornøya, the island off Vardø, is a seabird cliff you can walk onto, which is unusual. This is the bird European birders know as Brünnich's Guillemot, and it breeds here alongside Common Guillemot, <a href="/birds/razorbill/">Razorbill</a>, Kittiwake and Puffin.</p>
+          <p class="hl-row"><b>When</b> Breeding season, roughly March to July</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/great-grey-owl/">Great Grey Owl in Norway</a></h3>
+          <p class="hl-blurb">The Pasvik taiga along the Russian border is the Norwegian range, and numbers move with the vole cycle. A good vole year is worth planning a trip around.</p>
+          <p class="hl-row"><b>When</b> Resident, and it breeds in good vole years.</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/white-tailed-eagle/">White-tailed Eagle in Norway</a></h3>
+          <p class="hl-blurb">Norway holds the largest European population and Smøla has one of the densest concentrations anywhere. Also throughout Lofoten and Vesterålen, where the boat trips put you under them.</p>
+          <p class="hl-row"><b>When</b> Resident</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/atlantic-puffin/">Atlantic Puffin in Norway</a></h3>
+          <p class="hl-blurb">Runde is the most accessible colony and is reached by road from Ålesund, with the Lofoten cliffs holding birds further north. Late spring and summer is the season.</p>
+          <p class="hl-row"><b>When</b> Breeding season, April to August</p>
+
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/siberian-jay/">Siberian Jay in Norway</a></h3>
+          <p class="hl-blurb">A taiga bird of old pine forest. It is confiding around parking places and picnic spots in Pasvik, and it is one of the birds that makes the border forest feel like Siberia rather than Scandinavia.</p>
+          <p class="hl-row"><b>When</b> Resident</p>
+
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every Norwegian Species</h2>
@@ -3336,7 +3400,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/e58fde9fe327.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/steller-s-eider/">Steller's Eider</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:91.67%;width:8.33%"></span><span class="tg-b" style="left:0.00%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3344,7 +3408,7 @@
             <div class="tg-p">Varanger, particularly Batsfjord</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/e58fde9fe327.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/king-eider/">King Eider</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:91.67%;width:8.33%"></span><span class="tg-b" style="left:0.00%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3352,7 +3416,7 @@
             <div class="tg-p">The Varanger coast</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/6b65b8d99927.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/gyrfalcon/">Gyrfalcon</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3360,7 +3424,7 @@
             <div class="tg-p">Varanger and Dovrefjell</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/thick-billed-murre/">Thick-billed Murre</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3368,7 +3432,7 @@
             <div class="tg-p">Hornoya, reached by boat from Vardo</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/0950b7b233b7.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/great-grey-owl/">Great Grey Owl</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3376,7 +3440,7 @@
             <div class="tg-p">Pasvik and the border taiga</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/white-tailed-eagle/">White-tailed Eagle</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3384,7 +3448,7 @@
             <div class="tg-p">Smola, Lofoten and Vesteralen</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/atlantic-puffin/">Atlantic Puffin</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3392,7 +3456,7 @@
             <div class="tg-p">Runde and the Lofoten cliffs</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/058c1e5c2d2e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/siberian-jay/">Siberian Jay</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>

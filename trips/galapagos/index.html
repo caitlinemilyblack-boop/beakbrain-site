@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1010,6 +1021,59 @@
           <div class="grow"><dt>Getting in</dt><dd>Two airports take the flights, both from Quito and Guayaquil: Seymour (GPS) on Baltra for Santa Cruz and the cruise fleet, and San Cristobal (SCY) for the capital. There is no international service, so the mainland leg is compulsory.</dd></div>
           <div class="grow"><dt>Getting around</dt><dd>Boats reach almost every site and a licensed naturalist guide is required at all of them, with the islands any boat may visit fixed by the National Park itinerary its berth is licensed for; Santa Cruz, San Cristobal and Isabela have roads, hotels and public ferries between them, which is the one way to bird the archipelago without a cruise.</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/waved-albatross/">Waved Albatross at Punta Suarez</a></h3>
+          <p class="hl-blurb">The world's only tropical albatross, and effectively the whole species breeds on one island. Pairs return to the same patch of Espanola scrub each year and the courtship, a slow fencing of bills, happens within a few metres of the trail.</p>
+          <p class="hl-row"><b>When</b> Late March until late December, with courtship at its peak in April and May.</p>
+          <p class="hl-row"><b>Where</b> Punta Suarez</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/flightless-cormorant/">Flightless Cormorant on the western coasts</a></h3>
+          <p class="hl-blurb">A cormorant that lost the power of flight because nothing on these islands hunted it. Its stubby ragged wings still spread to dry. Around 2,000 birds survive, all of them on Fernandina and western Isabela.</p>
+          <p class="hl-row"><b>When</b> Year round; they breed in every month.</p>
+          <p class="hl-row"><b>Where</b> Punta Espinosa, Tagus Cove</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/galapagos-penguin/">Galapagos Penguin on the equator</a></h3>
+          <p class="hl-blurb">The only penguin that breeds north of the equator. It lives here because the Cromwell and Humboldt currents push cold water up the western coasts, and numbers rise and fall hard with El Nino.</p>
+          <p class="hl-row"><b>When</b> Year round, most active in the cool garua months from July.</p>
+          <p class="hl-row"><b>Where</b> Pinnacle Rock, Tagus Cove, Punta Espinosa</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/red-footed-booby/">Red-footed Booby on Genovesa</a></h3>
+          <p class="hl-blurb">The smallest of the three boobies and the only one that nests in trees. Genovesa holds some 140,000 pairs in its palo santo, and a white-phase bird turns up among the brown ones often enough to look for.</p>
+          <p class="hl-row"><b>When</b> Year round.</p>
+          <p class="hl-row"><b>Where</b> Prince Philip's Steps, Punta Pitt</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/woodpecker-finch/">Woodpecker Finch in the scalesia</a></h3>
+          <p class="hl-blurb">The tool user. It works a cactus spine or a twig into a crevice to lever out grubs, which is one of the few clear cases of tool use in any bird. The Santa Cruz highlands are the reliable ground for it.</p>
+          <p class="hl-row"><b>When</b> Year round, easiest in the wet garua forest.</p>
+          <p class="hl-row"><b>Where</b> Los Gemelos, Media Luna and Cerro Crocker</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/medium-tree-finch/">Medium Tree Finch on Cerro Pajas</a></h3>
+          <p class="hl-blurb">Restricted to the scalesia remnant on one hill on one island, and the hardest of the eighteen finches to reach. It needs an overnight on Floreana and a walk up from the settlement at first light.</p>
+          <p class="hl-row"><b>When</b> Year round, though birds may drop to the lowlands in the dry months.</p>
+          <p class="hl-row"><b>Where</b> Cerro Pajas</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/galapagos-crake/">Galapagos Crake in the fern-sedge</a></h3>
+          <p class="hl-blurb">A tiny flightless rail in the wet miconia and fern above Bellavista, far more often heard than seen. It is the reason a Santa Cruz highland morning starts at six.</p>
+          <p class="hl-row"><b>When</b> Year round, and it calls most in the garua months.</p>
+          <p class="hl-row"><b>Where</b> Media Luna and Cerro Crocker, Reserva El Chato</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/american-flamingo/">American Flamingo in the brackish lagoons</a></h3>
+          <p class="hl-blurb">Only a few hundred birds live in the archipelago, spread across a handful of coastal lagoons. Punta Cormorant on Floreana carries the largest flock, up to 150 birds, and Puerto Villamil the most reliable on Isabela.</p>
+          <p class="hl-row"><b>When</b> Year round; breeding July through March.</p>
+          <p class="hl-row"><b>Where</b> Punta Cormorant, Puerto Villamil, Playa Rojo</p>
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every Galapagos Species</h2>
@@ -1802,7 +1866,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ff7ebfc557ca.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/waved-albatross/">Waved Albatross</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:83.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -1810,7 +1874,7 @@
             <div class="tg-p">Punta Suarez</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/flightless-cormorant/">Flightless Cormorant</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -1818,7 +1882,7 @@
             <div class="tg-p">Punta Espinosa, Tagus Cove</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/09f9f8ac08a6.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/galapagos-penguin/">Galapagos Penguin</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:50.00%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -1826,7 +1890,7 @@
             <div class="tg-p">Pinnacle Rock, Tagus Cove, Punta Espinosa</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/red-footed-booby/">Red-footed Booby</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -1834,7 +1898,7 @@
             <div class="tg-p">Prince Philip's Steps, Punta Pitt</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a1c2898245cf.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/woodpecker-finch/">Woodpecker Finch</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:41.67%;width:50.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -1842,7 +1906,7 @@
             <div class="tg-p">Los Gemelos, Media Luna and Cerro Crocker</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a1c2898245cf.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/medium-tree-finch/">Medium Tree Finch</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:0.00%;width:58.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -1850,7 +1914,7 @@
             <div class="tg-p">Cerro Pajas</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/4abae2dbed79.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/galapagos-crake/">Galapagos Crake</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:41.67%;width:50.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -1858,7 +1922,7 @@
             <div class="tg-p">Media Luna and Cerro Crocker, Reserva El Chato</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/172a0556764c.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/american-flamingo/">American Flamingo</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:50.00%;width:50.00%"></span><span class="tg-b" style="left:0.00%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>

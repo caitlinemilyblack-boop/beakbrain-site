@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1007,6 +1018,59 @@
           <div class="grow"><dt>Getting in</dt><dd>San Pedro Sula (SAP) is the practical entry for the north and west, Tegucigalpa (TGU) for the centre and east, and Roatan (RTB) takes direct flights from the United States. La Ceiba (LCE) links the mainland to the islands and the Mosquitia.</dd></div>
           <div class="grow"><dt>Getting around</dt><dd>A hired vehicle with clearance covers everything on surfaced highways except the unmade tracks into Agalta and the western ranges, and the Mosquitia, which has no road at all and is reached by light aircraft and boat.</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/honduran-emerald/">Honduran Emerald at Olanchito</a></h3>
+          <p class="hl-blurb">The only bird endemic to Honduras, restricted to thorn scrub in the rain shadow of the Aguan valley. A refuge was declared for it and the habitat is still being cleared around the edges, which is why it is the country's conservation emblem.</p>
+          <p class="hl-row"><b>When</b> Year round, and easiest early in the dry season before the scrub is disturbed.</p>
+          <p class="hl-row"><b>Where</b> Olanchito</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/resplendent-quetzal/">Resplendent Quetzal in the western cloud forest</a></h3>
+          <p class="hl-blurb">Celaque and La Tigra both hold territories, and a calling pair on a nest hole turns a hard bird into a findable one for a few months of the year.</p>
+          <p class="hl-row"><b>When</b> March to June, when pairs are nesting and calling.</p>
+          <p class="hl-row"><b>Where</b> Gracias, San Juancito</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/lovely-cotinga/">Lovely Cotinga at Pico Bonito</a></h3>
+          <p class="hl-blurb">A turquoise cotinga that sits high in the canopy and is looked for from a tower rather than a trail. The Pico Bonito lodge tower is the best-known place in Central America to try.</p>
+          <p class="hl-row"><b>When</b> Year round, most reliable from March to June.</p>
+          <p class="hl-row"><b>Where</b> El Pino</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/keel-billed-motmot/">Keel-billed Motmot on the Caribbean slope</a></h3>
+          <p class="hl-blurb">Scarce and local through its whole range, and Honduras holds one of the more reliable populations. It sits still in the understorey and is heard long before it is seen.</p>
+          <p class="hl-row"><b>When</b> Year round, and it calls most from March to June.</p>
+          <p class="hl-row"><b>Where</b> El Pino, Peña Blanca</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/three-wattled-bellbird/">Three-wattled Bellbird in the highlands</a></h3>
+          <p class="hl-blurb">A bird whose call carries further than any other in the American tropics, and which moves up and down the mountains with the fruiting season rather than staying put.</p>
+          <p class="hl-row"><b>When</b> March to July, when males are calling from the cloud forest.</p>
+          <p class="hl-row"><b>Where</b> Gracias, Peña Blanca</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/great-green-macaw/">Great Green Macaw in the Mosquitia</a></h3>
+          <p class="hl-blurb">Gone from most of its Central American range and still present in the Rio Platano, which is the reason the reserve matters beyond its size.</p>
+          <p class="hl-row"><b>When</b> Year round, and the trip rather than the bird decides the season.</p>
+          <p class="hl-row"><b>Where</b> Palacios, Brus Laguna</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/agami-heron/">Agami Heron at Cuero y Salado</a></h3>
+          <p class="hl-blurb">A heron of shaded creek edges that is missed far more often than seen. The Cuero y Salado canals are worked by boat, which is how it is usually found.</p>
+          <p class="hl-row"><b>When</b> Year round, and easiest in the first hour of light.</p>
+          <p class="hl-row"><b>Where</b> La Union</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/highland-guan/">Highland Guan in the cloud forest</a></h3>
+          <p class="hl-blurb">A large forest guan restricted to the highlands of northern Central America, and both Celaque and La Tigra hold it within reach of a day walk.</p>
+          <p class="hl-row"><b>When</b> Year round, most vocal at dawn from March.</p>
+          <p class="hl-row"><b>Where</b> Gracias, San Juancito</p>
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every Honduran Species</h2>
@@ -4203,7 +4267,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/1239e5cb3801.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/honduran-emerald/">Honduran Emerald</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:0.00%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4211,7 +4275,7 @@
             <div class="tg-p">Olanchito</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/f2e71b25e474.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/resplendent-quetzal/">Resplendent Quetzal</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4219,7 +4283,7 @@
             <div class="tg-p">Gracias, San Juancito</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/6a48d6e3cd44.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/lovely-cotinga/">Lovely Cotinga</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4227,7 +4291,7 @@
             <div class="tg-p">El Pino</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6944bb858bf.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/keel-billed-motmot/">Keel-billed Motmot</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4235,7 +4299,7 @@
             <div class="tg-p">El Pino, Peña Blanca</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/6a48d6e3cd44.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/three-wattled-bellbird/">Three-wattled Bellbird</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4243,7 +4307,7 @@
             <div class="tg-p">Gracias, Peña Blanca</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/009a6ba16adc.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/great-green-macaw/">Great Green Macaw</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:8.33%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4251,7 +4315,7 @@
             <div class="tg-p">Palacios, Brus Laguna</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ae798de40aa3.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/agami-heron/">Agami Heron</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -4259,7 +4323,7 @@
             <div class="tg-p">La Union</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/4ee70d2904f5.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/highland-guan/">Highland Guan</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>

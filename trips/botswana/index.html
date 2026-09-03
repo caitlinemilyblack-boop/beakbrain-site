@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1009,6 +1020,59 @@
           <div class="grow"><dt>Getting in</dt><dd>Gaborone has the main international airport, and Maun and Kasane take the flights that most birding trips arrive on.</dd></div>
           <div class="grow"><dt>Getting around</dt><dd>Tarred roads link the main towns and a 4WD is needed inside every major park. Distances are long, fuel is only in the larger towns, and driving after dark is unsafe because of game and livestock.</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/pel-s-fishing-owl/">Pel's Fishing Owl in the delta</a></h3>
+          <p class="hl-blurb">A huge ginger owl that hunts fish from low branches over quiet water. Polers know the daytime roosts, and a night boat trip is the surest way to see one.</p>
+          <p class="hl-row"><b>When</b> All year, and easiest on a boat trip in the panhandle.</p>
+          <p class="hl-row"><b>Where</b> Shakawe, Moremi Game Reserve</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/slaty-egret/">Slaty Egret on the flood plain</a></h3>
+          <p class="hl-blurb">A small dark egret of shallow flooded grassland with a world range centred on the Okavango. It feeds at the edges of the swamp rather than in open water.</p>
+          <p class="hl-row"><b>When</b> All year on the delta, and around Maun whenever the Thamalakane is in flood.</p>
+          <p class="hl-row"><b>Where</b> Moremi Game Reserve, Maun</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/african-skimmer/">African Skimmer on the sandbars</a></h3>
+          <p class="hl-blurb">It needs exposed sand to rest and nest on, so it is present only while the rivers are low. Flocks gather on the panhandle bars and on the Chobe after breeding.</p>
+          <p class="hl-row"><b>When</b> Most reliable from August until the water rises.</p>
+          <p class="hl-row"><b>Where</b> Shakawe, Kasane</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/southern-carmine-bee-eater/">Southern Carmine Bee-eaters at their colonies</a></h3>
+          <p class="hl-blurb">They cut nest burrows into sandy river banks and gather in hundreds. On the Savuti plains they ride the backs of <a href="/birds/kori-bustard/">Kori Bustards</a> and take the insects the bustards flush.</p>
+          <p class="hl-row"><b>When</b> At the colonies in spring and early summer.</p>
+          <p class="hl-row"><b>Where</b> Shakawe, Kasane</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/wattled-crane/">Wattled Crane on the delta flood plain</a></h3>
+          <p class="hl-blurb">Southern Africa's largest crane, and the delta holds the biggest population left. Pairs feed on flooded grassland and sometimes gather in flocks of several hundred.</p>
+          <p class="hl-row"><b>When</b> All year, and easiest on the Khwai loops where it can be found on foot.</p>
+          <p class="hl-row"><b>Where</b> Moremi Game Reserve, Khwai</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/kori-bustard/">Kori Bustard on the Savuti plains</a></h3>
+          <p class="hl-blurb">The heaviest flying bird in Africa, and it strides the dry marsh at Savuti in remarkable numbers. Watch for the bee-eater perched on its back.</p>
+          <p class="hl-row"><b>When</b> All year on the plains, and through the Kalahari wherever the grass is long.</p>
+          <p class="hl-row"><b>Where</b> Savuti, Rakops</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/short-clawed-lark/">Short-clawed Lark on the southern grassland</a></h3>
+          <p class="hl-blurb">Almost the whole world range sits in south-eastern Botswana. It perches on fences and bushes in grazed acacia scrub and is vocal in every month.</p>
+          <p class="hl-row"><b>When</b> All year, and easiest after good rain when the grassland is at its best.</p>
+          <p class="hl-row"><b>Where</b> Ramatlabama, Lobatse</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/burchell-s-sandgrouse/">Burchell's Sandgrouse coming to water</a></h3>
+          <p class="hl-blurb">A sandgrouse of red Kalahari sand that flies to water soon after dawn. The hide at the community reserve north of Serowe is the surest place in the country.</p>
+          <p class="hl-row"><b>When</b> Early morning through the dry season.</p>
+          <p class="hl-row"><b>Where</b> Serowe, Rakops</p>
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every Botswana Species</h2>
@@ -3396,7 +3460,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/0950b7b233b7.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/pel-s-fishing-owl/">Pel's Fishing Owl</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:50.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3404,7 +3468,7 @@
             <div class="tg-p">Shakawe, Moremi Game Reserve</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ae798de40aa3.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/slaty-egret/">Slaty Egret</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:50.00%;width:50.00%"></span><span class="tg-b" style="left:0.00%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3412,7 +3476,7 @@
             <div class="tg-p">Moremi Game Reserve, <a href="#site-maun-and-the-thamalakane">Maun and the Thamalakane</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/african-skimmer/">African Skimmer</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:58.33%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3420,7 +3484,7 @@
             <div class="tg-p">Shakawe, <a href="#site-chobe-and-the-kasane-riverfront">Chobe and the Kasane riverfront</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/southern-carmine-bee-eater/">Southern Carmine Bee-eater</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:66.67%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3428,7 +3492,7 @@
             <div class="tg-p">Shakawe, <a href="#site-chobe-and-the-kasane-riverfront">Chobe and the Kasane riverfront</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/3237cadd96d2.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/wattled-crane/">Wattled Crane</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:50.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3436,7 +3500,7 @@
             <div class="tg-p">Moremi Game Reserve, Khwai</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/df453e92599a.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/kori-bustard/">Kori Bustard</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:50.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3444,7 +3508,7 @@
             <div class="tg-p"><a href="#site-savuti-and-the-mababe-depression">Savuti and the Mababe Depression</a>, Rakops</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/short-clawed-lark/">Short-clawed Lark</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:83.33%;width:16.67%"></span><span class="tg-b" style="left:0.00%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -3452,7 +3516,7 @@
             <div class="tg-p">Ramatlabama, Lobatse</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/73ddbe6fa51c.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/burchell-s-sandgrouse/">Burchell's Sandgrouse</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:50.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>

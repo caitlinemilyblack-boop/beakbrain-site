@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1010,6 +1021,59 @@
           <div class="grow"><dt>Routes</dt><dd><span class="glinks"><a class="glink" href="#itin-the-mindo-road">The Mindo Road<span class="gdays">5 days</span></a><a class="glink" href="#itin-both-slopes">Both Slopes<span class="gdays">8 days</span></a><a class="glink" href="#itin-andes-to-the-amazon">Andes to the Amazon<span class="gdays">10 days</span></a><a class="glink" href="#itin-the-jocotoco-south">The Jocotoco South<span class="gdays">12 days</span></a><a class="glink" href="#itin-the-whole-mainland">The Whole Mainland<span class="gdays">18 days</span></a></span></dd></div>
           <div class="grow"><dt>Getting around</dt><dd>Quito is the hub and no region here is more than a day from it. Mindo is ninety minutes by road and the Amazon is a forty-minute flight to Coca and then a boat.</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/sword-billed-hummingbird/">Sword-billed Hummingbirds at Yanacocha</a></h3>
+          <p class="hl-blurb">The only bird with a bill longer than its body, evolved to reach into the long corollas of the high Andean flowers. The feeders at Yanacocha at 3,500 m hold it daily, and it has to perch to preen with its feet because the bill cannot reach.</p>
+          <p class="hl-row"><b>When</b> All year at the feeders, with clearer mornings from June to September.</p>
+          <p class="hl-row"><b>Where</b> Quito, Papallacta</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/giant-antpitta/">Giant Antpitta at Refugio Paz de las Aves</a></h3>
+          <p class="hl-blurb">A bird almost nobody had photographed until a farmer above Mindo found in 2005 that one would come to worms and to its own name. The station now brings several antpitta species to a call at dawn and the method has spread across the Andes.</p>
+          <p class="hl-row"><b>When</b> Year round, at first light, and the walk in is steep and muddy whatever the month.</p>
+          <p class="hl-row"><b>Where</b> Nanegalito, Mindo</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/andean-cock-of-the-rock/">Andean Cock-of-the-rock on the west slope</a></h3>
+          <p class="hl-blurb">Males gather at dawn on the same branches season after season, and there are leks on both Andean slopes here. The one at Paz de las Aves is watched from a bench, which makes it among the easiest anywhere.</p>
+          <p class="hl-row"><b>When</b> Displaying all year, at its most intense from September to February, always at dawn.</p>
+          <p class="hl-row"><b>Where</b> Mindo, Nanegalito</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/andean-condor/">Andean Condors over Antisana</a></h3>
+          <p class="hl-blurb">Held as a water reserve for Quito, the paramo around Antisana is lightly grazed and open, and the cliffs above Laguna Micacocha carry a roost. Birds ride out on the first thermals of the morning, often at eye level with the road at 4,000 m.</p>
+          <p class="hl-row"><b>When</b> Mid-morning, and most reliable in the dry season from June to September.</p>
+          <p class="hl-row"><b>Where</b> Pintag, Papallacta</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/jocotoco-antpitta/">Jocotoco Antpitta at Tapichalaca</a></h3>
+          <p class="hl-blurb">Found in 1997 in a valley in the far south, unknown to science until then, and the reason the Jocotoco Foundation exists. The reserve built around it feeds a pair most mornings on a trail from the lodge.</p>
+          <p class="hl-row"><b>When</b> Year round at the feeding station, with drier walking from June to September.</p>
+          <p class="hl-row"><b>Where</b> Valladolid, Loja</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/harpy-eagle/">Harpy Eagle on the Napo</a></h3>
+          <p class="hl-blurb">The heaviest eagle in the Americas, and a nest with a chick will hold birds in view for months at a time. Lodges on the Napo track active nests and take guests when one is within reach.</p>
+          <p class="hl-row"><b>When</b> Nesting is irregular; ask the lodge what is active before you book.</p>
+          <p class="hl-row"><b>Where</b> Coca, Limoncocha</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/long-wattled-umbrellabird/">Long-wattled Umbrellabird in the Choco</a></h3>
+          <p class="hl-blurb">A crow-sized cotinga with a feathered wattle hanging from its chest, which the male inflates and swings at a lek. Almost all its habitat has gone to oil palm, so the private Choco reserves are where it survives.</p>
+          <p class="hl-row"><b>When</b> Lekking from December to May, and present all year at Canande.</p>
+          <p class="hl-row"><b>Where</b> Quininde, Mindo</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/plate-billed-mountain-toucan/">Plate-billed Mountain Toucan above Mindo</a></h3>
+          <p class="hl-blurb">A mountain toucan restricted to the wet west slope of the Andes in Ecuador and southern Colombia, and one of the birds the Mindo road is planned around. It comes to fruit feeders at several of the ridge lodges.</p>
+          <p class="hl-row"><b>When</b> All year, most often in the first two hours after dawn.</p>
+          <p class="hl-row"><b>Where</b> Nanegalito, Mindo</p>
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every Ecuadorian Species</h2>
@@ -7445,7 +7509,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/1239e5cb3801.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/sword-billed-hummingbird/">Sword-billed Hummingbird</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:41.67%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -7453,7 +7517,7 @@
             <div class="tg-p"><a href="#site-quito-yanacocha-and-the-northern-highlands">Quito, Yanacocha and the Northern Highlands</a>, Papallacta</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/6e3dc614e6a8.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/giant-antpitta/">Giant Antpitta</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -7461,7 +7525,7 @@
             <div class="tg-p">Nanegalito, <a href="#site-mindo-and-the-northwest-slope">Mindo and the Northwest Slope</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/a6f23103397e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/andean-cock-of-the-rock/">Andean Cock-of-the-rock</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:66.67%;width:33.33%"></span><span class="tg-b" style="left:0.00%;width:16.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -7469,7 +7533,7 @@
             <div class="tg-p"><a href="#site-mindo-and-the-northwest-slope">Mindo and the Northwest Slope</a>, Nanegalito</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/andean-condor/">Andean Condor</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:41.67%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -7477,7 +7541,7 @@
             <div class="tg-p">Pintag, Papallacta</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/6e3dc614e6a8.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/jocotoco-antpitta/">Jocotoco Antpitta</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -7485,7 +7549,7 @@
             <div class="tg-p">Valladolid, <a href="#site-loja-podocarpus-and-tapichalaca">Loja, Podocarpus and Tapichalaca</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/harpy-eagle/">Harpy Eagle</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -7493,7 +7557,7 @@
             <div class="tg-p">Coca, Limoncocha</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/6a48d6e3cd44.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/long-wattled-umbrellabird/">Long-wattled Umbrellabird</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:91.67%;width:8.33%"></span><span class="tg-b" style="left:0.00%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -7501,7 +7565,7 @@
             <div class="tg-p">Quininde, <a href="#site-mindo-and-the-northwest-slope">Mindo and the Northwest Slope</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/3c046347ea38.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/plate-billed-mountain-toucan/">Plate-billed Mountain Toucan</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>

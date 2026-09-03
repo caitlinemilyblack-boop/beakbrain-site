@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1009,6 +1020,59 @@
           <div class="grow"><dt>Getting in</dt><dd>Chengdu (CTU) for Sichuan, Xining (XNN) for the plateau, Kunming (KMG) for Yunnan, Beijing (PEK) for the Bohai coast, Shanghai (PVG) for the Jiangsu flats, Haikou (HAK) for Hainan and Urumqi (URC) for Xinjiang</dd></div>
           <div class="grow"><dt>Getting around</dt><dd>Domestic flights between regions, a car and driver within them, and the high-speed rail network for the eastern legs</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/chinese-monal/">Chinese Monal on Balang Shan</a></h3>
+          <p class="hl-blurb">A large iridescent pheasant of alpine scree above 4,000 m, and a Chinese endemic. The top of the Balang Shan pass is where it is looked for, at first light, from the roadside.</p>
+          <p class="hl-row"><b>When</b> April to June, once the pass is clear.</p>
+          <p class="hl-row"><b>Where</b> Wolong</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/spoon-billed-sandpiper/">Spoon-billed Sandpiper on the Jiangsu flats</a></h3>
+          <p class="hl-blurb">A wader with a spatulate bill and a world population in the hundreds of pairs. It stages on the Rudong mudflats on southbound passage, and you watch from the sea wall on a rising tide.</p>
+          <p class="hl-row"><b>When</b> August to October on southbound passage.</p>
+          <p class="hl-row"><b>Where</b> Rudong</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/temminck-s-tragopan/">Temminck's Tragopan in the Wolong forest</a></h3>
+          <p class="hl-blurb">A tragopan the colour of red brick with white spots. It inflates a blue lappet in display. The forest on the lower part of the Balang Shan road is the standard site.</p>
+          <p class="hl-row"><b>When</b> April to June.</p>
+          <p class="hl-row"><b>Where</b> Wolong</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/black-necked-crane/">Black-necked Crane on the plateau</a></h3>
+          <p class="hl-blurb">The only crane that lives its whole life at high altitude. It breeds on the Ruoergai and Qinghai marshes above 3,000 m and winters lower on the Yunnan plateau at Napahai.</p>
+          <p class="hl-row"><b>When</b> May to August breeding, November to March at Napahai.</p>
+          <p class="hl-row"><b>Where</b> Zoige, Shangri-La</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/przevalski-s-finch/">Przevalski's Finch on the Qinghai steppe</a></h3>
+          <p class="hl-blurb">A bird in a family of one. It lives only on the Tibetan plateau, and it was placed in its own family after decades of argument about whether it was a finch or a bunting. Qinghai is where it is looked for.</p>
+          <p class="hl-row"><b>When</b> May to September.</p>
+          <p class="hl-row"><b>Where</b> Qinghai Lake</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/red-crowned-crane/">Red-crowned Crane at Zhalong</a></h3>
+          <p class="hl-blurb">The crane of Chinese and Japanese art. It breeds in the northeastern reed marshes and winters on the Jiangsu coast. Zhalong outside Qiqihar is the best-known breeding reserve.</p>
+          <p class="hl-row"><b>When</b> April to September at Zhalong, December to February at Yancheng.</p>
+          <p class="hl-row"><b>Where</b> Zhalong, Yancheng</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/mrs-hume-s-pheasant/">Mrs. Hume's Pheasant at Baihualing</a></h3>
+          <p class="hl-blurb">A long-tailed pheasant of the Indo-Burmese hills, which comes to the paid village hides in western Yunnan at a few metres. Twenty years ago this was a bird almost nobody saw.</p>
+          <p class="hl-row"><b>When</b> All year at the hides, best in the dry from November.</p>
+          <p class="hl-row"><b>Where</b> Baihualing</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/ibisbill/">Ibisbill on the Tian Shan rivers</a></h3>
+          <p class="hl-blurb">A grey wader with a downcurved red bill that walks in shallow braided rivers of shingle, in a family of its own. The Tian Shan rivers in Xinjiang are the accessible Chinese site.</p>
+          <p class="hl-row"><b>When</b> April to September.</p>
+          <p class="hl-row"><b>Where</b> Urumqi</p>
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every Chinese Species</h2>
@@ -6504,7 +6568,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/de76657567f7.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/chinese-monal/">Chinese Monal</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -6512,7 +6576,7 @@
             <div class="tg-p"><a href="#site-western-sichuan-balang-shan-and-wolong">Western Sichuan: Balang Shan and Wolong</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/spoon-billed-sandpiper/">Spoon-billed Sandpiper</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:58.33%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -6520,7 +6584,7 @@
             <div class="tg-p"><a href="#site-the-yellow-sea-coast-rudong-and-the-jiangsu-mudflats">The Yellow Sea coast: Rudong and the Jiangsu mudflats</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/4ee70d2904f5.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/temminck-s-tragopan/">Temminck's Tragopan</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -6528,7 +6592,7 @@
             <div class="tg-p"><a href="#site-western-sichuan-balang-shan-and-wolong">Western Sichuan: Balang Shan and Wolong</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/3237cadd96d2.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/black-necked-crane/">Black-necked Crane</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -6536,7 +6600,7 @@
             <div class="tg-p">Zoige, Shangri-La</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/c6c44d11763b.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/przevalski-s-finch/">Przevalski's Finch</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -6544,7 +6608,7 @@
             <div class="tg-p">Qinghai Lake</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/3237cadd96d2.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/red-crowned-crane/">Red-crowned Crane</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:50.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -6552,7 +6616,7 @@
             <div class="tg-p">Zhalong, Yancheng</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/4ee70d2904f5.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/mrs-hume-s-pheasant/">Mrs. Hume's Pheasant</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:83.33%;width:16.67%"></span><span class="tg-b" style="left:0.00%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -6560,7 +6624,7 @@
             <div class="tg-p">Baihualing</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/ibisbill/">Ibisbill</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:50.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>

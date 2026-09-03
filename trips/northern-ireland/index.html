@@ -590,6 +590,17 @@
     .season h3 { font-size: 20px; color: var(--green-dark); }
     .season-lead { font-size: 14.5px; color: var(--muted); }
     .season-row { font-size: 13.5px; color: var(--muted); }
+    /* Birds that decide the trip: the species write-ups, which reached no page until
+       2026-09-03. Same card as a season block so the two read as one family. */
+    .hlwrap { margin-bottom: 30px; }
+    .hls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .hl { padding: 20px 22px; background: var(--surface); display: flex; flex-direction: column; gap: 7px; }
+    .hl h3 { font-size: 18px; color: var(--green-dark); line-height: 1.25; }
+    .hl h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .hl h3 a:hover, .hl h3 a:focus-visible { border-bottom-color: var(--green-dark); }
+    .hl-blurb { font-size: 14.5px; color: var(--muted); }
+    .hl-row { font-size: 13.5px; color: var(--muted); }
+    .hl-row b { display: block; font-family: var(--body); font-weight: 800; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-top: 4px; }
     .season-bullets, .glance-bullets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 3px; }
     .season-bullets li, .glance-bullets li { position: relative; padding-left: 13px; }
     .season-bullets li::before, .glance-bullets li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
@@ -1003,6 +1014,59 @@
           <div class="grow"><dt>Itineraries</dt><dd><span class="glinks"><a class="glink" href="#itin-a-belfast-layover">A Belfast Layover<span class="gdays">1 day</span></a><a class="glink" href="#itin-the-north-coast">The North Coast<span class="gdays">3 days</span></a><a class="glink" href="#itin-the-winter-loughs">The Winter Loughs<span class="gdays">4 days</span></a><a class="glink" href="#itin-the-lakelands-and-the-mournes">The Lakelands and the Mournes<span class="gdays">4 days</span></a><a class="glink" href="#itin-northern-ireland-in-a-week">Northern Ireland in a Week<span class="gdays">7 days</span></a></span></dd></div>
           <div class="grow"><dt>Getting around</dt><dd>A hire car reaches every region here. The island is small enough that the far southwest is five hours from the far north, and the border crosses without a stop</dd></div>
         </dl>
+      </div>
+      <div class="hlwrap">
+      <h2 class="cat-title">Birds that decide the trip</h2>
+        <div class="hls">
+        <article class="hl">
+          <h3><a href="/birds/brant-goose/">Light-bellied Brent Geese in Northern Ireland</a></h3>
+          <p class="hl-blurb">Almost the entire Canadian High Arctic population stops on Strangford Lough each autumn. The birds arrive from late August and spread along the east coast through the winter. It is one of the great arrivals in these islands, and it happens within an hour of Belfast.</p>
+          <p class="hl-row"><b>When</b> Late August to March, peak September and October</p>
+          <p class="hl-row"><b>Where</b> Strangford Lough and Lough Neagh</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/atlantic-puffin/">Puffins on Rathlin</a></h3>
+          <p class="hl-blurb">Rathlin's West Light holds the largest seabird colony in Northern Ireland, and the RSPB viewpoint is built into the lighthouse looking straight down into it. Puffins, <a href="/birds/razorbill/">Razorbills</a>, Guillemots and Kittiwakes all on one wall.</p>
+          <p class="hl-row"><b>When</b> April to July</p>
+          <p class="hl-row"><b>Where</b> The north coast, Rathlin and Lough Foyle</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/common-murre/">Guillemots on Rathlin</a></h3>
+          <p class="hl-blurb">The same wall at the West Light carries guillemots in thousands, packed onto ledges at eye level from the viewpoint. The colony is at its fullest in June.</p>
+          <p class="hl-row"><b>When</b> April to July</p>
+          <p class="hl-row"><b>Where</b> The north coast, Rathlin and Lough Foyle</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/whooper-swan/">Whooper Swans in Northern Ireland</a></h3>
+          <p class="hl-blurb">Icelandic birds winter on Lough Foyle, Lough Neagh and the Erne lakelands. They feed on stubble and flooded grassland and roost on open water.</p>
+          <p class="hl-row"><b>When</b> October to March</p>
+          <p class="hl-row"><b>Where</b> The north coast, Rathlin and Lough Foyle, Fermanagh and the Erne lakelands</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/red-billed-chough/">Choughs on the north coast</a></h3>
+          <p class="hl-blurb">Rathlin and the Antrim clifftops hold the small Northern Irish population, on short grazed turf above the sea. Numbers are low enough that every pair is known.</p>
+          <p class="hl-row"><b>When</b> All year</p>
+          <p class="hl-row"><b>Where</b> The north coast, Rathlin and Lough Foyle</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/eurasian-curlew/">Curlews in Northern Ireland</a></h3>
+          <p class="hl-blurb">Breeding Curlew have collapsed across these islands and the Fermanagh lakelands and the Antrim hills hold some of the last Northern Irish pairs, on rough wet grassland managed for them.</p>
+          <p class="hl-row"><b>When</b> March to July for breeding birds; winter on the loughs</p>
+          <p class="hl-row"><b>Where</b> Fermanagh and the Erne lakelands, The Mournes and Carlingford Lough</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/sandwich-tern/">Sandwich Terns on Strangford Lough</a></h3>
+          <p class="hl-blurb">Strangford holds one of the largest tern colonies in Ireland, on low islands the birds share with breeding gulls. <a href="/birds/sandwich-tern/">Sandwich Tern</a> are the noisiest of them, shaggy crested and heavy billed, and they carry sandeels back across the water all day. Watch from the shore at Castle Espie, or take the Portaferry crossing, which cuts straight through their fishing ground.</p>
+          <p class="hl-row"><b>When</b> Present from May to September. Birds are on the islands from late spring and the colony is loudest through June and July.</p>
+          <p class="hl-row"><b>Where</b> WWT Castle Espie, Portaferry</p>
+        </article>
+        <article class="hl">
+          <h3><a href="/birds/hen-harrier/">Hen Harriers over the Fermanagh uplands</a></h3>
+          <p class="hl-blurb">A harrier hunts by flying low and slow along the same line of ground again and again, wings held in a shallow V. Males are pale grey and females brown with a white rump, and both quarter the young forestry and open bog of the Erne uplands. Pick a vantage point with a wide view and give it an hour, because the bird comes to you rather than the other way round.</p>
+          <p class="hl-row"><b>When</b> Reported most from March to June, when birds display over the breeding ground.</p>
+          <p class="hl-row"><b>Where</b> Castle Caldwell Forest, Castle Archdale Country Park</p>
+        </article>
+        </div>
       </div>
       <div class="birdhead">
       <h2 class="cat-title">Every Northern Irish Species</h2>
@@ -2153,7 +2217,7 @@
             <div>Best Window</div><div>Where</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/e58fde9fe327.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/brant-goose/">Brant Goose</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:58.33%;width:41.67%"></span><span class="tg-b" style="left:0.00%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2161,7 +2225,7 @@
             <div class="tg-p"><a href="#site-strangford-lough-and-lough-neagh">Strangford Lough and Lough Neagh</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/atlantic-puffin/">Atlantic Puffin</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2169,7 +2233,7 @@
             <div class="tg-p"><a href="#site-the-north-coast-rathlin-and-lough-foyle">The north coast, Rathlin and Lough Foyle</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/common-murre/">Common Murre</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:25.00%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2177,7 +2241,7 @@
             <div class="tg-p"><a href="#site-the-north-coast-rathlin-and-lough-foyle">The north coast, Rathlin and Lough Foyle</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/e58fde9fe327.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/whooper-swan/">Whooper Swan</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:75.00%;width:25.00%"></span><span class="tg-b" style="left:0.00%;width:25.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2185,7 +2249,7 @@
             <div class="tg-p"><a href="#site-the-north-coast-rathlin-and-lough-foyle">The north coast, Rathlin and Lough Foyle</a>, <a href="#site-fermanagh-and-the-erne-lakelands">Fermanagh and the Erne lakelands</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/058c1e5c2d2e.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/red-billed-chough/">Red-billed Chough</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b tg-all" style="left:0.00%;width:100.00%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2193,7 +2257,7 @@
             <div class="tg-p"><a href="#site-the-north-coast-rathlin-and-lough-foyle">The north coast, Rathlin and Lough Foyle</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/972f2945351f.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/eurasian-curlew/">Eurasian Curlew</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2201,7 +2265,7 @@
             <div class="tg-p"><a href="#site-fermanagh-and-the-erne-lakelands">Fermanagh and the Erne lakelands</a>, <a href="#site-the-mournes-and-carlingford-lough">The Mournes and Carlingford Lough</a></div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/aa315e867896.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/sandwich-tern/">Sandwich Tern</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:33.33%;width:41.67%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -2209,7 +2273,7 @@
             <div class="tg-p">WWT Castle Espie, Portaferry</div>
           </div>
           <div class="tg-row">
-            <div class="tg-ill"><img src="/birds/assets/sprites/ce7ae97e3331.svg" alt="" loading="lazy" decoding="async" width="46" height="46"></div>
+            <div class="tg-ill"></div>
             <div class="tg-n"><a href="/birds/hen-harrier/">Hen Harrier</a></div>
             <div class="tg-mini"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tg-b" style="left:16.67%;width:33.33%"></span></div>
             <div class="tg-scale" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
