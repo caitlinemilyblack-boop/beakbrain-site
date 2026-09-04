@@ -981,6 +981,7 @@
       <div class="hstats">
         <div class="hstat"><b>180</b><span>species with a card here</span></div>
         <div class="hstat"><b>5</b><span>regions</span></div>
+        <div class="hstat"><b>2</b><span>protected areas listed</span></div>
       </div>
     </div>
 
@@ -2097,7 +2098,7 @@
         <li class="where"><b>Look for:</b> <a href="/birds/thick-billed-murre/">Thick-billed Murre</a>, <a href="/birds/northern-fulmar/">Northern Fulmar</a>, <a href="/birds/black-legged-kittiwake/">Black-legged Kittiwake</a>, <a href="/birds/black-guillemot/">Black Guillemot</a>, <a href="/birds/little-auk/">Little Auk</a>, <a href="/birds/ivory-gull/">Ivory Gull</a>, <a href="/birds/glaucous-gull/">Glaucous Gull</a>, <a href="/birds/snow-goose/">Snow Goose</a>, <a href="/birds/king-eider/">King Eider</a>, <a href="/birds/long-tailed-duck/">Long-tailed Duck</a>, <a href="/birds/purple-sandpiper/">Purple Sandpiper</a>, <a href="/birds/arctic-tern/">Arctic Tern</a></li>
 
 
-
+        <li class="where parks"><b>National park:</b> <span class="parkname">Sirmilik National Park</span></li>
 
 
         <li class="where covers"><b>Also covers:</b> Bylot Island, Pond Inlet, Prince Leopold Island, Sirmilik National Park</li><li class="where wildlife"><b>Also watch for:</b> Narwhal, beluga, bowhead, ringed seal and polar bear all use the same ice edge as the seabirds, which is why the sound is protected.</li>
@@ -2196,7 +2197,7 @@
         <li class="where"><b>Look for:</b> <a href="/birds/ivory-gull/">Ivory Gull</a>, <a href="/birds/ross-s-gull/">Ross's Gull</a>, <a href="/birds/rock-ptarmigan/">Rock Ptarmigan</a>, <a href="/birds/snowy-owl/">Snowy Owl</a>, <a href="/birds/long-tailed-jaeger/">Long-tailed Jaeger</a>, <a href="/birds/sanderling/">Sanderling</a>, <a href="/birds/ruddy-turnstone/">Ruddy Turnstone</a>, <a href="/birds/red-knot/">Red Knot</a>, <a href="/birds/baird-s-sandpiper/">Baird's Sandpiper</a>, <a href="/birds/snow-bunting/">Snow Bunting</a>, <a href="/birds/yellow-billed-loon/">Yellow-billed Loon</a>, <a href="/birds/king-eider/">King Eider</a></li>
 
 
-
+        <li class="where parks"><b>National park:</b> <span class="parkname">Quttinirpaaq National Park</span></li>
 
 
         <li class="where covers"><b>Also covers:</b> Grise Fiord, Quttinirpaaq National Park, Resolute, Seymour Island</li><li class="where wildlife"><b>Also watch for:</b> Muskoxen, Peary caribou and arctic wolves live on Ellesmere, and the wolves there have almost no experience of people and show no fear of them.</li>
@@ -2668,7 +2669,7 @@
       var REGIONS = [["site-iqaluit-and-southern-baffin",-68.8507,63.5162,"Iqaluit","#aa4845",0],["site-bylot-island-and-lancaster-sound",-82.1745,73.1931,"Bylot","#d37c43",1],["site-the-kivalliq-coast",-94.0547,62.3362,"Kivalliq","#936000",2],["site-foxe-basin-and-southampton-island",-86.0865,66.5275,"Foxe Basin","#9f9a28",3],["site-ellesmere-and-the-high-arctic",-85.9213,76.9049,"High Arctic","#497c24",4]];
       var LODGES = [];
       var GOING = [];
-      var NPARKS = [];
+      var NPARKS = [["site-bylot-island-and-lancaster-sound",-78.07963,72.89261,"Sirmilik National Park","Bylot Island and Lancaster Sound","#d37c43",null],["site-ellesmere-and-the-high-arctic",-71.3,81.8167,"Quttinirpaaq National Park","Ellesmere and the High Arctic","#497c24",null]];
       var STOPS = [];
       function boot() {
         if (!window.maplibregl) { setTimeout(boot, 80); return; }
