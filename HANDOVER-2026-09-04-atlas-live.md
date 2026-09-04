@@ -48,7 +48,7 @@ outliers and their weight is lodges, not maps.
 | species-lists | Keep GBIF and keep saying so | **nothing to do** |
 | condor | Find out why, then add | **cause found and fixed at source**, needs a pipeline rebuild to appear |
 | books | Get all seven | **list delivered**, and it is 34 units, not seven |
-| parks | Add them, backfill all 63 | **in progress**, see section 3 |
+| parks | Add them, backfill all 63 | **in progress**, 6 of 63 fetched, see section 3 |
 | lodges | Run them on all 63 | **not started** |
 | heroes | Source a clip per guide | **candidates ranked**, none chosen |
 
@@ -61,9 +61,9 @@ outliers and their weight is lodges, not maps.
 should name. Tested on Quebec: 12 parks across 4 regions, including Forillon,
 Fjord-du-Saguenay, Jacques-Cartier, Mont-Tremblant and the Cap Tourmente reserve.
 
-**The blocker is the fetch, not the proposal.** 2 of the 63 have a cache. The loop is
-running one guide at a time against Overpass and Alaska has been going for a long while,
-because it queries the guide's whole bounding box and Alaska's is enormous.
+**The blocker is the fetch, not the proposal.** 6 of the 63 have a cache after several
+hours. The loop is running one guide at a time against Overpass and queries each guide's
+whole bounding box; Alaska's is enormous and took most of that time on its own.
 
 Two ways forward, and the second is better:
 
@@ -71,7 +71,9 @@ Two ways forward, and the second is better:
 2. **Query per REGION bounding box rather than per guide.** A region is a few hundred
    kilometres across, the query returns in seconds, and the proposal only ever uses areas
    near a region's own coordinates anyway, so the wide query is fetching thousands of
-   protected areas that are discarded on the next line.
+   protected areas that are discarded on the next line. Quebec cached 1,490 of them and
+   the proposal used 12. At 6 guides in several hours the current loop finishes some time
+   tomorrow; per region it is minutes.
 
 Nothing has been written to any guide yet. `apply-parks.js` takes a proposal and a
 verdict file and is unchanged.
@@ -104,7 +106,7 @@ AviList rather than the news.
 
 ---
 
-## 5. The app: one fix committed, not shipped
+## 5. The app: shipped, and the OTA nearly went nowhere
 
 Sentry `REACT-NATIVE-S`, a real user on 1.0.2+28, opened Credits & licences and tapped
 Xeno-canto:
@@ -118,11 +120,27 @@ mechanism: onunhandledrejection
 always Screen Time or a content filter. **Thirteen `openURL` calls across five screens had
 no catch on them**, so every one was an unhandled rejection waiting for the right user.
 `src/openLink.ts` catches, says what happened, names Screen Time, and prints the address.
-`tsc` clean, committed as `a023706`.
+Committed as `a023706`, published to `production` as update group **`da774921`**.
 
-**It is JS-only, so it ships over the air with no new build.** It has not been shipped.
+**READ THIS BEFORE THE NEXT OTA.** The first publish went to runtime **1.0.1** and reached
+nobody, and it looked entirely successful doing it: `✔ Published!`, an update group ID and
+a dashboard link. Every live user is on **1.0.2**.
 
----
+`runtimeVersion.policy` is `appVersion`, and for an UPDATE that resolves from `app.json`.
+`eas.json` carries `"appVersionSource": "remote"`, which reads like "EAS knows the
+version" — it governs **builds** and the auto-incremented build number, and does nothing
+for `eas update`. `app.json` had been left at 1.0.1 when the 1.0.2 build shipped, so the
+file and the binary disagreed and the update targeted a runtime with no users on it.
+
+The only tell is the `Runtime version` line in the result block. **Read it back, every
+time.** `app.json` is corrected to 1.0.2 in `b3fab90`, and a real submission must bump it
+there as well as remotely or the next fix goes into the same hole.
+
+`dist/` was cleared afterwards: `eas update` overwrites it with 56 MB of native bundles,
+and the next `wrangler pages deploy dist` then dies on Cloudflare's 25 MiB per-file limit
+with an error that names the file and not the cause.
+
+Users get an update on the SECOND launch. Close the app fully, open, close, open.
 
 ## 6. What is still owed on every one of the 63
 
@@ -150,9 +168,12 @@ cd ~/Developer/beakbrain-site  && ./deploy-worker.sh
 `git status` immediately before, every time. A fresh deployment answers 404 for about 60
 seconds; that is the Cloudflare edge, not a routing bug.
 
-**17 commits on `trips/nation-guides-heroes-and-fixes` are unpushed.** The deploy rsyncs
-the working tree rather than HEAD, so what is live and what is on the remote are not the
-same thing until someone pushes.
+**Everything is pushed as of 2026-09-04.** All four repositories: `beakbrain-site` (17
+commits), `beakbrain-site-build` (95), `beakbrain-app`, and the `beakbrain-pipeline`
+submodule carrying the condor fix. Both trees are clean.
+
+Worth remembering anyway: the deploy rsyncs the working tree rather than HEAD, so what is
+live and what is on the remote are only the same thing while the tree is clean.
 
 ---
 
