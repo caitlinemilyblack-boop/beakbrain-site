@@ -48,42 +48,41 @@ outliers and their weight is lodges, not maps.
 | species-lists | Keep GBIF and keep saying so | **nothing to do** |
 | condor | Find out why, then add | **cause found and fixed at source**, needs a pipeline rebuild to appear |
 | books | Get all seven | **list delivered**, and it is 34 units, not seven |
-| parks | Add them, backfill all 63 | **in progress**, 6 of 63 fetched, see section 3 |
+| parks | Add them, backfill all 63 | **another session owns it**, see section 3 |
 | lodges | Run them on all 63 | **not started** |
 | heroes | Source a clip per guide | **candidates ranked**, none chosen |
 
 ---
 
-## 3. Parks: in progress, and the approach needs a decision
+## 3. Parks: ANOTHER SESSION OWNS THIS
 
-`propose-parks.js` is written and works. It reads the protected-area cache that
-`fetch-protected.js` already keeps for the lodge import and proposes what each region
-should name. Tested on Quebec: 12 parks across 4 regions, including Forillon,
+**`caitlinblack-f8` is working on it as of 10:35 today, and `fetch-protected.js` is theirs.**
+I have written nothing to that file and messaged them to say so. Read this section as a
+record of what is on disk, not as work to pick up.
+
+Both sessions reached the same diagnosis independently. `fetch-protected.js` queried each
+guide's whole bounding box: **Alaska answered HTTP 504** and **Connecticut returned 6,672
+protected areas**, because its box swallows New York and Massachusetts. Quebec cached 1,490
+and the proposal used twelve. The other session has uncommitted `--regions` and `--atlas`
+modes that box each region separately, with km-based padding and a cosine floor so a polar
+region does not ask for a box that wraps the world. Better than what I had drafted.
+
+**What is mine and committed:** `propose-parks.js`. It reads the protected-area cache and
+proposes what each region should name. A park qualifies three ways: its name IS one of the
+region's own areas, it contains one of their coordinates, or its centre is within 12 km or
+half its own width. Tested on Quebec: 12 parks across 4 regions, including Forillon,
 Fjord-du-Saguenay, Jacques-Cartier, Mont-Tremblant and the Cap Tourmente reserve.
 
-**The blocker is the fetch, not the proposal.** 6 of the 63 have a cache after several
-hours. The loop is running one guide at a time against Overpass and queries each guide's
-whole bounding box; Alaska's is enormous and took most of that time on its own.
-
-Two ways forward, and the second is better:
-
-1. Let it run. Hours, and the biggest states may time out repeatedly.
-2. **Query per REGION bounding box rather than per guide.** A region is a few hundred
-   kilometres across, the query returns in seconds, and the proposal only ever uses areas
-   near a region's own coordinates anyway, so the wide query is fetching thousands of
-   protected areas that are discarded on the next line. Quebec cached 1,490 of them and
-   the proposal used 12. At 6 guides in several hours the current loop finishes some time
-   tomorrow; per region it is minutes.
-
-Nothing has been written to any guide yet. `apply-parks.js` takes a proposal and a
-verdict file and is unchanged.
+**Caches on disk, all at GUIDE scope** and therefore worth re-fetching with `--force` once
+region scope lands: alabama, arizona, arkansas, california, colorado, connecticut,
+delaware, florida, quebec. Nine of 63.
 
 **Links.** No URL is proposed. `apply-parks.js` writes a link only where a verdict file
 says it was opened and found to name its park, and a park without one renders as plain
 text. 34 dead links reached the guides once by assuming a plausible URL was a good one.
 Backfilling names first and proving links second is the safe order.
 
----
+**Nothing has been written to any guide.**
 
 ## 4. The condor, and why it is not on the site yet
 
@@ -156,6 +155,23 @@ Unchanged by the deploy, and each is a decision Cat has already made:
 - **GBIF species list** (59 of 63), which Cat has settled: keep it and keep saying so.
 
 ---
+
+## 6b. Two sessions are running
+
+`caitlinblack-db` (this one) built the atlas and deployed it. `caitlinblack-f8` started at
+about 10:20 and owns the parks fetch. We have divided the work by file: parks tooling is
+theirs, and everything under section 2 above is mine.
+
+**The collision that nearly happened.** I read `fetch-protected.js`, decided it needed
+per-region boxes, and had a patch ready before noticing the file was modified one minute
+earlier and already had exactly that. Nothing was written, because the patch asserted on a
+second string that had also changed. The check that caught it was `git status` on the build
+repo showing a file I had not touched.
+
+**So: `git status` in BOTH trees before editing anything, not once per session.** And if a
+data file looks unfamiliar, check the mtime before writing it back. I migrated all 285
+photo overrides to `photo_url` across 91 guides at about 09:50 and re-picked the fleet; a
+`data/*.json` opened before that and written back afterwards would undo it silently.
 
 ## 7. Pre-flight, unchanged
 
