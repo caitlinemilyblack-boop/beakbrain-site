@@ -3580,7 +3580,7 @@
 
         <li class="where parks"><b>Parks and reserves:</b>
           <ul class="stoplist">
-            <li><span class="parkname">Kinabalu Park</span> <span class="pkind">(national park)</span>, Park headquarters at 1,560 m. The Silau Silau and Liwagu trails start here, and the summit road climbs above.</li>
+            <li><a class="parklink" href="https://www.sabahparks.org.my/kinabalu-park" target="_blank" rel="noopener">Kinabalu Park</a> <span class="pkind">(national park)</span>, Park headquarters at 1,560 m. The Silau Silau and Liwagu trails start here, and the summit road climbs above.</li>
           </ul>
         </li>
         <li class="where stops"><b>Stops:</b>
@@ -3775,7 +3775,7 @@
         <li class="where"><b>Look for:</b> <a href="/birds/bornean-bristlehead/">Bornean Bristlehead</a>, <a href="/birds/bornean-ground-cuckoo/">Bornean Ground Cuckoo</a>, <a href="/birds/black-crowned-pitta/">Black-crowned Pitta</a>, <a href="/birds/bushy-crested-hornbill/">Bushy-crested Hornbill</a>, <a href="/birds/white-fronted-falconet/">White-fronted Falconet</a>, <a href="/birds/rufous-collared-kingfisher/">Rufous-collared Kingfisher</a>, <a href="/birds/scarlet-rumped-trogon/">Scarlet-rumped Trogon</a>, <a href="/birds/blue-eared-kingfisher/">Blue-eared Kingfisher</a></li>
 
 
-        <li class="where parks"><b>Parks and reserves:</b> <span class="parkname">Tabin Wildlife Reserve</span></li>
+        <li class="where parks"><b>Parks and reserves:</b> <a class="parklink" href="https://tabinwildlife.com.my/" target="_blank" rel="noopener">Tabin Wildlife Reserve</a></li>
         <li class="where stops"><b>Stops:</b>
           <ul class="stoplist">
             <li class="stop"><button type="button" class="stoplink" data-stop="stop-tabin" title="Show Tabin on the map">Tabin</button>: The reserve east of Lahad Datu. A lodge sits inside it, and a road runs to the mud volcano.</li>
@@ -4350,7 +4350,7 @@
       var REGIONS = [["site-mount-kinabalu",116.5745,5.9857,"Kinabalu","#aa4845",0],["site-danum-valley",118.3276,5.0216,"Danum","#d37c43",1],["site-the-kinabatangan-river",118.287,5.5097,"Kinabatangan","#936000",2],["site-tabin-and-the-eastern-lowlands",118.7216,5.2227,"Tabin","#9f9a28",3],["site-sarawak-the-kelabit-highlands-and-bako",112.9029,2.6539,"Sarawak","#497c24",4]];
       var LODGES = [["bird-borneo-rainforest-danum",117.7461,5.0197,"Borneo Rainforest Lodge","Danum Valley, Lahad Datu, Sabah","#d37c43","$300 to $600 (all-inclusive) / night"],["ww-ibu-bumi-orangutan-kuching",110.3454,1.5598,"Ibu Bumi Orangutan","Kuching","#497c24",""],["ww-pantai-dalit-beach-resort-sdn-bhd-tuaran",116.3198,6.0659,"Pantai Dalit Beach Resort Sdn Bhd.","Tuaran","#aa4845","$100 to $300 / €86 to €259 / £74 to £222 / night"],["ww-turtle-island-lodge-sandakan",118.1159,5.8391,"Turtle Island Lodge","Sandakan","#936000","$100 to $300 / €86 to €259 / £74 to £222 / night"]];
       var GOING = [];
-      var NPARKS = [["site-mount-kinabalu",116.6768,6.2471,"Kinabalu Park","Mount Kinabalu","#aa4845",null],["site-danum-valley",117.6957,4.9397,"Danum Valley Conservation Area","Danum Valley","#d37c43",null],["site-tabin-and-the-eastern-lowlands",118.7216,5.2227,"Tabin Wildlife Reserve","Tabin and the eastern lowlands","#9f9a28",null],["site-sarawak-the-kelabit-highlands-and-bako",110.4784,1.7207,"Bako National Park","Sarawak: the Kelabit Highlands and Bako","#497c24",null]];
+      var NPARKS = [["site-mount-kinabalu",116.6768,6.2471,"Kinabalu Park","Mount Kinabalu","#aa4845","https://www.sabahparks.org.my/kinabalu-park"],["site-danum-valley",117.6957,4.9397,"Danum Valley Conservation Area","Danum Valley","#d37c43",null],["site-tabin-and-the-eastern-lowlands",118.7216,5.2227,"Tabin Wildlife Reserve","Tabin and the eastern lowlands","#9f9a28","https://tabinwildlife.com.my/"],["site-sarawak-the-kelabit-highlands-and-bako",110.4784,1.7207,"Bako National Park","Sarawak: the Kelabit Highlands and Bako","#497c24",null]];
       var STOPS = [["stop-kinabalu-park",116.6768,6.2471,"Kinabalu Park","Mount Kinabalu","#aa4845",""],["stop-poring",116.7087,6.0412,"Poring","Mount Kinabalu","#aa4845",""],["stop-danum-valley",117.6957,4.9397,"Danum Valley","Danum Valley","#d37c43",""],["stop-lahad-datu",118.4306,5.1155,"Lahad Datu","Danum Valley","#d37c43",""],["stop-sukau",118.287,5.5097,"Sukau","The Kinabatangan river","#936000",""],["stop-sandakan",118.1159,5.8391,"Sandakan","The Kinabatangan river","#936000",""],["stop-tabin",118.7216,5.2227,"Tabin","Tabin and the eastern lowlands","#9f9a28",""],["stop-bario",115.4604,3.7479,"Bario","Sarawak: the Kelabit Highlands and Bako","#497c24",""],["stop-bako",110.4784,1.7207,"Bako","Sarawak: the Kelabit Highlands and Bako","#497c24",""],["stop-kuching",110.3454,1.5598,"Kuching","Sarawak: the Kelabit Highlands and Bako","#497c24",""]];
       function boot() {
         if (!window.maplibregl) { setTimeout(boot, 80); return; }
